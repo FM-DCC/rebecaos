@@ -81,9 +81,11 @@ object Semantics extends SOS[String,St]:
     case (_, Nil) => sys.error(s"Unexpected formal rebecs: ${vars.mkString(",")}")
 
   def next[A>:String](st: St): Set[(A, St)] =
-    val someInitial = st._3.bag.find((m,_)=>m.m=="initial")
+//    val someInitial = st._3.bag.find((m,_)=>m.m=="initial")
+    val initials = for m <- st._3.bag.keySet if m.m=="initial" yield m.rcv
     for
-      msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if someInitial.isEmpty || someInitial.get._1==msg // for each message
+//      msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if someInitial.isEmpty || someInitial.get._1==msg // for each message
+      msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if (!initials(rcv)) || (initials(rcv) && m=="initial") // priority to initials
       rebEnv <- st._2.get(rcv).toSet  // getting the potential receiver
       mth <- rebEnv.meth.get(m).toSet // getting the potential method
       (newEnv,newMsgs) <- evalStm( mth.stm)(using rebEnv ++ // evaluate the satement with extra variables:

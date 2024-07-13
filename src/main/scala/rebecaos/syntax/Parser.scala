@@ -263,7 +263,7 @@ object Parser :
 
     def ineq:P[Expr] =
       (varOrIexpr ~ (op.surroundedBy(sps) ~ varOrIexpr).?)
-        .map(x => if x._2.isDefined then x._2.get._1(x._2.get._2,x._1) else x._1)
+        .map(x => if x._2.isDefined then x._2.get._1(x._1,x._2.get._2) else x._1)
 //          .match {
 //          case IVar(n) => BVar(n)
 //          case e => sys.error(s"unexpected integer expression ${x._1}")

@@ -39,8 +39,8 @@ object CaosConfig extends Configurator[St]:
     "View pretty data" -> view[St](_.toString, Code("haskell")).moveTo(0),
 //    "View structure" -> view(Show.mermaid, Mermaid),
      "Run semantics" -> steps((e:St)=>e, Semantics, Show.apply, _.toString, Text).expand,
-     "Build LTS" -> lts((e:St)=>e, Semantics, Show.short, _.toString),
-     "Build LTS (explore)" -> ltsExplore(e=>e, Semantics, Show.apply, _.toString),
+     "Build LTS" -> lts((e:St)=>e, Semantics, Show.short, _.toString,50),
+     "Build LTS (explore)" -> ltsExplore(e=>e, Semantics, Show.short, _.toString),
 //    "Find strong bisimulation (given a program \"A ~ B\")" ->
 //      compareStrongBisim(Semantics, Semantics,
 //        (e: System) => System(e.defs, e.main, None),

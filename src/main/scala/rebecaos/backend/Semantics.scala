@@ -84,9 +84,10 @@ object Semantics extends SOS[String,St]:
 //    val someInitial = st._3.bag.find((m,_)=>m.m=="initial")
     val initials = for m <- st._3.bag.keySet if m.m=="initial" yield m.rcv
     for
+      smallestTT <- st._3.bag.keySet.map(_.tt).minOption.toSet
 //      msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if someInitial.isEmpty || someInitial.get._1==msg // for each message
-      msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if (!initials(rcv)) || (initials(rcv) && m=="initial") // priority to initials
-      rebEnv <- st._2.get(rcv).toSet  // getting the potential receiver
+      msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if enabled(msg,initials,smallestTT) // priority to initials
+      rebEnv <- st._2.get(rcv).toSet if enabledDL(msg,rebEnv) // getting the potential receiver
       mth <- rebEnv.meth.get(m).toSet // getting the potential method
       (newEnv,newMsgs) <- evalStm( mth.stm)(using rebEnv ++ // evaluate the satement with extra variables:
           unify(mth.vars,args) +         // adding vars=values
@@ -98,6 +99,13 @@ object Semantics extends SOS[String,St]:
       //println(s"# msg $rcv.$m - old msgs: ${st._3}; dropped $msg; adding ${newMsgs} --> $updMsg")
       s"${Show(msg)}"
         -> (st._1, st._2 + (rcv -> newEnv), (st._3 - msg) ++ updMsg)
+
+  def enabled(m: Msg, initials: Set[String],smallestTT: Int): Boolean =
+    ((!initials(m.rcv)) || (initials(m.rcv) && m.m=="initial")) &&
+      m.tt <= smallestTT
+
+  def enabledDL(m: Msg, env: RebecEnv): Boolean =
+      m.dl.isEmpty || (m.dl.get >= env.now)
 
   def evalStmDb(stm:Statement)(using reb: RebecEnv): Set[(RebecEnv, Msgs)] =
     println(s"evaluating $stm knowing $reb")

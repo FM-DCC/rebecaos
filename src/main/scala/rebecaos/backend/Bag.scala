@@ -14,6 +14,7 @@ case class Bag[A](bag: Map[A, Int]):
   def ++(other: Bag[A]): Bag[A] =
     Bag(other.bag ++ (for (a, i) <- bag yield a -> (i + other.get(a))))
   def toSet: Set[A] = bag.keySet
+  def toList: List[A] = bag.toList.flatMap(kv=>List.fill(kv._2)(kv._1))
   def map[B](f:A=>B): Bag[B] =
     val bag2 = bag.foldRight[Map[B,Int]](Map())((ai,b) =>
         b + (f(ai._1) -> (ai._2 + b.getOrElse(f(ai._1),0))))

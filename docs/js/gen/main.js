@@ -279,6 +279,13 @@ function $dp_hashCode__I(instance) {
     }
   }
 }
+function $dp_isBlank__Z(instance) {
+  if (((typeof instance) === "string")) {
+    return $f_T__isBlank__Z(instance)
+  } else {
+    return instance.isBlank__Z()
+  }
+}
 function $dp_regionMatches__Z__I__T__I__I__Z(instance, x0, x1, x2, x3, x4) {
   if (((typeof instance) === "string")) {
     return $f_T__regionMatches__Z__I__T__I__I__Z(instance, x0, x1, x2, x3, x4)
@@ -10205,21 +10212,38 @@ function $m_RTLong$() {
   };
   return $n_RTLong$
 }
-function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTo__T__T($thiz, a) {
-  var this$3 = $n(($m_sc_StringOps$(), $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "[^.]*", $m_sci_Nil$())).findFirstIn__jl_CharSequence__s_Option(a));
-  return $as_T((this$3.isEmpty__Z() ? "X" : this$3.get__O()))
+function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__Lrebecaos_backend_Semantics$Msg__T($thiz, a) {
+  return ($f_T__isBlank__Z($n($n(a).Lrebecaos_backend_Semantics$Msg__f_snd)) ? $n(a).Lrebecaos_backend_Semantics$Msg__f_rcv : $n(a).Lrebecaos_backend_Semantics$Msg__f_snd)
 }
-function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__T__T($thiz, a) {
-  var $$x1 = $m_sc_StringOps$();
-  var this$3 = $n(($m_sc_StringOps$(), $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "@[^ \t\n]*", $m_sci_Nil$())).findFirstIn__jl_CharSequence__s_Option(a));
-  var x = $as_T((this$3.isEmpty__Z() ? ("@" + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTo__T__T($thiz, a)) : this$3.get__O()));
-  return $n($$x1).drop$extension__T__I__T(x, 1)
+function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getMsg__Lrebecaos_backend_Semantics$Msg__T($thiz, a) {
+  var $$x1 = $n(a).Lrebecaos_backend_Semantics$Msg__f_m;
+  var this$1 = $n($n(a).Lrebecaos_backend_Semantics$Msg__f_args);
+  return ((($$x1 + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", ",", "")) + ")")
 }
-function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getMsg__T__T($thiz, a) {
-  var $$x1 = $m_sc_StringOps$();
-  var this$3 = $n(($m_sc_StringOps$(), $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "\\.[^@]*", $m_sci_Nil$())).findFirstIn__jl_CharSequence__s_Option(a));
-  var x = $as_T((this$3.isEmpty__Z() ? ".Z" : this$3.get__O()));
-  return $n($$x1).drop$extension__T__I__T(x, 1)
+function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTime__Lrebecaos_backend_Semantics$Msg__T($thiz, a) {
+  var _1 = $n(a).Lrebecaos_backend_Semantics$Msg__f_tt;
+  var _2 = $n(a).Lrebecaos_backend_Semantics$Msg__f_dl;
+  var x7 = new $c_T2(_1, _2);
+  var x14 = $uI(x7.T2__f__1);
+  var x15 = $as_s_Option(x7.T2__f__2);
+  if ((x14 === 0)) {
+    var x = $m_s_None$();
+    var $$x1 = (x === x15)
+  } else {
+    var $$x1 = false
+  };
+  if ($$x1) {
+    return ""
+  };
+  var x$3 = $m_s_None$();
+  if ((x$3 === x15)) {
+    return (" @ " + x14)
+  };
+  if ((x15 instanceof $c_s_Some)) {
+    var dl = $uI($n($as_s_Some(x15)).s_Some__f_value);
+    return (((" @ " + x14) + "..") + dl)
+  };
+  throw new $c_s_MatchError(x7)
 }
 /** @constructor */
 function $c_Lrebecaos_frontend_CaosConfig$HistorySOS$() {
@@ -10232,14 +10256,91 @@ function $h_Lrebecaos_frontend_CaosConfig$HistorySOS$() {
   /*<skip>*/
 }
 $h_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype = $c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype;
-$c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype.toMermaid__T2__T = (function(hs) {
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype.toMermaidSnd__T2__T = (function(hs) {
+  var this$3 = $n($n($as_sc_IterableOnceOps($n($as_T3($n(hs)._1__O())).T3__f__2)).toList__sci_List());
+  var lt = new $c_sjsr_AnonFunction2(((_$1, _$2) => {
+    var _$1$1 = $as_T2(_$1);
+    var _$2$1 = $as_T2(_$2);
+    var $$x2 = $m_sc_StringOps$();
+    var x = $as_T($n(_$1$1)._1__O());
+    return $n($$x2).$less$extension__T__T__Z(x, $as_T($n(_$2$1)._1__O()))
+  }));
+  var this$4 = $n($as_sci_List($f_sc_SeqOps__sortWith__F2__O(this$3, lt)));
+  var f = ((st) => {
+    var st$1 = $as_T2(st);
+    return (((("  " + $n(st$1)._1__O()) + " ->> ") + $n(st$1)._1__O()) + ": initial(...)")
+  });
+  if ((this$4 === $m_sci_Nil$())) {
+    var $$x3 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$4.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$4.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x3 = h
+  };
+  var this$5 = $n($$x3);
+  var $$x4 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$5, "", "\n", "");
+  var this$6 = $n($n($as_sci_List($n(hs)._2__O())).reverse__sci_List());
+  var rest$1 = this$6;
+  var h$1 = null;
+  var t$1 = null;
+  while ((rest$1 !== $m_sci_Nil$())) {
+    var arg1$2 = $n(rest$1).head__O();
+    var act = $as_T2(arg1$2);
+    var this$8 = $n($n($as_Lrebecaos_backend_Bag($n(act)._2__O())).toList__sci_List());
+    var f$1 = ((m) => {
+      var m$1 = $as_Lrebecaos_backend_Semantics$Msg(m);
+      return (((((("  " + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__Lrebecaos_backend_Semantics$Msg__T(this, m$1)) + " ->> ") + $n(m$1).Lrebecaos_backend_Semantics$Msg__f_rcv) + ": ") + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getMsg__Lrebecaos_backend_Semantics$Msg__T(this, m$1)) + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTime__Lrebecaos_backend_Semantics$Msg__T(this, m$1))
+    });
+    if ((this$8 === $m_sci_Nil$())) {
+      var $$x1 = $m_sci_Nil$()
+    } else {
+      var arg1$3 = this$8.head__O();
+      var h$2 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
+      var t$2 = h$2;
+      var rest$2 = $as_sci_List(this$8.tail__O());
+      while ((rest$2 !== $m_sci_Nil$())) {
+        var arg1$4 = $n(rest$2).head__O();
+        var nx$1 = new $c_sci_$colon$colon(f$1(arg1$4), $m_sci_Nil$());
+        $n(t$2).sci_$colon$colon__f_next = nx$1;
+        t$2 = nx$1;
+        rest$2 = $as_sci_List($n(rest$2).tail__O())
+      };
+      var $$x1 = h$2
+    };
+    var it = $n($$x1).iterator__sc_Iterator();
+    while ($n(it).hasNext__Z()) {
+      var nx$2 = new $c_sci_$colon$colon($n(it).next__O(), $m_sci_Nil$());
+      if ((t$1 === null)) {
+        h$1 = nx$2
+      } else {
+        $n(t$1).sci_$colon$colon__f_next = nx$2
+      };
+      t$1 = nx$2
+    };
+    rest$1 = $as_sci_List($n(rest$1).tail__O())
+  };
+  var this$9 = $n(((h$1 === null) ? $m_sci_Nil$() : h$1));
+  return ((("sequenceDiagram\n" + $$x4) + "\n") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$9, "", "\n", ""))
+});
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype.toMermaidRcv__T2__T = (function(hs) {
   var this$2 = $n($n($as_sci_List($n(hs)._2__O())).reverse__sci_List());
   var f = ((act) => {
-    var act$1 = $as_T(act);
-    return ((((("  " + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__T__T(this, act$1)) + " ->> ") + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTo__T__T(this, act$1)) + ": ") + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getMsg__T__T(this, act$1))
+    var act$1 = $as_T2(act);
+    var $$x1 = $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__Lrebecaos_backend_Semantics$Msg__T(this, $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()));
+    var a = $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O());
+    return (((((("  " + $$x1) + " ->> ") + $n(a).Lrebecaos_backend_Semantics$Msg__f_rcv) + ": ") + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getMsg__Lrebecaos_backend_Semantics$Msg__T(this, $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))) + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTime__Lrebecaos_backend_Semantics$Msg__T(this, $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O())))
   });
   if ((this$2 === $m_sci_Nil$())) {
-    var $$x1 = $m_sci_Nil$()
+    var $$x2 = $m_sci_Nil$()
   } else {
     var arg1 = this$2.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
@@ -10252,9 +10353,9 @@ $c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype.toMermaid__T2__T = (funct
       t = nx;
       rest = $as_sci_List($n(rest).tail__O())
     };
-    var $$x1 = h
+    var $$x2 = h
   };
-  var this$3 = $n($$x1);
+  var this$3 = $n($$x2);
   return ("sequenceDiagram\n" + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", "\n", ""))
 });
 var $d_Lrebecaos_frontend_CaosConfig$HistorySOS$ = new $TypeData().initClass({
@@ -17304,7 +17405,7 @@ $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showTerminal__O__V = (functi
 $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showTrace__V = (function() {
   $n(this.Lcaos_frontend_widgets_SimulateMermaid__f_top).text__T__Lcaos_frontend_widgets_DomNode("");
   var $$x1 = $n($n($n($n($n($n(this.Lcaos_frontend_widgets_SimulateMermaid__f_top).append__T__Lcaos_frontend_widgets_DomElem("span")).style__T__Lcaos_frontend_widgets_DomElem("font-weight:bold;")).textEl__T__Lcaos_frontend_widgets_DomElem("Trace:")).append__T__Lcaos_frontend_widgets_DomElem("span")).style__T__Lcaos_frontend_widgets_DomElem("font-weight:normal"));
-  var this$1 = $n(this.Lcaos_frontend_widgets_SimulateMermaid__f_traceActs);
+  var this$1 = $n($n(this.Lcaos_frontend_widgets_SimulateMermaid__f_traceActs).map__F1__sci_List($n(this.Lcaos_frontend_widgets_SimulateMermaid__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_lb));
   $n($$x1).text__T__Lcaos_frontend_widgets_DomNode((" " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", ", ", "")))
 });
 $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showEnabled__O__V = (function(from) {
@@ -17332,7 +17433,7 @@ $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showEnabled__O__V = (functio
         var a$1 = $n(x$1$3)._1__O();
         var p$1 = $n(x$1$3)._2__O();
         var li = $n(ul).append__T__Lcaos_frontend_widgets_DomElem("li");
-        var b = $n($n($n($n(li).append__T__Lcaos_frontend_widgets_DomElem("button")).attr__T__T__Lcaos_frontend_widgets_DomElem("title", $dp_toString__T($n(p$1)))).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "btNextTrans")).textEl__T__Lcaos_frontend_widgets_DomElem($dp_toString__T($n(a$1)));
+        var b = $n($n($n($n(li).append__T__Lcaos_frontend_widgets_DomElem("button")).attr__T__T__Lcaos_frontend_widgets_DomElem("title", $dp_toString__T($n(p$1)))).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "btNextTrans")).textEl__T__Lcaos_frontend_widgets_DomElem($as_T($n($n(this.Lcaos_frontend_widgets_SimulateMermaid__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_lb).apply__O__O(a$1)));
         $n(b).on__T__F0__V("click", new $c_sjsr_AnonFunction0((() => {
           this.takeStep__O__O__V(a$1, p$1)
         })));
@@ -17646,7 +17747,7 @@ $c_Lcaos_frontend_widgets_SimulateText.prototype.showStStep__O__T = (function(c)
 $c_Lcaos_frontend_widgets_SimulateText.prototype.showActStep__s_Option__T = (function(a) {
   $m_sc_StringOps$();
   var this$1 = $n(a);
-  var x = (("<div style=\"text-align:left;width:15%;font-weight:bold;\">\n       |  " + ((!this$1.isEmpty__Z()) ? ($p_Lcaos_frontend_widgets_SimulateText__cleanHtml__T__T(this, $dp_toString__T($n($n(a).get__O()))) + " &#8594;") : "&#8594;")) + "\n       |</div>");
+  var x = (("<div style=\"text-align:left;width:15%;font-weight:bold;\">\n       |  " + ((!this$1.isEmpty__Z()) ? ($p_Lcaos_frontend_widgets_SimulateText__cleanHtml__T__T(this, $as_T($n($n(this.Lcaos_frontend_widgets_SimulateText__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_lb).apply__O__O($n(a).get__O()))) + " &#8594;") : "&#8594;")) + "\n       |</div>");
   return $m_sc_StringOps$().stripMargin$extension__T__C__T(x, 124)
 });
 var $d_Lcaos_frontend_widgets_SimulateText = new $TypeData().initClass({
@@ -18446,6 +18547,64 @@ var $d_Lcats_parse_Parser = new $TypeData().initClass({
   O: 1
 });
 $c_Lcats_parse_Parser.prototype.$classData = $d_Lcats_parse_Parser;
+function $p_jl_Character$__getTypeGE256__I__I($thiz, codePoint) {
+  return $n($p_jl_Character$__charTypes__AI($thiz)).get($p_jl_Character$__findIndexOfRange__AI__I__Z__I($thiz, $p_jl_Character$__charTypeIndices__AI($thiz), codePoint, false))
+}
+function $p_jl_Character$__java$lang$Character$$charTypesFirst256$lzycompute__AI($thiz) {
+  if (((((1 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0)) {
+    $thiz.jl_Character$__f_java$lang$Character$$charTypesFirst256 = new $ac_I(new Int32Array([15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 12, 24, 24, 24, 26, 24, 24, 24, 21, 22, 24, 25, 24, 20, 24, 24, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 24, 24, 25, 25, 25, 24, 24, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 21, 24, 22, 27, 23, 27, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 21, 25, 22, 25, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 12, 24, 26, 26, 26, 26, 28, 24, 27, 28, 5, 29, 25, 16, 28, 27, 28, 25, 11, 11, 27, 2, 24, 24, 27, 11, 5, 30, 11, 11, 11, 24, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 25, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 25, 2, 2, 2, 2, 2, 2, 2, 2]));
+    $thiz.jl_Character$__f_bitmap$0 = (((1 | $thiz.jl_Character$__f_bitmap$0) << 24) >> 24)
+  };
+  return $thiz.jl_Character$__f_java$lang$Character$$charTypesFirst256
+}
+function $p_jl_Character$__charTypeIndices$lzycompute__AI($thiz) {
+  if (((((2 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0)) {
+    var deltas = new $ac_I(new Int32Array([257, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 3, 2, 1, 1, 1, 2, 1, 3, 2, 4, 1, 2, 1, 3, 3, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 3, 1, 1, 1, 2, 2, 1, 1, 3, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 2, 1, 2, 2, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 69, 1, 27, 18, 4, 12, 14, 5, 7, 1, 1, 1, 17, 112, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 3, 1, 5, 2, 1, 1, 3, 1, 1, 1, 2, 1, 17, 1, 9, 35, 1, 2, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 2, 2, 51, 48, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 9, 38, 2, 1, 6, 1, 39, 1, 1, 1, 4, 1, 1, 45, 1, 1, 1, 2, 1, 2, 1, 1, 8, 27, 5, 3, 2, 11, 5, 1, 3, 2, 1, 2, 2, 11, 1, 2, 2, 32, 1, 10, 21, 10, 4, 2, 1, 99, 1, 1, 7, 1, 1, 6, 2, 2, 1, 4, 2, 10, 3, 2, 1, 14, 1, 1, 1, 1, 30, 27, 2, 89, 11, 1, 14, 10, 33, 9, 2, 1, 3, 1, 5, 22, 4, 1, 9, 1, 3, 1, 5, 2, 15, 1, 25, 3, 2, 1, 65, 1, 1, 11, 55, 27, 1, 3, 1, 54, 1, 1, 1, 1, 3, 8, 4, 1, 2, 1, 7, 10, 2, 2, 10, 1, 1, 6, 1, 7, 1, 1, 2, 1, 8, 2, 2, 2, 22, 1, 7, 1, 1, 3, 4, 2, 1, 1, 3, 4, 2, 2, 2, 2, 1, 1, 8, 1, 4, 2, 1, 3, 2, 2, 10, 2, 2, 6, 1, 1, 5, 2, 1, 1, 6, 4, 2, 2, 22, 1, 7, 1, 2, 1, 2, 1, 2, 2, 1, 1, 3, 2, 4, 2, 2, 3, 3, 1, 7, 4, 1, 1, 7, 10, 2, 3, 1, 11, 2, 1, 1, 9, 1, 3, 1, 22, 1, 7, 1, 2, 1, 5, 2, 1, 1, 3, 5, 1, 2, 1, 1, 2, 1, 2, 1, 15, 2, 2, 2, 10, 1, 1, 15, 1, 2, 1, 8, 2, 2, 2, 22, 1, 7, 1, 2, 1, 5, 2, 1, 1, 1, 1, 1, 4, 2, 2, 2, 2, 1, 8, 1, 1, 4, 2, 1, 3, 2, 2, 10, 1, 1, 6, 10, 1, 1, 1, 6, 3, 3, 1, 4, 3, 2, 1, 1, 1, 2, 3, 2, 3, 3, 3, 12, 4, 2, 1, 2, 3, 3, 1, 3, 1, 2, 1, 6, 1, 14, 10, 3, 6, 1, 1, 6, 3, 1, 8, 1, 3, 1, 23, 1, 10, 1, 5, 3, 1, 3, 4, 1, 3, 1, 4, 7, 2, 1, 2, 6, 2, 2, 2, 10, 8, 7, 1, 2, 2, 1, 8, 1, 3, 1, 23, 1, 10, 1, 5, 2, 1, 1, 1, 1, 5, 1, 1, 2, 1, 2, 2, 7, 2, 7, 1, 1, 2, 2, 2, 10, 1, 2, 15, 2, 1, 8, 1, 3, 1, 41, 2, 1, 3, 4, 1, 3, 1, 3, 1, 1, 8, 1, 8, 2, 2, 2, 10, 6, 3, 1, 6, 2, 2, 1, 18, 3, 24, 1, 9, 1, 1, 2, 7, 3, 1, 4, 3, 3, 1, 1, 1, 8, 18, 2, 1, 12, 48, 1, 2, 7, 4, 1, 6, 1, 8, 1, 10, 2, 37, 2, 1, 1, 2, 2, 1, 1, 2, 1, 6, 4, 1, 7, 1, 3, 1, 1, 1, 1, 2, 2, 1, 4, 1, 2, 6, 1, 2, 1, 2, 5, 1, 1, 1, 6, 2, 10, 2, 4, 32, 1, 3, 15, 1, 1, 3, 2, 6, 10, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 8, 1, 36, 4, 14, 1, 5, 1, 2, 5, 11, 1, 36, 1, 8, 1, 6, 1, 2, 5, 4, 2, 37, 43, 2, 4, 1, 6, 1, 2, 2, 2, 1, 10, 6, 6, 2, 2, 4, 3, 1, 3, 2, 7, 3, 4, 13, 1, 2, 2, 6, 1, 1, 1, 10, 3, 1, 2, 38, 1, 1, 5, 1, 2, 43, 1, 1, 332, 1, 4, 2, 7, 1, 1, 1, 4, 2, 41, 1, 4, 2, 33, 1, 4, 2, 7, 1, 1, 1, 4, 2, 15, 1, 57, 1, 4, 2, 67, 2, 3, 9, 20, 3, 16, 10, 6, 85, 11, 1, 620, 2, 17, 1, 26, 1, 1, 3, 75, 3, 3, 15, 13, 1, 4, 3, 11, 18, 3, 2, 9, 18, 2, 12, 13, 1, 3, 1, 2, 12, 52, 2, 1, 7, 8, 1, 2, 11, 3, 1, 3, 1, 1, 1, 2, 10, 6, 10, 6, 6, 1, 4, 3, 1, 1, 10, 6, 35, 1, 52, 8, 41, 1, 1, 5, 70, 10, 29, 3, 3, 4, 2, 3, 4, 2, 1, 6, 3, 4, 1, 3, 2, 10, 30, 2, 5, 11, 44, 4, 17, 7, 2, 6, 10, 1, 3, 34, 23, 2, 3, 2, 2, 53, 1, 1, 1, 7, 1, 1, 1, 1, 2, 8, 6, 10, 2, 1, 10, 6, 10, 6, 7, 1, 6, 82, 4, 1, 47, 1, 1, 5, 1, 1, 5, 1, 2, 7, 4, 10, 7, 10, 9, 9, 3, 2, 1, 30, 1, 4, 2, 2, 1, 1, 2, 2, 10, 44, 1, 1, 2, 3, 1, 1, 3, 2, 8, 4, 36, 8, 8, 2, 2, 3, 5, 10, 3, 3, 10, 30, 6, 2, 64, 8, 8, 3, 1, 13, 1, 7, 4, 1, 4, 2, 1, 2, 9, 44, 63, 13, 1, 34, 37, 39, 21, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 9, 8, 6, 2, 6, 2, 8, 8, 8, 8, 6, 2, 6, 2, 8, 1, 1, 1, 1, 1, 1, 1, 1, 8, 8, 14, 2, 8, 8, 8, 8, 8, 8, 5, 1, 2, 4, 1, 1, 1, 3, 3, 1, 2, 4, 1, 3, 4, 2, 2, 4, 1, 3, 8, 5, 3, 2, 3, 1, 2, 4, 1, 2, 1, 11, 5, 6, 2, 1, 1, 1, 2, 1, 1, 1, 8, 1, 1, 5, 1, 9, 1, 1, 4, 2, 3, 1, 1, 1, 11, 1, 1, 1, 10, 1, 5, 5, 6, 1, 1, 2, 6, 3, 1, 1, 1, 10, 3, 1, 1, 1, 13, 3, 32, 16, 13, 4, 1, 3, 12, 15, 2, 1, 4, 1, 2, 1, 3, 2, 3, 1, 1, 1, 2, 1, 5, 6, 1, 1, 1, 1, 1, 1, 4, 1, 1, 4, 1, 4, 1, 2, 2, 2, 5, 1, 4, 1, 1, 2, 1, 1, 16, 35, 1, 1, 4, 1, 6, 5, 5, 2, 4, 1, 2, 1, 2, 1, 7, 1, 31, 2, 2, 1, 1, 1, 31, 268, 8, 4, 20, 2, 7, 1, 1, 81, 1, 30, 25, 40, 6, 18, 12, 39, 25, 11, 21, 60, 78, 22, 183, 1, 9, 1, 54, 8, 111, 1, 144, 1, 103, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 30, 44, 5, 1, 1, 31, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 16, 256, 131, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 63, 1, 1, 1, 1, 32, 1, 1, 258, 48, 21, 2, 6, 3, 10, 166, 47, 1, 47, 1, 1, 1, 3, 2, 1, 1, 1, 1, 1, 1, 4, 1, 1, 2, 1, 6, 2, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 6, 1, 1, 1, 1, 3, 1, 1, 5, 4, 1, 2, 38, 1, 1, 5, 1, 2, 56, 7, 1, 1, 14, 1, 23, 9, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 7, 1, 32, 2, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 9, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5, 1, 10, 2, 68, 26, 1, 89, 12, 214, 26, 12, 4, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 9, 4, 2, 1, 5, 2, 3, 1, 1, 1, 2, 1, 86, 2, 2, 2, 2, 1, 1, 90, 1, 3, 1, 5, 41, 3, 94, 1, 2, 4, 10, 27, 5, 36, 12, 16, 31, 1, 10, 30, 8, 1, 15, 32, 10, 39, 15, 320, 6582, 10, 64, 20941, 51, 21, 1, 1143, 3, 55, 9, 40, 6, 2, 268, 1, 3, 16, 10, 2, 20, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7, 1, 70, 10, 2, 6, 8, 23, 9, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 77, 2, 1, 7, 1, 3, 1, 4, 1, 23, 2, 2, 1, 4, 4, 6, 2, 1, 1, 6, 52, 4, 8, 2, 50, 16, 1, 9, 2, 10, 6, 18, 6, 3, 1, 4, 10, 28, 8, 2, 23, 11, 2, 11, 1, 29, 3, 3, 1, 47, 1, 2, 4, 2, 1, 4, 13, 1, 1, 10, 4, 2, 32, 41, 6, 2, 2, 2, 2, 9, 3, 1, 8, 1, 1, 2, 10, 2, 4, 16, 1, 6, 3, 1, 1, 4, 48, 1, 1, 3, 2, 2, 5, 2, 1, 1, 1, 24, 2, 1, 2, 11, 1, 2, 2, 2, 1, 2, 1, 1, 10, 6, 2, 6, 2, 6, 9, 7, 1, 7, 145, 35, 2, 1, 2, 1, 2, 1, 1, 1, 2, 10, 6, 11172, 12, 23, 4, 49, 4, 2048, 6400, 366, 2, 106, 38, 7, 12, 5, 5, 1, 1, 10, 1, 13, 1, 5, 1, 1, 1, 2, 1, 2, 1, 108, 16, 17, 363, 1, 1, 16, 64, 2, 54, 40, 12, 1, 1, 2, 16, 7, 1, 1, 1, 6, 7, 9, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 4, 3, 3, 1, 4, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 1, 1, 1, 2, 4, 5, 1, 135, 2, 1, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 2, 10, 2, 3, 2, 26, 1, 1, 1, 1, 1, 1, 26, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 10, 1, 45, 2, 31, 3, 6, 2, 6, 2, 6, 2, 3, 3, 2, 1, 1, 1, 2, 1, 1, 4, 2, 10, 3, 2, 2, 12, 1, 26, 1, 19, 1, 2, 1, 15, 2, 14, 34, 123, 5, 3, 4, 45, 3, 9, 53, 4, 17, 1, 5, 12, 52, 45, 1, 130, 29, 3, 49, 47, 31, 1, 4, 12, 17, 1, 8, 1, 53, 30, 1, 1, 36, 4, 8, 1, 5, 42, 40, 40, 78, 2, 10, 854, 6, 2, 1, 1, 44, 1, 2, 3, 1, 2, 23, 1, 1, 8, 160, 22, 6, 3, 1, 26, 5, 1, 64, 56, 6, 2, 64, 1, 3, 1, 2, 5, 4, 4, 1, 3, 1, 27, 4, 3, 4, 1, 8, 8, 9, 7, 29, 2, 1, 128, 54, 3, 7, 22, 2, 8, 19, 5, 8, 128, 73, 535, 31, 385, 1, 1, 1, 53, 15, 7, 4, 20, 10, 16, 2, 1, 45, 3, 4, 2, 2, 2, 1, 4, 14, 25, 7, 10, 6, 3, 36, 5, 1, 8, 1, 10, 4, 60, 2, 1, 48, 3, 9, 2, 4, 4, 7, 10, 1190, 43, 1, 1, 1, 2, 6, 1, 1, 8, 10, 2358, 879, 145, 99, 13, 4, 2956, 1071, 13265, 569, 1223, 69, 11, 1, 46, 16, 4, 13, 16480, 2, 8190, 246, 10, 39, 2, 60, 2, 3, 3, 6, 8, 8, 2, 7, 30, 4, 48, 34, 66, 3, 1, 186, 87, 9, 18, 142, 26, 26, 26, 7, 1, 18, 26, 26, 1, 1, 2, 2, 1, 2, 2, 2, 4, 1, 8, 4, 1, 1, 1, 7, 1, 11, 26, 26, 2, 1, 4, 2, 8, 1, 7, 1, 26, 2, 1, 4, 1, 5, 1, 1, 3, 7, 1, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 26, 28, 2, 25, 1, 25, 1, 6, 25, 1, 25, 1, 6, 25, 1, 25, 1, 6, 25, 1, 25, 1, 6, 25, 1, 25, 1, 6, 1, 1, 2, 50, 5632, 4, 1, 27, 1, 2, 1, 1, 2, 1, 1, 10, 1, 4, 1, 1, 1, 1, 6, 1, 4, 1, 1, 1, 1, 1, 1, 3, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 4, 1, 7, 1, 4, 1, 4, 1, 1, 1, 10, 1, 17, 5, 3, 1, 5, 1, 17, 52, 2, 270, 44, 4, 100, 12, 15, 2, 14, 2, 15, 1, 15, 32, 11, 5, 31, 1, 60, 4, 43, 75, 29, 13, 43, 5, 9, 7, 2, 174, 33, 15, 6, 1, 70, 3, 20, 12, 37, 1, 5, 21, 17, 15, 63, 1, 1, 1, 182, 1, 4, 3, 62, 2, 4, 12, 24, 147, 70, 4, 11, 48, 70, 58, 116, 2188, 42711, 41, 4149, 11, 222, 16354, 542, 722403, 1, 30, 96, 128, 240, 65040, 65534, 2, 65534]));
+    $thiz.jl_Character$__f_charTypeIndices = $p_jl_Character$__uncompressDeltas__AI__AI($thiz, deltas);
+    $thiz.jl_Character$__f_bitmap$0 = (((2 | $thiz.jl_Character$__f_bitmap$0) << 24) >> 24)
+  };
+  return $thiz.jl_Character$__f_charTypeIndices
+}
+function $p_jl_Character$__charTypeIndices__AI($thiz) {
+  return (((((2 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0) ? $p_jl_Character$__charTypeIndices$lzycompute__AI($thiz) : $thiz.jl_Character$__f_charTypeIndices)
+}
+function $p_jl_Character$__charTypes$lzycompute__AI($thiz) {
+  if (((((4 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0)) {
+    $thiz.jl_Character$__f_charTypes = new $ac_I(new Int32Array([1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 1, 2, 5, 1, 3, 2, 1, 3, 2, 1, 3, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 3, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 2, 4, 27, 4, 27, 4, 27, 4, 27, 4, 27, 6, 1, 2, 1, 2, 4, 27, 1, 2, 0, 4, 2, 24, 0, 27, 1, 24, 1, 0, 1, 0, 1, 2, 1, 0, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 25, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 28, 6, 7, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 1, 0, 4, 24, 0, 2, 0, 24, 20, 0, 26, 0, 6, 20, 6, 24, 6, 24, 6, 24, 6, 0, 5, 0, 5, 24, 0, 16, 0, 25, 24, 26, 24, 28, 6, 24, 0, 24, 5, 4, 5, 6, 9, 24, 5, 6, 5, 24, 5, 6, 16, 28, 6, 4, 6, 28, 6, 5, 9, 5, 28, 5, 24, 0, 16, 5, 6, 5, 6, 0, 5, 6, 5, 0, 9, 5, 6, 4, 28, 24, 4, 0, 5, 6, 4, 6, 4, 6, 4, 6, 0, 24, 0, 5, 6, 0, 24, 0, 5, 0, 5, 0, 6, 0, 6, 8, 5, 6, 8, 6, 5, 8, 6, 8, 6, 8, 5, 6, 5, 6, 24, 9, 24, 4, 5, 0, 5, 0, 6, 8, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 5, 8, 6, 0, 8, 0, 8, 6, 5, 0, 8, 0, 5, 0, 5, 6, 0, 9, 5, 26, 11, 28, 26, 0, 6, 8, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 0, 8, 6, 0, 6, 0, 6, 0, 6, 0, 5, 0, 5, 0, 9, 6, 5, 6, 0, 6, 8, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 5, 8, 6, 0, 6, 8, 0, 8, 6, 0, 5, 0, 5, 6, 0, 9, 24, 26, 0, 6, 8, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 5, 8, 6, 8, 6, 0, 8, 0, 8, 6, 0, 6, 8, 0, 5, 0, 5, 6, 0, 9, 28, 5, 11, 0, 6, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 8, 6, 8, 0, 8, 0, 8, 6, 0, 5, 0, 8, 0, 9, 11, 28, 26, 28, 0, 8, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 6, 8, 0, 6, 0, 6, 0, 6, 0, 5, 0, 5, 6, 0, 9, 0, 11, 28, 0, 8, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 5, 8, 6, 8, 0, 6, 8, 0, 8, 6, 0, 8, 0, 5, 0, 5, 6, 0, 9, 0, 5, 0, 8, 0, 5, 0, 5, 0, 5, 0, 5, 8, 6, 0, 8, 0, 8, 6, 5, 0, 8, 0, 5, 6, 0, 9, 11, 0, 28, 5, 0, 8, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 0, 8, 6, 0, 6, 0, 8, 0, 8, 24, 0, 5, 6, 5, 6, 0, 26, 5, 4, 6, 24, 9, 24, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 6, 5, 6, 0, 6, 5, 0, 5, 0, 4, 0, 6, 0, 9, 0, 5, 0, 5, 28, 24, 28, 24, 28, 6, 28, 9, 11, 28, 6, 28, 6, 28, 6, 21, 22, 21, 22, 8, 5, 0, 5, 0, 6, 8, 6, 24, 6, 5, 6, 0, 6, 0, 28, 6, 28, 0, 28, 24, 28, 24, 0, 5, 8, 6, 8, 6, 8, 6, 8, 6, 5, 9, 24, 5, 8, 6, 5, 6, 5, 8, 5, 8, 5, 6, 5, 6, 8, 6, 8, 6, 5, 8, 9, 8, 6, 28, 1, 0, 1, 0, 1, 0, 5, 24, 4, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 24, 11, 0, 5, 28, 0, 5, 0, 20, 5, 24, 5, 12, 5, 21, 22, 0, 5, 24, 10, 0, 5, 0, 5, 6, 0, 5, 6, 24, 0, 5, 6, 0, 5, 0, 5, 0, 6, 0, 5, 6, 8, 6, 8, 6, 8, 6, 24, 4, 24, 26, 5, 6, 0, 9, 0, 11, 0, 24, 20, 24, 6, 12, 0, 9, 0, 5, 4, 5, 0, 5, 6, 5, 0, 5, 0, 5, 0, 6, 8, 6, 8, 0, 8, 6, 8, 6, 0, 28, 0, 24, 9, 5, 0, 5, 0, 5, 0, 8, 5, 8, 0, 9, 11, 0, 28, 5, 6, 8, 0, 24, 5, 8, 6, 8, 6, 0, 6, 8, 6, 8, 6, 8, 6, 0, 6, 9, 0, 9, 0, 24, 4, 24, 0, 6, 8, 5, 6, 8, 6, 8, 6, 8, 6, 8, 5, 0, 9, 24, 28, 6, 28, 0, 6, 8, 5, 8, 6, 8, 6, 8, 6, 8, 5, 9, 5, 6, 8, 6, 8, 6, 8, 6, 8, 0, 24, 5, 8, 6, 8, 6, 0, 24, 9, 0, 5, 9, 5, 4, 24, 0, 24, 0, 6, 24, 6, 8, 6, 5, 6, 5, 8, 6, 5, 0, 2, 4, 2, 4, 2, 4, 6, 0, 6, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 1, 0, 2, 1, 2, 1, 2, 0, 1, 0, 2, 0, 1, 0, 1, 0, 1, 0, 1, 2, 1, 2, 0, 2, 3, 2, 3, 2, 3, 2, 0, 2, 1, 3, 27, 2, 27, 2, 0, 2, 1, 3, 27, 2, 0, 2, 1, 0, 27, 2, 1, 27, 0, 2, 0, 2, 1, 3, 27, 0, 12, 16, 20, 24, 29, 30, 21, 29, 30, 21, 29, 24, 13, 14, 16, 12, 24, 29, 30, 24, 23, 24, 25, 21, 22, 24, 25, 24, 23, 24, 12, 16, 0, 16, 11, 4, 0, 11, 25, 21, 22, 4, 11, 25, 21, 22, 0, 4, 0, 26, 0, 6, 7, 6, 7, 6, 0, 28, 1, 28, 1, 28, 2, 1, 2, 1, 2, 28, 1, 28, 25, 1, 28, 1, 28, 1, 28, 1, 28, 1, 28, 2, 1, 2, 5, 2, 28, 2, 1, 25, 1, 2, 28, 25, 28, 2, 28, 11, 10, 1, 2, 10, 11, 0, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 25, 28, 21, 22, 28, 25, 28, 25, 28, 25, 28, 0, 28, 0, 28, 0, 11, 28, 11, 28, 25, 28, 25, 28, 25, 28, 25, 28, 0, 28, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 11, 28, 25, 21, 22, 25, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 25, 28, 25, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 25, 21, 22, 21, 22, 25, 21, 22, 25, 28, 25, 28, 25, 0, 28, 0, 1, 0, 2, 0, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 4, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 28, 1, 2, 1, 2, 6, 1, 2, 0, 24, 11, 24, 2, 0, 2, 0, 2, 0, 5, 0, 4, 24, 0, 6, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 6, 24, 29, 30, 29, 30, 24, 29, 30, 24, 29, 30, 24, 20, 24, 20, 24, 29, 30, 24, 29, 30, 21, 22, 21, 22, 21, 22, 21, 22, 24, 4, 24, 20, 0, 28, 0, 28, 0, 28, 0, 28, 0, 12, 24, 28, 4, 5, 10, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 28, 21, 22, 21, 22, 21, 22, 21, 22, 20, 21, 22, 28, 10, 6, 8, 20, 4, 28, 10, 4, 5, 24, 28, 0, 5, 0, 6, 27, 4, 5, 20, 5, 24, 4, 5, 0, 5, 0, 5, 0, 28, 11, 28, 5, 0, 28, 0, 5, 28, 0, 11, 28, 11, 28, 11, 28, 11, 28, 11, 28, 5, 0, 28, 5, 0, 5, 4, 5, 0, 28, 0, 5, 4, 24, 5, 4, 24, 5, 9, 5, 0, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 5, 6, 7, 24, 6, 24, 4, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 6, 5, 10, 6, 24, 0, 27, 4, 27, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 4, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 4, 27, 1, 2, 1, 2, 0, 1, 2, 1, 2, 0, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 0, 4, 2, 5, 6, 5, 6, 5, 6, 5, 8, 6, 8, 28, 0, 11, 28, 26, 28, 0, 5, 24, 0, 8, 5, 8, 6, 0, 24, 9, 0, 6, 5, 24, 5, 0, 9, 5, 6, 24, 5, 6, 8, 0, 24, 5, 0, 6, 8, 5, 6, 8, 6, 8, 6, 8, 24, 0, 4, 9, 0, 24, 0, 5, 6, 8, 6, 8, 6, 0, 5, 6, 5, 6, 8, 0, 9, 0, 24, 5, 4, 5, 28, 5, 8, 0, 5, 6, 5, 6, 5, 6, 5, 6, 5, 6, 5, 0, 5, 4, 24, 5, 8, 6, 8, 24, 5, 4, 8, 6, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 8, 6, 8, 6, 8, 24, 8, 6, 0, 9, 0, 5, 0, 5, 0, 5, 0, 19, 18, 5, 0, 5, 0, 2, 0, 2, 0, 5, 6, 5, 25, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 27, 0, 5, 21, 22, 0, 5, 0, 5, 0, 5, 26, 28, 0, 6, 24, 21, 22, 24, 0, 6, 0, 24, 20, 23, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 21, 22, 24, 21, 22, 24, 23, 24, 0, 24, 20, 21, 22, 21, 22, 21, 22, 24, 25, 20, 25, 0, 24, 26, 24, 0, 5, 0, 5, 0, 16, 0, 24, 26, 24, 21, 22, 24, 25, 24, 20, 24, 9, 24, 25, 24, 1, 21, 24, 22, 27, 23, 27, 2, 21, 25, 22, 25, 21, 22, 24, 21, 22, 24, 5, 4, 5, 4, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 26, 25, 27, 28, 26, 0, 28, 25, 28, 0, 16, 28, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 24, 0, 11, 0, 28, 10, 11, 28, 11, 0, 28, 0, 28, 6, 0, 5, 0, 5, 0, 5, 0, 11, 0, 5, 10, 5, 10, 0, 5, 0, 24, 5, 0, 5, 24, 10, 0, 1, 2, 5, 0, 9, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 24, 11, 0, 5, 11, 0, 24, 5, 0, 24, 0, 5, 0, 5, 0, 5, 6, 0, 6, 0, 6, 5, 0, 5, 0, 5, 0, 6, 0, 6, 11, 0, 24, 0, 5, 11, 24, 0, 5, 0, 24, 5, 0, 11, 5, 0, 11, 0, 5, 0, 11, 0, 8, 6, 8, 5, 6, 24, 0, 11, 9, 0, 6, 8, 5, 8, 6, 8, 6, 24, 16, 24, 0, 5, 0, 9, 0, 6, 5, 6, 8, 6, 0, 9, 24, 0, 6, 8, 5, 8, 6, 8, 5, 24, 0, 9, 0, 5, 6, 8, 6, 8, 6, 8, 6, 0, 9, 0, 5, 0, 10, 0, 24, 0, 5, 0, 5, 0, 5, 0, 5, 8, 0, 6, 4, 0, 5, 0, 28, 0, 28, 0, 28, 8, 6, 28, 8, 16, 6, 28, 6, 28, 6, 28, 0, 28, 6, 28, 0, 28, 0, 11, 0, 1, 2, 1, 2, 0, 2, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 2, 0, 2, 0, 2, 0, 2, 1, 2, 1, 0, 1, 0, 1, 0, 1, 0, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 0, 1, 25, 2, 25, 2, 1, 25, 2, 25, 2, 1, 25, 2, 25, 2, 1, 25, 2, 25, 2, 1, 25, 2, 25, 2, 1, 2, 0, 9, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 25, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 11, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 28, 0, 5, 0, 5, 0, 5, 0, 5, 0, 16, 0, 16, 0, 6, 0, 18, 0, 18, 0]));
+    $thiz.jl_Character$__f_bitmap$0 = (((4 | $thiz.jl_Character$__f_bitmap$0) << 24) >> 24)
+  };
+  return $thiz.jl_Character$__f_charTypes
+}
+function $p_jl_Character$__charTypes__AI($thiz) {
+  return (((((4 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0) ? $p_jl_Character$__charTypes$lzycompute__AI($thiz) : $thiz.jl_Character$__f_charTypes)
+}
+function $p_jl_Character$__uncompressDeltas__AI__AI($thiz, deltas) {
+  var acc = $n(deltas).get(0);
+  var i = 1;
+  var len = $n(deltas).u.length;
+  while ((i !== len)) {
+    acc = ((acc + $n(deltas).get(i)) | 0);
+    $n(deltas).set(i, acc);
+    i = ((1 + i) | 0)
+  };
+  return deltas
+}
+function $p_jl_Character$__findIndexOfRange__AI__I__Z__I($thiz, startOfRangesArray, value, hasEmptyRanges) {
+  var i = $m_ju_Arrays$().binarySearch__AI__I__I(startOfRangesArray, value);
+  if ((i >= 0)) {
+    if (hasEmptyRanges) {
+      var j = ((1 + i) | 0);
+      while (((j < $n(startOfRangesArray).u.length) && ($n(startOfRangesArray).get(j) === value))) {
+        j = ((1 + j) | 0)
+      };
+      return j
+    } else {
+      return ((1 + i) | 0)
+    }
+  } else {
+    return (((-1) - i) | 0)
+  }
+}
 function $p_jl_Character$__nonASCIIZeroDigitCodePoints$lzycompute__AI($thiz) {
   if (((((32 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0)) {
     $thiz.jl_Character$__f_nonASCIIZeroDigitCodePoints = new $ac_I(new Int32Array([1632, 1776, 1984, 2406, 2534, 2662, 2790, 2918, 3046, 3174, 3302, 3430, 3664, 3792, 3872, 4160, 4240, 6112, 6160, 6470, 6608, 6784, 6800, 6992, 7088, 7232, 7248, 42528, 43216, 43264, 43472, 43600, 44016, 65296, 66720, 69734, 69872, 69942, 70096, 71360, 120782, 120792, 120802, 120812, 120822]));
@@ -18456,8 +18615,14 @@ function $p_jl_Character$__nonASCIIZeroDigitCodePoints$lzycompute__AI($thiz) {
 function $p_jl_Character$__nonASCIIZeroDigitCodePoints__AI($thiz) {
   return (((((32 & $thiz.jl_Character$__f_bitmap$0) << 24) >> 24) === 0) ? $p_jl_Character$__nonASCIIZeroDigitCodePoints$lzycompute__AI($thiz) : $thiz.jl_Character$__f_nonASCIIZeroDigitCodePoints)
 }
+function $p_jl_Character$__isSeparator$1__I__Z($thiz, tpe) {
+  return (((tpe === 12) || (tpe === 13)) || (tpe === 14))
+}
 /** @constructor */
 function $c_jl_Character$() {
+  this.jl_Character$__f_java$lang$Character$$charTypesFirst256 = null;
+  this.jl_Character$__f_charTypeIndices = null;
+  this.jl_Character$__f_charTypes = null;
   this.jl_Character$__f_nonASCIIZeroDigitCodePoints = null;
   this.jl_Character$__f_bitmap$0 = 0
 }
@@ -18498,6 +18663,9 @@ $c_jl_Character$.prototype.digitWithValidRadix__I__I__I = (function(codePoint, r
 });
 $c_jl_Character$.prototype.isZeroDigit__C__Z = (function(ch) {
   return ((ch < 256) ? (ch === 48) : ($m_ju_Arrays$().binarySearch__AI__I__I($p_jl_Character$__nonASCIIZeroDigitCodePoints__AI(this), ch) >= 0))
+});
+$c_jl_Character$.prototype.isWhitespace__I__Z = (function(codePoint) {
+  return ((codePoint < 256) ? (((((((codePoint === 9) || (codePoint === 10)) || (codePoint === 11)) || (codePoint === 12)) || (codePoint === 13)) || ((codePoint >= 28) && (codePoint <= 31))) || ((codePoint !== 160) && $p_jl_Character$__isSeparator$1__I__Z(this, $n(this.java$lang$Character$$charTypesFirst256__AI()).get(codePoint)))) : (((codePoint !== 8199) && (codePoint !== 8239)) && $p_jl_Character$__isSeparator$1__I__Z(this, $p_jl_Character$__getTypeGE256__I__I(this, codePoint))))
 });
 $c_jl_Character$.prototype.toUpperCase__C__C = (function(ch) {
   return (65535 & this.toUpperCase__I__I(ch))
@@ -18570,6 +18738,9 @@ $c_jl_Character$.prototype.toLowerCase__I__I = (function(codePoint) {
       }
     }
   }
+});
+$c_jl_Character$.prototype.java$lang$Character$$charTypesFirst256__AI = (function() {
+  return (((((1 & this.jl_Character$__f_bitmap$0) << 24) >> 24) === 0) ? $p_jl_Character$__java$lang$Character$$charTypesFirst256$lzycompute__AI(this) : this.jl_Character$__f_java$lang$Character$$charTypesFirst256)
 });
 var $d_jl_Character$ = new $TypeData().initClass({
   jl_Character$: 0
@@ -20435,7 +20606,7 @@ $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
                   var m$5 = $as_Lrebecaos_backend_Semantics$Msg(m$4);
                   return this.subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg(m$5, $as_sci_Map($n($n(rebEnv$3).Lrebecaos_backend_Semantics$RebecEnv__f_rebs).$plus__T2__sci_MapOps(new $c_T2("self", x107))))
                 })));
-                var self = ("" + $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T(x$1$4));
+                var self = new $c_T2(x$1$4, updMsg);
                 var _1 = $n(st).T3__f__1;
                 var _2 = $n($as_sci_MapOps($n(st).T3__f__2)).$plus__T2__sci_MapOps(new $c_T2(x107, newEnv$1));
                 var _3 = $n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).$minus__O__Lrebecaos_backend_Bag(x$1$4)).$plus$plus__Lrebecaos_backend_Bag__Lrebecaos_backend_Bag(updMsg);
@@ -20944,76 +21115,70 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    ex.add(0);}\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + 1;}\n  }\n}\n\nmain {\n\tExample ex1( ex2):();\n\tExample ex2( ex1):();\n}", "Sarir-basic", "Simple example of a Rebeca program, taken from the Sarir paper."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n\t\tconsumer.consume(p);\n\t\tself.produce();\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons", "Producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n    Producer newProducer;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n    if (p==3) {\n\t\t\tnewProducer = new Producer(consuler):();\n    }\n    consumer.consume(p);\n\t\tif(p!=4){\n    \tself.produce();\n    }\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv produce(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons (dyn)", "(Unsupported) Dynamic version of the producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}", "Timed-ticket", "Ticket Service from an SCP'25 paper on Timed Rebeca"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Philosopher(3)\n{\n  knownrebecs\n  {\n    Fork forkL;\n    Fork forkR;\n  }\n  statevars\n  {\n    boolean eating;\n    boolean fL;\n    boolean fR;\n  }\n  msgsrv initial()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    self.arrive();\n  }\n\n  msgsrv arrive()\n  {\n    forkL.request();\n  }\n\n  msgsrv permit()\n  {\n    if (sender == forkL) {\n      if (!fL) {\n        fL = true;\n        forkR.request();\n      }\n    }\n    else {\n      if (fL && !(fR)) {\n        fR = true;\n        self.eat();\n      }\n      // else discard the message\n    }\n  }\n\n  msgsrv eat()\n  {\n    eating = true;\n    self.leave();\n  }\n\n  msgsrv leave()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    forkL.release();\n    forkR.release();\n    self.arrive();\n  }\n}\n\nreactiveclass Fork(3)\n{\n  knownrebecs\n  {\n    Philosopher philL;\n    Philosopher philR;\n  }\n  statevars\n  {\n    boolean lAssign;  \n    boolean rAssign;  \n    boolean leftReq;\n    boolean rightReq;\n  }\n  msgsrv initial()\n  { \n    lAssign = false;\n    rAssign = false;\n    leftReq = false;\n    rightReq = false;\n  }\n\n  msgsrv request()\n  {\n    if (sender == philL) {\n      if (!leftReq) {\n        leftReq = true;\n        if (!rAssign) {\n          lAssign = true;\n          philL.permit();\n        }\n      } \n      // else discard message\n    }\n    else {\n      if (!rightReq) {\n        rightReq = true;\n        if (!lAssign) {\n          rAssign = true;\n          philR.permit();\n        }\n      }\n      // else discard message\n    }\n  }\n  msgsrv release()\n  {\n    if (sender == philL && lAssign){\n      leftReq = false;\n      lAssign = false;\n      if (rightReq) {\n        rAssign=true;\n        philR.permit();\n      }\n    }\n    if (sender == philR && rAssign){\n      rAssign = false;\n      rightReq = false;\n      if (leftReq) {\n        lAssign=true;\n        philL.permit();\n      }\n    }\n  }\n}\n\nmain\n{\n  Philosopher phil0(fork0, fork2):();\n  Philosopher phil1(fork0, fork1):();\n  Philosopher phil2(fork1, fork2):();\n\n  Fork fork0(phil0, phil1):();\n  Fork fork1(phil1, phil2):();\n  Fork fork2(phil2, phil0):();\n}", "Dining Philosophers", "Dining philosophers, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BridgeController(5) {\n  knownrebecs {\n    Train t1;\n    Train t2;\n  }\n\n  statevars {\n    boolean isWaiting1;\n    boolean isWaiting2;\n    boolean isOnBridge1;\n    boolean isOnBridge2;\n  }\n\n  msgsrv initial() {\n    isOnBridge1 = false;  // red\n    isOnBridge2 = false;  // red\n    isWaiting1 = false;\n    isWaiting2 = false;\n  }\n  \n  msgsrv Arrive() {\n    if (sender == t1){\n      if (isOnBridge2 == false) {\n        isOnBridge1 = true; // green\n        t1.YouMayPass();\n      }\n      else {\n        isWaiting1 = true;\n      }\n    }\n    else {\n      if (isOnBridge1 == false){\n        isOnBridge2 = true; // green\n        t2.YouMayPass();\n      }\n      else{\n        isWaiting2 = true;\n      }\n    }\n  }\n  \n  msgsrv Leave() {\n    if (sender == t1) {\n      isOnBridge1 = false;  // red\n      if (isWaiting2){\n        isOnBridge2 = true;\n        t2.YouMayPass();\n        isWaiting2 = false;\n      }\n    } else {\n      isOnBridge2 = false;  // red\n      if (isWaiting1) {\n        isOnBridge1 = true;\n        t1.YouMayPass();\n        isWaiting1 = false;\n      }\n    }\n  }\n}\n\nreactiveclass Train(3) {\n  knownrebecs {\n    BridgeController controller;\n  }\n\n  statevars {\n    boolean onTheBridge;\n  }\n\n  msgsrv initial() {\n    onTheBridge = false;\n    self.Passed();\n  }\n\n  msgsrv YouMayPass() {\n    onTheBridge = true;\n    self.Passed();\n  }\n  \n  msgsrv Passed() {\n    onTheBridge = false;\n    controller.Leave();\n    self.ReachBridge();\n  }\n\n  msgsrv ReachBridge() {\n    controller.Arrive();\n  }\n}\n\nmain {\n  Train train1(theController):();\n  Train train2(theController):();\n  BridgeController theController(train1, train2):();\n}", "Trains", "Two trains and a controller, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8) { \n    knownrebecs { \n\t    Node nodeL; \n        Node nodeR; \n    } \n      \n    statevars { \n        boolean monitor; \n        int myId; \n        int phase; \n        int monitorId; \n        boolean receivedLeft; \n        boolean receivedRight; \n    } \n  \n    msgsrv initial(int id) { \n        myId = id; \n        monitor = false; \n        monitorId = id; \n        phase = 1; \n        receivedLeft = false; \n        receivedRight = false; \n        self.arrive(); \n    } \n  \n    msgsrv arrive() { \n        nodeL.receive(myId, true, phase); \n        nodeR.receive(myId, true, phase); \n\t} \n  \n\tmsgsrv receive(int msgId, boolean inOut, int hopCount) { \n\t\tif ((sender==nodeL) &&  (inOut)) {\n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)) { \n\t\t\t\tmonitorId = msgId; \n        \t    nodeR.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){ \n\t\t\t\t\tmonitorId=msgId; \n                    nodeL.receive (msgId, false,1); \n                } else { \n                    if (msgId == myId) { \n                    \tmonitor = true; \n                    \tmonitorId = myId; \n                \t} \n                } \n\t\t\t} \n        } \n            \n        if ((sender==nodeR) && (inOut)) { \n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)){ \n            \tmonitorId=msgId; \n                nodeL.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){  \n                \tmonitorId=msgId; \n\t\t\t\t\tnodeR.receive (msgId, false,1); \n                } else { \n                \tif (msgId == myId) { \n                    \tmonitor = true; \n                        monitorId = myId; \n                    } \n                } \n        \t} \n        } \n            \n        if ((sender==nodeL) && !(inOut) && !(msgId==myId)) { \n        \tnodeR.receive(msgId, false, 1);           \n        } \n            \n        if ((sender==nodeR) &&  !(inOut) && !(msgId==myId)) { \n        \tnodeL.receive(msgId, false, 1);           \n        } \n            \n\t\tif ((sender==nodeL) && !(inOut) && ((msgId == myId) && (hopCount==1))) { \n        \treceivedLeft = true; \n        } \n\t\tif (((sender==nodeR) && (msgId == myId)) && !(inOut) && (hopCount==1)) { \n        \treceivedRight = true; \n        }     \n            \n        if (receivedLeft && receivedRight&& (phase<3)){ \n        \tif(phase==2) { \n            \tmonitor=true; \n            } else { \n                phase = phase * 2; \n                receivedLeft=false; \n                receivedRight=false; \n                nodeL.receive(myId, true, phase); \n                nodeR.receive(myId, true, phase); \n            } \n        } \n\t} \n} \n  \n  \nmain { \n      Node node1(node4,node2):(1); \n      Node node2(node1,node3):(2); \n      Node node3(node2,node4):(3); \n      Node node4(node3,node1):(4); \n} ", "Leader Election HS (fix)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8){\n\tknownrebecs {\n\t\tNode rightNode;\n\t}\n\tstatevars {\n\t\tboolean isLeader;\n\t\tint myNumber;\n\t\tint currentLeader;\t\t\n\t}\n\tmsgsrv initial(int n) {\n\t\tmyNumber = n;\n\t\tcurrentLeader = n;\n\t\tisLeader = false;\n\t\tself.send();\n\t}\n\t\n\tmsgsrv ImLeader() {\n\t\tself.ImLeader();\n\t\t//The algorithm terminates here, but the leader keeps sending a msg to himself to avoid deadlock.\n\t}\n\tmsgsrv send() {\n\t\trightNode.receive(currentLeader);\n\t}\n\tmsgsrv receive(int n) {\n\t\tif (n == myNumber) {\n\t\t\tisLeader = true;\n\t\t\tself.ImLeader();\n\t\t}\n\t\telse {\n\t\t\tif (n > currentLeader) {\n\t\t\t\tcurrentLeader = n;\n\t\t\t\tself.send();\n\t\t\t}\n\t\t\t//else discard\n\t\t}\n\t}\n}\n\nmain { \n//Each node must have a unique identifier\n//In case of having more than three nodes or changing the leader to other node (rather than node1), you should change the property file too.\n   Node node0(node2):(4); \n   Node node1(node0):(20); \n   Node node2(node1):(10); \n} ", "Leader Election LCR", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("//In the name of Allah\n// The best will come\n\n//2 Phase Commit Protocol\nreactiveclass Node(10) {\n\tknownrebecs {\n\t    Node node1;\n\t    Node node2;\n\t}\n\tstatevars {\n\t    byte srvNo;\n\t\tboolean recievedResults;\n\t\tboolean creationAbility;\n\t\tint recievedResultsCounter;\n\t\tint expectedResultsCounter;\n\t\tboolean[2] cooperatorKnownRebecs;\n\t\t\n\t}\n\t\n\tmsgsrv initial(boolean nodeCreationAbility) {\n\t\tcreationAbility = nodeCreationAbility;\n\t\tself.createTransaction();\n\t}\n\t\n\tmsgsrv createTransaction() {\n\n\t\tboolean startTrans;\n\t\tstartTrans = ?(true, false);\n\t\tif (startTrans && creationAbility) {\n\t\t\tboolean dispatcher = false;\n\t\t\tboolean result;\n\n\t\t\tint i;\n\t\t\tfor(i = 0; i < 2; i = i + 1)\n\t\t\t\tcooperatorKnownRebecs[i] = false;\n\n\t\t\trecievedResultsCounter = 0;\n\t\t\trecievedResults = true;\n\n\n\t\t\texpectedResultsCounter = 0;\n\n            srvNo = 1;\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[0] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode1.startGlobalTransaction();\n\t\t\t}\n\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[1] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode2.startGlobalTransaction();\n\t\t\t}\n\n\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\tresult = ?(true, false);\n\t\t\tself.cooperatorResponse(result);\n\t\t}\n\t\telse {\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\tmsgsrv startGlobalTransaction() {\n\t\tboolean result;\n\t\tresult = ?(true, false);\n\n\t\tif (sender == node1) {\n\t\t\tnode1.cooperatorResponse(result);\n\t\t}\n\t\tif (sender == node2) {\n\t\t\tnode2.cooperatorResponse(result);\n        }\n        \n\t}\n\n\tmsgsrv cooperatorResponse(boolean result) {\n\t\trecievedResultsCounter = recievedResultsCounter + 1;\n\t\tif (!result)\n\t\t\trecievedResults = false;\n\n\t\tif (recievedResultsCounter == expectedResultsCounter) {\n            int i;\n\t\t\tif (cooperatorKnownRebecs[0]) {\n\t\t\t\tnode1.applyResult(recievedResults);\n\t\t\t}\n\t\t\tif (cooperatorKnownRebecs[1]) {\n\t\t\t\tnode2.applyResult(recievedResults);\n\t\t\t}\n\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\n\tmsgsrv applyResult(boolean result) {\n\t}\n\n}\n\n\nmain {\n\tNode node1(node2, node3):(true);\n\tNode node2(node3, node1):(false);\n\tNode node3(node1, node2):(true);\n}", "2-phase commit", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Sender(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tReceiver rec;     \n\t} \n      \n\tstatevars { \n\t\tboolean receivedBit; \n\t\tboolean sendBit; \n\t\tboolean hasSucceeded; \n\t} \n  \n\tmsgsrv initial() { \n\t\tsendBit = false; \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n\t} \n  \n\tmsgsrv sendMsg() { \n\t\t//receive(hasSucceeded) \n\t\tif (hasSucceeded == true) { \n\t\t\tif (sendBit == true) { \n\t\t\t\tsendBit = false; \n\t\t\t} else { \n\t\t\t\tsendBit = true; \n\t\t\t} \n\t\t} \n            \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n\t} \n} \n  \nreactiveclass Receiver(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean messageBit; \n\t} \n  \n\tmsgsrv initial() { \n\t} \n  \n\tmsgsrv receiveMsg(boolean msgBit) { \n\t\tmessageBit =msgBit; \n\t\t//sender.receive(true); \n\t} \n} \n  \nreactiveclass Medium(5) { \n\tknownrebecs { \n\t\tReceiver receiver; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean passMessage; \n\t} \n  \n\tmsgsrv initial() { \n\t\tpassMessage=true; \n\t} \n  \n\tmsgsrv pass(boolean msgBit) { \n\t\tpassMessage = ?(true,false); \n\t\tif(passMessage == true) { \n\t\t\treceiver.receiveMsg( msgBit); \n\t\t} else { \n\t\t\t//sender,receive(false); \n\t\t} \n\t} \n} \n  \nmain { \n\tSender sender (medium, receiver):(); \n\tMedium medium(receiver, sender):(); \n\tReceiver receiver(medium, sender):(); \n} ", "Sender-receiver", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BufferManager(4) {\n\tknownrebecs {\n\t\tProducer producer;\n\t\tConsumer consumer;\n\t}\n\n\tstatevars {\n\t\tboolean empty;\n\t\tboolean full;\n\t\tboolean producerWaiting;\n\t\tboolean consumerWaiting;\n\t\tint bufferlenght;\n\t\tint nextProduce;\n\t\tint nextConsume;\t\t\n\t}\n\n\tmsgsrv initial() {\n\t\tbufferlenght = 2;\n\t\tempty = true;\n\t\tfull = false;\n\t\tproducerWaiting = false;\n\t\tconsumerWaiting = false;\n\t\tnextProduce = 0;\n\t\tnextConsume = 0;\n\t}\n\n\tmsgsrv giveMeNextProduce() {\n\t\tif (!full)\t{\n\t\t\tproducer.produce(nextProduce);\n\t\t} \n\t}\n\n\tmsgsrv giveMeNextConsume() {\n\t\tif (!empty) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t} \n     \telse {\n\t\t\tconsumerWaiting = true;\n\t\t}\n\t}\n\n\tmsgsrv ackProduce() {\n\t\tnextProduce = (nextProduce + 1) %\n                    bufferlenght;\n\t\tif (nextProduce == nextConsume) {\n\t\t\tfull = true;\n\t\t}\n\t\tempty = false;\n\t\tif (consumerWaiting) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t\tconsumerWaiting = false;\n\t\t}\n\t}\n\n\tmsgsrv ackConsume() {\n\t\tnextConsume = (nextConsume + 1) %\n                    bufferlenght;\n\t\tif (nextConsume == nextProduce) {\n\t\t\tempty = true;\n\t\t}\n\t\tfull = false;\n\t\tif (producerWaiting) {\n\t\t\tproducer.produce(nextProduce);\n\t\t\tproducerWaiting = false;\n\t\t}\n\t}\n}\n\nreactiveclass Producer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginProduce();\n\t}\n\t\n\tmsgsrv produce(int bufNum) {\n\t\tbuffer.ackProduce();\n\t\tself.beginProduce();\n\t}\n\n\tmsgsrv beginProduce() {\n\t\tbuffer.giveMeNextProduce();\n\t}\n}\n\nreactiveclass Consumer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\t\t\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginConsume();\n\t}\n\n\tmsgsrv consume(int bufNum) {\n\t\tbuffer.ackConsume();\n\t\tself.beginConsume();\t\n\t}\n\t\n\tmsgsrv beginConsume() {\n\t\tbuffer.giveMeNextConsume();\n\t}\n\n}\n\nmain { \n\tBufferManager buffer(producer, consumer):();\n\tProducer producer(buffer):();\n\tConsumer consumer(buffer):();\n}", "Prod-Cons (larger)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (byte)(distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (byte)(distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = (byte)255;\n             rootDistance = (byte)255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( ! isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (byte)(distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (byte)(distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,D):(1);\n    BridgeToLanPort out1F(p1F,F):(2);\n    BridgeToLanPort out5D(p5D,D):(3);\n    BridgeToLanPort out5B(p5B,B):(4);\n    BridgeToLanPort out7F(p7F,F):(5);\n    BridgeToLanPort out7B(p7B,B):(6);\n    BridgeToLanPort out7K(p7K,K):(7);\n\n    ExtendedLan D(in1D, in5D):();\n    ExtendedLan B(in7B, in5B):();\n    ExtendedLan F(in1F, in7F):();\n    ExtendedLan K(in7K, in7K):();\n}", "Spanning-tree", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("/*\n\n* Model for 4x4 ASPIN. The model can be extended for lager NoCs by declaring routers in main part (last section of the code).\n\n*In the model only one packet is sent from router R00 to router R23. More packets can be scheduled to sent from a source to destination \n as like in \"Router\" mesage server.\n\n*/\n\nreactiveclass Manager(10){\n\t\n\tknownrebecs{\n\t\tRouter r00;\n\t\tRouter r10;\n\t\tRouter r20;\n\t\tRouter r30;\n\t\t\n\t\tRouter r01;\n\t\tRouter r11;\n\t\tRouter r21;\n\t\tRouter r31;\n\t\t\n\t\tRouter r02;\n\t\tRouter r12;\n\t\tRouter r22;\n\t\tRouter r32;\n\t\t\n\t\tRouter r03;\n\t\tRouter r13;\n\t\tRouter r23;\n\t\tRouter r33;\n\t}\n\t\n\tstatevars{\n\t}\n\t\n\tManager(){\n\t}\n\t\n\tmsgsrv reset(){ //each source and destination routeeer should be initialized here.\n\t\tr01.reStart() after(700); //source\t\t\n\t}\n}\n\nreactiveclass Router(10) {\n\n\tknownrebecs {\n\t\tManager manager;\n\t\tRouter N;  // : 0\n\t\tRouter E;  // : 1\n\t\tRouter S;  // : 2\n\t\tRouter W;  // : 3\t\t\n\t}\n\t\n\tstatevars {\n\t\tint bufSize;\n\t\tint maxTime;\t// To check if a packet is recieved by the time maxTime\n\t\tint recieved;\n\t\t\n\t\tbyte[4] bufNum; //for each of four sides\n\t\tboolean[4] full;\n\t\tboolean[4] enable;\n\t\tboolean [4] outMutex;\n\t\t\n\t\tbyte Xid;\n\t\tbyte Yid;\n\t}\n\t\n\tRouter(byte X, byte Y){\t\n\t\tXid = X;\n\t\tYid = Y;\n\t\n\t\tbufSize = 2;\n\t\tmaxTime = 250 ; \n\t\trecieved = 0;\n\n\t\tfor(int i=0;i<4;i++){\t\t\n\t\t\tenable[i] = true;\n\t\t\toutMutex[i] = true;\n\t\t\tbufNum[i] = 0;\n\t\t\tfull[i] = false;\n\t\t}\n\t\t\n\t\t//packet generation\n\t\tif(X == 0 && Y == 0){\n\t\t\tself.reqSend(2,3,1,5) after(10);  //sending a packet\n\t\t}\n\t\t\n\t\tif(X == 0 && Y == 1){\t\t\t\t// permamnet, don't change. \n\t\t\tself.reStart() after(700);\n\t\t}\n\t\t\n\t\tif(X == 2 && Y == 3){\t\t\t\t// in destination router. not necessary for all packets. just to check when the packet is recieved\n\t\t\tself.checkRecieved()after(maxTime);\n\t\t}\n\t}\n\t\n\tmsgsrv reqSend(byte Xtarget, byte Ytarget, int directionS, int packId){\t\n\t\tif (enable[directionS] == true){\n\t\t\tboolean sent = false;\n\t\t\t\t\t\n\t\t\tif(Xtarget > Xid){\t\t// Routing Algorithm XY: first move through horisental channels \n\t\t\t\tif(outMutex[1] == true){\t\n\t\t\t\t\tE.give_Ack(Xtarget, Ytarget,directionS,3,5, packId) after(26);\n\t\t\t\t\toutMutex[1] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Xtarget < Xid){\t\n\t\t\t\tif(outMutex[3] == true){\n\t\t\t\t\tW.give_Ack(Xtarget, Ytarget,directionS,1,5, packId ) after(26);\t\n\t\t\t\t\toutMutex[3] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t} else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Ytarget > Yid){\t\n\t\t\t\tif(outMutex[2] == true){\n\t\t\t\t\tS.give_Ack(Xtarget, Ytarget,directionS,0,5, packId ) after(26);\t\n\t\t\t\t\toutMutex [2] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\t\n\t\t\t}\t\n\t\t\telse if(Ytarget < Yid){\t\n\t\t\t\tif(outMutex[0] == true){\n\t\t\t\t\tN.give_Ack(Xtarget, Ytarget,directionS,2,5 , packId) after(26);\t\n\t\t\t\t\toutMutex[0] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t\t\t}\n\n\t\t\tif(sent == true){\n\t\t\t\tbufNum[directionS] = (byte)bufNum[directionS] + 1;\n\n\t\t\t\tif (bufNum[directionS] == bufSize) full[directionS] = true;         //update the value of \"full\".\n\t\t\t}\t\n\t\t} else\n\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t}\n\t\n\tmsgsrv get_Ack(int directionS){\n\t\t\n\t\tenable[directionS] = true;\n\t\t\n\t\tbufNum[directionS] = (byte)bufNum[directionS] - 1;\t\n\t\tfull[directionS] = false;\n\n\t\tif (sender == N) {\n\t\t\toutMutex[0] = true;\n\t\t}\t\n\t\telse if (sender == E){ \n\t\t\toutMutex[1] = true;\n\t\t}\t\n\t\telse if (sender == S){\n\t\t\toutMutex[2] = true;\n\t\t\t}\n\t\telse if (sender == W){ \n\t\t\toutMutex[3] = true;\n\t\t}\t\n\t}\n\t\n\tmsgsrv give_Ack(byte Xtarget, byte Ytarget,int directionS, int directionD,int msgSender, int packId){\n\t\tint MSGSender;\n\t\tif(sender == N)\n\t\t\tMSGSender = 0;\n\t\telse if (sender == E)\n\t\t\tMSGSender = 1;\n\t\telse if (sender == S)\n\t\t\tMSGSender = 2;\n\t\telse if (sender == W)\n\t\t\tMSGSender = 3;\n\t\telse {MSGSender = msgSender;\n\t\t\t\n\t\t}\n\t\t\t\t\n\t\tif(!(Xtarget == Xid && Ytarget == Yid)){\n\t\t\t\t\n\t\t\tif (full[directionD]) //buffer is full, the packet should wait.\n\t\t\t\tself.give_Ack(Xtarget, Ytarget,directionS,directionD,MSGSender,\n\t\t\t\t\t\t\t packId)after(2)deadline(3); //waiting via recalling give_ack after 2 time units.\n\t\t\t\n\t\t\telse{\t\n\t\t\t\tself.reqSend(Xtarget, Ytarget,directionD, packId); \n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\t\t\n\t\t}\t\t\n\t\t\n\t\telse if((Xtarget == Xid && Ytarget == Yid)){ //reach target\n\t\t\t\t\n\t\t\t\trecieved = recieved + 1;\n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\n\t}\n\n\tmsgsrv reStart(){\n\t\tmanager.reset();\n\t}\t\n\t\n\tmsgsrv deadlineMiss(){\n\t\tdelay(5);\n\t}\n\t\n\tmsgsrv checkPoint(){ // causes to hult\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t}\n\t\n\tmsgsrv checkRecieved(){ // Halt if recieved is 0, by calling checkpoint.(checkpoint method allways cause program to hult).\n\t\t\n\t\tif (recieved == 0){\n\t\t\tself.checkPoint();\n\t\t}\n\t\t\t\n\t}\n}\n\nmain {\n\tManager m(r00,r10,r20,r30,r01,r11,r21,r31,r02,r12,r22,r32,r03,r13,r23,r33):();\n\t\n\tRouter r00(m,r03,r10,r01,r30):(0,0);\n\tRouter r10(m,r13,r20,r11,r00):(1,0);\n\tRouter r20(m,r23,r30,r21,r10):(2,0);\n\tRouter r30(m,r33,r00,r31,r20):(3,0);\n\t\n\tRouter r01(m,r00,r11,r02,r31):(0,1);\n\tRouter r11(m,r10,r21,r12,r01):(1,1);\n\tRouter r21(m,r20,r31,r22,r11):(2,1);\n\tRouter r31(m,r30,r01,r32,r21):(3,1);\n\t\n\tRouter r02(m,r01,r12,r03,r32):(0,2);\n\tRouter r12(m,r11,r22,r13,r02):(1,2);\n\tRouter r22(m,r21,r32,r23,r12):(2,2);\n\tRouter r32(m,r31,r02,r33,r22):(3,2);\n\t\n\tRouter r03(m,r02,r13,r00,r33):(0,3);\n\tRouter r13(m,r12,r23,r10,r03):(1,3);\n\tRouter r23(m,r22,r33,r20,r13):(2,3);\n\tRouter r33(m,r32,r03,r30,r23):(3,3);\n}", "NOC", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("env int RESENDING_PERIOD = 25;\nenv int NORMAL_SPEED = 15;\nenv int REDUCED_SPEED = 7;\nenv int SAFE_DISTANCE = 20;  // segments has 1000 meters length and each sub-segment has 200 meteres length\nenv int SEGMENT_LENGTH = 200;\nenv int LOADING_TIME_PC = 60;\nenv int LOADING_TIME_WL = 60;\nenv int UNLOADING_TIME_SC = 30;\nenv int CHARGING_TIME_C1 = 60;\nenv int CHARGING_TIME_C2 = 60;\nenv int LEAVING_PERIOD = 13;\nenv int NUMBER_VEHICLES = 4;\n\n//************* E1:WL, E2:Crusher, E3:SC, E4:DP ***********\n\nreactiveclass CrossController (10){\t\t// to control when S4 passes S3\n\tknownrebecs\n\t{\n\t}\n\tstatevars\n\t{\n\t\tboolean crossIsFree;\n\t}\n\tCrossController()\n\t{ \n\t\tcrossIsFree= true;\n\t}\n\tmsgsrv giveCrossPermission(int vehicleId){\n\t\tif(crossIsFree){\n\t\t\tcrossIsFree = false;\n\t\t\t((Segment)sender).getCrossPermission(vehicleId);\n\t\t}\n\t\telse ((Segment)sender).crossNotAvailable(vehicleId);\n\t}\n\tmsgsrv freeCross(int vehicleId){\n\t\tcrossIsFree = true;\t\n\t}\n}\n\nreactiveclass PrimaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPcToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tPrimaryCrusher()\n\t{ \n\t\tisLoading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_PC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegPcToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass SecondaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegScToPrepoint;\n\t}\n\tstatevars\n\t{\n\t\tboolean isUnloading;\n\t}\n\tSecondaryCrusher()\n\t{ \n\t\tisUnloading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isUnloading == false){\n\t\t\tisUnloading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(UNLOADING_TIME_SC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegScToPrepoint.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisUnloading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass PrePoint (14) { \t\t\t// the point at the end of S7\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPreToE1;\n\t\tSegment firstSubSegPreToE2;\n\t}\n\tstatevars\n\t{\n\t\tboolean isBusy;\n\t\tboolean toE1;\n\t\tint count;\n\t}\n\tPrePoint()\n\t{ \n\t\tisBusy= false;\n\t\ttoE1 = true;\n\t\tcount=0;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isBusy == false){\n\t\t\tisBusy = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(toE1)\n\t\t\tfirstSubSegPreToE1.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisBusy= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tif(toE1){\n\t\t\ttoE1 = false;\n\t\t\tfirstSubSegPreToE2.givePermisionForVehicle(vehicleId, -1);\t\n\t\t}\n\t\telse \n\t\t{\n\t\t\ttoE1 = true;\n\t\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t\t}\n\t}\n}\n\nreactiveclass DecisionStation (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegDsToPc;\n\t}\n\tstatevars\n\t{\t\n\t\tboolean vehicle1Reached;\n\t\tboolean vehicle2Reached;\n\t\tboolean vehicle3Reached;\n\t\tboolean vehicle4Reached;\n\t\tboolean vehicle5Reached;\n\t\tboolean vehicle6Reached;\n\t\tboolean vehicle7Reached;\n\t\tboolean vehicle8Reached;\n\t}\n\tDecisionStation()\n\t{ \n\t\tself.leaveParkingSlots();\n\t}\n\tmsgsrv leaveParkingSlots(){\n\t\t\n\t\tstartSendingToNext(1) after(1);\n\t\t\n\t\tif(NUMBER_VEHICLES == 2 || NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 \n\t\t|| NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(2) after(4);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 \n\t\t|| NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(3) after(6);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 \n\t\t|| NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(4) after(9);\n\t\t\t\n \t\tif(NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7\n\t\t|| NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(5) after(12);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(6) after(15);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(7) after(19);\n\t\t\n\t\tif(NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(8) after(26);\n\t}\n\tmsgsrv getPermision(int vehicleId){\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId, int segmentDes){\n\t\tstartSendingToNext(vehicleId) after (RESENDING_PERIOD);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegDsToPc.givePermisionForVehicle(vehicleId,1);\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t\t((Segment)sender).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\t//startSendingToNext(vehicleId) after(LEAVING_PERIOD);\n\t\tif(vehicleId == 1)\n\t\t\tvehicle1Reached = true;\n\t\telse if(vehicleId == 2)\n\t\t\tvehicle2Reached = true;\n\t\telse if(vehicleId == 3)\n\t\t\tvehicle3Reached = true;\n\t\telse if(vehicleId == 4)\n\t\t\tvehicle4Reached = true;\n\t\telse if(vehicleId == 5)\n\t\t\tvehicle5Reached = true;\n\t\telse if(vehicleId == 6)\n\t\t\tvehicle6Reached = true;\n\t\telse if(vehicleId == 7)\n\t\t\tvehicle7Reached = true;\n\t\telse if(vehicleId == 8)\n\t\t\tvehicle8Reached = true;\n\t\t\n\t\t//if(NUMBER_VEHICLES == 4)\n\t\t//\t\tassertion(false);\n\t\t// when all vehicles travelled once the model checking stops by puting 'assertion(false)'\n\t\tif(NUMBER_VEHICLES == 1){\n\t\t\tif(vehicle1Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 2){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 3){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 4){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 5){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 6){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 7){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 8){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true && vehicle8Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t}\n\tmsgsrv loop (){\n\t\tself.loop() after(5000);\n\t}\n}\n\nreactiveclass WheelLoader (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegWlToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tWheelLoader()\n\t{ \n\t\tisLoading = false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_WL);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegWlToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass Segment(14) {\n\tknownrebecs\n\t{\n\t\t\n\t}\n\tstatevars\n\t{\n\t\tboolean isFree;\n\t\tboolean stoppedVehicle;\n\t\tint vehicleSpeed;\t\t\t// speed of the current vehicle\n\t\tint segmentLength;\n\t\t\n\t\tSegment nextSegment;\n\t\tDecisionStation decisionS;\n\t\tPrimaryCrusher primaryC;\n\t\tSecondaryCrusher secondaryC;\n\t\tWheelLoader wheelL;\n\t\tPrePoint prePoint;\n\t\tCrossController crossCtrl;\n\t\tSegment segRequestingCross;\n\t}\n\tSegment(Segment nextS, WheelLoader wl, PrimaryCrusher pc, SecondaryCrusher sc, \n\t\t\t\tDecisionStation ds, PrePoint preCs, CrossController ctrl, int speed, int segLength)\n\t{ \n\t\tnextSegment = nextS;\n\t\tdecisionS = ds;\n\t\tprimaryC = pc;\n\t\tsecondaryC = sc;\n\t\twheelL = wl;\n\t\tprePoint = preCs;\t\n\t\tcrossCtrl = ctrl;\n\t\tsegRequestingCross = null;\n\t\tsegmentLength = segLength;\n\t\t\n\t\tvehicleSpeed = speed;\n\t\tisFree = true;\n\t\tstoppedVehicle =false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId, int segmentDes){\n\t\tif (isFree)\n\t\t{\n\t\t\tisFree=false;\n\t\t\tif(crossCtrl == null){\n\t\t\t\tif(sender instanceof Segment)\n\t\t\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t\t((DecisionStation)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t\t((PrimaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t\t((WheelLoader)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t\t((SecondaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t\t((PrePoint)sender).getPermision(vehicleId);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tsegRequestingCross = ((Segment)sender);\n\t\t\t\tcrossCtrl.giveCrossPermission(vehicleId);\n\t\t\t}\n\t\t}\n\t\telse{\n\t\t\tif(sender instanceof Segment)\n\t\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t((DecisionStation)sender).segmentNotFree(vehicleId, segmentDes);\n\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t((PrimaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t((WheelLoader)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t((SecondaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t((PrePoint)sender).segmentNotFree(vehicleId);\n\t\t}\n\t\n\t}\n\tmsgsrv getCrossPermission(int vehicleId){\n\t\t((Segment)segRequestingCross).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered (int vehicleId){\t// moving of vehicle inside the segment should be modeled\n\t\tdelay((segmentLength-SAFE_DISTANCE)/vehicleSpeed);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv crossNotAvailable(int vehicleId){\n\t\tisFree = true;\n\t\t((Segment)segRequestingCross).segmentNotFree(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(nextSegment != null)\n\t\t\tnextSegment.givePermisionForVehicle(vehicleId,-1);\n\t\telse if(primaryC != null)\n\t\t\tprimaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(wheelL != null)\n\t\t\twheelL.givePermisionForVehicle(vehicleId);\n\t\telse if(secondaryC != null)\n\t\t\tsecondaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(decisionS != null)\n\t\t\tdecisionS.givePermisionForVehicle(vehicleId);\n\t\telse if(prePoint != null)\n\t\t\tprePoint.givePermisionForVehicle(vehicleId);\n\t\t\t\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tstoppedVehicle = false;\n\t\tdelay(SAFE_DISTANCE/vehicleSpeed);\n\t\tisFree = true;\n\t\tif(crossCtrl != null){\n\t\t\tsegRequestingCross = null;\n\t\t\tcrossCtrl.freeCross(vehicleId);\n\t\t}\n\t\tif(sender instanceof Segment)\n\t\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof DecisionStation)\n\t\t\t((DecisionStation)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t((PrimaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof WheelLoader)\n\t\t\t((WheelLoader)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t((SecondaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrePoint)\n\t\t\t((PrePoint)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId){\n\t\tstoppedVehicle = true;\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\n\nmain{\n\t//************* E1:WL, E2:PC, E3:SC, E4:DP ***********\n\tPrimaryCrusher pc(subSeg1E2ToS2):();\n\tSecondaryCrusher sc(subSeg1E3ToE4):();\n\tWheelLoader wl(subSeg1E1ToS2):();\n\tDecisionStation ds(subSeg1S4ToPre):();\n\tCrossController controller():();\n\tPrePoint prePoint(subSeg1S5ToE1,subSeg1S6ToE2):();\n\t// ():(segment,E1,E2,E3,E4,prepoint,controller)\n\t\n\t//################ S1 ##################\n\tSegment subSeg1E2ToS2():(subSeg2E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\tSegment subSeg2E2ToS2():(subSeg3E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E2ToS2():(subSeg4E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E2ToS2():(subSeg5E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E2ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\t\n\t//##################### S7 ##############\n\tSegment subSeg1E1ToS2():(subSeg2E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E1ToS2():(subSeg3E1ToS2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E1ToS2():(subSeg4E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E1ToS2():(subSeg5E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E1ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S2 ################\n\tSegment subSeg1S2ToE3():(subSeg2S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S2ToE3():(subSeg3S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S2ToE3():(subSeg4S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S2ToE3():(subSeg5S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S2ToE3():(null,null,null,sc,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S3 #############\n\tSegment subSeg1E3ToE4():(subSeg2E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E3ToE4():(subSeg3E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E3ToE4():(subSeg4E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E3ToE4():(subSeg5E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E3ToE4():(null,null,null,null,ds,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S6 #############\n\tSegment subSeg1S6ToE2():(subSeg2S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S6ToE2():(subSeg3S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S6ToE2():(subSeg4S6ToE2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S6ToE2():(subSeg5S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S6ToE2():(null,null,pc,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S5 #############\n\tSegment subSeg1S5ToE1():(subSeg2S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S5ToE1():(subSeg3S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S5ToE1():(null,wl,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S4 #############\n\tSegment subSeg1S4ToPre():(subSeg2S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S4ToPre():(subSeg3S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S4ToPre():(subSeg4S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S4ToPre():(subSeg5S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S4ToPre():(null,null,null,null,null,prePoint,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n}", "Vehicles", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>.")]));
   this.Lrebecaos_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $n($m_s_package$().s_package$__f_List);
-  var $$x11 = $m_sr_ScalaRunTime$();
-  var this$89 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((_$1) => {
-    var _$1$1 = $as_T3(_$1);
-    return $n(_$1$1).toString__T()
+  var $$x10 = $m_sr_ScalaRunTime$();
+  var this$89 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((_$3) => {
+    var _$3$1 = $as_T3(_$3);
+    return $n(_$3$1).toString__T()
   })), new $c_Lcaos_view_Code("haskell")));
   var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$89, 0);
-  var $$x10 = new $c_T2("View pretty data", y);
-  var this$93 = $n($m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
+  var $$x9 = new $c_T2("View pretty data", y);
+  var this$92 = $n($m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
     var e$1 = $as_T3(e);
     return e$1
   })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st) => {
     var st$1 = $as_T3(st);
     return $m_Lrebecaos_syntax_Show$().apply__T3__T(st$1)
-  })), new $c_sjsr_AnonFunction1(((_$2) => {
-    var _$2$1 = $as_T(_$2);
-    var this$92 = $n(_$2$1);
-    return this$92
+  })), new $c_sjsr_AnonFunction1(((a) => {
+    var a$1 = $as_T2(a);
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(a$1)._1__O()))
   })), $m_Lcaos_view_Text$()));
-  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$93);
-  var $$x9 = new $c_T2("Run semantics", y$1);
+  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$92);
+  var $$x8 = new $c_T2("Run semantics St", y$1);
   var $$x6 = $m_Lcaos_frontend_Configurator$();
   var $$x5 = new $c_sjsr_AnonFunction1(((e$2) => {
     var e$3 = $as_T3(e$2);
     $n($m_s_package$().s_package$__f_List);
-    var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([]));
+    var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
     var _2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1);
     return new $c_T2(e$3, _2)
   }));
-  var this$98 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
+  var this$97 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
   var sos = $m_Lrebecaos_backend_Semantics$();
-  var y$2 = $n($$x6).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x5, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos, this$98), new $c_sjsr_AnonFunction1(((st$2) => {
-    var st$3 = $as_T2(st$2);
-    var $$x7 = $m_Lrebecaos_syntax_Show$().apply__T3__T($as_T3($n(st$3)._1__O()));
-    var this$99 = $n($n($as_sci_List($n(st$3)._2__O())).reverse__sci_List());
-    return (($$x7 + "\n") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$99, "", " > ", ""))
-  })), new $c_sjsr_AnonFunction1(((_$3) => {
-    var _$3$1 = $as_T(_$3);
-    var this$100 = $n(_$3$1);
-    return this$100
-  })), $m_Lcaos_view_Text$());
-  var $$x8 = new $c_T2("Run semantics2", y$2);
+  var y$2 = $n($$x6).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x5, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos, this$97), new $c_sjsr_AnonFunction1(((hs) => {
+    var hs$1 = $as_T2(hs);
+    return $m_Lrebecaos_frontend_CaosConfig$HistorySOS$().toMermaidSnd__T2__T(hs$1)
+  })), new $c_sjsr_AnonFunction1(((act) => {
+    var act$1 = $as_T2(act);
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))
+  })), $m_Lcaos_view_Mermaid$());
+  var $$x7 = new $c_T2("Run semantics Snd", y$2);
   var $$x3 = $m_Lcaos_frontend_Configurator$();
   var $$x2 = new $c_sjsr_AnonFunction1(((e$3$1) => {
     var e$4 = $as_T3(e$3$1);
     $n($m_s_package$().s_package$__f_List);
-    var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([]));
+    var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
     var _2$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2);
     return new $c_T2(e$4, _2$1)
   }));
-  var this$105 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
+  var this$102 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
   var sos$1 = $m_Lrebecaos_backend_Semantics$();
-  var y$3 = $n($$x3).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x2, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos$1, this$105), new $c_sjsr_AnonFunction1(((hs) => {
-    var hs$1 = $as_T2(hs);
-    return $m_Lrebecaos_frontend_CaosConfig$HistorySOS$().toMermaid__T2__T(hs$1)
-  })), new $c_sjsr_AnonFunction1(((_$4) => {
-    var _$4$1 = $as_T(_$4);
-    var this$106 = $n(_$4$1);
-    return this$106
+  var y$3 = $n($$x3).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x2, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos$1, this$102), new $c_sjsr_AnonFunction1(((hs$2) => {
+    var hs$3 = $as_T2(hs$2);
+    return $m_Lrebecaos_frontend_CaosConfig$HistorySOS$().toMermaidRcv__T2__T(hs$3)
+  })), new $c_sjsr_AnonFunction1(((act$2) => {
+    var act$3 = $as_T2(act$2);
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$3)._1__O()))
   })), $m_Lcaos_view_Mermaid$());
-  var $$x4 = new $c_T2("Run semantics3", y$3);
+  var $$x4 = new $c_T2("Run semantics Rcv", y$3);
   var y$4 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$4$1) => {
     var e$5 = $as_T3(e$4$1);
     return e$5
-  })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st$3$1) => {
-    var st$4 = $as_T3(st$3$1);
-    return $m_Lrebecaos_syntax_Show$().short__T3__T(st$4)
-  })), new $c_sjsr_AnonFunction1(((_$5) => {
-    var _$5$1 = $as_T(_$5);
-    var this$109 = $n(_$5$1);
-    return this$109
+  })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st$2) => {
+    var st$3 = $as_T3(st$2);
+    return $m_Lrebecaos_syntax_Show$().short__T3__T(st$3)
+  })), new $c_sjsr_AnonFunction1(((_$4) => {
+    var _$4$1 = $as_T2(_$4);
+    return $n(_$4$1).toString__T()
   })), 50);
   var $$x1 = new $c_T2("Build LTS", y$4);
   var initialSt = new $c_sjsr_AnonFunction1(((e$5$1) => {
@@ -21021,36 +21186,35 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     return e$6
   }));
   var sos$2 = $m_Lrebecaos_backend_Semantics$();
-  var viewSt = new $c_sjsr_AnonFunction1(((st$4$1) => {
-    var st$5 = $as_T3(st$4$1);
-    return $m_Lrebecaos_syntax_Show$().short__T3__T(st$5)
+  var viewSt = new $c_sjsr_AnonFunction1(((st$3$1) => {
+    var st$4 = $as_T3(st$3$1);
+    return $m_Lrebecaos_syntax_Show$().short__T3__T(st$4)
   }));
-  var viewAct = new $c_sjsr_AnonFunction1(((_$6) => {
-    var _$6$1 = $as_T(_$6);
-    var this$112 = $n(_$6$1);
-    return this$112
+  var viewAct = new $c_sjsr_AnonFunction1(((_$5) => {
+    var _$5$1 = $as_T2(_$5);
+    return $n(_$5$1).toString__T()
   }));
   var y$5 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos$2, viewSt, viewAct);
-  var elems$3 = $n($$x11).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x10, $$x9, $$x8, $$x4, $$x1, new $c_T2("Build LTS (explore)", y$5)]));
+  var elems$3 = $n($$x10).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x9, $$x8, $$x7, $$x4, $$x1, new $c_T2("Build LTS (explore)", y$5)]));
   this.Lrebecaos_frontend_CaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3);
   this.Lrebecaos_frontend_CaosConfig$__f_footer = ($m_sc_StringOps$(), $m_sc_StringOps$().stripMargin$extension__T__C__T("Simple animator of rebecaOS, meant to exemplify the\n      | CAOS libraries, used to generate this website. Source code available online:\n      | <a target=\"_blank\" href=\"https://github.com/arcalab/CAOS\">\n      | https://github.com/arcalab/CAOS</a> (CAOS).", 124));
   $m_sc_StringOps$();
   var sosRules = $m_sc_StringOps$().stripMargin$extension__T__C__T("The operational rules that we use to reduce programs are provided below.\n      |These are explained, e.g. in\n      |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n      |<pre>\n      |WHEN\n      |  (\u03c3_ri(m), // statement\n      |   \u03c3_ri[now=max(TT,\u03c3_ri(now)),[arg=v],sender=rj], // env\n      |   Env,    // USELESS\n      |   B)      // outgoing messages // NOT NEEDED here\n      |  EVALUATES TO\n      |  (\u03c3'_ri,   // new env\n      |   Env',   // ALWAYS Env (without dynamic \"new\" creation)\n      |   B')     // new/updated outgoing messages\n      |IF\n      |  TT\u2264min(B) \u2227\n      |  \u03c3_ri(now)\u2264DL \u2227\n      |  (ri,m(v),rj,TT,DL) notin B \u2227\n      |  \u03c3_ri notin Env\n      |THEN\n      |  ({\u03c3ri}\u222aEnv,\n      |   {(ri,m(v),rj,TT,DL)}\u222aB)\n      |  \u2192\n      |  ({\u03c3'_ri} \u222a Env',\n      |   B')\n      |</pre>", 124);
-  var $$x16 = $m_Lcaos_frontend_Configurator$();
+  var $$x15 = $m_Lcaos_frontend_Configurator$();
   $n($m_s_package$().s_package$__f_List);
-  var $$x15 = $m_sr_ScalaRunTime$();
+  var $$x14 = $m_sr_ScalaRunTime$();
   var self = this.Lrebecaos_frontend_CaosConfig$__f_languageName;
   var self$1 = new $c_T2(self, "More information on the syntax of rebecaOS");
   $m_sc_StringOps$();
   var y$6 = $m_sc_StringOps$().stripMargin$extension__T__C__T("The syntax and timed (static) semantics for a Rebeca program can be found, e.g., in\n        |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n        |", 124);
-  var $$x14 = new $c_T2(self$1, y$6);
+  var $$x13 = new $c_T2(self$1, y$6);
   var self$2 = new $c_T2("Build LTS", "More information on the operational rules used here");
-  var $$x13 = new $c_T2(self$2, sosRules);
+  var $$x12 = new $c_T2(self$2, sosRules);
   var self$3 = new $c_T2("Build LTS (explore)", "More information on the operational rules used here");
-  var $$x12 = new $c_T2(self$3, sosRules);
+  var $$x11 = new $c_T2(self$3, sosRules);
   var self$4 = new $c_T2("Run semantics", "More information on the operational rules used here");
-  var elems$4 = $n($$x15).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x14, $$x13, $$x12, new $c_T2(self$4, sosRules)]));
-  this.Lrebecaos_frontend_CaosConfig$__f_documentation = $n($$x16).toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$4))
+  var elems$4 = $n($$x14).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x13, $$x12, $$x11, new $c_T2(self$4, sosRules)]));
+  this.Lrebecaos_frontend_CaosConfig$__f_documentation = $n($$x15).toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$4))
 }
 $c_Lrebecaos_frontend_CaosConfig$.prototype = new $h_O();
 $c_Lrebecaos_frontend_CaosConfig$.prototype.constructor = $c_Lrebecaos_frontend_CaosConfig$;
@@ -22438,41 +22602,6 @@ var $d_s_util_hashing_MurmurHash3$accum$1 = new $TypeData().initClass({
   F2: 1
 });
 $c_s_util_hashing_MurmurHash3$accum$1.prototype.$classData = $d_s_util_hashing_MurmurHash3$accum$1;
-function $ct_s_util_matching_Regex__ju_regex_Pattern__sci_Seq__($thiz, pattern, groupNames) {
-  $thiz.s_util_matching_Regex__f_pattern = pattern;
-  return $thiz
-}
-function $ct_s_util_matching_Regex__T__sci_Seq__($thiz, regex, groupNames) {
-  $ct_s_util_matching_Regex__ju_regex_Pattern__sci_Seq__($thiz, $m_ju_regex_PatternCompiler$().compile__T__I__ju_regex_Pattern(regex, 0), groupNames);
-  return $thiz
-}
-/** @constructor */
-function $c_s_util_matching_Regex() {
-  this.s_util_matching_Regex__f_pattern = null
-}
-$c_s_util_matching_Regex.prototype = new $h_O();
-$c_s_util_matching_Regex.prototype.constructor = $c_s_util_matching_Regex;
-/** @constructor */
-function $h_s_util_matching_Regex() {
-  /*<skip>*/
-}
-$h_s_util_matching_Regex.prototype = $c_s_util_matching_Regex.prototype;
-$c_s_util_matching_Regex.prototype.findFirstIn__jl_CharSequence__s_Option = (function(source) {
-  var this$1 = $n(this.s_util_matching_Regex__f_pattern);
-  var m = new $c_ju_regex_Matcher(this$1, $dp_toString__T($n(source)));
-  return (m.find__Z() ? new $c_s_Some(m.group__T()) : $m_s_None$())
-});
-$c_s_util_matching_Regex.prototype.toString__T = (function() {
-  return $n(this.s_util_matching_Regex__f_pattern).ju_regex_Pattern__f__pattern
-});
-var $d_s_util_matching_Regex = new $TypeData().initClass({
-  s_util_matching_Regex: 0
-}, false, "scala.util.matching.Regex", {
-  s_util_matching_Regex: 1,
-  O: 1,
-  Ljava_io_Serializable: 1
-});
-$c_s_util_matching_Regex.prototype.$classData = $d_s_util_matching_Regex;
 /** @constructor */
 function $c_Lcaos_frontend_Documentation$() {
   /*<skip>*/
@@ -30141,6 +30270,39 @@ $c_Lrebecaos_backend_Bag.prototype.$plus$plus__Lrebecaos_backend_Bag__Lrebecaos_
     throw new $c_s_MatchError(x$1$3)
   })))));
   return new $c_Lrebecaos_backend_Bag(bag)
+});
+$c_Lrebecaos_backend_Bag.prototype.toList__sci_List = (function() {
+  var this$1 = $n(this.Lrebecaos_backend_Bag__f_bag);
+  $m_sci_List$();
+  var this$3 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
+  var rest = this$3;
+  var h = null;
+  var t = null;
+  while ((rest !== $m_sci_Nil$())) {
+    var arg1 = $n(rest).head__O();
+    var kv = $as_T2(arg1);
+    $n($m_s_package$().s_package$__f_List);
+    var n = $uI($n(kv)._2__O());
+    var b = new $c_scm_ListBuffer();
+    var i = 0;
+    while ((i < n)) {
+      var elem = $n(kv)._1__O();
+      b.addOne__O__scm_ListBuffer(elem);
+      i = ((1 + i) | 0)
+    };
+    var it = $n(b.toList__sci_List()).iterator__sc_Iterator();
+    while ($n(it).hasNext__Z()) {
+      var nx = new $c_sci_$colon$colon($n(it).next__O(), $m_sci_Nil$());
+      if ((t === null)) {
+        h = nx
+      } else {
+        $n(t).sci_$colon$colon__f_next = nx
+      };
+      t = nx
+    };
+    rest = $as_sci_List($n(rest).tail__O())
+  };
+  return ((h === null) ? $m_sci_Nil$() : h)
 });
 $c_Lrebecaos_backend_Bag.prototype.map__F1__Lrebecaos_backend_Bag = (function(f) {
   var this$4 = $n(this.Lrebecaos_backend_Bag__f_bag);
@@ -43251,6 +43413,26 @@ function $f_T__trim__T($thiz) {
       return $as_T($thiz.substring(beginIndex, endIndex))
     }
   }
+}
+function $f_T__isBlank__Z($thiz) {
+  var len = $thiz.length;
+  var start = 0;
+  while (true) {
+    if ((start !== len)) {
+      var this$1 = $m_jl_Character$();
+      var index = start;
+      var c = $charAt($thiz, index);
+      var $$x1 = this$1.isWhitespace__I__Z(c)
+    } else {
+      var $$x1 = false
+    };
+    if ($$x1) {
+      start = ((1 + start) | 0)
+    } else {
+      break
+    }
+  };
+  return (start === len)
 }
 function $f_T__toString__T($thiz) {
   return $thiz

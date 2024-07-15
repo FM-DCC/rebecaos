@@ -1,7 +1,7 @@
 package rebecaos.backend
 
 import caos.sos.SOS
-import rebecaos.backend.Semantics.St
+import rebecaos.backend.Semantics.{St,Act}
 import rebecaos.syntax.Program.{BExpr, Expr, GVar, IExpr, InstanceDecl, Msgsrv, QVar, ReactiveClass, Statement, System}
 import Statement.*
 import IExpr.*
@@ -11,9 +11,10 @@ import rebecaos.syntax.Show
 import scala.annotation.targetName
 
 /** Small-step semantics for both commands and boolean+integer expressions.  */
-object Semantics extends SOS[String,St]:
+object Semantics extends SOS[Act,St]:
 
   type St = (System, Rebecs, Msgs)
+  type Act = (Msg,Msgs) // "received" and "sent"
 
   type Rebecs = Map[String,RebecEnv]
   case class RebecEnv(vars:Valuation, rebs:KnownReb, meth:Methods, clazz: String):
@@ -80,7 +81,7 @@ object Semantics extends SOS[String,St]:
     case (Nil, _) => sys.error(s"Unexpected actual rebecs: ${vals.mkString(",")}")
     case (_, Nil) => sys.error(s"Unexpected formal rebecs: ${vars.mkString(",")}")
 
-  def next[A>:String](st: St): Set[(A, St)] =
+  def next[A>:Act](st: St): Set[(A, St)] =
 //    val someInitial = st._3.bag.find((m,_)=>m.m=="initial")
     val initials = for m <- st._3.bag.keySet if m.m=="initial" yield m.rcv
     for
@@ -97,7 +98,7 @@ object Semantics extends SOS[String,St]:
     yield
       val updMsg = newMsgs.map(m => subst(m,rebEnv.rebs + ("self"->rcv)))
       //println(s"# msg $rcv.$m - old msgs: ${st._3}; dropped $msg; adding ${newMsgs} --> $updMsg")
-      s"${Show(msg)}"
+      (msg,updMsg)
         -> (st._1, st._2 + (rcv -> newEnv), (st._3 - msg) ++ updMsg)
 
   def enabled(m: Msg, initials: Set[String],smallestTT: Int): Boolean =

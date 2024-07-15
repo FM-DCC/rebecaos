@@ -63,24 +63,37 @@ object CaosConfig extends Configurator[St]:
       // generic
       def next[A>:Act](s:HState): Set[(A,HState)] =
         for (a,s2) <- sos.next(s._1) yield a -> (s2,a :: s._2)
+
     // just for our states
-    def toMermaid(hs:(St,List[String])):String = "sequenceDiagram\n" +
-//      (for st <- hs._1._2.toList.sortWith(_._1 < _._1) yield s"  ${st._1} ->> ${st._1}: initial(...)").mkString("\n") +
-//      "\n" +
-      (for act <- hs._2.reverse yield s"  ${getFrom(act)} ->> ${getTo(act)}: ${getMsg(act)}${getTime(act)}").mkString("\n")
-    private def getTo(a:String): String = "[^.]*".r.findFirstIn(a).getOrElse("X")
-    private def getFrom(a:String): String = "@[^ \t\n]*".r.findFirstIn(a).getOrElse("@"+getTo(a)).drop(1)
-    private def getMsg(a:String): String = "\\.[^@]*".r.findFirstIn(a).getOrElse(".Z").drop(1)
-    private def getTime(a:String): String = ""//"§.*".r.findFirstIn(a).getOrElse("§Z").drop(1)
+    def toMermaidSnd(hs: (St, List[Act])): String = "sequenceDiagram\n" +
+      (for st <- hs._1._2.toList.sortWith(_._1 < _._1) yield s"  ${st._1} ->> ${st._1}: initial(...)").mkString("\n") +
+      "\n" +
+      (for act <- hs._2.reverse; m <- act._2.toList
+        yield s"  ${getFrom(m)} ->> ${getTo(m)}: ${getMsg(m)}${getTime(m)}").mkString("\n")
+
+    def toMermaidRcv(hs:(St,List[Act])):String = "sequenceDiagram\n" +
+      (for act <- hs._2.reverse yield s"  ${getFrom(act._1)} ->> ${getTo(act._1)}: ${
+          getMsg(act._1)}${getTime(act._1)}").mkString("\n")
+
+    private def getTo(a:Msg): String = a.rcv//"[^.]*".r.findFirstIn(a).getOrElse("X")
+    private def getFrom(a:Msg): String = //"@[^ \t\n]*".r.findFirstIn(a).getOrElse("@"+getTo(a)).drop(1)
+      if a.snd.isBlank then getTo(a) else a.snd
+    private def getMsg(a:Msg): String = s"${a.m}(${a.args.mkString(",")})"//"\\.[^@]*".r.findFirstIn(a).getOrElse(".Z").drop(1)
+    private def getTime(a:Msg): String = //"§.*".r.findFirstIn(a).getOrElse("§Z").drop(1)
+      (a.tt,a.dl) match
+        case (0,None) => ""
+        case (i,None) => s" @ $i"
+        case (i,Some(dl)) => s" @ $i..$dl"
 
 
   /** Description of the widgets that appear in the dashboard. */
   val widgets = List(
     "View pretty data" -> view[St](_.toString, Code("haskell")).moveTo(0),
 //    "View structure" -> view(Show.mermaid, Mermaid),
-     "Run semantics" -> steps((e:St)=>e, Semantics, Show.apply, _.toString, Text).expand,
-     "Run semantics2" -> steps((e:St)=>(e,List[String]()), HistorySOS(Semantics), st=>s"${Show(st._1)}\n${st._2.reverse.mkString(" > ")}", _.toString, Text),
-     "Run semantics3" -> steps((e:St)=>(e,List[String]()), HistorySOS(Semantics), HistorySOS.toMermaid, _.toString, Mermaid),
+     "Run semantics St" -> steps((e:St)=>e, Semantics, Show.apply, a=>Show(a._1), Text).expand,
+//     "Run semantics2" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), st=>s"${Show(st._1)}\n${st._2.reverse.mkString(" > ")}", a=>Show(a._1), Text),
+     "Run semantics Snd" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), HistorySOS.toMermaidSnd, act=>Show(act._1), Mermaid),
+     "Run semantics Rcv" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), HistorySOS.toMermaidRcv, act=>Show(act._1), Mermaid),
      "Build LTS" -> lts((e:St)=>e, Semantics, Show.short, _.toString,50),
      "Build LTS (explore)" -> ltsExplore(e=>e, Semantics, Show.short, _.toString),
 //    "Find strong bisimulation (given a program \"A ~ B\")" ->

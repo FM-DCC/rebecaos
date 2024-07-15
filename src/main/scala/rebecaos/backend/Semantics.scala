@@ -69,7 +69,7 @@ object Semantics extends SOS[String,St]:
     case (Nil,Nil) => Map()
     case (QVar(v,"int")::restr, (d:Int)::restl) => unify(restr,restl)+(v->d)
     case (QVar(v,"byte")::restr, (d:Int)::restl) => unify(restr,restl)+(v->d)
-    case (QVar(v,"bool")::restr, (d:Boolean)::restl) => unify(restr,restl)+(v->d)
+    case (QVar(v,"boolean")::restr, (d:Boolean)::restl) => unify(restr,restl)+(v->d)
     case (QVar(v,t)::restr, d::restl) => sys.error(s"Value $d: ${d.getClass.toString} does not match variable $v: $t.")
     case (Nil,_) => sys.error(s"Unexpected actual arguments: ${vals.mkString(",")}")
     case (_,Nil) => sys.error(s"Unexpected formal arguments: ${vars.mkString(",")}")

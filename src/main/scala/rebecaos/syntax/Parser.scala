@@ -41,14 +41,20 @@ object Parser :
   // Simple parsers for spaces and comments
   /** Parser for a sequence of spaces or comments */
   private val whitespace: P[Unit] = P.charIn(" \t\r\n").void
+//    (string("/*") *> P.charsWhile0())
   private val comment: P[Unit] = string("//") *> P.charWhere(_!='\n').rep0.void
-  private val sps: P0[Unit] = (whitespace | comment).rep0.void
-  private val fsps: P[Unit] = (whitespace | comment).rep.void
+  val commentRest: P[Unit] = P.recursive(rest =>
+      P.charsWhile0(_!='*').with1 *> char('*') *>//"[^*]\\*".r
+      ((char('/') | rest))
+    )
+  val commentBlk: P[Unit] = string("/*") *> commentRest //P.charsWhile0()
+  private val sps: P0[Unit] = (whitespace | comment | commentBlk).rep0.void
+  private val fsps: P[Unit] = (whitespace | comment | commentBlk).rep.void
 
   // Parsing smaller tokens
   private def alphaDigit: P[Char] =
     P.charIn('A' to 'Z') | P.charIn('a' to 'z') | P.charIn('0' to '9') | P.charIn('_')
-  private def typeName: P[String] =
+  private def anyName: P[String] =
     alphaDigit.rep.string
   private def varName: P[String] =
     (charIn('a' to 'z') ~ alphaDigit.rep0).string
@@ -154,13 +160,13 @@ object Parser :
 
   def msgsrv: P[(String,Msgsrv)] =
     (string("msgsrv") *> fsps *>
-      (typeName <* sps) ~ // methodname
+      (anyName <* sps) ~ // methodname
         ((char('(') *> sps *> qvar.repSep0(sps ~ char(',') ~ sps)) <* sps <* char(')') <* sps) ~ // args
         ((char('{') *> sps *> statement.?) <* sps <* char('}')) // body
       ).map(x => x._1._1 -> Msgsrv(x._1._2.toList,x._2.getOrElse(Skip)))
 
   def qvar: P[QVar] =
-    (typeName ~ (sps *> varName))
+    (anyName ~ (sps *> anyName))
       .map(x => QVar(x._2,x._1))
 
   private def ending: P[Unit] =
@@ -176,15 +182,15 @@ object Parser :
       (string("skip") ~ ending).as(Skip)
 
     def call: P[Call] =
-      ((varName <* sps) ~ // rebeca name
-        (char('.') *> typeName <* sps) ~ // method name
+      ((anyName <* sps) ~ // rebeca name
+        (char('.') *> anyName <* sps) ~ // method name
         ((char('(') *> sps *> expr.repSep0(sps~char(',')~sps)) <* sps <* char(')') <* sps) ~
         (string("after") *> sps *> char('(') *> (iexpr <* sps <* char(')') <* sps)).? ~
         (string("deadline") *> sps *> char('(') *> (iexpr <* sps <* char(')'))).? <* ending
       ).map(x => Call(x._1._1._1._1,x._1._1._1._2,x._1._1._2,x._1._2,x._2)) // todo: "after" and "deadline"
 
     def choice: P[Choice] =
-      ((varName <* sps) ~ // var name
+      ((anyName <* sps) ~ // var name
         (char('=') *> sps *> char('?') *> sps *> char('(') *> sps *>
           (iexpr.repSep(sps ~ char(',') ~ sps) <* sps <* char(')') <* ending)) // args
         ).map(x => Choice(x._1,x._2.toList))
@@ -205,7 +211,7 @@ object Parser :
 
     def assign: P[Assign] =
     //      (varName ~ (string(":=")|char('=')).surroundedBy(sps) ~ iexpr)
-      (varName ~ (string("=") | char('=')).surroundedBy(sps) ~ expr <* (sps ~ char(';')))
+      (anyName ~ (string("=") | char('=')).surroundedBy(sps) ~ expr <* (sps ~ char(';')))
         .map(x => Assign(x._1._1, x._2))
     //    def contract: P[Command] = // contracts now only in the outside, after ';' is at the end of every assignment.
     //      (invariant~commRec.surroundedBy(sps)~invariant)
@@ -290,7 +296,7 @@ object Parser :
     def lit: P[IExpr] =
       char('(') *> iexprRec.surroundedBy(sps) <* char(')') |
         digits.map(x => N(x.toInt)) |
-        varName.map(IVar.apply)
+        anyName.map(IVar.apply)
 
     def pow: P[(IExpr, IExpr) => IExpr] =
       string("^").map(_ => Power.apply)

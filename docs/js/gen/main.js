@@ -2281,8 +2281,7 @@ function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRe
       var next2 = new $c_sr_ObjectRef(elem);
       var elem$1 = (((("\n  " + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, x48)) + "([") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showSt$1).apply__O__O(x48)))) + "]);");
       var res = new $c_sr_ObjectRef(elem$1);
-      var this$9 = $n(sos$5);
-      $n($n(this$9.next__T3__sci_Set($as_T3(x48))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
+      $n($n($n(sos$5).next__O__sci_Set(x48)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
         var x$1$1 = $as_T2(x$1);
         return ((x$1$1 !== null) && ($n(x$1$1)._1__O(), $n(x$1$1)._2__O(), true))
       })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((showSt$1, showAct$1, i$2, _ids$2, x48, next2, res) => ((x$1$2) => {
@@ -2291,8 +2290,8 @@ function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRe
           if ((x$1$3 !== null)) {
             var a$1 = $n(x$1$3)._1__O();
             var s2$1 = $n(x$1$3)._2__O();
-            var this$10 = $n($as_sci_Set(next2.sr_ObjectRef__f_elem));
-            var ev$7 = $as_sci_Set(this$10.incl__O__sci_SetOps(s2$1));
+            var this$9 = $n($as_sci_Set(next2.sr_ObjectRef__f_elem));
+            var ev$7 = $as_sci_Set(this$9.incl__O__sci_SetOps(s2$1));
             next2.sr_ObjectRef__f_elem = ev$7;
             var ev$8 = (($as_T(res.sr_ObjectRef__f_elem) + ((((((((("\n  " + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, s2$1)) + "([") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showSt$1).apply__O__O(s2$1)))) + "]);\n  ") + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, x48)) + " -->|") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showAct$1).apply__O__O(a$1)))) + "| ") + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, s2$1))) + ";");
             res.sr_ObjectRef__f_elem = ev$8;
@@ -10206,6 +10205,72 @@ function $m_RTLong$() {
   };
   return $n_RTLong$
 }
+function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTo__T__T($thiz, a) {
+  var this$3 = $n(($m_sc_StringOps$(), $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "[^.]*", $m_sci_Nil$())).findFirstIn__jl_CharSequence__s_Option(a));
+  return $as_T((this$3.isEmpty__Z() ? "X" : this$3.get__O()))
+}
+function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__T__T($thiz, a) {
+  var $$x1 = $m_sc_StringOps$();
+  var this$3 = $n(($m_sc_StringOps$(), $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "@[^ \t\n]*", $m_sci_Nil$())).findFirstIn__jl_CharSequence__s_Option(a));
+  var x = $as_T((this$3.isEmpty__Z() ? ("@" + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTo__T__T($thiz, a)) : this$3.get__O()));
+  return $n($$x1).drop$extension__T__I__T(x, 1)
+}
+function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getMsg__T__T($thiz, a) {
+  var $$x1 = $m_sc_StringOps$();
+  var this$3 = $n(($m_sc_StringOps$(), $ct_s_util_matching_Regex__T__sci_Seq__(new $c_s_util_matching_Regex(), "\\.[^@]*", $m_sci_Nil$())).findFirstIn__jl_CharSequence__s_Option(a));
+  var x = $as_T((this$3.isEmpty__Z() ? ".Z" : this$3.get__O()));
+  return $n($$x1).drop$extension__T__I__T(x, 1)
+}
+/** @constructor */
+function $c_Lrebecaos_frontend_CaosConfig$HistorySOS$() {
+  /*<skip>*/
+}
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype = new $h_O();
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype.constructor = $c_Lrebecaos_frontend_CaosConfig$HistorySOS$;
+/** @constructor */
+function $h_Lrebecaos_frontend_CaosConfig$HistorySOS$() {
+  /*<skip>*/
+}
+$h_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype = $c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype;
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype.toMermaid__T2__T = (function(hs) {
+  var this$2 = $n($n($as_sci_List($n(hs)._2__O())).reverse__sci_List());
+  var f = ((act) => {
+    var act$1 = $as_T(act);
+    return ((((("  " + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__T__T(this, act$1)) + " ->> ") + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getTo__T__T(this, act$1)) + ": ") + $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getMsg__T__T(this, act$1))
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$3 = $n($$x1);
+  return ("sequenceDiagram\n" + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", "\n", ""))
+});
+var $d_Lrebecaos_frontend_CaosConfig$HistorySOS$ = new $TypeData().initClass({
+  Lrebecaos_frontend_CaosConfig$HistorySOS$: 0
+}, false, "rebecaos.frontend.CaosConfig$HistorySOS$", {
+  Lrebecaos_frontend_CaosConfig$HistorySOS$: 1,
+  O: 1
+});
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$.prototype.$classData = $d_Lrebecaos_frontend_CaosConfig$HistorySOS$;
+var $n_Lrebecaos_frontend_CaosConfig$HistorySOS$;
+function $m_Lrebecaos_frontend_CaosConfig$HistorySOS$() {
+  if ((!$n_Lrebecaos_frontend_CaosConfig$HistorySOS$)) {
+    $n_Lrebecaos_frontend_CaosConfig$HistorySOS$ = new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$()
+  };
+  return $n_Lrebecaos_frontend_CaosConfig$HistorySOS$
+}
 function $s_Lrebecaos_frontend_Main__main__AT__V(args) {
   $m_Lcaos_frontend_Site$().initSite__Lcaos_frontend_Configurator__V($m_Lrebecaos_frontend_CaosConfig$())
 }
@@ -10255,7 +10320,7 @@ function $p_Lrebecaos_syntax_Parser$__alphaDigit__Lcats_parse_Parser($thiz) {
   var that$2 = $m_Lcats_parse_Parser$().charIn__C__sci_Seq__Lcats_parse_Parser(95, $m_sr_ScalaRunTime$().wrapCharArray__AC__sci_ArraySeq(new $ac_C(new Uint16Array([]))));
   return this$9.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2)
 }
-function $p_Lrebecaos_syntax_Parser$__typeName__Lcats_parse_Parser($thiz) {
+function $p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz) {
   var this$1 = $n($p_Lrebecaos_syntax_Parser$__alphaDigit__Lcats_parse_Parser($thiz));
   var acc = new $c_Lcats_parse_Accumulator$$anon$1();
   var this$3 = $n($m_Lcats_parse_Parser$().repAs__Lcats_parse_Parser__I__Lcats_parse_Accumulator__Lcats_parse_Parser(this$1, 1, acc));
@@ -10289,17 +10354,17 @@ function $p_Lrebecaos_syntax_Parser$__className__Lcats_parse_Parser($thiz) {
 }
 function $p_Lrebecaos_syntax_Parser$__intVal__Lcats_parse_Parser($thiz) {
   var this$5 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
-  var fn = new $c_sjsr_AnonFunction1(((_$2) => {
-    var _$2$1 = $as_T(_$2);
+  var fn = new $c_sjsr_AnonFunction1(((_$3) => {
+    var _$3$1 = $as_T(_$3);
     $m_sc_StringOps$();
     var this$4 = $m_jl_Integer$();
-    return this$4.parseInt__T__I__I(_$2$1, 10)
+    return this$4.parseInt__T__I__I(_$3$1, 10)
   }));
   return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$5, fn)
 }
 function $p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser($thiz) {
-  var ev$8 = $n($thiz.Lrebecaos_syntax_Parser$__f_sps);
-  return $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$8, $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59))
+  var ev$9 = $n($thiz.Lrebecaos_syntax_Parser$__f_sps);
+  return $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$9, $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59))
 }
 function $p_Lrebecaos_syntax_Parser$__basicStm$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$3) {
   var this$1 = $n($p_Lrebecaos_syntax_Parser$__skip$1__Lcats_parse_Parser($thiz));
@@ -10327,8 +10392,8 @@ function $p_Lrebecaos_syntax_Parser$__skip$1__Lcats_parse_Parser($thiz) {
   return $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$4, b)
 }
 function $p_Lrebecaos_syntax_Parser$__call$1__Lcats_parse_Parser($thiz) {
-  var this$1 = $n($n($p_Lrebecaos_syntax_Parser$__varName__Lcats_parse_Parser($thiz)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
-  var that = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(46)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__typeName__Lcats_parse_Parser($thiz))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps);
+  var this$1 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
+  var that = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(46)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps);
   $m_Lcats_parse_Parser$();
   var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
   var $$x1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps);
@@ -10356,7 +10421,7 @@ function $p_Lrebecaos_syntax_Parser$__call$1__Lcats_parse_Parser($thiz) {
   return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$17, fn)
 }
 function $p_Lrebecaos_syntax_Parser$__choice$1__Lcats_parse_Parser($thiz) {
-  var this$3 = $n($n($p_Lrebecaos_syntax_Parser$__varName__Lcats_parse_Parser($thiz)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
+  var this$3 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
   var $$x1 = $n($n($n($n($n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(61)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(63))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
   var this$1 = $n($thiz.iexpr__Lcats_parse_Parser());
   var sep = $n($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($thiz.Lrebecaos_syntax_Parser$__f_sps);
@@ -10405,9 +10470,9 @@ function $p_Lrebecaos_syntax_Parser$__commBlock$1__Lcats_parse_Parser__Lcats_par
   var this$1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(123));
   var that = $thiz.Lrebecaos_syntax_Parser$__f_sps;
   $m_Lcats_parse_Parser$();
-  var this$6 = $n($n(new $c_Lcats_parse_Parser$Impl$Prod(this$1, that).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(stmRec$1).$qmark__Lcats_parse_Parser0()).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((_$6) => {
-    var _$6$1 = $as_s_Option(_$6);
-    var this$5 = $n(_$6$1);
+  var this$6 = $n($n(new $c_Lcats_parse_Parser$Impl$Prod(this$1, that).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(stmRec$1).$qmark__Lcats_parse_Parser0()).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((_$7) => {
+    var _$7$1 = $as_s_Option(_$7);
+    var this$5 = $n(_$7$1);
     return $as_Lrebecaos_syntax_Program$Statement((this$5.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$5.get__O()))
   }))))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125))));
   var that$1 = $p_Lrebecaos_syntax_Parser$__skip$1__Lcats_parse_Parser($thiz);
@@ -10422,7 +10487,7 @@ function $p_Lrebecaos_syntax_Parser$__commBlock$1__Lcats_parse_Parser__Lcats_par
   return this$11.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4)
 }
 function $p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz) {
-  var this$3 = $n($p_Lrebecaos_syntax_Parser$__varName__Lcats_parse_Parser($thiz));
+  var this$3 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz));
   var this$1 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("="));
   var that = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(61);
   var this$2 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
@@ -10543,15 +10608,15 @@ function $p_Lrebecaos_syntax_Parser$__ineq$1__Lcats_parse_Parser($thiz) {
 }
 function $p_Lrebecaos_syntax_Parser$__varOrIexpr$1__Lcats_parse_Parser($thiz) {
   var this$5 = $n($thiz.iexpr__Lcats_parse_Parser());
-  var fn = new $c_sjsr_AnonFunction1(((_$7) => {
-    var _$7$1 = $as_Lrebecaos_syntax_Program$IExpr(_$7);
-    if ((_$7$1 instanceof $c_Lrebecaos_syntax_Program$IExpr$IVar)) {
-      var x$1 = $as_Lrebecaos_syntax_Program$IExpr$IVar(_$7$1);
+  var fn = new $c_sjsr_AnonFunction1(((_$8) => {
+    var _$8$1 = $as_Lrebecaos_syntax_Program$IExpr(_$8);
+    if ((_$8$1 instanceof $c_Lrebecaos_syntax_Program$IExpr$IVar)) {
+      var x$1 = $as_Lrebecaos_syntax_Program$IExpr$IVar(_$8$1);
       var this$3 = $n(x$1);
       var x27 = this$3.Lrebecaos_syntax_Program$IExpr$IVar__f_ident;
       var $$x1 = new $c_Lrebecaos_syntax_Program$GVar(x27)
     } else {
-      var $$x1 = _$7$1
+      var $$x1 = _$8$1
     };
     return $as_Lrebecaos_syntax_Program$Expr($$x1)
   }));
@@ -10561,8 +10626,8 @@ function $p_Lrebecaos_syntax_Parser$__or$1__Lcats_parse_Parser($thiz) {
   var this$1 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("||"));
   var that = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("\\/");
   var this$4 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var fn = new $c_sjsr_AnonFunction1(((_$8) => {
-    $as_jl_Void(_$8);
+  var fn = new $c_sjsr_AnonFunction1(((_$9) => {
+    $as_jl_Void(_$9);
     return new $c_sjsr_AnonFunction2(((x, y) => {
       var x$1 = $as_Lrebecaos_syntax_Program$Expr(x);
       var y$1 = $as_Lrebecaos_syntax_Program$Expr(y);
@@ -10577,8 +10642,8 @@ function $p_Lrebecaos_syntax_Parser$__and$1__Lcats_parse_Parser($thiz) {
   var this$1 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("&&"));
   var that = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("/\\");
   var this$4 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var fn = new $c_sjsr_AnonFunction1(((_$9) => {
-    $as_jl_Void(_$9);
+  var fn = new $c_sjsr_AnonFunction1(((_$10) => {
+    $as_jl_Void(_$10);
     return new $c_sjsr_AnonFunction2(((x, y) => {
       var x$1 = $as_Lrebecaos_syntax_Program$Expr(x);
       var y$1 = $as_Lrebecaos_syntax_Program$Expr(y);
@@ -10604,7 +10669,7 @@ function $p_Lrebecaos_syntax_Parser$__lit$2__Lcats_parse_Parser__Lcats_parse_Par
   }));
   var that = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$7, fn);
   var this$11 = $n(this$8.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var this$10 = $n($p_Lrebecaos_syntax_Parser$__varName__Lcats_parse_Parser($thiz));
+  var this$10 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz));
   var fn$1 = new $c_sjsr_AnonFunction1(((ident) => {
     var ident$1 = $as_T(ident);
     return new $c_Lrebecaos_syntax_Program$IExpr$IVar(ident$1)
@@ -10614,8 +10679,8 @@ function $p_Lrebecaos_syntax_Parser$__lit$2__Lcats_parse_Parser__Lcats_parse_Par
 }
 function $p_Lrebecaos_syntax_Parser$__pow$1__Lcats_parse_Parser($thiz) {
   var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("^"));
-  var fn = new $c_sjsr_AnonFunction1(((_$10) => {
-    $as_jl_Void(_$10);
+  var fn = new $c_sjsr_AnonFunction1(((_$11) => {
+    $as_jl_Void(_$11);
     return new $c_sjsr_AnonFunction2(((e1, e2) => {
       var e1$1 = $as_Lrebecaos_syntax_Program$IExpr(e1);
       var e2$1 = $as_Lrebecaos_syntax_Program$IExpr(e2);
@@ -10626,8 +10691,8 @@ function $p_Lrebecaos_syntax_Parser$__pow$1__Lcats_parse_Parser($thiz) {
 }
 function $p_Lrebecaos_syntax_Parser$__mult$1__Lcats_parse_Parser($thiz) {
   var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("*"));
-  var fn = new $c_sjsr_AnonFunction1(((_$11) => {
-    $as_jl_Void(_$11);
+  var fn = new $c_sjsr_AnonFunction1(((_$12) => {
+    $as_jl_Void(_$12);
     return new $c_sjsr_AnonFunction2(((e1, e2) => {
       var e1$1 = $as_Lrebecaos_syntax_Program$IExpr(e1);
       var e2$1 = $as_Lrebecaos_syntax_Program$IExpr(e2);
@@ -10655,6 +10720,8 @@ function $p_Lrebecaos_syntax_Parser$__plusminus$1__Lcats_parse_Parser($thiz) {
 }
 /** @constructor */
 function $c_Lrebecaos_syntax_Parser$() {
+  this.Lrebecaos_syntax_Parser$__f_commentRest = null;
+  this.Lrebecaos_syntax_Parser$__f_commentBlk = null;
   this.Lrebecaos_syntax_Parser$__f_sps = null;
   this.Lrebecaos_syntax_Parser$__f_fsps = null;
   $n_Lrebecaos_syntax_Parser$ = this;
@@ -10679,18 +10746,47 @@ function $c_Lrebecaos_syntax_Parser$() {
   $m_Lcats_parse_Parser$();
   var this$9 = new $c_Lcats_parse_Parser$Impl$Rep0(this$5, 2147483647, acc);
   var comment = $n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().void0__Lcats_parse_Parser0__Lcats_parse_Parser0(this$9));
-  var this$10 = $n(whitespace);
-  var this$11 = $n(this$10.orElse__Lcats_parse_Parser__Lcats_parse_Parser(comment));
+  this.Lrebecaos_syntax_Parser$__f_commentRest = $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((rest) => {
+    var rest$1 = $as_Lcats_parse_Parser(rest);
+    var this$10 = $m_Lcats_parse_Parser$();
+    var this$11 = $n($m_Lcats_parse_Parser$Impl$().Lcats_parse_Parser$Impl$__f_allChars);
+    var b$1 = $m_sci_IndexedSeq$().newBuilder__scm_Builder();
+    var it$1 = this$11.iterator__sc_Iterator();
+    while ($n(it$1).hasNext__Z()) {
+      var elem$1 = $n(it$1).next__O();
+      var _$2 = $uC(elem$1);
+      if (((_$2 !== 42) !== false)) {
+        var this$12 = $n(b$1);
+        this$12.addOne__O__scm_Growable(elem$1)
+      }
+    };
+    var this$13 = $n(this$10.charIn__sc_Iterable__Lcats_parse_Parser($as_sc_Iterable($n(b$1).result__O())));
+    $m_Lcats_parse_Accumulator0$();
+    var acc$1 = new $c_Lcats_parse_Accumulator0$$anon$5();
+    $m_Lcats_parse_Parser$();
+    var this$17 = new $c_Lcats_parse_Parser$Impl$Rep0(this$13, 2147483647, acc$1);
+    var ev$1 = $n($m_Lcats_parse_Parser$().string0__Lcats_parse_Parser0__Lcats_parse_Parser0(this$17));
+    var $$x2 = $n($m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$1, $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(42)));
+    var this$18 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(47));
+    return $n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$18.orElse__Lcats_parse_Parser__Lcats_parse_Parser(rest$1))
+  })));
+  this.Lrebecaos_syntax_Parser$__f_commentBlk = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("/*")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_commentRest);
+  var this$19 = $n(whitespace);
+  var this$20 = $n(this$19.orElse__Lcats_parse_Parser__Lcats_parse_Parser(comment));
+  var that = this.Lrebecaos_syntax_Parser$__f_commentBlk;
+  var this$21 = $n(this$20.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
   $m_Lcats_parse_Accumulator0$();
-  var acc$1 = new $c_Lcats_parse_Accumulator0$$anon$5();
+  var acc$2 = new $c_Lcats_parse_Accumulator0$$anon$5();
   $m_Lcats_parse_Parser$();
-  var this$15 = new $c_Lcats_parse_Parser$Impl$Rep0(this$11, 2147483647, acc$1);
-  this.Lrebecaos_syntax_Parser$__f_sps = $m_Lcats_parse_Parser$().void0__Lcats_parse_Parser0__Lcats_parse_Parser0(this$15);
-  var this$16 = $n(whitespace);
-  var this$17 = $n(this$16.orElse__Lcats_parse_Parser__Lcats_parse_Parser(comment));
-  var acc$2 = new $c_Lcats_parse_Accumulator$$anon$1();
-  var this$19 = $n($m_Lcats_parse_Parser$().repAs__Lcats_parse_Parser__I__Lcats_parse_Accumulator__Lcats_parse_Parser(this$17, 1, acc$2));
-  this.Lrebecaos_syntax_Parser$__f_fsps = $m_Lcats_parse_Parser$().void__Lcats_parse_Parser__Lcats_parse_Parser(this$19)
+  var this$25 = new $c_Lcats_parse_Parser$Impl$Rep0(this$21, 2147483647, acc$2);
+  this.Lrebecaos_syntax_Parser$__f_sps = $m_Lcats_parse_Parser$().void0__Lcats_parse_Parser0__Lcats_parse_Parser0(this$25);
+  var this$26 = $n(whitespace);
+  var this$27 = $n(this$26.orElse__Lcats_parse_Parser__Lcats_parse_Parser(comment));
+  var that$1 = this.Lrebecaos_syntax_Parser$__f_commentBlk;
+  var this$28 = $n(this$27.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
+  var acc$3 = new $c_Lcats_parse_Accumulator$$anon$1();
+  var this$30 = $n($m_Lcats_parse_Parser$().repAs__Lcats_parse_Parser__I__Lcats_parse_Accumulator__Lcats_parse_Parser(this$28, 1, acc$3));
+  this.Lrebecaos_syntax_Parser$__f_fsps = $m_Lcats_parse_Parser$().void__Lcats_parse_Parser__Lcats_parse_Parser(this$30)
 }
 $c_Lrebecaos_syntax_Parser$.prototype = new $h_O();
 $c_Lrebecaos_syntax_Parser$.prototype.constructor = $c_Lrebecaos_syntax_Parser$;
@@ -10727,16 +10823,16 @@ $c_Lrebecaos_syntax_Parser$.prototype.pp__Lcats_parse_Parser__T__s_util_Either =
   throw new $c_s_MatchError(x6)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.system__Lcats_parse_Parser = (function() {
-  var ev$4 = $n(this.Lrebecaos_syntax_Parser$__f_sps);
+  var ev$5 = $n(this.Lrebecaos_syntax_Parser$__f_sps);
   var $$x1 = $m_Lcats_parse_Parser$With1$();
   var this$1 = $n(this.reactiveclass__Lcats_parse_Parser());
   var sep = this.Lrebecaos_syntax_Parser$__f_sps;
   var this$2 = $m_Lcats_parse_Parser$();
-  var ev$3 = $n(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep));
-  var ev$2 = $n(this.Lrebecaos_syntax_Parser$__f_sps);
-  var that = $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$2, this.mainblock__Lcats_parse_Parser());
+  var ev$4 = $n(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep));
+  var ev$3 = $n(this.Lrebecaos_syntax_Parser$__f_sps);
+  var that = $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$3, this.mainblock__Lcats_parse_Parser());
   $m_Lcats_parse_Parser$();
-  var this$9 = $n($n($n($$x1).$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$4, new $c_Lcats_parse_Parser$Impl$Prod(ev$3, that))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
+  var this$9 = $n($n($n($$x1).$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$5, new $c_Lcats_parse_Parser$Impl$Prod(ev$4, that))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var $$x2 = $n($as_sc_IterableOnceOps($n(x$1)._1__O()));
@@ -10754,9 +10850,9 @@ $c_Lrebecaos_syntax_Parser$.prototype.mainblock__Lcats_parse_Parser = (function(
   var sep = this.Lrebecaos_syntax_Parser$__f_sps;
   var this$2 = $m_Lcats_parse_Parser$();
   var this$4 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125)));
-  var fn = new $c_sjsr_AnonFunction1(((_$3) => {
-    var _$3$1 = $as_sci_List(_$3);
-    return $n(_$3$1)
+  var fn = new $c_sjsr_AnonFunction1(((_$4) => {
+    var _$4$1 = $as_sci_List(_$4);
+    return $n(_$4$1)
   }));
   return $n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn))
 });
@@ -10774,11 +10870,11 @@ $c_Lrebecaos_syntax_Parser$.prototype.instancedecl__Lcats_parse_Parser = (functi
   var this$20 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
   var $$x2 = $n($n($n(this.Lrebecaos_syntax_Parser$__f_sps).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(58))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40));
   var this$13 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
-  var fn = new $c_sjsr_AnonFunction1(((_$4) => {
-    var _$4$1 = $as_T(_$4);
+  var fn = new $c_sjsr_AnonFunction1(((_$5) => {
+    var _$5$1 = $as_T(_$5);
     $m_sc_StringOps$();
     var this$12 = $m_jl_Integer$();
-    return this$12.parseInt__T__I__I(_$4$1, 10)
+    return this$12.parseInt__T__I__I(_$5$1, 10)
   }));
   var this$15 = $n($m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$13, fn));
   var this$14 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("true"));
@@ -10818,7 +10914,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.reactiveclass__Lcats_parse_Parser = (funct
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var self = $n($as_T2($n(x$1)._1__O()))._1__O();
-    var ev$6 = $as_T(self);
+    var ev$7 = $as_T(self);
     var qsize = $as_s_Option($n($as_T2($n(x$1)._1__O()))._2__O());
     var this$11 = $n($as_s_Option($n($as_T2($n($as_T2($n(x$1)._2__O()))._1__O()))._1__O()));
     var known = $as_sci_List((this$11.isEmpty__Z() ? $m_s_package$().s_package$__f_Nil : this$11.get__O()));
@@ -10835,7 +10931,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.reactiveclass__Lcats_parse_Parser = (funct
     var this$17 = $m_s_$less$colon$less$();
     var msgsrv = $as_sci_Map($n($$x5).$plus$plus__sc_IterableOnce__sc_IterableOps($n($$x3).toMap__s_$less$colon$less__sci_Map(this$17.s_$less$colon$less$__f_singleton)));
     var y$1 = new $c_Lrebecaos_syntax_Program$ReactiveClass(qsize, known, state, msgsrv);
-    return new $c_T2(ev$6, y$1)
+    return new $c_T2(ev$7, y$1)
   }));
   return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$20, fn)
 });
@@ -10851,15 +10947,15 @@ $c_Lrebecaos_syntax_Parser$.prototype.blockQVar__Lcats_parse_Parser = (function(
   var sep = this.Lrebecaos_syntax_Parser$__f_sps;
   var this$2 = $m_Lcats_parse_Parser$();
   var this$4 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125)));
-  var fn = new $c_sjsr_AnonFunction1(((_$5) => {
-    var _$5$1 = $as_sci_List(_$5);
-    return $n(_$5$1)
+  var fn = new $c_sjsr_AnonFunction1(((_$6) => {
+    var _$6$1 = $as_sci_List(_$6);
+    return $n(_$6$1)
   }));
   return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.msgsrv__Lcats_parse_Parser = (function() {
   var $$x2 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("msgsrv")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_fsps);
-  var this$3 = $n($n($p_Lrebecaos_syntax_Parser$__typeName__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
+  var this$3 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
   var $$x1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps);
   var this$1 = $n(this.qvar__Lcats_parse_Parser());
   var sep = $n($n(this.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps);
@@ -10873,18 +10969,18 @@ $c_Lrebecaos_syntax_Parser$.prototype.msgsrv__Lcats_parse_Parser = (function() {
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var self = $n($as_T2($n(x$1)._1__O()))._1__O();
-    var ev$7 = $as_T(self);
+    var ev$8 = $as_T(self);
     var vars = $n($as_sci_List($n($as_T2($n(x$1)._1__O()))._2__O()));
     var this$11 = $n($as_s_Option($n(x$1)._2__O()));
     var stm = $as_Lrebecaos_syntax_Program$Statement((this$11.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$11.get__O()));
     var y = new $c_Lrebecaos_syntax_Program$Msgsrv(vars, stm);
-    return new $c_T2(ev$7, y)
+    return new $c_T2(ev$8, y)
   }));
   return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$14, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.qvar__Lcats_parse_Parser = (function() {
-  var this$1 = $n($p_Lrebecaos_syntax_Parser$__typeName__Lcats_parse_Parser(this));
-  var that = $n(this.Lrebecaos_syntax_Parser$__f_sps).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__varName__Lcats_parse_Parser(this));
+  var this$1 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this));
+  var that = $n(this.Lrebecaos_syntax_Parser$__f_sps).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this));
   $m_Lcats_parse_Parser$();
   var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
@@ -10945,11 +11041,11 @@ $c_Lrebecaos_syntax_Parser$.prototype.iexpr__Lcats_parse_Parser = (function() {
 });
 $c_Lrebecaos_syntax_Parser$.prototype.listSep__Lcats_parse_Parser__Lcats_parse_Parser0__Lcats_parse_Parser = (function(elem, op) {
   var this$8 = $n($n(elem).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
-  var ev$10 = $n($n(op).backtrack__Lcats_parse_Parser0());
-  var ev$9 = $n(this.Lrebecaos_syntax_Parser$__f_sps);
-  var that = $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$9, elem);
+  var ev$11 = $n($n(op).backtrack__Lcats_parse_Parser0());
+  var ev$10 = $n(this.Lrebecaos_syntax_Parser$__f_sps);
+  var that = $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$10, elem);
   $m_Lcats_parse_Parser$();
-  var this$4 = new $c_Lcats_parse_Parser$Impl$Prod(ev$10, that);
+  var this$4 = new $c_Lcats_parse_Parser$Impl$Prod(ev$11, that);
   $m_Lcats_parse_Accumulator0$();
   var acc = new $c_Lcats_parse_Accumulator0$$anon$5();
   $m_Lcats_parse_Parser$();
@@ -16631,14 +16727,12 @@ $c_Lcaos_frontend_widgets_Explore.prototype.update__V = (function() {
 $c_Lcaos_frontend_widgets_Explore.prototype.initialise__V = (function() {
   try {
     this.Lcaos_frontend_widgets_Explore__f_root = $n(this.Lcaos_frontend_widgets_Explore__f_init).apply__O();
-    var this$4 = $n($m_s_Predef$().s_Predef$__f_Map);
+    var this$3 = $n($m_s_Predef$().s_Predef$__f_Map);
     var $$x1 = $m_sr_ScalaRunTime$();
     var self = this.Lcaos_frontend_widgets_Explore__f_root;
-    var this$2 = $n(this.Lcaos_frontend_widgets_Explore__f_sos);
-    var s = this.Lcaos_frontend_widgets_Explore__f_root;
-    var y = this$2.next__T3__sci_Set($as_T3(s));
+    var y = $n(this.Lcaos_frontend_widgets_Explore__f_sos).next__O__sci_Set(this.Lcaos_frontend_widgets_Explore__f_root);
     var elems = $n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
-    this.Lcaos_frontend_widgets_Explore__f_tree = this$4.from__sc_IterableOnce__sci_Map(elems);
+    this.Lcaos_frontend_widgets_Explore__f_tree = this$3.from__sc_IterableOnce__sci_Map(elems);
     this.updateDiagram__V()
   } catch (e) {
     var e$1 = e;
@@ -16654,8 +16748,7 @@ $c_Lcaos_frontend_widgets_Explore.prototype.initialise__V = (function() {
 $c_Lcaos_frontend_widgets_Explore.prototype.expandState__O__V = (function(st) {
   try {
     var $$x1 = this.Lcaos_frontend_widgets_Explore__f_tree;
-    var this$2 = $n(this.Lcaos_frontend_widgets_Explore__f_sos);
-    var y = this$2.next__T3__sci_Set($as_T3(st));
+    var y = $n(this.Lcaos_frontend_widgets_Explore__f_sos).next__O__sci_Set(st);
     this.Lcaos_frontend_widgets_Explore__f_tree = $as_sci_Map($n($$x1).$plus__T2__sci_MapOps(new $c_T2(st, y)));
     this.updateDiagram__V();
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().location.replace(("#" + this.mkStId__O__T(st)))
@@ -17216,13 +17309,12 @@ $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showTrace__V = (function() {
 });
 $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showEnabled__O__V = (function(from) {
   $n(this.Lcaos_frontend_widgets_SimulateMermaid__f_left).html__T__Lcaos_frontend_widgets_DomElem("");
-  var this$1 = $n($n(this.Lcaos_frontend_widgets_SimulateMermaid__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_sos);
-  var enabled = this$1.next__T3__sci_Set($as_T3(from));
+  var enabled = $n($n(this.Lcaos_frontend_widgets_SimulateMermaid__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_sos).next__O__sci_Set(from);
   var ul = $n($n(this.Lcaos_frontend_widgets_SimulateMermaid__f_left).append__T__Lcaos_frontend_widgets_DomElem("ul")).style__T__Lcaos_frontend_widgets_DomElem("list-style-type:none;padding:0;margin:0;");
   $n($n($n($n(ul).append__T__Lcaos_frontend_widgets_DomElem("li")).append__T__Lcaos_frontend_widgets_DomElem("span")).style__T__Lcaos_frontend_widgets_DomElem("font-weight:bold;")).textEl__T__Lcaos_frontend_widgets_DomElem("Enabled transitions:");
-  var this$2 = $n(enabled);
+  var this$1 = $n(enabled);
   $m_sci_List$();
-  var this$5 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$2));
+  var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
   var lt = new $c_sjsr_AnonFunction2(((_$9, _$10) => {
     var _$9$1 = $as_T2(_$9);
     var _$10$1 = $as_T2(_$10);
@@ -17230,7 +17322,7 @@ $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showEnabled__O__V = (functio
     var x = $dp_toString__T($n($n(_$9$1)._1__O()));
     return $n($$x1).$less$extension__T__T__Z(x, $dp_toString__T($n($n(_$10$1)._1__O())))
   }));
-  $n($n($as_sc_IterableOps($f_sc_SeqOps__sortWith__F2__O(this$5, lt))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
+  $n($n($as_sc_IterableOps($f_sc_SeqOps__sortWith__F2__O(this$4, lt))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
     var x$1$1 = $as_T2(x$1);
     return ((x$1$1 !== null) && ($n(x$1$1)._1__O(), $n(x$1$1)._2__O(), true))
   })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((x$1$2) => {
@@ -17481,13 +17573,12 @@ $c_Lcaos_frontend_widgets_SimulateText.prototype.showTerminal__O__V = (function(
 });
 $c_Lcaos_frontend_widgets_SimulateText.prototype.showEnabled__O__V = (function(from) {
   $n(this.Lcaos_frontend_widgets_SimulateText__f_left).html__T__Lcaos_frontend_widgets_DomElem("");
-  var this$1 = $n($n(this.Lcaos_frontend_widgets_SimulateText__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_sos);
-  var enabled = this$1.next__T3__sci_Set($as_T3(from));
+  var enabled = $n($n(this.Lcaos_frontend_widgets_SimulateText__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_sos).next__O__sci_Set(from);
   var ul = $n($n(this.Lcaos_frontend_widgets_SimulateText__f_left).append__T__Lcaos_frontend_widgets_DomElem("ul")).style__T__Lcaos_frontend_widgets_DomElem("list-style-type:none;padding:0;margin:0;");
   $n($n($n($n(ul).append__T__Lcaos_frontend_widgets_DomElem("li")).append__T__Lcaos_frontend_widgets_DomElem("span")).style__T__Lcaos_frontend_widgets_DomElem("font-weight:bold;")).textEl__T__Lcaos_frontend_widgets_DomElem("Enabled transitions:");
-  var this$2 = $n(enabled);
+  var this$1 = $n(enabled);
   $m_sci_List$();
-  var this$6 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$2));
+  var this$5 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
   var lt = new $c_sjsr_AnonFunction2(((x, y) => {
     var x$1 = $as_T2(x);
     var y$1 = $as_T2(y);
@@ -17495,7 +17586,7 @@ $c_Lcaos_frontend_widgets_SimulateText.prototype.showEnabled__O__V = (function(f
     var x$2 = $as_T($n($n(this.Lcaos_frontend_widgets_SimulateText__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_lb).apply__O__O($n(x$1)._1__O()));
     return $n($$x1).$less$extension__T__T__Z(x$2, $as_T($n($n(this.Lcaos_frontend_widgets_SimulateText__f_simulate).Lcaos_frontend_widgets_WidgetInfo$Simulate__f_lb).apply__O__O($n(y$1)._1__O())))
   }));
-  $n($n($as_sc_IterableOps($f_sc_SeqOps__sortWith__F2__O(this$6, lt))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$1) => {
+  $n($n($as_sc_IterableOps($f_sc_SeqOps__sortWith__F2__O(this$5, lt))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$1) => {
     var x$1$2 = $as_T2(x$1$1);
     return ((x$1$2 !== null) && ($n(x$1$2)._1__O(), $n(x$1$2)._2__O(), true))
   })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((x$1$2$1) => {
@@ -20181,7 +20272,7 @@ $c_Lrebecaos_backend_Semantics$.prototype.unify__sci_List__sci_List__sci_Map = (
           }
         }
       };
-      if ((x62 === "bool")) {
+      if ((x62 === "boolean")) {
         if ((x64 instanceof $c_sci_$colon$colon)) {
           var x29 = $as_sci_$colon$colon(x64);
           var x30 = $n(x29).sci_$colon$colon__f_head;
@@ -20813,6 +20904,9 @@ $c_Lrebecaos_backend_Semantics$.prototype.eval__Lrebecaos_syntax_Program$BExpr__
     throw new $c_s_MatchError(x249)
   }
 });
+$c_Lrebecaos_backend_Semantics$.prototype.next__O__sci_Set = (function(s) {
+  return this.next__T3__sci_Set($as_T3(s))
+});
 var $d_Lrebecaos_backend_Semantics$ = new $TypeData().initClass({
   Lrebecaos_backend_Semantics$: 0
 }, false, "rebecaos.backend.Semantics$", {
@@ -20847,17 +20941,17 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     return $m_Lrebecaos_backend_Semantics$().initSt__Lrebecaos_syntax_Program$System__T3($m_Lrebecaos_syntax_Parser$().parseProgram__T__Lrebecaos_syntax_Program$System(str$1))
   }));
   $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    ex.add(0);}\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + 1;}\n  }\n}\n\nmain {\n\tExample ex1( ex2):();\n\tExample ex2( ex1):();\n}", "Sarir-basic", "Simple example of a Rebeca program, taken from the Sarir paper."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n\t\tconsumer.consume(p);\n\t\tself.produce();\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons", "Producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n    Producer newProducer;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n    if (p==3) {\n\t\t\tnewProducer = new Producer(consuler):();\n    }\n    consumer.consume(p);\n\t\tif(p!=4){\n    \tself.produce();\n    }\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv produce(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons (dyn)", "(Unsupported) Dynamic version of the producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}", "Timed-ticket", "Ticket Service from an SCP'25 paper on Timed Rebeca"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Philosopher(3)\n{\n  knownrebecs\n  {\n    Fork forkL;\n    Fork forkR;\n  }\n  statevars\n  {\n    boolean eating;\n    boolean fL;\n    boolean fR;\n  }\n  msgsrv initial()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    self.arrive();\n  }\n\n  msgsrv arrive()\n  {\n    forkL.request();\n  }\n\n  msgsrv permit()\n  {\n    if (sender == forkL) {\n      if (!fL) {\n        fL = true;\n        forkR.request();\n      }\n    }\n    else {\n      if (fL && !(fR)) {\n        fR = true;\n        self.eat();\n      }\n      // else discard the message\n    }\n  }\n\n  msgsrv eat()\n  {\n    eating = true;\n    self.leave();\n  }\n\n  msgsrv leave()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    forkL.release();\n    forkR.release();\n    self.arrive();\n  }\n}\n\nreactiveclass Fork(3)\n{\n  knownrebecs\n  {\n    Philosopher philL;\n    Philosopher philR;\n  }\n  statevars\n  {\n    boolean lAssign;  \n    boolean rAssign;  \n    boolean leftReq;\n    boolean rightReq;\n  }\n  msgsrv initial()\n  { \n    lAssign = false;\n    rAssign = false;\n    leftReq = false;\n    rightReq = false;\n  }\n\n  msgsrv request()\n  {\n    if (sender == philL) {\n      if (!leftReq) {\n        leftReq = true;\n        if (!rAssign) {\n          lAssign = true;\n          philL.permit();\n        }\n      } \n      // else discard message\n    }\n    else {\n      if (!rightReq) {\n        rightReq = true;\n        if (!lAssign) {\n          rAssign = true;\n          philR.permit();\n        }\n      }\n      // else discard message\n    }\n  }\n  msgsrv release()\n  {\n    if (sender == philL && lAssign){\n      leftReq = false;\n      lAssign = false;\n      if (rightReq) {\n        rAssign=true;\n        philR.permit();\n      }\n    }\n    if (sender == philR && rAssign){\n      rAssign = false;\n      rightReq = false;\n      if (leftReq) {\n        lAssign=true;\n        philL.permit();\n      }\n    }\n  }\n}\n\nmain\n{\n  Philosopher phil0(fork0, fork2):();\n  Philosopher phil1(fork0, fork1):();\n  Philosopher phil2(fork1, fork2):();\n\n  Fork fork0(phil0, phil1):();\n  Fork fork1(phil1, phil2):();\n  Fork fork2(phil2, phil0):();\n}", "Dining Philosophers", "Dining philosophers, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BridgeController(5) {\n  knownrebecs {\n    Train t1;\n    Train t2;\n  }\n\n  statevars {\n    boolean isWaiting1;\n    boolean isWaiting2;\n    boolean isOnBridge1;\n    boolean isOnBridge2;\n  }\n\n  msgsrv initial() {\n    isOnBridge1 = false;  // red\n    isOnBridge2 = false;  // red\n    isWaiting1 = false;\n    isWaiting2 = false;\n  }\n  \n  msgsrv Arrive() {\n    if (sender == t1){\n      if (isOnBridge2 == false) {\n        isOnBridge1 = true; // green\n        t1.YouMayPass();\n      }\n      else {\n        isWaiting1 = true;\n      }\n    }\n    else {\n      if (isOnBridge1 == false){\n        isOnBridge2 = true; // green\n        t2.YouMayPass();\n      }\n      else{\n        isWaiting2 = true;\n      }\n    }\n  }\n  \n  msgsrv Leave() {\n    if (sender == t1) {\n      isOnBridge1 = false;  // red\n      if (isWaiting2){\n        isOnBridge2 = true;\n        t2.YouMayPass();\n        isWaiting2 = false;\n      }\n    } else {\n      isOnBridge2 = false;  // red\n      if (isWaiting1) {\n        isOnBridge1 = true;\n        t1.YouMayPass();\n        isWaiting1 = false;\n      }\n    }\n  }\n}\n\nreactiveclass Train(3) {\n  knownrebecs {\n    BridgeController controller;\n  }\n\n  statevars {\n    boolean onTheBridge;\n  }\n\n  msgsrv initial() {\n    onTheBridge = false;\n    self.Passed();\n  }\n\n  msgsrv YouMayPass() {\n    onTheBridge = true;\n    self.Passed();\n  }\n  \n  msgsrv Passed() {\n    onTheBridge = false;\n    controller.Leave();\n    self.ReachBridge();\n  }\n\n  msgsrv ReachBridge() {\n    controller.Arrive();\n  }\n}\n\nmain {\n  Train train1(theController):();\n  Train train2(theController):();\n  BridgeController theController(train1, train2):();\n}", "Trains", "Two trains and a controller, taken from http://rebeca-lang.org/Rebeca.")]));
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    ex.add(0);}\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + 1;}\n  }\n}\n\nmain {\n\tExample ex1( ex2):();\n\tExample ex2( ex1):();\n}", "Sarir-basic", "Simple example of a Rebeca program, taken from the Sarir paper."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n\t\tconsumer.consume(p);\n\t\tself.produce();\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons", "Producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n    Producer newProducer;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n    if (p==3) {\n\t\t\tnewProducer = new Producer(consuler):();\n    }\n    consumer.consume(p);\n\t\tif(p!=4){\n    \tself.produce();\n    }\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv produce(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons (dyn)", "(Unsupported) Dynamic version of the producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}", "Timed-ticket", "Ticket Service from an SCP'25 paper on Timed Rebeca"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Philosopher(3)\n{\n  knownrebecs\n  {\n    Fork forkL;\n    Fork forkR;\n  }\n  statevars\n  {\n    boolean eating;\n    boolean fL;\n    boolean fR;\n  }\n  msgsrv initial()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    self.arrive();\n  }\n\n  msgsrv arrive()\n  {\n    forkL.request();\n  }\n\n  msgsrv permit()\n  {\n    if (sender == forkL) {\n      if (!fL) {\n        fL = true;\n        forkR.request();\n      }\n    }\n    else {\n      if (fL && !(fR)) {\n        fR = true;\n        self.eat();\n      }\n      // else discard the message\n    }\n  }\n\n  msgsrv eat()\n  {\n    eating = true;\n    self.leave();\n  }\n\n  msgsrv leave()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    forkL.release();\n    forkR.release();\n    self.arrive();\n  }\n}\n\nreactiveclass Fork(3)\n{\n  knownrebecs\n  {\n    Philosopher philL;\n    Philosopher philR;\n  }\n  statevars\n  {\n    boolean lAssign;  \n    boolean rAssign;  \n    boolean leftReq;\n    boolean rightReq;\n  }\n  msgsrv initial()\n  { \n    lAssign = false;\n    rAssign = false;\n    leftReq = false;\n    rightReq = false;\n  }\n\n  msgsrv request()\n  {\n    if (sender == philL) {\n      if (!leftReq) {\n        leftReq = true;\n        if (!rAssign) {\n          lAssign = true;\n          philL.permit();\n        }\n      } \n      // else discard message\n    }\n    else {\n      if (!rightReq) {\n        rightReq = true;\n        if (!lAssign) {\n          rAssign = true;\n          philR.permit();\n        }\n      }\n      // else discard message\n    }\n  }\n  msgsrv release()\n  {\n    if (sender == philL && lAssign){\n      leftReq = false;\n      lAssign = false;\n      if (rightReq) {\n        rAssign=true;\n        philR.permit();\n      }\n    }\n    if (sender == philR && rAssign){\n      rAssign = false;\n      rightReq = false;\n      if (leftReq) {\n        lAssign=true;\n        philL.permit();\n      }\n    }\n  }\n}\n\nmain\n{\n  Philosopher phil0(fork0, fork2):();\n  Philosopher phil1(fork0, fork1):();\n  Philosopher phil2(fork1, fork2):();\n\n  Fork fork0(phil0, phil1):();\n  Fork fork1(phil1, phil2):();\n  Fork fork2(phil2, phil0):();\n}", "Dining Philosophers", "Dining philosophers, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BridgeController(5) {\n  knownrebecs {\n    Train t1;\n    Train t2;\n  }\n\n  statevars {\n    boolean isWaiting1;\n    boolean isWaiting2;\n    boolean isOnBridge1;\n    boolean isOnBridge2;\n  }\n\n  msgsrv initial() {\n    isOnBridge1 = false;  // red\n    isOnBridge2 = false;  // red\n    isWaiting1 = false;\n    isWaiting2 = false;\n  }\n  \n  msgsrv Arrive() {\n    if (sender == t1){\n      if (isOnBridge2 == false) {\n        isOnBridge1 = true; // green\n        t1.YouMayPass();\n      }\n      else {\n        isWaiting1 = true;\n      }\n    }\n    else {\n      if (isOnBridge1 == false){\n        isOnBridge2 = true; // green\n        t2.YouMayPass();\n      }\n      else{\n        isWaiting2 = true;\n      }\n    }\n  }\n  \n  msgsrv Leave() {\n    if (sender == t1) {\n      isOnBridge1 = false;  // red\n      if (isWaiting2){\n        isOnBridge2 = true;\n        t2.YouMayPass();\n        isWaiting2 = false;\n      }\n    } else {\n      isOnBridge2 = false;  // red\n      if (isWaiting1) {\n        isOnBridge1 = true;\n        t1.YouMayPass();\n        isWaiting1 = false;\n      }\n    }\n  }\n}\n\nreactiveclass Train(3) {\n  knownrebecs {\n    BridgeController controller;\n  }\n\n  statevars {\n    boolean onTheBridge;\n  }\n\n  msgsrv initial() {\n    onTheBridge = false;\n    self.Passed();\n  }\n\n  msgsrv YouMayPass() {\n    onTheBridge = true;\n    self.Passed();\n  }\n  \n  msgsrv Passed() {\n    onTheBridge = false;\n    controller.Leave();\n    self.ReachBridge();\n  }\n\n  msgsrv ReachBridge() {\n    controller.Arrive();\n  }\n}\n\nmain {\n  Train train1(theController):();\n  Train train2(theController):();\n  BridgeController theController(train1, train2):();\n}", "Trains", "Two trains and a controller, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8) { \n    knownrebecs { \n\t    Node nodeL; \n        Node nodeR; \n    } \n      \n    statevars { \n        boolean monitor; \n        int myId; \n        int phase; \n        int monitorId; \n        boolean receivedLeft; \n        boolean receivedRight; \n    } \n  \n    msgsrv initial(int id) { \n        myId = id; \n        monitor = false; \n        monitorId = id; \n        phase = 1; \n        receivedLeft = false; \n        receivedRight = false; \n        self.arrive(); \n    } \n  \n    msgsrv arrive() { \n        nodeL.receive(myId, true, phase); \n        nodeR.receive(myId, true, phase); \n\t} \n  \n\tmsgsrv receive(int msgId, boolean inOut, int hopCount) { \n\t\tif ((sender==nodeL) &&  (inOut)) {\n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)) { \n\t\t\t\tmonitorId = msgId; \n        \t    nodeR.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){ \n\t\t\t\t\tmonitorId=msgId; \n                    nodeL.receive (msgId, false,1); \n                } else { \n                    if (msgId == myId) { \n                    \tmonitor = true; \n                    \tmonitorId = myId; \n                \t} \n                } \n\t\t\t} \n        } \n            \n        if ((sender==nodeR) && (inOut)) { \n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)){ \n            \tmonitorId=msgId; \n                nodeL.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){  \n                \tmonitorId=msgId; \n\t\t\t\t\tnodeR.receive (msgId, false,1); \n                } else { \n                \tif (msgId == myId) { \n                    \tmonitor = true; \n                        monitorId = myId; \n                    } \n                } \n        \t} \n        } \n            \n        if ((sender==nodeL) && !(inOut) && !(msgId==myId)) { \n        \tnodeR.receive(msgId, false, 1);           \n        } \n            \n        if ((sender==nodeR) &&  !(inOut) && !(msgId==myId)) { \n        \tnodeL.receive(msgId, false, 1);           \n        } \n            \n\t\tif ((sender==nodeL) && !(inOut) && ((msgId == myId) && (hopCount==1))) { \n        \treceivedLeft = true; \n        } \n\t\tif (((sender==nodeR) && (msgId == myId)) && !(inOut) && (hopCount==1)) { \n        \treceivedRight = true; \n        }     \n            \n        if (receivedLeft && receivedRight&& (phase<3)){ \n        \tif(phase==2) { \n            \tmonitor=true; \n            } else { \n                phase = phase * 2; \n                receivedLeft=false; \n                receivedRight=false; \n                nodeL.receive(myId, true, phase); \n                nodeR.receive(myId, true, phase); \n            } \n        } \n\t} \n} \n  \n  \nmain { \n      Node node1(node4,node2):(1); \n      Node node2(node1,node3):(2); \n      Node node3(node2,node4):(3); \n      Node node4(node3,node1):(4); \n} ", "Leader Election HS (fix)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8){\n\tknownrebecs {\n\t\tNode rightNode;\n\t}\n\tstatevars {\n\t\tboolean isLeader;\n\t\tint myNumber;\n\t\tint currentLeader;\t\t\n\t}\n\tmsgsrv initial(int n) {\n\t\tmyNumber = n;\n\t\tcurrentLeader = n;\n\t\tisLeader = false;\n\t\tself.send();\n\t}\n\t\n\tmsgsrv ImLeader() {\n\t\tself.ImLeader();\n\t\t//The algorithm terminates here, but the leader keeps sending a msg to himself to avoid deadlock.\n\t}\n\tmsgsrv send() {\n\t\trightNode.receive(currentLeader);\n\t}\n\tmsgsrv receive(int n) {\n\t\tif (n == myNumber) {\n\t\t\tisLeader = true;\n\t\t\tself.ImLeader();\n\t\t}\n\t\telse {\n\t\t\tif (n > currentLeader) {\n\t\t\t\tcurrentLeader = n;\n\t\t\t\tself.send();\n\t\t\t}\n\t\t\t//else discard\n\t\t}\n\t}\n}\n\nmain { \n//Each node must have a unique identifier\n//In case of having more than three nodes or changing the leader to other node (rather than node1), you should change the property file too.\n   Node node0(node2):(4); \n   Node node1(node0):(20); \n   Node node2(node1):(10); \n} ", "Leader Election LCR", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("//In the name of Allah\n// The best will come\n\n//2 Phase Commit Protocol\nreactiveclass Node(10) {\n\tknownrebecs {\n\t    Node node1;\n\t    Node node2;\n\t}\n\tstatevars {\n\t    byte srvNo;\n\t\tboolean recievedResults;\n\t\tboolean creationAbility;\n\t\tint recievedResultsCounter;\n\t\tint expectedResultsCounter;\n\t\tboolean[2] cooperatorKnownRebecs;\n\t\t\n\t}\n\t\n\tmsgsrv initial(boolean nodeCreationAbility) {\n\t\tcreationAbility = nodeCreationAbility;\n\t\tself.createTransaction();\n\t}\n\t\n\tmsgsrv createTransaction() {\n\n\t\tboolean startTrans;\n\t\tstartTrans = ?(true, false);\n\t\tif (startTrans && creationAbility) {\n\t\t\tboolean dispatcher = false;\n\t\t\tboolean result;\n\n\t\t\tint i;\n\t\t\tfor(i = 0; i < 2; i = i + 1)\n\t\t\t\tcooperatorKnownRebecs[i] = false;\n\n\t\t\trecievedResultsCounter = 0;\n\t\t\trecievedResults = true;\n\n\n\t\t\texpectedResultsCounter = 0;\n\n            srvNo = 1;\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[0] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode1.startGlobalTransaction();\n\t\t\t}\n\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[1] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode2.startGlobalTransaction();\n\t\t\t}\n\n\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\tresult = ?(true, false);\n\t\t\tself.cooperatorResponse(result);\n\t\t}\n\t\telse {\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\tmsgsrv startGlobalTransaction() {\n\t\tboolean result;\n\t\tresult = ?(true, false);\n\n\t\tif (sender == node1) {\n\t\t\tnode1.cooperatorResponse(result);\n\t\t}\n\t\tif (sender == node2) {\n\t\t\tnode2.cooperatorResponse(result);\n        }\n        \n\t}\n\n\tmsgsrv cooperatorResponse(boolean result) {\n\t\trecievedResultsCounter = recievedResultsCounter + 1;\n\t\tif (!result)\n\t\t\trecievedResults = false;\n\n\t\tif (recievedResultsCounter == expectedResultsCounter) {\n            int i;\n\t\t\tif (cooperatorKnownRebecs[0]) {\n\t\t\t\tnode1.applyResult(recievedResults);\n\t\t\t}\n\t\t\tif (cooperatorKnownRebecs[1]) {\n\t\t\t\tnode2.applyResult(recievedResults);\n\t\t\t}\n\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\n\tmsgsrv applyResult(boolean result) {\n\t}\n\n}\n\n\nmain {\n\tNode node1(node2, node3):(true);\n\tNode node2(node3, node1):(false);\n\tNode node3(node1, node2):(true);\n}", "2-phase commit", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Sender(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tReceiver rec;     \n\t} \n      \n\tstatevars { \n\t\tboolean receivedBit; \n\t\tboolean sendBit; \n\t\tboolean hasSucceeded; \n\t} \n  \n\tmsgsrv initial() { \n\t\tsendBit = false; \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n\t} \n  \n\tmsgsrv sendMsg() { \n\t\t//receive(hasSucceeded) \n\t\tif (hasSucceeded == true) { \n\t\t\tif (sendBit == true) { \n\t\t\t\tsendBit = false; \n\t\t\t} else { \n\t\t\t\tsendBit = true; \n\t\t\t} \n\t\t} \n            \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n\t} \n} \n  \nreactiveclass Receiver(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean messageBit; \n\t} \n  \n\tmsgsrv initial() { \n\t} \n  \n\tmsgsrv receiveMsg(boolean msgBit) { \n\t\tmessageBit =msgBit; \n\t\t//sender.receive(true); \n\t} \n} \n  \nreactiveclass Medium(5) { \n\tknownrebecs { \n\t\tReceiver receiver; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean passMessage; \n\t} \n  \n\tmsgsrv initial() { \n\t\tpassMessage=true; \n\t} \n  \n\tmsgsrv pass(boolean msgBit) { \n\t\tpassMessage = ?(true,false); \n\t\tif(passMessage == true) { \n\t\t\treceiver.receiveMsg( msgBit); \n\t\t} else { \n\t\t\t//sender,receive(false); \n\t\t} \n\t} \n} \n  \nmain { \n\tSender sender (medium, receiver):(); \n\tMedium medium(receiver, sender):(); \n\tReceiver receiver(medium, sender):(); \n} ", "Sender-receiver", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BufferManager(4) {\n\tknownrebecs {\n\t\tProducer producer;\n\t\tConsumer consumer;\n\t}\n\n\tstatevars {\n\t\tboolean empty;\n\t\tboolean full;\n\t\tboolean producerWaiting;\n\t\tboolean consumerWaiting;\n\t\tint bufferlenght;\n\t\tint nextProduce;\n\t\tint nextConsume;\t\t\n\t}\n\n\tmsgsrv initial() {\n\t\tbufferlenght = 2;\n\t\tempty = true;\n\t\tfull = false;\n\t\tproducerWaiting = false;\n\t\tconsumerWaiting = false;\n\t\tnextProduce = 0;\n\t\tnextConsume = 0;\n\t}\n\n\tmsgsrv giveMeNextProduce() {\n\t\tif (!full)\t{\n\t\t\tproducer.produce(nextProduce);\n\t\t} \n\t}\n\n\tmsgsrv giveMeNextConsume() {\n\t\tif (!empty) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t} \n     \telse {\n\t\t\tconsumerWaiting = true;\n\t\t}\n\t}\n\n\tmsgsrv ackProduce() {\n\t\tnextProduce = (nextProduce + 1) %\n                    bufferlenght;\n\t\tif (nextProduce == nextConsume) {\n\t\t\tfull = true;\n\t\t}\n\t\tempty = false;\n\t\tif (consumerWaiting) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t\tconsumerWaiting = false;\n\t\t}\n\t}\n\n\tmsgsrv ackConsume() {\n\t\tnextConsume = (nextConsume + 1) %\n                    bufferlenght;\n\t\tif (nextConsume == nextProduce) {\n\t\t\tempty = true;\n\t\t}\n\t\tfull = false;\n\t\tif (producerWaiting) {\n\t\t\tproducer.produce(nextProduce);\n\t\t\tproducerWaiting = false;\n\t\t}\n\t}\n}\n\nreactiveclass Producer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginProduce();\n\t}\n\t\n\tmsgsrv produce(int bufNum) {\n\t\tbuffer.ackProduce();\n\t\tself.beginProduce();\n\t}\n\n\tmsgsrv beginProduce() {\n\t\tbuffer.giveMeNextProduce();\n\t}\n}\n\nreactiveclass Consumer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\t\t\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginConsume();\n\t}\n\n\tmsgsrv consume(int bufNum) {\n\t\tbuffer.ackConsume();\n\t\tself.beginConsume();\t\n\t}\n\t\n\tmsgsrv beginConsume() {\n\t\tbuffer.giveMeNextConsume();\n\t}\n\n}\n\nmain { \n\tBufferManager buffer(producer, consumer):();\n\tProducer producer(buffer):();\n\tConsumer consumer(buffer):();\n}", "Prod-Cons (larger)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (byte)(distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (byte)(distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = (byte)255;\n             rootDistance = (byte)255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( ! isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (byte)(distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (byte)(distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,D):(1);\n    BridgeToLanPort out1F(p1F,F):(2);\n    BridgeToLanPort out5D(p5D,D):(3);\n    BridgeToLanPort out5B(p5B,B):(4);\n    BridgeToLanPort out7F(p7F,F):(5);\n    BridgeToLanPort out7B(p7B,B):(6);\n    BridgeToLanPort out7K(p7K,K):(7);\n\n    ExtendedLan D(in1D, in5D):();\n    ExtendedLan B(in7B, in5B):();\n    ExtendedLan F(in1F, in7F):();\n    ExtendedLan K(in7K, in7K):();\n}", "Spanning-tree", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("/*\n\n* Model for 4x4 ASPIN. The model can be extended for lager NoCs by declaring routers in main part (last section of the code).\n\n*In the model only one packet is sent from router R00 to router R23. More packets can be scheduled to sent from a source to destination \n as like in \"Router\" mesage server.\n\n*/\n\nreactiveclass Manager(10){\n\t\n\tknownrebecs{\n\t\tRouter r00;\n\t\tRouter r10;\n\t\tRouter r20;\n\t\tRouter r30;\n\t\t\n\t\tRouter r01;\n\t\tRouter r11;\n\t\tRouter r21;\n\t\tRouter r31;\n\t\t\n\t\tRouter r02;\n\t\tRouter r12;\n\t\tRouter r22;\n\t\tRouter r32;\n\t\t\n\t\tRouter r03;\n\t\tRouter r13;\n\t\tRouter r23;\n\t\tRouter r33;\n\t}\n\t\n\tstatevars{\n\t}\n\t\n\tManager(){\n\t}\n\t\n\tmsgsrv reset(){ //each source and destination routeeer should be initialized here.\n\t\tr01.reStart() after(700); //source\t\t\n\t}\n}\n\nreactiveclass Router(10) {\n\n\tknownrebecs {\n\t\tManager manager;\n\t\tRouter N;  // : 0\n\t\tRouter E;  // : 1\n\t\tRouter S;  // : 2\n\t\tRouter W;  // : 3\t\t\n\t}\n\t\n\tstatevars {\n\t\tint bufSize;\n\t\tint maxTime;\t// To check if a packet is recieved by the time maxTime\n\t\tint recieved;\n\t\t\n\t\tbyte[4] bufNum; //for each of four sides\n\t\tboolean[4] full;\n\t\tboolean[4] enable;\n\t\tboolean [4] outMutex;\n\t\t\n\t\tbyte Xid;\n\t\tbyte Yid;\n\t}\n\t\n\tRouter(byte X, byte Y){\t\n\t\tXid = X;\n\t\tYid = Y;\n\t\n\t\tbufSize = 2;\n\t\tmaxTime = 250 ; \n\t\trecieved = 0;\n\n\t\tfor(int i=0;i<4;i++){\t\t\n\t\t\tenable[i] = true;\n\t\t\toutMutex[i] = true;\n\t\t\tbufNum[i] = 0;\n\t\t\tfull[i] = false;\n\t\t}\n\t\t\n\t\t//packet generation\n\t\tif(X == 0 && Y == 0){\n\t\t\tself.reqSend(2,3,1,5) after(10);  //sending a packet\n\t\t}\n\t\t\n\t\tif(X == 0 && Y == 1){\t\t\t\t// permamnet, don't change. \n\t\t\tself.reStart() after(700);\n\t\t}\n\t\t\n\t\tif(X == 2 && Y == 3){\t\t\t\t// in destination router. not necessary for all packets. just to check when the packet is recieved\n\t\t\tself.checkRecieved()after(maxTime);\n\t\t}\n\t}\n\t\n\tmsgsrv reqSend(byte Xtarget, byte Ytarget, int directionS, int packId){\t\n\t\tif (enable[directionS] == true){\n\t\t\tboolean sent = false;\n\t\t\t\t\t\n\t\t\tif(Xtarget > Xid){\t\t// Routing Algorithm XY: first move through horisental channels \n\t\t\t\tif(outMutex[1] == true){\t\n\t\t\t\t\tE.give_Ack(Xtarget, Ytarget,directionS,3,5, packId) after(26);\n\t\t\t\t\toutMutex[1] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Xtarget < Xid){\t\n\t\t\t\tif(outMutex[3] == true){\n\t\t\t\t\tW.give_Ack(Xtarget, Ytarget,directionS,1,5, packId ) after(26);\t\n\t\t\t\t\toutMutex[3] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t} else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Ytarget > Yid){\t\n\t\t\t\tif(outMutex[2] == true){\n\t\t\t\t\tS.give_Ack(Xtarget, Ytarget,directionS,0,5, packId ) after(26);\t\n\t\t\t\t\toutMutex [2] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\t\n\t\t\t}\t\n\t\t\telse if(Ytarget < Yid){\t\n\t\t\t\tif(outMutex[0] == true){\n\t\t\t\t\tN.give_Ack(Xtarget, Ytarget,directionS,2,5 , packId) after(26);\t\n\t\t\t\t\toutMutex[0] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t\t\t}\n\n\t\t\tif(sent == true){\n\t\t\t\tbufNum[directionS] = (byte)bufNum[directionS] + 1;\n\n\t\t\t\tif (bufNum[directionS] == bufSize) full[directionS] = true;         //update the value of \"full\".\n\t\t\t}\t\n\t\t} else\n\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t}\n\t\n\tmsgsrv get_Ack(int directionS){\n\t\t\n\t\tenable[directionS] = true;\n\t\t\n\t\tbufNum[directionS] = (byte)bufNum[directionS] - 1;\t\n\t\tfull[directionS] = false;\n\n\t\tif (sender == N) {\n\t\t\toutMutex[0] = true;\n\t\t}\t\n\t\telse if (sender == E){ \n\t\t\toutMutex[1] = true;\n\t\t}\t\n\t\telse if (sender == S){\n\t\t\toutMutex[2] = true;\n\t\t\t}\n\t\telse if (sender == W){ \n\t\t\toutMutex[3] = true;\n\t\t}\t\n\t}\n\t\n\tmsgsrv give_Ack(byte Xtarget, byte Ytarget,int directionS, int directionD,int msgSender, int packId){\n\t\tint MSGSender;\n\t\tif(sender == N)\n\t\t\tMSGSender = 0;\n\t\telse if (sender == E)\n\t\t\tMSGSender = 1;\n\t\telse if (sender == S)\n\t\t\tMSGSender = 2;\n\t\telse if (sender == W)\n\t\t\tMSGSender = 3;\n\t\telse {MSGSender = msgSender;\n\t\t\t\n\t\t}\n\t\t\t\t\n\t\tif(!(Xtarget == Xid && Ytarget == Yid)){\n\t\t\t\t\n\t\t\tif (full[directionD]) //buffer is full, the packet should wait.\n\t\t\t\tself.give_Ack(Xtarget, Ytarget,directionS,directionD,MSGSender,\n\t\t\t\t\t\t\t packId)after(2)deadline(3); //waiting via recalling give_ack after 2 time units.\n\t\t\t\n\t\t\telse{\t\n\t\t\t\tself.reqSend(Xtarget, Ytarget,directionD, packId); \n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\t\t\n\t\t}\t\t\n\t\t\n\t\telse if((Xtarget == Xid && Ytarget == Yid)){ //reach target\n\t\t\t\t\n\t\t\t\trecieved = recieved + 1;\n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\n\t}\n\n\tmsgsrv reStart(){\n\t\tmanager.reset();\n\t}\t\n\t\n\tmsgsrv deadlineMiss(){\n\t\tdelay(5);\n\t}\n\t\n\tmsgsrv checkPoint(){ // causes to hult\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t}\n\t\n\tmsgsrv checkRecieved(){ // Halt if recieved is 0, by calling checkpoint.(checkpoint method allways cause program to hult).\n\t\t\n\t\tif (recieved == 0){\n\t\t\tself.checkPoint();\n\t\t}\n\t\t\t\n\t}\n}\n\nmain {\n\tManager m(r00,r10,r20,r30,r01,r11,r21,r31,r02,r12,r22,r32,r03,r13,r23,r33):();\n\t\n\tRouter r00(m,r03,r10,r01,r30):(0,0);\n\tRouter r10(m,r13,r20,r11,r00):(1,0);\n\tRouter r20(m,r23,r30,r21,r10):(2,0);\n\tRouter r30(m,r33,r00,r31,r20):(3,0);\n\t\n\tRouter r01(m,r00,r11,r02,r31):(0,1);\n\tRouter r11(m,r10,r21,r12,r01):(1,1);\n\tRouter r21(m,r20,r31,r22,r11):(2,1);\n\tRouter r31(m,r30,r01,r32,r21):(3,1);\n\t\n\tRouter r02(m,r01,r12,r03,r32):(0,2);\n\tRouter r12(m,r11,r22,r13,r02):(1,2);\n\tRouter r22(m,r21,r32,r23,r12):(2,2);\n\tRouter r32(m,r31,r02,r33,r22):(3,2);\n\t\n\tRouter r03(m,r02,r13,r00,r33):(0,3);\n\tRouter r13(m,r12,r23,r10,r03):(1,3);\n\tRouter r23(m,r22,r33,r20,r13):(2,3);\n\tRouter r33(m,r32,r03,r30,r23):(3,3);\n}", "NOC", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("env int RESENDING_PERIOD = 25;\nenv int NORMAL_SPEED = 15;\nenv int REDUCED_SPEED = 7;\nenv int SAFE_DISTANCE = 20;  // segments has 1000 meters length and each sub-segment has 200 meteres length\nenv int SEGMENT_LENGTH = 200;\nenv int LOADING_TIME_PC = 60;\nenv int LOADING_TIME_WL = 60;\nenv int UNLOADING_TIME_SC = 30;\nenv int CHARGING_TIME_C1 = 60;\nenv int CHARGING_TIME_C2 = 60;\nenv int LEAVING_PERIOD = 13;\nenv int NUMBER_VEHICLES = 4;\n\n//************* E1:WL, E2:Crusher, E3:SC, E4:DP ***********\n\nreactiveclass CrossController (10){\t\t// to control when S4 passes S3\n\tknownrebecs\n\t{\n\t}\n\tstatevars\n\t{\n\t\tboolean crossIsFree;\n\t}\n\tCrossController()\n\t{ \n\t\tcrossIsFree= true;\n\t}\n\tmsgsrv giveCrossPermission(int vehicleId){\n\t\tif(crossIsFree){\n\t\t\tcrossIsFree = false;\n\t\t\t((Segment)sender).getCrossPermission(vehicleId);\n\t\t}\n\t\telse ((Segment)sender).crossNotAvailable(vehicleId);\n\t}\n\tmsgsrv freeCross(int vehicleId){\n\t\tcrossIsFree = true;\t\n\t}\n}\n\nreactiveclass PrimaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPcToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tPrimaryCrusher()\n\t{ \n\t\tisLoading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_PC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegPcToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass SecondaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegScToPrepoint;\n\t}\n\tstatevars\n\t{\n\t\tboolean isUnloading;\n\t}\n\tSecondaryCrusher()\n\t{ \n\t\tisUnloading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isUnloading == false){\n\t\t\tisUnloading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(UNLOADING_TIME_SC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegScToPrepoint.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisUnloading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass PrePoint (14) { \t\t\t// the point at the end of S7\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPreToE1;\n\t\tSegment firstSubSegPreToE2;\n\t}\n\tstatevars\n\t{\n\t\tboolean isBusy;\n\t\tboolean toE1;\n\t\tint count;\n\t}\n\tPrePoint()\n\t{ \n\t\tisBusy= false;\n\t\ttoE1 = true;\n\t\tcount=0;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isBusy == false){\n\t\t\tisBusy = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(toE1)\n\t\t\tfirstSubSegPreToE1.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisBusy= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tif(toE1){\n\t\t\ttoE1 = false;\n\t\t\tfirstSubSegPreToE2.givePermisionForVehicle(vehicleId, -1);\t\n\t\t}\n\t\telse \n\t\t{\n\t\t\ttoE1 = true;\n\t\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t\t}\n\t}\n}\n\nreactiveclass DecisionStation (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegDsToPc;\n\t}\n\tstatevars\n\t{\t\n\t\tboolean vehicle1Reached;\n\t\tboolean vehicle2Reached;\n\t\tboolean vehicle3Reached;\n\t\tboolean vehicle4Reached;\n\t\tboolean vehicle5Reached;\n\t\tboolean vehicle6Reached;\n\t\tboolean vehicle7Reached;\n\t\tboolean vehicle8Reached;\n\t}\n\tDecisionStation()\n\t{ \n\t\tself.leaveParkingSlots();\n\t}\n\tmsgsrv leaveParkingSlots(){\n\t\t\n\t\tstartSendingToNext(1) after(1);\n\t\t\n\t\tif(NUMBER_VEHICLES == 2 || NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 \n\t\t|| NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(2) after(4);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 \n\t\t|| NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(3) after(6);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 \n\t\t|| NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(4) after(9);\n\t\t\t\n \t\tif(NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7\n\t\t|| NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(5) after(12);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(6) after(15);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(7) after(19);\n\t\t\n\t\tif(NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(8) after(26);\n\t}\n\tmsgsrv getPermision(int vehicleId){\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId, int segmentDes){\n\t\tstartSendingToNext(vehicleId) after (RESENDING_PERIOD);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegDsToPc.givePermisionForVehicle(vehicleId,1);\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t\t((Segment)sender).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\t//startSendingToNext(vehicleId) after(LEAVING_PERIOD);\n\t\tif(vehicleId == 1)\n\t\t\tvehicle1Reached = true;\n\t\telse if(vehicleId == 2)\n\t\t\tvehicle2Reached = true;\n\t\telse if(vehicleId == 3)\n\t\t\tvehicle3Reached = true;\n\t\telse if(vehicleId == 4)\n\t\t\tvehicle4Reached = true;\n\t\telse if(vehicleId == 5)\n\t\t\tvehicle5Reached = true;\n\t\telse if(vehicleId == 6)\n\t\t\tvehicle6Reached = true;\n\t\telse if(vehicleId == 7)\n\t\t\tvehicle7Reached = true;\n\t\telse if(vehicleId == 8)\n\t\t\tvehicle8Reached = true;\n\t\t\n\t\t//if(NUMBER_VEHICLES == 4)\n\t\t//\t\tassertion(false);\n\t\t// when all vehicles travelled once the model checking stops by puting 'assertion(false)'\n\t\tif(NUMBER_VEHICLES == 1){\n\t\t\tif(vehicle1Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 2){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 3){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 4){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 5){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 6){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 7){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 8){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true && vehicle8Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t}\n\tmsgsrv loop (){\n\t\tself.loop() after(5000);\n\t}\n}\n\nreactiveclass WheelLoader (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegWlToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tWheelLoader()\n\t{ \n\t\tisLoading = false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_WL);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegWlToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass Segment(14) {\n\tknownrebecs\n\t{\n\t\t\n\t}\n\tstatevars\n\t{\n\t\tboolean isFree;\n\t\tboolean stoppedVehicle;\n\t\tint vehicleSpeed;\t\t\t// speed of the current vehicle\n\t\tint segmentLength;\n\t\t\n\t\tSegment nextSegment;\n\t\tDecisionStation decisionS;\n\t\tPrimaryCrusher primaryC;\n\t\tSecondaryCrusher secondaryC;\n\t\tWheelLoader wheelL;\n\t\tPrePoint prePoint;\n\t\tCrossController crossCtrl;\n\t\tSegment segRequestingCross;\n\t}\n\tSegment(Segment nextS, WheelLoader wl, PrimaryCrusher pc, SecondaryCrusher sc, \n\t\t\t\tDecisionStation ds, PrePoint preCs, CrossController ctrl, int speed, int segLength)\n\t{ \n\t\tnextSegment = nextS;\n\t\tdecisionS = ds;\n\t\tprimaryC = pc;\n\t\tsecondaryC = sc;\n\t\twheelL = wl;\n\t\tprePoint = preCs;\t\n\t\tcrossCtrl = ctrl;\n\t\tsegRequestingCross = null;\n\t\tsegmentLength = segLength;\n\t\t\n\t\tvehicleSpeed = speed;\n\t\tisFree = true;\n\t\tstoppedVehicle =false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId, int segmentDes){\n\t\tif (isFree)\n\t\t{\n\t\t\tisFree=false;\n\t\t\tif(crossCtrl == null){\n\t\t\t\tif(sender instanceof Segment)\n\t\t\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t\t((DecisionStation)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t\t((PrimaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t\t((WheelLoader)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t\t((SecondaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t\t((PrePoint)sender).getPermision(vehicleId);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tsegRequestingCross = ((Segment)sender);\n\t\t\t\tcrossCtrl.giveCrossPermission(vehicleId);\n\t\t\t}\n\t\t}\n\t\telse{\n\t\t\tif(sender instanceof Segment)\n\t\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t((DecisionStation)sender).segmentNotFree(vehicleId, segmentDes);\n\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t((PrimaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t((WheelLoader)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t((SecondaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t((PrePoint)sender).segmentNotFree(vehicleId);\n\t\t}\n\t\n\t}\n\tmsgsrv getCrossPermission(int vehicleId){\n\t\t((Segment)segRequestingCross).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered (int vehicleId){\t// moving of vehicle inside the segment should be modeled\n\t\tdelay((segmentLength-SAFE_DISTANCE)/vehicleSpeed);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv crossNotAvailable(int vehicleId){\n\t\tisFree = true;\n\t\t((Segment)segRequestingCross).segmentNotFree(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(nextSegment != null)\n\t\t\tnextSegment.givePermisionForVehicle(vehicleId,-1);\n\t\telse if(primaryC != null)\n\t\t\tprimaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(wheelL != null)\n\t\t\twheelL.givePermisionForVehicle(vehicleId);\n\t\telse if(secondaryC != null)\n\t\t\tsecondaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(decisionS != null)\n\t\t\tdecisionS.givePermisionForVehicle(vehicleId);\n\t\telse if(prePoint != null)\n\t\t\tprePoint.givePermisionForVehicle(vehicleId);\n\t\t\t\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tstoppedVehicle = false;\n\t\tdelay(SAFE_DISTANCE/vehicleSpeed);\n\t\tisFree = true;\n\t\tif(crossCtrl != null){\n\t\t\tsegRequestingCross = null;\n\t\t\tcrossCtrl.freeCross(vehicleId);\n\t\t}\n\t\tif(sender instanceof Segment)\n\t\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof DecisionStation)\n\t\t\t((DecisionStation)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t((PrimaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof WheelLoader)\n\t\t\t((WheelLoader)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t((SecondaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrePoint)\n\t\t\t((PrePoint)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId){\n\t\tstoppedVehicle = true;\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\n\nmain{\n\t//************* E1:WL, E2:PC, E3:SC, E4:DP ***********\n\tPrimaryCrusher pc(subSeg1E2ToS2):();\n\tSecondaryCrusher sc(subSeg1E3ToE4):();\n\tWheelLoader wl(subSeg1E1ToS2):();\n\tDecisionStation ds(subSeg1S4ToPre):();\n\tCrossController controller():();\n\tPrePoint prePoint(subSeg1S5ToE1,subSeg1S6ToE2):();\n\t// ():(segment,E1,E2,E3,E4,prepoint,controller)\n\t\n\t//################ S1 ##################\n\tSegment subSeg1E2ToS2():(subSeg2E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\tSegment subSeg2E2ToS2():(subSeg3E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E2ToS2():(subSeg4E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E2ToS2():(subSeg5E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E2ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\t\n\t//##################### S7 ##############\n\tSegment subSeg1E1ToS2():(subSeg2E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E1ToS2():(subSeg3E1ToS2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E1ToS2():(subSeg4E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E1ToS2():(subSeg5E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E1ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S2 ################\n\tSegment subSeg1S2ToE3():(subSeg2S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S2ToE3():(subSeg3S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S2ToE3():(subSeg4S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S2ToE3():(subSeg5S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S2ToE3():(null,null,null,sc,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S3 #############\n\tSegment subSeg1E3ToE4():(subSeg2E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E3ToE4():(subSeg3E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E3ToE4():(subSeg4E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E3ToE4():(subSeg5E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E3ToE4():(null,null,null,null,ds,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S6 #############\n\tSegment subSeg1S6ToE2():(subSeg2S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S6ToE2():(subSeg3S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S6ToE2():(subSeg4S6ToE2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S6ToE2():(subSeg5S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S6ToE2():(null,null,pc,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S5 #############\n\tSegment subSeg1S5ToE1():(subSeg2S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S5ToE1():(subSeg3S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S5ToE1():(null,wl,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S4 #############\n\tSegment subSeg1S4ToPre():(subSeg2S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S4ToPre():(subSeg3S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S4ToPre():(subSeg4S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S4ToPre():(subSeg5S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S4ToPre():(null,null,null,null,null,prePoint,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n}", "Vehicles", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>.")]));
   this.Lrebecaos_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $n($m_s_package$().s_package$__f_List);
-  var $$x4 = $m_sr_ScalaRunTime$();
-  var this$41 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((_$1) => {
+  var $$x11 = $m_sr_ScalaRunTime$();
+  var this$89 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((_$1) => {
     var _$1$1 = $as_T3(_$1);
     return $n(_$1$1).toString__T()
   })), new $c_Lcaos_view_Code("haskell")));
-  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$41, 0);
-  var $$x3 = new $c_T2("View pretty data", y);
-  var this$45 = $n($m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
+  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$89, 0);
+  var $$x10 = new $c_T2("View pretty data", y);
+  var this$93 = $n($m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
     var e$1 = $as_T3(e);
     return e$1
   })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st) => {
@@ -20865,58 +20959,98 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     return $m_Lrebecaos_syntax_Show$().apply__T3__T(st$1)
   })), new $c_sjsr_AnonFunction1(((_$2) => {
     var _$2$1 = $as_T(_$2);
-    var this$44 = $n(_$2$1);
-    return this$44
+    var this$92 = $n(_$2$1);
+    return this$92
   })), $m_Lcaos_view_Text$()));
-  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$45);
-  var $$x2 = new $c_T2("Run semantics", y$1);
-  var y$2 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$2) => {
+  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$93);
+  var $$x9 = new $c_T2("Run semantics", y$1);
+  var $$x6 = $m_Lcaos_frontend_Configurator$();
+  var $$x5 = new $c_sjsr_AnonFunction1(((e$2) => {
     var e$3 = $as_T3(e$2);
-    return e$3
-  })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st$2) => {
-    var st$3 = $as_T3(st$2);
-    return $m_Lrebecaos_syntax_Show$().short__T3__T(st$3)
+    $n($m_s_package$().s_package$__f_List);
+    var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([]));
+    var _2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1);
+    return new $c_T2(e$3, _2)
+  }));
+  var this$98 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
+  var sos = $m_Lrebecaos_backend_Semantics$();
+  var y$2 = $n($$x6).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x5, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos, this$98), new $c_sjsr_AnonFunction1(((st$2) => {
+    var st$3 = $as_T2(st$2);
+    var $$x7 = $m_Lrebecaos_syntax_Show$().apply__T3__T($as_T3($n(st$3)._1__O()));
+    var this$99 = $n($n($as_sci_List($n(st$3)._2__O())).reverse__sci_List());
+    return (($$x7 + "\n") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$99, "", " > ", ""))
   })), new $c_sjsr_AnonFunction1(((_$3) => {
     var _$3$1 = $as_T(_$3);
-    var this$48 = $n(_$3$1);
-    return this$48
-  })), 50);
-  var $$x1 = new $c_T2("Build LTS", y$2);
-  var initialSt = new $c_sjsr_AnonFunction1(((e$3$1) => {
+    var this$100 = $n(_$3$1);
+    return this$100
+  })), $m_Lcaos_view_Text$());
+  var $$x8 = new $c_T2("Run semantics2", y$2);
+  var $$x3 = $m_Lcaos_frontend_Configurator$();
+  var $$x2 = new $c_sjsr_AnonFunction1(((e$3$1) => {
     var e$4 = $as_T3(e$3$1);
-    return e$4
+    $n($m_s_package$().s_package$__f_List);
+    var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([]));
+    var _2$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2);
+    return new $c_T2(e$4, _2$1)
   }));
-  var sos = $m_Lrebecaos_backend_Semantics$();
-  var viewSt = new $c_sjsr_AnonFunction1(((st$3$1) => {
+  var this$105 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
+  var sos$1 = $m_Lrebecaos_backend_Semantics$();
+  var y$3 = $n($$x3).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x2, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos$1, this$105), new $c_sjsr_AnonFunction1(((hs) => {
+    var hs$1 = $as_T2(hs);
+    return $m_Lrebecaos_frontend_CaosConfig$HistorySOS$().toMermaid__T2__T(hs$1)
+  })), new $c_sjsr_AnonFunction1(((_$4) => {
+    var _$4$1 = $as_T(_$4);
+    var this$106 = $n(_$4$1);
+    return this$106
+  })), $m_Lcaos_view_Mermaid$());
+  var $$x4 = new $c_T2("Run semantics3", y$3);
+  var y$4 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$4$1) => {
+    var e$5 = $as_T3(e$4$1);
+    return e$5
+  })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st$3$1) => {
     var st$4 = $as_T3(st$3$1);
     return $m_Lrebecaos_syntax_Show$().short__T3__T(st$4)
+  })), new $c_sjsr_AnonFunction1(((_$5) => {
+    var _$5$1 = $as_T(_$5);
+    var this$109 = $n(_$5$1);
+    return this$109
+  })), 50);
+  var $$x1 = new $c_T2("Build LTS", y$4);
+  var initialSt = new $c_sjsr_AnonFunction1(((e$5$1) => {
+    var e$6 = $as_T3(e$5$1);
+    return e$6
   }));
-  var viewAct = new $c_sjsr_AnonFunction1(((_$4) => {
-    var _$4$1 = $as_T(_$4);
-    var this$51 = $n(_$4$1);
-    return this$51
+  var sos$2 = $m_Lrebecaos_backend_Semantics$();
+  var viewSt = new $c_sjsr_AnonFunction1(((st$4$1) => {
+    var st$5 = $as_T3(st$4$1);
+    return $m_Lrebecaos_syntax_Show$().short__T3__T(st$5)
   }));
-  var y$3 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos, viewSt, viewAct);
-  var elems$1 = $n($$x4).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x3, $$x2, $$x1, new $c_T2("Build LTS (explore)", y$3)]));
-  this.Lrebecaos_frontend_CaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1);
+  var viewAct = new $c_sjsr_AnonFunction1(((_$6) => {
+    var _$6$1 = $as_T(_$6);
+    var this$112 = $n(_$6$1);
+    return this$112
+  }));
+  var y$5 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos$2, viewSt, viewAct);
+  var elems$3 = $n($$x11).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x10, $$x9, $$x8, $$x4, $$x1, new $c_T2("Build LTS (explore)", y$5)]));
+  this.Lrebecaos_frontend_CaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3);
   this.Lrebecaos_frontend_CaosConfig$__f_footer = ($m_sc_StringOps$(), $m_sc_StringOps$().stripMargin$extension__T__C__T("Simple animator of rebecaOS, meant to exemplify the\n      | CAOS libraries, used to generate this website. Source code available online:\n      | <a target=\"_blank\" href=\"https://github.com/arcalab/CAOS\">\n      | https://github.com/arcalab/CAOS</a> (CAOS).", 124));
   $m_sc_StringOps$();
   var sosRules = $m_sc_StringOps$().stripMargin$extension__T__C__T("The operational rules that we use to reduce programs are provided below.\n      |These are explained, e.g. in\n      |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n      |<pre>\n      |WHEN\n      |  (\u03c3_ri(m), // statement\n      |   \u03c3_ri[now=max(TT,\u03c3_ri(now)),[arg=v],sender=rj], // env\n      |   Env,    // USELESS\n      |   B)      // outgoing messages // NOT NEEDED here\n      |  EVALUATES TO\n      |  (\u03c3'_ri,   // new env\n      |   Env',   // ALWAYS Env (without dynamic \"new\" creation)\n      |   B')     // new/updated outgoing messages\n      |IF\n      |  TT\u2264min(B) \u2227\n      |  \u03c3_ri(now)\u2264DL \u2227\n      |  (ri,m(v),rj,TT,DL) notin B \u2227\n      |  \u03c3_ri notin Env\n      |THEN\n      |  ({\u03c3ri}\u222aEnv,\n      |   {(ri,m(v),rj,TT,DL)}\u222aB)\n      |  \u2192\n      |  ({\u03c3'_ri} \u222a Env',\n      |   B')\n      |</pre>", 124);
-  var $$x9 = $m_Lcaos_frontend_Configurator$();
+  var $$x16 = $m_Lcaos_frontend_Configurator$();
   $n($m_s_package$().s_package$__f_List);
-  var $$x8 = $m_sr_ScalaRunTime$();
+  var $$x15 = $m_sr_ScalaRunTime$();
   var self = this.Lrebecaos_frontend_CaosConfig$__f_languageName;
   var self$1 = new $c_T2(self, "More information on the syntax of rebecaOS");
   $m_sc_StringOps$();
-  var y$4 = $m_sc_StringOps$().stripMargin$extension__T__C__T("The syntax and timed (static) semantics for a Rebeca program can be found, e.g., in\n        |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n        |", 124);
-  var $$x7 = new $c_T2(self$1, y$4);
+  var y$6 = $m_sc_StringOps$().stripMargin$extension__T__C__T("The syntax and timed (static) semantics for a Rebeca program can be found, e.g., in\n        |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n        |", 124);
+  var $$x14 = new $c_T2(self$1, y$6);
   var self$2 = new $c_T2("Build LTS", "More information on the operational rules used here");
-  var $$x6 = new $c_T2(self$2, sosRules);
+  var $$x13 = new $c_T2(self$2, sosRules);
   var self$3 = new $c_T2("Build LTS (explore)", "More information on the operational rules used here");
-  var $$x5 = new $c_T2(self$3, sosRules);
+  var $$x12 = new $c_T2(self$3, sosRules);
   var self$4 = new $c_T2("Run semantics", "More information on the operational rules used here");
-  var elems$2 = $n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x7, $$x6, $$x5, new $c_T2(self$4, sosRules)]));
-  this.Lrebecaos_frontend_CaosConfig$__f_documentation = $n($$x9).toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2))
+  var elems$4 = $n($$x15).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x14, $$x13, $$x12, new $c_T2(self$4, sosRules)]));
+  this.Lrebecaos_frontend_CaosConfig$__f_documentation = $n($$x16).toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$4))
 }
 $c_Lrebecaos_frontend_CaosConfig$.prototype = new $h_O();
 $c_Lrebecaos_frontend_CaosConfig$.prototype.constructor = $c_Lrebecaos_frontend_CaosConfig$;
@@ -20973,6 +21107,49 @@ function $m_Lrebecaos_frontend_CaosConfig$() {
   };
   return $n_Lrebecaos_frontend_CaosConfig$
 }
+/** @constructor */
+function $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos$2, outer) {
+  this.Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1__f_sos$1 = null;
+  this.Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1__f_sos$1 = sos$2;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  }
+}
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1.prototype = new $h_O();
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1.prototype.constructor = $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1;
+/** @constructor */
+function $h_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1() {
+  /*<skip>*/
+}
+$h_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1.prototype = $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1.prototype;
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1.prototype.next__T2__sci_Set = (function(s) {
+  return $as_sci_Set($n($n($n(this.Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1__f_sos$1).next__O__sci_Set($n(s)._1__O())).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
+    var x$1$1 = $as_T2(x$1);
+    return ((x$1$1 !== null) && ($n(x$1$1)._1__O(), $n(x$1$1)._2__O(), true))
+  })))).map__F1__O(new $c_sjsr_AnonFunction1(((x$1$2) => {
+    var x$1$3 = $as_T2(x$1$2);
+    if ((x$1$3 !== null)) {
+      var a$1 = $n(x$1$3)._1__O();
+      var s2$1 = $n(x$1$3)._2__O();
+      var this$2 = $n($as_sci_List($n(s)._2__O()));
+      var _2 = new $c_sci_$colon$colon(a$1, this$2);
+      var y = new $c_T2(s2$1, _2);
+      return new $c_T2(a$1, y)
+    };
+    throw new $c_s_MatchError(x$1$3)
+  }))))
+});
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1.prototype.next__O__sci_Set = (function(s) {
+  return this.next__T2__sci_Set($as_T2(s))
+});
+var $d_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1 = new $TypeData().initClass({
+  Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1: 0
+}, false, "rebecaos.frontend.CaosConfig$HistorySOS$$anon$1", {
+  Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1: 1,
+  O: 1,
+  Lcaos_sos_SOS: 1
+});
+$c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1.prototype.$classData = $d_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1;
 /** @constructor */
 function $c_s_$less$colon$less$() {
   this.s_$less$colon$less$__f_singleton = null;
@@ -22261,6 +22438,41 @@ var $d_s_util_hashing_MurmurHash3$accum$1 = new $TypeData().initClass({
   F2: 1
 });
 $c_s_util_hashing_MurmurHash3$accum$1.prototype.$classData = $d_s_util_hashing_MurmurHash3$accum$1;
+function $ct_s_util_matching_Regex__ju_regex_Pattern__sci_Seq__($thiz, pattern, groupNames) {
+  $thiz.s_util_matching_Regex__f_pattern = pattern;
+  return $thiz
+}
+function $ct_s_util_matching_Regex__T__sci_Seq__($thiz, regex, groupNames) {
+  $ct_s_util_matching_Regex__ju_regex_Pattern__sci_Seq__($thiz, $m_ju_regex_PatternCompiler$().compile__T__I__ju_regex_Pattern(regex, 0), groupNames);
+  return $thiz
+}
+/** @constructor */
+function $c_s_util_matching_Regex() {
+  this.s_util_matching_Regex__f_pattern = null
+}
+$c_s_util_matching_Regex.prototype = new $h_O();
+$c_s_util_matching_Regex.prototype.constructor = $c_s_util_matching_Regex;
+/** @constructor */
+function $h_s_util_matching_Regex() {
+  /*<skip>*/
+}
+$h_s_util_matching_Regex.prototype = $c_s_util_matching_Regex.prototype;
+$c_s_util_matching_Regex.prototype.findFirstIn__jl_CharSequence__s_Option = (function(source) {
+  var this$1 = $n(this.s_util_matching_Regex__f_pattern);
+  var m = new $c_ju_regex_Matcher(this$1, $dp_toString__T($n(source)));
+  return (m.find__Z() ? new $c_s_Some(m.group__T()) : $m_s_None$())
+});
+$c_s_util_matching_Regex.prototype.toString__T = (function() {
+  return $n(this.s_util_matching_Regex__f_pattern).ju_regex_Pattern__f__pattern
+});
+var $d_s_util_matching_Regex = new $TypeData().initClass({
+  s_util_matching_Regex: 0
+}, false, "scala.util.matching.Regex", {
+  s_util_matching_Regex: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_util_matching_Regex.prototype.$classData = $d_s_util_matching_Regex;
 /** @constructor */
 function $c_Lcaos_frontend_Documentation$() {
   /*<skip>*/

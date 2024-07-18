@@ -1,11 +1,12 @@
 package rebecaos.backend
 
 import caos.sos.SOS
-import rebecaos.backend.Semantics.{St,Act}
-import rebecaos.syntax.Program.{BExpr, Expr, GVar, IExpr, InstanceDecl, Msgsrv, QVar, ReactiveClass, Statement, System}
+import rebecaos.backend.Semantics.{Act, Rebecs, St}
+import rebecaos.syntax.Program.{BExpr, Expr, Expr2, GVar, IExpr, InstanceDecl, Msgsrv, QVar, ReactiveClass, Statement, System}
 import Statement.*
 import IExpr.*
 import BExpr.*
+import rebecaos.backend.Eval.Data
 import rebecaos.syntax.Show
 
 import scala.annotation.targetName
@@ -19,15 +20,24 @@ object Semantics extends SOS[Act,St]:
   type Rebecs = Map[String,RebecEnv]
   case class RebecEnv(vars:Valuation, rebs:KnownReb, meth:Methods, clazz: String):
     @targetName("addValuation")
-    def ++(vars2:Valuation) = RebecEnv(vars++vars2, rebs, meth, clazz)
+    def ++(vars2: Valuation) = RebecEnv(vars ++ vars2, rebs, meth, clazz)
     @targetName("addAssignment")
-    def +(vd:(String,Boolean|Int)) = RebecEnv(vars+vd,rebs,meth,clazz)
+    def +(vd:(String,Data)) = RebecEnv(vars+vd,rebs,meth,clazz)
+    @targetName("addRebecs")
+    def ++(rebs2: Iterable[(String,String)]) = RebecEnv(vars, rebs ++ rebs2, meth, clazz)
     @targetName("addRebec")
     def +(kn:(String,String)) = RebecEnv(vars,rebs+kn,meth,clazz)
     def now:Int = vars.getOrElse("now",0) match
-      case i:Int => i
+      case Data.N(i) => i
       case b => sys.error(s"variable 'now' should be an int, but it is '$b'.")
-  type Data = Boolean|Int
+  object RebecEnv:
+    private var seed=0;
+    def restart: Unit = seed=0
+    def newVar:String =
+      seed += 1
+      s"v${seed-1}"
+    def empty: RebecEnv = RebecEnv(Map(),Map(),Map(),"")
+//  type Data = Boolean|Int
   type Valuation = Map[String,Data]
   type KnownReb  = Map[String,String] // from local names to system names
   type Methods   = Map[String,Msgsrv]
@@ -37,20 +47,23 @@ object Semantics extends SOS[Act,St]:
                // receiver, method, args, sender, timeSend, deadline
 
   def initSt(s: System): St =
+    RebecEnv.restart
     (s, getInstances(s).toMap, Bag(getInitMsg(s)) )
 
   def getInstances(s: System): List[(String,RebecEnv)] =
     for dec <- s.main yield
-      val vars = Map("now"->0)
-      val clazz = s.classes.getOrElse(dec.clazz, sys.error(s"Unknown rebeca class: ${dec.clazz}"))
-      val meth = clazz.msgsrv
-      val rebs = unifyReb(clazz.known, dec.known) + ("self"->dec.name) //no sender
-      dec.name -> RebecEnv(vars,rebs,meth,dec.clazz)
+      instantiate(dec, s, Data.N(0))
+
+  def instantiate(dec: InstanceDecl, s:System, now:Data): (String,RebecEnv) =
+    val clazz = s.classes.getOrElse(dec.clazz, sys.error(s"Unknown rebeca class: ${dec.clazz}"))
+    val meth = clazz.msgsrv
+    val rebs = unifyReb(clazz.known, dec.known) + ("self"->dec.name) //no sender
+    dec.name -> RebecEnv(Map("now"->now),rebs,meth,dec.clazz)
 
   def getInitMsg(s: System): List[Msg] =
     for dec <- s.main yield
       //println(s"added ${dec.name}.initial(${dec.args})")
-      Msg(dec.name,"initial",dec.args,"",0,None)
+      Msg(dec.name,"initial",dec.args.map(a=>Eval(a)(using RebecEnv.empty)),"",0,None)
 
 //  /** Given a rebeca class name, a method name, a list of arguments, and a program, returns a concrete rebeca instance. */
 //  def instantiate(dec: InstanceDecl, msgsrvN:String, s:System): RebecInst =
@@ -66,11 +79,11 @@ object Semantics extends SOS[Act,St]:
 //    //    val x = subst(msgsrv.stm)(using msgsrv.vars.map(_.name).zip(decl.args).toMap) // ingoring types of arguments
 //    RebecInst(stm,env,Bag(),dec.clazz) //
 //
-  def unify(vars: List[QVar], vals: List[Int|Boolean]): Valuation = (vars,vals) match
+  def unify(vars: List[QVar], vals: List[Data]): Valuation = (vars,vals) match
     case (Nil,Nil) => Map()
-    case (QVar(v,"int")::restr, (d:Int)::restl) => unify(restr,restl)+(v->d)
-    case (QVar(v,"byte")::restr, (d:Int)::restl) => unify(restr,restl)+(v->d)
-    case (QVar(v,"boolean")::restr, (d:Boolean)::restl) => unify(restr,restl)+(v->d)
+    case (QVar(v,"int")::restr, (d:Data)::restl) => unify(restr,restl)+(v->d)
+    case (QVar(v,"byte")::restr, (d:Data)::restl) => unify(restr,restl)+(v->d)
+    case (QVar(v,"boolean")::restr, (d:Data)::restl) => unify(restr,restl)+(v->d)
     case (QVar(v,t)::restr, d::restl) => sys.error(s"Value $d: ${d.getClass.toString} does not match variable $v: $t.")
     case (Nil,_) => sys.error(s"Unexpected actual arguments: ${vals.mkString(",")}")
     case (_,Nil) => sys.error(s"Unexpected formal arguments: ${vars.mkString(",")}")
@@ -90,16 +103,17 @@ object Semantics extends SOS[Act,St]:
       msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if enabled(msg,initials,smallestTT) // priority to initials
       rebEnv <- st._2.get(rcv).toSet if enabledDL(msg,rebEnv) // getting the potential receiver
       mth <- rebEnv.meth.get(m).toSet // getting the potential method
-      (newEnv,newMsgs) <- evalStm( mth.stm)(using rebEnv ++ // evaluate the satement with extra variables:
+      (newEnv,newMsgs,newRebs) <- evalStm( mth.stm)(using rebEnv ++ // evaluate the satement with extra variables:
           unify(mth.vars,args) +         // adding vars=values
-          ("now" -> (rebEnv.now max tt)) + // setting "now" value
-          ("sender" -> snd) // setting the "sender"
+          ("now" -> Data.N(rebEnv.now max tt)) + // setting "now" value
+          ("sender" -> Data.RebRef(snd)), // setting the "sender"
+          st._1
         )
     yield
       val updMsg = newMsgs.map(m => subst(m,rebEnv.rebs + ("self"->rcv)))
       //println(s"# msg $rcv.$m - old msgs: ${st._3}; dropped $msg; adding ${newMsgs} --> $updMsg")
       (msg,updMsg)
-        -> (st._1, st._2 + (rcv -> newEnv), (st._3 - msg) ++ updMsg)
+        -> (st._1, (st._2 + (rcv -> newEnv)) ++ newRebs, (st._3 - msg) ++ updMsg)
 
   def enabled(m: Msg, initials: Set[String],smallestTT: Int): Boolean =
     ((!initials(m.rcv)) || (initials(m.rcv) && m.m=="initial")) &&
@@ -108,48 +122,66 @@ object Semantics extends SOS[Act,St]:
   def enabledDL(m: Msg, env: RebecEnv): Boolean =
       m.dl.isEmpty || (m.dl.get >= env.now)
 
-  def evalStmDb(stm:Statement)(using reb: RebecEnv): Set[(RebecEnv, Msgs)] =
+  def evalStmDb(stm:Statement)(using reb: RebecEnv, sys:System): Set[(RebecEnv, Msgs, Rebecs)] =
     println(s"evaluating $stm knowing $reb")
     val res = evalStm(stm)
     println(s"--> Got: $res")
     res
 
-  def evalStm(stm:Statement)(using reb: RebecEnv): Set[(RebecEnv, Msgs)] = stm match
-    case Skip => Set(reb -> Bag())
+  def evalStm(stm:Statement)(using reb: RebecEnv, sys:System): Set[(RebecEnv, Msgs, Rebecs)] = stm match
+    case Skip => Set((reb,Bag(),Map()))
     case Seq(Skip, c2) => evalStm(c2)
     case Seq(c1, c2) =>
       for
-        (sigma,msgs) <- evalStm(c1)
-        (sigma2,msgs2) <- evalStm(c2)(using reb++sigma.vars)
+        (sigma,msgs,r1) <- evalStm(c1)
+        (sigma2,msgs2,r2) <- evalStm(c2)(using reb++sigma.vars++sigma.rebs)
       yield
-        sigma2 -> (msgs ++ msgs2)
+        (sigma2 , msgs ++ msgs2 , r1 ++ r2)
     case Assign(ident, e) =>
-      val reb2 = reb + (ident -> eval(e)(using reb))
-      Set(reb2 -> Bag())
-    case ITE(b, ct, cf) => if (eval(b)(using reb))
+      val reb2 = reb + (ident -> Eval(e)(using reb))
+      Set((reb2 , Bag() , Map()))
+    case ITE(b, ct, cf) => if (Eval(b)(using reb).toBool)
       then evalStm(ct)
       else evalStm(cf)
     case Choice(v, options) =>
       for opt <- options.toSet yield
-        val newopt = eval(opt)(using reb)
+        val newopt = Eval(opt)(using reb)
         val sigma2 = reb + (v -> newopt)
-        sigma2 -> Bag()
+        (sigma2 , Bag() , Map())
+    case NewReb(dec) =>
+      // need to:
+      // (1) create a new instance with a global name,
+      //     replacing only known rebecs and using a correct "now", and
+      // (2) add a new msg to initialise it, evaluating arguments
+      val globalName = RebecEnv.newVar
+      val newKnown = dec.known.map(k => reb.rebs.getOrElse(k,k))
+      val dec2 = InstanceDecl(dec.clazz,globalName,newKnown,dec.args)
+//      val updReb = reb ++
+//        unify(mth.vars, args) + // adding vars=values
+//        ("now" -> Data.N(rebEnv.now max tt)) + // setting "now" value
+//        ("sender" -> Data.RebRef(snd))
+      val (localName,reb2) = instantiate(dec2,sys,Data.N(reb.now))
+      val msg = Msg(globalName,"initial",dec.args.map(a=>Eval(a)(using reb)),"",reb.now,None)
+//      val reb3 =
+      Set((reb + (localName->globalName), Bag()+msg, Map(globalName -> reb2)))
     case Call(rebec, meth, args, after, deadline) =>
-      val after2 = after.map(e=> eval(e)(using reb))
-      val deadline2 = deadline.map(e=> eval(e)(using reb))
-      val tt = reb.now + after2.getOrElse(0)
-      val dl = deadline2.map(_ + reb.now)
+      val after2 = after.map(e=> Eval(e)(using reb))
+      val deadline2 = deadline.map(e=> Eval(e)(using reb))
+      val tt = reb.now + after2.map(_.toInt).getOrElse(0)
+      val dl = deadline2.map(_.toInt + reb.now)
 //      println(s"DEADLINE - updated from $deadline to $deadline2 to $dl (and 'after' set to $after2 to $tt)")
 //      println(s"msg: ${Show(Msg(rebec,meth,args.map(e=>eval(e)(using reb.vars)),"self",tt,dl))} -- ${Msg(rebec,meth,args.map(e=>eval(e)(using reb.vars)),"self",tt,dl)}")
-      Set(reb -> (Bag() + Msg(rebec,meth,args.map(e=>eval(e)(using reb)),"self",tt,dl)))
+      Set((reb,
+           Bag() + Msg(rebec,meth,args.map(e=>Eval(e)(using reb)),"self",tt,dl),
+           Map()))
 //    case Call(rebec, meth, args, _, _) => sys.error("Semantics of calls with time not yet supported.")
     case Delay(d) => // sys.error("Semantics of delay not yet supported.")
-      val d2 = eval(d)(using reb)
-      val tt = reb.vars.get("now") match
-        case Some(i: Int) => i + d2
-        case None => d2
-        case Some(b) => sys.error(s"variable 'now' should be an int, but it is '$b'.")
-      Set(reb+("now"->tt) -> Bag())
+      val tt = reb.now + Eval(d).toInt
+//        reb.vars.get("now") match
+//        case Some(i: Int) => i + d2
+//        case None => d2
+//        case Some(b) => sys.error(s"variable 'now' should be an int, but it is '$b'.")
+      Set((reb+("now"->Data.N(tt)) , Bag() , Map()))
 
   def evalReb(rebName:String, rebecs: Rebecs): RebecEnv =
     rebecs.getOrElse(rebName, sys.error(s"Rebec instance '$rebName' not found - known: {${rebecs.keySet.mkString(",")}}"))
@@ -208,57 +240,57 @@ object Semantics extends SOS[Act,St]:
 //    case Impl(e1, e2) => Impl(subst(e1), subst(e2))
 //    case _ => b
 
-  def substReb(stm: Statement)(using rebs:Map[String,String]): Statement = stm match
-    case Skip => Skip
-    case Seq(c1, c2) => Seq(substReb(c1),substReb(c2))
-    case Assign(ident, e) => stm
-    case ITE(b, ct, cf) => ITE(b,substReb(ct),substReb(cf))
-    case Choice(v, options) => stm
-    case Call(rebec, meth, args, after, dl) =>
-      Call(rebs.getOrElse(rebec,sys.error(s"rebec $rebec not found in $stm")),meth,args,after,dl)
-    case Delay(d) => stm
+//  def substReb(stm: Statement)(using rebs:Map[String,String]): Statement = stm match
+//    case Skip => Skip
+//    case Seq(c1, c2) => Seq(substReb(c1),substReb(c2))
+//    case Assign(ident, e) => stm
+//    case ITE(b, ct, cf) => ITE(b,substReb(ct),substReb(cf))
+//    case Choice(v, options) => stm
+//    case Call(rebec, meth, args, after, dl) =>
+//      Call(rebs.getOrElse(rebec,sys.error(s"rebec $rebec not found in $stm")),meth,args,after,dl)
+//    case Delay(d) => stm
 
-  def eval(e: Expr)(using env: RebecEnv): Int|Boolean = e match
-    case GVar("false") => false
-    case GVar("true") => true
-    case GVar(name) => env.vars.get(name) match
-      case Some(value) => value
-      case None => env.rebs.get(name) match
-        case Some(str) => str.hashCode
-        case None => sys.error(s"Unknown variable: '$name'")
-//    case IVar("false") => false
-//    case IVar("true") => true
-    case iexpr: IExpr => eval(iexpr)
-    case bexpr: BExpr => eval(bexpr)
-
-  def eval(e: IExpr)(using env: RebecEnv): Int = e match
-    case N(n) => n
-    case IVar(ident) => env.vars.get(ident) match
-      case Some(value: Int) => value
-      case Some(value: Boolean) => sys.error(s"Variable $ident has type Boolean ($value), but expected an Int.")
-      case None => env.rebs.get(ident) match
-        case Some(str) => str.hashCode
-        case None => sys.error(s"Unknown integer variable: '$ident'")
-    case Plus(e1, e2) => eval(e1) + eval(e2)
-    case Times(e1, e2) => eval(e1) * eval(e2)
-    case Minus(e1, e2) => eval(e1) - eval(e2)
-    case Power(e1, e2) => Math.pow(eval(e1), eval(e2)).toInt
-
-  def eval(e: BExpr)(using env: RebecEnv): Boolean = e match
-    case BTrue => true
-    case BFalse => false
-    case BVar(ident) => env.vars.get(ident) match
-      case Some(value: Boolean) => value
-      case Some(value: Int) => sys.error(s"Variable $ident has type Int ($value), but expected an Boolean.")
-      case None => sys.error(s"Unknown boolean variable: '$ident'")
-    case And(b1, b2) => eval(b1) && eval(b2)
-    case Or(b1, b2) => eval(b1) || eval(b2)
-    case Not(b) => !eval(b)
-    case Less(e1, e2) => toInt(eval(e1)) < toInt(eval(e2))
-    case Greater(e1, e2) => toInt(eval(e1)) > toInt(eval(e2))
-    case Eq(e1, e2) => eval(e1) == eval(e2)
-    case Impl(e1, e2) => (!eval(e1)) || eval(e2)
-
-  private def toInt(x:Int|Boolean): Int = x match
-    case i:Int => i
-    case _ => sys.error(s"Expected int but found'$x'")
+//  def eval(e: Expr)(using env: RebecEnv): Int|Boolean = e match
+//    case GVar("false") => false
+//    case GVar("true") => true
+//    case GVar(name) => env.vars.get(name) match
+//      case Some(value) => value
+//      case None => env.rebs.get(name) match
+//        case Some(str) => str.hashCode
+//        case None => sys.error(s"Unknown variable: '$name'")
+////    case IVar("false") => false
+////    case IVar("true") => true
+//    case iexpr: IExpr => eval(iexpr)
+//    case bexpr: BExpr => eval(bexpr)
+//
+//  def eval(e: IExpr)(using env: RebecEnv): Int = e match
+//    case N(n) => n
+//    case IVar(ident) => env.vars.get(ident) match
+//      case Some(value: Int) => value
+//      case Some(value: Boolean) => sys.error(s"Variable $ident has type Boolean ($value), but expected an Int.")
+//      case None => env.rebs.get(ident) match
+//        case Some(str) => str.hashCode
+//        case None => sys.error(s"Unknown integer variable: '$ident'")
+//    case Plus(e1, e2) => eval(e1) + eval(e2)
+//    case Times(e1, e2) => eval(e1) * eval(e2)
+//    case Minus(e1, e2) => eval(e1) - eval(e2)
+//    case Power(e1, e2) => Math.pow(eval(e1), eval(e2)).toInt
+//
+//  def eval(e: BExpr)(using env: RebecEnv): Boolean = e match
+//    case BTrue => true
+//    case BFalse => false
+//    case BVar(ident) => env.vars.get(ident) match
+//      case Some(value: Boolean) => value
+//      case Some(value: Int) => sys.error(s"Variable $ident has type Int ($value), but expected an Boolean.")
+//      case None => sys.error(s"Unknown boolean variable: '$ident'")
+//    case And(b1, b2) => eval(b1) && eval(b2)
+//    case Or(b1, b2) => eval(b1) || eval(b2)
+//    case Not(b) => !eval(b)
+//    case Less(e1, e2) => toInt(eval(e1)) < toInt(eval(e2))
+//    case Greater(e1, e2) => toInt(eval(e1)) > toInt(eval(e2))
+//    case Eq(e1, e2) => eval(e1) == eval(e2)
+//    case Impl(e1, e2) => (!eval(e1)) || eval(e2)
+//
+//  private def toInt(x:Int|Boolean): Int = x match
+//    case i:Int => i
+//    case _ => sys.error(s"Expected int but found'$x'")

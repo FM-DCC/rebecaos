@@ -2316,6 +2316,53 @@ function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRe
     throw new $c_s_MatchError(x44)
   }
 }
+function $p_Lcaos_sos_SOS$__aux$3__Lcaos_sos_SOS__sci_Set__sci_Set__I__I__T3($thiz, sos$7, next, done, edges, limit) {
+  var limit$tailLocal2 = limit;
+  var edges$tailLocal2 = edges;
+  var done$tailLocal2 = done;
+  var next$tailLocal3 = next;
+  while (true) {
+    if ((limit$tailLocal2 <= 0)) {
+      var _1 = done$tailLocal2;
+      var _2 = edges$tailLocal2;
+      return new $c_T3(_1, _2, false)
+    };
+    var this$2 = $n(next$tailLocal3);
+    var x54 = $f_sc_IterableOps__headOption__s_Option(this$2);
+    var x = $m_s_None$();
+    if ((x === x54)) {
+      var _1$1 = done$tailLocal2;
+      var _2$1 = edges$tailLocal2;
+      return new $c_T3(_1$1, _2$1, true)
+    };
+    if ((x54 instanceof $c_s_Some)) {
+      var x58 = $n($as_s_Some(x54)).s_Some__f_value;
+      if ($n(done$tailLocal2).contains__O__Z(x58)) {
+        var this$4 = $n(next$tailLocal3);
+        next$tailLocal3 = $as_sci_Set(this$4.excl__O__sci_SetOps(x58));
+        continue
+      };
+      var more = $n(sos$7).next__O__sci_Set(x58);
+      var this$5 = $n(next$tailLocal3);
+      var this$7 = $n(this$5.excl__O__sci_SetOps(x58));
+      var that = $as_sc_IterableOnce($n(more).map__F1__O(new $c_sjsr_AnonFunction1(((_$2) => {
+        var _$2$1 = $as_T2(_$2);
+        return $n(_$2$1)._2__O()
+      }))));
+      var next$tailLocal3$tmp1 = $as_sci_Set(this$7.concat__sc_IterableOnce__sc_SetOps(that));
+      var this$8 = $n(done$tailLocal2);
+      var done$tailLocal2$tmp1 = $as_sci_Set(this$8.incl__O__sci_SetOps(x58));
+      var edges$tailLocal2$tmp1 = ((edges$tailLocal2 + $n(more).size__I()) | 0);
+      var limit$tailLocal2$tmp1 = ((limit$tailLocal2 - $n(more).size__I()) | 0);
+      next$tailLocal3 = next$tailLocal3$tmp1;
+      done$tailLocal2 = done$tailLocal2$tmp1;
+      edges$tailLocal2 = edges$tailLocal2$tmp1;
+      limit$tailLocal2 = limit$tailLocal2$tmp1;
+      continue
+    };
+    throw new $c_s_MatchError(x54)
+  }
+}
 /** @constructor */
 function $c_Lcaos_sos_SOS$() {
   /*<skip>*/
@@ -2339,6 +2386,14 @@ $c_Lcaos_sos_SOS$.prototype.toMermaid__Lcaos_sos_SOS__O__F1__F1__I__T = (functio
   var this$5 = $n($m_s_Predef$().s_Predef$__f_Set);
   var elems$2 = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([]));
   return ("graph TD\n  style 0 fill:#8f7,stroke:#363,stroke-width:4px;" + $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRef__sci_Set__sci_Set__I__T(this, sos, showSt, showAct, i, _ids, $$x1, this$5.from__sc_IterableOnce__sci_Set(elems$2), maxNodes))
+});
+$c_Lcaos_sos_SOS$.prototype.traverseEdges__Lcaos_sos_SOS__O__I__T3 = (function(sos, s, max) {
+  var this$1 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var elems = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([s]));
+  var $$x1 = this$1.from__sc_IterableOnce__sci_Set(elems);
+  var this$2 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var elems$1 = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([]));
+  return $p_Lcaos_sos_SOS$__aux$3__Lcaos_sos_SOS__sci_Set__sci_Set__I__I__T3(this, sos, $$x1, this$2.from__sc_IterableOnce__sci_Set(elems$1), 0, max)
 });
 var $d_Lcaos_sos_SOS$ = new $TypeData().initClass({
   Lcaos_sos_SOS$: 0
@@ -4695,9 +4750,6 @@ $c_Lcats_parse_Parser0.prototype.$qmark__Lcats_parse_Parser0 = (function() {
 });
 $c_Lcats_parse_Parser0.prototype.void__Lcats_parse_Parser0 = (function() {
   return $m_Lcats_parse_Parser$().void0__Lcats_parse_Parser0__Lcats_parse_Parser0(this)
-});
-$c_Lcats_parse_Parser0.prototype.backtrack__Lcats_parse_Parser0 = (function() {
-  return $m_Lcats_parse_Parser$().backtrack0__Lcats_parse_Parser0__Lcats_parse_Parser0(this)
 });
 $c_Lcats_parse_Parser0.prototype.$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0 = (function(that) {
   return $m_Lcats_parse_Parser$().product0__Lcats_parse_Parser0__Lcats_parse_Parser0__Lcats_parse_Parser0(this, that)
@@ -10212,6 +10264,218 @@ function $m_RTLong$() {
   };
   return $n_RTLong$
 }
+/** @constructor */
+function $c_Lrebecaos_backend_Eval$() {
+  /*<skip>*/
+}
+$c_Lrebecaos_backend_Eval$.prototype = new $h_O();
+$c_Lrebecaos_backend_Eval$.prototype.constructor = $c_Lrebecaos_backend_Eval$;
+/** @constructor */
+function $h_Lrebecaos_backend_Eval$() {
+  /*<skip>*/
+}
+$h_Lrebecaos_backend_Eval$.prototype = $c_Lrebecaos_backend_Eval$.prototype;
+$c_Lrebecaos_backend_Eval$.prototype.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data = (function(e, env) {
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$N)) {
+    var x$1 = $as_Lrebecaos_syntax_Program$Expr2$N(e);
+    var this$2 = $n(x$1);
+    var x146 = this$2.Lrebecaos_syntax_Program$Expr2$N__f_n;
+    return new $c_Lrebecaos_backend_Eval$Data$N(x146)
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$B)) {
+    var x$1$1 = $as_Lrebecaos_syntax_Program$Expr2$B(e);
+    var this$5 = $n(x$1$1);
+    var x143 = this$5.Lrebecaos_syntax_Program$Expr2$B__f_b;
+    return new $c_Lrebecaos_backend_Eval$Data$B(x143)
+  };
+  if (false) {
+    var x$1$2 = $as_Lrebecaos_syntax_Program$Expr2$RebRef(e);
+    var x140 = $n(x$1$2)._1__T();
+    return new $c_Lrebecaos_backend_Eval$Data$RebRef(x140)
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Var)) {
+    var x$1$3 = $as_Lrebecaos_syntax_Program$Expr2$Var(e);
+    var this$10 = $n(x$1$3);
+    var x137 = this$10.Lrebecaos_syntax_Program$Expr2$Var__f_v;
+    var x28 = $n($n(env).Lrebecaos_backend_Semantics$RebecEnv__f_vars).get__O__s_Option(x137);
+    if ((x28 instanceof $c_s_Some)) {
+      var x40 = $as_Lrebecaos_backend_Eval$Data($n($as_s_Some(x28)).s_Some__f_value);
+      if ((x40 instanceof $c_Lrebecaos_backend_Eval$Data$N)) {
+        var x$1$4 = $as_Lrebecaos_backend_Eval$Data$N(x40);
+        var this$12 = $n(x$1$4);
+        var x43 = this$12.Lrebecaos_backend_Eval$Data$N__f_n;
+        return new $c_Lrebecaos_backend_Eval$Data$N(x43)
+      };
+      if ((x40 instanceof $c_Lrebecaos_backend_Eval$Data$B)) {
+        var x$1$5 = $as_Lrebecaos_backend_Eval$Data$B(x40);
+        var this$15 = $n(x$1$5);
+        var x38 = this$15.Lrebecaos_backend_Eval$Data$B__f_b;
+        return new $c_Lrebecaos_backend_Eval$Data$B(x38)
+      };
+      if ((x40 instanceof $c_Lrebecaos_backend_Eval$Data$RebRef)) {
+        var x$1$6 = $as_Lrebecaos_backend_Eval$Data$RebRef(x40);
+        var this$18 = $n(x$1$6);
+        var x33 = this$18.Lrebecaos_backend_Eval$Data$RebRef__f_r;
+        return new $c_Lrebecaos_backend_Eval$Data$RebRef(x33)
+      }
+    };
+    var x = $m_s_None$();
+    if ((x === x28)) {
+      var x25 = $n($n(env).Lrebecaos_backend_Semantics$RebecEnv__f_rebs).get__O__s_Option(x137);
+      if ((x25 instanceof $c_s_Some)) {
+        var str = $as_T($n($as_s_Some(x25)).s_Some__f_value);
+        return new $c_Lrebecaos_backend_Eval$Data$RebRef(str)
+      };
+      var x$3 = $m_s_None$();
+      if ((x$3 === x25)) {
+        $m_s_sys_package$().error__T__E((("Unknown variable '" + x137) + "'."))
+      };
+      throw new $c_s_MatchError(x25)
+    };
+    throw new $c_s_MatchError(x28)
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Infix)) {
+    var x$1$7 = $as_Lrebecaos_syntax_Program$Expr2$Infix(e);
+    var this$22 = $n(x$1$7);
+    var x132 = this$22.Lrebecaos_syntax_Program$Expr2$Infix__f_op;
+    var this$23 = $n(x$1$7);
+    var x133 = this$23.Lrebecaos_syntax_Program$Expr2$Infix__f_e1;
+    var this$24 = $n(x$1$7);
+    var x134 = this$24.Lrebecaos_syntax_Program$Expr2$Infix__f_e2;
+    if ((x132 === "&&")) {
+      var b = ($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x133, env)).toBool__Z() && $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x134, env)).toBool__Z());
+      return new $c_Lrebecaos_backend_Eval$Data$B(b)
+    };
+    if ((x132 === "||")) {
+      var b$1 = ($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x133, env)).toBool__Z() || $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x134, env)).toBool__Z());
+      return new $c_Lrebecaos_backend_Eval$Data$B(b$1)
+    };
+    if ((x132 === "=>")) {
+      var b$2 = ((!$n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x133, env)).toBool__Z()) || $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x134, env)).toBool__Z());
+      return new $c_Lrebecaos_backend_Eval$Data$B(b$2)
+    }
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Func)) {
+    var x$1$8 = $as_Lrebecaos_syntax_Program$Expr2$Func(e);
+    var this$29 = $n(x$1$8);
+    var x116 = this$29.Lrebecaos_syntax_Program$Expr2$Func__f_op;
+    var this$30 = $n(x$1$8);
+    var x117 = this$30.Lrebecaos_syntax_Program$Expr2$Func__f_es;
+    if (((x116 === "not") && (x117 !== null))) {
+      $n($m_s_package$().s_package$__f_List);
+      if (($n(x117).lengthCompare__I__I(1) === 0)) {
+        var this$34 = $n(x117);
+        var x119 = $as_Lrebecaos_syntax_Program$Expr2($f_sc_LinearSeqOps__apply__I__O(this$34, 0));
+        var b$3 = (!$n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x119, env)).toBool__Z());
+        return new $c_Lrebecaos_backend_Eval$Data$B(b$3)
+      }
+    }
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Infix)) {
+    var x$1$9 = $as_Lrebecaos_syntax_Program$Expr2$Infix(e);
+    var this$37 = $n(x$1$9);
+    var x111 = this$37.Lrebecaos_syntax_Program$Expr2$Infix__f_op;
+    var this$38 = $n(x$1$9);
+    var x112 = this$38.Lrebecaos_syntax_Program$Expr2$Infix__f_e1;
+    var this$39 = $n(x$1$9);
+    var x113 = this$39.Lrebecaos_syntax_Program$Expr2$Infix__f_e2;
+    switch (x111) {
+      case "+": {
+        var n = (($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I() + $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I()) | 0);
+        return new $c_Lrebecaos_backend_Eval$Data$N(n);
+        break
+      }
+      case "-": {
+        var n$1 = (($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I() - $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I()) | 0);
+        return new $c_Lrebecaos_backend_Eval$Data$N(n$1);
+        break
+      }
+      case "*": {
+        var n$2 = Math.imul($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I(), $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I());
+        return new $c_Lrebecaos_backend_Eval$Data$N(n$2);
+        break
+      }
+      case "/": {
+        var n$3 = $intDiv($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I(), $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I());
+        return new $c_Lrebecaos_backend_Eval$Data$N(n$3);
+        break
+      }
+      case "%": {
+        var n$4 = $intMod($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I(), $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I());
+        return new $c_Lrebecaos_backend_Eval$Data$N(n$4);
+        break
+      }
+      case "^": {
+        var x$2 = $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I();
+        var x$5 = x$2;
+        var x$4 = $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I();
+        var y = x$4;
+        var n$5 = $doubleToInt($uD(Math.pow(x$5, y)));
+        return new $c_Lrebecaos_backend_Eval$Data$N(n$5);
+        break
+      }
+      case "<": {
+        var b$4 = ($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I() < $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I());
+        return new $c_Lrebecaos_backend_Eval$Data$B(b$4);
+        break
+      }
+      case ">": {
+        var b$5 = ($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I() > $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I());
+        return new $c_Lrebecaos_backend_Eval$Data$B(b$5);
+        break
+      }
+      case "<=": {
+        var b$6 = ($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I() <= $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I());
+        return new $c_Lrebecaos_backend_Eval$Data$B(b$6);
+        break
+      }
+      case ">=": {
+        var b$7 = ($n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env)).toInt__I() >= $n(this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env)).toInt__I());
+        return new $c_Lrebecaos_backend_Eval$Data$B(b$7);
+        break
+      }
+      case "==": {
+        var x$5$1 = this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env);
+        var x$6 = this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env);
+        var b$8 = ((x$5$1 === null) ? (x$6 === null) : $n(x$5$1).equals__O__Z(x$6));
+        return new $c_Lrebecaos_backend_Eval$Data$B(b$8);
+        break
+      }
+      case "!=": {
+        var x$7 = this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x112, env);
+        var x$8 = this.apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x113, env);
+        var b$9 = (!((x$7 === null) ? (x$8 === null) : $n(x$7).equals__O__Z(x$8)));
+        return new $c_Lrebecaos_backend_Eval$Data$B(b$9);
+        break
+      }
+      default: {
+        $m_s_sys_package$().error__T__E(((("Unknonw operator '" + x111) + "' in ") + e))
+      }
+    }
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Func)) {
+    var x$1$10 = $as_Lrebecaos_syntax_Program$Expr2$Func(e);
+    var this$57 = $n(x$1$10);
+    var x47 = this$57.Lrebecaos_syntax_Program$Expr2$Func__f_op;
+    var this$58 = $n(x$1$10);
+    $m_s_sys_package$().error__T__E(((("Unknonw function '" + x47) + "' in ") + e))
+  };
+  throw new $c_s_MatchError(e)
+});
+var $d_Lrebecaos_backend_Eval$ = new $TypeData().initClass({
+  Lrebecaos_backend_Eval$: 0
+}, false, "rebecaos.backend.Eval$", {
+  Lrebecaos_backend_Eval$: 1,
+  O: 1
+});
+$c_Lrebecaos_backend_Eval$.prototype.$classData = $d_Lrebecaos_backend_Eval$;
+var $n_Lrebecaos_backend_Eval$;
+function $m_Lrebecaos_backend_Eval$() {
+  if ((!$n_Lrebecaos_backend_Eval$)) {
+    $n_Lrebecaos_backend_Eval$ = new $c_Lrebecaos_backend_Eval$()
+  };
+  return $n_Lrebecaos_backend_Eval$
+}
 function $p_Lrebecaos_frontend_CaosConfig$HistorySOS$__getFrom__Lrebecaos_backend_Semantics$Msg__T($thiz, a) {
   return ($f_T__isBlank__Z($n($n(a).Lrebecaos_backend_Semantics$Msg__f_snd)) ? $n(a).Lrebecaos_backend_Semantics$Msg__f_rcv : $n(a).Lrebecaos_backend_Semantics$Msg__f_snd)
 }
@@ -10468,89 +10732,27 @@ function $p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser($thiz) {
   return $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$9, $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59))
 }
 function $p_Lrebecaos_syntax_Parser$__basicStm$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$3) {
-  var this$1 = $n($p_Lrebecaos_syntax_Parser$__skip$1__Lcats_parse_Parser($thiz));
+  var this$1 = $n($thiz.skip__Lcats_parse_Parser());
   var that = $p_Lrebecaos_syntax_Parser$__ite$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$3);
   var this$2 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var that$1 = $p_Lrebecaos_syntax_Parser$__delay$1__Lcats_parse_Parser($thiz);
+  var that$1 = $thiz.delay__Lcats_parse_Parser();
   var this$3 = $n(this$2.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
   var that$2 = $p_Lrebecaos_syntax_Parser$__ite$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$3);
   var this$5 = $n(this$3.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
-  var this$4 = $n($p_Lrebecaos_syntax_Parser$__call$1__Lcats_parse_Parser($thiz));
+  var this$4 = $n($thiz.call__Lcats_parse_Parser());
   var that$3 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$4);
   var this$7 = $n(this$5.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
   var this$6 = $n($p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz));
   var that$4 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$6);
-  var this$8 = $n(this$7.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4));
-  var that$5 = $p_Lrebecaos_syntax_Parser$__choice$1__Lcats_parse_Parser($thiz);
-  return this$8.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$5)
-}
-function $p_Lrebecaos_syntax_Parser$__skip$1__Lcats_parse_Parser($thiz) {
-  var this$1 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("skip"));
-  var that = $p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser($thiz);
-  $m_Lcats_parse_Parser$();
-  var this$4 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
-  var b = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
-  return $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$4, b)
-}
-function $p_Lrebecaos_syntax_Parser$__call$1__Lcats_parse_Parser($thiz) {
-  var this$1 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
-  var that = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(46)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps);
-  $m_Lcats_parse_Parser$();
-  var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
-  var $$x1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps);
-  var this$4 = $n($thiz.expr__Lcats_parse_Parser());
-  var sep = $n($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($thiz.Lrebecaos_syntax_Parser$__f_sps);
-  var this$5 = $m_Lcats_parse_Parser$();
-  var that$1 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$5.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$4, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps);
-  $m_Lcats_parse_Parser$();
-  var this$9 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
-  var that$2 = $n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("after")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n($thiz.iexpr__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps))).$qmark__Lcats_parse_Parser0();
-  $m_Lcats_parse_Parser$();
-  var this$12 = new $c_Lcats_parse_Parser$Impl$Prod(this$9, that$2);
-  var that$3 = $n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("deadline")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($thiz.iexpr__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41)))).$qmark__Lcats_parse_Parser0();
-  $m_Lcats_parse_Parser$();
-  var this$17 = $n(new $c_Lcats_parse_Parser$Impl$Prod(this$12, that$3).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser($thiz)));
-  var fn = new $c_sjsr_AnonFunction1(((x) => {
-    var x$1 = $as_T2(x);
-    var rebec = $as_T($n($as_T2($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O()))._1__O());
-    var meth = $as_T($n($as_T2($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O()))._2__O());
-    var args = $as_sci_List($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._2__O());
-    var after = $as_s_Option($n($as_T2($n(x$1)._1__O()))._2__O());
-    var dl = $as_s_Option($n(x$1)._2__O());
-    return new $c_Lrebecaos_syntax_Program$Statement$Call(rebec, meth, args, after, dl)
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$17, fn)
-}
-function $p_Lrebecaos_syntax_Parser$__choice$1__Lcats_parse_Parser($thiz) {
-  var this$3 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
-  var $$x1 = $n($n($n($n($n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(61)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(63))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
-  var this$1 = $n($thiz.iexpr__Lcats_parse_Parser());
-  var sep = $n($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($thiz.Lrebecaos_syntax_Parser$__f_sps);
-  var this$2 = $m_Lcats_parse_Parser$();
-  var that = $n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n(this$2.repSep__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser(this$1, 1, sep)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser($thiz)));
-  $m_Lcats_parse_Parser$();
-  var this$10 = new $c_Lcats_parse_Parser$Impl$Prod(this$3, that);
-  var fn = new $c_sjsr_AnonFunction1(((x) => {
-    var x$1 = $as_T2(x);
-    var v = $as_T($n(x$1)._1__O());
-    var this$7 = $n($as_Lcats_data_NonEmptyList($n(x$1)._2__O()));
-    var this$8 = $n(this$7.Lcats_data_NonEmptyList__f_tail);
-    var elem = this$7.Lcats_data_NonEmptyList__f_head;
-    var options = new $c_sci_$colon$colon(elem, this$8);
-    return new $c_Lrebecaos_syntax_Program$Statement$Choice(v, options)
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn)
-}
-function $p_Lrebecaos_syntax_Parser$__delay$1__Lcats_parse_Parser($thiz) {
-  var this$3 = $n($n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("delay")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n($thiz.iexpr__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser($thiz))));
-  var fn = new $c_sjsr_AnonFunction1(((d) => {
-    var d$1 = $as_Lrebecaos_syntax_Program$IExpr(d);
-    return new $c_Lrebecaos_syntax_Program$Statement$Delay(d$1)
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$3, fn)
+  var this$9 = $n(this$7.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4));
+  var this$8 = $n($thiz.choice__Lcats_parse_Parser());
+  var that$5 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$8);
+  var this$10 = $n(this$9.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$5));
+  var that$6 = $thiz.newInst__Lcats_parse_Parser();
+  return this$10.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$6)
 }
 function $p_Lrebecaos_syntax_Parser$__ite$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$2) {
-  var this$1 = $n($n($n($n($n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("if")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.bexpr__Lcats_parse_Parser())).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
+  var this$1 = $n($n($n($n($n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("if")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.expr2__Lcats_parse_Parser())).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
   var that = $n($p_Lrebecaos_syntax_Parser$__commBlock$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$2)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps);
   $m_Lcats_parse_Parser$();
   var this$4 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
@@ -10559,7 +10761,7 @@ function $p_Lrebecaos_syntax_Parser$__ite$1__Lcats_parse_Parser__Lcats_parse_Par
   var this$10 = new $c_Lcats_parse_Parser$Impl$Prod(this$4, that$1);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
-    var b = $as_Lrebecaos_syntax_Program$BExpr($n($as_T2($n(x$1)._1__O()))._1__O());
+    var b = $as_Lrebecaos_syntax_Program$Expr2($n($as_T2($n(x$1)._1__O()))._1__O());
     var ct = $as_Lrebecaos_syntax_Program$Statement($n($as_T2($n(x$1)._1__O()))._2__O());
     var this$8 = $n($as_s_Option($n(x$1)._2__O()));
     var cf = $as_Lrebecaos_syntax_Program$Statement((this$8.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$8.get__O()));
@@ -10571,21 +10773,24 @@ function $p_Lrebecaos_syntax_Parser$__commBlock$1__Lcats_parse_Parser__Lcats_par
   var this$1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(123));
   var that = $thiz.Lrebecaos_syntax_Parser$__f_sps;
   $m_Lcats_parse_Parser$();
-  var this$6 = $n($n(new $c_Lcats_parse_Parser$Impl$Prod(this$1, that).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(stmRec$1).$qmark__Lcats_parse_Parser0()).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((_$7) => {
-    var _$7$1 = $as_s_Option(_$7);
-    var this$5 = $n(_$7$1);
+  var this$6 = $n($n(new $c_Lcats_parse_Parser$Impl$Prod(this$1, that).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(stmRec$1).$qmark__Lcats_parse_Parser0()).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((_$6) => {
+    var _$6$1 = $as_s_Option(_$6);
+    var this$5 = $n(_$6$1);
     return $as_Lrebecaos_syntax_Program$Statement((this$5.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$5.get__O()))
   }))))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125))));
-  var that$1 = $p_Lrebecaos_syntax_Parser$__skip$1__Lcats_parse_Parser($thiz);
+  var that$1 = $thiz.skip__Lcats_parse_Parser();
   var this$8 = $n(this$6.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
-  var this$7 = $n($p_Lrebecaos_syntax_Parser$__call$1__Lcats_parse_Parser($thiz));
+  var this$7 = $n($thiz.call__Lcats_parse_Parser());
   var that$2 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$7);
   var this$10 = $n(this$8.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
   var this$9 = $n($p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz));
   var that$3 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$9);
-  var this$11 = $n(this$10.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
-  var that$4 = $p_Lrebecaos_syntax_Parser$__choice$1__Lcats_parse_Parser($thiz);
-  return this$11.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4)
+  var this$12 = $n(this$10.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
+  var this$11 = $n($thiz.choice__Lcats_parse_Parser());
+  var that$4 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$11);
+  var this$13 = $n(this$12.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4));
+  var that$5 = $thiz.newInst__Lcats_parse_Parser();
+  return this$13.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$5)
 }
 function $p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz) {
   var this$3 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz));
@@ -10596,13 +10801,13 @@ function $p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz) {
   var that$1 = this$2.between__Lcats_parse_Parser0__Lcats_parse_Parser0__Lcats_parse_Parser(b, b);
   $m_Lcats_parse_Parser$();
   var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$3, that$1);
-  var that$2 = $thiz.expr__Lcats_parse_Parser();
+  var that$2 = $thiz.expr2__Lcats_parse_Parser();
   $m_Lcats_parse_Parser$();
   var this$11 = $n(new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$2).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59))));
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var ident = $as_T($n($as_T2($n(x$1)._1__O()))._1__O());
-    var e = $as_Lrebecaos_syntax_Program$Expr($n(x$1)._2__O());
+    var e = $as_Lrebecaos_syntax_Program$Expr2($n(x$1)._2__O());
     return new $c_Lrebecaos_syntax_Program$Statement$Assign(ident, e)
   }));
   return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$11, fn)
@@ -10610,214 +10815,186 @@ function $p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz) {
 function $p_Lrebecaos_syntax_Parser$__lit$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$1) {
   return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((litR) => {
     var litR$1 = $as_Lcats_parse_Parser(litR);
-    var this$2 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("true"));
-    var b = $s_Lrebecaos_syntax_Program$BExpr$__BTrue__Lrebecaos_syntax_Program$BExpr();
-    var this$4 = $n($m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$2, b));
-    var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("false"));
-    var b$1 = $s_Lrebecaos_syntax_Program$BExpr$__BFalse__Lrebecaos_syntax_Program$BExpr();
-    var that = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$3, b$1);
-    var this$7 = $n(this$4.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-    var this$6 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(33)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(litR$1));
+    var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("true"));
+    var b = new $c_Lrebecaos_syntax_Program$Expr2$B(true);
+    var this$6 = $n($m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$3, b));
+    var this$5 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("false"));
+    var b$1 = new $c_Lrebecaos_syntax_Program$Expr2$B(false);
+    var that = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$5, b$1);
+    var this$12 = $n(this$6.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
+    var this$11 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
     var fn = new $c_sjsr_AnonFunction1(((x) => {
-      var x$1 = $as_Lrebecaos_syntax_Program$Expr(x);
-      var b$2 = $thiz.toBExpr__Lrebecaos_syntax_Program$Expr__Lrebecaos_syntax_Program$BExpr(x$1);
-      return new $c_Lrebecaos_syntax_Program$BExpr$Not(b$2)
+      var x$1 = $as_T(x);
+      $m_sc_StringOps$();
+      var this$9 = $m_jl_Integer$();
+      var n = this$9.parseInt__T__I__I(x$1, 10);
+      return new $c_Lrebecaos_syntax_Program$Expr2$N(n)
     }));
-    var that$1 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$6, fn);
-    var this$9 = $n(this$7.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
-    var this$8 = $n($p_Lrebecaos_syntax_Parser$__ineq$1__Lcats_parse_Parser($thiz));
-    var that$2 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$8);
-    var this$10 = $n(this$9.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
+    var that$1 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$11, fn);
+    var this$15 = $n(this$12.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
+    var this$14 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz));
+    var fn$1 = new $c_sjsr_AnonFunction1(((v) => {
+      var v$1 = $as_T(v);
+      return new $c_Lrebecaos_syntax_Program$Expr2$Var(v$1)
+    }));
+    var that$2 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$14, fn$1);
+    var this$16 = $n(this$15.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
     var that$3 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(exprRec$1)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41));
-    return this$10.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3)
+    var this$20 = $n(this$16.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
+    var this$19 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(33)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(litR$1));
+    var fn$2 = new $c_sjsr_AnonFunction1(((x$2) => {
+      var x$3 = $as_Lrebecaos_syntax_Program$Expr2(x$2);
+      $n($m_s_package$().s_package$__f_List);
+      var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lrebecaos_syntax_Program$Expr2.getArrayOf().constr)([x$3]));
+      var es = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+      return new $c_Lrebecaos_syntax_Program$Expr2$Func("not", es)
+    }));
+    var that$4 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$19, fn$2);
+    return this$20.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4)
   })))
 }
-function $p_Lrebecaos_syntax_Parser$__op$1__Lcats_parse_Parser($thiz) {
-  var this$5 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("<="));
-  var b = new $c_sjsr_AnonFunction2(((x, y) => {
-    var x$1 = $as_Lrebecaos_syntax_Program$Expr(x);
-    var y$1 = $as_Lrebecaos_syntax_Program$Expr(y);
-    var b1 = new $c_Lrebecaos_syntax_Program$BExpr$Less(x$1, y$1);
-    var b2 = new $c_Lrebecaos_syntax_Program$BExpr$Eq(x$1, y$1);
-    return new $c_Lrebecaos_syntax_Program$BExpr$Or(b1, b2)
-  }));
-  var this$10 = $n($m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$5, b));
-  var this$9 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser(">="));
-  var b$1 = new $c_sjsr_AnonFunction2(((x$2, y$2) => {
-    var x$3 = $as_Lrebecaos_syntax_Program$Expr(x$2);
-    var y$3 = $as_Lrebecaos_syntax_Program$Expr(y$2);
-    var b1$1 = new $c_Lrebecaos_syntax_Program$BExpr$Greater(x$3, y$3);
-    var b2$1 = new $c_Lrebecaos_syntax_Program$BExpr$Eq(x$3, y$3);
-    return new $c_Lrebecaos_syntax_Program$BExpr$Or(b1$1, b2$1)
-  }));
-  var that = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$9, b$1);
-  var this$14 = $n(this$10.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var this$13 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("!="));
-  var b$3 = new $c_sjsr_AnonFunction2(((x$3$1, y$3$1) => {
-    var x$4 = $as_Lrebecaos_syntax_Program$Expr(x$3$1);
-    var y$4 = $as_Lrebecaos_syntax_Program$Expr(y$3$1);
-    var b$2 = new $c_Lrebecaos_syntax_Program$BExpr$Eq(x$4, y$4);
-    return new $c_Lrebecaos_syntax_Program$BExpr$Not(b$2)
-  }));
-  var that$1 = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$13, b$3);
-  var this$17 = $n(this$14.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
-  var this$16 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(60));
-  var b$4 = new $c_sjsr_AnonFunction2(((e1, e2) => {
-    var e1$1 = $as_Lrebecaos_syntax_Program$Expr(e1);
-    var e2$1 = $as_Lrebecaos_syntax_Program$Expr(e2);
-    return new $c_Lrebecaos_syntax_Program$BExpr$Less(e1$1, e2$1)
-  }));
-  var that$2 = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$16, b$4);
-  var this$20 = $n(this$17.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
-  var this$19 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(62));
-  var b$5 = new $c_sjsr_AnonFunction2(((e1$2, e2$2) => {
-    var e1$3 = $as_Lrebecaos_syntax_Program$Expr(e1$2);
-    var e2$3 = $as_Lrebecaos_syntax_Program$Expr(e2$2);
-    return new $c_Lrebecaos_syntax_Program$BExpr$Greater(e1$3, e2$3)
-  }));
-  var that$3 = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$19, b$5);
-  var this$23 = $n(this$20.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
-  var this$22 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("=="));
-  var b$6 = new $c_sjsr_AnonFunction2(((e1$3$1, e2$3$1) => {
-    var e1$4 = $as_Lrebecaos_syntax_Program$Expr(e1$3$1);
-    var e2$4 = $as_Lrebecaos_syntax_Program$Expr(e2$3$1);
-    return new $c_Lrebecaos_syntax_Program$BExpr$Eq(e1$4, e2$4)
-  }));
-  var that$4 = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$22, b$6);
-  return this$23.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4)
-}
-function $p_Lrebecaos_syntax_Parser$__ineq$1__Lcats_parse_Parser($thiz) {
-  var this$5 = $n($p_Lrebecaos_syntax_Parser$__varOrIexpr$1__Lcats_parse_Parser($thiz));
-  var this$1 = $n($p_Lrebecaos_syntax_Parser$__op$1__Lcats_parse_Parser($thiz));
-  var b = $thiz.Lrebecaos_syntax_Parser$__f_sps;
-  var this$2 = $n(this$1.between__Lcats_parse_Parser0__Lcats_parse_Parser0__Lcats_parse_Parser(b, b));
-  var that = $p_Lrebecaos_syntax_Parser$__varOrIexpr$1__Lcats_parse_Parser($thiz);
-  $m_Lcats_parse_Parser$();
-  var that$1 = new $c_Lcats_parse_Parser$Impl$Prod(this$2, that).$qmark__Lcats_parse_Parser0();
-  $m_Lcats_parse_Parser$();
-  var this$10 = new $c_Lcats_parse_Parser$Impl$Prod(this$5, that$1);
-  var fn = new $c_sjsr_AnonFunction1(((x) => {
-    var x$1 = $as_T2(x);
-    var this$9 = $n($as_s_Option($n(x$1)._2__O()));
-    if ((!this$9.isEmpty__Z())) {
-      return $as_Lrebecaos_syntax_Program$Expr($n($as_F2($n($as_T2($n($as_s_Option($n(x$1)._2__O())).get__O()))._1__O())).apply__O__O__O($n(x$1)._1__O(), $n($as_T2($n($as_s_Option($n(x$1)._2__O())).get__O()))._2__O()))
-    } else {
-      return $as_Lrebecaos_syntax_Program$Expr($n(x$1)._1__O())
-    }
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn)
-}
-function $p_Lrebecaos_syntax_Parser$__varOrIexpr$1__Lcats_parse_Parser($thiz) {
-  var this$5 = $n($thiz.iexpr__Lcats_parse_Parser());
-  var fn = new $c_sjsr_AnonFunction1(((_$8) => {
-    var _$8$1 = $as_Lrebecaos_syntax_Program$IExpr(_$8);
-    if ((_$8$1 instanceof $c_Lrebecaos_syntax_Program$IExpr$IVar)) {
-      var x$1 = $as_Lrebecaos_syntax_Program$IExpr$IVar(_$8$1);
-      var this$3 = $n(x$1);
-      var x27 = this$3.Lrebecaos_syntax_Program$IExpr$IVar__f_ident;
-      var $$x1 = new $c_Lrebecaos_syntax_Program$GVar(x27)
-    } else {
-      var $$x1 = _$8$1
-    };
-    return $as_Lrebecaos_syntax_Program$Expr($$x1)
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$5, fn)
-}
-function $p_Lrebecaos_syntax_Parser$__or$1__Lcats_parse_Parser($thiz) {
+function $p_Lrebecaos_syntax_Parser$__op1$1__Lcats_parse_Parser($thiz) {
   var this$1 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("||"));
   var that = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("\\/");
-  var this$4 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var fn = new $c_sjsr_AnonFunction1(((_$9) => {
-    $as_jl_Void(_$9);
-    return new $c_sjsr_AnonFunction2(((x, y) => {
-      var x$1 = $as_Lrebecaos_syntax_Program$Expr(x);
-      var y$1 = $as_Lrebecaos_syntax_Program$Expr(y);
-      var b1 = $thiz.toBExpr__Lrebecaos_syntax_Program$Expr__Lrebecaos_syntax_Program$BExpr(x$1);
-      var b2 = $thiz.toBExpr__Lrebecaos_syntax_Program$Expr__Lrebecaos_syntax_Program$BExpr(y$1);
-      return new $c_Lrebecaos_syntax_Program$BExpr$Or(b1, b2)
-    }))
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn)
+  var this$2 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
+  return $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$2, "||")
 }
-function $p_Lrebecaos_syntax_Parser$__and$1__Lcats_parse_Parser($thiz) {
+function $p_Lrebecaos_syntax_Parser$__op2$1__Lcats_parse_Parser($thiz) {
   var this$1 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("&&"));
   var that = $m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("/\\");
-  var this$4 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var fn = new $c_sjsr_AnonFunction1(((_$10) => {
-    $as_jl_Void(_$10);
-    return new $c_sjsr_AnonFunction2(((x, y) => {
-      var x$1 = $as_Lrebecaos_syntax_Program$Expr(x);
-      var y$1 = $as_Lrebecaos_syntax_Program$Expr(y);
-      var b1 = $thiz.toBExpr__Lrebecaos_syntax_Program$Expr__Lrebecaos_syntax_Program$BExpr(x$1);
-      var b2 = $thiz.toBExpr__Lrebecaos_syntax_Program$Expr__Lrebecaos_syntax_Program$BExpr(y$1);
-      return new $c_Lrebecaos_syntax_Program$BExpr$And(b1, b2)
-    }))
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn)
+  var this$2 = $n(this$1.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
+  return $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$2, "&&")
 }
-function $p_Lrebecaos_syntax_Parser$__lit$2__Lcats_parse_Parser__Lcats_parse_Parser($thiz, iexprRec$1) {
-  var $$x1 = $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40);
-  var this$1 = $n(iexprRec$1);
-  var b = $thiz.Lrebecaos_syntax_Parser$__f_sps;
-  var this$8 = $n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$1.between__Lcats_parse_Parser0__Lcats_parse_Parser0__Lcats_parse_Parser(b, b))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41)));
-  var this$7 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
-  var fn = new $c_sjsr_AnonFunction1(((x) => {
-    var x$1 = $as_T(x);
-    $m_sc_StringOps$();
-    var this$5 = $m_jl_Integer$();
-    var n = this$5.parseInt__T__I__I(x$1, 10);
-    return new $c_Lrebecaos_syntax_Program$IExpr$N(n)
-  }));
-  var that = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$7, fn);
-  var this$11 = $n(this$8.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-  var this$10 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz));
-  var fn$1 = new $c_sjsr_AnonFunction1(((ident) => {
-    var ident$1 = $as_T(ident);
-    return new $c_Lrebecaos_syntax_Program$IExpr$IVar(ident$1)
-  }));
-  var that$1 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn$1);
-  return this$11.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1)
+function $p_Lrebecaos_syntax_Parser$__op3$1__Lcats_parse_Parser($thiz) {
+  var $$x2 = $m_Lcats_parse_Parser$();
+  var this$1 = $n($m_s_Predef$().wrapString__T__sci_WrappedString("<>="));
+  $m_sci_List$();
+  var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
+  var f = ((c) => {
+    var c$1 = $uC(c);
+    return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(c$1)
+  });
+  if ((this$4 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$4.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$4.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$5 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
+  var acc = new $c_Lcats_parse_Accumulator$$anon$1();
+  var this$7 = $n($m_Lcats_parse_Parser$().repAs__Lcats_parse_Parser__I__Lcats_parse_Accumulator__Lcats_parse_Parser(this$5, 1, acc));
+  var this$9 = $n($m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$7));
+  var this$8 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("!="));
+  var that = $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$8);
+  return this$9.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that)
 }
-function $p_Lrebecaos_syntax_Parser$__pow$1__Lcats_parse_Parser($thiz) {
-  var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("^"));
-  var fn = new $c_sjsr_AnonFunction1(((_$11) => {
-    $as_jl_Void(_$11);
-    return new $c_sjsr_AnonFunction2(((e1, e2) => {
-      var e1$1 = $as_Lrebecaos_syntax_Program$IExpr(e1);
-      var e2$1 = $as_Lrebecaos_syntax_Program$IExpr(e2);
-      return new $c_Lrebecaos_syntax_Program$IExpr$Power(e1$1, e2$1)
-    }))
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$3, fn)
+function $p_Lrebecaos_syntax_Parser$__op4$1__Lcats_parse_Parser($thiz) {
+  var $$x2 = $m_Lcats_parse_Parser$();
+  var this$1 = $n($m_s_Predef$().wrapString__T__sci_WrappedString("+-"));
+  $m_sci_List$();
+  var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
+  var f = ((c) => {
+    var c$1 = $uC(c);
+    return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(c$1)
+  });
+  if ((this$4 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$4.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$4.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$5 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
+  return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$5)
 }
-function $p_Lrebecaos_syntax_Parser$__mult$1__Lcats_parse_Parser($thiz) {
-  var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("*"));
-  var fn = new $c_sjsr_AnonFunction1(((_$12) => {
-    $as_jl_Void(_$12);
-    return new $c_sjsr_AnonFunction2(((e1, e2) => {
-      var e1$1 = $as_Lrebecaos_syntax_Program$IExpr(e1);
-      var e2$1 = $as_Lrebecaos_syntax_Program$IExpr(e2);
-      return new $c_Lrebecaos_syntax_Program$IExpr$Times(e1$1, e2$1)
-    }))
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$3, fn)
+function $p_Lrebecaos_syntax_Parser$__op5$1__Lcats_parse_Parser($thiz) {
+  var $$x2 = $m_Lcats_parse_Parser$();
+  var this$1 = $n($m_s_Predef$().wrapString__T__sci_WrappedString("*/%"));
+  $m_sci_List$();
+  var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
+  var f = ((c) => {
+    var c$1 = $uC(c);
+    return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(c$1)
+  });
+  if ((this$4 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$4.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$4.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$5 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
+  return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$5)
 }
-function $p_Lrebecaos_syntax_Parser$__plusminus$1__Lcats_parse_Parser($thiz) {
-  var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("+"));
-  var b = new $c_sjsr_AnonFunction2(((e1, e2) => {
-    var e1$1 = $as_Lrebecaos_syntax_Program$IExpr(e1);
-    var e2$1 = $as_Lrebecaos_syntax_Program$IExpr(e2);
-    return new $c_Lrebecaos_syntax_Program$IExpr$Plus(e1$1, e2$1)
-  }));
-  var this$6 = $n($m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$3, b));
-  var this$5 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("-"));
-  var b$1 = new $c_sjsr_AnonFunction2(((e1$2, e2$2) => {
-    var e1$3 = $as_Lrebecaos_syntax_Program$IExpr(e1$2);
-    var e2$3 = $as_Lrebecaos_syntax_Program$IExpr(e2$2);
-    return new $c_Lrebecaos_syntax_Program$IExpr$Minus(e1$3, e2$3)
-  }));
-  var that = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$5, b$1);
-  return this$6.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that)
+function $p_Lrebecaos_syntax_Parser$__combine$1__T2__Lrebecaos_syntax_Program$Expr2($thiz, x) {
+  var this$1 = $n($as_s_Option($n(x)._2__O()));
+  if ((!this$1.isEmpty__Z())) {
+    var op = $as_T($n($as_T2($n($as_s_Option($n(x)._2__O())).get__O()))._1__O());
+    var e1 = $as_Lrebecaos_syntax_Program$Expr2($n(x)._1__O());
+    var e2 = $as_Lrebecaos_syntax_Program$Expr2($n($as_T2($n($as_s_Option($n(x)._2__O())).get__O()))._2__O());
+    return new $c_Lrebecaos_syntax_Program$Expr2$Infix(op, e1, e2)
+  } else {
+    return $as_Lrebecaos_syntax_Program$Expr2($n(x)._1__O())
+  }
+}
+function $p_Lrebecaos_syntax_Parser$__infix$1__Lcats_parse_Parser__Lcats_parse_Parser__Lcats_parse_Parser($thiz, p, ops) {
+  return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((rec) => {
+    var rec$1 = $as_Lcats_parse_Parser(rec);
+    var this$5 = $n($n(p).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
+    var this$2 = $n($n(ops).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps));
+    $m_Lcats_parse_Parser$();
+    var that = new $c_Lcats_parse_Parser$Impl$Prod(this$2, rec$1).$qmark__Lcats_parse_Parser0();
+    $m_Lcats_parse_Parser$();
+    var this$8 = new $c_Lcats_parse_Parser$Impl$Prod(this$5, that);
+    var fn = new $c_sjsr_AnonFunction1(((x) => {
+      var x$1 = $as_T2(x);
+      return $p_Lrebecaos_syntax_Parser$__combine$1__T2__Lrebecaos_syntax_Program$Expr2($thiz, x$1)
+    }));
+    return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$8, fn)
+  })))
+}
+function $p_Lrebecaos_syntax_Parser$__orP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$7) {
+  return $p_Lrebecaos_syntax_Parser$__infix$1__Lcats_parse_Parser__Lcats_parse_Parser__Lcats_parse_Parser($thiz, $p_Lrebecaos_syntax_Parser$__andP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$7), $p_Lrebecaos_syntax_Parser$__op1$1__Lcats_parse_Parser($thiz))
+}
+function $p_Lrebecaos_syntax_Parser$__andP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$6) {
+  return $p_Lrebecaos_syntax_Parser$__infix$1__Lcats_parse_Parser__Lcats_parse_Parser__Lcats_parse_Parser($thiz, $p_Lrebecaos_syntax_Parser$__ineqP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$6), $p_Lrebecaos_syntax_Parser$__op2$1__Lcats_parse_Parser($thiz))
+}
+function $p_Lrebecaos_syntax_Parser$__ineqP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$5) {
+  return $p_Lrebecaos_syntax_Parser$__infix$1__Lcats_parse_Parser__Lcats_parse_Parser__Lcats_parse_Parser($thiz, $p_Lrebecaos_syntax_Parser$__sumP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$5), $p_Lrebecaos_syntax_Parser$__op3$1__Lcats_parse_Parser($thiz))
+}
+function $p_Lrebecaos_syntax_Parser$__sumP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$4) {
+  return $p_Lrebecaos_syntax_Parser$__infix$1__Lcats_parse_Parser__Lcats_parse_Parser__Lcats_parse_Parser($thiz, $p_Lrebecaos_syntax_Parser$__multP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$4), $p_Lrebecaos_syntax_Parser$__op4$1__Lcats_parse_Parser($thiz))
+}
+function $p_Lrebecaos_syntax_Parser$__multP$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$3) {
+  return $p_Lrebecaos_syntax_Parser$__infix$1__Lcats_parse_Parser__Lcats_parse_Parser__Lcats_parse_Parser($thiz, $p_Lrebecaos_syntax_Parser$__lit$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$3), $p_Lrebecaos_syntax_Parser$__op5$1__Lcats_parse_Parser($thiz))
 }
 /** @constructor */
 function $c_Lrebecaos_syntax_Parser$() {
@@ -10968,28 +11145,15 @@ $c_Lrebecaos_syntax_Parser$.prototype.instancedecl__Lcats_parse_Parser = (functi
   var this$5 = $m_Lcats_parse_Parser$();
   var that$1 = $n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$5.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$4, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41));
   $m_Lcats_parse_Parser$();
-  var this$20 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
+  var this$11 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
   var $$x2 = $n($n($n(this.Lrebecaos_syntax_Parser$__f_sps).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(58))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40));
-  var this$13 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
-  var fn = new $c_sjsr_AnonFunction1(((_$5) => {
-    var _$5$1 = $as_T(_$5);
-    $m_sc_StringOps$();
-    var this$12 = $m_jl_Integer$();
-    return this$12.parseInt__T__I__I(_$5$1, 10)
-  }));
-  var this$15 = $n($m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$13, fn));
-  var this$14 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("true"));
-  var that$2 = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$14, true);
-  var this$17 = $n(this$15.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
-  var this$16 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("false"));
-  var that$3 = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$16, false);
-  var this$18 = $n(this$17.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
+  var this$9 = $n(this.expr2__Lcats_parse_Parser());
   var sep$1 = $n($n(this.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps);
-  var this$19 = $m_Lcats_parse_Parser$();
-  var that$4 = $n($n($n($n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this$19.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$18, 0, sep$1))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this));
+  var this$10 = $m_Lcats_parse_Parser$();
+  var that$2 = $n($n($n($n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this$10.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$9, 0, sep$1))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this));
   $m_Lcats_parse_Parser$();
-  var this$24 = new $c_Lcats_parse_Parser$Impl$Prod(this$20, that$4);
-  var fn$1 = new $c_sjsr_AnonFunction1(((x) => {
+  var this$16 = new $c_Lcats_parse_Parser$Impl$Prod(this$11, that$2);
+  var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var clazz = $as_T($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O());
     var name = $as_T($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._2__O());
@@ -10997,7 +11161,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.instancedecl__Lcats_parse_Parser = (functi
     var args = $as_sci_List($n(x$1)._2__O());
     return new $c_Lrebecaos_syntax_Program$InstanceDecl(clazz, name, known, args)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$24, fn$1)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$16, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.reactiveclass__Lcats_parse_Parser = (function() {
   var this$1 = $n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("reactiveclass")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($p_Lrebecaos_syntax_Parser$__className__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)));
@@ -11048,9 +11212,9 @@ $c_Lrebecaos_syntax_Parser$.prototype.blockQVar__Lcats_parse_Parser = (function(
   var sep = this.Lrebecaos_syntax_Parser$__f_sps;
   var this$2 = $m_Lcats_parse_Parser$();
   var this$4 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125)));
-  var fn = new $c_sjsr_AnonFunction1(((_$6) => {
-    var _$6$1 = $as_sci_List(_$6);
-    return $n(_$6$1)
+  var fn = new $c_sjsr_AnonFunction1(((_$5) => {
+    var _$5$1 = $as_sci_List(_$5);
+    return $n(_$5$1)
   }));
   return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn)
 });
@@ -11102,74 +11266,106 @@ $c_Lrebecaos_syntax_Parser$.prototype.statement__Lcats_parse_Parser = (function(
     })))
   })))
 });
-$c_Lrebecaos_syntax_Parser$.prototype.toBExpr__Lrebecaos_syntax_Program$Expr__Lrebecaos_syntax_Program$BExpr = (function(e) {
-  if ((e instanceof $c_Lrebecaos_syntax_Program$BExpr)) {
-    var b = $as_Lrebecaos_syntax_Program$BExpr(e);
-    return b
-  } else if ((e instanceof $c_Lrebecaos_syntax_Program$GVar)) {
-    var x$1 = $as_Lrebecaos_syntax_Program$GVar(e);
-    var this$2 = $n(x$1);
-    var x22 = this$2.Lrebecaos_syntax_Program$GVar__f_name;
-    return new $c_Lrebecaos_syntax_Program$BExpr$BVar(x22)
-  } else if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr$IVar)) {
-    var x$1$1 = $as_Lrebecaos_syntax_Program$IExpr$IVar(e);
-    var this$5 = $n(x$1$1);
-    var x19 = this$5.Lrebecaos_syntax_Program$IExpr$IVar__f_ident;
-    return new $c_Lrebecaos_syntax_Program$BExpr$BVar(x19)
-  } else {
-    $m_s_sys_package$().error__T__E(("Expected boolean but found int: " + e))
-  }
-});
-$c_Lrebecaos_syntax_Parser$.prototype.bexpr__Lcats_parse_Parser = (function() {
-  var this$2 = $n(this.expr__Lcats_parse_Parser());
-  var fn = new $c_sjsr_AnonFunction1(((e) => {
-    var e$1 = $as_Lrebecaos_syntax_Program$Expr(e);
-    return this.toBExpr__Lrebecaos_syntax_Program$Expr__Lrebecaos_syntax_Program$BExpr(e$1)
-  }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$2, fn)
-});
-$c_Lrebecaos_syntax_Parser$.prototype.expr__Lcats_parse_Parser = (function() {
-  return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((exprRec) => {
-    var exprRec$1 = $as_Lcats_parse_Parser(exprRec);
-    return this.listSep__Lcats_parse_Parser__Lcats_parse_Parser0__Lcats_parse_Parser(this.listSep__Lcats_parse_Parser__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__lit$1__Lcats_parse_Parser__Lcats_parse_Parser(this, exprRec$1), $p_Lrebecaos_syntax_Parser$__and$1__Lcats_parse_Parser(this)), $p_Lrebecaos_syntax_Parser$__or$1__Lcats_parse_Parser(this))
-  })))
-});
-$c_Lrebecaos_syntax_Parser$.prototype.iexpr__Lcats_parse_Parser = (function() {
-  return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((iexprRec) => {
-    var iexprRec$1 = $as_Lcats_parse_Parser(iexprRec);
-    return this.listSep__Lcats_parse_Parser__Lcats_parse_Parser0__Lcats_parse_Parser(this.listSep__Lcats_parse_Parser__Lcats_parse_Parser0__Lcats_parse_Parser(this.listSep__Lcats_parse_Parser__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__lit$2__Lcats_parse_Parser__Lcats_parse_Parser(this, iexprRec$1), $p_Lrebecaos_syntax_Parser$__pow$1__Lcats_parse_Parser(this)), $p_Lrebecaos_syntax_Parser$__mult$1__Lcats_parse_Parser(this)), $p_Lrebecaos_syntax_Parser$__plusminus$1__Lcats_parse_Parser(this))
-  })))
-});
-$c_Lrebecaos_syntax_Parser$.prototype.listSep__Lcats_parse_Parser__Lcats_parse_Parser0__Lcats_parse_Parser = (function(elem, op) {
-  var this$8 = $n($n(elem).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
-  var ev$11 = $n($n(op).backtrack__Lcats_parse_Parser0());
-  var ev$10 = $n(this.Lrebecaos_syntax_Parser$__f_sps);
-  var that = $m_Lcats_parse_Parser$With1$().$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$10, elem);
+$c_Lrebecaos_syntax_Parser$.prototype.skip__Lcats_parse_Parser = (function() {
+  var this$1 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("skip"));
+  var that = $p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this);
   $m_Lcats_parse_Parser$();
-  var this$4 = new $c_Lcats_parse_Parser$Impl$Prod(ev$11, that);
-  $m_Lcats_parse_Accumulator0$();
-  var acc = new $c_Lcats_parse_Accumulator0$$anon$5();
+  var this$4 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
+  var b = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
+  return $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$4, b)
+});
+$c_Lrebecaos_syntax_Parser$.prototype.call__Lcats_parse_Parser = (function() {
+  var this$1 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
+  var that = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(46)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps);
   $m_Lcats_parse_Parser$();
-  var that$1 = new $c_Lcats_parse_Parser$Impl$Rep0(this$4, 2147483647, acc);
+  var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
+  var $$x1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps);
+  var this$4 = $n(this.expr2__Lcats_parse_Parser());
+  var sep = $n($n(this.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps);
+  var this$5 = $m_Lcats_parse_Parser$();
+  var that$1 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$5.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$4, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps);
   $m_Lcats_parse_Parser$();
-  var this$13 = new $c_Lcats_parse_Parser$Impl$Prod(this$8, that$1);
+  var this$9 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
+  var that$2 = $n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("after")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n(this.expr2__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps))).$qmark__Lcats_parse_Parser0();
+  $m_Lcats_parse_Parser$();
+  var this$12 = new $c_Lcats_parse_Parser$Impl$Prod(this$9, that$2);
+  var that$3 = $n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("deadline")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(this.expr2__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41)))).$qmark__Lcats_parse_Parser0();
+  $m_Lcats_parse_Parser$();
+  var this$17 = $n(new $c_Lcats_parse_Parser$Impl$Prod(this$12, that$3).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this)));
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
-    var pairlist = $as_sci_List($n(x$1)._2__O());
-    var first = $n(x$1)._1__O();
-    var this$12 = $n(pairlist);
-    var acc$1 = first;
-    var these = this$12;
-    while ((!$n(these).isEmpty__Z())) {
-      var arg1 = acc$1;
-      var arg2 = $n(these).head__O();
-      var pair = $as_T2(arg2);
-      acc$1 = $n($as_F2($n(pair)._1__O())).apply__O__O__O(arg1, $n(pair)._2__O());
-      these = $as_sc_LinearSeq($n(these).tail__O())
-    };
-    return acc$1
+    var rebec = $as_T($n($as_T2($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O()))._1__O());
+    var meth = $as_T($n($as_T2($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O()))._2__O());
+    var args = $as_sci_List($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._2__O());
+    var after = $as_s_Option($n($as_T2($n(x$1)._1__O()))._2__O());
+    var dl = $as_s_Option($n(x$1)._2__O());
+    return new $c_Lrebecaos_syntax_Program$Statement$Call(rebec, meth, args, after, dl)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$13, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$17, fn)
+});
+$c_Lrebecaos_syntax_Parser$.prototype.choice__Lcats_parse_Parser = (function() {
+  var this$3 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
+  var $$x1 = $n($n($n($n($n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(61)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(63))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
+  var this$1 = $n(this.expr2__Lcats_parse_Parser());
+  var sep = $n($n(this.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps);
+  var this$2 = $m_Lcats_parse_Parser$();
+  var that = $n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n(this$2.repSep__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser(this$1, 1, sep)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this)));
+  $m_Lcats_parse_Parser$();
+  var this$10 = new $c_Lcats_parse_Parser$Impl$Prod(this$3, that);
+  var fn = new $c_sjsr_AnonFunction1(((x) => {
+    var x$1 = $as_T2(x);
+    var v = $as_T($n(x$1)._1__O());
+    var this$7 = $n($as_Lcats_data_NonEmptyList($n(x$1)._2__O()));
+    var this$8 = $n(this$7.Lcats_data_NonEmptyList__f_tail);
+    var elem = this$7.Lcats_data_NonEmptyList__f_head;
+    var options = new $c_sci_$colon$colon(elem, this$8);
+    return new $c_Lrebecaos_syntax_Program$Statement$Choice(v, options)
+  }));
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn)
+});
+$c_Lrebecaos_syntax_Parser$.prototype.newInst__Lcats_parse_Parser = (function() {
+  var this$1 = $n($n($n($n($n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(61))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("new"))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
+  var that = $n($p_Lrebecaos_syntax_Parser$__className__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps);
+  $m_Lcats_parse_Parser$();
+  var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
+  var $$x1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps);
+  var this$4 = $n($p_Lrebecaos_syntax_Parser$__varName__Lcats_parse_Parser(this));
+  var sep = $n($n(this.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps);
+  var this$5 = $m_Lcats_parse_Parser$();
+  var that$1 = $n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$5.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$4, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41));
+  $m_Lcats_parse_Parser$();
+  var this$11 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
+  var $$x2 = $n($n($n(this.Lrebecaos_syntax_Parser$__f_sps).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(58))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40));
+  var this$9 = $n(this.expr2__Lcats_parse_Parser());
+  var sep$1 = $n($n(this.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(44))).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps);
+  var this$10 = $m_Lcats_parse_Parser$();
+  var that$2 = $n($n($n($n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this$10.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$9, 0, sep$1))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this));
+  $m_Lcats_parse_Parser$();
+  var this$17 = new $c_Lcats_parse_Parser$Impl$Prod(this$11, that$2);
+  var fn = new $c_sjsr_AnonFunction1(((x) => {
+    var x$1 = $as_T2(x);
+    var clazz = $as_T($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._2__O());
+    var name = $as_T($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O());
+    var known = $as_sci_List($n($as_T2($n(x$1)._1__O()))._2__O());
+    var args = $as_sci_List($n(x$1)._2__O());
+    var dec = new $c_Lrebecaos_syntax_Program$InstanceDecl(clazz, name, known, args);
+    return new $c_Lrebecaos_syntax_Program$Statement$NewReb(dec)
+  }));
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$17, fn)
+});
+$c_Lrebecaos_syntax_Parser$.prototype.delay__Lcats_parse_Parser = (function() {
+  var this$3 = $n($n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("delay")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n(this.expr2__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this))));
+  var fn = new $c_sjsr_AnonFunction1(((d) => {
+    var d$1 = $as_Lrebecaos_syntax_Program$Expr2(d);
+    return new $c_Lrebecaos_syntax_Program$Statement$Delay(d$1)
+  }));
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$3, fn)
+});
+$c_Lrebecaos_syntax_Parser$.prototype.expr2__Lcats_parse_Parser = (function() {
+  return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((exprRec) => {
+    var exprRec$1 = $as_Lcats_parse_Parser(exprRec);
+    return $p_Lrebecaos_syntax_Parser$__orP$1__Lcats_parse_Parser__Lcats_parse_Parser(this, exprRec$1)
+  })))
 });
 $c_Lrebecaos_syntax_Parser$.prototype.listSepRep__Lcats_parse_Parser__Lcats_parse_Parser0__F2__Lcats_parse_Parser = (function(elem, sep, join) {
   var this$1 = $n(elem);
@@ -11196,18 +11392,6 @@ function $m_Lrebecaos_syntax_Parser$() {
     $n_Lrebecaos_syntax_Parser$ = new $c_Lrebecaos_syntax_Parser$()
   };
   return $n_Lrebecaos_syntax_Parser$
-}
-function $is_Lrebecaos_syntax_Program$Expr(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lrebecaos_syntax_Program$Expr)))
-}
-function $as_Lrebecaos_syntax_Program$Expr(obj) {
-  return (($is_Lrebecaos_syntax_Program$Expr(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$Expr(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$Expr(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$Expr(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr;", depth))
 }
 /** @constructor */
 function $c_Lrebecaos_syntax_Show$() {
@@ -11239,7 +11423,7 @@ $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_backend_Semantics$RebecEnv_
   var this$2 = $n($as_sc_IterableOnceOps($n($n(rb).Lrebecaos_backend_Semantics$RebecEnv__f_vars).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
     var x$1$1 = $as_T2(x$1);
     var v = $as_T($n(x$1$1)._1__O());
-    var d = $n(x$1$1)._2__O();
+    var d = $as_Lrebecaos_backend_Eval$Data($n(x$1$1)._2__O());
     return ((v + ":") + d)
   })))));
   var $$x1 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ",", "");
@@ -11339,18 +11523,6 @@ function $isArrayOf_F1(obj, depth) {
 }
 function $asArrayOf_F1(obj, depth) {
   return (($isArrayOf_F1(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.Function1;", depth))
-}
-function $is_F2(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.F2)))
-}
-function $as_F2(obj) {
-  return (($is_F2(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.Function2"))
-}
-function $isArrayOf_F2(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.F2)))
-}
-function $asArrayOf_F2(obj, depth) {
-  return (($isArrayOf_F2(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.Function2;", depth))
 }
 /** @constructor */
 function $c_s_LowPriorityImplicits2() {
@@ -18514,9 +18686,6 @@ $c_Lcats_parse_Parser.prototype.between__Lcats_parse_Parser0__Lcats_parse_Parser
 $c_Lcats_parse_Parser.prototype.void__Lcats_parse_Parser0 = (function() {
   return $m_Lcats_parse_Parser$().void__Lcats_parse_Parser__Lcats_parse_Parser(this)
 });
-$c_Lcats_parse_Parser.prototype.backtrack__Lcats_parse_Parser0 = (function() {
-  return $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this)
-});
 $c_Lcats_parse_Parser.prototype.$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0 = (function(that) {
   $m_Lcats_parse_Parser$();
   return new $c_Lcats_parse_Parser$Impl$Prod(this, that)
@@ -20305,14 +20474,6 @@ var $d_ju_regex_Pattern = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_ju_regex_Pattern.prototype.$classData = $d_ju_regex_Pattern;
-function $p_Lrebecaos_backend_Semantics$__toInt__O__I($thiz, x) {
-  if ($isInt(x)) {
-    var i = $uI(x);
-    return i
-  } else {
-    $m_s_sys_package$().error__T__E((("Expected int but found'" + x) + "'"))
-  }
-}
 function $p_Lrebecaos_backend_Semantics$__upd$1__sci_Map__T__T($thiz, knownReb$1, s) {
   return $as_T($n(knownReb$1).getOrElse__O__F0__O(s, new $c_sjsr_AnonFunction0((() => s))))
 }
@@ -20328,6 +20489,7 @@ function $h_Lrebecaos_backend_Semantics$() {
 }
 $h_Lrebecaos_backend_Semantics$.prototype = $c_Lrebecaos_backend_Semantics$.prototype;
 $c_Lrebecaos_backend_Semantics$.prototype.initSt__Lrebecaos_syntax_Program$System__T3 = (function(s) {
+  $m_Lrebecaos_backend_Semantics$RebecEnv$().restart__V();
   var this$2 = $n(this.getInstances__Lrebecaos_syntax_Program$System__sci_List(s));
   var this$1 = $m_s_$less$colon$less$();
   var _2 = $m_sci_Map$().from__sc_IterableOnce__sci_Map(this$2);
@@ -20335,49 +20497,10 @@ $c_Lrebecaos_backend_Semantics$.prototype.initSt__Lrebecaos_syntax_Program$Syste
   return new $c_T3(s, _2, _3)
 });
 $c_Lrebecaos_backend_Semantics$.prototype.getInstances__Lrebecaos_syntax_Program$System__sci_List = (function(s) {
-  var this$10 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
-  var f = ((dec) => {
-    var dec$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(dec);
-    var this$4 = $n($m_s_Predef$().s_Predef$__f_Map);
-    var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("now", 0)]));
-    var vars = this$4.from__sc_IterableOnce__sci_Map(elems);
-    var clazz = $as_Lrebecaos_syntax_Program$ReactiveClass($n($n(s).Lrebecaos_syntax_Program$System__f_classes).getOrElse__O__F0__O($n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_clazz, new $c_sjsr_AnonFunction0((() => {
-      $m_s_sys_package$().error__T__E(("Unknown rebeca class: " + $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_clazz))
-    }))));
-    var meth = $n(clazz).Lrebecaos_syntax_Program$ReactiveClass__f_msgsrv;
-    var $$x1 = this.unifyReb__sci_List__sci_List__sci_Map($n(clazz).Lrebecaos_syntax_Program$ReactiveClass__f_known, $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_known);
-    var y = $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_name;
-    var rebs = $as_sci_Map($n($$x1).$plus__T2__sci_MapOps(new $c_T2("self", y)));
-    var self = $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_name;
-    var clazz$1 = $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_clazz;
-    var y$1 = new $c_Lrebecaos_backend_Semantics$RebecEnv(vars, rebs, meth, clazz$1);
-    return new $c_T2(self, y$1)
-  });
-  if ((this$10 === $m_sci_Nil$())) {
-    return $m_sci_Nil$()
-  } else {
-    var arg1 = this$10.head__O();
-    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-    var t = h;
-    var rest = $as_sci_List(this$10.tail__O());
-    while ((rest !== $m_sci_Nil$())) {
-      var arg1$1 = $n(rest).head__O();
-      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-      $n(t).sci_$colon$colon__f_next = nx;
-      t = nx;
-      rest = $as_sci_List($n(rest).tail__O())
-    };
-    return h
-  }
-});
-$c_Lrebecaos_backend_Semantics$.prototype.getInitMsg__Lrebecaos_syntax_Program$System__sci_List = (function(s) {
   var this$3 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
   var f = ((dec) => {
     var dec$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(dec);
-    var rcv = $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_name;
-    var args = $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_args;
-    var dl = $m_s_None$();
-    return new $c_Lrebecaos_backend_Semantics$Msg(rcv, "initial", args, "", 0, dl)
+    return this.instantiate__Lrebecaos_syntax_Program$InstanceDecl__Lrebecaos_syntax_Program$System__Lrebecaos_backend_Eval$Data__T2(dec$1, s, new $c_Lrebecaos_backend_Eval$Data$N(0))
   });
   if ((this$3 === $m_sci_Nil$())) {
     return $m_sci_Nil$()
@@ -20396,14 +20519,76 @@ $c_Lrebecaos_backend_Semantics$.prototype.getInitMsg__Lrebecaos_syntax_Program$S
     return h
   }
 });
+$c_Lrebecaos_backend_Semantics$.prototype.instantiate__Lrebecaos_syntax_Program$InstanceDecl__Lrebecaos_syntax_Program$System__Lrebecaos_backend_Eval$Data__T2 = (function(dec, s, now) {
+  var clazz = $as_Lrebecaos_syntax_Program$ReactiveClass($n($n(s).Lrebecaos_syntax_Program$System__f_classes).getOrElse__O__F0__O($n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_clazz, new $c_sjsr_AnonFunction0((() => {
+    $m_s_sys_package$().error__T__E(("Unknown rebeca class: " + $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_clazz))
+  }))));
+  var meth = $n(clazz).Lrebecaos_syntax_Program$ReactiveClass__f_msgsrv;
+  var $$x1 = this.unifyReb__sci_List__sci_List__sci_Map($n(clazz).Lrebecaos_syntax_Program$ReactiveClass__f_known, $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_known);
+  var y = $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_name;
+  var rebs = $as_sci_Map($n($$x1).$plus__T2__sci_MapOps(new $c_T2("self", y)));
+  var self = $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_name;
+  var this$7 = $n($m_s_Predef$().s_Predef$__f_Map);
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("now", now)]));
+  var vars = this$7.from__sc_IterableOnce__sci_Map(elems);
+  var clazz$1 = $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_clazz;
+  var y$1 = new $c_Lrebecaos_backend_Semantics$RebecEnv(vars, rebs, meth, clazz$1);
+  return new $c_T2(self, y$1)
+});
+$c_Lrebecaos_backend_Semantics$.prototype.getInitMsg__Lrebecaos_syntax_Program$System__sci_List = (function(s) {
+  var this$4 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
+  var f$1 = ((dec) => {
+    var dec$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(dec);
+    var rcv = $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_name;
+    var this$2 = $n($n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_args);
+    var f = ((a) => {
+      var a$1 = $as_Lrebecaos_syntax_Program$Expr2(a);
+      return $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(a$1, $m_Lrebecaos_backend_Semantics$RebecEnv$().empty__Lrebecaos_backend_Semantics$RebecEnv())
+    });
+    if ((this$2 === $m_sci_Nil$())) {
+      var args = $m_sci_Nil$()
+    } else {
+      var arg1 = this$2.head__O();
+      var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+      var t = h;
+      var rest = $as_sci_List(this$2.tail__O());
+      while ((rest !== $m_sci_Nil$())) {
+        var arg1$1 = $n(rest).head__O();
+        var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+        $n(t).sci_$colon$colon__f_next = nx;
+        t = nx;
+        rest = $as_sci_List($n(rest).tail__O())
+      };
+      var args = h
+    };
+    var dl = $m_s_None$();
+    return new $c_Lrebecaos_backend_Semantics$Msg(rcv, "initial", args, "", 0, dl)
+  });
+  if ((this$4 === $m_sci_Nil$())) {
+    return $m_sci_Nil$()
+  } else {
+    var arg1$2 = this$4.head__O();
+    var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
+    var t$1 = h$1;
+    var rest$1 = $as_sci_List(this$4.tail__O());
+    while ((rest$1 !== $m_sci_Nil$())) {
+      var arg1$3 = $n(rest$1).head__O();
+      var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
+      $n(t$1).sci_$colon$colon__f_next = nx$1;
+      t$1 = nx$1;
+      rest$1 = $as_sci_List($n(rest$1).tail__O())
+    };
+    return h$1
+  }
+});
 $c_Lrebecaos_backend_Semantics$.prototype.unify__sci_List__sci_List__sci_Map = (function(vars, vals) {
-  var x11 = new $c_T2(vars, vals);
-  var x63 = $as_sci_List(x11.T2__f__1);
-  var x64 = $as_sci_List(x11.T2__f__2);
+  var x13 = new $c_T2(vars, vals);
+  var x65 = $as_sci_List(x13.T2__f__1);
+  var x66 = $as_sci_List(x13.T2__f__2);
   var x = $m_s_package$().s_package$__f_Nil;
-  if (((x === null) ? (x63 === null) : $n(x).equals__O__Z(x63))) {
+  if (((x === null) ? (x65 === null) : $n(x).equals__O__Z(x65))) {
     var x$3 = $m_s_package$().s_package$__f_Nil;
-    var $$x1 = ((x$3 === null) ? (x64 === null) : $n(x$3).equals__O__Z(x64))
+    var $$x1 = ((x$3 === null) ? (x66 === null) : $n(x$3).equals__O__Z(x66))
   } else {
     var $$x1 = false
   };
@@ -20412,80 +20597,77 @@ $c_Lrebecaos_backend_Semantics$.prototype.unify__sci_List__sci_List__sci_Map = (
     var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
     return this$2.from__sc_IterableOnce__sci_Map(elems)
   };
-  if ((x63 instanceof $c_sci_$colon$colon)) {
-    var x57 = $as_sci_$colon$colon(x63);
-    var x58 = $as_Lrebecaos_syntax_Program$QVar($n(x57).sci_$colon$colon__f_head);
-    var x59 = $n(x57).sci_$colon$colon__f_next;
-    if ((x58 !== null)) {
-      var this$4 = $n(x58);
-      var x61 = this$4.Lrebecaos_syntax_Program$QVar__f_name;
-      var this$5 = $n(x58);
-      var x62 = this$5.Lrebecaos_syntax_Program$QVar__f_typ;
-      if ((x62 === "int")) {
-        if ((x64 instanceof $c_sci_$colon$colon)) {
-          var x53 = $as_sci_$colon$colon(x64);
-          var x54 = $n(x53).sci_$colon$colon__f_head;
-          var x55 = $n(x53).sci_$colon$colon__f_next;
-          if ($isInt(x54)) {
-            var d = $uI(x54);
-            return $as_sci_Map($n(this.unify__sci_List__sci_List__sci_Map(x59, x55)).$plus__T2__sci_MapOps(new $c_T2(x61, d)))
+  if ((x65 instanceof $c_sci_$colon$colon)) {
+    var x59 = $as_sci_$colon$colon(x65);
+    var x60 = $as_Lrebecaos_syntax_Program$QVar($n(x59).sci_$colon$colon__f_head);
+    var x61 = $n(x59).sci_$colon$colon__f_next;
+    if ((x60 !== null)) {
+      var this$4 = $n(x60);
+      var x63 = this$4.Lrebecaos_syntax_Program$QVar__f_name;
+      var this$5 = $n(x60);
+      var x64 = this$5.Lrebecaos_syntax_Program$QVar__f_typ;
+      if ((x64 === "int")) {
+        if ((x66 instanceof $c_sci_$colon$colon)) {
+          var x55 = $as_sci_$colon$colon(x66);
+          var x56 = $as_Lrebecaos_backend_Eval$Data($n(x55).sci_$colon$colon__f_head);
+          var x57 = $n(x55).sci_$colon$colon__f_next;
+          if ((x56 !== null)) {
+            return $as_sci_Map($n(this.unify__sci_List__sci_List__sci_Map(x61, x57)).$plus__T2__sci_MapOps(new $c_T2(x63, x56)))
           }
         }
       };
-      if ((x62 === "byte")) {
-        if ((x64 instanceof $c_sci_$colon$colon)) {
-          var x41 = $as_sci_$colon$colon(x64);
-          var x42 = $n(x41).sci_$colon$colon__f_head;
-          var x43 = $n(x41).sci_$colon$colon__f_next;
-          if ($isInt(x42)) {
-            var d$2 = $uI(x42);
-            return $as_sci_Map($n(this.unify__sci_List__sci_List__sci_Map(x59, x43)).$plus__T2__sci_MapOps(new $c_T2(x61, d$2)))
+      if ((x64 === "byte")) {
+        if ((x66 instanceof $c_sci_$colon$colon)) {
+          var x43 = $as_sci_$colon$colon(x66);
+          var x44 = $as_Lrebecaos_backend_Eval$Data($n(x43).sci_$colon$colon__f_head);
+          var x45 = $n(x43).sci_$colon$colon__f_next;
+          if ((x44 !== null)) {
+            return $as_sci_Map($n(this.unify__sci_List__sci_List__sci_Map(x61, x45)).$plus__T2__sci_MapOps(new $c_T2(x63, x44)))
           }
         }
       };
-      if ((x62 === "boolean")) {
-        if ((x64 instanceof $c_sci_$colon$colon)) {
-          var x29 = $as_sci_$colon$colon(x64);
-          var x30 = $n(x29).sci_$colon$colon__f_head;
-          var x31 = $n(x29).sci_$colon$colon__f_next;
-          if (((typeof x30) === "boolean")) {
-            var d$3 = $uZ(x30);
-            return $as_sci_Map($n(this.unify__sci_List__sci_List__sci_Map(x59, x31)).$plus__T2__sci_MapOps(new $c_T2(x61, d$3)))
+      if ((x64 === "boolean")) {
+        if ((x66 instanceof $c_sci_$colon$colon)) {
+          var x31 = $as_sci_$colon$colon(x66);
+          var x32 = $as_Lrebecaos_backend_Eval$Data($n(x31).sci_$colon$colon__f_head);
+          var x33 = $n(x31).sci_$colon$colon__f_next;
+          if ((x32 !== null)) {
+            return $as_sci_Map($n(this.unify__sci_List__sci_List__sci_Map(x61, x33)).$plus__T2__sci_MapOps(new $c_T2(x63, x32)))
           }
         }
       };
-      if ((x64 instanceof $c_sci_$colon$colon)) {
-        var x18 = $as_sci_$colon$colon(x64);
-        $n(x18);
-        var d$4 = $n(x18).sci_$colon$colon__f_head;
+      if ((x66 instanceof $c_sci_$colon$colon)) {
+        var x20 = $as_sci_$colon$colon(x66);
+        $n(x20);
+        var d$4 = $as_Lrebecaos_backend_Eval$Data($n(x20).sci_$colon$colon__f_head);
         var $$x2 = $m_s_sys_package$();
         var this$12 = $n(d$4);
-        $n($$x2).error__T__E((((((((("Value " + d$4) + ": ") + $n($objectGetClass(this$12)).toString__T()) + " does not match variable ") + x61) + ": ") + x62) + "."))
+        $n($$x2).error__T__E((((((((("Value " + d$4) + ": ") + $objectGetClass(this$12).toString__T()) + " does not match variable ") + x63) + ": ") + x64) + "."))
       }
     }
   };
   var x$5 = $m_s_package$().s_package$__f_Nil;
-  if (((x$5 === null) ? (x63 === null) : $n(x$5).equals__O__Z(x63))) {
+  if (((x$5 === null) ? (x65 === null) : $n(x$5).equals__O__Z(x65))) {
     var $$x3 = $m_s_sys_package$();
     var this$13 = $n(vals);
     $n($$x3).error__T__E(("Unexpected actual arguments: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$13, "", ",", "")))
   };
   var x$7 = $m_s_package$().s_package$__f_Nil;
-  if (((x$7 === null) ? (x64 === null) : $n(x$7).equals__O__Z(x64))) {
+  if (((x$7 === null) ? (x66 === null) : $n(x$7).equals__O__Z(x66))) {
     var $$x4 = $m_s_sys_package$();
     var this$14 = $n(vars);
     $n($$x4).error__T__E(("Unexpected formal arguments: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$14, "", ",", "")))
   };
-  throw new $c_s_MatchError(x11)
+  throw new $c_s_MatchError(x13)
 });
 $c_Lrebecaos_backend_Semantics$.prototype.unifyReb__sci_List__sci_List__sci_Map = (function(vars, vals) {
-  var x65 = new $c_T2(vars, vals);
-  var x81 = $as_sci_List(x65.T2__f__1);
-  var x82 = $as_sci_List(x65.T2__f__2);
+  var x67 = new $c_T2(vars, vals);
+  var x83 = $as_sci_List(x67.T2__f__1);
+  var x84 = $as_sci_List(x67.T2__f__2);
   var x = $m_s_package$().s_package$__f_Nil;
-  if (((x === null) ? (x81 === null) : $n(x).equals__O__Z(x81))) {
+  if (((x === null) ? (x83 === null) : $n(x).equals__O__Z(x83))) {
     var x$3 = $m_s_package$().s_package$__f_Nil;
-    var $$x1 = ((x$3 === null) ? (x82 === null) : $n(x$3).equals__O__Z(x82))
+    var $$x1 = ((x$3 === null) ? (x84 === null) : $n(x$3).equals__O__Z(x84))
   } else {
     var $$x1 = false
   };
@@ -20494,35 +20676,35 @@ $c_Lrebecaos_backend_Semantics$.prototype.unifyReb__sci_List__sci_List__sci_Map 
     var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
     return this$2.from__sc_IterableOnce__sci_Map(elems)
   };
-  if ((x81 instanceof $c_sci_$colon$colon)) {
-    var x75 = $as_sci_$colon$colon(x81);
-    var x76 = $as_Lrebecaos_syntax_Program$QVar($n(x75).sci_$colon$colon__f_head);
-    var x77 = $n(x75).sci_$colon$colon__f_next;
-    if ((x76 !== null)) {
-      var this$4 = $n(x76);
-      var x79 = this$4.Lrebecaos_syntax_Program$QVar__f_name;
-      var this$5 = $n(x76);
-      if ((x82 instanceof $c_sci_$colon$colon)) {
-        var x72 = $as_sci_$colon$colon(x82);
-        var x74 = $n(x72).sci_$colon$colon__f_next;
-        var arg = $as_T($n(x72).sci_$colon$colon__f_head);
-        return $as_sci_Map($n(this.unifyReb__sci_List__sci_List__sci_Map(x77, x74)).$plus__T2__sci_MapOps(new $c_T2(x79, arg)))
+  if ((x83 instanceof $c_sci_$colon$colon)) {
+    var x77 = $as_sci_$colon$colon(x83);
+    var x78 = $as_Lrebecaos_syntax_Program$QVar($n(x77).sci_$colon$colon__f_head);
+    var x79 = $n(x77).sci_$colon$colon__f_next;
+    if ((x78 !== null)) {
+      var this$4 = $n(x78);
+      var x81 = this$4.Lrebecaos_syntax_Program$QVar__f_name;
+      var this$5 = $n(x78);
+      if ((x84 instanceof $c_sci_$colon$colon)) {
+        var x74 = $as_sci_$colon$colon(x84);
+        var x76 = $n(x74).sci_$colon$colon__f_next;
+        var arg = $as_T($n(x74).sci_$colon$colon__f_head);
+        return $as_sci_Map($n(this.unifyReb__sci_List__sci_List__sci_Map(x79, x76)).$plus__T2__sci_MapOps(new $c_T2(x81, arg)))
       }
     }
   };
   var x$5 = $m_s_package$().s_package$__f_Nil;
-  if (((x$5 === null) ? (x81 === null) : $n(x$5).equals__O__Z(x81))) {
+  if (((x$5 === null) ? (x83 === null) : $n(x$5).equals__O__Z(x83))) {
     var $$x2 = $m_s_sys_package$();
     var this$8 = $n(vals);
     $n($$x2).error__T__E(("Unexpected actual rebecs: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$8, "", ",", "")))
   };
   var x$7 = $m_s_package$().s_package$__f_Nil;
-  if (((x$7 === null) ? (x82 === null) : $n(x$7).equals__O__Z(x82))) {
+  if (((x$7 === null) ? (x84 === null) : $n(x$7).equals__O__Z(x84))) {
     var $$x3 = $m_s_sys_package$();
     var this$9 = $n(vars);
     $n($$x3).error__T__E(("Unexpected formal rebecs: " + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$9, "", ",", "")))
   };
-  throw new $c_s_MatchError(x65)
+  throw new $c_s_MatchError(x67)
 });
 $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
   var initials = $as_sci_Set($n($n($n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((m) => {
@@ -20571,47 +20753,51 @@ $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
       var x$1$4 = $as_Lrebecaos_backend_Semantics$Msg(x$1$3$1);
       if ((x$1$4 !== null)) {
         var this$22 = $n(x$1$4);
-        var x107 = this$22.Lrebecaos_backend_Semantics$Msg__f_rcv;
+        var x111 = this$22.Lrebecaos_backend_Semantics$Msg__f_rcv;
         var this$23 = $n(x$1$4);
-        var x108 = this$23.Lrebecaos_backend_Semantics$Msg__f_m;
+        var x112 = this$23.Lrebecaos_backend_Semantics$Msg__f_m;
         var this$24 = $n(x$1$4);
-        var x109 = this$24.Lrebecaos_backend_Semantics$Msg__f_args;
+        var x113 = this$24.Lrebecaos_backend_Semantics$Msg__f_args;
         var this$25 = $n(x$1$4);
-        var x110 = this$25.Lrebecaos_backend_Semantics$Msg__f_snd;
+        var x114 = this$25.Lrebecaos_backend_Semantics$Msg__f_snd;
         var this$26 = $n(x$1$4);
-        var x111 = this$26.Lrebecaos_backend_Semantics$Msg__f_tt;
+        var x115 = this$26.Lrebecaos_backend_Semantics$Msg__f_tt;
         var this$27 = $n(x$1$4);
-        var this$28 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($as_sc_MapOps($n(st).T3__f__2)).get__O__s_Option(x107)));
+        var this$28 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($as_sc_MapOps($n(st).T3__f__2)).get__O__s_Option(x111)));
         return $as_sci_Set($n($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$28)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((rebEnv) => {
           var rebEnv$1 = $as_Lrebecaos_backend_Semantics$RebecEnv(rebEnv);
           return this.enabledDL__Lrebecaos_backend_Semantics$Msg__Lrebecaos_backend_Semantics$RebecEnv__Z(x$1$4, rebEnv$1)
         })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((rebEnv$2) => {
           var rebEnv$3 = $as_Lrebecaos_backend_Semantics$RebecEnv(rebEnv$2);
-          var this$29 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($n(rebEnv$3).Lrebecaos_backend_Semantics$RebecEnv__f_meth).get__O__s_Option(x108)));
+          var this$29 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($n(rebEnv$3).Lrebecaos_backend_Semantics$RebecEnv__f_meth).get__O__s_Option(x112)));
           return $as_sc_IterableOnce($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$29)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((mth) => {
             var mth$1 = $as_Lrebecaos_syntax_Program$Msgsrv(mth);
-            var $$x3 = $n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_stm;
-            var $$x2 = $n(rebEnv$3).addValuation__sci_Map__Lrebecaos_backend_Semantics$RebecEnv(this.unify__sci_List__sci_List__sci_Map($n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_vars, x109));
+            var $$x4 = $n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_stm;
+            var $$x3 = $n($n(rebEnv$3).addValuation__sci_Map__Lrebecaos_backend_Semantics$RebecEnv(this.unify__sci_List__sci_List__sci_Map($n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_vars, x113)));
             var x = $n(rebEnv$3).now__I();
-            var y = ((x > x111) ? x : x111);
-            return $as_sc_IterableOnce($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__sci_Set($$x3, $n($n($$x2).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2("now", y))).addRebec__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2("sender", x110)))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$5) => {
-              var x$1$6 = $as_T2(x$1$5);
-              return ((x$1$6 !== null) && ($as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$6)._1__O()), $as_Lrebecaos_backend_Bag($n(x$1$6)._2__O()), true))
+            var n = ((x > x115) ? x : x115);
+            var y = new $c_Lrebecaos_backend_Eval$Data$N(n);
+            var $$x2 = $n($$x3).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2("now", y));
+            var y$1 = new $c_Lrebecaos_backend_Eval$Data$RebRef(x114);
+            return $as_sc_IterableOnce($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_syntax_Program$System__sci_Set($$x4, $n($$x2).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2("sender", y$1)), $as_Lrebecaos_syntax_Program$System($n(st).T3__f__1))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$5) => {
+              var x$1$6 = $as_T3(x$1$5);
+              return ((x$1$6 !== null) && ($as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$6).T3__f__1), $as_Lrebecaos_backend_Bag($n(x$1$6).T3__f__2), $as_sci_Map($n(x$1$6).T3__f__3), true))
             })))).map__F1__O(new $c_sjsr_AnonFunction1(((x$1$2$1) => {
-              var x$1$7 = $as_T2(x$1$2$1);
+              var x$1$7 = $as_T3(x$1$2$1);
               if ((x$1$7 !== null)) {
-                var newEnv$1 = $as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$7)._1__O());
-                var newMsgs$1 = $as_Lrebecaos_backend_Bag($n(x$1$7)._2__O());
+                var newEnv$1 = $as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$7).T3__f__1);
+                var newMsgs$1 = $as_Lrebecaos_backend_Bag($n(x$1$7).T3__f__2);
+                var newRebs$1 = $as_sci_Map($n(x$1$7).T3__f__3);
                 var updMsg = $n(newMsgs$1).map__F1__Lrebecaos_backend_Bag(new $c_sjsr_AnonFunction1(((m$4) => {
                   var m$5 = $as_Lrebecaos_backend_Semantics$Msg(m$4);
-                  return this.subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg(m$5, $as_sci_Map($n($n(rebEnv$3).Lrebecaos_backend_Semantics$RebecEnv__f_rebs).$plus__T2__sci_MapOps(new $c_T2("self", x107))))
+                  return this.subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg(m$5, $as_sci_Map($n($n(rebEnv$3).Lrebecaos_backend_Semantics$RebecEnv__f_rebs).$plus__T2__sci_MapOps(new $c_T2("self", x111))))
                 })));
                 var self = new $c_T2(x$1$4, updMsg);
                 var _1 = $n(st).T3__f__1;
-                var _2 = $n($as_sci_MapOps($n(st).T3__f__2)).$plus__T2__sci_MapOps(new $c_T2(x107, newEnv$1));
+                var _2 = $n($n($as_sci_MapOps($n(st).T3__f__2)).$plus__T2__sci_MapOps(new $c_T2(x111, newEnv$1))).$plus$plus__sc_IterableOnce__sc_IterableOps(newRebs$1);
                 var _3 = $n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).$minus__O__Lrebecaos_backend_Bag(x$1$4)).$plus$plus__Lrebecaos_backend_Bag__Lrebecaos_backend_Bag(updMsg);
-                var y$1 = new $c_T3(_1, _2, _3);
-                return new $c_T2(self, y$1)
+                var y$2 = new $c_T3(_1, _2, _3);
+                return new $c_T2(self, y$2)
               };
               throw new $c_s_MatchError(x$1$7)
             }))))
@@ -20645,202 +20831,287 @@ $c_Lrebecaos_backend_Semantics$.prototype.enabled__Lrebecaos_backend_Semantics$M
 $c_Lrebecaos_backend_Semantics$.prototype.enabledDL__Lrebecaos_backend_Semantics$Msg__Lrebecaos_backend_Semantics$RebecEnv__Z = (function(m, env) {
   return ($n($n(m).Lrebecaos_backend_Semantics$Msg__f_dl).isEmpty__Z() || ($uI($n($n(m).Lrebecaos_backend_Semantics$Msg__f_dl).get__O()) >= $n(env).now__I()))
 });
-$c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__sci_Set = (function(stm, reb) {
+$c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_syntax_Program$System__sci_Set = (function(stm, reb, sys) {
   var stm$tailLocal1 = stm;
   while (true) {
-    var x131 = stm$tailLocal1;
+    var x136 = stm$tailLocal1;
     var x = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
-    if (((x === null) ? (x131 === null) : $n(x).equals__O__Z(x131))) {
+    if (((x === null) ? (x136 === null) : $n(x).equals__O__Z(x136))) {
       var this$3 = $n($m_s_Predef$().s_Predef$__f_Set);
       var $$x1 = $m_sr_ScalaRunTime$();
-      var y = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
-      var elems = $n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(reb, y)]));
-      return this$3.from__sc_IterableOnce__sci_Set(elems)
+      var _2 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
+      var this$1 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+      var _3 = this$1.from__sc_IterableOnce__sci_Map(elems);
+      var elems$1 = $n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(reb, _2, _3)]));
+      return this$3.from__sc_IterableOnce__sci_Set(elems$1)
     };
-    if ((x131 instanceof $c_Lrebecaos_syntax_Program$Statement$Seq)) {
-      var x$1 = $as_Lrebecaos_syntax_Program$Statement$Seq(x131);
+    if ((x136 instanceof $c_Lrebecaos_syntax_Program$Statement$Seq)) {
+      var x$1 = $as_Lrebecaos_syntax_Program$Statement$Seq(x136);
       var this$5 = $n(x$1);
-      var x161 = this$5.Lrebecaos_syntax_Program$Statement$Seq__f_c1;
+      var x169 = this$5.Lrebecaos_syntax_Program$Statement$Seq__f_c1;
       var this$6 = $n(x$1);
-      var x162 = this$6.Lrebecaos_syntax_Program$Statement$Seq__f_c2;
+      var x170 = this$6.Lrebecaos_syntax_Program$Statement$Seq__f_c2;
       var x$3 = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
-      if (((x$3 === null) ? (x161 === null) : $n(x$3).equals__O__Z(x161))) {
-        stm$tailLocal1 = x162;
+      if (((x$3 === null) ? (x169 === null) : $n(x$3).equals__O__Z(x169))) {
+        stm$tailLocal1 = x170;
         continue
       };
-      return $as_sci_Set($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__sci_Set(x161, reb)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$1) => {
-        var x$1$2 = $as_T2(x$1$1);
-        return ((x$1$2 !== null) && ($as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$2)._1__O()), $as_Lrebecaos_backend_Bag($n(x$1$2)._2__O()), true))
-      })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((reb, x162) => ((x$1$2$1) => {
-        var x$1$3 = $as_T2(x$1$2$1);
+      return $as_sci_Set($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_syntax_Program$System__sci_Set(x169, reb, sys)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$1) => {
+        var x$1$2 = $as_T3(x$1$1);
+        return ((x$1$2 !== null) && ($as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$2).T3__f__1), $as_Lrebecaos_backend_Bag($n(x$1$2).T3__f__2), $as_sci_Map($n(x$1$2).T3__f__3), true))
+      })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((reb, sys, x170) => ((x$1$2$1) => {
+        var x$1$3 = $as_T3(x$1$2$1);
         if ((x$1$3 !== null)) {
-          var sigma$1 = $as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$3)._1__O());
-          var msgs$1 = $as_Lrebecaos_backend_Bag($n(x$1$3)._2__O());
-          return $as_sci_Set($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__sci_Set(x162, $n(reb).addValuation__sci_Map__Lrebecaos_backend_Semantics$RebecEnv($n(sigma$1).Lrebecaos_backend_Semantics$RebecEnv__f_vars))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$2$2) => {
-            var x$1$4 = $as_T2(x$1$2$2);
-            return ((x$1$4 !== null) && ($as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$4)._1__O()), $as_Lrebecaos_backend_Bag($n(x$1$4)._2__O()), true))
+          var sigma$1 = $as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$3).T3__f__1);
+          var msgs$1 = $as_Lrebecaos_backend_Bag($n(x$1$3).T3__f__2);
+          var r1$1 = $as_sci_Map($n(x$1$3).T3__f__3);
+          return $as_sci_Set($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_syntax_Program$System__sci_Set(x170, $n($n(reb).addValuation__sci_Map__Lrebecaos_backend_Semantics$RebecEnv($n(sigma$1).Lrebecaos_backend_Semantics$RebecEnv__f_vars)).addRebecs__sc_Iterable__Lrebecaos_backend_Semantics$RebecEnv($n(sigma$1).Lrebecaos_backend_Semantics$RebecEnv__f_rebs), sys)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$2$2) => {
+            var x$1$4 = $as_T3(x$1$2$2);
+            return ((x$1$4 !== null) && ($as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$4).T3__f__1), $as_Lrebecaos_backend_Bag($n(x$1$4).T3__f__2), $as_sci_Map($n(x$1$4).T3__f__3), true))
           })))).map__F1__O(new $c_sjsr_AnonFunction1(((x$1$3$1) => {
-            var x$1$5 = $as_T2(x$1$3$1);
+            var x$1$5 = $as_T3(x$1$3$1);
             if ((x$1$5 !== null)) {
-              var sigma2$1 = $as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$5)._1__O());
-              var msgs2$1 = $as_Lrebecaos_backend_Bag($n(x$1$5)._2__O());
-              var y$1 = $n(msgs$1).$plus$plus__Lrebecaos_backend_Bag__Lrebecaos_backend_Bag(msgs2$1);
-              return new $c_T2(sigma2$1, y$1)
+              var sigma2$1 = $as_Lrebecaos_backend_Semantics$RebecEnv($n(x$1$5).T3__f__1);
+              var msgs2$1 = $as_Lrebecaos_backend_Bag($n(x$1$5).T3__f__2);
+              var r2$1 = $as_sci_Map($n(x$1$5).T3__f__3);
+              var _2$1 = $n(msgs$1).$plus$plus__Lrebecaos_backend_Bag__Lrebecaos_backend_Bag(msgs2$1);
+              var _3$1 = $n(r1$1).$plus$plus__sc_IterableOnce__sc_IterableOps(r2$1);
+              return new $c_T3(sigma2$1, _2$1, _3$1)
             };
             throw new $c_s_MatchError(x$1$5)
           }))))
         };
         throw new $c_s_MatchError(x$1$3)
-      }))(reb, x162))))
+      }))(reb, sys, x170))))
     };
-    if ((x131 instanceof $c_Lrebecaos_syntax_Program$Statement$Assign)) {
-      var x$1$6 = $as_Lrebecaos_syntax_Program$Statement$Assign(x131);
+    if ((x136 instanceof $c_Lrebecaos_syntax_Program$Statement$Assign)) {
+      var x$1$6 = $as_Lrebecaos_syntax_Program$Statement$Assign(x136);
+      var this$10 = $n(x$1$6);
+      var x161 = this$10.Lrebecaos_syntax_Program$Statement$Assign__f_ident;
       var this$11 = $n(x$1$6);
-      var x153 = this$11.Lrebecaos_syntax_Program$Statement$Assign__f_ident;
-      var this$12 = $n(x$1$6);
-      var x154 = this$12.Lrebecaos_syntax_Program$Statement$Assign__f_e;
+      var x162 = this$11.Lrebecaos_syntax_Program$Statement$Assign__f_e;
       var $$x2 = $n(reb);
-      var y$2 = this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(x154, reb);
-      var reb2 = $n($$x2).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2(x153, y$2));
-      var this$17 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var y = $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x162, reb);
+      var reb2 = $n($$x2).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2(x161, y));
+      var this$16 = $n($m_s_Predef$().s_Predef$__f_Set);
       var $$x3 = $m_sr_ScalaRunTime$();
-      var y$3 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
-      var elems$1 = $n($$x3).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(reb2, y$3)]));
-      return this$17.from__sc_IterableOnce__sci_Set(elems$1)
+      var _2$2 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
+      var this$14 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+      var _3$2 = this$14.from__sc_IterableOnce__sci_Map(elems$2);
+      var elems$3 = $n($$x3).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(reb2, _2$2, _3$2)]));
+      return this$16.from__sc_IterableOnce__sci_Set(elems$3)
     };
-    if ((x131 instanceof $c_Lrebecaos_syntax_Program$Statement$ITE)) {
-      var x$1$7 = $as_Lrebecaos_syntax_Program$Statement$ITE(x131);
+    if ((x136 instanceof $c_Lrebecaos_syntax_Program$Statement$ITE)) {
+      var x$1$7 = $as_Lrebecaos_syntax_Program$Statement$ITE(x136);
+      var this$18 = $n(x$1$7);
+      var x156 = this$18.Lrebecaos_syntax_Program$Statement$ITE__f_b;
       var this$19 = $n(x$1$7);
-      var x148 = this$19.Lrebecaos_syntax_Program$Statement$ITE__f_b;
+      var x157 = this$19.Lrebecaos_syntax_Program$Statement$ITE__f_ct;
       var this$20 = $n(x$1$7);
-      var x149 = this$20.Lrebecaos_syntax_Program$Statement$ITE__f_ct;
-      var this$21 = $n(x$1$7);
-      var x150 = this$21.Lrebecaos_syntax_Program$Statement$ITE__f_cf;
-      if (this.eval__Lrebecaos_syntax_Program$BExpr__Lrebecaos_backend_Semantics$RebecEnv__Z(x148, reb)) {
-        stm$tailLocal1 = x149;
+      var x158 = this$20.Lrebecaos_syntax_Program$Statement$ITE__f_cf;
+      if ($n($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x156, reb)).toBool__Z()) {
+        stm$tailLocal1 = x157;
         continue
       } else {
-        stm$tailLocal1 = x150;
+        stm$tailLocal1 = x158;
         continue
       }
     };
-    if ((x131 instanceof $c_Lrebecaos_syntax_Program$Statement$Choice)) {
-      var x$1$8 = $as_Lrebecaos_syntax_Program$Statement$Choice(x131);
+    if ((x136 instanceof $c_Lrebecaos_syntax_Program$Statement$Choice)) {
+      var x$1$8 = $as_Lrebecaos_syntax_Program$Statement$Choice(x136);
+      var this$22 = $n(x$1$8);
+      var x152 = this$22.Lrebecaos_syntax_Program$Statement$Choice__f_v;
       var this$23 = $n(x$1$8);
-      var x144 = this$23.Lrebecaos_syntax_Program$Statement$Choice__f_v;
-      var this$24 = $n(x$1$8);
-      var x145 = this$24.Lrebecaos_syntax_Program$Statement$Choice__f_options;
-      var this$25 = $n(x145);
-      return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$25)).map__F1__O(new $c_sjsr_AnonFunction1(((reb, x144) => ((opt) => {
-        var opt$1 = $as_Lrebecaos_syntax_Program$Expr(opt);
-        var newopt = this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(opt$1, reb);
-        var sigma2$2 = $n(reb).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2(x144, newopt));
-        var y$4 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
-        return new $c_T2(sigma2$2, y$4)
-      }))(reb, x144))))
+      var x153 = this$23.Lrebecaos_syntax_Program$Statement$Choice__f_options;
+      var this$24 = $n(x153);
+      return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$24)).map__F1__O(new $c_sjsr_AnonFunction1(((reb, x152) => ((opt) => {
+        var opt$1 = $as_Lrebecaos_syntax_Program$Expr2(opt);
+        var newopt = $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(opt$1, reb);
+        var sigma2$2 = $n(reb).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2(x152, newopt));
+        var _2$3 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
+        var this$27 = $n($m_s_Predef$().s_Predef$__f_Map);
+        var elems$4 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+        var _3$3 = this$27.from__sc_IterableOnce__sci_Map(elems$4);
+        return new $c_T3(sigma2$2, _2$3, _3$3)
+      }))(reb, x152))))
     };
-    if ((x131 instanceof $c_Lrebecaos_syntax_Program$Statement$Call)) {
-      var x$1$9 = $as_Lrebecaos_syntax_Program$Statement$Call(x131);
-      var this$31 = $n(x$1$9);
-      var x137 = this$31.Lrebecaos_syntax_Program$Statement$Call__f_rebec;
-      var this$32 = $n(x$1$9);
-      var x138 = this$32.Lrebecaos_syntax_Program$Statement$Call__f_meth;
-      var this$33 = $n(x$1$9);
-      var x139 = this$33.Lrebecaos_syntax_Program$Statement$Call__f_args;
-      var this$34 = $n(x$1$9);
-      var x140 = this$34.Lrebecaos_syntax_Program$Statement$Call__f_after;
-      var this$35 = $n(x$1$9);
-      var x141 = this$35.Lrebecaos_syntax_Program$Statement$Call__f_dl;
-      var this$36 = $n(x140);
-      if (this$36.isEmpty__Z()) {
-        var after2 = $m_s_None$()
-      } else {
-        var arg1 = this$36.get__O();
-        var e = $as_Lrebecaos_syntax_Program$IExpr(arg1);
-        var after2 = new $c_s_Some(this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(e, reb))
-      };
-      var this$37 = $n(x141);
-      if (this$37.isEmpty__Z()) {
-        var deadline2 = $m_s_None$()
-      } else {
-        var arg1$1 = this$37.get__O();
-        var e$1 = $as_Lrebecaos_syntax_Program$IExpr(arg1$1);
-        var deadline2 = new $c_s_Some(this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(e$1, reb))
-      };
-      var $$x4 = $n(reb).now__I();
-      var this$38 = $n(after2);
-      var tt = (($$x4 + $uI((this$38.isEmpty__Z() ? 0 : this$38.get__O()))) | 0);
-      var this$39 = $n(deadline2);
-      if (this$39.isEmpty__Z()) {
-        var dl = $m_s_None$()
-      } else {
-        var arg1$2 = this$39.get__O();
-        var _$2 = $uI(arg1$2);
-        var dl = new $c_s_Some(((_$2 + $n(reb).now__I()) | 0))
-      };
-      var this$44 = $n($m_s_Predef$().s_Predef$__f_Set);
-      var $$x6 = $m_sr_ScalaRunTime$();
-      var $$x5 = $n($m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag());
-      var this$41 = $n(x139);
-      var f = ((reb) => ((e$4) => {
-        var e$2 = $as_Lrebecaos_syntax_Program$Expr(e$4);
-        return this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(e$2, reb)
+    if ((x136 instanceof $c_Lrebecaos_syntax_Program$Statement$NewReb)) {
+      var x$1$9 = $as_Lrebecaos_syntax_Program$Statement$NewReb(x136);
+      var this$30 = $n(x$1$9);
+      var x149 = this$30.Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
+      var globalName = $m_Lrebecaos_backend_Semantics$RebecEnv$().newVar__T();
+      var this$31 = $n($n(x149).Lrebecaos_syntax_Program$InstanceDecl__f_known);
+      var f = ((reb) => ((k) => {
+        var k$1 = $as_T(k);
+        return $as_T($n($n(reb).Lrebecaos_backend_Semantics$RebecEnv__f_rebs).getOrElse__O__F0__O(k$1, new $c_sjsr_AnonFunction0((() => k$1))))
       }))(reb);
-      if ((this$41 === $m_sci_Nil$())) {
-        var args = $m_sci_Nil$()
+      if ((this$31 === $m_sci_Nil$())) {
+        var newKnown = $m_sci_Nil$()
       } else {
-        var arg1$3 = this$41.head__O();
-        var h = new $c_sci_$colon$colon(f(arg1$3), $m_sci_Nil$());
+        var arg1 = this$31.head__O();
+        var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
         var t = h;
-        var rest = $as_sci_List(this$41.tail__O());
+        var rest = $as_sci_List(this$31.tail__O());
         while ((rest !== $m_sci_Nil$())) {
-          var arg1$4 = $n(rest).head__O();
-          var nx = new $c_sci_$colon$colon(f(arg1$4), $m_sci_Nil$());
+          var arg1$1 = $n(rest).head__O();
+          var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
           $n(t).sci_$colon$colon__f_next = nx;
           t = nx;
           rest = $as_sci_List($n(rest).tail__O())
         };
-        var args = h
+        var newKnown = h
       };
-      var y$5 = $n($$x5).$plus__O__Lrebecaos_backend_Bag(new $c_Lrebecaos_backend_Semantics$Msg(x137, x138, args, "self", tt, dl));
-      var elems$2 = $n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(reb, y$5)]));
-      return this$44.from__sc_IterableOnce__sci_Set(elems$2)
-    };
-    if ((x131 instanceof $c_Lrebecaos_syntax_Program$Statement$Delay)) {
-      var x$1$10 = $as_Lrebecaos_syntax_Program$Statement$Delay(x131);
-      var this$46 = $n(x$1$10);
-      var x134 = this$46.Lrebecaos_syntax_Program$Statement$Delay__f_d;
-      var d2 = this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x134, reb);
+      var clazz = $n(x149).Lrebecaos_syntax_Program$InstanceDecl__f_clazz;
+      var args = $n(x149).Lrebecaos_syntax_Program$InstanceDecl__f_args;
+      var dec2 = new $c_Lrebecaos_syntax_Program$InstanceDecl(clazz, globalName, newKnown, args);
       matchResult19: {
-        var tt$2;
-        var x125 = $n($n(reb).Lrebecaos_backend_Semantics$RebecEnv__f_vars).get__O__s_Option("now");
-        if ((x125 instanceof $c_s_Some)) {
-          var x129 = $n($as_s_Some(x125)).s_Some__f_value;
-          if ($isInt(x129)) {
-            var i = $uI(x129);
-            var tt$2 = ((i + d2) | 0);
-            break matchResult19
-          }
-        };
-        var x$5 = $m_s_None$();
-        if ((x$5 === x125)) {
-          var tt$2 = d2;
+        var \u03b41$___1;
+        var \u03b41$___2;
+        var n = $n(reb).now__I();
+        var x133 = this.instantiate__Lrebecaos_syntax_Program$InstanceDecl__Lrebecaos_syntax_Program$System__Lrebecaos_backend_Eval$Data__T2(dec2, sys, new $c_Lrebecaos_backend_Eval$Data$N(n));
+        if ((x133 !== null)) {
+          var localName = $as_T($n(x133)._1__O());
+          var reb2$2 = $as_Lrebecaos_backend_Semantics$RebecEnv($n(x133)._2__O());
+          var \u03b41$___1 = localName;
+          var \u03b41$___2 = reb2$2;
           break matchResult19
         };
-        if ((x125 instanceof $c_s_Some)) {
-          var b$2 = $n($as_s_Some(x125)).s_Some__f_value;
-          $m_s_sys_package$().error__T__E((("variable 'now' should be an int, but it is '" + b$2) + "'."))
-        };
-        throw new $c_s_MatchError(x125)
+        throw new $c_s_MatchError(x133)
       };
-      var this$51 = $n($m_s_Predef$().s_Predef$__f_Set);
-      var $$x7 = $m_sr_ScalaRunTime$();
-      var self = $n(reb).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2("now", tt$2));
-      var y$6 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
-      var elems$3 = $n($$x7).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y$6)]));
-      return this$51.from__sc_IterableOnce__sci_Set(elems$3)
+      var localName$2 = $as_T(\u03b41$___1);
+      var reb2$3 = $as_Lrebecaos_backend_Semantics$RebecEnv(\u03b41$___2);
+      var this$35 = $n($n(x149).Lrebecaos_syntax_Program$InstanceDecl__f_args);
+      var f$1 = ((reb) => ((a) => {
+        var a$1 = $as_Lrebecaos_syntax_Program$Expr2(a);
+        return $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(a$1, reb)
+      }))(reb);
+      if ((this$35 === $m_sci_Nil$())) {
+        var args$1 = $m_sci_Nil$()
+      } else {
+        var arg1$2 = this$35.head__O();
+        var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
+        var t$1 = h$1;
+        var rest$1 = $as_sci_List(this$35.tail__O());
+        while ((rest$1 !== $m_sci_Nil$())) {
+          var arg1$3 = $n(rest$1).head__O();
+          var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
+          $n(t$1).sci_$colon$colon__f_next = nx$1;
+          t$1 = nx$1;
+          rest$1 = $as_sci_List($n(rest$1).tail__O())
+        };
+        var args$1 = h$1
+      };
+      var tt = $n(reb).now__I();
+      var dl = $m_s_None$();
+      var msg = new $c_Lrebecaos_backend_Semantics$Msg(globalName, "initial", args$1, "", tt, dl);
+      var this$43 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var $$x4 = $m_sr_ScalaRunTime$();
+      var _1 = $n(reb).addRebec__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2(localName$2, globalName));
+      var _2$4 = $n($m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag()).$plus__O__Lrebecaos_backend_Bag(msg);
+      var this$41 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var elems$5 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(globalName, reb2$3)]));
+      var _3$4 = this$41.from__sc_IterableOnce__sci_Map(elems$5);
+      var elems$6 = $n($$x4).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(_1, _2$4, _3$4)]));
+      return this$43.from__sc_IterableOnce__sci_Set(elems$6)
     };
-    throw new $c_s_MatchError(x131)
+    if ((x136 instanceof $c_Lrebecaos_syntax_Program$Statement$Call)) {
+      var x$1$10 = $as_Lrebecaos_syntax_Program$Statement$Call(x136);
+      var this$45 = $n(x$1$10);
+      var x142 = this$45.Lrebecaos_syntax_Program$Statement$Call__f_rebec;
+      var this$46 = $n(x$1$10);
+      var x143 = this$46.Lrebecaos_syntax_Program$Statement$Call__f_meth;
+      var this$47 = $n(x$1$10);
+      var x144 = this$47.Lrebecaos_syntax_Program$Statement$Call__f_args;
+      var this$48 = $n(x$1$10);
+      var x145 = this$48.Lrebecaos_syntax_Program$Statement$Call__f_after;
+      var this$49 = $n(x$1$10);
+      var x146 = this$49.Lrebecaos_syntax_Program$Statement$Call__f_dl;
+      var this$50 = $n(x145);
+      if (this$50.isEmpty__Z()) {
+        var after2 = $m_s_None$()
+      } else {
+        var arg1$4 = this$50.get__O();
+        var e = $as_Lrebecaos_syntax_Program$Expr2(arg1$4);
+        var after2 = new $c_s_Some($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(e, reb))
+      };
+      var this$51 = $n(x146);
+      if (this$51.isEmpty__Z()) {
+        var deadline2 = $m_s_None$()
+      } else {
+        var arg1$5 = this$51.get__O();
+        var e$1 = $as_Lrebecaos_syntax_Program$Expr2(arg1$5);
+        var deadline2 = new $c_s_Some($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(e$1, reb))
+      };
+      var $$x6 = $n(reb).now__I();
+      var this$52 = $n(after2);
+      if (this$52.isEmpty__Z()) {
+        var $$x5 = $m_s_None$()
+      } else {
+        var arg1$6 = this$52.get__O();
+        var _$2 = $as_Lrebecaos_backend_Eval$Data(arg1$6);
+        var $$x5 = new $c_s_Some($n(_$2).toInt__I())
+      };
+      var this$53 = $n($$x5);
+      var tt$1 = (($$x6 + $uI((this$53.isEmpty__Z() ? 0 : this$53.get__O()))) | 0);
+      var this$54 = $n(deadline2);
+      if (this$54.isEmpty__Z()) {
+        var dl$1 = $m_s_None$()
+      } else {
+        var arg1$7 = this$54.get__O();
+        var _$3 = $as_Lrebecaos_backend_Eval$Data(arg1$7);
+        var dl$1 = new $c_s_Some((($n(_$3).toInt__I() + $n(reb).now__I()) | 0))
+      };
+      var this$59 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var $$x8 = $m_sr_ScalaRunTime$();
+      var $$x7 = $n($m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag());
+      var this$55 = $n(x144);
+      var f$2 = ((reb) => ((e$4) => {
+        var e$2 = $as_Lrebecaos_syntax_Program$Expr2(e$4);
+        return $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(e$2, reb)
+      }))(reb);
+      if ((this$55 === $m_sci_Nil$())) {
+        var args$2 = $m_sci_Nil$()
+      } else {
+        var arg1$8 = this$55.head__O();
+        var h$2 = new $c_sci_$colon$colon(f$2(arg1$8), $m_sci_Nil$());
+        var t$2 = h$2;
+        var rest$2 = $as_sci_List(this$55.tail__O());
+        while ((rest$2 !== $m_sci_Nil$())) {
+          var arg1$9 = $n(rest$2).head__O();
+          var nx$2 = new $c_sci_$colon$colon(f$2(arg1$9), $m_sci_Nil$());
+          $n(t$2).sci_$colon$colon__f_next = nx$2;
+          t$2 = nx$2;
+          rest$2 = $as_sci_List($n(rest$2).tail__O())
+        };
+        var args$2 = h$2
+      };
+      var _2$5 = $n($$x7).$plus__O__Lrebecaos_backend_Bag(new $c_Lrebecaos_backend_Semantics$Msg(x142, x143, args$2, "self", tt$1, dl$1));
+      var this$57 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var elems$7 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+      var _3$5 = this$57.from__sc_IterableOnce__sci_Map(elems$7);
+      var elems$8 = $n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(reb, _2$5, _3$5)]));
+      return this$59.from__sc_IterableOnce__sci_Set(elems$8)
+    };
+    if ((x136 instanceof $c_Lrebecaos_syntax_Program$Statement$Delay)) {
+      var x$1$11 = $as_Lrebecaos_syntax_Program$Statement$Delay(x136);
+      var this$61 = $n(x$1$11);
+      var x139 = this$61.Lrebecaos_syntax_Program$Statement$Delay__f_d;
+      var tt$2 = (($n(reb).now__I() + $n($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr2__Lrebecaos_backend_Semantics$RebecEnv__Lrebecaos_backend_Eval$Data(x139, reb)).toInt__I()) | 0);
+      var this$67 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var $$x10 = $m_sr_ScalaRunTime$();
+      var $$x9 = $n(reb);
+      var y$1 = new $c_Lrebecaos_backend_Eval$Data$N(tt$2);
+      var _1$1 = $n($$x9).addAssignment__T2__Lrebecaos_backend_Semantics$RebecEnv(new $c_T2("now", y$1));
+      var _2$6 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
+      var this$65 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var elems$9 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+      var _3$6 = this$65.from__sc_IterableOnce__sci_Map(elems$9);
+      var elems$10 = $n($$x10).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(_1$1, _2$6, _3$6)]));
+      return this$67.from__sc_IterableOnce__sci_Set(elems$10)
+    };
+    throw new $c_s_MatchError(x136)
   }
 });
 $c_Lrebecaos_backend_Semantics$.prototype.subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg = (function(m, knownReb) {
@@ -20851,229 +21122,6 @@ $c_Lrebecaos_backend_Semantics$.prototype.subst__Lrebecaos_backend_Semantics$Msg
   var tt = $n(m).Lrebecaos_backend_Semantics$Msg__f_tt;
   var dl = $n(m).Lrebecaos_backend_Semantics$Msg__f_dl;
   return new $c_Lrebecaos_backend_Semantics$Msg(rcv, m$1, args, snd, tt, dl)
-});
-$c_Lrebecaos_backend_Semantics$.prototype.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O = (function(e, env) {
-  if ((e instanceof $c_Lrebecaos_syntax_Program$GVar)) {
-    var x$1 = $as_Lrebecaos_syntax_Program$GVar(e);
-    var this$2 = $n(x$1);
-    var x208 = this$2.Lrebecaos_syntax_Program$GVar__f_name;
-    if ((x208 === "false")) {
-      return false
-    };
-    if ((x208 === "true")) {
-      return true
-    };
-    var x194 = $n($n(env).Lrebecaos_backend_Semantics$RebecEnv__f_vars).get__O__s_Option(x208);
-    if ((x194 instanceof $c_s_Some)) {
-      var value = $n($as_s_Some(x194)).s_Some__f_value;
-      return value
-    };
-    var x = $m_s_None$();
-    if ((x === x194)) {
-      var x191 = $n($n(env).Lrebecaos_backend_Semantics$RebecEnv__f_rebs).get__O__s_Option(x208);
-      if ((x191 instanceof $c_s_Some)) {
-        var str = $as_T($n($as_s_Some(x191)).s_Some__f_value);
-        return $f_T__hashCode__I($n(str))
-      };
-      var x$3 = $m_s_None$();
-      if ((x$3 === x191)) {
-        $m_s_sys_package$().error__T__E((("Unknown variable: '" + x208) + "'"))
-      };
-      throw new $c_s_MatchError(x191)
-    };
-    throw new $c_s_MatchError(x194)
-  };
-  if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr)) {
-    var iexpr = $as_Lrebecaos_syntax_Program$IExpr(e);
-    return this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(iexpr, env)
-  };
-  if ((e instanceof $c_Lrebecaos_syntax_Program$BExpr)) {
-    var bexpr = $as_Lrebecaos_syntax_Program$BExpr(e);
-    return this.eval__Lrebecaos_syntax_Program$BExpr__Lrebecaos_backend_Semantics$RebecEnv__Z(bexpr, env)
-  };
-  throw new $c_s_MatchError(e)
-});
-$c_Lrebecaos_backend_Semantics$.prototype.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I = (function(e, env) {
-  if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr$N)) {
-    var x$1 = $as_Lrebecaos_syntax_Program$IExpr$N(e);
-    var this$2 = $n(x$1);
-    var x241 = this$2.Lrebecaos_syntax_Program$IExpr$N__f_n;
-    return x241
-  };
-  if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr$IVar)) {
-    var x$1$1 = $as_Lrebecaos_syntax_Program$IExpr$IVar(e);
-    var this$4 = $n(x$1$1);
-    var x238 = this$4.Lrebecaos_syntax_Program$IExpr$IVar__f_ident;
-    var x212 = $n($n(env).Lrebecaos_backend_Semantics$RebecEnv__f_vars).get__O__s_Option(x238);
-    if ((x212 instanceof $c_s_Some)) {
-      var x217 = $n($as_s_Some(x212)).s_Some__f_value;
-      if ($isInt(x217)) {
-        var value = $uI(x217);
-        return value
-      };
-      if (((typeof x217) === "boolean")) {
-        var value$2 = $uZ(x217);
-        $m_s_sys_package$().error__T__E((((("Variable " + x238) + " has type Boolean (") + value$2) + "), but expected an Int."))
-      }
-    };
-    var x = $m_s_None$();
-    if ((x === x212)) {
-      var x209 = $n($n(env).Lrebecaos_backend_Semantics$RebecEnv__f_rebs).get__O__s_Option(x238);
-      if ((x209 instanceof $c_s_Some)) {
-        var str = $as_T($n($as_s_Some(x209)).s_Some__f_value);
-        return $f_T__hashCode__I($n(str))
-      };
-      var x$3 = $m_s_None$();
-      if ((x$3 === x209)) {
-        $m_s_sys_package$().error__T__E((("Unknown integer variable: '" + x238) + "'"))
-      };
-      throw new $c_s_MatchError(x209)
-    };
-    throw new $c_s_MatchError(x212)
-  };
-  if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr$Plus)) {
-    var x$1$2 = $as_Lrebecaos_syntax_Program$IExpr$Plus(e);
-    var this$6 = $n(x$1$2);
-    var x234 = this$6.Lrebecaos_syntax_Program$IExpr$Plus__f_e1;
-    var this$7 = $n(x$1$2);
-    var x235 = this$7.Lrebecaos_syntax_Program$IExpr$Plus__f_e2;
-    return ((this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x234, env) + this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x235, env)) | 0)
-  };
-  if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr$Times)) {
-    var x$1$3 = $as_Lrebecaos_syntax_Program$IExpr$Times(e);
-    var this$9 = $n(x$1$3);
-    var x230 = this$9.Lrebecaos_syntax_Program$IExpr$Times__f_e1;
-    var this$10 = $n(x$1$3);
-    var x231 = this$10.Lrebecaos_syntax_Program$IExpr$Times__f_e2;
-    return Math.imul(this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x230, env), this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x231, env))
-  };
-  if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr$Minus)) {
-    var x$1$4 = $as_Lrebecaos_syntax_Program$IExpr$Minus(e);
-    var this$12 = $n(x$1$4);
-    var x226 = this$12.Lrebecaos_syntax_Program$IExpr$Minus__f_e1;
-    var this$13 = $n(x$1$4);
-    var x227 = this$13.Lrebecaos_syntax_Program$IExpr$Minus__f_e2;
-    return ((this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x226, env) - this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x227, env)) | 0)
-  };
-  if ((e instanceof $c_Lrebecaos_syntax_Program$IExpr$Power)) {
-    var x$1$5 = $as_Lrebecaos_syntax_Program$IExpr$Power(e);
-    var this$15 = $n(x$1$5);
-    var x222 = this$15.Lrebecaos_syntax_Program$IExpr$Power__f_e1;
-    var this$16 = $n(x$1$5);
-    var x223 = this$16.Lrebecaos_syntax_Program$IExpr$Power__f_e2;
-    var x$2 = this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x222, env);
-    var a = x$2;
-    var x$4 = this.eval__Lrebecaos_syntax_Program$IExpr__Lrebecaos_backend_Semantics$RebecEnv__I(x223, env);
-    var b = x$4;
-    return $doubleToInt($uD(Math.pow(a, b)))
-  };
-  throw new $c_s_MatchError(e)
-});
-$c_Lrebecaos_backend_Semantics$.prototype.eval__Lrebecaos_syntax_Program$BExpr__Lrebecaos_backend_Semantics$RebecEnv__Z = (function(e, env) {
-  var e$tailLocal1 = e;
-  while (true) {
-    var x249 = e$tailLocal1;
-    var x = $s_Lrebecaos_syntax_Program$BExpr$__BTrue__Lrebecaos_syntax_Program$BExpr();
-    if (((x === null) ? (x249 === null) : $n(x).equals__O__Z(x249))) {
-      return true
-    };
-    var x$3 = $s_Lrebecaos_syntax_Program$BExpr$__BFalse__Lrebecaos_syntax_Program$BExpr();
-    if (((x$3 === null) ? (x249 === null) : $n(x$3).equals__O__Z(x249))) {
-      return false
-    };
-    if ((x249 instanceof $c_Lrebecaos_syntax_Program$BExpr$BVar)) {
-      var x$1 = $as_Lrebecaos_syntax_Program$BExpr$BVar(x249);
-      var this$2 = $n(x$1);
-      var x279 = this$2.Lrebecaos_syntax_Program$BExpr$BVar__f_name;
-      var x242 = $n($n(env).Lrebecaos_backend_Semantics$RebecEnv__f_vars).get__O__s_Option(x279);
-      if ((x242 instanceof $c_s_Some)) {
-        var x247 = $n($as_s_Some(x242)).s_Some__f_value;
-        if (((typeof x247) === "boolean")) {
-          var value = $uZ(x247);
-          return value
-        };
-        if ($isInt(x247)) {
-          var value$2 = $uI(x247);
-          $m_s_sys_package$().error__T__E((((("Variable " + x279) + " has type Int (") + value$2) + "), but expected an Boolean."))
-        }
-      };
-      var x$5 = $m_s_None$();
-      if ((x$5 === x242)) {
-        $m_s_sys_package$().error__T__E((("Unknown boolean variable: '" + x279) + "'"))
-      };
-      throw new $c_s_MatchError(x242)
-    };
-    if ((x249 instanceof $c_Lrebecaos_syntax_Program$BExpr$And)) {
-      var x$1$1 = $as_Lrebecaos_syntax_Program$BExpr$And(x249);
-      var this$4 = $n(x$1$1);
-      var x275 = this$4.Lrebecaos_syntax_Program$BExpr$And__f_b1;
-      var this$5 = $n(x$1$1);
-      var x276 = this$5.Lrebecaos_syntax_Program$BExpr$And__f_b2;
-      if (this.eval__Lrebecaos_syntax_Program$BExpr__Lrebecaos_backend_Semantics$RebecEnv__Z(x275, env)) {
-        e$tailLocal1 = x276;
-        continue
-      } else {
-        return false
-      }
-    };
-    if ((x249 instanceof $c_Lrebecaos_syntax_Program$BExpr$Or)) {
-      var x$1$2 = $as_Lrebecaos_syntax_Program$BExpr$Or(x249);
-      var this$7 = $n(x$1$2);
-      var x271 = this$7.Lrebecaos_syntax_Program$BExpr$Or__f_b1;
-      var this$8 = $n(x$1$2);
-      var x272 = this$8.Lrebecaos_syntax_Program$BExpr$Or__f_b2;
-      if (this.eval__Lrebecaos_syntax_Program$BExpr__Lrebecaos_backend_Semantics$RebecEnv__Z(x271, env)) {
-        return true
-      } else {
-        e$tailLocal1 = x272;
-        continue
-      }
-    };
-    if ((x249 instanceof $c_Lrebecaos_syntax_Program$BExpr$Not)) {
-      var x$1$3 = $as_Lrebecaos_syntax_Program$BExpr$Not(x249);
-      var this$10 = $n(x$1$3);
-      var x268 = this$10.Lrebecaos_syntax_Program$BExpr$Not__f_b;
-      return (!this.eval__Lrebecaos_syntax_Program$BExpr__Lrebecaos_backend_Semantics$RebecEnv__Z(x268, env))
-    };
-    if ((x249 instanceof $c_Lrebecaos_syntax_Program$BExpr$Less)) {
-      var x$1$4 = $as_Lrebecaos_syntax_Program$BExpr$Less(x249);
-      var this$12 = $n(x$1$4);
-      var x264 = this$12.Lrebecaos_syntax_Program$BExpr$Less__f_e1;
-      var this$13 = $n(x$1$4);
-      var x265 = this$13.Lrebecaos_syntax_Program$BExpr$Less__f_e2;
-      return ($p_Lrebecaos_backend_Semantics$__toInt__O__I(this, this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(x264, env)) < $p_Lrebecaos_backend_Semantics$__toInt__O__I(this, this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(x265, env)))
-    };
-    if ((x249 instanceof $c_Lrebecaos_syntax_Program$BExpr$Greater)) {
-      var x$1$5 = $as_Lrebecaos_syntax_Program$BExpr$Greater(x249);
-      var this$15 = $n(x$1$5);
-      var x260 = this$15.Lrebecaos_syntax_Program$BExpr$Greater__f_e1;
-      var this$16 = $n(x$1$5);
-      var x261 = this$16.Lrebecaos_syntax_Program$BExpr$Greater__f_e2;
-      return ($p_Lrebecaos_backend_Semantics$__toInt__O__I(this, this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(x260, env)) > $p_Lrebecaos_backend_Semantics$__toInt__O__I(this, this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(x261, env)))
-    };
-    if ((x249 instanceof $c_Lrebecaos_syntax_Program$BExpr$Eq)) {
-      var x$1$6 = $as_Lrebecaos_syntax_Program$BExpr$Eq(x249);
-      var this$18 = $n(x$1$6);
-      var x256 = this$18.Lrebecaos_syntax_Program$BExpr$Eq__f_e1;
-      var this$19 = $n(x$1$6);
-      var x257 = this$19.Lrebecaos_syntax_Program$BExpr$Eq__f_e2;
-      var x$2 = this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(x256, env);
-      var y = this.eval__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_Semantics$RebecEnv__O(x257, env);
-      return $m_sr_BoxesRunTime$().equals__O__O__Z(x$2, y)
-    };
-    if (false) {
-      var x$1$7 = $as_Lrebecaos_syntax_Program$BExpr$Impl(x249);
-      var x252 = $n(x$1$7)._1__Lrebecaos_syntax_Program$BExpr();
-      var x253 = $n(x$1$7)._2__Lrebecaos_syntax_Program$BExpr();
-      if ((!this.eval__Lrebecaos_syntax_Program$BExpr__Lrebecaos_backend_Semantics$RebecEnv__Z(x252, env))) {
-        return true
-      } else {
-        e$tailLocal1 = x253;
-        continue
-      }
-    };
-    throw new $c_s_MatchError(x249)
-  }
 });
 $c_Lrebecaos_backend_Semantics$.prototype.next__O__sci_Set = (function(s) {
   return this.next__T3__sci_Set($as_T3(s))
@@ -21112,17 +21160,17 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     return $m_Lrebecaos_backend_Semantics$().initSt__Lrebecaos_syntax_Program$System__T3($m_Lrebecaos_syntax_Parser$().parseProgram__T__Lrebecaos_syntax_Program$System(str$1))
   }));
   $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    ex.add(0);}\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + 1;}\n  }\n}\n\nmain {\n\tExample ex1( ex2):();\n\tExample ex2( ex1):();\n}", "Sarir-basic", "Simple example of a Rebeca program, taken from the Sarir paper."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n\t\tconsumer.consume(p);\n\t\tself.produce();\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons", "Producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n    Producer newProducer;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n    if (p==3) {\n\t\t\tnewProducer = new Producer(consuler):();\n    }\n    consumer.consume(p);\n\t\tif(p!=4){\n    \tself.produce();\n    }\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv produce(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons (dyn)", "(Unsupported) Dynamic version of the producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}", "Timed-ticket", "Ticket Service from an SCP'25 paper on Timed Rebeca"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Philosopher(3)\n{\n  knownrebecs\n  {\n    Fork forkL;\n    Fork forkR;\n  }\n  statevars\n  {\n    boolean eating;\n    boolean fL;\n    boolean fR;\n  }\n  msgsrv initial()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    self.arrive();\n  }\n\n  msgsrv arrive()\n  {\n    forkL.request();\n  }\n\n  msgsrv permit()\n  {\n    if (sender == forkL) {\n      if (!fL) {\n        fL = true;\n        forkR.request();\n      }\n    }\n    else {\n      if (fL && !(fR)) {\n        fR = true;\n        self.eat();\n      }\n      // else discard the message\n    }\n  }\n\n  msgsrv eat()\n  {\n    eating = true;\n    self.leave();\n  }\n\n  msgsrv leave()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    forkL.release();\n    forkR.release();\n    self.arrive();\n  }\n}\n\nreactiveclass Fork(3)\n{\n  knownrebecs\n  {\n    Philosopher philL;\n    Philosopher philR;\n  }\n  statevars\n  {\n    boolean lAssign;  \n    boolean rAssign;  \n    boolean leftReq;\n    boolean rightReq;\n  }\n  msgsrv initial()\n  { \n    lAssign = false;\n    rAssign = false;\n    leftReq = false;\n    rightReq = false;\n  }\n\n  msgsrv request()\n  {\n    if (sender == philL) {\n      if (!leftReq) {\n        leftReq = true;\n        if (!rAssign) {\n          lAssign = true;\n          philL.permit();\n        }\n      } \n      // else discard message\n    }\n    else {\n      if (!rightReq) {\n        rightReq = true;\n        if (!lAssign) {\n          rAssign = true;\n          philR.permit();\n        }\n      }\n      // else discard message\n    }\n  }\n  msgsrv release()\n  {\n    if (sender == philL && lAssign){\n      leftReq = false;\n      lAssign = false;\n      if (rightReq) {\n        rAssign=true;\n        philR.permit();\n      }\n    }\n    if (sender == philR && rAssign){\n      rAssign = false;\n      rightReq = false;\n      if (leftReq) {\n        lAssign=true;\n        philL.permit();\n      }\n    }\n  }\n}\n\nmain\n{\n  Philosopher phil0(fork0, fork2):();\n  Philosopher phil1(fork0, fork1):();\n  Philosopher phil2(fork1, fork2):();\n\n  Fork fork0(phil0, phil1):();\n  Fork fork1(phil1, phil2):();\n  Fork fork2(phil2, phil0):();\n}", "Dining Philosophers", "Dining philosophers, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BridgeController(5) {\n  knownrebecs {\n    Train t1;\n    Train t2;\n  }\n\n  statevars {\n    boolean isWaiting1;\n    boolean isWaiting2;\n    boolean isOnBridge1;\n    boolean isOnBridge2;\n  }\n\n  msgsrv initial() {\n    isOnBridge1 = false;  // red\n    isOnBridge2 = false;  // red\n    isWaiting1 = false;\n    isWaiting2 = false;\n  }\n  \n  msgsrv Arrive() {\n    if (sender == t1){\n      if (isOnBridge2 == false) {\n        isOnBridge1 = true; // green\n        t1.YouMayPass();\n      }\n      else {\n        isWaiting1 = true;\n      }\n    }\n    else {\n      if (isOnBridge1 == false){\n        isOnBridge2 = true; // green\n        t2.YouMayPass();\n      }\n      else{\n        isWaiting2 = true;\n      }\n    }\n  }\n  \n  msgsrv Leave() {\n    if (sender == t1) {\n      isOnBridge1 = false;  // red\n      if (isWaiting2){\n        isOnBridge2 = true;\n        t2.YouMayPass();\n        isWaiting2 = false;\n      }\n    } else {\n      isOnBridge2 = false;  // red\n      if (isWaiting1) {\n        isOnBridge1 = true;\n        t1.YouMayPass();\n        isWaiting1 = false;\n      }\n    }\n  }\n}\n\nreactiveclass Train(3) {\n  knownrebecs {\n    BridgeController controller;\n  }\n\n  statevars {\n    boolean onTheBridge;\n  }\n\n  msgsrv initial() {\n    onTheBridge = false;\n    self.Passed();\n  }\n\n  msgsrv YouMayPass() {\n    onTheBridge = true;\n    self.Passed();\n  }\n  \n  msgsrv Passed() {\n    onTheBridge = false;\n    controller.Leave();\n    self.ReachBridge();\n  }\n\n  msgsrv ReachBridge() {\n    controller.Arrive();\n  }\n}\n\nmain {\n  Train train1(theController):();\n  Train train2(theController):();\n  BridgeController theController(train1, train2):();\n}", "Trains", "Two trains and a controller, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8) { \n    knownrebecs { \n\t    Node nodeL; \n        Node nodeR; \n    } \n      \n    statevars { \n        boolean monitor; \n        int myId; \n        int phase; \n        int monitorId; \n        boolean receivedLeft; \n        boolean receivedRight; \n    } \n  \n    msgsrv initial(int id) { \n        myId = id; \n        monitor = false; \n        monitorId = id; \n        phase = 1; \n        receivedLeft = false; \n        receivedRight = false; \n        self.arrive(); \n    } \n  \n    msgsrv arrive() { \n        nodeL.receive(myId, true, phase); \n        nodeR.receive(myId, true, phase); \n\t} \n  \n\tmsgsrv receive(int msgId, boolean inOut, int hopCount) { \n\t\tif ((sender==nodeL) &&  (inOut)) {\n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)) { \n\t\t\t\tmonitorId = msgId; \n        \t    nodeR.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){ \n\t\t\t\t\tmonitorId=msgId; \n                    nodeL.receive (msgId, false,1); \n                } else { \n                    if (msgId == myId) { \n                    \tmonitor = true; \n                    \tmonitorId = myId; \n                \t} \n                } \n\t\t\t} \n        } \n            \n        if ((sender==nodeR) && (inOut)) { \n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)){ \n            \tmonitorId=msgId; \n                nodeL.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){  \n                \tmonitorId=msgId; \n\t\t\t\t\tnodeR.receive (msgId, false,1); \n                } else { \n                \tif (msgId == myId) { \n                    \tmonitor = true; \n                        monitorId = myId; \n                    } \n                } \n        \t} \n        } \n            \n        if ((sender==nodeL) && !(inOut) && !(msgId==myId)) { \n        \tnodeR.receive(msgId, false, 1);           \n        } \n            \n        if ((sender==nodeR) &&  !(inOut) && !(msgId==myId)) { \n        \tnodeL.receive(msgId, false, 1);           \n        } \n            \n\t\tif ((sender==nodeL) && !(inOut) && ((msgId == myId) && (hopCount==1))) { \n        \treceivedLeft = true; \n        } \n\t\tif (((sender==nodeR) && (msgId == myId)) && !(inOut) && (hopCount==1)) { \n        \treceivedRight = true; \n        }     \n            \n        if (receivedLeft && receivedRight&& (phase<3)){ \n        \tif(phase==2) { \n            \tmonitor=true; \n            } else { \n                phase = phase * 2; \n                receivedLeft=false; \n                receivedRight=false; \n                nodeL.receive(myId, true, phase); \n                nodeR.receive(myId, true, phase); \n            } \n        } \n\t} \n} \n  \n  \nmain { \n      Node node1(node4,node2):(1); \n      Node node2(node1,node3):(2); \n      Node node3(node2,node4):(3); \n      Node node4(node3,node1):(4); \n} ", "Leader Election HS (fix)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8){\n\tknownrebecs {\n\t\tNode rightNode;\n\t}\n\tstatevars {\n\t\tboolean isLeader;\n\t\tint myNumber;\n\t\tint currentLeader;\t\t\n\t}\n\tmsgsrv initial(int n) {\n\t\tmyNumber = n;\n\t\tcurrentLeader = n;\n\t\tisLeader = false;\n\t\tself.send();\n\t}\n\t\n\tmsgsrv ImLeader() {\n\t\tself.ImLeader();\n\t\t//The algorithm terminates here, but the leader keeps sending a msg to himself to avoid deadlock.\n\t}\n\tmsgsrv send() {\n\t\trightNode.receive(currentLeader);\n\t}\n\tmsgsrv receive(int n) {\n\t\tif (n == myNumber) {\n\t\t\tisLeader = true;\n\t\t\tself.ImLeader();\n\t\t}\n\t\telse {\n\t\t\tif (n > currentLeader) {\n\t\t\t\tcurrentLeader = n;\n\t\t\t\tself.send();\n\t\t\t}\n\t\t\t//else discard\n\t\t}\n\t}\n}\n\nmain { \n//Each node must have a unique identifier\n//In case of having more than three nodes or changing the leader to other node (rather than node1), you should change the property file too.\n   Node node0(node2):(4); \n   Node node1(node0):(20); \n   Node node2(node1):(10); \n} ", "Leader Election LCR", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("//In the name of Allah\n// The best will come\n\n//2 Phase Commit Protocol\nreactiveclass Node(10) {\n\tknownrebecs {\n\t    Node node1;\n\t    Node node2;\n\t}\n\tstatevars {\n\t    byte srvNo;\n\t\tboolean recievedResults;\n\t\tboolean creationAbility;\n\t\tint recievedResultsCounter;\n\t\tint expectedResultsCounter;\n\t\tboolean[2] cooperatorKnownRebecs;\n\t\t\n\t}\n\t\n\tmsgsrv initial(boolean nodeCreationAbility) {\n\t\tcreationAbility = nodeCreationAbility;\n\t\tself.createTransaction();\n\t}\n\t\n\tmsgsrv createTransaction() {\n\n\t\tboolean startTrans;\n\t\tstartTrans = ?(true, false);\n\t\tif (startTrans && creationAbility) {\n\t\t\tboolean dispatcher = false;\n\t\t\tboolean result;\n\n\t\t\tint i;\n\t\t\tfor(i = 0; i < 2; i = i + 1)\n\t\t\t\tcooperatorKnownRebecs[i] = false;\n\n\t\t\trecievedResultsCounter = 0;\n\t\t\trecievedResults = true;\n\n\n\t\t\texpectedResultsCounter = 0;\n\n            srvNo = 1;\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[0] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode1.startGlobalTransaction();\n\t\t\t}\n\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[1] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode2.startGlobalTransaction();\n\t\t\t}\n\n\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\tresult = ?(true, false);\n\t\t\tself.cooperatorResponse(result);\n\t\t}\n\t\telse {\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\tmsgsrv startGlobalTransaction() {\n\t\tboolean result;\n\t\tresult = ?(true, false);\n\n\t\tif (sender == node1) {\n\t\t\tnode1.cooperatorResponse(result);\n\t\t}\n\t\tif (sender == node2) {\n\t\t\tnode2.cooperatorResponse(result);\n        }\n        \n\t}\n\n\tmsgsrv cooperatorResponse(boolean result) {\n\t\trecievedResultsCounter = recievedResultsCounter + 1;\n\t\tif (!result)\n\t\t\trecievedResults = false;\n\n\t\tif (recievedResultsCounter == expectedResultsCounter) {\n            int i;\n\t\t\tif (cooperatorKnownRebecs[0]) {\n\t\t\t\tnode1.applyResult(recievedResults);\n\t\t\t}\n\t\t\tif (cooperatorKnownRebecs[1]) {\n\t\t\t\tnode2.applyResult(recievedResults);\n\t\t\t}\n\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\n\tmsgsrv applyResult(boolean result) {\n\t}\n\n}\n\n\nmain {\n\tNode node1(node2, node3):(true);\n\tNode node2(node3, node1):(false);\n\tNode node3(node1, node2):(true);\n}", "2-phase commit", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Sender(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tReceiver rec;     \n\t} \n      \n\tstatevars { \n\t\tboolean receivedBit; \n\t\tboolean sendBit; \n\t\tboolean hasSucceeded; \n\t} \n  \n\tmsgsrv initial() { \n\t\tsendBit = false; \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n\t} \n  \n\tmsgsrv sendMsg() { \n\t\t//receive(hasSucceeded) \n\t\tif (hasSucceeded == true) { \n\t\t\tif (sendBit == true) { \n\t\t\t\tsendBit = false; \n\t\t\t} else { \n\t\t\t\tsendBit = true; \n\t\t\t} \n\t\t} \n            \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n\t} \n} \n  \nreactiveclass Receiver(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean messageBit; \n\t} \n  \n\tmsgsrv initial() { \n\t} \n  \n\tmsgsrv receiveMsg(boolean msgBit) { \n\t\tmessageBit =msgBit; \n\t\t//sender.receive(true); \n\t} \n} \n  \nreactiveclass Medium(5) { \n\tknownrebecs { \n\t\tReceiver receiver; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean passMessage; \n\t} \n  \n\tmsgsrv initial() { \n\t\tpassMessage=true; \n\t} \n  \n\tmsgsrv pass(boolean msgBit) { \n\t\tpassMessage = ?(true,false); \n\t\tif(passMessage == true) { \n\t\t\treceiver.receiveMsg( msgBit); \n\t\t} else { \n\t\t\t//sender,receive(false); \n\t\t} \n\t} \n} \n  \nmain { \n\tSender sender (medium, receiver):(); \n\tMedium medium(receiver, sender):(); \n\tReceiver receiver(medium, sender):(); \n} ", "Sender-receiver", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BufferManager(4) {\n\tknownrebecs {\n\t\tProducer producer;\n\t\tConsumer consumer;\n\t}\n\n\tstatevars {\n\t\tboolean empty;\n\t\tboolean full;\n\t\tboolean producerWaiting;\n\t\tboolean consumerWaiting;\n\t\tint bufferlenght;\n\t\tint nextProduce;\n\t\tint nextConsume;\t\t\n\t}\n\n\tmsgsrv initial() {\n\t\tbufferlenght = 2;\n\t\tempty = true;\n\t\tfull = false;\n\t\tproducerWaiting = false;\n\t\tconsumerWaiting = false;\n\t\tnextProduce = 0;\n\t\tnextConsume = 0;\n\t}\n\n\tmsgsrv giveMeNextProduce() {\n\t\tif (!full)\t{\n\t\t\tproducer.produce(nextProduce);\n\t\t} \n\t}\n\n\tmsgsrv giveMeNextConsume() {\n\t\tif (!empty) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t} \n     \telse {\n\t\t\tconsumerWaiting = true;\n\t\t}\n\t}\n\n\tmsgsrv ackProduce() {\n\t\tnextProduce = (nextProduce + 1) %\n                    bufferlenght;\n\t\tif (nextProduce == nextConsume) {\n\t\t\tfull = true;\n\t\t}\n\t\tempty = false;\n\t\tif (consumerWaiting) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t\tconsumerWaiting = false;\n\t\t}\n\t}\n\n\tmsgsrv ackConsume() {\n\t\tnextConsume = (nextConsume + 1) %\n                    bufferlenght;\n\t\tif (nextConsume == nextProduce) {\n\t\t\tempty = true;\n\t\t}\n\t\tfull = false;\n\t\tif (producerWaiting) {\n\t\t\tproducer.produce(nextProduce);\n\t\t\tproducerWaiting = false;\n\t\t}\n\t}\n}\n\nreactiveclass Producer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginProduce();\n\t}\n\t\n\tmsgsrv produce(int bufNum) {\n\t\tbuffer.ackProduce();\n\t\tself.beginProduce();\n\t}\n\n\tmsgsrv beginProduce() {\n\t\tbuffer.giveMeNextProduce();\n\t}\n}\n\nreactiveclass Consumer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\t\t\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginConsume();\n\t}\n\n\tmsgsrv consume(int bufNum) {\n\t\tbuffer.ackConsume();\n\t\tself.beginConsume();\t\n\t}\n\t\n\tmsgsrv beginConsume() {\n\t\tbuffer.giveMeNextConsume();\n\t}\n\n}\n\nmain { \n\tBufferManager buffer(producer, consumer):();\n\tProducer producer(buffer):();\n\tConsumer consumer(buffer):();\n}", "Prod-Cons (larger)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (byte)(distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (byte)(distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = (byte)255;\n             rootDistance = (byte)255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( ! isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (byte)(distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (byte)(distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,D):(1);\n    BridgeToLanPort out1F(p1F,F):(2);\n    BridgeToLanPort out5D(p5D,D):(3);\n    BridgeToLanPort out5B(p5B,B):(4);\n    BridgeToLanPort out7F(p7F,F):(5);\n    BridgeToLanPort out7B(p7B,B):(6);\n    BridgeToLanPort out7K(p7K,K):(7);\n\n    ExtendedLan D(in1D, in5D):();\n    ExtendedLan B(in7B, in5B):();\n    ExtendedLan F(in1F, in7F):();\n    ExtendedLan K(in7K, in7K):();\n}", "Spanning-tree", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("/*\n\n* Model for 4x4 ASPIN. The model can be extended for lager NoCs by declaring routers in main part (last section of the code).\n\n*In the model only one packet is sent from router R00 to router R23. More packets can be scheduled to sent from a source to destination \n as like in \"Router\" mesage server.\n\n*/\n\nreactiveclass Manager(10){\n\t\n\tknownrebecs{\n\t\tRouter r00;\n\t\tRouter r10;\n\t\tRouter r20;\n\t\tRouter r30;\n\t\t\n\t\tRouter r01;\n\t\tRouter r11;\n\t\tRouter r21;\n\t\tRouter r31;\n\t\t\n\t\tRouter r02;\n\t\tRouter r12;\n\t\tRouter r22;\n\t\tRouter r32;\n\t\t\n\t\tRouter r03;\n\t\tRouter r13;\n\t\tRouter r23;\n\t\tRouter r33;\n\t}\n\t\n\tstatevars{\n\t}\n\t\n\tManager(){\n\t}\n\t\n\tmsgsrv reset(){ //each source and destination routeeer should be initialized here.\n\t\tr01.reStart() after(700); //source\t\t\n\t}\n}\n\nreactiveclass Router(10) {\n\n\tknownrebecs {\n\t\tManager manager;\n\t\tRouter N;  // : 0\n\t\tRouter E;  // : 1\n\t\tRouter S;  // : 2\n\t\tRouter W;  // : 3\t\t\n\t}\n\t\n\tstatevars {\n\t\tint bufSize;\n\t\tint maxTime;\t// To check if a packet is recieved by the time maxTime\n\t\tint recieved;\n\t\t\n\t\tbyte[4] bufNum; //for each of four sides\n\t\tboolean[4] full;\n\t\tboolean[4] enable;\n\t\tboolean [4] outMutex;\n\t\t\n\t\tbyte Xid;\n\t\tbyte Yid;\n\t}\n\t\n\tRouter(byte X, byte Y){\t\n\t\tXid = X;\n\t\tYid = Y;\n\t\n\t\tbufSize = 2;\n\t\tmaxTime = 250 ; \n\t\trecieved = 0;\n\n\t\tfor(int i=0;i<4;i++){\t\t\n\t\t\tenable[i] = true;\n\t\t\toutMutex[i] = true;\n\t\t\tbufNum[i] = 0;\n\t\t\tfull[i] = false;\n\t\t}\n\t\t\n\t\t//packet generation\n\t\tif(X == 0 && Y == 0){\n\t\t\tself.reqSend(2,3,1,5) after(10);  //sending a packet\n\t\t}\n\t\t\n\t\tif(X == 0 && Y == 1){\t\t\t\t// permamnet, don't change. \n\t\t\tself.reStart() after(700);\n\t\t}\n\t\t\n\t\tif(X == 2 && Y == 3){\t\t\t\t// in destination router. not necessary for all packets. just to check when the packet is recieved\n\t\t\tself.checkRecieved()after(maxTime);\n\t\t}\n\t}\n\t\n\tmsgsrv reqSend(byte Xtarget, byte Ytarget, int directionS, int packId){\t\n\t\tif (enable[directionS] == true){\n\t\t\tboolean sent = false;\n\t\t\t\t\t\n\t\t\tif(Xtarget > Xid){\t\t// Routing Algorithm XY: first move through horisental channels \n\t\t\t\tif(outMutex[1] == true){\t\n\t\t\t\t\tE.give_Ack(Xtarget, Ytarget,directionS,3,5, packId) after(26);\n\t\t\t\t\toutMutex[1] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Xtarget < Xid){\t\n\t\t\t\tif(outMutex[3] == true){\n\t\t\t\t\tW.give_Ack(Xtarget, Ytarget,directionS,1,5, packId ) after(26);\t\n\t\t\t\t\toutMutex[3] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t} else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Ytarget > Yid){\t\n\t\t\t\tif(outMutex[2] == true){\n\t\t\t\t\tS.give_Ack(Xtarget, Ytarget,directionS,0,5, packId ) after(26);\t\n\t\t\t\t\toutMutex [2] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\t\n\t\t\t}\t\n\t\t\telse if(Ytarget < Yid){\t\n\t\t\t\tif(outMutex[0] == true){\n\t\t\t\t\tN.give_Ack(Xtarget, Ytarget,directionS,2,5 , packId) after(26);\t\n\t\t\t\t\toutMutex[0] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t\t\t}\n\n\t\t\tif(sent == true){\n\t\t\t\tbufNum[directionS] = (byte)bufNum[directionS] + 1;\n\n\t\t\t\tif (bufNum[directionS] == bufSize) full[directionS] = true;         //update the value of \"full\".\n\t\t\t}\t\n\t\t} else\n\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t}\n\t\n\tmsgsrv get_Ack(int directionS){\n\t\t\n\t\tenable[directionS] = true;\n\t\t\n\t\tbufNum[directionS] = (byte)bufNum[directionS] - 1;\t\n\t\tfull[directionS] = false;\n\n\t\tif (sender == N) {\n\t\t\toutMutex[0] = true;\n\t\t}\t\n\t\telse if (sender == E){ \n\t\t\toutMutex[1] = true;\n\t\t}\t\n\t\telse if (sender == S){\n\t\t\toutMutex[2] = true;\n\t\t\t}\n\t\telse if (sender == W){ \n\t\t\toutMutex[3] = true;\n\t\t}\t\n\t}\n\t\n\tmsgsrv give_Ack(byte Xtarget, byte Ytarget,int directionS, int directionD,int msgSender, int packId){\n\t\tint MSGSender;\n\t\tif(sender == N)\n\t\t\tMSGSender = 0;\n\t\telse if (sender == E)\n\t\t\tMSGSender = 1;\n\t\telse if (sender == S)\n\t\t\tMSGSender = 2;\n\t\telse if (sender == W)\n\t\t\tMSGSender = 3;\n\t\telse {MSGSender = msgSender;\n\t\t\t\n\t\t}\n\t\t\t\t\n\t\tif(!(Xtarget == Xid && Ytarget == Yid)){\n\t\t\t\t\n\t\t\tif (full[directionD]) //buffer is full, the packet should wait.\n\t\t\t\tself.give_Ack(Xtarget, Ytarget,directionS,directionD,MSGSender,\n\t\t\t\t\t\t\t packId)after(2)deadline(3); //waiting via recalling give_ack after 2 time units.\n\t\t\t\n\t\t\telse{\t\n\t\t\t\tself.reqSend(Xtarget, Ytarget,directionD, packId); \n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\t\t\n\t\t}\t\t\n\t\t\n\t\telse if((Xtarget == Xid && Ytarget == Yid)){ //reach target\n\t\t\t\t\n\t\t\t\trecieved = recieved + 1;\n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\n\t}\n\n\tmsgsrv reStart(){\n\t\tmanager.reset();\n\t}\t\n\t\n\tmsgsrv deadlineMiss(){\n\t\tdelay(5);\n\t}\n\t\n\tmsgsrv checkPoint(){ // causes to hult\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t}\n\t\n\tmsgsrv checkRecieved(){ // Halt if recieved is 0, by calling checkpoint.(checkpoint method allways cause program to hult).\n\t\t\n\t\tif (recieved == 0){\n\t\t\tself.checkPoint();\n\t\t}\n\t\t\t\n\t}\n}\n\nmain {\n\tManager m(r00,r10,r20,r30,r01,r11,r21,r31,r02,r12,r22,r32,r03,r13,r23,r33):();\n\t\n\tRouter r00(m,r03,r10,r01,r30):(0,0);\n\tRouter r10(m,r13,r20,r11,r00):(1,0);\n\tRouter r20(m,r23,r30,r21,r10):(2,0);\n\tRouter r30(m,r33,r00,r31,r20):(3,0);\n\t\n\tRouter r01(m,r00,r11,r02,r31):(0,1);\n\tRouter r11(m,r10,r21,r12,r01):(1,1);\n\tRouter r21(m,r20,r31,r22,r11):(2,1);\n\tRouter r31(m,r30,r01,r32,r21):(3,1);\n\t\n\tRouter r02(m,r01,r12,r03,r32):(0,2);\n\tRouter r12(m,r11,r22,r13,r02):(1,2);\n\tRouter r22(m,r21,r32,r23,r12):(2,2);\n\tRouter r32(m,r31,r02,r33,r22):(3,2);\n\t\n\tRouter r03(m,r02,r13,r00,r33):(0,3);\n\tRouter r13(m,r12,r23,r10,r03):(1,3);\n\tRouter r23(m,r22,r33,r20,r13):(2,3);\n\tRouter r33(m,r32,r03,r30,r23):(3,3);\n}", "NOC", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("env int RESENDING_PERIOD = 25;\nenv int NORMAL_SPEED = 15;\nenv int REDUCED_SPEED = 7;\nenv int SAFE_DISTANCE = 20;  // segments has 1000 meters length and each sub-segment has 200 meteres length\nenv int SEGMENT_LENGTH = 200;\nenv int LOADING_TIME_PC = 60;\nenv int LOADING_TIME_WL = 60;\nenv int UNLOADING_TIME_SC = 30;\nenv int CHARGING_TIME_C1 = 60;\nenv int CHARGING_TIME_C2 = 60;\nenv int LEAVING_PERIOD = 13;\nenv int NUMBER_VEHICLES = 4;\n\n//************* E1:WL, E2:Crusher, E3:SC, E4:DP ***********\n\nreactiveclass CrossController (10){\t\t// to control when S4 passes S3\n\tknownrebecs\n\t{\n\t}\n\tstatevars\n\t{\n\t\tboolean crossIsFree;\n\t}\n\tCrossController()\n\t{ \n\t\tcrossIsFree= true;\n\t}\n\tmsgsrv giveCrossPermission(int vehicleId){\n\t\tif(crossIsFree){\n\t\t\tcrossIsFree = false;\n\t\t\t((Segment)sender).getCrossPermission(vehicleId);\n\t\t}\n\t\telse ((Segment)sender).crossNotAvailable(vehicleId);\n\t}\n\tmsgsrv freeCross(int vehicleId){\n\t\tcrossIsFree = true;\t\n\t}\n}\n\nreactiveclass PrimaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPcToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tPrimaryCrusher()\n\t{ \n\t\tisLoading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_PC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegPcToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass SecondaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegScToPrepoint;\n\t}\n\tstatevars\n\t{\n\t\tboolean isUnloading;\n\t}\n\tSecondaryCrusher()\n\t{ \n\t\tisUnloading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isUnloading == false){\n\t\t\tisUnloading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(UNLOADING_TIME_SC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegScToPrepoint.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisUnloading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass PrePoint (14) { \t\t\t// the point at the end of S7\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPreToE1;\n\t\tSegment firstSubSegPreToE2;\n\t}\n\tstatevars\n\t{\n\t\tboolean isBusy;\n\t\tboolean toE1;\n\t\tint count;\n\t}\n\tPrePoint()\n\t{ \n\t\tisBusy= false;\n\t\ttoE1 = true;\n\t\tcount=0;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isBusy == false){\n\t\t\tisBusy = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(toE1)\n\t\t\tfirstSubSegPreToE1.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisBusy= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tif(toE1){\n\t\t\ttoE1 = false;\n\t\t\tfirstSubSegPreToE2.givePermisionForVehicle(vehicleId, -1);\t\n\t\t}\n\t\telse \n\t\t{\n\t\t\ttoE1 = true;\n\t\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t\t}\n\t}\n}\n\nreactiveclass DecisionStation (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegDsToPc;\n\t}\n\tstatevars\n\t{\t\n\t\tboolean vehicle1Reached;\n\t\tboolean vehicle2Reached;\n\t\tboolean vehicle3Reached;\n\t\tboolean vehicle4Reached;\n\t\tboolean vehicle5Reached;\n\t\tboolean vehicle6Reached;\n\t\tboolean vehicle7Reached;\n\t\tboolean vehicle8Reached;\n\t}\n\tDecisionStation()\n\t{ \n\t\tself.leaveParkingSlots();\n\t}\n\tmsgsrv leaveParkingSlots(){\n\t\t\n\t\tstartSendingToNext(1) after(1);\n\t\t\n\t\tif(NUMBER_VEHICLES == 2 || NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 \n\t\t|| NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(2) after(4);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 \n\t\t|| NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(3) after(6);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 \n\t\t|| NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(4) after(9);\n\t\t\t\n \t\tif(NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7\n\t\t|| NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(5) after(12);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(6) after(15);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(7) after(19);\n\t\t\n\t\tif(NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(8) after(26);\n\t}\n\tmsgsrv getPermision(int vehicleId){\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId, int segmentDes){\n\t\tstartSendingToNext(vehicleId) after (RESENDING_PERIOD);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegDsToPc.givePermisionForVehicle(vehicleId,1);\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t\t((Segment)sender).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\t//startSendingToNext(vehicleId) after(LEAVING_PERIOD);\n\t\tif(vehicleId == 1)\n\t\t\tvehicle1Reached = true;\n\t\telse if(vehicleId == 2)\n\t\t\tvehicle2Reached = true;\n\t\telse if(vehicleId == 3)\n\t\t\tvehicle3Reached = true;\n\t\telse if(vehicleId == 4)\n\t\t\tvehicle4Reached = true;\n\t\telse if(vehicleId == 5)\n\t\t\tvehicle5Reached = true;\n\t\telse if(vehicleId == 6)\n\t\t\tvehicle6Reached = true;\n\t\telse if(vehicleId == 7)\n\t\t\tvehicle7Reached = true;\n\t\telse if(vehicleId == 8)\n\t\t\tvehicle8Reached = true;\n\t\t\n\t\t//if(NUMBER_VEHICLES == 4)\n\t\t//\t\tassertion(false);\n\t\t// when all vehicles travelled once the model checking stops by puting 'assertion(false)'\n\t\tif(NUMBER_VEHICLES == 1){\n\t\t\tif(vehicle1Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 2){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 3){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 4){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 5){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 6){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 7){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 8){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true && vehicle8Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t}\n\tmsgsrv loop (){\n\t\tself.loop() after(5000);\n\t}\n}\n\nreactiveclass WheelLoader (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegWlToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tWheelLoader()\n\t{ \n\t\tisLoading = false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_WL);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegWlToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass Segment(14) {\n\tknownrebecs\n\t{\n\t\t\n\t}\n\tstatevars\n\t{\n\t\tboolean isFree;\n\t\tboolean stoppedVehicle;\n\t\tint vehicleSpeed;\t\t\t// speed of the current vehicle\n\t\tint segmentLength;\n\t\t\n\t\tSegment nextSegment;\n\t\tDecisionStation decisionS;\n\t\tPrimaryCrusher primaryC;\n\t\tSecondaryCrusher secondaryC;\n\t\tWheelLoader wheelL;\n\t\tPrePoint prePoint;\n\t\tCrossController crossCtrl;\n\t\tSegment segRequestingCross;\n\t}\n\tSegment(Segment nextS, WheelLoader wl, PrimaryCrusher pc, SecondaryCrusher sc, \n\t\t\t\tDecisionStation ds, PrePoint preCs, CrossController ctrl, int speed, int segLength)\n\t{ \n\t\tnextSegment = nextS;\n\t\tdecisionS = ds;\n\t\tprimaryC = pc;\n\t\tsecondaryC = sc;\n\t\twheelL = wl;\n\t\tprePoint = preCs;\t\n\t\tcrossCtrl = ctrl;\n\t\tsegRequestingCross = null;\n\t\tsegmentLength = segLength;\n\t\t\n\t\tvehicleSpeed = speed;\n\t\tisFree = true;\n\t\tstoppedVehicle =false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId, int segmentDes){\n\t\tif (isFree)\n\t\t{\n\t\t\tisFree=false;\n\t\t\tif(crossCtrl == null){\n\t\t\t\tif(sender instanceof Segment)\n\t\t\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t\t((DecisionStation)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t\t((PrimaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t\t((WheelLoader)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t\t((SecondaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t\t((PrePoint)sender).getPermision(vehicleId);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tsegRequestingCross = ((Segment)sender);\n\t\t\t\tcrossCtrl.giveCrossPermission(vehicleId);\n\t\t\t}\n\t\t}\n\t\telse{\n\t\t\tif(sender instanceof Segment)\n\t\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t((DecisionStation)sender).segmentNotFree(vehicleId, segmentDes);\n\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t((PrimaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t((WheelLoader)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t((SecondaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t((PrePoint)sender).segmentNotFree(vehicleId);\n\t\t}\n\t\n\t}\n\tmsgsrv getCrossPermission(int vehicleId){\n\t\t((Segment)segRequestingCross).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered (int vehicleId){\t// moving of vehicle inside the segment should be modeled\n\t\tdelay((segmentLength-SAFE_DISTANCE)/vehicleSpeed);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv crossNotAvailable(int vehicleId){\n\t\tisFree = true;\n\t\t((Segment)segRequestingCross).segmentNotFree(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(nextSegment != null)\n\t\t\tnextSegment.givePermisionForVehicle(vehicleId,-1);\n\t\telse if(primaryC != null)\n\t\t\tprimaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(wheelL != null)\n\t\t\twheelL.givePermisionForVehicle(vehicleId);\n\t\telse if(secondaryC != null)\n\t\t\tsecondaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(decisionS != null)\n\t\t\tdecisionS.givePermisionForVehicle(vehicleId);\n\t\telse if(prePoint != null)\n\t\t\tprePoint.givePermisionForVehicle(vehicleId);\n\t\t\t\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tstoppedVehicle = false;\n\t\tdelay(SAFE_DISTANCE/vehicleSpeed);\n\t\tisFree = true;\n\t\tif(crossCtrl != null){\n\t\t\tsegRequestingCross = null;\n\t\t\tcrossCtrl.freeCross(vehicleId);\n\t\t}\n\t\tif(sender instanceof Segment)\n\t\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof DecisionStation)\n\t\t\t((DecisionStation)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t((PrimaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof WheelLoader)\n\t\t\t((WheelLoader)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t((SecondaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrePoint)\n\t\t\t((PrePoint)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId){\n\t\tstoppedVehicle = true;\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\n\nmain{\n\t//************* E1:WL, E2:PC, E3:SC, E4:DP ***********\n\tPrimaryCrusher pc(subSeg1E2ToS2):();\n\tSecondaryCrusher sc(subSeg1E3ToE4):();\n\tWheelLoader wl(subSeg1E1ToS2):();\n\tDecisionStation ds(subSeg1S4ToPre):();\n\tCrossController controller():();\n\tPrePoint prePoint(subSeg1S5ToE1,subSeg1S6ToE2):();\n\t// ():(segment,E1,E2,E3,E4,prepoint,controller)\n\t\n\t//################ S1 ##################\n\tSegment subSeg1E2ToS2():(subSeg2E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\tSegment subSeg2E2ToS2():(subSeg3E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E2ToS2():(subSeg4E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E2ToS2():(subSeg5E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E2ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\t\n\t//##################### S7 ##############\n\tSegment subSeg1E1ToS2():(subSeg2E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E1ToS2():(subSeg3E1ToS2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E1ToS2():(subSeg4E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E1ToS2():(subSeg5E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E1ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S2 ################\n\tSegment subSeg1S2ToE3():(subSeg2S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S2ToE3():(subSeg3S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S2ToE3():(subSeg4S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S2ToE3():(subSeg5S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S2ToE3():(null,null,null,sc,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S3 #############\n\tSegment subSeg1E3ToE4():(subSeg2E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E3ToE4():(subSeg3E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E3ToE4():(subSeg4E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E3ToE4():(subSeg5E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E3ToE4():(null,null,null,null,ds,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S6 #############\n\tSegment subSeg1S6ToE2():(subSeg2S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S6ToE2():(subSeg3S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S6ToE2():(subSeg4S6ToE2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S6ToE2():(subSeg5S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S6ToE2():(null,null,pc,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S5 #############\n\tSegment subSeg1S5ToE1():(subSeg2S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S5ToE1():(subSeg3S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S5ToE1():(null,wl,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S4 #############\n\tSegment subSeg1S4ToPre():(subSeg2S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S4ToPre():(subSeg3S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S4ToPre():(subSeg4S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S4ToPre():(subSeg5S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S4ToPre():(null,null,null,null,null,prePoint,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n}", "Vehicles", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>.")]));
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    aaaa = new Example(self):();\n    bbb = new Example(ex):();\n    ex.add(0);\n    }\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + 1;}\n  }\n}\n\nmain {\n\tExample ex1( ex2):();\n\tExample ex2( ex1):();\n}", "sandbox", ""), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    ex.add(0);}\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + 1;}\n  }\n}\n\nmain {\n\tExample ex1( ex2):();\n\tExample ex2( ex1):();\n}", "Sarir-basic", "Simple example of a Rebeca program, taken from the Sarir paper."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n\t\tconsumer.consume(p);\n\t\tself.produce();\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons", "Producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n    Producer newProducer;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n    if (p==3) {\n\t\t\tnewProducer = new Producer(consumer):();\n    }\n    consumer.consume(p);\n\t\tif(p!=4){\n    \tself.produce();\n    }\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv produce(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}", "Prod-Cons (dyn)", "(Unsupported) Dynamic version of the producer-consumer example from FMCO 2006's paper from Marjan Sirjani"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}", "Timed-ticket", "Ticket Service from an SCP'25 paper on Timed Rebeca"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n  }\n  msgsrv initial() {\n  }\n  msgsrv requestTicket() {\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket();\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try();\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):();\n  Customer c(a):();\n}", "Untimed-ticket", "Untimed version of the ticket service from an SCP'25 paper on Timed Rebeca"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Philosopher(3)\n{\n  knownrebecs\n  {\n    Fork forkL;\n    Fork forkR;\n  }\n  statevars\n  {\n    boolean eating;\n    boolean fL;\n    boolean fR;\n  }\n  msgsrv initial()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    self.arrive();\n  }\n\n  msgsrv arrive()\n  {\n    forkL.request();\n  }\n\n  msgsrv permit()\n  {\n    if (sender == forkL) {\n      if (!fL) {\n        fL = true;\n        forkR.request();\n      }\n    }\n    else {\n      if (fL && !(fR)) {\n        fR = true;\n        self.eat();\n      }\n      // else discard the message\n    }\n  }\n\n  msgsrv eat()\n  {\n    eating = true;\n    self.leave();\n  }\n\n  msgsrv leave()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    forkL.release();\n    forkR.release();\n    self.arrive();\n  }\n}\n\nreactiveclass Fork(3)\n{\n  knownrebecs\n  {\n    Philosopher philL;\n    Philosopher philR;\n  }\n  statevars\n  {\n    boolean lAssign;  \n    boolean rAssign;  \n    boolean leftReq;\n    boolean rightReq;\n  }\n  msgsrv initial()\n  { \n    lAssign = false;\n    rAssign = false;\n    leftReq = false;\n    rightReq = false;\n  }\n\n  msgsrv request()\n  {\n    if (sender == philL) {\n      if (!leftReq) {\n        leftReq = true;\n        if (!rAssign) {\n          lAssign = true;\n          philL.permit();\n        }\n      } \n      // else discard message\n    }\n    else {\n      if (!rightReq) {\n        rightReq = true;\n        if (!lAssign) {\n          rAssign = true;\n          philR.permit();\n        }\n      }\n      // else discard message\n    }\n  }\n  msgsrv release()\n  {\n    if (sender == philL && lAssign){\n      leftReq = false;\n      lAssign = false;\n      if (rightReq) {\n        rAssign=true;\n        philR.permit();\n      }\n    }\n    if (sender == philR && rAssign){\n      rAssign = false;\n      rightReq = false;\n      if (leftReq) {\n        lAssign=true;\n        philL.permit();\n      }\n    }\n  }\n}\n\nmain\n{\n  Philosopher phil0(fork0, fork2):();\n  Philosopher phil1(fork0, fork1):();\n  Philosopher phil2(fork1, fork2):();\n\n  Fork fork0(phil0, phil1):();\n  Fork fork1(phil1, phil2):();\n  Fork fork2(phil2, phil0):();\n}", "Dining Philosophers", "Dining philosophers, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BridgeController(5) {\n  knownrebecs {\n    Train t1;\n    Train t2;\n  }\n\n  statevars {\n    boolean isWaiting1;\n    boolean isWaiting2;\n    boolean isOnBridge1;\n    boolean isOnBridge2;\n  }\n\n  msgsrv initial() {\n    isOnBridge1 = false;  // red\n    isOnBridge2 = false;  // red\n    isWaiting1 = false;\n    isWaiting2 = false;\n  }\n  \n  msgsrv Arrive() {\n    if (sender == t1){\n      if (isOnBridge2 == false) {\n        isOnBridge1 = true; // green\n        t1.YouMayPass();\n      }\n      else {\n        isWaiting1 = true;\n      }\n    }\n    else {\n      if (isOnBridge1 == false){\n        isOnBridge2 = true; // green\n        t2.YouMayPass();\n      }\n      else{\n        isWaiting2 = true;\n      }\n    }\n  }\n  \n  msgsrv Leave() {\n    if (sender == t1) {\n      isOnBridge1 = false;  // red\n      if (isWaiting2){\n        isOnBridge2 = true;\n        t2.YouMayPass();\n        isWaiting2 = false;\n      }\n    } else {\n      isOnBridge2 = false;  // red\n      if (isWaiting1) {\n        isOnBridge1 = true;\n        t1.YouMayPass();\n        isWaiting1 = false;\n      }\n    }\n  }\n}\n\nreactiveclass Train(3) {\n  knownrebecs {\n    BridgeController controller;\n  }\n\n  statevars {\n    boolean onTheBridge;\n  }\n\n  msgsrv initial() {\n    onTheBridge = false;\n    self.Passed();\n  }\n\n  msgsrv YouMayPass() {\n    onTheBridge = true;\n    self.Passed();\n  }\n  \n  msgsrv Passed() {\n    onTheBridge = false;\n    controller.Leave();\n    self.ReachBridge();\n  }\n\n  msgsrv ReachBridge() {\n    controller.Arrive();\n  }\n}\n\nmain {\n  Train train1(theController):();\n  Train train2(theController):();\n  BridgeController theController(train1, train2):();\n}", "Trains", "Two trains and a controller, taken from http://rebeca-lang.org/Rebeca."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8) { \n    knownrebecs { \n\t    Node nodeL; \n        Node nodeR; \n    } \n      \n    statevars { \n        boolean monitor; \n        int myId; \n        int phase; \n        int monitorId; \n        boolean receivedLeft; \n        boolean receivedRight; \n    } \n  \n    msgsrv initial(int id) { \n        myId = id; \n        monitor = false; \n        monitorId = id; \n        phase = 1; \n        receivedLeft = false; \n        receivedRight = false; \n        self.arrive(); \n    } \n  \n    msgsrv arrive() { \n        nodeL.receive(myId, true, phase); \n        nodeR.receive(myId, true, phase); \n\t} \n  \n\tmsgsrv receive(int msgId, boolean inOut, int hopCount) { \n\t\tif ((sender==nodeL) &&  (inOut)) {\n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)) { \n\t\t\t\tmonitorId = msgId; \n        \t    nodeR.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){ \n\t\t\t\t\tmonitorId=msgId; \n                    nodeL.receive (msgId, false,1); \n                } else { \n                    if (msgId == myId) { \n                    \tmonitor = true; \n                    \tmonitorId = myId; \n                \t} \n                } \n\t\t\t} \n        } \n            \n        if ((sender==nodeR) && (inOut)) { \n\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)){ \n            \tmonitorId=msgId; \n                nodeL.receive (msgId, true, hopCount-1); \n            } else { \n\t\t\t\tif (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){  \n                \tmonitorId=msgId; \n\t\t\t\t\tnodeR.receive (msgId, false,1); \n                } else { \n                \tif (msgId == myId) { \n                    \tmonitor = true; \n                        monitorId = myId; \n                    } \n                } \n        \t} \n        } \n            \n        if ((sender==nodeL) && !(inOut) && !(msgId==myId)) { \n        \tnodeR.receive(msgId, false, 1);           \n        } \n            \n        if ((sender==nodeR) &&  !(inOut) && !(msgId==myId)) { \n        \tnodeL.receive(msgId, false, 1);           \n        } \n            \n\t\tif ((sender==nodeL) && !(inOut) && ((msgId == myId) && (hopCount==1))) { \n        \treceivedLeft = true; \n        } \n\t\tif (((sender==nodeR) && (msgId == myId)) && !(inOut) && (hopCount==1)) { \n        \treceivedRight = true; \n        }     \n            \n        if (receivedLeft && receivedRight&& (phase<3)){ \n        \tif(phase==2) { \n            \tmonitor=true; \n            } else { \n                phase = phase * 2; \n                receivedLeft=false; \n                receivedRight=false; \n                nodeL.receive(myId, true, phase); \n                nodeR.receive(myId, true, phase); \n            } \n        } \n\t} \n} \n  \n  \nmain { \n      Node node1(node4,node2):(1); \n      Node node2(node1,node3):(2); \n      Node node3(node2,node4):(3); \n      Node node4(node3,node1):(4); \n} ", "Leader Election HS (fix)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8){\n\tknownrebecs {\n\t\tNode rightNode;\n\t}\n\tstatevars {\n\t\tboolean isLeader;\n\t\tint myNumber;\n\t\tint currentLeader;\t\t\n\t}\n\tmsgsrv initial(int n) {\n\t\tmyNumber = n;\n\t\tcurrentLeader = n;\n\t\tisLeader = false;\n\t\tself.send();\n\t}\n\t\n\tmsgsrv ImLeader() {\n\t\tself.ImLeader();\n\t\t//The algorithm terminates here, but the leader keeps sending a msg to himself to avoid deadlock.\n\t}\n\tmsgsrv send() {\n\t\trightNode.receive(currentLeader);\n\t}\n\tmsgsrv receive(int n) {\n\t\tif (n == myNumber) {\n\t\t\tisLeader = true;\n\t\t\tself.ImLeader();\n\t\t}\n\t\telse {\n\t\t\tif (n > currentLeader) {\n\t\t\t\tcurrentLeader = n;\n\t\t\t\tself.send();\n\t\t\t}\n\t\t\t//else discard\n\t\t}\n\t}\n}\n\nmain { \n//Each node must have a unique identifier\n//In case of having more than three nodes or changing the leader to other node (rather than node1), you should change the property file too.\n   Node node0(node2):(4); \n   Node node1(node0):(20); \n   Node node2(node1):(10); \n} ", "Leader Election LCR", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("//2 Phase Commit Protocol\nreactiveclass Node(10) {\n\tknownrebecs {\n\t    Node node1;\n\t    Node node2;\n\t}\n\tstatevars {\n\t    byte srvNo;\n\t\tboolean recievedResults;\n\t\tboolean creationAbility;\n\t\tint recievedResultsCounter;\n\t\tint expectedResultsCounter;\n\t\tboolean[2] cooperatorKnownRebecs;\n\t\t\n\t}\n\t\n\tmsgsrv initial(boolean nodeCreationAbility) {\n\t\tcreationAbility = nodeCreationAbility;\n\t\tself.createTransaction();\n\t}\n\t\n\tmsgsrv createTransaction() {\n\n\t\tboolean startTrans;\n\t\tstartTrans = ?(true, false);\n\t\tif (startTrans && creationAbility) {\n\t\t\tboolean dispatcher = false;\n\t\t\tboolean result;\n\n\t\t\tint i;\n\t\t\tfor(i = 0; i < 2; i = i + 1)\n\t\t\t\tcooperatorKnownRebecs[i] = false;\n\n\t\t\trecievedResultsCounter = 0;\n\t\t\trecievedResults = true;\n\n\n\t\t\texpectedResultsCounter = 0;\n\n            srvNo = 1;\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[0] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode1.startGlobalTransaction();\n\t\t\t}\n\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs[1] = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode2.startGlobalTransaction();\n\t\t\t}\n\n\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\tresult = ?(true, false);\n\t\t\tself.cooperatorResponse(result);\n\t\t}\n\t\telse {\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\tmsgsrv startGlobalTransaction() {\n\t\tboolean result;\n\t\tresult = ?(true, false);\n\n\t\tif (sender == node1) {\n\t\t\tnode1.cooperatorResponse(result);\n\t\t}\n\t\tif (sender == node2) {\n\t\t\tnode2.cooperatorResponse(result);\n        }\n        \n\t}\n\n\tmsgsrv cooperatorResponse(boolean result) {\n\t\trecievedResultsCounter = recievedResultsCounter + 1;\n\t\tif (!result)\n\t\t\trecievedResults = false;\n\n\t\tif (recievedResultsCounter == expectedResultsCounter) {\n            int i;\n\t\t\tif (cooperatorKnownRebecs[0]) {\n\t\t\t\tnode1.applyResult(recievedResults);\n\t\t\t}\n\t\t\tif (cooperatorKnownRebecs[1]) {\n\t\t\t\tnode2.applyResult(recievedResults);\n\t\t\t}\n\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\n\tmsgsrv applyResult(boolean result) {\n\t}\n\n}\n\n\nmain {\n\tNode node1(node2, node3):(true);\n\tNode node2(node3, node1):(false);\n\tNode node3(node1, node2):(true);\n}", "2-phase commit (array)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("// Adapted version without arrays\n//2 Phase Commit Protocol\nreactiveclass Node(10) {\n\tknownrebecs {\n\t    Node node1;\n\t    Node node2;\n\t}\n\tstatevars {\n\t    byte srvNo;\n\t\tboolean recievedResults;\n\t\tboolean creationAbility;\n\t\tint recievedResultsCounter;\n\t\tint expectedResultsCounter;\n\t\tboolean cooperatorKnownRebecs0;\n\t\tboolean cooperatorKnownRebecs1;\n\t\t\n\t}\n\t\n\tmsgsrv initial(boolean nodeCreationAbility) {\n\t\tcreationAbility = nodeCreationAbility;\n\t\tself.createTransaction();\n\t}\n\t\n\tmsgsrv createTransaction() {\n\n\t\t//boolean startTrans;\n\t\tstartTrans = ?(true, false);\n\t\tif (startTrans && creationAbility) {\n\t\t\t//boolean dispatcher = false;\n\t\t\t//boolean result;\n\n\t\t\t//int i;\n\t\t\t//for(i = 0; i < 2; i = i + 1)\n\t\t\t//\tcooperatorKnownRebecs[i] = false;\n      cooperatorKnownRebecs0 = false;\n      cooperatorKnownRebecs1 = false;\n\n\t\t\trecievedResultsCounter = 0;\n\t\t\trecievedResults = true;\n\n\n\t\t\texpectedResultsCounter = 0;\n\n            srvNo = 1;\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs0 = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode1.startGlobalTransaction();\n\t\t\t}\n\n\t\t\tdispatcher = ?(true, false);\n\t\t\tif (dispatcher) {\n\t\t\t\tcooperatorKnownRebecs1 = true;\n\t\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\t\tnode2.startGlobalTransaction();\n\t\t\t}\n\n\t\t\texpectedResultsCounter = expectedResultsCounter + 1;\n\t\t\tresult = ?(true, false);\n\t\t\tself.cooperatorResponse(result);\n\t\t}\n\t\telse {\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\tmsgsrv startGlobalTransaction() {\n\t\t//boolean result;\n\t\tresult = ?(true, false);\n\n\t\tif (sender == node1) {\n\t\t\tnode1.cooperatorResponse(result);\n\t\t}\n\t\tif (sender == node2) {\n\t\t\tnode2.cooperatorResponse(result);\n        }\n        \n\t}\n\n\tmsgsrv cooperatorResponse(boolean result) {\n\t\trecievedResultsCounter = recievedResultsCounter + 1;\n\t\tif (!result)\n\t\t\trecievedResults = false;\n\n\t\tif (recievedResultsCounter == expectedResultsCounter) {\n            //int i;\n\t\t\tif (cooperatorKnownRebecs0) {\n\t\t\t\tnode1.applyResult(recievedResults);\n\t\t\t}\n\t\t\tif (cooperatorKnownRebecs1) {\n\t\t\t\tnode2.applyResult(recievedResults);\n\t\t\t}\n\n\t\t\tself.createTransaction();\n\t\t}\n\t}\n\t\n\n\tmsgsrv applyResult(boolean result) {\n\t}\n\n}\n\n\nmain {\n\tNode node1(node2, node3):(true);\n\tNode node2(node3, node1):(false);\n\tNode node3(node1, node2):(true);\n}", "2-phase commit (fixed)", "Adapted, without arrays, from <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Sender(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tReceiver rec;     \n\t} \n      \n\tstatevars { \n\t\tboolean receivedBit; \n\t\tboolean sendBit; \n\t\tboolean hasSucceeded; \n\t} \n  \n\tmsgsrv initial() { \n\t\tsendBit = false; \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n    hasSucceeded = false;\n\t} \n  \n\tmsgsrv sendMsg() { \n\t\t//receive(hasSucceeded) \n\t\tif (hasSucceeded == true) { \n\t\t\tif (sendBit == true) { \n\t\t\t\tsendBit = false; \n\t\t\t} else { \n\t\t\t\tsendBit = true; \n\t\t\t} \n\t\t} \n            \n\t\tmedium.pass(sendBit); \n\t\tself.sendMsg(); \n\t} \n} \n  \nreactiveclass Receiver(5) { \n\tknownrebecs { \n\t\tMedium medium; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean messageBit; \n\t} \n  \n\tmsgsrv initial() { \n\t} \n  \n\tmsgsrv receiveMsg(boolean msgBit) { \n\t\tmessageBit =msgBit; \n\t\t//sender.receive(true); \n\t} \n} \n  \nreactiveclass Medium(5) { \n\tknownrebecs { \n\t\tReceiver receiver; \n\t\tSender sender;    \n\t} \n      \n\tstatevars { \n\t\tboolean passMessage; \n\t} \n  \n\tmsgsrv initial() { \n\t\tpassMessage=true; \n\t} \n  \n\tmsgsrv pass(boolean msgBit) { \n\t\tpassMessage = ?(true,false); \n\t\tif(passMessage == true) { \n\t\t\treceiver.receiveMsg( msgBit); \n\t\t} else { \n\t\t\t//sender,receive(false); \n\t\t} \n\t} \n} \n  \nmain { \n\tSender sender (medium, receiver):(); \n\tMedium medium(receiver, sender):(); \n\tReceiver receiver(medium, sender):(); \n}", "Sender-receiver", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BufferManager(4) {\n\tknownrebecs {\n\t\tProducer producer;\n\t\tConsumer consumer;\n\t}\n\n\tstatevars {\n\t\tboolean empty;\n\t\tboolean full;\n\t\tboolean producerWaiting;\n\t\tboolean consumerWaiting;\n\t\tint bufferlenght;\n\t\tint nextProduce;\n\t\tint nextConsume;\t\t\n\t}\n\n\tmsgsrv initial() {\n\t\tbufferlenght = 2;\n\t\tempty = true;\n\t\tfull = false;\n\t\tproducerWaiting = false;\n\t\tconsumerWaiting = false;\n\t\tnextProduce = 0;\n\t\tnextConsume = 0;\n\t}\n\n\tmsgsrv giveMeNextProduce() {\n\t\tif (!full)\t{\n\t\t\tproducer.produce(nextProduce);\n\t\t} \n\t}\n\n\tmsgsrv giveMeNextConsume() {\n\t\tif (!empty) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t} \n     \telse {\n\t\t\tconsumerWaiting = true;\n\t\t}\n\t}\n\n\tmsgsrv ackProduce() {\n\t\tnextProduce = (nextProduce + 1) %\n                    bufferlenght;\n\t\tif (nextProduce == nextConsume) {\n\t\t\tfull = true;\n\t\t}\n\t\tempty = false;\n\t\tif (consumerWaiting) {\n\t\t\tconsumer.consume(nextConsume);\n\t\t\tconsumerWaiting = false;\n\t\t}\n\t}\n\n\tmsgsrv ackConsume() {\n\t\tnextConsume = (nextConsume + 1) %\n                    bufferlenght;\n\t\tif (nextConsume == nextProduce) {\n\t\t\tempty = true;\n\t\t}\n\t\tfull = false;\n\t\tif (producerWaiting) {\n\t\t\tproducer.produce(nextProduce);\n\t\t\tproducerWaiting = false;\n\t\t}\n\t}\n}\n\nreactiveclass Producer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginProduce();\n\t}\n\t\n\tmsgsrv produce(int bufNum) {\n\t\tbuffer.ackProduce();\n\t\tself.beginProduce();\n\t}\n\n\tmsgsrv beginProduce() {\n\t\tbuffer.giveMeNextProduce();\n\t}\n}\n\nreactiveclass Consumer(2) {\n\tknownrebecs {\n\t\tBufferManager buffer;\t\t\n\t}\n\n\tstatevars {\n\t}\n\n\tmsgsrv initial() {\n\t\tself.beginConsume();\n\t}\n\n\tmsgsrv consume(int bufNum) {\n\t\tbuffer.ackConsume();\n\t\tself.beginConsume();\t\n\t}\n\t\n\tmsgsrv beginConsume() {\n\t\tbuffer.giveMeNextConsume();\n\t}\n\n}\n\nmain { \n\tBufferManager buffer(producer, consumer):();\n\tProducer producer(buffer):();\n\tConsumer consumer(buffer):();\n}", "Prod-Cons (larger)", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (byte)(distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (byte)(distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = (byte)255;\n             rootDistance = (byte)255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( ! isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (byte)(distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (byte)(distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,D):(1);\n    BridgeToLanPort out1F(p1F,F):(2);\n    BridgeToLanPort out5D(p5D,D):(3);\n    BridgeToLanPort out5B(p5B,B):(4);\n    BridgeToLanPort out7F(p7F,F):(5);\n    BridgeToLanPort out7B(p7B,B):(6);\n    BridgeToLanPort out7K(p7K,K):(7);\n\n    ExtendedLan D(in1D, in5D):();\n    ExtendedLan B(in7B, in5B):();\n    ExtendedLan F(in1F, in7F):();\n    ExtendedLan K(in7K, in7K):();\n}", "Spanning-tree", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = 255;\n             rootDistance = 255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( !isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,d):(1);\n    BridgeToLanPort out1F(p1F,f):(2);\n    BridgeToLanPort out5D(p5D,d):(3);\n    BridgeToLanPort out5B(p5B,b):(4);\n    BridgeToLanPort out7F(p7F,f):(5);\n    BridgeToLanPort out7B(p7B,b):(6);\n    BridgeToLanPort out7K(p7K,k):(7);\n\n    ExtendedLan d(in1D, in5D):();\n    ExtendedLan b(in7B, in5B):();\n    ExtendedLan f(in1F, in7F):();\n    ExtendedLan k(in7K, in7K):();\n}", "Spanning-tree (fixed)", "Adapted from <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("/*\n\n* Model for 4x4 ASPIN. The model can be extended for lager NoCs by declaring routers in main part (last section of the code).\n\n*In the model only one packet is sent from router R00 to router R23. More packets can be scheduled to sent from a source to destination \n as like in \"Router\" mesage server.\n\n*/\n\nreactiveclass Manager(10){\n\t\n\tknownrebecs{\n\t\tRouter r00;\n\t\tRouter r10;\n\t\tRouter r20;\n\t\tRouter r30;\n\t\t\n\t\tRouter r01;\n\t\tRouter r11;\n\t\tRouter r21;\n\t\tRouter r31;\n\t\t\n\t\tRouter r02;\n\t\tRouter r12;\n\t\tRouter r22;\n\t\tRouter r32;\n\t\t\n\t\tRouter r03;\n\t\tRouter r13;\n\t\tRouter r23;\n\t\tRouter r33;\n\t}\n\t\n\tstatevars{\n\t}\n\t\n\tManager(){\n\t}\n\t\n\tmsgsrv reset(){ //each source and destination routeeer should be initialized here.\n\t\tr01.reStart() after(700); //source\t\t\n\t}\n}\n\nreactiveclass Router(10) {\n\n\tknownrebecs {\n\t\tManager manager;\n\t\tRouter N;  // : 0\n\t\tRouter E;  // : 1\n\t\tRouter S;  // : 2\n\t\tRouter W;  // : 3\t\t\n\t}\n\t\n\tstatevars {\n\t\tint bufSize;\n\t\tint maxTime;\t// To check if a packet is recieved by the time maxTime\n\t\tint recieved;\n\t\t\n\t\tbyte[4] bufNum; //for each of four sides\n\t\tboolean[4] full;\n\t\tboolean[4] enable;\n\t\tboolean [4] outMutex;\n\t\t\n\t\tbyte Xid;\n\t\tbyte Yid;\n\t}\n\t\n\tRouter(byte X, byte Y){\t\n\t\tXid = X;\n\t\tYid = Y;\n\t\n\t\tbufSize = 2;\n\t\tmaxTime = 250 ; \n\t\trecieved = 0;\n\n\t\tfor(int i=0;i<4;i++){\t\t\n\t\t\tenable[i] = true;\n\t\t\toutMutex[i] = true;\n\t\t\tbufNum[i] = 0;\n\t\t\tfull[i] = false;\n\t\t}\n\t\t\n\t\t//packet generation\n\t\tif(X == 0 && Y == 0){\n\t\t\tself.reqSend(2,3,1,5) after(10);  //sending a packet\n\t\t}\n\t\t\n\t\tif(X == 0 && Y == 1){\t\t\t\t// permamnet, don't change. \n\t\t\tself.reStart() after(700);\n\t\t}\n\t\t\n\t\tif(X == 2 && Y == 3){\t\t\t\t// in destination router. not necessary for all packets. just to check when the packet is recieved\n\t\t\tself.checkRecieved()after(maxTime);\n\t\t}\n\t}\n\t\n\tmsgsrv reqSend(byte Xtarget, byte Ytarget, int directionS, int packId){\t\n\t\tif (enable[directionS] == true){\n\t\t\tboolean sent = false;\n\t\t\t\t\t\n\t\t\tif(Xtarget > Xid){\t\t// Routing Algorithm XY: first move through horisental channels \n\t\t\t\tif(outMutex[1] == true){\t\n\t\t\t\t\tE.give_Ack(Xtarget, Ytarget,directionS,3,5, packId) after(26);\n\t\t\t\t\toutMutex[1] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Xtarget < Xid){\t\n\t\t\t\tif(outMutex[3] == true){\n\t\t\t\t\tW.give_Ack(Xtarget, Ytarget,directionS,1,5, packId ) after(26);\t\n\t\t\t\t\toutMutex[3] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t} else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n\t\t\t}\t\n\t\t\telse if(Ytarget > Yid){\t\n\t\t\t\tif(outMutex[2] == true){\n\t\t\t\t\tS.give_Ack(Xtarget, Ytarget,directionS,0,5, packId ) after(26);\t\n\t\t\t\t\toutMutex [2] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\t\n\t\t\t}\t\n\t\t\telse if(Ytarget < Yid){\t\n\t\t\t\tif(outMutex[0] == true){\n\t\t\t\t\tN.give_Ack(Xtarget, Ytarget,directionS,2,5 , packId) after(26);\t\n\t\t\t\t\toutMutex[0] = false;\n\t\t\t\t\tenable[directionS] = false;\n\t\t\t\t\tsent = true;\n\t\t\t\t}else\n\t\t\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t\t\t}\n\n\t\t\tif(sent == true){\n\t\t\t\tbufNum[directionS] = (byte)bufNum[directionS] + 1;\n\n\t\t\t\tif (bufNum[directionS] == bufSize) full[directionS] = true;         //update the value of \"full\".\n\t\t\t}\t\n\t\t} else\n\t\t\tself.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n\t}\n\t\n\tmsgsrv get_Ack(int directionS){\n\t\t\n\t\tenable[directionS] = true;\n\t\t\n\t\tbufNum[directionS] = (byte)bufNum[directionS] - 1;\t\n\t\tfull[directionS] = false;\n\n\t\tif (sender == N) {\n\t\t\toutMutex[0] = true;\n\t\t}\t\n\t\telse if (sender == E){ \n\t\t\toutMutex[1] = true;\n\t\t}\t\n\t\telse if (sender == S){\n\t\t\toutMutex[2] = true;\n\t\t\t}\n\t\telse if (sender == W){ \n\t\t\toutMutex[3] = true;\n\t\t}\t\n\t}\n\t\n\tmsgsrv give_Ack(byte Xtarget, byte Ytarget,int directionS, int directionD,int msgSender, int packId){\n\t\tint MSGSender;\n\t\tif(sender == N)\n\t\t\tMSGSender = 0;\n\t\telse if (sender == E)\n\t\t\tMSGSender = 1;\n\t\telse if (sender == S)\n\t\t\tMSGSender = 2;\n\t\telse if (sender == W)\n\t\t\tMSGSender = 3;\n\t\telse {MSGSender = msgSender;\n\t\t\t\n\t\t}\n\t\t\t\t\n\t\tif(!(Xtarget == Xid && Ytarget == Yid)){\n\t\t\t\t\n\t\t\tif (full[directionD]) //buffer is full, the packet should wait.\n\t\t\t\tself.give_Ack(Xtarget, Ytarget,directionS,directionD,MSGSender,\n\t\t\t\t\t\t\t packId)after(2)deadline(3); //waiting via recalling give_ack after 2 time units.\n\t\t\t\n\t\t\telse{\t\n\t\t\t\tself.reqSend(Xtarget, Ytarget,directionD, packId); \n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\t\t\n\t\t}\t\t\n\t\t\n\t\telse if((Xtarget == Xid && Ytarget == Yid)){ //reach target\n\t\t\t\t\n\t\t\t\trecieved = recieved + 1;\n\t\t\t\t\t\n\t\t\t\tif(MSGSender == 0)\n\t\t\t\t\tN.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 1)\t\t\n\t\t\t\t\tE.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 2)\t\t\n\t\t\t\t\tS.get_Ack(directionS);\n\t\t\t\telse if(MSGSender == 3)\t\t\n\t\t\t\t\tW.get_Ack(directionS);\n\t\t\t}\n\t}\n\n\tmsgsrv reStart(){\n\t\tmanager.reset();\n\t}\t\n\t\n\tmsgsrv deadlineMiss(){\n\t\tdelay(5);\n\t}\n\t\n\tmsgsrv checkPoint(){ // causes to hult\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t\tself.deadlineMiss() after(1)deadline(3);\n\t}\n\t\n\tmsgsrv checkRecieved(){ // Halt if recieved is 0, by calling checkpoint.(checkpoint method allways cause program to hult).\n\t\t\n\t\tif (recieved == 0){\n\t\t\tself.checkPoint();\n\t\t}\n\t\t\t\n\t}\n}\n\nmain {\n\tManager m(r00,r10,r20,r30,r01,r11,r21,r31,r02,r12,r22,r32,r03,r13,r23,r33):();\n\t\n\tRouter r00(m,r03,r10,r01,r30):(0,0);\n\tRouter r10(m,r13,r20,r11,r00):(1,0);\n\tRouter r20(m,r23,r30,r21,r10):(2,0);\n\tRouter r30(m,r33,r00,r31,r20):(3,0);\n\t\n\tRouter r01(m,r00,r11,r02,r31):(0,1);\n\tRouter r11(m,r10,r21,r12,r01):(1,1);\n\tRouter r21(m,r20,r31,r22,r11):(2,1);\n\tRouter r31(m,r30,r01,r32,r21):(3,1);\n\t\n\tRouter r02(m,r01,r12,r03,r32):(0,2);\n\tRouter r12(m,r11,r22,r13,r02):(1,2);\n\tRouter r22(m,r21,r32,r23,r12):(2,2);\n\tRouter r32(m,r31,r02,r33,r22):(3,2);\n\t\n\tRouter r03(m,r02,r13,r00,r33):(0,3);\n\tRouter r13(m,r12,r23,r10,r03):(1,3);\n\tRouter r23(m,r22,r33,r20,r13):(2,3);\n\tRouter r33(m,r32,r03,r30,r23):(3,3);\n}", "NOC", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>."), new $c_Lcaos_frontend_Configurator$Example("env int RESENDING_PERIOD = 25;\nenv int NORMAL_SPEED = 15;\nenv int REDUCED_SPEED = 7;\nenv int SAFE_DISTANCE = 20;  // segments has 1000 meters length and each sub-segment has 200 meteres length\nenv int SEGMENT_LENGTH = 200;\nenv int LOADING_TIME_PC = 60;\nenv int LOADING_TIME_WL = 60;\nenv int UNLOADING_TIME_SC = 30;\nenv int CHARGING_TIME_C1 = 60;\nenv int CHARGING_TIME_C2 = 60;\nenv int LEAVING_PERIOD = 13;\nenv int NUMBER_VEHICLES = 4;\n\n//************* E1:WL, E2:Crusher, E3:SC, E4:DP ***********\n\nreactiveclass CrossController (10){\t\t// to control when S4 passes S3\n\tknownrebecs\n\t{\n\t}\n\tstatevars\n\t{\n\t\tboolean crossIsFree;\n\t}\n\tCrossController()\n\t{ \n\t\tcrossIsFree= true;\n\t}\n\tmsgsrv giveCrossPermission(int vehicleId){\n\t\tif(crossIsFree){\n\t\t\tcrossIsFree = false;\n\t\t\t((Segment)sender).getCrossPermission(vehicleId);\n\t\t}\n\t\telse ((Segment)sender).crossNotAvailable(vehicleId);\n\t}\n\tmsgsrv freeCross(int vehicleId){\n\t\tcrossIsFree = true;\t\n\t}\n}\n\nreactiveclass PrimaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPcToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tPrimaryCrusher()\n\t{ \n\t\tisLoading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_PC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegPcToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass SecondaryCrusher (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegScToPrepoint;\n\t}\n\tstatevars\n\t{\n\t\tboolean isUnloading;\n\t}\n\tSecondaryCrusher()\n\t{ \n\t\tisUnloading= false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isUnloading == false){\n\t\t\tisUnloading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(UNLOADING_TIME_SC);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegScToPrepoint.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisUnloading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass PrePoint (14) { \t\t\t// the point at the end of S7\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegPreToE1;\n\t\tSegment firstSubSegPreToE2;\n\t}\n\tstatevars\n\t{\n\t\tboolean isBusy;\n\t\tboolean toE1;\n\t\tint count;\n\t}\n\tPrePoint()\n\t{ \n\t\tisBusy= false;\n\t\ttoE1 = true;\n\t\tcount=0;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isBusy == false){\n\t\t\tisBusy = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(toE1)\n\t\t\tfirstSubSegPreToE1.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisBusy= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tif(toE1){\n\t\t\ttoE1 = false;\n\t\t\tfirstSubSegPreToE2.givePermisionForVehicle(vehicleId, -1);\t\n\t\t}\n\t\telse \n\t\t{\n\t\t\ttoE1 = true;\n\t\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t\t}\n\t}\n}\n\nreactiveclass DecisionStation (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegDsToPc;\n\t}\n\tstatevars\n\t{\t\n\t\tboolean vehicle1Reached;\n\t\tboolean vehicle2Reached;\n\t\tboolean vehicle3Reached;\n\t\tboolean vehicle4Reached;\n\t\tboolean vehicle5Reached;\n\t\tboolean vehicle6Reached;\n\t\tboolean vehicle7Reached;\n\t\tboolean vehicle8Reached;\n\t}\n\tDecisionStation()\n\t{ \n\t\tself.leaveParkingSlots();\n\t}\n\tmsgsrv leaveParkingSlots(){\n\t\t\n\t\tstartSendingToNext(1) after(1);\n\t\t\n\t\tif(NUMBER_VEHICLES == 2 || NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 \n\t\t|| NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(2) after(4);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 \n\t\t|| NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(3) after(6);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 \n\t\t|| NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(4) after(9);\n\t\t\t\n \t\tif(NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7\n\t\t|| NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(5) after(12);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(6) after(15);\n\t\t\t\n\t\tif(NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(7) after(19);\n\t\t\n\t\tif(NUMBER_VEHICLES == 8)\n\t\t\tstartSendingToNext(8) after(26);\n\t}\n\tmsgsrv getPermision(int vehicleId){\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId, int segmentDes){\n\t\tstartSendingToNext(vehicleId) after (RESENDING_PERIOD);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegDsToPc.givePermisionForVehicle(vehicleId,1);\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t\t((Segment)sender).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\t//startSendingToNext(vehicleId) after(LEAVING_PERIOD);\n\t\tif(vehicleId == 1)\n\t\t\tvehicle1Reached = true;\n\t\telse if(vehicleId == 2)\n\t\t\tvehicle2Reached = true;\n\t\telse if(vehicleId == 3)\n\t\t\tvehicle3Reached = true;\n\t\telse if(vehicleId == 4)\n\t\t\tvehicle4Reached = true;\n\t\telse if(vehicleId == 5)\n\t\t\tvehicle5Reached = true;\n\t\telse if(vehicleId == 6)\n\t\t\tvehicle6Reached = true;\n\t\telse if(vehicleId == 7)\n\t\t\tvehicle7Reached = true;\n\t\telse if(vehicleId == 8)\n\t\t\tvehicle8Reached = true;\n\t\t\n\t\t//if(NUMBER_VEHICLES == 4)\n\t\t//\t\tassertion(false);\n\t\t// when all vehicles travelled once the model checking stops by puting 'assertion(false)'\n\t\tif(NUMBER_VEHICLES == 1){\n\t\t\tif(vehicle1Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 2){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 3){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 4){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 5){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true) \n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 6){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\t\t\n\t\telse if(NUMBER_VEHICLES == 7){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t\telse if(NUMBER_VEHICLES == 8){\n\t\t\tif(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n\t\t\t&& vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n\t\t\t&& vehicle7Reached == true && vehicle8Reached == true)\n\t\t\t\tassertion(false);\n\t\t}\n\t}\n\tmsgsrv loop (){\n\t\tself.loop() after(5000);\n\t}\n}\n\nreactiveclass WheelLoader (14) {\n\tknownrebecs\n\t{\n\t\tSegment firstSubSegWlToSc;\n\t}\n\tstatevars\n\t{\n\t\tboolean isLoading;\n\t}\n\tWheelLoader()\n\t{ \n\t\tisLoading = false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId){\n\t \tif (isLoading == false){\n\t\t\tisLoading = true;\n\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t}\n\t\telse \n\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t}\t\n\tmsgsrv vehicleEntered(int vehicleId){\n\t\tdelay(LOADING_TIME_WL);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tfirstSubSegWlToSc.givePermisionForVehicle(vehicleId,-1);\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tisLoading= false;\n\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree (int vehicleId){\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\nreactiveclass Segment(14) {\n\tknownrebecs\n\t{\n\t\t\n\t}\n\tstatevars\n\t{\n\t\tboolean isFree;\n\t\tboolean stoppedVehicle;\n\t\tint vehicleSpeed;\t\t\t// speed of the current vehicle\n\t\tint segmentLength;\n\t\t\n\t\tSegment nextSegment;\n\t\tDecisionStation decisionS;\n\t\tPrimaryCrusher primaryC;\n\t\tSecondaryCrusher secondaryC;\n\t\tWheelLoader wheelL;\n\t\tPrePoint prePoint;\n\t\tCrossController crossCtrl;\n\t\tSegment segRequestingCross;\n\t}\n\tSegment(Segment nextS, WheelLoader wl, PrimaryCrusher pc, SecondaryCrusher sc, \n\t\t\t\tDecisionStation ds, PrePoint preCs, CrossController ctrl, int speed, int segLength)\n\t{ \n\t\tnextSegment = nextS;\n\t\tdecisionS = ds;\n\t\tprimaryC = pc;\n\t\tsecondaryC = sc;\n\t\twheelL = wl;\n\t\tprePoint = preCs;\t\n\t\tcrossCtrl = ctrl;\n\t\tsegRequestingCross = null;\n\t\tsegmentLength = segLength;\n\t\t\n\t\tvehicleSpeed = speed;\n\t\tisFree = true;\n\t\tstoppedVehicle =false;\n\t}\n\tmsgsrv givePermisionForVehicle(int vehicleId, int segmentDes){\n\t\tif (isFree)\n\t\t{\n\t\t\tisFree=false;\n\t\t\tif(crossCtrl == null){\n\t\t\t\tif(sender instanceof Segment)\n\t\t\t\t\t((Segment)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t\t((DecisionStation)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t\t((PrimaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t\t((WheelLoader)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t\t((SecondaryCrusher)sender).getPermision(vehicleId);\n\t\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t\t((PrePoint)sender).getPermision(vehicleId);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tsegRequestingCross = ((Segment)sender);\n\t\t\t\tcrossCtrl.giveCrossPermission(vehicleId);\n\t\t\t}\n\t\t}\n\t\telse{\n\t\t\tif(sender instanceof Segment)\n\t\t\t\t((Segment)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof DecisionStation)\n\t\t\t\t((DecisionStation)sender).segmentNotFree(vehicleId, segmentDes);\n\t\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t\t((PrimaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof WheelLoader)\n\t\t\t\t((WheelLoader)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t\t((SecondaryCrusher)sender).segmentNotFree(vehicleId);\n\t\t\telse if(sender instanceof PrePoint)\n\t\t\t\t((PrePoint)sender).segmentNotFree(vehicleId);\n\t\t}\n\t\n\t}\n\tmsgsrv getCrossPermission(int vehicleId){\n\t\t((Segment)segRequestingCross).getPermision(vehicleId);\n\t}\n\tmsgsrv vehicleEntered (int vehicleId){\t// moving of vehicle inside the segment should be modeled\n\t\tdelay((segmentLength-SAFE_DISTANCE)/vehicleSpeed);\n\t\tself.startSendingToNext(vehicleId);\n\t}\n\tmsgsrv crossNotAvailable(int vehicleId){\n\t\tisFree = true;\n\t\t((Segment)segRequestingCross).segmentNotFree(vehicleId);\n\t}\n\tmsgsrv startSendingToNext(int vehicleId){\n\t\tif(nextSegment != null)\n\t\t\tnextSegment.givePermisionForVehicle(vehicleId,-1);\n\t\telse if(primaryC != null)\n\t\t\tprimaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(wheelL != null)\n\t\t\twheelL.givePermisionForVehicle(vehicleId);\n\t\telse if(secondaryC != null)\n\t\t\tsecondaryC.givePermisionForVehicle(vehicleId);\n\t\telse if(decisionS != null)\n\t\t\tdecisionS.givePermisionForVehicle(vehicleId);\n\t\telse if(prePoint != null)\n\t\t\tprePoint.givePermisionForVehicle(vehicleId);\n\t\t\t\n\t}\n\tmsgsrv getPermision (int vehicleId){\n\t\tstoppedVehicle = false;\n\t\tdelay(SAFE_DISTANCE/vehicleSpeed);\n\t\tisFree = true;\n\t\tif(crossCtrl != null){\n\t\t\tsegRequestingCross = null;\n\t\t\tcrossCtrl.freeCross(vehicleId);\n\t\t}\n\t\tif(sender instanceof Segment)\n\t\t\t((Segment)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof DecisionStation)\n\t\t\t((DecisionStation)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrimaryCrusher)\n\t\t\t((PrimaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof WheelLoader)\n\t\t\t((WheelLoader)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof SecondaryCrusher)\n\t\t\t((SecondaryCrusher)sender).vehicleEntered(vehicleId);\n\t\telse if(sender instanceof PrePoint)\n\t\t\t((PrePoint)sender).vehicleEntered(vehicleId);\n\t}\n\tmsgsrv segmentNotFree(int vehicleId){\n\t\tstoppedVehicle = true;\n\t\tself.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n\t}\n}\n\n\nmain{\n\t//************* E1:WL, E2:PC, E3:SC, E4:DP ***********\n\tPrimaryCrusher pc(subSeg1E2ToS2):();\n\tSecondaryCrusher sc(subSeg1E3ToE4):();\n\tWheelLoader wl(subSeg1E1ToS2):();\n\tDecisionStation ds(subSeg1S4ToPre):();\n\tCrossController controller():();\n\tPrePoint prePoint(subSeg1S5ToE1,subSeg1S6ToE2):();\n\t// ():(segment,E1,E2,E3,E4,prepoint,controller)\n\t\n\t//################ S1 ##################\n\tSegment subSeg1E2ToS2():(subSeg2E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\tSegment subSeg2E2ToS2():(subSeg3E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E2ToS2():(subSeg4E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E2ToS2():(subSeg5E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E2ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n\t\n\t//##################### S7 ##############\n\tSegment subSeg1E1ToS2():(subSeg2E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E1ToS2():(subSeg3E1ToS2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E1ToS2():(subSeg4E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E1ToS2():(subSeg5E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E1ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S2 ################\n\tSegment subSeg1S2ToE3():(subSeg2S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S2ToE3():(subSeg3S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S2ToE3():(subSeg4S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S2ToE3():(subSeg5S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S2ToE3():(null,null,null,sc,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S3 #############\n\tSegment subSeg1E3ToE4():(subSeg2E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2E3ToE4():(subSeg3E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3E3ToE4():(subSeg4E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4E3ToE4():(subSeg5E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5E3ToE4():(null,null,null,null,ds,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S6 #############\n\tSegment subSeg1S6ToE2():(subSeg2S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S6ToE2():(subSeg3S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S6ToE2():(subSeg4S6ToE2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S6ToE2():(subSeg5S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S6ToE2():(null,null,pc,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S5 #############\n\tSegment subSeg1S5ToE1():(subSeg2S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S5ToE1():(subSeg3S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S5ToE1():(null,wl,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n\t\n\t//################## S4 #############\n\tSegment subSeg1S4ToPre():(subSeg2S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg2S4ToPre():(subSeg3S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg3S4ToPre():(subSeg4S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg4S4ToPre():(subSeg5S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\tSegment subSeg5S4ToPre():(null,null,null,null,null,prePoint,null,NORMAL_SPEED,SEGMENT_LENGTH);\n\t\n}", "Vehicles", "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>.")]));
   this.Lrebecaos_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $n($m_s_package$().s_package$__f_List);
-  var $$x10 = $m_sr_ScalaRunTime$();
-  var this$89 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((_$3) => {
+  var $$x11 = $m_sr_ScalaRunTime$();
+  var this$113 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((_$3) => {
     var _$3$1 = $as_T3(_$3);
     return $n(_$3$1).toString__T()
   })), new $c_Lcaos_view_Code("haskell")));
-  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$89, 0);
-  var $$x9 = new $c_T2("View pretty data", y);
-  var this$92 = $n($m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
+  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$113, 0);
+  var $$x10 = new $c_T2("View pretty data", y);
+  var this$116 = $n($m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
     var e$1 = $as_T3(e);
     return e$1
   })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st) => {
@@ -21132,44 +21180,44 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var a$1 = $as_T2(a);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(a$1)._1__O()))
   })), $m_Lcaos_view_Text$()));
-  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$92);
-  var $$x8 = new $c_T2("Run semantics St", y$1);
-  var $$x6 = $m_Lcaos_frontend_Configurator$();
-  var $$x5 = new $c_sjsr_AnonFunction1(((e$2) => {
+  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$116);
+  var $$x9 = new $c_T2("Run semantics St", y$1);
+  var $$x7 = $m_Lcaos_frontend_Configurator$();
+  var $$x6 = new $c_sjsr_AnonFunction1(((e$2) => {
     var e$3 = $as_T3(e$2);
     $n($m_s_package$().s_package$__f_List);
     var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
     var _2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1);
     return new $c_T2(e$3, _2)
   }));
-  var this$97 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
+  var this$121 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
   var sos = $m_Lrebecaos_backend_Semantics$();
-  var y$2 = $n($$x6).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x5, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos, this$97), new $c_sjsr_AnonFunction1(((hs) => {
+  var y$2 = $n($$x7).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x6, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos, this$121), new $c_sjsr_AnonFunction1(((hs) => {
     var hs$1 = $as_T2(hs);
     return $m_Lrebecaos_frontend_CaosConfig$HistorySOS$().toMermaidSnd__T2__T(hs$1)
   })), new $c_sjsr_AnonFunction1(((act) => {
     var act$1 = $as_T2(act);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))
   })), $m_Lcaos_view_Mermaid$());
-  var $$x7 = new $c_T2("Run semantics Snd", y$2);
-  var $$x3 = $m_Lcaos_frontend_Configurator$();
-  var $$x2 = new $c_sjsr_AnonFunction1(((e$3$1) => {
+  var $$x8 = new $c_T2("Run semantics Snd", y$2);
+  var $$x4 = $m_Lcaos_frontend_Configurator$();
+  var $$x3 = new $c_sjsr_AnonFunction1(((e$3$1) => {
     var e$4 = $as_T3(e$3$1);
     $n($m_s_package$().s_package$__f_List);
     var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
     var _2$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2);
     return new $c_T2(e$4, _2$1)
   }));
-  var this$102 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
+  var this$126 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
   var sos$1 = $m_Lrebecaos_backend_Semantics$();
-  var y$3 = $n($$x3).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x2, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos$1, this$102), new $c_sjsr_AnonFunction1(((hs$2) => {
+  var y$3 = $n($$x4).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x3, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos$1, this$126), new $c_sjsr_AnonFunction1(((hs$2) => {
     var hs$3 = $as_T2(hs$2);
     return $m_Lrebecaos_frontend_CaosConfig$HistorySOS$().toMermaidRcv__T2__T(hs$3)
   })), new $c_sjsr_AnonFunction1(((act$2) => {
     var act$3 = $as_T2(act$2);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$3)._1__O()))
   })), $m_Lcaos_view_Mermaid$());
-  var $$x4 = new $c_T2("Run semantics Rcv", y$3);
+  var $$x5 = new $c_T2("Run semantics Rcv", y$3);
   var y$4 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$4$1) => {
     var e$5 = $as_T3(e$4$1);
     return e$5
@@ -21180,7 +21228,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var _$4$1 = $as_T2(_$4);
     return $n(_$4$1).toString__T()
   })), 50);
-  var $$x1 = new $c_T2("Build LTS", y$4);
+  var $$x2 = new $c_T2("Build LTS", y$4);
   var initialSt = new $c_sjsr_AnonFunction1(((e$5$1) => {
     var e$6 = $as_T3(e$5$1);
     return e$6
@@ -21195,26 +21243,50 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     return $n(_$5$1).toString__T()
   }));
   var y$5 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos$2, viewSt, viewAct);
-  var elems$3 = $n($$x10).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x9, $$x8, $$x7, $$x4, $$x1, new $c_T2("Build LTS (explore)", y$5)]));
+  var $$x1 = new $c_T2("Build LTS (explore)", y$5);
+  var y$6 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$6$1) => {
+    var e$7 = $as_T3(e$6$1);
+    matchResult4: {
+      var \u03b41$___1;
+      var \u03b41$___2;
+      var \u03b41$___3;
+      var x16 = $m_Lcaos_sos_SOS$().traverseEdges__Lcaos_sos_SOS__O__I__T3($m_Lrebecaos_backend_Semantics$(), e$7, 3000);
+      if ((x16 !== null)) {
+        var st$5 = $as_sci_Set($n(x16).T3__f__1);
+        var eds = $uI($n(x16).T3__f__2);
+        var done = $uZ($n(x16).T3__f__3);
+        var \u03b41$___1 = st$5;
+        var \u03b41$___2 = eds;
+        var \u03b41$___3 = done;
+        break matchResult4
+      };
+      throw new $c_s_MatchError(x16)
+    };
+    var st$2$1 = $as_sci_Set(\u03b41$___1);
+    var eds$2 = $uI(\u03b41$___2);
+    var done$2 = $uZ(\u03b41$___3);
+    return (((("States: " + $n(st$2$1).size__I()) + "\nEdges: ") + eds$2) + ((!done$2) ? "\n(stopped: limit of edges reached)" : ""))
+  })), $m_Lcaos_view_Text$());
+  var elems$3 = $n($$x11).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x10, $$x9, $$x8, $$x5, $$x2, $$x1, new $c_T2("Number of states and edges", y$6)]));
   this.Lrebecaos_frontend_CaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3);
   this.Lrebecaos_frontend_CaosConfig$__f_footer = ($m_sc_StringOps$(), $m_sc_StringOps$().stripMargin$extension__T__C__T("Simple animator of rebecaOS, meant to exemplify the\n      | CAOS libraries, used to generate this website. Source code available online:\n      | <a target=\"_blank\" href=\"https://github.com/arcalab/CAOS\">\n      | https://github.com/arcalab/CAOS</a> (CAOS).", 124));
   $m_sc_StringOps$();
   var sosRules = $m_sc_StringOps$().stripMargin$extension__T__C__T("The operational rules that we use to reduce programs are provided below.\n      |These are explained, e.g. in\n      |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n      |<pre>\n      |WHEN\n      |  (\u03c3_ri(m), // statement\n      |   \u03c3_ri[now=max(TT,\u03c3_ri(now)),[arg=v],sender=rj], // env\n      |   Env,    // USELESS\n      |   B)      // outgoing messages // NOT NEEDED here\n      |  EVALUATES TO\n      |  (\u03c3'_ri,   // new env\n      |   Env',   // ALWAYS Env (without dynamic \"new\" creation)\n      |   B')     // new/updated outgoing messages\n      |IF\n      |  TT\u2264min(B) \u2227\n      |  \u03c3_ri(now)\u2264DL \u2227\n      |  (ri,m(v),rj,TT,DL) notin B \u2227\n      |  \u03c3_ri notin Env\n      |THEN\n      |  ({\u03c3ri}\u222aEnv,\n      |   {(ri,m(v),rj,TT,DL)}\u222aB)\n      |  \u2192\n      |  ({\u03c3'_ri} \u222a Env',\n      |   B')\n      |</pre>", 124);
-  var $$x15 = $m_Lcaos_frontend_Configurator$();
+  var $$x16 = $m_Lcaos_frontend_Configurator$();
   $n($m_s_package$().s_package$__f_List);
-  var $$x14 = $m_sr_ScalaRunTime$();
+  var $$x15 = $m_sr_ScalaRunTime$();
   var self = this.Lrebecaos_frontend_CaosConfig$__f_languageName;
   var self$1 = new $c_T2(self, "More information on the syntax of rebecaOS");
   $m_sc_StringOps$();
-  var y$6 = $m_sc_StringOps$().stripMargin$extension__T__C__T("The syntax and timed (static) semantics for a Rebeca program can be found, e.g., in\n        |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n        |", 124);
-  var $$x13 = new $c_T2(self$1, y$6);
+  var y$7 = $m_sc_StringOps$().stripMargin$extension__T__C__T("The syntax and timed (static) semantics for a Rebeca program can be found, e.g., in\n        |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n        |", 124);
+  var $$x14 = new $c_T2(self$1, y$7);
   var self$2 = new $c_T2("Build LTS", "More information on the operational rules used here");
-  var $$x12 = new $c_T2(self$2, sosRules);
+  var $$x13 = new $c_T2(self$2, sosRules);
   var self$3 = new $c_T2("Build LTS (explore)", "More information on the operational rules used here");
-  var $$x11 = new $c_T2(self$3, sosRules);
+  var $$x12 = new $c_T2(self$3, sosRules);
   var self$4 = new $c_T2("Run semantics", "More information on the operational rules used here");
-  var elems$4 = $n($$x14).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x13, $$x12, $$x11, new $c_T2(self$4, sosRules)]));
-  this.Lrebecaos_frontend_CaosConfig$__f_documentation = $n($$x15).toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$4))
+  var elems$4 = $n($$x15).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x14, $$x13, $$x12, new $c_T2(self$4, sosRules)]));
+  this.Lrebecaos_frontend_CaosConfig$__f_documentation = $n($$x16).toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$4))
 }
 $c_Lrebecaos_frontend_CaosConfig$.prototype = new $h_O();
 $c_Lrebecaos_frontend_CaosConfig$.prototype.constructor = $c_Lrebecaos_frontend_CaosConfig$;
@@ -24485,42 +24557,52 @@ function $m_Lrebecaos_backend_Bag$() {
   };
   return $n_Lrebecaos_backend_Bag$
 }
-function $s_Lrebecaos_syntax_Program$BExpr$__BTrue__Lrebecaos_syntax_Program$BExpr() {
-  $m_Lrebecaos_syntax_Program$BExpr$();
-  return $t_Lrebecaos_syntax_Program$BExpr$__BTrue
-}
-function $s_Lrebecaos_syntax_Program$BExpr$__BFalse__Lrebecaos_syntax_Program$BExpr() {
-  $m_Lrebecaos_syntax_Program$BExpr$();
-  return $t_Lrebecaos_syntax_Program$BExpr$__BFalse
-}
 /** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$() {
-  $n_Lrebecaos_syntax_Program$BExpr$ = this;
-  $t_Lrebecaos_syntax_Program$BExpr$__BTrue = new $c_Lrebecaos_syntax_Program$BExpr$$anon$2(0, "BTrue", this);
-  $t_Lrebecaos_syntax_Program$BExpr$__BFalse = new $c_Lrebecaos_syntax_Program$BExpr$$anon$2(1, "BFalse", this)
+function $c_Lrebecaos_backend_Semantics$RebecEnv$() {
+  this.Lrebecaos_backend_Semantics$RebecEnv$__f_seed = 0;
+  this.Lrebecaos_backend_Semantics$RebecEnv$__f_seed = 0
 }
-$c_Lrebecaos_syntax_Program$BExpr$.prototype = new $h_O();
-$c_Lrebecaos_syntax_Program$BExpr$.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$;
+$c_Lrebecaos_backend_Semantics$RebecEnv$.prototype = new $h_O();
+$c_Lrebecaos_backend_Semantics$RebecEnv$.prototype.constructor = $c_Lrebecaos_backend_Semantics$RebecEnv$;
 /** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$() {
+function $h_Lrebecaos_backend_Semantics$RebecEnv$() {
   /*<skip>*/
 }
-$h_Lrebecaos_syntax_Program$BExpr$.prototype = $c_Lrebecaos_syntax_Program$BExpr$.prototype;
-var $d_Lrebecaos_syntax_Program$BExpr$ = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$: 0
-}, false, "rebecaos.syntax.Program$BExpr$", {
-  Lrebecaos_syntax_Program$BExpr$: 1,
+$h_Lrebecaos_backend_Semantics$RebecEnv$.prototype = $c_Lrebecaos_backend_Semantics$RebecEnv$.prototype;
+$c_Lrebecaos_backend_Semantics$RebecEnv$.prototype.restart__V = (function() {
+  this.Lrebecaos_backend_Semantics$RebecEnv$__f_seed = 0
+});
+$c_Lrebecaos_backend_Semantics$RebecEnv$.prototype.newVar__T = (function() {
+  this.Lrebecaos_backend_Semantics$RebecEnv$__f_seed = ((1 + this.Lrebecaos_backend_Semantics$RebecEnv$__f_seed) | 0);
+  return ("v" + (((-1) + this.Lrebecaos_backend_Semantics$RebecEnv$__f_seed) | 0))
+});
+$c_Lrebecaos_backend_Semantics$RebecEnv$.prototype.empty__Lrebecaos_backend_Semantics$RebecEnv = (function() {
+  var this$1 = $n($m_s_Predef$().s_Predef$__f_Map);
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+  var vars = this$1.from__sc_IterableOnce__sci_Map(elems);
+  var this$2 = $n($m_s_Predef$().s_Predef$__f_Map);
+  var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+  var rebs = this$2.from__sc_IterableOnce__sci_Map(elems$1);
+  var this$3 = $n($m_s_Predef$().s_Predef$__f_Map);
+  var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
+  var meth = this$3.from__sc_IterableOnce__sci_Map(elems$2);
+  return new $c_Lrebecaos_backend_Semantics$RebecEnv(vars, rebs, meth, "")
+});
+var $d_Lrebecaos_backend_Semantics$RebecEnv$ = new $TypeData().initClass({
+  Lrebecaos_backend_Semantics$RebecEnv$: 0
+}, false, "rebecaos.backend.Semantics$RebecEnv$", {
+  Lrebecaos_backend_Semantics$RebecEnv$: 1,
   O: 1,
   s_deriving_Mirror: 1,
-  s_deriving_Mirror$Sum: 1
+  s_deriving_Mirror$Product: 1
 });
-$c_Lrebecaos_syntax_Program$BExpr$.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$;
-var $n_Lrebecaos_syntax_Program$BExpr$;
-function $m_Lrebecaos_syntax_Program$BExpr$() {
-  if ((!$n_Lrebecaos_syntax_Program$BExpr$)) {
-    $n_Lrebecaos_syntax_Program$BExpr$ = new $c_Lrebecaos_syntax_Program$BExpr$()
+$c_Lrebecaos_backend_Semantics$RebecEnv$.prototype.$classData = $d_Lrebecaos_backend_Semantics$RebecEnv$;
+var $n_Lrebecaos_backend_Semantics$RebecEnv$;
+function $m_Lrebecaos_backend_Semantics$RebecEnv$() {
+  if ((!$n_Lrebecaos_backend_Semantics$RebecEnv$)) {
+    $n_Lrebecaos_backend_Semantics$RebecEnv$ = new $c_Lrebecaos_backend_Semantics$RebecEnv$()
   };
-  return $n_Lrebecaos_syntax_Program$BExpr$
+  return $n_Lrebecaos_backend_Semantics$RebecEnv$
 }
 function $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() {
   $m_Lrebecaos_syntax_Program$Statement$();
@@ -30593,6 +30675,13 @@ $c_Lrebecaos_backend_Semantics$RebecEnv.prototype.addAssignment__T2__Lrebecaos_b
   var clazz = this.Lrebecaos_backend_Semantics$RebecEnv__f_clazz;
   return new $c_Lrebecaos_backend_Semantics$RebecEnv(vars, rebs, meth, clazz)
 });
+$c_Lrebecaos_backend_Semantics$RebecEnv.prototype.addRebecs__sc_Iterable__Lrebecaos_backend_Semantics$RebecEnv = (function(rebs2) {
+  var vars = this.Lrebecaos_backend_Semantics$RebecEnv__f_vars;
+  var rebs = $as_sci_Map($n(this.Lrebecaos_backend_Semantics$RebecEnv__f_rebs).$plus$plus__sc_IterableOnce__sc_IterableOps(rebs2));
+  var meth = this.Lrebecaos_backend_Semantics$RebecEnv__f_meth;
+  var clazz = this.Lrebecaos_backend_Semantics$RebecEnv__f_clazz;
+  return new $c_Lrebecaos_backend_Semantics$RebecEnv(vars, rebs, meth, clazz)
+});
 $c_Lrebecaos_backend_Semantics$RebecEnv.prototype.addRebec__T2__Lrebecaos_backend_Semantics$RebecEnv = (function(kn) {
   var vars = this.Lrebecaos_backend_Semantics$RebecEnv__f_vars;
   var rebs = $as_sci_Map($n(this.Lrebecaos_backend_Semantics$RebecEnv__f_rebs).$plus__T2__sci_MapOps(kn));
@@ -30602,9 +30691,11 @@ $c_Lrebecaos_backend_Semantics$RebecEnv.prototype.addRebec__T2__Lrebecaos_backen
 });
 $c_Lrebecaos_backend_Semantics$RebecEnv.prototype.now__I = (function() {
   var x5 = $n(this.Lrebecaos_backend_Semantics$RebecEnv__f_vars).getOrElse__O__F0__O("now", new $c_sjsr_AnonFunction0((() => 0)));
-  if ($isInt(x5)) {
-    var i = $uI(x5);
-    return i
+  if ((x5 instanceof $c_Lrebecaos_backend_Eval$Data$N)) {
+    var x$1 = $as_Lrebecaos_backend_Eval$Data$N(x5);
+    var this$3 = $n(x$1);
+    var x8 = this$3.Lrebecaos_backend_Eval$Data$N__f_n;
+    return x8
   };
   $m_s_sys_package$().error__T__E((("variable 'now' should be an int, but it is '" + x5) + "'."))
 });
@@ -36199,69 +36290,82 @@ var $d_Lorg_scalajs_linker_runtime_UndefinedBehaviorError = new $TypeData().init
 });
 $c_Lorg_scalajs_linker_runtime_UndefinedBehaviorError.prototype.$classData = $d_Lorg_scalajs_linker_runtime_UndefinedBehaviorError;
 /** @constructor */
-function $c_Lrebecaos_syntax_Program$GVar(name) {
-  this.Lrebecaos_syntax_Program$GVar__f_name = null;
-  this.Lrebecaos_syntax_Program$GVar__f_name = name
-}
-$c_Lrebecaos_syntax_Program$GVar.prototype = new $h_O();
-$c_Lrebecaos_syntax_Program$GVar.prototype.constructor = $c_Lrebecaos_syntax_Program$GVar;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$GVar() {
+function $c_Lrebecaos_backend_Eval$Data() {
   /*<skip>*/
 }
-$h_Lrebecaos_syntax_Program$GVar.prototype = $c_Lrebecaos_syntax_Program$GVar.prototype;
-$c_Lrebecaos_syntax_Program$GVar.prototype.productIterator__sc_Iterator = (function() {
+$c_Lrebecaos_backend_Eval$Data.prototype = new $h_O();
+$c_Lrebecaos_backend_Eval$Data.prototype.constructor = $c_Lrebecaos_backend_Eval$Data;
+/** @constructor */
+function $h_Lrebecaos_backend_Eval$Data() {
+  /*<skip>*/
+}
+$h_Lrebecaos_backend_Eval$Data.prototype = $c_Lrebecaos_backend_Eval$Data.prototype;
+$c_Lrebecaos_backend_Eval$Data.prototype.productIterator__sc_Iterator = (function() {
   return new $c_s_Product$$anon$1(this)
 });
-$c_Lrebecaos_syntax_Program$GVar.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$GVar.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$GVar)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$GVar(x$0);
-    return ((this.Lrebecaos_syntax_Program$GVar__f_name === $n(x$0$2).Lrebecaos_syntax_Program$GVar__f_name) && ($n(x$0$2), true))
+$c_Lrebecaos_backend_Eval$Data.prototype.toInt__I = (function() {
+  if ((this instanceof $c_Lrebecaos_backend_Eval$Data$N)) {
+    var x$1 = $as_Lrebecaos_backend_Eval$Data$N(this);
+    var this$2 = $n(x$1);
+    var x4 = this$2.Lrebecaos_backend_Eval$Data$N__f_n;
+    return x4
   } else {
-    return false
+    $m_s_sys_package$().error__T__E((("Expected 'int'; found '" + this) + "'."))
   }
 });
-$c_Lrebecaos_syntax_Program$GVar.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+$c_Lrebecaos_backend_Eval$Data.prototype.toBool__Z = (function() {
+  if ((this instanceof $c_Lrebecaos_backend_Eval$Data$B)) {
+    var x$1 = $as_Lrebecaos_backend_Eval$Data$B(this);
+    var this$2 = $n(x$1);
+    var x8 = this$2.Lrebecaos_backend_Eval$Data$B__f_b;
+    return x8
+  } else {
+    $m_s_sys_package$().error__T__E((("Expected 'boolean'; found '" + this) + "'."))
+  }
 });
-$c_Lrebecaos_syntax_Program$GVar.prototype.productArity__I = (function() {
-  return 1
-});
-$c_Lrebecaos_syntax_Program$GVar.prototype.productPrefix__T = (function() {
-  return "GVar"
-});
-$c_Lrebecaos_syntax_Program$GVar.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$GVar__f_name
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$GVar(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$GVar) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$GVar"))
+function $as_Lrebecaos_backend_Eval$Data(obj) {
+  return (((obj instanceof $c_Lrebecaos_backend_Eval$Data) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.backend.Eval$Data"))
 }
-function $isArrayOf_Lrebecaos_syntax_Program$GVar(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$GVar)))
+function $isArrayOf_Lrebecaos_backend_Eval$Data(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_backend_Eval$Data)))
 }
-function $asArrayOf_Lrebecaos_syntax_Program$GVar(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$GVar(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$GVar;", depth))
+function $asArrayOf_Lrebecaos_backend_Eval$Data(obj, depth) {
+  return (($isArrayOf_Lrebecaos_backend_Eval$Data(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.backend.Eval$Data;", depth))
 }
-var $d_Lrebecaos_syntax_Program$GVar = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$GVar: 0
-}, false, "rebecaos.syntax.Program$GVar", {
-  Lrebecaos_syntax_Program$GVar: 1,
+/** @constructor */
+function $c_Lrebecaos_syntax_Program$Expr2() {
+  /*<skip>*/
+}
+$c_Lrebecaos_syntax_Program$Expr2.prototype = new $h_O();
+$c_Lrebecaos_syntax_Program$Expr2.prototype.constructor = $c_Lrebecaos_syntax_Program$Expr2;
+/** @constructor */
+function $h_Lrebecaos_syntax_Program$Expr2() {
+  /*<skip>*/
+}
+$h_Lrebecaos_syntax_Program$Expr2.prototype = $c_Lrebecaos_syntax_Program$Expr2.prototype;
+$c_Lrebecaos_syntax_Program$Expr2.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_s_Product$$anon$1(this)
+});
+function $as_Lrebecaos_syntax_Program$Expr2(obj) {
+  return (((obj instanceof $c_Lrebecaos_syntax_Program$Expr2) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr2"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Expr2(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr2)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Expr2(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Expr2(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr2;", depth))
+}
+var $d_Lrebecaos_syntax_Program$Expr2 = new $TypeData().initClass({
+  Lrebecaos_syntax_Program$Expr2: 0
+}, false, "rebecaos.syntax.Program$Expr2", {
+  Lrebecaos_syntax_Program$Expr2: 1,
   O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
   s_Equals: 1,
   s_Product: 1,
-  Ljava_io_Serializable: 1
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
 });
-$c_Lrebecaos_syntax_Program$GVar.prototype.$classData = $d_Lrebecaos_syntax_Program$GVar;
+$c_Lrebecaos_syntax_Program$Expr2.prototype.$classData = $d_Lrebecaos_syntax_Program$Expr2;
 /** @constructor */
 function $c_Lrebecaos_syntax_Program$Statement() {
   /*<skip>*/
@@ -43529,51 +43633,579 @@ var $d_ju_regex_PatternSyntaxException = new $TypeData().initClass({
 });
 $c_ju_regex_PatternSyntaxException.prototype.$classData = $d_ju_regex_PatternSyntaxException;
 /** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr() {
-  /*<skip>*/
+function $c_Lrebecaos_backend_Eval$Data$B(b) {
+  this.Lrebecaos_backend_Eval$Data$B__f_b = false;
+  this.Lrebecaos_backend_Eval$Data$B__f_b = b
 }
-$c_Lrebecaos_syntax_Program$BExpr.prototype = new $h_O();
-$c_Lrebecaos_syntax_Program$BExpr.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr;
+$c_Lrebecaos_backend_Eval$Data$B.prototype = new $h_Lrebecaos_backend_Eval$Data();
+$c_Lrebecaos_backend_Eval$Data$B.prototype.constructor = $c_Lrebecaos_backend_Eval$Data$B;
 /** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr() {
+function $h_Lrebecaos_backend_Eval$Data$B() {
   /*<skip>*/
 }
-$h_Lrebecaos_syntax_Program$BExpr.prototype = $c_Lrebecaos_syntax_Program$BExpr.prototype;
-$c_Lrebecaos_syntax_Program$BExpr.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_s_Product$$anon$1(this)
+$h_Lrebecaos_backend_Eval$Data$B.prototype = $c_Lrebecaos_backend_Eval$Data$B.prototype;
+$c_Lrebecaos_backend_Eval$Data$B.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  var hash = acc;
+  var data = $f_T__hashCode__I("B");
+  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  var hash$1 = acc;
+  var data$1 = (this.Lrebecaos_backend_Eval$Data$B__f_b ? 1231 : 1237);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var hash$2 = acc;
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
 });
-function $as_Lrebecaos_syntax_Program$BExpr(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr;", depth))
-}
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$IExpr() {
-  /*<skip>*/
-}
-$c_Lrebecaos_syntax_Program$IExpr.prototype = new $h_O();
-$c_Lrebecaos_syntax_Program$IExpr.prototype.constructor = $c_Lrebecaos_syntax_Program$IExpr;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$IExpr() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$IExpr.prototype = $c_Lrebecaos_syntax_Program$IExpr.prototype;
-$c_Lrebecaos_syntax_Program$IExpr.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_s_Product$$anon$1(this)
+$c_Lrebecaos_backend_Eval$Data$B.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_backend_Eval$Data$B)) {
+    var x$0$2 = $as_Lrebecaos_backend_Eval$Data$B(x$0);
+    return (this.Lrebecaos_backend_Eval$Data$B__f_b === $n(x$0$2).Lrebecaos_backend_Eval$Data$B__f_b)
+  } else {
+    return false
+  }
 });
-function $as_Lrebecaos_syntax_Program$IExpr(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$IExpr) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$IExpr"))
+$c_Lrebecaos_backend_Eval$Data$B.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_backend_Eval$Data$B.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lrebecaos_backend_Eval$Data$B.prototype.productPrefix__T = (function() {
+  return "B"
+});
+$c_Lrebecaos_backend_Eval$Data$B.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_backend_Eval$Data$B__f_b
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_backend_Eval$Data$B(obj) {
+  return (((obj instanceof $c_Lrebecaos_backend_Eval$Data$B) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.backend.Eval$Data$B"))
 }
-function $isArrayOf_Lrebecaos_syntax_Program$IExpr(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$IExpr)))
+function $isArrayOf_Lrebecaos_backend_Eval$Data$B(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_backend_Eval$Data$B)))
 }
-function $asArrayOf_Lrebecaos_syntax_Program$IExpr(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$IExpr(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$IExpr;", depth))
+function $asArrayOf_Lrebecaos_backend_Eval$Data$B(obj, depth) {
+  return (($isArrayOf_Lrebecaos_backend_Eval$Data$B(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.backend.Eval$Data$B;", depth))
 }
+var $d_Lrebecaos_backend_Eval$Data$B = new $TypeData().initClass({
+  Lrebecaos_backend_Eval$Data$B: 0
+}, false, "rebecaos.backend.Eval$Data$B", {
+  Lrebecaos_backend_Eval$Data$B: 1,
+  Lrebecaos_backend_Eval$Data: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_backend_Eval$Data$B.prototype.$classData = $d_Lrebecaos_backend_Eval$Data$B;
+/** @constructor */
+function $c_Lrebecaos_backend_Eval$Data$N(n) {
+  this.Lrebecaos_backend_Eval$Data$N__f_n = 0;
+  this.Lrebecaos_backend_Eval$Data$N__f_n = n
+}
+$c_Lrebecaos_backend_Eval$Data$N.prototype = new $h_Lrebecaos_backend_Eval$Data();
+$c_Lrebecaos_backend_Eval$Data$N.prototype.constructor = $c_Lrebecaos_backend_Eval$Data$N;
+/** @constructor */
+function $h_Lrebecaos_backend_Eval$Data$N() {
+  /*<skip>*/
+}
+$h_Lrebecaos_backend_Eval$Data$N.prototype = $c_Lrebecaos_backend_Eval$Data$N.prototype;
+$c_Lrebecaos_backend_Eval$Data$N.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  var hash = acc;
+  var data = $f_T__hashCode__I("N");
+  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  var hash$1 = acc;
+  var data$1 = this.Lrebecaos_backend_Eval$Data$N__f_n;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var hash$2 = acc;
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
+});
+$c_Lrebecaos_backend_Eval$Data$N.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_backend_Eval$Data$N)) {
+    var x$0$2 = $as_Lrebecaos_backend_Eval$Data$N(x$0);
+    return (this.Lrebecaos_backend_Eval$Data$N__f_n === $n(x$0$2).Lrebecaos_backend_Eval$Data$N__f_n)
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_backend_Eval$Data$N.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_backend_Eval$Data$N.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lrebecaos_backend_Eval$Data$N.prototype.productPrefix__T = (function() {
+  return "N"
+});
+$c_Lrebecaos_backend_Eval$Data$N.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_backend_Eval$Data$N__f_n
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_backend_Eval$Data$N(obj) {
+  return (((obj instanceof $c_Lrebecaos_backend_Eval$Data$N) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.backend.Eval$Data$N"))
+}
+function $isArrayOf_Lrebecaos_backend_Eval$Data$N(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_backend_Eval$Data$N)))
+}
+function $asArrayOf_Lrebecaos_backend_Eval$Data$N(obj, depth) {
+  return (($isArrayOf_Lrebecaos_backend_Eval$Data$N(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.backend.Eval$Data$N;", depth))
+}
+var $d_Lrebecaos_backend_Eval$Data$N = new $TypeData().initClass({
+  Lrebecaos_backend_Eval$Data$N: 0
+}, false, "rebecaos.backend.Eval$Data$N", {
+  Lrebecaos_backend_Eval$Data$N: 1,
+  Lrebecaos_backend_Eval$Data: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_backend_Eval$Data$N.prototype.$classData = $d_Lrebecaos_backend_Eval$Data$N;
+/** @constructor */
+function $c_Lrebecaos_backend_Eval$Data$RebRef(r) {
+  this.Lrebecaos_backend_Eval$Data$RebRef__f_r = null;
+  this.Lrebecaos_backend_Eval$Data$RebRef__f_r = r
+}
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype = new $h_Lrebecaos_backend_Eval$Data();
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.constructor = $c_Lrebecaos_backend_Eval$Data$RebRef;
+/** @constructor */
+function $h_Lrebecaos_backend_Eval$Data$RebRef() {
+  /*<skip>*/
+}
+$h_Lrebecaos_backend_Eval$Data$RebRef.prototype = $c_Lrebecaos_backend_Eval$Data$RebRef.prototype;
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+});
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_backend_Eval$Data$RebRef)) {
+    var x$0$2 = $as_Lrebecaos_backend_Eval$Data$RebRef(x$0);
+    return (this.Lrebecaos_backend_Eval$Data$RebRef__f_r === $n(x$0$2).Lrebecaos_backend_Eval$Data$RebRef__f_r)
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.productPrefix__T = (function() {
+  return "RebRef"
+});
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_backend_Eval$Data$RebRef__f_r
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_backend_Eval$Data$RebRef(obj) {
+  return (((obj instanceof $c_Lrebecaos_backend_Eval$Data$RebRef) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.backend.Eval$Data$RebRef"))
+}
+function $isArrayOf_Lrebecaos_backend_Eval$Data$RebRef(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_backend_Eval$Data$RebRef)))
+}
+function $asArrayOf_Lrebecaos_backend_Eval$Data$RebRef(obj, depth) {
+  return (($isArrayOf_Lrebecaos_backend_Eval$Data$RebRef(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.backend.Eval$Data$RebRef;", depth))
+}
+var $d_Lrebecaos_backend_Eval$Data$RebRef = new $TypeData().initClass({
+  Lrebecaos_backend_Eval$Data$RebRef: 0
+}, false, "rebecaos.backend.Eval$Data$RebRef", {
+  Lrebecaos_backend_Eval$Data$RebRef: 1,
+  Lrebecaos_backend_Eval$Data: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_backend_Eval$Data$RebRef.prototype.$classData = $d_Lrebecaos_backend_Eval$Data$RebRef;
+/** @constructor */
+function $c_Lrebecaos_syntax_Program$Expr2$B(b) {
+  this.Lrebecaos_syntax_Program$Expr2$B__f_b = false;
+  this.Lrebecaos_syntax_Program$Expr2$B__f_b = b
+}
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype = new $h_Lrebecaos_syntax_Program$Expr2();
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.constructor = $c_Lrebecaos_syntax_Program$Expr2$B;
+/** @constructor */
+function $h_Lrebecaos_syntax_Program$Expr2$B() {
+  /*<skip>*/
+}
+$h_Lrebecaos_syntax_Program$Expr2$B.prototype = $c_Lrebecaos_syntax_Program$Expr2$B.prototype;
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  var hash = acc;
+  var data = $f_T__hashCode__I("B");
+  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  var hash$1 = acc;
+  var data$1 = (this.Lrebecaos_syntax_Program$Expr2$B__f_b ? 1231 : 1237);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var hash$2 = acc;
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
+});
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$Expr2$B)) {
+    var x$0$2 = $as_Lrebecaos_syntax_Program$Expr2$B(x$0);
+    return (this.Lrebecaos_syntax_Program$Expr2$B__f_b === $n(x$0$2).Lrebecaos_syntax_Program$Expr2$B__f_b)
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.productPrefix__T = (function() {
+  return "B"
+});
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_syntax_Program$Expr2$B__f_b
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_syntax_Program$Expr2$B(obj) {
+  return (((obj instanceof $c_Lrebecaos_syntax_Program$Expr2$B) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr2$B"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Expr2$B(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr2$B)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Expr2$B(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Expr2$B(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr2$B;", depth))
+}
+var $d_Lrebecaos_syntax_Program$Expr2$B = new $TypeData().initClass({
+  Lrebecaos_syntax_Program$Expr2$B: 0
+}, false, "rebecaos.syntax.Program$Expr2$B", {
+  Lrebecaos_syntax_Program$Expr2$B: 1,
+  Lrebecaos_syntax_Program$Expr2: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$B.prototype.$classData = $d_Lrebecaos_syntax_Program$Expr2$B;
+/** @constructor */
+function $c_Lrebecaos_syntax_Program$Expr2$Func(op, es) {
+  this.Lrebecaos_syntax_Program$Expr2$Func__f_op = null;
+  this.Lrebecaos_syntax_Program$Expr2$Func__f_es = null;
+  this.Lrebecaos_syntax_Program$Expr2$Func__f_op = op;
+  this.Lrebecaos_syntax_Program$Expr2$Func__f_es = es
+}
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype = new $h_Lrebecaos_syntax_Program$Expr2();
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.constructor = $c_Lrebecaos_syntax_Program$Expr2$Func;
+/** @constructor */
+function $h_Lrebecaos_syntax_Program$Expr2$Func() {
+  /*<skip>*/
+}
+$h_Lrebecaos_syntax_Program$Expr2$Func.prototype = $c_Lrebecaos_syntax_Program$Expr2$Func.prototype;
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+});
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$Expr2$Func)) {
+    var x$0$2 = $as_Lrebecaos_syntax_Program$Expr2$Func(x$0);
+    if ((this.Lrebecaos_syntax_Program$Expr2$Func__f_op === $n(x$0$2).Lrebecaos_syntax_Program$Expr2$Func__f_op)) {
+      var x = this.Lrebecaos_syntax_Program$Expr2$Func__f_es;
+      var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$Expr2$Func__f_es;
+      return ((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.productArity__I = (function() {
+  return 2
+});
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.productPrefix__T = (function() {
+  return "Func"
+});
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_syntax_Program$Expr2$Func__f_op
+  };
+  if ((n === 1)) {
+    return this.Lrebecaos_syntax_Program$Expr2$Func__f_es
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_syntax_Program$Expr2$Func(obj) {
+  return (((obj instanceof $c_Lrebecaos_syntax_Program$Expr2$Func) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr2$Func"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Expr2$Func(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr2$Func)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Expr2$Func(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Expr2$Func(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr2$Func;", depth))
+}
+var $d_Lrebecaos_syntax_Program$Expr2$Func = new $TypeData().initClass({
+  Lrebecaos_syntax_Program$Expr2$Func: 0
+}, false, "rebecaos.syntax.Program$Expr2$Func", {
+  Lrebecaos_syntax_Program$Expr2$Func: 1,
+  Lrebecaos_syntax_Program$Expr2: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$Func.prototype.$classData = $d_Lrebecaos_syntax_Program$Expr2$Func;
+/** @constructor */
+function $c_Lrebecaos_syntax_Program$Expr2$Infix(op, e1, e2) {
+  this.Lrebecaos_syntax_Program$Expr2$Infix__f_op = null;
+  this.Lrebecaos_syntax_Program$Expr2$Infix__f_e1 = null;
+  this.Lrebecaos_syntax_Program$Expr2$Infix__f_e2 = null;
+  this.Lrebecaos_syntax_Program$Expr2$Infix__f_op = op;
+  this.Lrebecaos_syntax_Program$Expr2$Infix__f_e1 = e1;
+  this.Lrebecaos_syntax_Program$Expr2$Infix__f_e2 = e2
+}
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype = new $h_Lrebecaos_syntax_Program$Expr2();
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.constructor = $c_Lrebecaos_syntax_Program$Expr2$Infix;
+/** @constructor */
+function $h_Lrebecaos_syntax_Program$Expr2$Infix() {
+  /*<skip>*/
+}
+$h_Lrebecaos_syntax_Program$Expr2$Infix.prototype = $c_Lrebecaos_syntax_Program$Expr2$Infix.prototype;
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+});
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$Expr2$Infix)) {
+    var x$0$2 = $as_Lrebecaos_syntax_Program$Expr2$Infix(x$0);
+    if ((this.Lrebecaos_syntax_Program$Expr2$Infix__f_op === $n(x$0$2).Lrebecaos_syntax_Program$Expr2$Infix__f_op)) {
+      var x = this.Lrebecaos_syntax_Program$Expr2$Infix__f_e1;
+      var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$Expr2$Infix__f_e1;
+      var $$x1 = ((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))
+    } else {
+      var $$x1 = false
+    };
+    if ($$x1) {
+      var x$3 = this.Lrebecaos_syntax_Program$Expr2$Infix__f_e2;
+      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$Expr2$Infix__f_e2;
+      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.productPrefix__T = (function() {
+  return "Infix"
+});
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.productElement__I__O = (function(n) {
+  switch (n) {
+    case 0: {
+      return this.Lrebecaos_syntax_Program$Expr2$Infix__f_op;
+      break
+    }
+    case 1: {
+      return this.Lrebecaos_syntax_Program$Expr2$Infix__f_e1;
+      break
+    }
+    case 2: {
+      return this.Lrebecaos_syntax_Program$Expr2$Infix__f_e2;
+      break
+    }
+    default: {
+      throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+    }
+  }
+});
+function $as_Lrebecaos_syntax_Program$Expr2$Infix(obj) {
+  return (((obj instanceof $c_Lrebecaos_syntax_Program$Expr2$Infix) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr2$Infix"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Expr2$Infix(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr2$Infix)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Expr2$Infix(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Expr2$Infix(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr2$Infix;", depth))
+}
+var $d_Lrebecaos_syntax_Program$Expr2$Infix = new $TypeData().initClass({
+  Lrebecaos_syntax_Program$Expr2$Infix: 0
+}, false, "rebecaos.syntax.Program$Expr2$Infix", {
+  Lrebecaos_syntax_Program$Expr2$Infix: 1,
+  Lrebecaos_syntax_Program$Expr2: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$Infix.prototype.$classData = $d_Lrebecaos_syntax_Program$Expr2$Infix;
+/** @constructor */
+function $c_Lrebecaos_syntax_Program$Expr2$N(n) {
+  this.Lrebecaos_syntax_Program$Expr2$N__f_n = 0;
+  this.Lrebecaos_syntax_Program$Expr2$N__f_n = n
+}
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype = new $h_Lrebecaos_syntax_Program$Expr2();
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.constructor = $c_Lrebecaos_syntax_Program$Expr2$N;
+/** @constructor */
+function $h_Lrebecaos_syntax_Program$Expr2$N() {
+  /*<skip>*/
+}
+$h_Lrebecaos_syntax_Program$Expr2$N.prototype = $c_Lrebecaos_syntax_Program$Expr2$N.prototype;
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  var hash = acc;
+  var data = $f_T__hashCode__I("N");
+  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  var hash$1 = acc;
+  var data$1 = this.Lrebecaos_syntax_Program$Expr2$N__f_n;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var hash$2 = acc;
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
+});
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$Expr2$N)) {
+    var x$0$2 = $as_Lrebecaos_syntax_Program$Expr2$N(x$0);
+    return (this.Lrebecaos_syntax_Program$Expr2$N__f_n === $n(x$0$2).Lrebecaos_syntax_Program$Expr2$N__f_n)
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.productPrefix__T = (function() {
+  return "N"
+});
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_syntax_Program$Expr2$N__f_n
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_syntax_Program$Expr2$N(obj) {
+  return (((obj instanceof $c_Lrebecaos_syntax_Program$Expr2$N) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr2$N"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Expr2$N(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr2$N)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Expr2$N(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Expr2$N(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr2$N;", depth))
+}
+var $d_Lrebecaos_syntax_Program$Expr2$N = new $TypeData().initClass({
+  Lrebecaos_syntax_Program$Expr2$N: 0
+}, false, "rebecaos.syntax.Program$Expr2$N", {
+  Lrebecaos_syntax_Program$Expr2$N: 1,
+  Lrebecaos_syntax_Program$Expr2: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$N.prototype.$classData = $d_Lrebecaos_syntax_Program$Expr2$N;
+function $as_Lrebecaos_syntax_Program$Expr2$RebRef(obj) {
+  return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr2$RebRef"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Expr2$RebRef(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr2$RebRef)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Expr2$RebRef(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Expr2$RebRef(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr2$RebRef;", depth))
+}
+/** @constructor */
+function $c_Lrebecaos_syntax_Program$Expr2$Var(v) {
+  this.Lrebecaos_syntax_Program$Expr2$Var__f_v = null;
+  this.Lrebecaos_syntax_Program$Expr2$Var__f_v = v
+}
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype = new $h_Lrebecaos_syntax_Program$Expr2();
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.constructor = $c_Lrebecaos_syntax_Program$Expr2$Var;
+/** @constructor */
+function $h_Lrebecaos_syntax_Program$Expr2$Var() {
+  /*<skip>*/
+}
+$h_Lrebecaos_syntax_Program$Expr2$Var.prototype = $c_Lrebecaos_syntax_Program$Expr2$Var.prototype;
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+});
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$Expr2$Var)) {
+    var x$0$2 = $as_Lrebecaos_syntax_Program$Expr2$Var(x$0);
+    return (this.Lrebecaos_syntax_Program$Expr2$Var__f_v === $n(x$0$2).Lrebecaos_syntax_Program$Expr2$Var__f_v)
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.productPrefix__T = (function() {
+  return "Var"
+});
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_syntax_Program$Expr2$Var__f_v
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_syntax_Program$Expr2$Var(obj) {
+  return (((obj instanceof $c_Lrebecaos_syntax_Program$Expr2$Var) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Expr2$Var"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Expr2$Var(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Expr2$Var)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Expr2$Var(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Expr2$Var(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr2$Var;", depth))
+}
+var $d_Lrebecaos_syntax_Program$Expr2$Var = new $TypeData().initClass({
+  Lrebecaos_syntax_Program$Expr2$Var: 0
+}, false, "rebecaos.syntax.Program$Expr2$Var", {
+  Lrebecaos_syntax_Program$Expr2$Var: 1,
+  Lrebecaos_syntax_Program$Expr2: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_syntax_Program$Expr2$Var.prototype.$classData = $d_Lrebecaos_syntax_Program$Expr2$Var;
 /** @constructor */
 function $c_Lrebecaos_syntax_Program$Statement$Assign(ident, e) {
   this.Lrebecaos_syntax_Program$Statement$Assign__f_ident = null;
@@ -43989,6 +44621,70 @@ var $d_Lrebecaos_syntax_Program$Statement$ITE = new $TypeData().initClass({
   s_reflect_Enum: 1
 });
 $c_Lrebecaos_syntax_Program$Statement$ITE.prototype.$classData = $d_Lrebecaos_syntax_Program$Statement$ITE;
+/** @constructor */
+function $c_Lrebecaos_syntax_Program$Statement$NewReb(dec) {
+  this.Lrebecaos_syntax_Program$Statement$NewReb__f_dec = null;
+  this.Lrebecaos_syntax_Program$Statement$NewReb__f_dec = dec
+}
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype = new $h_Lrebecaos_syntax_Program$Statement();
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.constructor = $c_Lrebecaos_syntax_Program$Statement$NewReb;
+/** @constructor */
+function $h_Lrebecaos_syntax_Program$Statement$NewReb() {
+  /*<skip>*/
+}
+$h_Lrebecaos_syntax_Program$Statement$NewReb.prototype = $c_Lrebecaos_syntax_Program$Statement$NewReb.prototype;
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+});
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$Statement$NewReb)) {
+    var x$0$2 = $as_Lrebecaos_syntax_Program$Statement$NewReb(x$0);
+    var x = this.Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
+    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
+    return ((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))
+  } else {
+    return false
+  }
+});
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.productArity__I = (function() {
+  return 1
+});
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.productPrefix__T = (function() {
+  return "NewReb"
+});
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lrebecaos_syntax_Program$Statement$NewReb__f_dec
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+});
+function $as_Lrebecaos_syntax_Program$Statement$NewReb(obj) {
+  return (((obj instanceof $c_Lrebecaos_syntax_Program$Statement$NewReb) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$Statement$NewReb"))
+}
+function $isArrayOf_Lrebecaos_syntax_Program$Statement$NewReb(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$Statement$NewReb)))
+}
+function $asArrayOf_Lrebecaos_syntax_Program$Statement$NewReb(obj, depth) {
+  return (($isArrayOf_Lrebecaos_syntax_Program$Statement$NewReb(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Statement$NewReb;", depth))
+}
+var $d_Lrebecaos_syntax_Program$Statement$NewReb = new $TypeData().initClass({
+  Lrebecaos_syntax_Program$Statement$NewReb: 0
+}, false, "rebecaos.syntax.Program$Statement$NewReb", {
+  Lrebecaos_syntax_Program$Statement$NewReb: 1,
+  Lrebecaos_syntax_Program$Statement: 1,
+  O: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.$classData = $d_Lrebecaos_syntax_Program$Statement$NewReb;
 /** @constructor */
 function $c_Lrebecaos_syntax_Program$Statement$Seq(c1, c2) {
   this.Lrebecaos_syntax_Program$Statement$Seq__f_c1 = null;
@@ -46351,960 +47047,6 @@ function $m_Lcats_instances_package$option$() {
   };
   return $n_Lcats_instances_package$option$
 }
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$And(b1, b2) {
-  this.Lrebecaos_syntax_Program$BExpr$And__f_b1 = null;
-  this.Lrebecaos_syntax_Program$BExpr$And__f_b2 = null;
-  this.Lrebecaos_syntax_Program$BExpr$And__f_b1 = b1;
-  this.Lrebecaos_syntax_Program$BExpr$And__f_b2 = b2
-}
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$And;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$And() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$And.prototype = $c_Lrebecaos_syntax_Program$BExpr$And.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$BExpr$And)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$BExpr$And(x$0);
-    var x = this.Lrebecaos_syntax_Program$BExpr$And__f_b1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$And__f_b1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$BExpr$And__f_b2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$And__f_b2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.productPrefix__T = (function() {
-  return "And"
-});
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$BExpr$And__f_b1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$BExpr$And__f_b2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$BExpr$And(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr$And) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$And"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$And(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$And)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$And(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$And(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$And;", depth))
-}
-var $d_Lrebecaos_syntax_Program$BExpr$And = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$And: 0
-}, false, "rebecaos.syntax.Program$BExpr$And", {
-  Lrebecaos_syntax_Program$BExpr$And: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$And.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$And;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$BVar(name) {
-  this.Lrebecaos_syntax_Program$BExpr$BVar__f_name = null;
-  this.Lrebecaos_syntax_Program$BExpr$BVar__f_name = name
-}
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$BVar;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$BVar() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$BVar.prototype = $c_Lrebecaos_syntax_Program$BExpr$BVar.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$BExpr$BVar)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$BExpr$BVar(x$0);
-    return (this.Lrebecaos_syntax_Program$BExpr$BVar__f_name === $n(x$0$2).Lrebecaos_syntax_Program$BExpr$BVar__f_name)
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.productArity__I = (function() {
-  return 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.productPrefix__T = (function() {
-  return "BVar"
-});
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$BExpr$BVar__f_name
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$BExpr$BVar(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr$BVar) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$BVar"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$BVar(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$BVar)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$BVar(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$BVar(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$BVar;", depth))
-}
-var $d_Lrebecaos_syntax_Program$BExpr$BVar = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$BVar: 0
-}, false, "rebecaos.syntax.Program$BExpr$BVar", {
-  Lrebecaos_syntax_Program$BExpr$BVar: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$BVar.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$BVar;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$Eq(e1, e2) {
-  this.Lrebecaos_syntax_Program$BExpr$Eq__f_e1 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Eq__f_e2 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Eq__f_e1 = e1;
-  this.Lrebecaos_syntax_Program$BExpr$Eq__f_e2 = e2
-}
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$Eq;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$Eq() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$Eq.prototype = $c_Lrebecaos_syntax_Program$BExpr$Eq.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$BExpr$Eq)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$BExpr$Eq(x$0);
-    var x = this.Lrebecaos_syntax_Program$BExpr$Eq__f_e1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Eq__f_e1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$BExpr$Eq__f_e2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Eq__f_e2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.productPrefix__T = (function() {
-  return "Eq"
-});
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Eq__f_e1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Eq__f_e2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$BExpr$Eq(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr$Eq) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$Eq"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$Eq(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$Eq)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$Eq(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$Eq(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$Eq;", depth))
-}
-var $d_Lrebecaos_syntax_Program$BExpr$Eq = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$Eq: 0
-}, false, "rebecaos.syntax.Program$BExpr$Eq", {
-  Lrebecaos_syntax_Program$BExpr$Eq: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$Eq.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$Eq;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$Greater(e1, e2) {
-  this.Lrebecaos_syntax_Program$BExpr$Greater__f_e1 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Greater__f_e2 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Greater__f_e1 = e1;
-  this.Lrebecaos_syntax_Program$BExpr$Greater__f_e2 = e2
-}
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$Greater;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$Greater() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$Greater.prototype = $c_Lrebecaos_syntax_Program$BExpr$Greater.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$BExpr$Greater)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$BExpr$Greater(x$0);
-    var x = this.Lrebecaos_syntax_Program$BExpr$Greater__f_e1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Greater__f_e1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$BExpr$Greater__f_e2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Greater__f_e2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.productPrefix__T = (function() {
-  return "Greater"
-});
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Greater__f_e1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Greater__f_e2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$BExpr$Greater(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr$Greater) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$Greater"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$Greater(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$Greater)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$Greater(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$Greater(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$Greater;", depth))
-}
-var $d_Lrebecaos_syntax_Program$BExpr$Greater = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$Greater: 0
-}, false, "rebecaos.syntax.Program$BExpr$Greater", {
-  Lrebecaos_syntax_Program$BExpr$Greater: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$Greater.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$Greater;
-function $as_Lrebecaos_syntax_Program$BExpr$Impl(obj) {
-  return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$Impl"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$Impl(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$Impl)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$Impl(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$Impl(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$Impl;", depth))
-}
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$Less(e1, e2) {
-  this.Lrebecaos_syntax_Program$BExpr$Less__f_e1 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Less__f_e2 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Less__f_e1 = e1;
-  this.Lrebecaos_syntax_Program$BExpr$Less__f_e2 = e2
-}
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$Less;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$Less() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$Less.prototype = $c_Lrebecaos_syntax_Program$BExpr$Less.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$BExpr$Less)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$BExpr$Less(x$0);
-    var x = this.Lrebecaos_syntax_Program$BExpr$Less__f_e1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Less__f_e1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$BExpr$Less__f_e2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Less__f_e2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.productPrefix__T = (function() {
-  return "Less"
-});
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Less__f_e1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Less__f_e2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$BExpr$Less(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr$Less) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$Less"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$Less(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$Less)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$Less(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$Less(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$Less;", depth))
-}
-var $d_Lrebecaos_syntax_Program$BExpr$Less = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$Less: 0
-}, false, "rebecaos.syntax.Program$BExpr$Less", {
-  Lrebecaos_syntax_Program$BExpr$Less: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$Less.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$Less;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$Not(b) {
-  this.Lrebecaos_syntax_Program$BExpr$Not__f_b = null;
-  this.Lrebecaos_syntax_Program$BExpr$Not__f_b = b
-}
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$Not;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$Not() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$Not.prototype = $c_Lrebecaos_syntax_Program$BExpr$Not.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$BExpr$Not)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$BExpr$Not(x$0);
-    var x = this.Lrebecaos_syntax_Program$BExpr$Not__f_b;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Not__f_b;
-    return ((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.productArity__I = (function() {
-  return 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.productPrefix__T = (function() {
-  return "Not"
-});
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Not__f_b
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$BExpr$Not(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr$Not) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$Not"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$Not(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$Not)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$Not(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$Not(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$Not;", depth))
-}
-var $d_Lrebecaos_syntax_Program$BExpr$Not = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$Not: 0
-}, false, "rebecaos.syntax.Program$BExpr$Not", {
-  Lrebecaos_syntax_Program$BExpr$Not: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$Not.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$Not;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$Or(b1, b2) {
-  this.Lrebecaos_syntax_Program$BExpr$Or__f_b1 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Or__f_b2 = null;
-  this.Lrebecaos_syntax_Program$BExpr$Or__f_b1 = b1;
-  this.Lrebecaos_syntax_Program$BExpr$Or__f_b2 = b2
-}
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$Or;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$Or() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$Or.prototype = $c_Lrebecaos_syntax_Program$BExpr$Or.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$BExpr$Or)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$BExpr$Or(x$0);
-    var x = this.Lrebecaos_syntax_Program$BExpr$Or__f_b1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Or__f_b1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$BExpr$Or__f_b2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$BExpr$Or__f_b2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.productPrefix__T = (function() {
-  return "Or"
-});
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Or__f_b1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$BExpr$Or__f_b2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$BExpr$Or(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$BExpr$Or) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$BExpr$Or"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$BExpr$Or(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$BExpr$Or)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$BExpr$Or(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$BExpr$Or(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$BExpr$Or;", depth))
-}
-var $d_Lrebecaos_syntax_Program$BExpr$Or = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$Or: 0
-}, false, "rebecaos.syntax.Program$BExpr$Or", {
-  Lrebecaos_syntax_Program$BExpr$Or: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$Or.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$Or;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$IExpr$IVar(ident) {
-  this.Lrebecaos_syntax_Program$IExpr$IVar__f_ident = null;
-  this.Lrebecaos_syntax_Program$IExpr$IVar__f_ident = ident
-}
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype = new $h_Lrebecaos_syntax_Program$IExpr();
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.constructor = $c_Lrebecaos_syntax_Program$IExpr$IVar;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$IExpr$IVar() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$IExpr$IVar.prototype = $c_Lrebecaos_syntax_Program$IExpr$IVar.prototype;
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$IExpr$IVar)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$IExpr$IVar(x$0);
-    return (this.Lrebecaos_syntax_Program$IExpr$IVar__f_ident === $n(x$0$2).Lrebecaos_syntax_Program$IExpr$IVar__f_ident)
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.productArity__I = (function() {
-  return 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.productPrefix__T = (function() {
-  return "IVar"
-});
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$IExpr$IVar__f_ident
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$IExpr$IVar(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$IExpr$IVar) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$IExpr$IVar"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$IExpr$IVar(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$IExpr$IVar)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$IExpr$IVar(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$IExpr$IVar(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$IExpr$IVar;", depth))
-}
-var $d_Lrebecaos_syntax_Program$IExpr$IVar = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$IExpr$IVar: 0
-}, false, "rebecaos.syntax.Program$IExpr$IVar", {
-  Lrebecaos_syntax_Program$IExpr$IVar: 1,
-  Lrebecaos_syntax_Program$IExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$IVar.prototype.$classData = $d_Lrebecaos_syntax_Program$IExpr$IVar;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$IExpr$Minus(e1, e2) {
-  this.Lrebecaos_syntax_Program$IExpr$Minus__f_e1 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Minus__f_e2 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Minus__f_e1 = e1;
-  this.Lrebecaos_syntax_Program$IExpr$Minus__f_e2 = e2
-}
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype = new $h_Lrebecaos_syntax_Program$IExpr();
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.constructor = $c_Lrebecaos_syntax_Program$IExpr$Minus;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$IExpr$Minus() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$IExpr$Minus.prototype = $c_Lrebecaos_syntax_Program$IExpr$Minus.prototype;
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$IExpr$Minus)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$IExpr$Minus(x$0);
-    var x = this.Lrebecaos_syntax_Program$IExpr$Minus__f_e1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Minus__f_e1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$IExpr$Minus__f_e2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Minus__f_e2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.productPrefix__T = (function() {
-  return "Minus"
-});
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Minus__f_e1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Minus__f_e2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$IExpr$Minus(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$IExpr$Minus) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$IExpr$Minus"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$IExpr$Minus(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$IExpr$Minus)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$IExpr$Minus(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$IExpr$Minus(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$IExpr$Minus;", depth))
-}
-var $d_Lrebecaos_syntax_Program$IExpr$Minus = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$IExpr$Minus: 0
-}, false, "rebecaos.syntax.Program$IExpr$Minus", {
-  Lrebecaos_syntax_Program$IExpr$Minus: 1,
-  Lrebecaos_syntax_Program$IExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$Minus.prototype.$classData = $d_Lrebecaos_syntax_Program$IExpr$Minus;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$IExpr$N(n) {
-  this.Lrebecaos_syntax_Program$IExpr$N__f_n = 0;
-  this.Lrebecaos_syntax_Program$IExpr$N__f_n = n
-}
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype = new $h_Lrebecaos_syntax_Program$IExpr();
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.constructor = $c_Lrebecaos_syntax_Program$IExpr$N;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$IExpr$N() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$IExpr$N.prototype = $c_Lrebecaos_syntax_Program$IExpr$N.prototype;
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.hashCode__I = (function() {
-  var acc = (-889275714);
-  var hash = acc;
-  var data = $f_T__hashCode__I("N");
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
-  var hash$1 = acc;
-  var data$1 = this.Lrebecaos_syntax_Program$IExpr$N__f_n;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
-  var hash$2 = acc;
-  return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
-});
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$IExpr$N)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$IExpr$N(x$0);
-    return (this.Lrebecaos_syntax_Program$IExpr$N__f_n === $n(x$0$2).Lrebecaos_syntax_Program$IExpr$N__f_n)
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.productArity__I = (function() {
-  return 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.productPrefix__T = (function() {
-  return "N"
-});
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$IExpr$N__f_n
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$IExpr$N(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$IExpr$N) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$IExpr$N"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$IExpr$N(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$IExpr$N)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$IExpr$N(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$IExpr$N(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$IExpr$N;", depth))
-}
-var $d_Lrebecaos_syntax_Program$IExpr$N = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$IExpr$N: 0
-}, false, "rebecaos.syntax.Program$IExpr$N", {
-  Lrebecaos_syntax_Program$IExpr$N: 1,
-  Lrebecaos_syntax_Program$IExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$N.prototype.$classData = $d_Lrebecaos_syntax_Program$IExpr$N;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$IExpr$Plus(e1, e2) {
-  this.Lrebecaos_syntax_Program$IExpr$Plus__f_e1 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Plus__f_e2 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Plus__f_e1 = e1;
-  this.Lrebecaos_syntax_Program$IExpr$Plus__f_e2 = e2
-}
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype = new $h_Lrebecaos_syntax_Program$IExpr();
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.constructor = $c_Lrebecaos_syntax_Program$IExpr$Plus;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$IExpr$Plus() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$IExpr$Plus.prototype = $c_Lrebecaos_syntax_Program$IExpr$Plus.prototype;
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$IExpr$Plus)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$IExpr$Plus(x$0);
-    var x = this.Lrebecaos_syntax_Program$IExpr$Plus__f_e1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Plus__f_e1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$IExpr$Plus__f_e2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Plus__f_e2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.productPrefix__T = (function() {
-  return "Plus"
-});
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Plus__f_e1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Plus__f_e2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$IExpr$Plus(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$IExpr$Plus) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$IExpr$Plus"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$IExpr$Plus(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$IExpr$Plus)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$IExpr$Plus(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$IExpr$Plus(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$IExpr$Plus;", depth))
-}
-var $d_Lrebecaos_syntax_Program$IExpr$Plus = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$IExpr$Plus: 0
-}, false, "rebecaos.syntax.Program$IExpr$Plus", {
-  Lrebecaos_syntax_Program$IExpr$Plus: 1,
-  Lrebecaos_syntax_Program$IExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$Plus.prototype.$classData = $d_Lrebecaos_syntax_Program$IExpr$Plus;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$IExpr$Power(e1, e2) {
-  this.Lrebecaos_syntax_Program$IExpr$Power__f_e1 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Power__f_e2 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Power__f_e1 = e1;
-  this.Lrebecaos_syntax_Program$IExpr$Power__f_e2 = e2
-}
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype = new $h_Lrebecaos_syntax_Program$IExpr();
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.constructor = $c_Lrebecaos_syntax_Program$IExpr$Power;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$IExpr$Power() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$IExpr$Power.prototype = $c_Lrebecaos_syntax_Program$IExpr$Power.prototype;
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$IExpr$Power)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$IExpr$Power(x$0);
-    var x = this.Lrebecaos_syntax_Program$IExpr$Power__f_e1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Power__f_e1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$IExpr$Power__f_e2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Power__f_e2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.productPrefix__T = (function() {
-  return "Power"
-});
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Power__f_e1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Power__f_e2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$IExpr$Power(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$IExpr$Power) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$IExpr$Power"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$IExpr$Power(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$IExpr$Power)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$IExpr$Power(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$IExpr$Power(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$IExpr$Power;", depth))
-}
-var $d_Lrebecaos_syntax_Program$IExpr$Power = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$IExpr$Power: 0
-}, false, "rebecaos.syntax.Program$IExpr$Power", {
-  Lrebecaos_syntax_Program$IExpr$Power: 1,
-  Lrebecaos_syntax_Program$IExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$Power.prototype.$classData = $d_Lrebecaos_syntax_Program$IExpr$Power;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$IExpr$Times(e1, e2) {
-  this.Lrebecaos_syntax_Program$IExpr$Times__f_e1 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Times__f_e2 = null;
-  this.Lrebecaos_syntax_Program$IExpr$Times__f_e1 = e1;
-  this.Lrebecaos_syntax_Program$IExpr$Times__f_e2 = e2
-}
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype = new $h_Lrebecaos_syntax_Program$IExpr();
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.constructor = $c_Lrebecaos_syntax_Program$IExpr$Times;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$IExpr$Times() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$IExpr$Times.prototype = $c_Lrebecaos_syntax_Program$IExpr$Times.prototype;
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lrebecaos_syntax_Program$IExpr$Times)) {
-    var x$0$2 = $as_Lrebecaos_syntax_Program$IExpr$Times(x$0);
-    var x = this.Lrebecaos_syntax_Program$IExpr$Times__f_e1;
-    var x$2 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Times__f_e1;
-    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-      var x$3 = this.Lrebecaos_syntax_Program$IExpr$Times__f_e2;
-      var x$4 = $n(x$0$2).Lrebecaos_syntax_Program$IExpr$Times__f_e2;
-      return ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-    } else {
-      return false
-    }
-  } else {
-    return false
-  }
-});
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.productArity__I = (function() {
-  return 2
-});
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.productPrefix__T = (function() {
-  return "Times"
-});
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Times__f_e1
-  };
-  if ((n === 1)) {
-    return this.Lrebecaos_syntax_Program$IExpr$Times__f_e2
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-});
-function $as_Lrebecaos_syntax_Program$IExpr$Times(obj) {
-  return (((obj instanceof $c_Lrebecaos_syntax_Program$IExpr$Times) || (obj === null)) ? obj : $throwClassCastException(obj, "rebecaos.syntax.Program$IExpr$Times"))
-}
-function $isArrayOf_Lrebecaos_syntax_Program$IExpr$Times(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lrebecaos_syntax_Program$IExpr$Times)))
-}
-function $asArrayOf_Lrebecaos_syntax_Program$IExpr$Times(obj, depth) {
-  return (($isArrayOf_Lrebecaos_syntax_Program$IExpr$Times(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$IExpr$Times;", depth))
-}
-var $d_Lrebecaos_syntax_Program$IExpr$Times = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$IExpr$Times: 0
-}, false, "rebecaos.syntax.Program$IExpr$Times", {
-  Lrebecaos_syntax_Program$IExpr$Times: 1,
-  Lrebecaos_syntax_Program$IExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$IExpr$Times.prototype.$classData = $d_Lrebecaos_syntax_Program$IExpr$Times;
 /** @constructor */
 function $c_sc_ArrayOps$ArrayIterator$mcB$sp(xs$mcB$sp) {
   this.sc_ArrayOps$ArrayIterator__f_xs = null;
@@ -52696,50 +52438,6 @@ var $d_Lcats_kernel_instances_UnitAlgebra = new $TypeData().initClass({
   Lcats_kernel_CommutativeGroup: 1
 });
 $c_Lcats_kernel_instances_UnitAlgebra.prototype.$classData = $d_Lcats_kernel_instances_UnitAlgebra;
-/** @constructor */
-function $c_Lrebecaos_syntax_Program$BExpr$$anon$2(_$ordinal$4, \u03b4name$4, outer) {
-  this.Lrebecaos_syntax_Program$BExpr$$anon$2__f_$name$2 = null;
-  this.Lrebecaos_syntax_Program$BExpr$$anon$2__f_$name$2 = \u03b4name$4;
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  }
-}
-$c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype = new $h_Lrebecaos_syntax_Program$BExpr();
-$c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype.constructor = $c_Lrebecaos_syntax_Program$BExpr$$anon$2;
-/** @constructor */
-function $h_Lrebecaos_syntax_Program$BExpr$$anon$2() {
-  /*<skip>*/
-}
-$h_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype = $c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype;
-$c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype.productArity__I = (function() {
-  return 0
-});
-$c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype.productElement__I__O = (function(n) {
-  return $f_sr_EnumValue__productElement__I__O(this, n)
-});
-$c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype.productPrefix__T = (function() {
-  return this.Lrebecaos_syntax_Program$BExpr$$anon$2__f_$name$2
-});
-$c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype.toString__T = (function() {
-  return this.Lrebecaos_syntax_Program$BExpr$$anon$2__f_$name$2
-});
-var $d_Lrebecaos_syntax_Program$BExpr$$anon$2 = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$BExpr$$anon$2: 0
-}, false, "rebecaos.syntax.Program$BExpr$$anon$2", {
-  Lrebecaos_syntax_Program$BExpr$$anon$2: 1,
-  Lrebecaos_syntax_Program$BExpr: 1,
-  O: 1,
-  Lrebecaos_syntax_Program$Expr: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1,
-  sr_EnumValue: 1,
-  s_deriving_Mirror: 1,
-  s_deriving_Mirror$Product: 1,
-  s_deriving_Mirror$Singleton: 1
-});
-$c_Lrebecaos_syntax_Program$BExpr$$anon$2.prototype.$classData = $d_Lrebecaos_syntax_Program$BExpr$$anon$2;
 /** @constructor */
 function $c_sc_AbstractSet() {
   /*<skip>*/
@@ -67213,8 +66911,6 @@ function $m_Lcats_implicits$() {
 }
 $L0 = new $c_RTLong(0, 0);
 $d_J.zero = $L0;
-var $t_Lrebecaos_syntax_Program$BExpr$__BTrue = null;
-var $t_Lrebecaos_syntax_Program$BExpr$__BFalse = null;
 var $t_Lrebecaos_syntax_Program$Statement$__Skip = null;
 getFileAsText = (function(arg) {
   $m_Lcaos_frontend_Site$().getFileAsText__Lorg_scalajs_dom_raw_File__V(arg)

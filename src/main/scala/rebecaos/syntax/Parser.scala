@@ -3,7 +3,7 @@ package rebecaos.syntax
 import cats.parse.Parser.*
 import cats.parse.{LocationMap, Parser as P, Parser0 as P0}
 import cats.parse.Numbers.*
-
+import rebecaos.backend.Eval.Data
 import rebecaos.syntax.Program.*
 import rebecaos.syntax.Program.IExpr.*
 import rebecaos.syntax.Program.BExpr.*
@@ -128,7 +128,8 @@ object Parser :
       (varName <* sps) ~ // rebecName
       ((char('(') *> sps *> varName.repSep0(sps ~ char(',') ~ sps)) <* sps <* char(')')) ~ // known rebecs
       ((sps *> char(':') *> sps *> char('(') *>
-        (digits.map(_.toInt) | string("true").as(true) | string("false").as(false))
+        //(digits.map(s => Data.N(s.toInt)) | string("true").as(Data.B(true)) | string("false").as(Data.B(false)))
+        expr2
           .repSep0(sps ~ char(',') ~ sps)) <*
         sps <* char(')') <* ending ) // queue sizes
     ).map(x => InstanceDecl(x._1._1._1,x._1._1._2,x._1._2,x._2))
@@ -174,44 +175,22 @@ object Parser :
 
   def statement: P[Statement] = P.recursive(stmRec =>
     def basicStm: P[Statement] =
-      skip | ite | delay | ite | call.backtrack | assign.backtrack | choice
+      skip | ite | delay | ite | call.backtrack | assign.backtrack | choice.backtrack | newInst
     //      contract | skip | ite | whilec | assert | assign
 
-    def skip: P[Skip.type] =
-    //      string("skip").as(Skip)
-      (string("skip") ~ ending).as(Skip)
-
-    def call: P[Call] =
-      ((anyName <* sps) ~ // rebeca name
-        (char('.') *> anyName <* sps) ~ // method name
-        ((char('(') *> sps *> expr.repSep0(sps~char(',')~sps)) <* sps <* char(')') <* sps) ~
-        (string("after") *> sps *> char('(') *> (iexpr <* sps <* char(')') <* sps)).? ~
-        (string("deadline") *> sps *> char('(') *> (iexpr <* sps <* char(')'))).? <* ending
-      ).map(x => Call(x._1._1._1._1,x._1._1._1._2,x._1._1._2,x._1._2,x._2)) // todo: "after" and "deadline"
-
-    def choice: P[Choice] =
-      ((anyName <* sps) ~ // var name
-        (char('=') *> sps *> char('?') *> sps *> char('(') *> sps *>
-          (iexpr.repSep(sps ~ char(',') ~ sps) <* sps <* char(')') <* ending)) // args
-        ).map(x => Choice(x._1,x._2.toList))
-
-    def delay:P[Delay] =
-      (string("delay") *> sps *> char('(') *> sps *> (iexpr <* sps <* char(')') <* ending )
-      ).map(Delay.apply)
-
     def ite: P[ITE] =
-      (((string("if") *> sps *> char('(') *> sps *> bexpr) <* sps <* char(')') <* sps) ~ // bool
+      (((string("if") *> sps *> char('(') *> sps *> expr2) <* sps <* char(')') <* sps) ~ // bool
         (commBlock <* sps) ~ // then
         (string("else") *> sps *> commBlock).?) // else
         .map(x => ITE(x._1._1, x._1._2, x._2.getOrElse(Skip)))
 
     def commBlock =
       (char('{') ~ sps) *> stmRec.?.map(_.getOrElse(Skip)) <* (sps ~ char('}')) |
-        skip | call.backtrack | assign.backtrack | choice
+        skip | call.backtrack | assign.backtrack | choice.backtrack | newInst
 
     def assign: P[Assign] =
     //      (varName ~ (string(":=")|char('=')).surroundedBy(sps) ~ iexpr)
-      (anyName ~ (string("=") | char('=')).surroundedBy(sps) ~ expr <* (sps ~ char(';')))
+      (anyName ~ (string("=") | char('=')).surroundedBy(sps) ~ expr2 <* (sps ~ char(';')))
         .map(x => Assign(x._1._1, x._2))
     //    def contract: P[Command] = // contracts now only in the outside, after ';' is at the end of every assignment.
     //      (invariant~commRec.surroundedBy(sps)~invariant)
@@ -228,6 +207,42 @@ object Parser :
     listSepRep(basicStm, sps, Seq.apply)
   )
 
+  def skip: P[Skip.type] =
+  //      string("skip").as(Skip)
+    (string("skip") ~ ending).as(Skip)
+
+  def call: P[Call] =
+    ((anyName <* sps) ~ // rebeca name
+      (char('.') *> anyName <* sps) ~ // method name
+      ((char('(') *> sps *> expr2.repSep0(sps~char(',')~sps)) <* sps <* char(')') <* sps) ~
+      (string("after") *> sps *> char('(') *> (expr2 <* sps <* char(')') <* sps)).? ~
+      (string("deadline") *> sps *> char('(') *> (expr2 <* sps <* char(')'))).? <* ending
+    ).map(x => Call(x._1._1._1._1,x._1._1._1._2,x._1._1._2,x._1._2,x._2)) // todo: "after" and "deadline"
+
+  def choice: P[Choice] =
+    ((anyName <* sps) ~ // var name
+      (char('=') *> sps *> char('?') *> sps *> char('(') *> sps *>
+        (expr2.repSep(sps ~ char(',') ~ sps) <* sps <* char(')') <* ending)) // args
+      ).map(x => Choice(x._1,x._2.toList))
+
+  def newInst: P[NewReb] =
+    ((anyName <* sps <* // var name
+       char('=') <* sps <*
+       string("new") <* sps) ~ // new keyword
+     (className <* sps) ~ // className
+        ((char('(') *> sps *> varName.repSep0(sps ~ char(',') ~ sps)) <* sps <* char(')')) ~ // known rebecs
+        ((sps *> char(':') *> sps *> char('(') *>
+          //(digits.map(s => Data.N(s.toInt)) | string("true").as(Data.B(true)) | string("false").as(Data.B(false)))
+          expr2
+            .repSep0(sps ~ char(',') ~ sps)) <*
+          sps <* char(')') <* ending ) // queue sizes
+//        ).map(x => InstanceDecl(x._1._1._1,x._1._1._2,x._1._2,x._2))
+      ).map(x => NewReb(InstanceDecl(x._1._1._2, x._1._1._1, x._1._2, x._2)))
+
+  def delay:P[Delay] =
+    (string("delay") *> sps *> char('(') *> sps *> (expr2 <* sps <* char(')') <* ending )
+    ).map(Delay.apply)
+
 
 //  def expr: P[Expr] =
 ////    varName.map(GVar(_)) | bexpr.backtrack | iexpr
@@ -237,95 +252,132 @@ object Parser :
 ////      bexpr <* sps <* char(until) |
 ////      iexpr <* sps <* char(until)
 
-
-  def toBExpr(e:Expr): BExpr = e match
-    case b:BExpr => b
-    case GVar(name) => BVar(name)
-    case IVar(name) => BVar(name)
-    case _ => sys.error(s"Expected boolean but found int: $e")
-
-  def bexpr: P[BExpr] = expr.map(toBExpr)
-  /** (Recursive) Parser for a boolean expression */
-  def expr: P[Expr] = P.recursive[Expr](exprRec =>
-    def lit: P[Expr] = P.recursive(litR =>
-      string("true").as(BTrue) |
-        string("false").as(BFalse) |
-//        varName.map(BVar.apply) |
-        (char('!') *> litR).map(x => Not(toBExpr(x))) |
-        ineq.backtrack |
-        char('(') *> exprRec <* char(')')
+  def expr2: P[Expr2] =P.recursive[Expr2](exprRec =>
+    // literal: constant, variable, parenthesis, or !literal
+    def lit: P[Expr2] = P.recursive(litR =>
+      string("true").as(Expr2.B(true)) |
+      string("false").as(Expr2.B(false)) |
+      digits.map(x => Expr2.N(x.toInt)) |
+//      (string("new") *> sps *> call).map(c => Expr2.NewReb(c)) |
+      anyName.map(Expr2.Var.apply) |
+      char('(') *> exprRec <* char(')') |
+      (char('!') *> litR).map(x => Expr2.Func("not",List(x)))
     )
 
-    def insideBrackets: P[Expr] =
-      exprRec.backtrack | ineq
+    def op1: P[String] = (string("||") | string("\\/")).as("||")
+    def op2: P[String] = (string("&&") | string("/\\")).as("&&")
+    def op3: P[String] = oneOf("<>=".toList.map(char)).rep.string | string("!=").string
+    def op4: P[String] = oneOf("+-".toList.map(char)).string
+    def op5: P[String] = oneOf("*/%".toList.map(char)).string
 
-    def op: P[(Expr, Expr) => BExpr] =
-      string("<=").as((x: Expr, y: Expr) => Or(Less(x, y), Eq(x, y))) |
-        string(">=").as((x: Expr, y: Expr) => Or(Greater(x, y), Eq(x, y))) |
-        string("!=").as((x: Expr, y: Expr) => Not(Eq(x, y))) |
-        char('<').as(Less.apply) |
-        char('>').as(Greater.apply) |
-        string("==").as(Eq.apply)
 
-    def ineq:P[Expr] =
-      (varOrIexpr ~ (op.surroundedBy(sps) ~ varOrIexpr).?)
-        .map(x => if x._2.isDefined then x._2.get._1(x._1,x._2.get._2) else x._1)
-//          .match {
-//          case IVar(n) => BVar(n)
-//          case e => sys.error(s"unexpected integer expression ${x._1}")
-//        })
-//        .map(x => x._1._2(x._1._1, x._2))
+    def combine(x:(Expr2,Option[(String,Expr2)])): Expr2 =
+      if x._2.isDefined then Expr2.Infix(x._2.get._1, x._1, x._2.get._2) else x._1
 
-    def varOrIexpr:P[Expr] =
-      iexpr.map(_ match
-        case IVar(n) => GVar(n)
-        case i => i
-      )
+    def infix(p:P[Expr2],ops:P[String]): P[Expr2] = P.recursive(rec =>
+      ((p <* sps) ~ ((ops <* sps) ~ rec).?).map(combine))
 
-    def or: P[(Expr, Expr) => BExpr] =
-      (string("||") | string("\\/")).map(_ => (x,y) => Or(toBExpr(x),toBExpr(y)))
+    def orP: P[Expr2]   = infix(andP,op1)
+    def andP: P[Expr2]  = infix(ineqP,op2)
+    def ineqP: P[Expr2] = infix(sumP,op3)
+    def sumP: P[Expr2]  = infix(multP,op4)
+    def multP: P[Expr2] = infix(lit,op5)
 
-    def and: P[(Expr, Expr) => BExpr] =
-      (string("&&") | string("/\\")).map(_ => (x,y) => And(toBExpr(x),toBExpr(y)))
-
-    listSep(listSep(lit, and), or)
+    orP
   )
 
-  /** (Recursive) Parser for an integer expression */
-  def iexpr: P[IExpr] = P.recursive(iexprRec =>
-    def lit: P[IExpr] =
-      char('(') *> iexprRec.surroundedBy(sps) <* char(')') |
-        digits.map(x => N(x.toInt)) |
-        anyName.map(IVar.apply)
 
-    def pow: P[(IExpr, IExpr) => IExpr] =
-      string("^").map(_ => Power.apply)
-
-    def mult: P[(IExpr, IExpr) => IExpr] =
-      string("*").map(_ => Times.apply)
-
-    def plusminus: P[(IExpr, IExpr) => IExpr] =
-      string("+").as(Plus.apply) |
-        string("-").as(Minus.apply)
-
-    listSep(listSep(listSep(lit, pow), mult), plusminus)
-  )
+  ////////////////////
+  /// DEPRECATED? //
+  ///////////////////
+//  def toBExpr(e:Expr): BExpr = e match
+//    case b:BExpr => b
+//    case GVar(name) => BVar(name)
+//    case IVar(name) => BVar(name)
+//    case _ => sys.error(s"Expected boolean but found int: $e")
+//
+//  def bexpr: P[BExpr] = expr.map(toBExpr)
+//  /** (Recursive) Parser for a boolean expression */
+//  def expr: P[Expr] = P.recursive[Expr](exprRec =>
+//    def lit: P[Expr] = P.recursive(litR =>
+//      string("true").as(BTrue) |
+//        string("false").as(BFalse) |
+////        varName.map(BVar.apply) |
+//        (char('!') *> litR).map(x => Not(toBExpr(x))) |
+//        ineq.backtrack |
+//        char('(') *> exprRec <* char(')')
+//    )
+//
+//    def insideBrackets: P[Expr] =
+//      exprRec.backtrack | ineq
+//
+//    def op: P[(Expr, Expr) => BExpr] =
+//      string("<=").as((x: Expr, y: Expr) => Or(Less(x, y), Eq(x, y))) |
+//        string(">=").as((x: Expr, y: Expr) => Or(Greater(x, y), Eq(x, y))) |
+//        string("!=").as((x: Expr, y: Expr) => Not(Eq(x, y))) |
+//        char('<').as(Less.apply) |
+//        char('>').as(Greater.apply) |
+//        string("==").as(Eq.apply)
+//
+//    def ineq:P[Expr] =
+//      (varOrIexpr ~ (op.surroundedBy(sps) ~ varOrIexpr).?)
+//        .map(x => if x._2.isDefined then x._2.get._1(x._1,x._2.get._2) else x._1)
+////          .match {
+////          case IVar(n) => BVar(n)
+////          case e => sys.error(s"unexpected integer expression ${x._1}")
+////        })
+////        .map(x => x._1._2(x._1._1, x._2))
+//
+//    def varOrIexpr:P[Expr] =
+//      iexpr.map(_ match
+//        case IVar(n) => GVar(n)
+//        case i => i
+//      )
+//
+//    def or: P[(Expr, Expr) => BExpr] =
+//      (string("||") | string("\\/")).map(_ => (x,y) => Or(toBExpr(x),toBExpr(y)))
+//
+//    def and: P[(Expr, Expr) => BExpr] =
+//      (string("&&") | string("/\\")).map(_ => (x,y) => And(toBExpr(x),toBExpr(y)))
+//
+//    listSep(listSep(lit, and), or)
+//  )
+//
+//  /** (Recursive) Parser for an integer expression */
+//  def iexpr: P[IExpr] = P.recursive(iexprRec =>
+//    def lit: P[IExpr] =
+//      char('(') *> iexprRec.surroundedBy(sps) <* char(')') |
+//        digits.map(x => N(x.toInt)) |
+//        anyName.map(IVar.apply)
+//
+//    def pow: P[(IExpr, IExpr) => IExpr] =
+//      string("^").map(_ => Power.apply)
+//
+//    def mult: P[(IExpr, IExpr) => IExpr] =
+//      string("*").map(_ => Times.apply)
+//
+//    def plusminus: P[(IExpr, IExpr) => IExpr] =
+//      string("+").as(Plus.apply) |
+//        string("-").as(Minus.apply)
+//
+//    listSep(listSep(listSep(lit, pow), mult), plusminus)
+//  )
 
 
   /// Auxiliary parser combinators
 
   /** Non-empty list of elements with a binary operator */
-  def listSep[A](elem: P[A], op: P0[(A, A) => A]): P[A] =
-    ((elem <* sps) ~ (op.backtrack.with1 ~ (sps.with1 *> elem)).rep0)
-      .map(x =>
-        val pairlist = x._2
-        val first = x._1;
-        pairlist.foldLeft(first)((rest, pair) => pair._1(rest, pair._2))
-      )
+//  def listSep[A](elem: P[A], op: P0[(A, A) => A]): P[A] =
+//    ((elem <* sps) ~ (op.backtrack.with1 ~ (sps.with1 *> elem)).rep0)
+//      .map(x =>
+//        val pairlist = x._2
+//        val first = x._1;
+//        pairlist.foldLeft(first)((rest, pair) => pair._1(rest, pair._2))
+//      )
 
   /** Pair of elements with a separator */
-  def binary[A, B](p1: P[A], op: String, p2: P[B]): P[(A, B)] =
-    (p1 ~ string(op).surroundedBy(sps) ~ p2).map(x => (x._1._1, x._2))
+//  def binary[A, B](p1: P[A], op: String, p2: P[B]): P[(A, B)] =
+//    (p1 ~ string(op).surroundedBy(sps) ~ p2).map(x => (x._1._1, x._2))
 
   /** Similar to `listSep`, but using native repSep that is more eager (less backtrack). */
   def listSepRep[A](elem: P[A], sep: P0[_], join: (A, A) => A): P[A] =

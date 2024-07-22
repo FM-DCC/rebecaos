@@ -96,7 +96,7 @@ object CaosConfig extends Configurator[St]:
 
   /** Description of the widgets that appear in the dashboard. */
   val widgets = List(
-    "View pretty data" -> view[St](_.toString, Code("haskell")).moveTo(0),
+    "View pretty data" -> view[St](s=>Show(s._1), Code("haskell")).moveTo(0),
 //    "View structure" -> view(Show.mermaid, Mermaid),
      "Run semantics St" -> steps((e:St)=>e, Semantics, Show.apply, a=>Show(a._1), Text).expand,
 //     "Run semantics2" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), st=>s"${Show(st._1)}\n${st._2.reverse.mkString(" > ")}", a=>Show(a._1), Text),

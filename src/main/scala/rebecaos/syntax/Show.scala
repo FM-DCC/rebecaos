@@ -1,6 +1,7 @@
 package rebecaos.syntax
 
-import Program.System
+import Program.{Expr2, InstanceDecl, Msgsrv, ReactiveClass, Statement, System}
+import rebecaos.backend.Eval
 //import rebecaos.backend.Semantics.{RebecInst, Rebecs, St}
 import rebecaos.backend.Semantics
 import rebecaos.backend.Semantics.Msg
@@ -29,6 +30,58 @@ object Show:
 
   def short(st: Semantics.St): String =
     st._2.map((n,e) => s"$n${if e.now>0 then s"-${e.now}" else ""}").mkString(" ")
+
+
+  def apply(s:System): String =
+    s.classes.map(showClass).mkString("\n")+
+      "\nmain:"+
+      s.main.map(showInstDecl).mkString
+  def showClass(cl:(String,ReactiveClass)): String =
+    s"reactiveclass ${cl._1} (${cl._2.qsize.map(_.toString).getOrElse("")}):${
+      cl._2.known.map(x => s"\n  known ${x.name}: ${x.typ}").mkString}${
+      cl._2.state.map(x => s"\n  var ${x.name}: ${x.typ}").mkString}${
+      cl._2.msgsrv.map(x => s"\n  msgsrv ${x._1}:${showMsgSrv(x._2)}").mkString}"
+  def showInstDecl(i:InstanceDecl): String =
+    s"\n  ${i.clazz} ${i.name}(${i.known.mkString(",")}):(${i.args.map(apply).mkString(",")})"
+  def showMsgSrv(ms: Msgsrv): String =
+    s"${ms.vars.map(x=>x.name+": "+x.typ).mkString(", ")}${
+      "\n    "+showStms(ms.stm).mkString("\n    ")
+    }"
+
+  def apply(e:Expr2): String = e match
+    case Expr2.N(n) => n.toString
+    case Expr2.B(b) => b.toString
+    case Expr2.RebRef(r) => r
+    case Expr2.Var(v) => v
+    case Expr2.Infix(op, e1, e2) => s"${exprPar(e1)} $op ${exprPar(e2)}"
+    case Expr2.Func("!", List(e)) => s"!${exprPar(e)}"
+    case Expr2.Func(op,es) => s"$op(${es.map(apply).mkString(",")})"
+  private def exprPar(e:Expr2): String = e match
+    case i:Expr2.Infix => s"(${apply(e)})"
+    case _ => apply(e)
+
+  def showStms(s: Statement): List[String] = s match
+    case Statement.Seq(e1, e2) => showStms(e1) ::: showStms(e2)
+    case Statement.ITE(b,ct,cf) =>
+      s"if ${apply(b)}:"::(
+        showStms(ct).map(x=>s"  $x"):::(
+          if cf==Statement.Skip then Nil else
+      "else:"::
+        showStms(cf).map(x=>s"  $x")))
+    case Statement.Assign(ident,e) =>
+      List(s"$ident := ${apply(e)}")
+    case Statement.Skip => Nil
+    case Statement.Call(rebec, meth, args, after, dl) =>
+      List(s"${rebec}.${meth}(${args.map(apply).mkString(",")})${
+        if after.nonEmpty then s" after ${apply(after.get)}" else ""}${
+        if dl.nonEmpty then s" deadline ${apply(dl.get)}" else ""
+      }")
+    case Statement.NewReb(dec) =>
+      List(showInstDecl(dec).drop(3))
+    case Statement.Choice(ident,es) =>
+      showStms(Statement.Assign(ident,Expr2.Func("?",es)))
+    case Statement.Delay(e) =>
+      List(s"delay ${apply(e)}")
 
 
 //  def apply(st: St): String =

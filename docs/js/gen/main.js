@@ -11393,6 +11393,9 @@ function $m_Lrebecaos_syntax_Parser$() {
   };
   return $n_Lrebecaos_syntax_Parser$
 }
+function $p_Lrebecaos_syntax_Show$__exprPar__Lrebecaos_syntax_Program$Expr2__T($thiz, e) {
+  return ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Infix) ? ($as_Lrebecaos_syntax_Program$Expr2$Infix(e), (("(" + $thiz.apply__Lrebecaos_syntax_Program$Expr2__T(e)) + ")")) : $thiz.apply__Lrebecaos_syntax_Program$Expr2__T(e))
+}
 /** @constructor */
 function $c_Lrebecaos_syntax_Show$() {
   /*<skip>*/
@@ -11453,6 +11456,397 @@ $c_Lrebecaos_syntax_Show$.prototype.short__T3__T = (function(st) {
     return (n + (($n(e).now__I() > 0) ? ("-" + $n(e).now__I()) : ""))
   })))));
   return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", " ", "")
+});
+$c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_syntax_Program$System__T = (function(s) {
+  var this$2 = $n($as_sc_IterableOnceOps($n($n(s).Lrebecaos_syntax_Program$System__f_classes).map__F1__O(new $c_sjsr_AnonFunction1(((cl) => {
+    var cl$1 = $as_T2(cl);
+    return this.showClass__T2__T(cl$1)
+  })))));
+  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", "\n", "");
+  var this$3 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
+  var f = ((i) => {
+    var i$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(i);
+    return this.showInstDecl__Lrebecaos_syntax_Program$InstanceDecl__T(i$1)
+  });
+  if ((this$3 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$3.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$3.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$4 = $n($$x1);
+  return (($$x2 + "\nmain:") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", "", ""))
+});
+$c_Lrebecaos_syntax_Show$.prototype.showClass__T2__T = (function(cl) {
+  var $$x7 = $n(cl)._1__O();
+  var this$1 = $n($n($as_Lrebecaos_syntax_Program$ReactiveClass($n(cl)._2__O())).Lrebecaos_syntax_Program$ReactiveClass__f_qsize);
+  if (this$1.isEmpty__Z()) {
+    var $$x5 = $m_s_None$()
+  } else {
+    var arg1 = this$1.get__O();
+    var _$1 = $uI(arg1);
+    var $$x5 = new $c_s_Some(("" + _$1))
+  };
+  var this$3 = $n($$x5);
+  var $$x6 = (this$3.isEmpty__Z() ? "" : this$3.get__O());
+  var this$4 = $n($n($as_Lrebecaos_syntax_Program$ReactiveClass($n(cl)._2__O())).Lrebecaos_syntax_Program$ReactiveClass__f_known);
+  var f = ((x) => {
+    var x$1 = $as_Lrebecaos_syntax_Program$QVar(x);
+    return ((("\n  known " + $n(x$1).Lrebecaos_syntax_Program$QVar__f_name) + ": ") + $n(x$1).Lrebecaos_syntax_Program$QVar__f_typ)
+  });
+  if ((this$4 === $m_sci_Nil$())) {
+    var $$x3 = $m_sci_Nil$()
+  } else {
+    var arg1$1 = this$4.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$4.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$2 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$2), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x3 = h
+  };
+  var this$5 = $n($$x3);
+  var $$x4 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$5, "", "", "");
+  var this$6 = $n($n($as_Lrebecaos_syntax_Program$ReactiveClass($n(cl)._2__O())).Lrebecaos_syntax_Program$ReactiveClass__f_state);
+  var f$1 = ((x$2) => {
+    var x$3 = $as_Lrebecaos_syntax_Program$QVar(x$2);
+    return ((("\n  var " + $n(x$3).Lrebecaos_syntax_Program$QVar__f_name) + ": ") + $n(x$3).Lrebecaos_syntax_Program$QVar__f_typ)
+  });
+  if ((this$6 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1$3 = this$6.head__O();
+    var h$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
+    var t$1 = h$1;
+    var rest$1 = $as_sci_List(this$6.tail__O());
+    while ((rest$1 !== $m_sci_Nil$())) {
+      var arg1$4 = $n(rest$1).head__O();
+      var nx$1 = new $c_sci_$colon$colon(f$1(arg1$4), $m_sci_Nil$());
+      $n(t$1).sci_$colon$colon__f_next = nx$1;
+      t$1 = nx$1;
+      rest$1 = $as_sci_List($n(rest$1).tail__O())
+    };
+    var $$x1 = h$1
+  };
+  var this$7 = $n($$x1);
+  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$7, "", "", "");
+  var this$8 = $n($as_sc_IterableOnceOps($n($n($as_Lrebecaos_syntax_Program$ReactiveClass($n(cl)._2__O())).Lrebecaos_syntax_Program$ReactiveClass__f_msgsrv).map__F1__O(new $c_sjsr_AnonFunction1(((x$3$1) => {
+    var x$4 = $as_T2(x$3$1);
+    return ((("\n  msgsrv " + $n(x$4)._1__O()) + ":") + this.showMsgSrv__Lrebecaos_syntax_Program$Msgsrv__T($as_Lrebecaos_syntax_Program$Msgsrv($n(x$4)._2__O())))
+  })))));
+  return ((((((("reactiveclass " + $$x7) + " (") + $$x6) + "):") + $$x4) + $$x2) + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$8, "", "", ""))
+});
+$c_Lrebecaos_syntax_Show$.prototype.showInstDecl__Lrebecaos_syntax_Program$InstanceDecl__T = (function(i) {
+  var $$x4 = $n(i).Lrebecaos_syntax_Program$InstanceDecl__f_clazz;
+  var $$x3 = $n(i).Lrebecaos_syntax_Program$InstanceDecl__f_name;
+  var this$1 = $n($n(i).Lrebecaos_syntax_Program$InstanceDecl__f_known);
+  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", ",", "");
+  var this$3 = $n($n(i).Lrebecaos_syntax_Program$InstanceDecl__f_args);
+  var f = ((e) => {
+    var e$1 = $as_Lrebecaos_syntax_Program$Expr2(e);
+    return this.apply__Lrebecaos_syntax_Program$Expr2__T(e$1)
+  });
+  if ((this$3 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$3.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$3.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$4 = $n($$x1);
+  return (((((((("\n  " + $$x4) + " ") + $$x3) + "(") + $$x2) + "):(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", ",", "")) + ")")
+});
+$c_Lrebecaos_syntax_Show$.prototype.showMsgSrv__Lrebecaos_syntax_Program$Msgsrv__T = (function(ms) {
+  var this$2 = $n($n(ms).Lrebecaos_syntax_Program$Msgsrv__f_vars);
+  var f = ((x) => {
+    var x$1 = $as_Lrebecaos_syntax_Program$QVar(x);
+    return (($n(x$1).Lrebecaos_syntax_Program$QVar__f_name + ": ") + $n(x$1).Lrebecaos_syntax_Program$QVar__f_typ)
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$3 = $n($$x1);
+  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ", ", "");
+  var this$4 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List($n(ms).Lrebecaos_syntax_Program$Msgsrv__f_stm));
+  return ((("" + $$x2) + "\n    ") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", "\n    ", ""))
+});
+$c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_syntax_Program$Expr2__T = (function(e) {
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$N)) {
+    var x$1 = $as_Lrebecaos_syntax_Program$Expr2$N(e);
+    var this$2 = $n(x$1);
+    var x28 = this$2.Lrebecaos_syntax_Program$Expr2$N__f_n;
+    return ("" + x28)
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$B)) {
+    var x$1$1 = $as_Lrebecaos_syntax_Program$Expr2$B(e);
+    var this$5 = $n(x$1$1);
+    var x25 = this$5.Lrebecaos_syntax_Program$Expr2$B__f_b;
+    return ("" + x25)
+  };
+  if (false) {
+    var x$1$2 = $as_Lrebecaos_syntax_Program$Expr2$RebRef(e);
+    var x22 = $n(x$1$2)._1__T();
+    return x22
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Var)) {
+    var x$1$3 = $as_Lrebecaos_syntax_Program$Expr2$Var(e);
+    var this$9 = $n(x$1$3);
+    var x19 = this$9.Lrebecaos_syntax_Program$Expr2$Var__f_v;
+    return x19
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Infix)) {
+    var x$1$4 = $as_Lrebecaos_syntax_Program$Expr2$Infix(e);
+    var this$11 = $n(x$1$4);
+    var x14 = this$11.Lrebecaos_syntax_Program$Expr2$Infix__f_op;
+    var this$12 = $n(x$1$4);
+    var x15 = this$12.Lrebecaos_syntax_Program$Expr2$Infix__f_e1;
+    var this$13 = $n(x$1$4);
+    var x16 = this$13.Lrebecaos_syntax_Program$Expr2$Infix__f_e2;
+    return (((($p_Lrebecaos_syntax_Show$__exprPar__Lrebecaos_syntax_Program$Expr2__T(this, x15) + " ") + x14) + " ") + $p_Lrebecaos_syntax_Show$__exprPar__Lrebecaos_syntax_Program$Expr2__T(this, x16))
+  };
+  if ((e instanceof $c_Lrebecaos_syntax_Program$Expr2$Func)) {
+    var x$1$5 = $as_Lrebecaos_syntax_Program$Expr2$Func(e);
+    var this$15 = $n(x$1$5);
+    var x8 = this$15.Lrebecaos_syntax_Program$Expr2$Func__f_op;
+    var this$16 = $n(x$1$5);
+    var x9 = this$16.Lrebecaos_syntax_Program$Expr2$Func__f_es;
+    if (((x8 === "!") && (x9 !== null))) {
+      $n($m_s_package$().s_package$__f_List);
+      if (($n(x9).lengthCompare__I__I(1) === 0)) {
+        var this$20 = $n(x9);
+        var x11 = $as_Lrebecaos_syntax_Program$Expr2($f_sc_LinearSeqOps__apply__I__O(this$20, 0));
+        return ("!" + $p_Lrebecaos_syntax_Show$__exprPar__Lrebecaos_syntax_Program$Expr2__T(this, x11))
+      }
+    };
+    var this$22 = $n(x9);
+    var f = ((e$3) => {
+      var e$1 = $as_Lrebecaos_syntax_Program$Expr2(e$3);
+      return this.apply__Lrebecaos_syntax_Program$Expr2__T(e$1)
+    });
+    if ((this$22 === $m_sci_Nil$())) {
+      var $$x1 = $m_sci_Nil$()
+    } else {
+      var arg1 = this$22.head__O();
+      var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+      var t = h;
+      var rest = $as_sci_List(this$22.tail__O());
+      while ((rest !== $m_sci_Nil$())) {
+        var arg1$1 = $n(rest).head__O();
+        var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+        $n(t).sci_$colon$colon__f_next = nx;
+        t = nx;
+        rest = $as_sci_List($n(rest).tail__O())
+      };
+      var $$x1 = h
+    };
+    var this$23 = $n($$x1);
+    return (((x8 + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$23, "", ",", "")) + ")")
+  };
+  throw new $c_s_MatchError(e)
+});
+$c_Lrebecaos_syntax_Show$.prototype.showStms__Lrebecaos_syntax_Program$Statement__sci_List = (function(s) {
+  var s$tailLocal1 = s;
+  while (true) {
+    var x31 = s$tailLocal1;
+    if ((x31 instanceof $c_Lrebecaos_syntax_Program$Statement$Seq)) {
+      var x$1 = $as_Lrebecaos_syntax_Program$Statement$Seq(x31);
+      var this$2 = $n(x$1);
+      var x60 = this$2.Lrebecaos_syntax_Program$Statement$Seq__f_c1;
+      var this$3 = $n(x$1);
+      var x61 = this$3.Lrebecaos_syntax_Program$Statement$Seq__f_c2;
+      var prefix$1 = this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x60);
+      return $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x61)).$colon$colon$colon__sci_List__sci_List(prefix$1)
+    };
+    if ((x31 instanceof $c_Lrebecaos_syntax_Program$Statement$ITE)) {
+      var x$1$1 = $as_Lrebecaos_syntax_Program$Statement$ITE(x31);
+      var this$5 = $n(x$1$1);
+      var x55 = this$5.Lrebecaos_syntax_Program$Statement$ITE__f_b;
+      var this$6 = $n(x$1$1);
+      var x56 = this$6.Lrebecaos_syntax_Program$Statement$ITE__f_ct;
+      var this$7 = $n(x$1$1);
+      var x57 = this$7.Lrebecaos_syntax_Program$Statement$ITE__f_cf;
+      var elem$1 = (("if " + this.apply__Lrebecaos_syntax_Program$Expr2__T(x55)) + ":");
+      var this$9 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x56));
+      var f = ((x) => {
+        var x$2 = $as_T(x);
+        return ("  " + x$2)
+      });
+      if ((this$9 === $m_sci_Nil$())) {
+        var prefix$2 = $m_sci_Nil$()
+      } else {
+        var arg1 = this$9.head__O();
+        var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+        var t = h;
+        var rest = $as_sci_List(this$9.tail__O());
+        while ((rest !== $m_sci_Nil$())) {
+          var arg1$1 = $n(rest).head__O();
+          var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+          $n(t).sci_$colon$colon__f_next = nx;
+          t = nx;
+          rest = $as_sci_List($n(rest).tail__O())
+        };
+        var prefix$2 = h
+      };
+      var x$3 = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
+      if (((x57 === null) ? (x$3 === null) : $n(x57).equals__O__Z(x$3))) {
+        var $$x1 = $m_s_package$().s_package$__f_Nil
+      } else {
+        var this$10 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x57));
+        var f$1 = ((x$4) => {
+          var x$5 = $as_T(x$4);
+          return ("  " + x$5)
+        });
+        if ((this$10 === $m_sci_Nil$())) {
+          var $$x2 = $m_sci_Nil$()
+        } else {
+          var arg1$2 = this$10.head__O();
+          var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
+          var t$1 = h$1;
+          var rest$1 = $as_sci_List(this$10.tail__O());
+          while ((rest$1 !== $m_sci_Nil$())) {
+            var arg1$3 = $n(rest$1).head__O();
+            var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
+            $n(t$1).sci_$colon$colon__f_next = nx$1;
+            t$1 = nx$1;
+            rest$1 = $as_sci_List($n(rest$1).tail__O())
+          };
+          var $$x2 = h$1
+        };
+        var this$11 = $n($$x2);
+        var $$x1 = new $c_sci_$colon$colon("else:", this$11)
+      };
+      var this$12 = $n($n($$x1).$colon$colon$colon__sci_List__sci_List(prefix$2));
+      return new $c_sci_$colon$colon(elem$1, this$12)
+    };
+    if ((x31 instanceof $c_Lrebecaos_syntax_Program$Statement$Assign)) {
+      var x$1$2 = $as_Lrebecaos_syntax_Program$Statement$Assign(x31);
+      var this$14 = $n(x$1$2);
+      var x51 = this$14.Lrebecaos_syntax_Program$Statement$Assign__f_ident;
+      var this$15 = $n(x$1$2);
+      var x52 = this$15.Lrebecaos_syntax_Program$Statement$Assign__f_e;
+      $n($m_s_package$().s_package$__f_List);
+      var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([((x51 + " := ") + this.apply__Lrebecaos_syntax_Program$Expr2__T(x52))]));
+      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems)
+    };
+    var x$5$1 = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
+    if (((x$5$1 === null) ? (x31 === null) : $n(x$5$1).equals__O__Z(x31))) {
+      return $m_s_package$().s_package$__f_Nil
+    };
+    if ((x31 instanceof $c_Lrebecaos_syntax_Program$Statement$Call)) {
+      var x$1$3 = $as_Lrebecaos_syntax_Program$Statement$Call(x31);
+      var this$18 = $n(x$1$3);
+      var x44 = this$18.Lrebecaos_syntax_Program$Statement$Call__f_rebec;
+      var this$19 = $n(x$1$3);
+      var x45 = this$19.Lrebecaos_syntax_Program$Statement$Call__f_meth;
+      var this$20 = $n(x$1$3);
+      var x46 = this$20.Lrebecaos_syntax_Program$Statement$Call__f_args;
+      var this$21 = $n(x$1$3);
+      var x47 = this$21.Lrebecaos_syntax_Program$Statement$Call__f_after;
+      var this$22 = $n(x$1$3);
+      var x48 = this$22.Lrebecaos_syntax_Program$Statement$Call__f_dl;
+      $n($m_s_package$().s_package$__f_List);
+      var $$x6 = $m_sr_ScalaRunTime$();
+      var this$23 = $n(x46);
+      var f$2 = ((e$2) => {
+        var e = $as_Lrebecaos_syntax_Program$Expr2(e$2);
+        return this.apply__Lrebecaos_syntax_Program$Expr2__T(e)
+      });
+      if ((this$23 === $m_sci_Nil$())) {
+        var $$x4 = $m_sci_Nil$()
+      } else {
+        var arg1$4 = this$23.head__O();
+        var h$2 = new $c_sci_$colon$colon(f$2(arg1$4), $m_sci_Nil$());
+        var t$2 = h$2;
+        var rest$2 = $as_sci_List(this$23.tail__O());
+        while ((rest$2 !== $m_sci_Nil$())) {
+          var arg1$5 = $n(rest$2).head__O();
+          var nx$2 = new $c_sci_$colon$colon(f$2(arg1$5), $m_sci_Nil$());
+          $n(t$2).sci_$colon$colon__f_next = nx$2;
+          t$2 = nx$2;
+          rest$2 = $as_sci_List($n(rest$2).tail__O())
+        };
+        var $$x4 = h$2
+      };
+      var this$24 = $n($$x4);
+      var $$x5 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$24, "", ",", "");
+      var this$25 = $n(x47);
+      if ((!this$25.isEmpty__Z())) {
+        var $$x3 = (" after " + this.apply__Lrebecaos_syntax_Program$Expr2__T($as_Lrebecaos_syntax_Program$Expr2($n(x47).get__O())))
+      } else {
+        var $$x3 = ""
+      };
+      var this$26 = $n(x48);
+      var elems$1 = $n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([(((((((x44 + ".") + x45) + "(") + $$x5) + ")") + $$x3) + ((!this$26.isEmpty__Z()) ? (" deadline " + this.apply__Lrebecaos_syntax_Program$Expr2__T($as_Lrebecaos_syntax_Program$Expr2($n(x48).get__O()))) : ""))]));
+      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1)
+    };
+    if ((x31 instanceof $c_Lrebecaos_syntax_Program$Statement$NewReb)) {
+      var x$1$4 = $as_Lrebecaos_syntax_Program$Statement$NewReb(x31);
+      var this$29 = $n(x$1$4);
+      var x41 = this$29.Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
+      $n($m_s_package$().s_package$__f_List);
+      var $$x8 = $m_sr_ScalaRunTime$();
+      var $$x7 = $m_sc_StringOps$();
+      var x$6 = this.showInstDecl__Lrebecaos_syntax_Program$InstanceDecl__T(x41);
+      var elems$2 = $n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([$n($$x7).drop$extension__T__I__T(x$6, 3)]));
+      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2)
+    };
+    if ((x31 instanceof $c_Lrebecaos_syntax_Program$Statement$Choice)) {
+      var x$1$5 = $as_Lrebecaos_syntax_Program$Statement$Choice(x31);
+      var this$33 = $n(x$1$5);
+      var x37 = this$33.Lrebecaos_syntax_Program$Statement$Choice__f_v;
+      var this$34 = $n(x$1$5);
+      var x38 = this$34.Lrebecaos_syntax_Program$Statement$Choice__f_options;
+      var e$1 = new $c_Lrebecaos_syntax_Program$Expr2$Func("?", x38);
+      s$tailLocal1 = new $c_Lrebecaos_syntax_Program$Statement$Assign(x37, e$1);
+      continue
+    };
+    if ((x31 instanceof $c_Lrebecaos_syntax_Program$Statement$Delay)) {
+      var x$1$6 = $as_Lrebecaos_syntax_Program$Statement$Delay(x31);
+      var this$38 = $n(x$1$6);
+      var x34 = this$38.Lrebecaos_syntax_Program$Statement$Delay__f_d;
+      $n($m_s_package$().s_package$__f_List);
+      var elems$3 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([("delay " + this.apply__Lrebecaos_syntax_Program$Expr2__T(x34))]));
+      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3)
+    };
+    throw new $c_s_MatchError(x31)
+  }
 });
 var $d_Lrebecaos_syntax_Show$ = new $TypeData().initClass({
   Lrebecaos_syntax_Show$: 0
@@ -21164,9 +21558,9 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   this.Lrebecaos_frontend_CaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
   $n($m_s_package$().s_package$__f_List);
   var $$x11 = $m_sr_ScalaRunTime$();
-  var this$113 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((_$3) => {
-    var _$3$1 = $as_T3(_$3);
-    return $n(_$3$1).toString__T()
+  var this$113 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((s) => {
+    var s$1 = $as_T3(s);
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$System__T($as_Lrebecaos_syntax_Program$System($n(s$1).T3__f__1))
   })), new $c_Lcaos_view_Code("haskell")));
   var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$113, 0);
   var $$x10 = new $c_T2("View pretty data", y);
@@ -21224,9 +21618,9 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st$2) => {
     var st$3 = $as_T3(st$2);
     return $m_Lrebecaos_syntax_Show$().short__T3__T(st$3)
-  })), new $c_sjsr_AnonFunction1(((_$4) => {
-    var _$4$1 = $as_T2(_$4);
-    return $n(_$4$1).toString__T()
+  })), new $c_sjsr_AnonFunction1(((_$3) => {
+    var _$3$1 = $as_T2(_$3);
+    return $n(_$3$1).toString__T()
   })), 50);
   var $$x2 = new $c_T2("Build LTS", y$4);
   var initialSt = new $c_sjsr_AnonFunction1(((e$5$1) => {
@@ -21238,9 +21632,9 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var st$4 = $as_T3(st$3$1);
     return $m_Lrebecaos_syntax_Show$().short__T3__T(st$4)
   }));
-  var viewAct = new $c_sjsr_AnonFunction1(((_$5) => {
-    var _$5$1 = $as_T2(_$5);
-    return $n(_$5$1).toString__T()
+  var viewAct = new $c_sjsr_AnonFunction1(((_$4) => {
+    var _$4$1 = $as_T2(_$4);
+    return $n(_$4$1).toString__T()
   }));
   var y$5 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos$2, viewSt, viewAct);
   var $$x1 = new $c_T2("Build LTS (explore)", y$5);

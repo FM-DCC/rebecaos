@@ -3,6 +3,7 @@ package rebecaos.backend
 import caos.sos.SOS
 import rebecaos.backend.Semantics.{Act, Rebecs, St}
 import rebecaos.syntax.Program.{BExpr, Expr, Expr2, GVar, IExpr, InstanceDecl, Msgsrv, QVar, ReactiveClass, Statement, System}
+import RebecEnv.*
 import Statement.*
 import IExpr.*
 import BExpr.*
@@ -18,29 +19,6 @@ object Semantics extends SOS[Act,St]:
   type Act = (Msg,Msgs) // "received" and "sent"
 
   type Rebecs = Map[String,RebecEnv]
-  case class RebecEnv(vars:Valuation, rebs:KnownReb, meth:Methods, clazz: String):
-    @targetName("addValuation")
-    def ++(vars2: Valuation) = RebecEnv(vars ++ vars2, rebs, meth, clazz)
-    @targetName("addAssignment")
-    def +(vd:(String,Data)) = RebecEnv(vars+vd,rebs,meth,clazz)
-    @targetName("addRebecs")
-    def ++(rebs2: Iterable[(String,String)]) = RebecEnv(vars, rebs ++ rebs2, meth, clazz)
-    @targetName("addRebec")
-    def +(kn:(String,String)) = RebecEnv(vars,rebs+kn,meth,clazz)
-    def now:Int = vars.getOrElse("now",0) match
-      case Data.N(i) => i
-      case b => sys.error(s"variable 'now' should be an int, but it is '$b'.")
-  object RebecEnv:
-    private var seed=0;
-    def restart: Unit = seed=0
-    def newVar:String =
-      seed += 1
-      s"v${seed-1}"
-    def empty: RebecEnv = RebecEnv(Map(),Map(),Map(),"")
-//  type Data = Boolean|Int
-  type Valuation = Map[String,Data]
-  type KnownReb  = Map[String,String] // from local names to system names
-  type Methods   = Map[String,Msgsrv]
 
   type Msgs = Bag[Msg] // bag of Class/Instance name, Method name, Arguments
   case class Msg(rcv:String,m:String,args:List[Data],snd:String,tt:Int,dl:Option[Int])

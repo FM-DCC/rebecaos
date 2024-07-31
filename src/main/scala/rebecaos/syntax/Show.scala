@@ -3,7 +3,7 @@ package rebecaos.syntax
 import Program.{Expr2, InstanceDecl, Msgsrv, ReactiveClass, Statement, System}
 import rebecaos.backend.Eval
 //import rebecaos.backend.Semantics.{RebecInst, Rebecs, St}
-import rebecaos.backend.Semantics
+import rebecaos.backend.{Semantics,RebecEnv}
 import rebecaos.backend.Semantics.Msg
 
 /**
@@ -18,7 +18,7 @@ object Show:
   def applyR(rbs: Semantics.Rebecs): String =
     rbs.map((k, v) => s"$k => ${apply(v)}").mkString("\n")
 
-  def apply(rb: Semantics.RebecEnv): String =
+  def apply(rb: RebecEnv): String =
     s"[${rb.vars.map((v, d) => s"$v:$d").mkString(",")}]{${rb.rebs.map((v, d) => s"$v:$d").mkString(",")}}:${rb.clazz}"
 
   def apply(msg: Msg): String =

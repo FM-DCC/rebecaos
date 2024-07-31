@@ -1,6 +1,6 @@
 package rebecaos.backend
 
-import rebecaos.backend.Semantics.RebecEnv
+import rebecaos.backend.RebecEnv
 import rebecaos.syntax.Program.Expr2
 
 object Eval:

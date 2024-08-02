@@ -102,8 +102,8 @@ object CaosConfig extends Configurator[St]:
 //     "Run semantics2" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), st=>s"${Show(st._1)}\n${st._2.reverse.mkString(" > ")}", a=>Show(a._1), Text),
      "Run semantics Snd" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), HistorySOS.toMermaidSnd, act=>Show(act._1), Mermaid),
      "Run semantics Rcv" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), HistorySOS.toMermaidRcv, act=>Show(act._1), Mermaid),
-     "Build LTS" -> lts((e:St)=>e, Semantics, Show.short, _.toString,50),
-     "Build LTS (explore)" -> ltsExplore(e=>e, Semantics, Show.short, _.toString),
+     "Build LTS" -> lts((e:St)=>e, Semantics, Show.short, x => Show(x._1),50),
+     "Build LTS (explore)" -> ltsExplore(e=>e, Semantics, Show.short, x => Show(x._1)),
 //     "Global LTS info" -> view((e: St) => {
 //        val (st, eds, done) = SOS.traverse(Semantics, e, 2000)
 //        s"States: ${st.size}\nEdges: $eds"+

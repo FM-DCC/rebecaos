@@ -22,7 +22,7 @@ object Show:
     s"[${rb.vars.map((v, d) => s"$v:$d").mkString(",")}]{${rb.rebs.map((v, d) => s"$v:$d").mkString(",")}}:${rb.clazz}"
 
   def apply(msg: Msg): String =
-    s"${msg.rcv}.${msg.m}(${msg.args.mkString(",")})${
+    s"${msg.rcv}.${msg.m}(${msg.args.map(apply).mkString(",")})${
       if msg.snd=="" then "" else s"@${msg.snd}"}${
       if msg.tt>0 then s" after ${msg.tt}" else ""}${
       if msg.dl.nonEmpty then s" deadline ${msg.dl.get}" else ""
@@ -59,6 +59,12 @@ object Show:
   private def exprPar(e:Expr2): String = e match
     case i:Expr2.Infix => s"(${apply(e)})"
     case _ => apply(e)
+
+  def apply(d: Eval.Data): String = d match
+    case Eval.Data.N(n) => n.toString
+    case Eval.Data.B(b) => b.toString
+    case Eval.Data.RebRef(r) => s"&$r"
+
 
   def showStms(s: Statement): List[String] = s match
     case Statement.Seq(e1, e2) => showStms(e1) ::: showStms(e2)

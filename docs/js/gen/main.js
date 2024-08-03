@@ -21685,7 +21685,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   })), new $c_Lcaos_view_Code("haskell")));
   var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$113, 0);
   var $$x10 = new $c_T2("View pretty data", y);
-  var this$116 = $n($m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
+  var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
     var e$1 = $as_T3(e);
     return e$1
   })), $m_Lrebecaos_backend_Semantics$(), new $c_sjsr_AnonFunction1(((st) => {
@@ -21694,9 +21694,8 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   })), new $c_sjsr_AnonFunction1(((a) => {
     var a$1 = $as_T2(a);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(a$1)._1__O()))
-  })), $m_Lcaos_view_Text$()));
-  var y$1 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$116);
-  var $$x9 = new $c_T2("Run semantics St", y$1);
+  })), $m_Lcaos_view_Text$());
+  var $$x9 = new $c_T2("Run semantics (state's view)", y$1);
   var $$x7 = $m_Lcaos_frontend_Configurator$();
   var $$x6 = new $c_sjsr_AnonFunction1(((e$2) => {
     var e$3 = $as_T3(e$2);
@@ -21705,16 +21704,17 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var acts = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1);
     return new $c_Lrebecaos_frontend_CaosConfig$HState(e$3, acts)
   }));
-  var this$121 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
+  var this$120 = $m_Lrebecaos_frontend_CaosConfig$HistorySOS$();
   var sos = $m_Lrebecaos_backend_Semantics$();
-  var y$2 = $n($$x7).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x6, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos, this$121), new $c_sjsr_AnonFunction1(((hs) => {
+  var this$121 = $n($n($$x7).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x6, new $c_Lrebecaos_frontend_CaosConfig$HistorySOS$$anon$1(sos, this$120), new $c_sjsr_AnonFunction1(((hs) => {
     var hs$1 = $as_Lrebecaos_frontend_CaosConfig$HState(hs);
     return $m_Lrebecaos_frontend_CaosConfig$HistorySOS$().toMermaidSnd__Lrebecaos_frontend_CaosConfig$HState__T(hs$1)
   })), new $c_sjsr_AnonFunction1(((act) => {
     var act$1 = $as_T2(act);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))
-  })), $m_Lcaos_view_Mermaid$());
-  var $$x8 = new $c_T2("Run semantics (Sender's view)", y$2);
+  })), $m_Lcaos_view_Mermaid$()));
+  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$121);
+  var $$x8 = new $c_T2("Run semantics (sender's view)", y$2);
   var $$x4 = $m_Lcaos_frontend_Configurator$();
   var $$x3 = new $c_sjsr_AnonFunction1(((e$3$1) => {
     var e$4 = $as_T3(e$3$1);
@@ -21732,7 +21732,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var act$3 = $as_T2(act$2);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$3)._1__O()))
   })), $m_Lcaos_view_Mermaid$());
-  var $$x5 = new $c_T2("Run semantics (Receiver's view)", y$3);
+  var $$x5 = new $c_T2("Run semantics (receiver's view)", y$3);
   var y$4 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$4$1) => {
     var e$5 = $as_T3(e$4$1);
     return e$5

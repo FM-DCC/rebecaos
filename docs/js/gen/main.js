@@ -21714,7 +21714,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var act$1 = $as_T2(act);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))
   })), $m_Lcaos_view_Mermaid$());
-  var $$x8 = new $c_T2("Run semantics Snd", y$2);
+  var $$x8 = new $c_T2("Run semantics (Sender's view)", y$2);
   var $$x4 = $m_Lcaos_frontend_Configurator$();
   var $$x3 = new $c_sjsr_AnonFunction1(((e$3$1) => {
     var e$4 = $as_T3(e$3$1);
@@ -21732,7 +21732,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var act$3 = $as_T2(act$2);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$3)._1__O()))
   })), $m_Lcaos_view_Mermaid$());
-  var $$x5 = new $c_T2("Run semantics Rcv", y$3);
+  var $$x5 = new $c_T2("Run semantics (Receiver's view)", y$3);
   var y$4 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$4$1) => {
     var e$5 = $as_T3(e$4$1);
     return e$5

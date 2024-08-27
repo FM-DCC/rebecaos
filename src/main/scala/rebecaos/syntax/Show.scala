@@ -22,8 +22,11 @@ object Show:
     s"[${rb.vars.map((v, d) => s"$v:$d").mkString(",")}]{${rb.rebs.map((v, d) => s"$v:$d").mkString(",")}}:${rb.clazz}"
 
   def apply(msg: Msg): String =
-    s"${msg.rcv}.${msg.m}(${msg.args.map(apply).mkString(",")})${
-      if msg.snd=="" then "" else s"@${msg.snd}"}${
+    s"${
+      if msg.snd=="" then "[-]" else s"[${msg.snd}]"} ${
+      msg.rcv}.${
+      msg.m}(${
+      msg.args.map(apply).mkString(",")})${
       if msg.tt>0 then s" after ${msg.tt}" else ""}${
       if msg.dl.nonEmpty then s" deadline ${msg.dl.get}" else ""
     }"

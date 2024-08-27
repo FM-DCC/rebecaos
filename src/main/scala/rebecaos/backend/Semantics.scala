@@ -40,7 +40,7 @@ object Semantics extends SOS[Act,St]:
 
   def getInitMsg(s: System): List[Msg] =
     for dec <- s.main yield
-      //println(s"added ${dec.name}.initial(${dec.args})")
+      //println(s"added ${dec.name}.initial(${dec.args.map(a=>Eval(a)(using RebecEnv.empty))})")
       Msg(dec.name,"initial",dec.args.map(a=>Eval(a)(using RebecEnv.empty)),"",0,None)
 
 //  /** Given a rebeca class name, a method name, a list of arguments, and a program, returns a concrete rebeca instance. */

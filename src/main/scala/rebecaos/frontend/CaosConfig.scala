@@ -8,6 +8,7 @@ import rebecaos.backend.*
 import rebecaos.backend.Semantics.*
 import rebecaos.syntax.Program.System
 import rebecaos.syntax.{Program, Show}
+import rebecaos.backend.HistoryState.{HState,HistorySOS}
 
 /** Object used to configure which analysis appear in the browser */
 object CaosConfig extends Configurator[St]:
@@ -25,10 +26,10 @@ object CaosConfig extends Configurator[St]:
       -> "Simple example of a Rebeca program, taken from the paper <a href=\"http://rebeca-lang.org/Rebeca\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. Unlike the original paper, this version initialises the counter in the <code>initial</code> method.",
     "[Dyn] Simple" -> "reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    reb1 = new Example(self):();\n    reb2 = new Example(ex):();\n    ex.add(0);\n    }\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + 1;}\n  }\n}\n\nmain {\n\tExample ex1( ex2):();\n\tExample ex2( ex1):();\n}"
       -> "Varition of the \"Simple\" example of a Rebeca program from the paper <a href=\"http://rebeca-lang.org/Rebeca\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This version also creates new rebecs dynamically.",
-    "Prod-Cons" -> "reactive class Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n\t\tconsumer.consume(p);\n\t\tself.produce();\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}"
+    "Prod-Cons" -> "reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n\t\tconsumer.consume(p);\n\t\tself.produce();\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer prod(cons):();\n\tConsumer cons():();\n}"
       -> "Producer-consumer example from the paper <a href=\"http://rebeca-lang.org/Rebeca\">Rebeca: Theory, Applications, and Tools (FMCO 2006)</a>",
-    "[Dyn] Prod-Cons" -> "reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n    Producer newProducer;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n    if (p==3) {\n\t\t\tnewProducer = new Producer(consumer):();\n    }\n    consumer.consume(p);\n\t\tif(p!=4){\n    \tself.produce();\n    }\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv produce(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer producer(consumer):();\n\tConsumer consumer():();\n}"
-      -> "(Unsupported) Dynamic version of the producer-consumer example from FMCO 2006's paper from Marjan Sirjani",
+    "[Dyn] Prod-Cons" -> "reactiveclass Producer {\n\tknownrebecs {\n\t\tConsumer consumer;\n\t}\n\tstatevars {\n\t\tbyte p;\n    Producer newProducer;\n\t}\n\tmsgsrv initial() {\n\t\tself.produce();\n\t}\n\tmsgsrv produce() {\n\t\t// produce data\n\t\tp=?(1,2,3,4);\n    if (p==3) {\n\t\t\tnewProducer = new Producer(consumer):();\n    }\n    consumer.consume(p);\n\t\tif(p!=4){\n    \tself.produce();\n    }\n\t}\n}\n\nreactiveclass Consumer {\n\tknownrebecs {\n\t}\n\tstatevars {\n\t\tbyte p;\n\t}\n\tmsgsrv initial() {\n\t}\n\tmsgsrv consume(byte data) {\n\t\t// consume data\n\t\tp = data;\n\t}\n}\n\nmain {\n\tProducer prod(cons):();\n\tConsumer cons():();\n}"
+      -> "Dynamic version of the producer-consumer example from FMCO 2006's paper from Marjan Sirjani",
     "[Time] Ticket service" -> "reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}"
       -> "Ticket Service from an SCP'25 paper on Timed Rebeca",
     "Untimed Ticket Service" -> "reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n  }\n  msgsrv initial() {\n  }\n  msgsrv requestTicket() {\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket();\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try();\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):();\n  Customer c(a):();\n}"
@@ -65,49 +66,18 @@ object CaosConfig extends Configurator[St]:
 //      -> "From <a href=\"http://rebeca-lang.org/Rebeca\">http://rebeca-lang.org/Rebeca</a>.",
   )
 
-  case class HState(s: St, acts: List[Act]):
-    override def toString(): String =
-      Show(s)
-
-  object HistorySOS:
-    def apply(sos:SOS[Act,St]): SOS[Act,HState] = new SOS:
-      //type HStatePair = (State,List[Act])
-      // specific to our states (not generic)
-      def next[A>:Act](s:HState): Set[(A,HState)] =
-        for (a,s2) <- sos.next(s.s) yield a -> HState(s2,a :: s.acts)
-
-    // just for our states
-    def toMermaidSnd(hs: HState): String = "sequenceDiagram\n" +
-      (for st <- hs.s._2.toList.sortWith(_._1 < _._1) yield s"  ${st._1} ->> ${st._1}: initial(...)").mkString("\n") +
-      "\n" +
-      (for act <- hs.acts.reverse; m <- act._2.toList
-        yield s"  ${getFrom(m)} ->> ${getTo(m)}: ${getMsg(m)}${getTime(m)}").mkString("\n")
-
-    def toMermaidRcv(hs:HState):String = "sequenceDiagram\n" +
-      (for act <- hs.acts.reverse yield s"  ${getFrom(act._1)} ->> ${getTo(act._1)}: ${
-          getMsg(act._1)}${getTime(act._1)}").mkString("\n")
-
-    private def getTo(a:Msg): String = a.rcv//"[^.]*".r.findFirstIn(a).getOrElse("X")
-    private def getFrom(a:Msg): String = //"@[^ \t\n]*".r.findFirstIn(a).getOrElse("@"+getTo(a)).drop(1)
-      if a.snd.isBlank then getTo(a) else a.snd
-    private def getMsg(a:Msg): String = s"${a.m}(${a.args.mkString(",")})"//"\\.[^@]*".r.findFirstIn(a).getOrElse(".Z").drop(1)
-    private def getTime(a:Msg): String = //"§.*".r.findFirstIn(a).getOrElse("§Z").drop(1)
-      (a.tt,a.dl) match
-        case (0,None) => ""
-        case (i,None) => s" @ $i"
-        case (i,Some(dl)) => s" @ $i..$dl"
-
-
   /** Description of the widgets that appear in the dashboard. */
   val widgets = List(
     "View pretty data" -> view[St](s=>Show(s._1), Code("haskell")).moveTo(0),
 //    "View structure" -> view(Show.mermaid, Mermaid),
      "Run semantics (state's view)" -> steps((e:St)=>e, Semantics, Show.apply, a=>Show(a._1), Text),
 //     "Run semantics2" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), st=>s"${Show(st._1)}\n${st._2.reverse.mkString(" > ")}", a=>Show(a._1), Text),
-     "Run semantics (sender's view)" -> steps((e:St)=>HState(e,List[Act]()),
-        HistorySOS(Semantics), HistorySOS.toMermaidSnd, act=>Show(act._1), Mermaid).expand,
-     "Run semantics (receiver's view)" -> steps((e:St)=>HState(e,List[Act]()),
-        HistorySOS(Semantics), HistorySOS.toMermaidRcv, act=>Show(act._1), Mermaid),
+    "Run semantics (sequence chart)" -> steps((e: St) => HState(e, List[Act]()),
+      HistorySOS(Semantics), HistorySOS.toMermaidSndRcv, act => Show(act._1), Mermaid).expand,
+//    "Run semantics (sender's view)" -> steps((e:St)=>HState(e,List[Act]()),
+//        HistorySOS(Semantics), HistorySOS.toMermaidSnd, act=>Show(act._1), Mermaid).expand,
+//     "Run semantics (receiver's view)" -> steps((e:St)=>HState(e,List[Act]()),
+//        HistorySOS(Semantics), HistorySOS.toMermaidRcv, act=>Show(act._1), Mermaid),
      "Build LTS" -> lts((e:St)=>e, Semantics, Show.short, x => Show(x._1),50),
      "Build LTS (explore)" -> ltsExplore(e=>e, Semantics, Show.short, x => Show(x._1)),
 //     "Global LTS info" -> view((e: St) => {
@@ -154,11 +124,9 @@ object CaosConfig extends Configurator[St]:
       |IF
       |  TT≤min(B) ∧
       |  σ_ri(now)≤DL ∧
-      |  (ri,m(v),rj,TT,DL) notin B ∧
-      |  σ_ri notin Env
       |THEN
-      |  ({σri}∪Env,
-      |   {(ri,m(v),rj,TT,DL)}∪B)
+      |  ({σri} ∪ Env,              // disjoint union
+      |   {(ri,m(v),rj,TT,DL)} ∪ B) // disjoint union
       |  →
       |  ({σ'_ri} ∪ Env',
       |   B')
@@ -172,4 +140,6 @@ object CaosConfig extends Configurator[St]:
     "Build LTS" -> "More information on the operational rules used here" -> sosRules,
     "Build LTS (explore)" -> "More information on the operational rules used here" -> sosRules,
     "Run semantics" -> "More information on the operational rules used here" -> sosRules,
+    "Run semantics (sequence chart)" -> "More information on the sequence charts." ->
+      "Builds interactively a sequence chart. <ul><li>Solid arrows represent messages <strong>sent and received</strong>, and <li>dashed arrows represent </strong>pending messages that are only sent</strong>.</ul>",
   )

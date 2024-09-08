@@ -258,6 +258,7 @@ object Parser :
       string("true").as(Expr2.B(true)) |
       string("false").as(Expr2.B(false)) |
       digits.map(x => Expr2.N(x.toInt)) |
+      (char('-')*>digits).map(x => Expr2.N(x.toInt * -1)) |
 //      (string("new") *> sps *> call).map(c => Expr2.NewReb(c)) |
       anyName.map(Expr2.Var.apply) |
       char('(') *> exprRec <* char(')') |

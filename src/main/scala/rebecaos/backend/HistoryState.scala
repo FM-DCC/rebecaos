@@ -59,7 +59,7 @@ object HistoryState:
     private def getTo(a:Msg): String = a.rcv//"[^.]*".r.findFirstIn(a).getOrElse("X")
     private def getFrom(a:Msg): String = //"@[^ \t\n]*".r.findFirstIn(a).getOrElse("@"+getTo(a)).drop(1)
       if a.snd.isBlank then getTo(a) else a.snd
-    private def getMsg(a:Msg): String = s"${a.m}(${a.args.mkString(",")})"//"\\.[^@]*".r.findFirstIn(a).getOrElse(".Z").drop(1)
+    private def getMsg(a:Msg): String = s"${a.m}(${a.args.map(Show.apply).mkString(",")})"//"\\.[^@]*".r.findFirstIn(a).getOrElse(".Z").drop(1)
     private def getTime(a:Msg): String = //"§.*".r.findFirstIn(a).getOrElse("§Z").drop(1)
       (a.tt,a.dl) match
         case (0,None) => ""

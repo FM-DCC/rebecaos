@@ -12,7 +12,7 @@ import rebecaos.backend.HistoryState.{HState,HistorySOS}
 
 /** Object used to configure which analysis appear in the browser */
 object CaosConfig extends Configurator[St]:
-  val name = "Animator of Rebeca's semantics"
+  val name = "RebeCAOS: an animator of Rebeca's semantics"
   override val languageName: String = "Input Rebeca program"
 
   /** Parser, converting a string into a System in rebecaOS */
@@ -70,7 +70,7 @@ object CaosConfig extends Configurator[St]:
 
   /** Description of the widgets that appear in the dashboard. */
   val widgets = List(
-    "View pretty data" -> view[St](s=>Show(s._1), Code("haskell")).moveTo(0),
+    "View pretty data" -> view[St](s=>Show(s._1), Code("haskell")).moveTo(1),
 //    "View structure" -> view(Show.mermaid, Mermaid),
      "Run semantics (state's view)" -> steps((e:St)=>e, Semantics, Show.apply, a=>Show(a._1), Text),
 //     "Run semantics2" -> steps((e:St)=>(e,List[Act]()), HistorySOS(Semantics), st=>s"${Show(st._1)}\n${st._2.reverse.mkString(" > ")}", a=>Show(a._1), Text),

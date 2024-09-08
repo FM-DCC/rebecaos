@@ -21609,7 +21609,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   this.Lrebecaos_frontend_CaosConfig$__f_documentation = null;
   $n_Lrebecaos_frontend_CaosConfig$ = this;
   $f_Lcaos_frontend_Configurator__$init$__V(this);
-  this.Lrebecaos_frontend_CaosConfig$__f_name = "Animator of Rebeca's semantics";
+  this.Lrebecaos_frontend_CaosConfig$__f_name = "RebeCAOS: an animator of Rebeca's semantics";
   this.Lrebecaos_frontend_CaosConfig$__f_languageName = "Input Rebeca program";
   this.Lrebecaos_frontend_CaosConfig$__f_parser = new $c_sjsr_AnonFunction1(((str) => {
     var str$1 = $as_T(str);
@@ -21624,7 +21624,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
     var s$1 = $as_T3(s);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$System__T($as_Lrebecaos_syntax_Program$System($n(s$1).T3__f__1))
   })), new $c_Lcaos_view_Code("haskell")));
-  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$119, 0);
+  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$119, 1);
   var $$x7 = new $c_T2("View pretty data", y);
   var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
     var e$1 = $as_T3(e);

@@ -5,8 +5,6 @@ import cats.parse.{LocationMap, Parser as P, Parser0 as P0}
 import cats.parse.Numbers.*
 import rebecaos.backend.Eval.Data
 import rebecaos.syntax.Program.*
-import rebecaos.syntax.Program.IExpr.*
-import rebecaos.syntax.Program.BExpr.*
 import rebecaos.syntax.Program.Statement.*
 
 import scala.sys.error
@@ -252,17 +250,17 @@ object Parser :
 ////      bexpr <* sps <* char(until) |
 ////      iexpr <* sps <* char(until)
 
-  def expr2: P[Expr2] =P.recursive[Expr2](exprRec =>
+  def expr2: P[Expr] =P.recursive[Expr](exprRec =>
     // literal: constant, variable, parenthesis, or !literal
-    def lit: P[Expr2] = P.recursive(litR =>
-      string("true").as(Expr2.B(true)) |
-      string("false").as(Expr2.B(false)) |
-      digits.map(x => Expr2.N(x.toInt)) |
-      (char('-')*>digits).map(x => Expr2.N(x.toInt * -1)) |
+    def lit: P[Expr] = P.recursive(litR =>
+      string("true").as(Expr.B(true)) |
+      string("false").as(Expr.B(false)) |
+      digits.map(x => Expr.N(x.toInt)) |
+      (char('-')*>digits).map(x => Expr.N(x.toInt * -1)) |
 //      (string("new") *> sps *> call).map(c => Expr2.NewReb(c)) |
-      anyName.map(Expr2.Var.apply) |
+      anyName.map(Expr.Var.apply) |
       char('(') *> exprRec <* char(')') |
-      (char('!') *> litR).map(x => Expr2.Func("not",List(x)))
+      (char('!') *> litR).map(x => Expr.Func("not",List(x)))
     )
 
     def op1: P[String] = (string("||") | string("\\/")).as("||")
@@ -272,17 +270,17 @@ object Parser :
     def op5: P[String] = oneOf("*/%".toList.map(char)).string
 
 
-    def combine(x:(Expr2,Option[(String,Expr2)])): Expr2 =
-      if x._2.isDefined then Expr2.Infix(x._2.get._1, x._1, x._2.get._2) else x._1
+    def combine(x:(Expr,Option[(String,Expr)])): Expr =
+      if x._2.isDefined then Expr.Infix(x._2.get._1, x._1, x._2.get._2) else x._1
 
-    def infix(p:P[Expr2],ops:P[String]): P[Expr2] = P.recursive(rec =>
+    def infix(p:P[Expr], ops:P[String]): P[Expr] = P.recursive(rec =>
       ((p <* sps) ~ ((ops <* sps) ~ rec).?).map(combine))
 
-    def orP: P[Expr2]   = infix(andP,op1)
-    def andP: P[Expr2]  = infix(ineqP,op2)
-    def ineqP: P[Expr2] = infix(sumP,op3)
-    def sumP: P[Expr2]  = infix(multP,op4)
-    def multP: P[Expr2] = infix(lit,op5)
+    def orP: P[Expr]   = infix(andP,op1)
+    def andP: P[Expr]  = infix(ineqP,op2)
+    def ineqP: P[Expr] = infix(sumP,op3)
+    def sumP: P[Expr]  = infix(multP,op4)
+    def multP: P[Expr] = infix(lit,op5)
 
     orP
   )

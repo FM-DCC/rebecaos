@@ -1,6 +1,6 @@
 package rebecaos.syntax
 
-import Program.{Expr2, InstanceDecl, Msgsrv, ReactiveClass, Statement, System}
+import Program.{Expr, InstanceDecl, Msgsrv, ReactiveClass, Statement, System}
 import rebecaos.backend.Eval
 //import rebecaos.backend.Semantics.{RebecInst, Rebecs, St}
 import rebecaos.backend.{Semantics,RebecEnv}
@@ -51,16 +51,16 @@ object Show:
       "\n    "+showStms(ms.stm).mkString("\n    ")
     }"
 
-  def apply(e:Expr2): String = e match
-    case Expr2.N(n) => n.toString
-    case Expr2.B(b) => b.toString
-    case Expr2.RebRef(r) => r
-    case Expr2.Var(v) => v
-    case Expr2.Infix(op, e1, e2) => s"${exprPar(e1)} $op ${exprPar(e2)}"
-    case Expr2.Func("!", List(e)) => s"!${exprPar(e)}"
-    case Expr2.Func(op,es) => s"$op(${es.map(apply).mkString(",")})"
-  private def exprPar(e:Expr2): String = e match
-    case i:Expr2.Infix => s"(${apply(e)})"
+  def apply(e:Expr): String = e match
+    case Expr.N(n) => n.toString
+    case Expr.B(b) => b.toString
+    //case Expr2.RebRef(r) => r
+    case Expr.Var(v) => v
+    case Expr.Infix(op, e1, e2) => s"${exprPar(e1)} $op ${exprPar(e2)}"
+    case Expr.Func("!", List(e)) => s"!${exprPar(e)}"
+    case Expr.Func(op,es) => s"$op(${es.map(apply).mkString(",")})"
+  private def exprPar(e:Expr): String = e match
+    case i:Expr.Infix => s"(${apply(e)})"
     case _ => apply(e)
 
   def apply(d: Eval.Data): String = d match
@@ -88,7 +88,7 @@ object Show:
     case Statement.NewReb(dec) =>
       List(showInstDecl(dec).drop(3))
     case Statement.Choice(ident,es) =>
-      showStms(Statement.Assign(ident,Expr2.Func("?",es)))
+      showStms(Statement.Assign(ident,Expr.Func("?",es)))
     case Statement.Delay(e) =>
       List(s"delay ${apply(e)}")
 

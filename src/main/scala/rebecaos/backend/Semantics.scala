@@ -2,11 +2,9 @@ package rebecaos.backend
 
 import caos.sos.SOS
 import rebecaos.backend.Semantics.{Act, Rebecs, St}
-import rebecaos.syntax.Program.{BExpr, Expr, Expr2, GVar, IExpr, InstanceDecl, Msgsrv, QVar, ReactiveClass, Statement, System}
+import rebecaos.syntax.Program.{Expr, GVar, InstanceDecl, Msgsrv, QVar, ReactiveClass, Statement, System}
 import RebecEnv.*
 import Statement.*
-import IExpr.*
-import BExpr.*
 import rebecaos.backend.Eval.Data
 import rebecaos.syntax.Show
 

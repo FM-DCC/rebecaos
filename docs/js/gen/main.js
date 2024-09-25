@@ -11406,16 +11406,16 @@ $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_backend_RebecEnv__T = (func
   return ((((("[" + $$x1) + "]{") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ",", "")) + "}:") + $n(rb).Lrebecaos_backend_RebecEnv__f_clazz)
 });
 $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_backend_Semantics$Msg__T = (function(msg) {
-  var $$x6 = (($n(msg).Lrebecaos_backend_Semantics$Msg__f_snd === "") ? "[-]" : (("[" + $n(msg).Lrebecaos_backend_Semantics$Msg__f_snd) + "]"));
-  var $$x5 = $n(msg).Lrebecaos_backend_Semantics$Msg__f_rcv;
-  var $$x4 = $n(msg).Lrebecaos_backend_Semantics$Msg__f_m;
+  var $$x7 = (($n(msg).Lrebecaos_backend_Semantics$Msg__f_snd === "") ? "" : (("[" + $n(msg).Lrebecaos_backend_Semantics$Msg__f_snd) + "]"));
+  var $$x6 = $n(msg).Lrebecaos_backend_Semantics$Msg__f_rcv;
+  var $$x5 = $n(msg).Lrebecaos_backend_Semantics$Msg__f_m;
   var this$2 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_args);
   var f = ((d) => {
     var d$1 = $as_Lrebecaos_backend_Eval$Data(d);
     return this.apply__Lrebecaos_backend_Eval$Data__T(d$1)
   });
   if ((this$2 === $m_sci_Nil$())) {
-    var $$x2 = $m_sci_Nil$()
+    var $$x3 = $m_sci_Nil$()
   } else {
     var arg1 = this$2.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
@@ -11428,13 +11428,23 @@ $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_backend_Semantics$Msg__T = 
       t = nx;
       rest = $as_sci_List($n(rest).tail__O())
     };
-    var $$x2 = h
+    var $$x3 = h
   };
-  var this$3 = $n($$x2);
-  var $$x3 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ",", "");
-  var $$x1 = (($n(msg).Lrebecaos_backend_Semantics$Msg__f_tt > 0) ? (" after " + $n(msg).Lrebecaos_backend_Semantics$Msg__f_tt) : "");
+  var this$3 = $n($$x3);
+  var $$x4 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ",", "");
+  var $$x2 = (($n(msg).Lrebecaos_backend_Semantics$Msg__f_tt > 0) ? (" @ " + $n(msg).Lrebecaos_backend_Semantics$Msg__f_tt) : "");
   var this$4 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl);
-  return ((((((((($$x6 + " ") + $$x5) + ".") + $$x4) + "(") + $$x3) + ")") + $$x1) + ((!this$4.isEmpty__Z()) ? (" deadline " + $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl).get__O()) : ""))
+  if (((!this$4.isEmpty__Z()) && ($n(msg).Lrebecaos_backend_Semantics$Msg__f_tt === 0))) {
+    var $$x1 = (" @ 0.." + $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl).get__O())
+  } else {
+    var this$5 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl);
+    if ((!this$5.isEmpty__Z())) {
+      var $$x1 = (".." + $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl).get__O())
+    } else {
+      var $$x1 = ""
+    }
+  };
+  return ((((((((($$x7 + " ") + $$x6) + ".") + $$x5) + "(") + $$x4) + ")") + $$x2) + $$x1)
 });
 $c_Lrebecaos_syntax_Show$.prototype.short__T3__T = (function(st) {
   var this$2 = $n($as_sc_IterableOnceOps($n($as_sc_IterableOps($n(st).T3__f__2)).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {

@@ -23,12 +23,14 @@ object Show:
 
   def apply(msg: Msg): String =
     s"${
-      if msg.snd=="" then "[-]" else s"[${msg.snd}]"} ${
+      if msg.snd=="" then "" else s"[${msg.snd}]"} ${
+      //if msg.snd=="" then "[-]" else s"[${msg.snd}]"} ${
       msg.rcv}.${
       msg.m}(${
       msg.args.map(apply).mkString(",")})${
-      if msg.tt>0 then s" after ${msg.tt}" else ""}${
-      if msg.dl.nonEmpty then s" deadline ${msg.dl.get}" else ""
+      if msg.tt>0 then s" @ ${msg.tt}" else ""}${
+      if msg.dl.nonEmpty && msg.tt==0 then s" @ 0..${msg.dl.get}"
+      else if msg.dl.nonEmpty then s"..${msg.dl.get}" else  ""
     }"
 
   def short(st: Semantics.St): String =

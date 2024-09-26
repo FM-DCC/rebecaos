@@ -21602,7 +21602,7 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   this.Lrebecaos_frontend_CaosConfig$__f_documentation = null;
   $n_Lrebecaos_frontend_CaosConfig$ = this;
   $f_Lcaos_frontend_Configurator__$init$__V(this);
-  this.Lrebecaos_frontend_CaosConfig$__f_name = "RebeCAOS: an animator of Rebeca's semantics";
+  this.Lrebecaos_frontend_CaosConfig$__f_name = "RebeCaos: an animator of Rebeca's semantics";
   this.Lrebecaos_frontend_CaosConfig$__f_languageName = "Input Rebeca program";
   this.Lrebecaos_frontend_CaosConfig$__f_parser = new $c_sjsr_AnonFunction1(((str) => {
     var str$1 = $as_T(str);

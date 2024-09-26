@@ -30,16 +30,18 @@ object Semantics extends SOS[Act,St]:
     for dec <- s.main yield
       instantiate(dec, s, Data.N(0))
 
+  /** Creates a pair with the variable name and a fresh state */
   def instantiate(dec: InstanceDecl, s:System, now:Data): (String,RebecEnv) =
     val clazz = s.classes.getOrElse(dec.clazz, sys.error(s"Unknown rebeca class: ${dec.clazz}"))
     val meth = clazz.msgsrv
     val rebs = unifyReb(clazz.known, dec.known) + ("self"->dec.name) //no sender
-    dec.name -> RebecEnv(Map("now"->now),rebs,meth,dec.clazz)
+    dec.name -> (RebecEnv(Map("now"->now),meth,dec.clazz) ++ rebs)
 
   def getInitMsg(s: System): List[Msg] =
     for dec <- s.main yield
       //println(s"added ${dec.name}.initial(${dec.args.map(a=>Eval(a)(using RebecEnv.empty))})")
-      Msg(dec.name,"initial",dec.args.map(a=>Eval(a)(using RebecEnv.empty)),"",0,None)
+      val x = Msg(dec.name,"initial",dec.args.map(a=>Eval(a)(using RebecEnv.empty)),"",0,None)
+      x
 
 //  /** Given a rebeca class name, a method name, a list of arguments, and a program, returns a concrete rebeca instance. */
 //  def instantiate(dec: InstanceDecl, msgsrvN:String, s:System): RebecInst =
@@ -86,8 +88,8 @@ object Semantics extends SOS[Act,St]:
           st._1
         )
     yield
-      val updMsg = newMsgs.map(m => subst(m,rebEnv.rebs + ("self"->rcv)))
-      //println(s"# msg $rcv.$m - old msgs: ${st._3}; dropped $msg; adding ${newMsgs} --> $updMsg")
+      val updMsg = newMsgs.map(m => subst(m,Map("self"->rcv)))
+//      println(s"# msg $rcv.$m - old msgs: ${st._3}; dropped $msg; adding ${newMsgs} --> $updMsg")
       (msg,updMsg)
         -> (st._1, (st._2 + (rcv -> newEnv)) ++ newRebs, (st._3 - msg) ++ updMsg)
 
@@ -104,17 +106,18 @@ object Semantics extends SOS[Act,St]:
     println(s"--> Got: $res")
     res
 
-  def evalStm(stm:Statement)(using reb: RebecEnv, sys:System): Set[(RebecEnv, Msgs, Rebecs)] = stm match
+  def evalStm(stm:Statement)(using reb: RebecEnv, syst:System): Set[(RebecEnv, Msgs, Rebecs)] = stm match
     case Skip => Set((reb,Bag(),Map()))
     case Seq(Skip, c2) => evalStm(c2)
     case Seq(c1, c2) =>
       for
         (sigma,msgs,r1) <- evalStm(c1)
-        (sigma2,msgs2,r2) <- evalStm(c2)(using reb++sigma.vars++sigma.rebs)
+        (sigma2,msgs2,r2) <- evalStm(c2)(using reb++sigma.vars)
       yield
         (sigma2 , msgs ++ msgs2 , r1 ++ r2)
     case Assign(ident, e) =>
-      val reb2 = reb + (ident -> Eval(e)(using reb))
+      val reb2 = reb + (ident -> Eval(e))
+      //println(s"[:=] added ${ident}<-${Eval(e)}")
       Set((reb2 , Bag() , Map()))
     case ITE(b, ct, cf) => if (Eval(b)(using reb).toBool)
       then evalStm(ct)
@@ -129,26 +132,25 @@ object Semantics extends SOS[Act,St]:
       // (1) create a new instance with a global name,
       //     replacing only known rebecs and using a correct "now", and
       // (2) add a new msg to initialise it, evaluating arguments
-      val globalName = RebecEnv.newVar
-      val newKnown = dec.known.map(k => reb.rebs.getOrElse(k,k))
-      val dec2 = InstanceDecl(dec.clazz,globalName,newKnown,dec.args)
-//      val updReb = reb ++
-//        unify(mth.vars, args) + // adding vars=values
-//        ("now" -> Data.N(rebEnv.now max tt)) + // setting "now" value
-//        ("sender" -> Data.RebRef(snd))
-      val (localName,reb2) = instantiate(dec2,sys,Data.N(reb.now))
-      val msg = Msg(globalName,"initial",dec.args.map(a=>Eval(a)(using reb)),"",reb.now,None)
-//      val reb3 =
-      Set((reb + (localName->globalName), Bag()+msg, Map(globalName -> reb2)))
-    case Call(rebec, meth, args, after, deadline) =>
-      val after2 = after.map(e=> Eval(e)(using reb))
-      val deadline2 = deadline.map(e=> Eval(e)(using reb))
+      val rebID = RebecEnv.newVar
+      val localName = dec.name // localName = new ...
+      val clazz = syst.classes.getOrElse(dec.clazz, sys.error(s"Unknown rebeca class: ${dec.clazz}")) // class definition used for the new rebec
+      val meth = clazz.msgsrv // needed to the state (env) of the new rebec
+      val knwonRebs = unifyReb(clazz.known, dec.known.map(reb.getReb))
+      val newRebState = RebecEnv(Map("now"->Data.N(reb.now),"self"->Data.RebRef(rebID)),meth,dec.clazz)++knwonRebs
+      val msg = Msg(rebID,"initial",dec.args.map(Eval(_)),reb.getReb("self"),reb.now,None)
+//      println(s"[:=new] added ${localName}<-${rebID}")
+      Set((reb + (localName->rebID), Bag()+msg, Map(rebID -> newRebState)))
+    case Call(rebVar, meth, args, after, deadline) =>
+      val r = reb.getReb(rebVar)
+      val after2 = after.map(Eval(_))
+      val deadline2 = deadline.map(Eval(_))
       val tt = reb.now + after2.map(_.toInt).getOrElse(0)
       val dl = deadline2.map(_.toInt + reb.now)
 //      println(s"DEADLINE - updated from $deadline to $deadline2 to $dl (and 'after' set to $after2 to $tt)")
 //      println(s"msg: ${Show(Msg(rebec,meth,args.map(e=>eval(e)(using reb.vars)),"self",tt,dl))} -- ${Msg(rebec,meth,args.map(e=>eval(e)(using reb.vars)),"self",tt,dl)}")
       Set((reb,
-           Bag() + Msg(rebec,meth,args.map(e=>Eval(e)(using reb)),"self",tt,dl),
+           Bag() + Msg(r,meth,args.map(Eval(_)),"self",tt,dl),
            Map()))
 //    case Call(rebec, meth, args, _, _) => sys.error("Semantics of calls with time not yet supported.")
     case Delay(d) => // sys.error("Semantics of delay not yet supported.")
@@ -168,8 +170,8 @@ object Semantics extends SOS[Act,St]:
   // Auxiliar: replacing values and evaluating integers/booleans
   /////////////////////
 
-  def subst(m:Msg,knownReb: KnownReb): Msg =
-    def upd(s:String) = knownReb.getOrElse(s,s)
+  def subst(m:Msg,updMap:Map[String,String]): Msg =
+    def upd(s:String) = updMap.getOrElse(s,s)
     Msg(upd(m.rcv),m.m,m.args,upd(m.snd),m.tt,m.dl)
 
 //  def subst(stm:Statement)(using env:Valuation): Statement = stm match

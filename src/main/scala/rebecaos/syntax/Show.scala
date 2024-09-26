@@ -19,7 +19,8 @@ object Show:
     rbs.map((k, v) => s"$k => ${apply(v)}").mkString("\n")
 
   def apply(rb: RebecEnv): String =
-    s"[${rb.vars.map((v, d) => s"$v:${apply(d)}").mkString(",")}]{${rb.rebs.map((v, d) => s"$v:$d").mkString(",")}}:${rb.clazz}"
+//    s"[${rb.vars.map((v, d) => s"$v:${apply(d)}").mkString(",")}]{${rb.rebs.map((v, d) => s"$v:$d").mkString(",")}}:${rb.clazz}"
+    s"[${rb.vars.map((v, d) => s"$v:${apply(d)}").mkString(",")}]:${rb.clazz}"
 
   def apply(msg: Msg): String =
     s"${

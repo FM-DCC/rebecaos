@@ -28,9 +28,9 @@ object Eval:
       case Some(Data.N(n)) => Data.N(n)
       case Some(Data.B(n)) => Data.B(n)
       case Some(Data.RebRef(r)) => Data.RebRef(r)
-      case None => env.rebs.get(v) match
-        case Some(str) => Data.RebRef(str)
-        case None => sys.error(s"Unknown variable '$v'.")
+//      case None => env.rebs.get(v) match
+//        case Some(str) => Data.RebRef(str)
+      case None => sys.error(s"Unknown variable '$v'.")
 //    case Expr2.NewReb(_) => Data.RebRef(RebecEnv.newVar) // ignoring call
     case Expr.Infix("&&",e1,e2) => Data.B(apply(e1).toBool && apply(e2).toBool)
     case Expr.Infix("||",e1,e2) => Data.B(apply(e1).toBool || apply(e2).toBool)

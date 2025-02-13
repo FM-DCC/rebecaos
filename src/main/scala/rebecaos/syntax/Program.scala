@@ -8,7 +8,7 @@ import rebecaos.backend.Eval
 object Program:
 
   /** Full system: collection of reactive classes' definitions, followed by the concrete instances */
-  case class System(classes: Map[String,ReactiveClass], main: List[InstanceDecl])
+  case class System(classes: Map[String,ReactiveClass], main: List[InstanceDecl], reqs: List[Expr]=Nil)
 
   /** Declaration of an instance of a rebec (actor) */
   case class InstanceDecl(clazz: String, name: String, known: List[String], args: List[Expr])
@@ -36,7 +36,7 @@ object Program:
   enum Expr:
     case N(n:Int)
     case B(b:Boolean)
-    case Var(v:String)
+    case Var(v:String,prefix:String="")
     case Infix(op:String, e1:Expr, e2:Expr)
     case Func(op:String,es:List[Expr])
 //    case RebRef(r:String)

@@ -22,7 +22,7 @@ object CaosConfig extends Configurator[St]:
 
   /** Examples of programs that the user can choose from. The first is the default one. */
   val examples = List(
-    "Simple" -> "reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    ex.add(1);}\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + a;}\n  }\n}\n\nmain {\n\tExample ex1(ex2):();\n\tExample ex2(ex1):();\n}"
+    "Simple" -> "reactiveclass Example {\n\tknownrebecs { Example ex;}\n\tstatevars { int counter; }\n\tmsgsrv initial() {\n    counter=0;\n    ex.add(1);}\n\tmsgsrv add(int a) {\n\t\tif ( counter < 100) \n\t\t\t{counter = counter + a;}\n  }\n}\n\nmain {\n\tExample ex1(ex2):();\n\tExample ex2(ex1):();\n}\n\nreaches ex1.counter==1;\nreaches ex2.counter==1;\nreaches deadlock;"
       -> "Simple example of a Rebeca program, borrowed from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This includes a few adaptations from the original paper, e.g., initialising the counter in the <code>initial</code> method.",
     "[Dyn] Simple" -> "reactiveclass Example {\n\tknownrebecs {}\n\tstatevars {\n  \tint counter;\n    Example target;\n  }\n\tmsgsrv initial() {\n    counter=0;\n    target = self;\n    target.add(1);}\n\tmsgsrv add(int a) {\n  \tcounter = counter + a;\n\t\tif ( counter == 1) \n    \ttarget = new Example():();\n\t\ttarget.add(1);\n  }\n}\n\nmain {\n\tExample ex1():();\n}"
        -> "Variation of the \"Simple\" example of a Rebeca program from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This version keeps creating new Example rebecs dynamically every 1-2 counts.",
@@ -97,6 +97,22 @@ object CaosConfig extends Configurator[St]:
           (if !done then "\n(stopped: limit of edges reached)" else "")
       },
       Text),
+    "Reachability checks" -> view((e:St)=> {
+          val search = Semantics.checkReqs(e)
+          var res = ""
+          if !search._3 then res += s"stopped after traversing ${search._2} edges"
+          res +=
+            (for x <- search._1
+              yield s"Found state where '${Show(x._1)}' after\n  ${x._2._1.replaceAll(" > ","\n  ")}:\n${x._2._2}")
+              .mkString("\n-----------------\n")
+          if res.isEmpty then e._1.reqs.size.match {
+            case 0 => s"Write \"reaches EXPR;\" at the end of the file to search for a state that satisfies EXPR."
+            case 1 => s"The state with '${Show(e._1.reqs.head)}' is not reachable."
+            case _ => s"None of the ${e._1.reqs.size} states is reachable."
+          } else
+            res
+        },
+      Text ),
 //    "Find strong bisimulation (given a program \"A ~ B\")" ->
 //      compareStrongBisim(Semantics, Semantics,
 //        (e: System) => System(e.defs, e.main, None),

@@ -54,6 +54,11 @@ object Parser :
     P.charIn('A' to 'Z') | P.charIn('a' to 'z') | P.charIn('0' to '9') | P.charIn('_')
   private def anyName: P[String] =
     alphaDigit.rep.string
+  private def qAnyName: P[Expr.Var] =
+    (anyName ~ (char('.') *> anyName).?).map( x => x match
+      case (str,None) => Expr.Var(str,"")
+      case (str,Some(str2)) => Expr.Var(str2,str)
+    )
   private def varName: P[String] =
     (charIn('a' to 'z') ~ alphaDigit.rep0).string
   private def className: P[String] =
@@ -110,15 +115,18 @@ object Parser :
   def system: P[System] =
     (sps.with1 *>
       reactiveclass.repSep0(sps).with1 ~
-      (sps.with1 *> mainblock) <*
-      sps
-    ).map(x => System(x._1.toMap,x._2))
+      (sps.with1 *> mainblock) ~
+      (sps *> (check <* sps).repSep0(sps))
+    ).map(x => System(x._1._1.toMap,x._1._2,x._2))
 
 
   def mainblock: P[List[InstanceDecl]] =
     string("main") *> sps *>
       ((char('{') *> sps *> instancedecl.repSep0(sps)) <* sps <* char('}'))
         .map(_.toList)
+
+  def check: P[Expr] =
+    string("reaches") *> sps *> (expr2 <* sps <* char(';'))
 
   def instancedecl: P[InstanceDecl] =
     //className rebecName(⟨rebecName⟩∗) : (⟨literal⟩∗);
@@ -258,7 +266,7 @@ object Parser :
       digits.map(x => Expr.N(x.toInt)) |
       (char('-')*>digits).map(x => Expr.N(x.toInt * -1)) |
 //      (string("new") *> sps *> call).map(c => Expr2.NewReb(c)) |
-      anyName.map(Expr.Var.apply) |
+      qAnyName |
       char('(') *> exprRec <* char(')') |
       (char('!') *> litR).map(x => Expr.Func("not",List(x)))
     )

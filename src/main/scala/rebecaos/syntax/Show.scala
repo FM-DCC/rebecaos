@@ -58,7 +58,8 @@ object Show:
     case Expr.N(n) => n.toString
     case Expr.B(b) => b.toString
     //case Expr2.RebRef(r) => r
-    case Expr.Var(v) => v
+    case Expr.Var(v,"") => v
+    case Expr.Var(v,pre) => s"$pre.$v"
     case Expr.Infix(op, e1, e2) => s"${exprPar(e1)} $op ${exprPar(e2)}"
     case Expr.Func("!", List(e)) => s"!${exprPar(e)}"
     case Expr.Func(op,es) => s"$op(${es.map(apply).mkString(",")})"

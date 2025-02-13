@@ -174,6 +174,55 @@ object Semantics extends SOS[Act,St]:
     def upd(s:String) = updMap.getOrElse(s,s)
     Msg(upd(m.rcv),m.m,m.args,upd(m.snd),m.tt,m.dl)
 
+
+  def checkReqs(s:St, max:Int=5000): (Map[Expr,(String,String)],Int,Boolean) =
+    val totalReq = s._1.reqs.size
+    def aux(nextSt:Map[St,List[Act]], done:Set[St],
+            edges:Int, limit:Int,
+            reqReached: Map[Expr,(String,String)]): (Map[Expr,(String,String)],Int,Boolean) =
+      if limit <=0 then
+        return (Map(),edges,false)
+      if reqReached.size >= totalReq then
+        return (reqReached,edges,true)
+      nextSt.headOption match
+        case None =>
+          (reqReached, edges, true)
+        case Some((st,_)) if done contains st =>
+          aux(nextSt-st,done,edges,limit,reqReached)
+        case Some((st,trace)) => //visiting new state
+          val more = next(st)
+          val checks = check(st,trace,reqReached,more.isEmpty)
+          aux((nextSt-st)++more.map(as=>(as._2 -> (as._1::trace))).toMap, done+st, edges+more.size,limit-more.size,checks)
+
+    def check(st:St, tr:List[Act], reqs:Map[Expr,(String,String)],dead:Boolean): Map[Expr,(String,String)] =
+      val newReq = for req <- st._1.reqs
+                       if !reqs.contains(req)  &&
+                         (checkExpr(req,st._2) ||
+                           (req==Expr.Var("deadlock") && dead))
+        yield req -> (tr.reverse.map(x=>Show(x._1)).mkString(" > ") -> Show(st))
+      reqs ++ newReq.toMap
+
+//    def checkExprAux(exp:Expr,rebs:Rebecs): Boolean =
+//      println(s"## checking if '${Show(exp)}' knowing '${Show.applyR(rebs)}'")
+//      val res = checkExpr(exp,rebs)
+//      if res then
+//        println(s"s --> TRUE (${Eval.eval(exp)(using rebs)} != B(false)? YES) ")
+//      res
+
+    def checkExpr(exp:Expr,rebs:Rebecs): Boolean =
+      try
+//        val res = Eval.eval(exp)(using rebs)
+//        println(s"is $res != B(false)? --> ${res != Data.B(false)}" )
+//        res != Data.B(false)
+        Eval.eval(exp)(using rebs) != Data.B(false)
+      catch
+        case Eval.UnkonwnElm(_) => false
+        case t:Throwable => throw t
+
+    aux(Map(s->Nil), Set(), 0, max, Map())
+
+
+
 //  def subst(stm:Statement)(using env:Valuation): Statement = stm match
 //    case Skip => Skip
 //    case Seq(c1, c2) => Seq(subst(c1),subst(c2))

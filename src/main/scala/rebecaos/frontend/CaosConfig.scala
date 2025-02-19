@@ -103,7 +103,6 @@ object CaosConfig extends Configurator[St]:
       Text),
     "Reachability checks" -> view((e:St)=> {
           val search = Semantics.checkReqs(e)
-          println(search)
           var res =
             (for x <- search._1
               yield s"Found state where '${Show(x._1)}' after\n  ${x._2._1.replaceAll(" > ","\n  ")}:\n${x._2._2}")

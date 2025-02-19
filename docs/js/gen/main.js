@@ -5768,35 +5768,6 @@ function $m_jl_StackTrace$StringRE$() {
   };
   return $n_jl_StackTrace$StringRE$
 }
-/** @constructor */
-function $c_jl_System$Streams$() {
-  this.jl_System$Streams$__f_out = null;
-  this.jl_System$Streams$__f_err = null;
-  $n_jl_System$Streams$ = this;
-  this.jl_System$Streams$__f_out = new $c_jl_JSConsoleBasedPrintStream(false);
-  this.jl_System$Streams$__f_err = new $c_jl_JSConsoleBasedPrintStream(true)
-}
-$c_jl_System$Streams$.prototype = new $h_O();
-$c_jl_System$Streams$.prototype.constructor = $c_jl_System$Streams$;
-/** @constructor */
-function $h_jl_System$Streams$() {
-  /*<skip>*/
-}
-$h_jl_System$Streams$.prototype = $c_jl_System$Streams$.prototype;
-var $d_jl_System$Streams$ = new $TypeData().initClass({
-  jl_System$Streams$: 0
-}, false, "java.lang.System$Streams$", {
-  jl_System$Streams$: 1,
-  O: 1
-});
-$c_jl_System$Streams$.prototype.$classData = $d_jl_System$Streams$;
-var $n_jl_System$Streams$;
-function $m_jl_System$Streams$() {
-  if ((!$n_jl_System$Streams$)) {
-    $n_jl_System$Streams$ = new $c_jl_System$Streams$()
-  };
-  return $n_jl_System$Streams$
-}
 function $p_jl_System$SystemProperties$__loadSystemProperties__O($thiz) {
   var result = {};
   result["java.version"] = "1.8";
@@ -16059,28 +16030,6 @@ function $m_s_sys_package$() {
   return $n_s_sys_package$
 }
 /** @constructor */
-function $c_s_util_DynamicVariable(init) {
-  this.s_util_DynamicVariable__f_v = null;
-  this.s_util_DynamicVariable__f_v = init
-}
-$c_s_util_DynamicVariable.prototype = new $h_O();
-$c_s_util_DynamicVariable.prototype.constructor = $c_s_util_DynamicVariable;
-/** @constructor */
-function $h_s_util_DynamicVariable() {
-  /*<skip>*/
-}
-$h_s_util_DynamicVariable.prototype = $c_s_util_DynamicVariable.prototype;
-$c_s_util_DynamicVariable.prototype.toString__T = (function() {
-  return (("DynamicVariable(" + this.s_util_DynamicVariable__f_v) + ")")
-});
-var $d_s_util_DynamicVariable = new $TypeData().initClass({
-  s_util_DynamicVariable: 0
-}, false, "scala.util.DynamicVariable", {
-  s_util_DynamicVariable: 1,
-  O: 1
-});
-$c_s_util_DynamicVariable.prototype.$classData = $d_s_util_DynamicVariable;
-/** @constructor */
 function $c_s_util_Sorting$() {
   /*<skip>*/
 }
@@ -21945,35 +21894,32 @@ function $c_Lrebecaos_frontend_CaosConfig$() {
   var y$6 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$6$1) => {
     var e$7 = $as_T3(e$6$1);
     var search = $m_Lrebecaos_backend_Semantics$().checkReqs__T3__I__T3(e$7, 5000);
-    var this$146 = $m_s_Console$();
-    var this$147 = $n(this$146.out__Ljava_io_PrintStream());
-    this$147.java$lang$JSConsoleBasedPrintStream$$printString__T__V((search + "\n"));
-    var this$148 = $n($as_sc_IterableOnceOps($n($as_sc_IterableOps($n(search).T3__f__1)).map__F1__O(new $c_sjsr_AnonFunction1(((x$4) => {
+    var this$145 = $n($as_sc_IterableOnceOps($n($as_sc_IterableOps($n(search).T3__f__1)).map__F1__O(new $c_sjsr_AnonFunction1(((x$4) => {
       var x$5 = $as_T2(x$4);
       return ((((("Found state where '" + $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$Expr__T($as_Lrebecaos_syntax_Program$Expr($n(x$5)._1__O()))) + "' after\n  ") + $f_T__replaceAll__T__T__T($n($as_T($n($as_T2($n(x$5)._2__O()))._1__O())), " > ", "\n  ")) + ":\n") + $n($as_T2($n(x$5)._2__O()))._2__O())
     })))));
-    var res = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$148, "", "\n-----------------\n", "");
+    var res = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$145, "", "\n-----------------\n", "");
     if ((!$uZ($n(search).T3__f__3))) {
       $m_sc_StringOps$();
       var x$6 = res;
-      var this$151 = $n(x$6);
-      if ((!(this$151 === ""))) {
+      var this$148 = $n(x$6);
+      if ((!(this$148 === ""))) {
         res = (res + "\n-----------------\n")
       };
       res = ((res + ("Stopped after traversing " + $n(search).T3__f__2)) + " edges.\n")
     };
-    var this$152 = $n(res);
-    if ((this$152 === "")) {
-      var this$153 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
-      var x5 = this$153.length__I();
+    var this$149 = $n(res);
+    if ((this$149 === "")) {
+      var this$150 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
+      var x5 = this$150.length__I();
       if ((x5 === 0)) {
         return "Write \"reaches EXPR;\" at the end of the file to search for a state that satisfies EXPR."
       };
       if ((x5 === 1)) {
         return (("The state with '" + $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$Expr__T($as_Lrebecaos_syntax_Program$Expr($n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs).head__O()))) + "' is not reachable.")
       };
-      var this$154 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
-      return (("None of the " + this$154.length__I()) + " states is reachable.")
+      var this$151 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
+      return (("None of the " + this$151.length__I()) + " states is reachable.")
     } else {
       return res
     }
@@ -22250,39 +22196,6 @@ function $m_s_Array$() {
     $n_s_Array$ = new $c_s_Array$()
   };
   return $n_s_Array$
-}
-/** @constructor */
-function $c_s_Console$() {
-  this.s_Console$__f_outVar = null;
-  $n_s_Console$ = this;
-  this.s_Console$__f_outVar = new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_out);
-  new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_err);
-  new $c_s_util_DynamicVariable(null)
-}
-$c_s_Console$.prototype = new $h_O();
-$c_s_Console$.prototype.constructor = $c_s_Console$;
-/** @constructor */
-function $h_s_Console$() {
-  /*<skip>*/
-}
-$h_s_Console$.prototype = $c_s_Console$.prototype;
-$c_s_Console$.prototype.out__Ljava_io_PrintStream = (function() {
-  return $as_Ljava_io_PrintStream($n(this.s_Console$__f_outVar).s_util_DynamicVariable__f_v)
-});
-var $d_s_Console$ = new $TypeData().initClass({
-  s_Console$: 0
-}, false, "scala.Console$", {
-  s_Console$: 1,
-  O: 1,
-  s_io_AnsiColor: 1
-});
-$c_s_Console$.prototype.$classData = $d_s_Console$;
-var $n_s_Console$;
-function $m_s_Console$() {
-  if ((!$n_s_Console$)) {
-    $n_s_Console$ = new $c_s_Console$()
-  };
-  return $n_s_Console$
 }
 /** @constructor */
 function $c_s_LowPriorityImplicits() {
@@ -29252,17 +29165,6 @@ var $d_Lcats_parse_Parser$Error = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lcats_parse_Parser$Error.prototype.$classData = $d_Lcats_parse_Parser$Error;
-/** @constructor */
-function $c_Ljava_io_OutputStream() {
-  /*<skip>*/
-}
-$c_Ljava_io_OutputStream.prototype = new $h_O();
-$c_Ljava_io_OutputStream.prototype.constructor = $c_Ljava_io_OutputStream;
-/** @constructor */
-function $h_Ljava_io_OutputStream() {
-  /*<skip>*/
-}
-$h_Ljava_io_OutputStream.prototype = $c_Ljava_io_OutputStream.prototype;
 class $c_jl_AssertionError extends $c_jl_Error {
   constructor(detailMessage) {
     super();
@@ -36744,20 +36646,6 @@ var $d_Lcats_parse_Parser$Impl$WithContextP0 = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lcats_parse_Parser$Impl$WithContextP0.prototype.$classData = $d_Lcats_parse_Parser$Impl$WithContextP0;
-function $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__($thiz, out) {
-  return $thiz
-}
-/** @constructor */
-function $c_Ljava_io_FilterOutputStream() {
-  /*<skip>*/
-}
-$c_Ljava_io_FilterOutputStream.prototype = new $h_Ljava_io_OutputStream();
-$c_Ljava_io_FilterOutputStream.prototype.constructor = $c_Ljava_io_FilterOutputStream;
-/** @constructor */
-function $h_Ljava_io_FilterOutputStream() {
-  /*<skip>*/
-}
-$h_Ljava_io_FilterOutputStream.prototype = $c_Ljava_io_FilterOutputStream.prototype;
 class $c_jl_ArithmeticException extends $c_jl_RuntimeException {
   constructor(s) {
     super();
@@ -36919,28 +36807,6 @@ var $d_jl_IndexOutOfBoundsException = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_jl_IndexOutOfBoundsException.prototype.$classData = $d_jl_IndexOutOfBoundsException;
-/** @constructor */
-function $c_jl_JSConsoleBasedPrintStream$DummyOutputStream() {
-  /*<skip>*/
-}
-$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype = new $h_Ljava_io_OutputStream();
-$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.constructor = $c_jl_JSConsoleBasedPrintStream$DummyOutputStream;
-/** @constructor */
-function $h_jl_JSConsoleBasedPrintStream$DummyOutputStream() {
-  /*<skip>*/
-}
-$h_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype = $c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype;
-var $d_jl_JSConsoleBasedPrintStream$DummyOutputStream = new $TypeData().initClass({
-  jl_JSConsoleBasedPrintStream$DummyOutputStream: 0
-}, false, "java.lang.JSConsoleBasedPrintStream$DummyOutputStream", {
-  jl_JSConsoleBasedPrintStream$DummyOutputStream: 1,
-  Ljava_io_OutputStream: 1,
-  O: 1,
-  Ljava_io_Closeable: 1,
-  jl_AutoCloseable: 1,
-  Ljava_io_Flushable: 1
-});
-$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream$DummyOutputStream;
 class $c_jl_NegativeArraySizeException extends $c_jl_RuntimeException {
   constructor() {
     super();
@@ -47928,30 +47794,6 @@ function $m_Lcats_instances_package$option$() {
   };
   return $n_Lcats_instances_package$option$
 }
-function $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__($thiz, _out, autoFlush, charset) {
-  $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__($thiz, _out);
-  return $thiz
-}
-/** @constructor */
-function $c_Ljava_io_PrintStream() {
-  /*<skip>*/
-}
-$c_Ljava_io_PrintStream.prototype = new $h_Ljava_io_FilterOutputStream();
-$c_Ljava_io_PrintStream.prototype.constructor = $c_Ljava_io_PrintStream;
-/** @constructor */
-function $h_Ljava_io_PrintStream() {
-  /*<skip>*/
-}
-$h_Ljava_io_PrintStream.prototype = $c_Ljava_io_PrintStream.prototype;
-function $as_Ljava_io_PrintStream(obj) {
-  return (((obj instanceof $c_Ljava_io_PrintStream) || (obj === null)) ? obj : $throwClassCastException(obj, "java.io.PrintStream"))
-}
-function $isArrayOf_Ljava_io_PrintStream(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Ljava_io_PrintStream)))
-}
-function $asArrayOf_Ljava_io_PrintStream(obj, depth) {
-  return (($isArrayOf_Ljava_io_PrintStream(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.io.PrintStream;", depth))
-}
 class $c_Lrebecaos_backend_Eval$UnkonwnElm extends $c_jl_RuntimeException {
   constructor(msg) {
     super();
@@ -50107,73 +49949,6 @@ function $m_Lcats_parse_Parser$Impl$StartParser$() {
   };
   return $n_Lcats_parse_Parser$Impl$StartParser$
 }
-function $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V($thiz, line) {
-  if (($as_T((typeof console)) !== "undefined")) {
-    if (($thiz.jl_JSConsoleBasedPrintStream__f_isErr && $uZ((!(!console.error))))) {
-      console.error(line)
-    } else {
-      console.log(line)
-    }
-  }
-}
-/** @constructor */
-function $c_jl_JSConsoleBasedPrintStream(isErr) {
-  this.jl_JSConsoleBasedPrintStream__f_isErr = false;
-  this.jl_JSConsoleBasedPrintStream__f_buffer = null;
-  this.jl_JSConsoleBasedPrintStream__f_isErr = isErr;
-  var out = new $c_jl_JSConsoleBasedPrintStream$DummyOutputStream();
-  $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__(this, out, false, null);
-  this.jl_JSConsoleBasedPrintStream__f_buffer = ""
-}
-$c_jl_JSConsoleBasedPrintStream.prototype = new $h_Ljava_io_PrintStream();
-$c_jl_JSConsoleBasedPrintStream.prototype.constructor = $c_jl_JSConsoleBasedPrintStream;
-/** @constructor */
-function $h_jl_JSConsoleBasedPrintStream() {
-  /*<skip>*/
-}
-$h_jl_JSConsoleBasedPrintStream.prototype = $c_jl_JSConsoleBasedPrintStream.prototype;
-$c_jl_JSConsoleBasedPrintStream.prototype.java$lang$JSConsoleBasedPrintStream$$printString__T__V = (function(s) {
-  var rest = s;
-  while ((rest !== "")) {
-    var this$1 = $n(rest);
-    var nlPos = $uI(this$1.indexOf("\n"));
-    if ((nlPos < 0)) {
-      this.jl_JSConsoleBasedPrintStream__f_buffer = (("" + this.jl_JSConsoleBasedPrintStream__f_buffer) + rest);
-      rest = ""
-    } else {
-      var $$x1 = this.jl_JSConsoleBasedPrintStream__f_buffer;
-      var this$2 = $n(rest);
-      if ((nlPos > this$2.length)) {
-        $charAt(this$2, nlPos)
-      };
-      if ((nlPos < 0)) {
-        $charAt(this$2, (-1))
-      };
-      $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V(this, (("" + $$x1) + $as_T(this$2.substring(0, nlPos))));
-      this.jl_JSConsoleBasedPrintStream__f_buffer = "";
-      var this$3 = $n(rest);
-      var beginIndex = ((1 + nlPos) | 0);
-      if (((beginIndex < 0) || (beginIndex > this$3.length))) {
-        $charAt(this$3, beginIndex)
-      };
-      rest = $as_T(this$3.substring(beginIndex))
-    }
-  }
-});
-var $d_jl_JSConsoleBasedPrintStream = new $TypeData().initClass({
-  jl_JSConsoleBasedPrintStream: 0
-}, false, "java.lang.JSConsoleBasedPrintStream", {
-  jl_JSConsoleBasedPrintStream: 1,
-  Ljava_io_PrintStream: 1,
-  Ljava_io_FilterOutputStream: 1,
-  Ljava_io_OutputStream: 1,
-  O: 1,
-  Ljava_io_Closeable: 1,
-  jl_AutoCloseable: 1,
-  Ljava_io_Flushable: 1,
-  jl_Appendable: 1
-});
-$c_jl_JSConsoleBasedPrintStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream;
 function $f_sc_BitSetOps__contains__I__Z($thiz, elem) {
   if ((elem >= 0)) {
     var this$1 = $thiz.word__I__J((elem >> 6));

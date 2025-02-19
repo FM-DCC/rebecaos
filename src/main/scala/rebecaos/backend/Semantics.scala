@@ -181,7 +181,7 @@ object Semantics extends SOS[Act,St]:
             edges:Int, limit:Int,
             reqReached: Map[Expr,(String,String)]): (Map[Expr,(String,String)],Int,Boolean) =
       if limit <=0 then
-        return (Map(),edges,false)
+        return (reqReached,edges,false)
       if reqReached.size >= totalReq then
         return (reqReached,edges,true)
       nextSt.headOption match

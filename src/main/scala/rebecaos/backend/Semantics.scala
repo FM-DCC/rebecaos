@@ -22,10 +22,12 @@ object Semantics extends SOS[Act,St]:
   case class Msg(rcv:String,m:String,args:List[Data],snd:String,tt:Int,dl:Option[Int])
                // receiver, method, args, sender, timeSend, deadline
 
+  /* Initial state of a system S */
   def initSt(s: System): St =
     RebecEnv.restart
     (s, getInstances(s).toMap, Bag(getInitMsg(s)) )
 
+  /* Collect all instance declarations in the `main` block. */
   def getInstances(s: System): List[(String,RebecEnv)] =
     for dec <- s.main yield
       instantiate(dec, s, Data.N(0))
@@ -37,6 +39,7 @@ object Semantics extends SOS[Act,St]:
     val rebs = unifyReb(clazz.known, dec.known) + ("self"->dec.name) //no sender
     dec.name -> (RebecEnv(Map("now"->now),meth,dec.clazz) ++ rebs)
 
+  /* Build a message `initial` for all instances declared in the `main` block. */
   def getInitMsg(s: System): List[Msg] =
     for dec <- s.main yield
       //println(s"added ${dec.name}.initial(${dec.args.map(a=>Eval(a)(using RebecEnv.empty))})")
@@ -57,6 +60,7 @@ object Semantics extends SOS[Act,St]:
 //    //    val x = subst(msgsrv.stm)(using msgsrv.vars.map(_.name).zip(decl.args).toMap) // ingoring types of arguments
 //    RebecInst(stm,env,Bag(),dec.clazz) //
 //
+  /* Try to unify qualified variables. */
   def unify(vars: List[QVar], vals: List[Data]): Valuation = (vars,vals) match
     case (Nil,Nil) => Map()
     case (QVar(v,"int")::restr, (d:Data)::restl) => unify(restr,restl)+(v->d)
@@ -66,12 +70,15 @@ object Semantics extends SOS[Act,St]:
     case (Nil,_) => sys.error(s"Unexpected actual arguments: ${vals.mkString(",")}")
     case (_,Nil) => sys.error(s"Unexpected formal arguments: ${vars.mkString(",")}")
 
+  /* Try to unify variables with rebecs. */
   def unifyReb(vars: List[QVar], vals: List[String]): Map[String,String] = (vars,vals) match
     case (Nil,Nil) => Map()
     case (QVar(v,typ)::rest1, arg::rest2) => unifyReb(rest1,rest2)+(v->arg)
     case (Nil, _) => sys.error(s"Unexpected actual rebecs: ${vals.mkString(",")}")
     case (_, Nil) => sys.error(s"Unexpected formal rebecs: ${vars.mkString(",")}")
 
+  /* Calculate the set of possible next steps of a given state.
+     Each step includes an action (message received) and a new state. */
   def next[A>:Act](st: St): Set[(A, St)] =
 //    val someInitial = st._3.bag.find((m,_)=>m.m=="initial")
     val initials = for m <- st._3.bag.keySet if m.m=="initial" yield m.rcv
@@ -93,19 +100,23 @@ object Semantics extends SOS[Act,St]:
       (msg,updMsg)
         -> (st._1, (st._2 + (rcv -> newEnv)) ++ newRebs, (st._3 - msg) ++ updMsg)
 
+  /* Checks if a given message is enabled, given priority to `initial` states. */
   def enabled(m: Msg, initials: Set[String],smallestTT: Int): Boolean =
     ((!initials(m.rcv)) || (initials(m.rcv) && m.m=="initial")) &&
       m.tt <= smallestTT
 
+  /* Checks if a given message is enabled based on its deadline. */
   def enabledDL(m: Msg, env: RebecEnv): Boolean =
       m.dl.isEmpty || (m.dl.get >= env.now)
 
+  /* Evaluates a (non-deterministic) statement, returning a set of possible state updates. */
   def evalStmDb(stm:Statement)(using reb: RebecEnv, sys:System): Set[(RebecEnv, Msgs, Rebecs)] =
     println(s"evaluating $stm knowing $reb")
     val res = evalStm(stm)
     println(s"--> Got: $res")
     res
 
+  /* Tries to retrieve a specific rebec, throwing an error message in case of failure. */
   def evalStm(stm:Statement)(using reb: RebecEnv, syst:System): Set[(RebecEnv, Msgs, Rebecs)] = stm match
     case Skip => Set((reb,Bag(),Map()))
     case Seq(Skip, c2) => evalStm(c2)
@@ -167,14 +178,16 @@ object Semantics extends SOS[Act,St]:
 
 
   /////////////////////
-  // Auxiliar: replacing values and evaluating integers/booleans
+  // Auxiliar: replacing values and checking requirements
   /////////////////////
 
+  /* Replaces message names based on a given mapping of names. */
   def subst(m:Msg,updMap:Map[String,String]): Msg =
     def upd(s:String) = updMap.getOrElse(s,s)
     Msg(upd(m.rcv),m.m,m.args,upd(m.snd),m.tt,m.dl)
 
 
+  /* Traverses the state space using random-walks while checking if a set of queries are reached. */
   def checkReqs(s:St, max:Int=5000): (Map[Expr,(String,String)],Int,Boolean) =
     val totalReq = s._1.reqs.size
     def aux(nextSt:Map[St,List[Act]], done:Set[St],

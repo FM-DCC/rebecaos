@@ -81,7 +81,7 @@ object Semantics extends SOS[Act,St]:
      Each step includes an action (message received) and a new state. */
   def next[A>:Act](st: St): Set[(A, St)] =
 //    val someInitial = st._3.bag.find((m,_)=>m.m=="initial")
-    val initials = for m <- st._3.bag.keySet if m.m=="initial" yield m.rcv
+    val initials = Set[String]() //for m <- st._3.bag.keySet if m.m=="initial" yield m.rcv
     for
       smallestTT <- st._3.bag.keySet.map(_.tt).minOption.toSet
 //      msg@Msg(rcv,m,args,snd,tt,dl) <- st._3.toSet if someInitial.isEmpty || someInitial.get._1==msg // for each message

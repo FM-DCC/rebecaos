@@ -21353,28 +21353,32 @@ $c_Lrebecaos_backend_Semantics$.prototype.unifyReb__sci_List__sci_List__sci_Map 
   throw new $c_s_MatchError(x59)
 });
 $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
-  var this$1 = $n($m_s_Predef$().s_Predef$__f_Set);
-  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([]));
-  var initials = this$1.from__sc_IterableOnce__sci_Set(elems);
+  var initials = $as_sci_Set($n($n($n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((m) => {
+    var m$1 = $as_Lrebecaos_backend_Semantics$Msg(m);
+    return ($n(m$1).Lrebecaos_backend_Semantics$Msg__f_m === "initial")
+  })))).map__F1__O(new $c_sjsr_AnonFunction1(((m$2) => {
+    var m$3 = $as_Lrebecaos_backend_Semantics$Msg(m$2);
+    return $n(m$3).Lrebecaos_backend_Semantics$Msg__f_rcv
+  }))));
   var $$x1 = $m_s_Option$();
-  var this$3 = $n($as_sc_IterableOnceOps($n($n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((_$1) => {
+  var this$4 = $n($as_sc_IterableOnceOps($n($n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((_$1) => {
     var _$1$1 = $as_Lrebecaos_backend_Semantics$Msg(_$1);
     return $n(_$1$1).Lrebecaos_backend_Semantics$Msg__f_tt
   })))));
   var ord = $m_s_math_Ordering$Int$();
-  var this$4 = $n($n($$x1).option2Iterable__s_Option__sc_Iterable($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$3, ord)));
-  return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$4)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((smallestTT) => {
+  var this$5 = $n($n($$x1).option2Iterable__s_Option__sc_Iterable($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$4, ord)));
+  return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$5)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((smallestTT) => {
     var smallestTT$1 = $uI(smallestTT);
-    var this$5 = $n($as_Lrebecaos_backend_Bag($n(st).T3__f__3));
-    return $as_sc_IterableOnce($n($n($n($n(this$5.Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
+    var this$6 = $n($as_Lrebecaos_backend_Bag($n(st).T3__f__3));
+    return $as_sc_IterableOnce($n($n($n($n(this$6.Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
       var x$1$1 = $as_Lrebecaos_backend_Semantics$Msg(x$1);
       if ((x$1$1 !== null)) {
-        var this$7 = $n(x$1$1);
         var this$8 = $n(x$1$1);
         var this$9 = $n(x$1$1);
         var this$10 = $n(x$1$1);
         var this$11 = $n(x$1$1);
         var this$12 = $n(x$1$1);
+        var this$13 = $n(x$1$1);
         return true
       } else {
         return false
@@ -21382,37 +21386,37 @@ $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
     })))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$2) => {
       var x$1$3 = $as_Lrebecaos_backend_Semantics$Msg(x$1$2);
       if ((x$1$3 !== null)) {
-        var this$14 = $n(x$1$3);
         var this$15 = $n(x$1$3);
         var this$16 = $n(x$1$3);
         var this$17 = $n(x$1$3);
         var this$18 = $n(x$1$3);
         var this$19 = $n(x$1$3);
+        var this$20 = $n(x$1$3);
         return this.enabled__Lrebecaos_backend_Semantics$Msg__sci_Set__I__Z(x$1$3, initials, smallestTT$1)
       };
       throw new $c_s_MatchError(x$1$3)
     })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((x$1$3$1) => {
       var x$1$4 = $as_Lrebecaos_backend_Semantics$Msg(x$1$3$1);
       if ((x$1$4 !== null)) {
-        var this$21 = $n(x$1$4);
-        var x103 = this$21.Lrebecaos_backend_Semantics$Msg__f_rcv;
         var this$22 = $n(x$1$4);
-        var x104 = this$22.Lrebecaos_backend_Semantics$Msg__f_m;
+        var x103 = this$22.Lrebecaos_backend_Semantics$Msg__f_rcv;
         var this$23 = $n(x$1$4);
-        var x105 = this$23.Lrebecaos_backend_Semantics$Msg__f_args;
+        var x104 = this$23.Lrebecaos_backend_Semantics$Msg__f_m;
         var this$24 = $n(x$1$4);
-        var x106 = this$24.Lrebecaos_backend_Semantics$Msg__f_snd;
+        var x105 = this$24.Lrebecaos_backend_Semantics$Msg__f_args;
         var this$25 = $n(x$1$4);
-        var x107 = this$25.Lrebecaos_backend_Semantics$Msg__f_tt;
+        var x106 = this$25.Lrebecaos_backend_Semantics$Msg__f_snd;
         var this$26 = $n(x$1$4);
-        var this$27 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($as_sc_MapOps($n(st).T3__f__2)).get__O__s_Option(x103)));
-        return $as_sci_Set($n($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$27)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((rebEnv) => {
+        var x107 = this$26.Lrebecaos_backend_Semantics$Msg__f_tt;
+        var this$27 = $n(x$1$4);
+        var this$28 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($as_sc_MapOps($n(st).T3__f__2)).get__O__s_Option(x103)));
+        return $as_sci_Set($n($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$28)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((rebEnv) => {
           var rebEnv$1 = $as_Lrebecaos_backend_RebecEnv(rebEnv);
           return this.enabledDL__Lrebecaos_backend_Semantics$Msg__Lrebecaos_backend_RebecEnv__Z(x$1$4, rebEnv$1)
         })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((rebEnv$2) => {
           var rebEnv$3 = $as_Lrebecaos_backend_RebecEnv(rebEnv$2);
-          var this$28 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($n(rebEnv$3).Lrebecaos_backend_RebecEnv__f_meth).get__O__s_Option(x104)));
-          return $as_sc_IterableOnce($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$28)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((mth) => {
+          var this$29 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($n(rebEnv$3).Lrebecaos_backend_RebecEnv__f_meth).get__O__s_Option(x104)));
+          return $as_sc_IterableOnce($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$29)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((mth) => {
             var mth$1 = $as_Lrebecaos_syntax_Program$Msgsrv(mth);
             var $$x4 = $n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_stm;
             var $$x3 = $n($n(rebEnv$3).addValuation__sci_Map__Lrebecaos_backend_RebecEnv(this.unify__sci_List__sci_List__sci_Map($n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_vars, x105)));
@@ -21430,11 +21434,11 @@ $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
                 var newEnv$1 = $as_Lrebecaos_backend_RebecEnv($n(x$1$7).T3__f__1);
                 var newMsgs$1 = $as_Lrebecaos_backend_Bag($n(x$1$7).T3__f__2);
                 var newRebs$1 = $as_sci_Map($n(x$1$7).T3__f__3);
-                var updMsg = $n(newMsgs$1).map__F1__Lrebecaos_backend_Bag(new $c_sjsr_AnonFunction1(((m) => {
-                  var m$1 = $as_Lrebecaos_backend_Semantics$Msg(m);
-                  var this$41 = $n($m_s_Predef$().s_Predef$__f_Map);
-                  var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("self", x103)]));
-                  return this.subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg(m$1, this$41.from__sc_IterableOnce__sci_Map(elems$1))
+                var updMsg = $n(newMsgs$1).map__F1__Lrebecaos_backend_Bag(new $c_sjsr_AnonFunction1(((m$4) => {
+                  var m$5 = $as_Lrebecaos_backend_Semantics$Msg(m$4);
+                  var this$42 = $n($m_s_Predef$().s_Predef$__f_Map);
+                  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("self", x103)]));
+                  return this.subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg(m$5, this$42.from__sc_IterableOnce__sci_Map(elems))
                 })));
                 var self = new $c_T2(x$1$4, updMsg);
                 var _1 = $n(st).T3__f__1;

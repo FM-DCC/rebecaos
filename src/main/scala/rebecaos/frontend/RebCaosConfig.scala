@@ -11,7 +11,7 @@ import rebecaos.syntax.{Program, Show}
 import rebecaos.backend.HistoryState.{HState,HistorySOS}
 
 /** Object used to configure which analysis appear in the browser */
-object CaosConfig extends Configurator[St]:
+object RebCaosConfig extends Configurator[St]:
   val name = "RebeCaos: an animator of Rebeca's semantics"
   override val languageName: String = "Input Rebeca program"
 

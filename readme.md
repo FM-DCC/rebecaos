@@ -6,6 +6,23 @@ A compiled version of this project can be used at
 
  - https://fm-dcc.github.io/rebecaos
 
+# Tutorial
+
+A snapshot of this project with tag [v0.1](https://github.com/FM-DCC/rebecaos/releases/tag/v0.1) has been archived in Zenodo at https://zenodo.org/records/14947781.
+This version in Zenodo has been extended with:
+ - a detailed `readme.md` explaining how to compile and modify this code, and how to replicate examples from a published article;
+ - a `Dockerfile` which can be used to recompile the code using Docker, without relying on JVM nor sbt.
+
+# Publications
+
+  - [BP25a] M. H. ter Beek, J. Proença, _Animating Rebeca_, in: E. A. Lee, M. R.
+  Mousavi, C. Talcott (Eds.), Rebeca for Actor Analysis in Action, Vol. 15560
+  of LNCS, Springer, 2025, pp. 182--194. https://doi.org/10.1007/978-3-031-85134-6_8
+  - [PB25] J. Proença, M. H. ter Beek, _RebeCaos_, in: C. Di Giusto, A. Ravara
+  (Eds.), Proceedings of the 27th IFIP WG 6.1 International Conference on
+  Coordination Models and Languages (COORDINATION 2025), Vol. 15731 of LNCS,
+  Springer, 2025, pp. 219--229. https://doi.org/10.1007/978-3-031-95589-1_11
+
 
 # Caos
 

@@ -14,6 +14,19 @@
     display: none;
 }
 
+.close-btn {
+    position: absolute; /* Position the button absolutely within the div */
+    top: -22px; /* Distance from the top */
+    right: -18px; /* Distance from the right */
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 20px; /* Increase font size */
+    cursor: pointer; /* Change cursor to pointer */
+}
+.mydiv{
+    position: relative;
+}
+
 /*.active{
     display: block;
 }*/
@@ -110,6 +123,50 @@ a {
 }
 .dropdown>a:focus {
     border-color: black;
+}
+/* optional: hidden state */
+.hidden {
+  display: none;
+}
+.togglesPanel {
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+    /* padding: 3px; */
+    /* background-color: #f9f9f9; */
+    /* border-bottom: 1px solid #ddd; */
+    /* border-right: 1px solid #ddd; */
+    /* margin-right: 5px; */
+}
+.tgBtn {
+    --bg-off: #f3e3e3;
+    --bg-on: #455fd4;
+    --text-off: #313a49;
+    --text-on: #ffffff;
+    padding: 5px 8px;
+    border-radius: 12px;
+    border: black;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    background: var(--bg-off);
+    color: var(--text-off);
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
+}
+
+.tgBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.onBt {
+  background: var(--bg-on);
+  color: var(--text-on);
 }
 .overlay { 
     position: fixed;

@@ -1115,12 +1115,12 @@ var $d_J = new $TypeData().initPrim(null, "J", "long", $ac_J, (void 0));
 var $d_F = new $TypeData().initPrim(0.0, "F", "float", $ac_F, Float32Array);
 var $d_D = new $TypeData().initPrim(0.0, "D", "double", $ac_D, Float64Array);
 function $f_Lcaos_frontend_Configurator__$init$__V($thiz) {
-  $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]));
-  $thiz.caos$frontend$Configurator$_setter_$smallWidgets_$eq__sc_Iterable__V($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems));
+  $thiz.caos$frontend$Configurator$_setter_$shortName_$eq__s_Option__V($m_s_None$());
+  $thiz.caos$frontend$Configurator$_setter_$smallWidgets_$eq__sc_Iterable__V($m_sci_Nil$());
   var docs = $m_Lcaos_frontend_Documentation$().$lessinit$greater$default$1__sci_Map();
   $thiz.caos$frontend$Configurator$_setter_$documentation_$eq__Lcaos_frontend_Documentation__V(new $c_Lcaos_frontend_Documentation(docs));
-  $thiz.caos$frontend$Configurator$_setter_$footer_$eq__T__V("")
+  $thiz.caos$frontend$Configurator$_setter_$footer_$eq__T__V("");
+  $thiz.caos$frontend$Configurator$_setter_$toggles_$eq__sci_List__V($m_sci_Nil$())
 }
 function $is_Lcaos_frontend_Configurator(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcaos_frontend_Configurator)))
@@ -1169,6 +1169,12 @@ $c_Lcaos_frontend_Configurator$.prototype.lts__F1__Lcaos_sos_SOS__F1__F1__I__Lca
   var pre = new $c_sjsr_AnonFunction1(((x$2) => x$2));
   return new $c_Lcaos_frontend_widgets_WidgetInfo$Visualize(v, typ, pre)
 });
+$c_Lcaos_frontend_Configurator$.prototype.toExampleDesc__T2__Lcaos_frontend_Configurator$Example = (function(nameCodeDesc) {
+  var example = $as_T($n($as_T2($n(nameCodeDesc)._1__O()))._2__O());
+  var name = $as_T($n($as_T2($n(nameCodeDesc)._1__O()))._1__O());
+  var description = $as_T($n(nameCodeDesc)._2__O());
+  return new $c_Lcaos_frontend_Configurator$Example(example, name, description)
+});
 $c_Lcaos_frontend_Configurator$.prototype.toDocumentation__sci_List__Lcaos_frontend_Documentation = (function(docs) {
   var docs$1 = $m_Lcaos_frontend_Documentation$().$lessinit$greater$default$1__sci_Map();
   return new $c_Lcaos_frontend_Documentation(docs$1).add__sc_Iterable__Lcaos_frontend_Documentation(docs)
@@ -1213,7 +1219,7 @@ $c_Lcaos_frontend_Site$.prototype.initSite__Lcaos_frontend_Configurator__V = (fu
   var x = $as_T($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().URL);
   var xs = $n($$x1).split$extension__T__C__AT(x, 63);
   var this$4 = $n($n($$x2).wrapRefArray__AO__scm_ArraySeq$ofRef($asArrayOf_O($m_sc_ArrayOps$().drop$extension__O__I__O(xs, 1), 1)));
-  var urlQuery = $f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", "?", "")), "%2F", "/")), "%3C", "<")), "%26", "&")), "%3E", ">")), "%20", " ")), "%23", "#")), "%24", "$")), "%7B", "{")), "%2B", "+")), "%7D", "}")), "%2C", ",")), "%7C", "|")), "%3A", ":")), "%5E", "^")), "%3B", ";")), "%7E", "~")), "%3F", "?")), "%5B", "[")), "%40", "@")), "%5D", "]")), "%22", "\"")), "%60", "`")), "%28", "(")), "%29", ")");
+  var urlQuery = $f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", "?", "")), "%2F", "/")), "%3C", "<")), "%26", "&")), "%3E", ">")), "%20", " ")), "%23", "#")), "%24", "$")), "%7B", "{")), "%2B", "+")), "%7D", "}")), "%2C", ",")), "%7C", "|")), "%3A", ":")), "%5E", "^")), "%3B", ";")), "%7E", "~")), "%3F", "?")), "%5B", "[")), "%40", "@")), "%5D", "]")), "%22", "\"")), "%60", "`")), "%28", "(")), "%29", ")")), "%27", "'")), "%0A", "\n");
   matchResult1: {
     var mainExample;
     var x1 = $n($n(config).examples__sc_Iterable()).find__F1__s_Option(new $c_sjsr_AnonFunction1(((_$6) => {
@@ -1223,8 +1229,8 @@ $c_Lcaos_frontend_Site$.prototype.initSite__Lcaos_frontend_Configurator__V = (fu
     var x$1 = $m_s_None$();
     if ((x$1 === x1)) {
       $m_sc_StringOps$();
-      var this$8 = $n(urlQuery);
-      if ((!(this$8 === ""))) {
+      var this$7 = $n(urlQuery);
+      if ((!(this$7 === ""))) {
         var value = new $c_Lcaos_frontend_Configurator$Example(urlQuery, "Custom", "");
         var mainExample = new $c_s_Some(value);
         break matchResult1
@@ -1238,19 +1244,23 @@ $c_Lcaos_frontend_Site$.prototype.initSite__Lcaos_frontend_Configurator__V = (fu
   this.Lcaos_frontend_Site$__f_errorArea = new $c_Lcaos_frontend_widgets_OutputArea();
   this.Lcaos_frontend_Site$__f_descriptionArea = new $c_Lcaos_frontend_widgets_OutputArea();
   var code = new $c_Lcaos_frontend_Site$$anon$1(config, mainExample);
-  code.init__Lcaos_frontend_widgets_DomElem__Z__V(this.Lcaos_frontend_Site$__f_leftColumn, true);
-  $n(this.Lcaos_frontend_Site$__f_errorArea).init__Lcaos_frontend_widgets_DomElem__V(this.Lcaos_frontend_Site$__f_leftColumn);
+  this.initToggles__Lcaos_frontend_widgets_DomElem__Lcaos_frontend_Configurator__V(this.Lcaos_frontend_Site$__f_leftColumn, config);
+  code.init__Lcaos_frontend_widgets_DomElem__Z__Z__V(this.Lcaos_frontend_Site$__f_leftColumn, true, false);
+  var \u03b41$ = this.Lcaos_frontend_Site$__f_errorArea;
+  $n(\u03b41$).init__Lcaos_frontend_widgets_DomElem__Z__V(this.Lcaos_frontend_Site$__f_leftColumn, ($n(\u03b41$), false));
   var title = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("title");
   var toolTitle = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById("tool-title");
-  title.innerHTML = $n(config).name__T();
+  var this$10 = $n($n(config).shortName__s_Option());
+  title.innerHTML = $as_T((this$10.isEmpty__Z() ? $n(config).name__T() : this$10.get__O()));
   toolTitle.innerHTML = $n(config).name__T();
   var $$x3 = new $c_sjsr_AnonFunction0((() => {
-    this.globalReload__V()
+    $m_Lcaos_frontend_Site$().globalReload__V()
   }));
   var value$1 = this.Lcaos_frontend_Site$__f_descriptionArea;
   var examples = new $c_Lcaos_frontend_widgets_ExampleWidget("Examples", config, $$x3, code, new $c_s_Some(value$1));
-  $n(this.Lcaos_frontend_Site$__f_descriptionArea).init__Lcaos_frontend_widgets_DomElem__V(this.Lcaos_frontend_Site$__f_leftColumn);
-  examples.init__Lcaos_frontend_widgets_DomElem__Z__V(this.Lcaos_frontend_Site$__f_leftColumn, true);
+  var \u03b42$ = this.Lcaos_frontend_Site$__f_descriptionArea;
+  $n(\u03b42$).init__Lcaos_frontend_widgets_DomElem__Z__V(this.Lcaos_frontend_Site$__f_leftColumn, ($n(\u03b42$), false));
+  examples.init__Lcaos_frontend_widgets_DomElem__Z__Z__V(this.Lcaos_frontend_Site$__f_leftColumn, true, false);
   var this$14 = $n($as_sc_IterableOps($n($n($n(config).smallWidgets__sc_Iterable()).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$1) => {
     var x$1$2 = $as_T2(x$1$1);
     return ((x$1$2 !== null) && ($as_T($n(x$1$2)._1__O()), $as_Lcaos_frontend_widgets_WidgetInfo($n(x$1$2)._2__O()), true))
@@ -1269,14 +1279,14 @@ $c_Lcaos_frontend_Site$.prototype.initSite__Lcaos_frontend_Configurator__V = (fu
   var widgets = $as_sc_Iterable(this$14.concat__sc_IterableOnce__O(suffix));
   var boxes = $as_sc_Iterable($n(widgets).map__F1__O(new $c_sjsr_AnonFunction1(((wc) => {
     var wc$1 = $as_T2(wc);
-    var w = this.mkWidget__T2__F0__F0__Lcaos_frontend_widgets_OutputArea__Lcaos_frontend_Documentation__Lcaos_frontend_widgets_Widget(wc$1, new $c_sjsr_AnonFunction0((() => code.get__O())), new $c_sjsr_AnonFunction0((() => $as_sci_Seq($n(examples.get__sci_Seq()).map__F1__O(new $c_sjsr_AnonFunction1(((kv) => {
+    var w = $m_Lcaos_frontend_Site$().mkWidget__T2__F0__F0__Lcaos_frontend_widgets_OutputArea__Lcaos_frontend_Documentation__Lcaos_frontend_widgets_Widget(wc$1, new $c_sjsr_AnonFunction0((() => code.get__O())), new $c_sjsr_AnonFunction0((() => $as_sci_Seq($n(examples.get__sci_Seq()).map__F1__O(new $c_sjsr_AnonFunction1(((kv) => {
       var kv$1 = $as_T2(kv);
       var self = $n(kv$1)._1__O();
       var ev$2 = $as_T(self);
       var y = $n($n(config).parser__F1()).apply__O__O($n(kv$1)._2__O());
       return new $c_T2(ev$2, y)
-    })))))), this.Lcaos_frontend_Site$__f_errorArea, $n(config).documentation__Lcaos_frontend_Documentation());
-    $n(w).init__Lcaos_frontend_widgets_DomElem__Z__V((($n($as_Lcaos_frontend_widgets_WidgetInfo($n(wc$1)._2__O())).location__I() === 0) ? this.Lcaos_frontend_Site$__f_rightColumn : this.Lcaos_frontend_Site$__f_leftColumn), $n($as_Lcaos_frontend_widgets_WidgetInfo($n(wc$1)._2__O())).expanded__Z());
+    })))))), $m_Lcaos_frontend_Site$().Lcaos_frontend_Site$__f_errorArea, $n(config).documentation__Lcaos_frontend_Documentation());
+    $n(w).init__Lcaos_frontend_widgets_DomElem__Z__Z__V((($n($as_Lcaos_frontend_widgets_WidgetInfo($n(wc$1)._2__O())).location__I() === 0) ? $m_Lcaos_frontend_Site$().Lcaos_frontend_Site$__f_rightColumn : $m_Lcaos_frontend_Site$().Lcaos_frontend_Site$__f_leftColumn), $n($as_Lcaos_frontend_widgets_WidgetInfo($n(wc$1)._2__O())).expanded__Z(), $n($as_Lcaos_frontend_widgets_WidgetInfo($n(wc$1)._2__O())).hidden__Z());
     return w
   }))));
   if ((mainExample instanceof $c_s_Some)) {
@@ -1288,23 +1298,21 @@ $c_Lcaos_frontend_Site$.prototype.initSite__Lcaos_frontend_Configurator__V = (fu
       $n(this.Lcaos_frontend_Site$__f_descriptionArea).setValue__T__V($n(ex$2).Lcaos_frontend_Configurator$Example__f_description)
     }
   };
-  $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_widgets_CodeWidget.getArrayOf().constr)([code]));
-  var this$21 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems));
-  var this$22 = $n(this$21.appendedAll__sc_IterableOnce__sci_List(boxes));
+  var this$20 = new $c_sci_$colon$colon(code, $m_sci_Nil$());
+  var this$21 = $n(this$20.appendedAll__sc_IterableOnce__sci_List(boxes));
   var f = ((b) => {
     var b$1 = $as_Lcaos_frontend_widgets_Widget(b);
     return new $c_sjsr_AnonFunction0((() => {
       $n(b$1).update__V()
     }))
   });
-  if ((this$22 === $m_sci_Nil$())) {
+  if ((this$21 === $m_sci_Nil$())) {
     var $$x4 = $m_sci_Nil$()
   } else {
-    var arg1 = this$22.head__O();
+    var arg1 = this$21.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
     var t = h;
-    var rest = $as_sci_List(this$22.tail__O());
+    var rest = $as_sci_List(this$21.tail__O());
     while ((rest !== $m_sci_Nil$())) {
       var arg1$1 = $n(rest).head__O();
       var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -1315,6 +1323,7 @@ $c_Lcaos_frontend_Site$.prototype.initSite__Lcaos_frontend_Configurator__V = (fu
     var $$x4 = h
   };
   this.Lcaos_frontend_Site$__f_toReload = $$x4;
+  this.mkToggleActions__Lcaos_frontend_Configurator__V(config);
   this.globalReload__V()
 });
 $c_Lcaos_frontend_Site$.prototype.mkWidget__T2__F0__F0__Lcaos_frontend_widgets_OutputArea__Lcaos_frontend_Documentation__Lcaos_frontend_widgets_Widget = (function(w, get, getAll, out, doc) {
@@ -1323,72 +1332,72 @@ $c_Lcaos_frontend_Site$.prototype.mkWidget__T2__F0__F0__Lcaos_frontend_widgets_O
     if ((x13 instanceof $c_Lcaos_frontend_widgets_WidgetInfo$Visualize)) {
       var x$1 = $as_Lcaos_frontend_widgets_WidgetInfo$Visualize(x13);
       var this$2 = $n(x$1);
-      var x90 = this$2.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_v;
+      var x93 = this$2.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_v;
       var this$3 = $n(x$1);
-      var x91 = this$3.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
+      var x94 = this$3.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
       var this$4 = $n(x$1);
-      var x92 = this$4.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_pre;
+      var x95 = this$4.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_pre;
       var x = $m_Lcaos_view_Mermaid$();
-      if ((x === x91)) {
-        return new $c_Lcaos_frontend_widgets_VisualiseMermaid(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x90).apply__O__O($n(x92).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), out, doc)
+      if ((x === x94)) {
+        return new $c_Lcaos_frontend_widgets_VisualiseMermaid(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x93).apply__O__O($n(x95).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), out, doc)
       }
     };
     if ((x13 instanceof $c_Lcaos_frontend_widgets_WidgetInfo$Visualize)) {
       var x$1$1 = $as_Lcaos_frontend_widgets_WidgetInfo$Visualize(x13);
+      var this$6 = $n(x$1$1);
+      var x88 = this$6.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_v;
       var this$7 = $n(x$1$1);
-      var x85 = this$7.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_v;
+      var x89 = this$7.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
       var this$8 = $n(x$1$1);
-      var x86 = this$8.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
-      var this$9 = $n(x$1$1);
-      var x87 = this$9.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_pre;
+      var x90 = this$8.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_pre;
       var x$3 = $m_Lcaos_view_Text$();
-      if ((x$3 === x86)) {
-        return new $c_Lcaos_frontend_widgets_VisualiseText(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x85).apply__O__O($n(x87).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), out, doc)
+      if ((x$3 === x89)) {
+        return new $c_Lcaos_frontend_widgets_VisualiseText(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x88).apply__O__O($n(x90).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), out, doc)
       }
     };
     if ((x13 instanceof $c_Lcaos_frontend_widgets_WidgetInfo$Visualize)) {
       var x$1$2 = $as_Lcaos_frontend_widgets_WidgetInfo$Visualize(x13);
+      var this$10 = $n(x$1$2);
+      var x80 = this$10.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_v;
       var this$11 = $n(x$1$2);
-      var x77 = this$11.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_v;
+      var x81 = this$11.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
       var this$12 = $n(x$1$2);
-      var x78 = this$12.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
-      var this$13 = $n(x$1$2);
-      var x79 = this$13.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_pre;
-      if ((x78 instanceof $c_Lcaos_view_Code)) {
-        var x$1$3 = $as_Lcaos_view_Code(x78);
-        var this$15 = $n(x$1$3);
-        var x82 = this$15.Lcaos_view_Code__f_lang;
-        return new $c_Lcaos_frontend_widgets_VisualiseCode(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x77).apply__O__O($n(x79).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), x82, out, doc)
+      var x82 = this$12.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_pre;
+      if ((x81 instanceof $c_Lcaos_view_Code)) {
+        var x$1$3 = $as_Lcaos_view_Code(x81);
+        var this$14 = $n(x$1$3);
+        var x85 = this$14.Lcaos_view_Code__f_lang;
+        return new $c_Lcaos_frontend_widgets_VisualiseCode(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x80).apply__O__O($n(x82).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), x85, out, doc)
       }
     };
     if (false) {
       var x$1$4 = $as_Lcaos_frontend_widgets_WidgetInfo$VisualizeAll(x13);
-      var x72 = $n(x$1$4)._1__F1();
-      var x73 = $n(x$1$4)._2__Lcaos_view_ViewType();
-      var x74 = $n(x$1$4)._3__F1();
+      var x75 = $n(x$1$4)._1__F1();
+      var x76 = $n(x$1$4)._2__Lcaos_view_ViewType();
+      var x77 = $n(x$1$4)._3__F1();
       var x$5 = $m_Lcaos_view_Mermaid$();
-      if ((x$5 === x73)) {
-        return new $c_Lcaos_frontend_widgets_VisualiseMermaid(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x72).apply__O__O($n($as_sc_IterableOps($n(getAll).apply__O())).map__F1__O(new $c_sjsr_AnonFunction1(((kv) => {
+      if ((x$5 === x76)) {
+        return new $c_Lcaos_frontend_widgets_VisualiseMermaid(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x75).apply__O__O($n($as_sc_IterableOps($n(getAll).apply__O())).map__F1__O(new $c_sjsr_AnonFunction1(((kv) => {
           var kv$1 = $as_T2(kv);
           var self = $n(kv$1)._1__O();
           var ev$3 = $as_T(self);
-          var y = $n(x74).apply__O__O($n(kv$1)._2__O());
+          var y = $n(x77).apply__O__O($n(kv$1)._2__O());
           return new $c_T2(ev$3, y)
         }))))))), $as_T($n(w)._1__O()), out, doc)
       }
     };
     if (false) {
       var x$1$5 = $as_Lcaos_frontend_widgets_WidgetInfo$VisualizeAll(x13);
-      var x67 = $n(x$1$5)._1__F1();
-      var x68 = $n(x$1$5)._2__Lcaos_view_ViewType();
-      var x69 = $n(x$1$5)._3__F1();
+      var x70 = $n(x$1$5)._1__F1();
+      var x71 = $n(x$1$5)._2__Lcaos_view_ViewType();
+      var x72 = $n(x$1$5)._3__F1();
       var x$7 = $m_Lcaos_view_Text$();
-      if ((x$7 === x68)) {
-        return new $c_Lcaos_frontend_widgets_VisualiseText(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x67).apply__O__O($n($as_sc_IterableOps($n(getAll).apply__O())).map__F1__O(new $c_sjsr_AnonFunction1(((kv$2) => {
+      if ((x$7 === x71)) {
+        return new $c_Lcaos_frontend_widgets_VisualiseText(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_View($n(x70).apply__O__O($n($as_sc_IterableOps($n(getAll).apply__O())).map__F1__O(new $c_sjsr_AnonFunction1(((kv$2) => {
           var kv$3 = $as_T2(kv$2);
           var self$1 = $n(kv$3)._1__O();
           var ev$4 = $as_T(self$1);
-          var y$1 = $n(x69).apply__O__O($n(kv$3)._2__O());
+          var y$1 = $n(x72).apply__O__O($n(kv$3)._2__O());
           return new $c_T2(ev$4, y$1)
         }))))))), $as_T($n(w)._1__O()), out, doc)
       }
@@ -1397,22 +1406,22 @@ $c_Lcaos_frontend_Site$.prototype.mkWidget__T2__F0__F0__Lcaos_frontend_widgets_O
       matchAlts2: {
         if ((x13 instanceof $c_Lcaos_frontend_widgets_WidgetInfo$Visualize)) {
           var x$1$6 = $as_Lcaos_frontend_widgets_WidgetInfo$Visualize(x13);
+          var this$22 = $n(x$1$6);
           var this$23 = $n(x$1$6);
+          var x66 = this$23.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
           var this$24 = $n(x$1$6);
-          var x63 = this$24.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ;
-          var this$25 = $n(x$1$6);
           var x$9 = $m_Lcaos_view_Html$();
-          if ((x$9 === x63)) {
+          if ((x$9 === x66)) {
             break matchAlts2
           }
         };
         if (false) {
           var x$1$7 = $as_Lcaos_frontend_widgets_WidgetInfo$VisualizeAll(x13);
           $n(x$1$7)._1__F1();
-          var x58 = $n(x$1$7)._2__Lcaos_view_ViewType();
+          var x61 = $n(x$1$7)._2__Lcaos_view_ViewType();
           $n(x$1$7)._3__F1();
           var x$11 = $m_Lcaos_view_Html$();
-          if ((x$11 === x58)) {
+          if ((x$11 === x61)) {
             break matchAlts2
           }
         };
@@ -1423,86 +1432,91 @@ $c_Lcaos_frontend_Site$.prototype.mkWidget__T2__F0__F0__Lcaos_frontend_widgets_O
     };
     if (false) {
       var x$1$8 = $as_Lcaos_frontend_widgets_WidgetInfo$VisualizeTab(x13);
-      var x51 = $n(x$1$8)._1__F1();
-      var x52 = $n(x$1$8)._2__Lcaos_view_ViewType();
-      var x53 = $n(x$1$8)._3__F1();
-      var x54 = $n(x$1$8)._4__F1();
+      var x54 = $n(x$1$8)._1__F1();
+      var x55 = $n(x$1$8)._2__Lcaos_view_ViewType();
+      var x56 = $n(x$1$8)._3__F1();
+      var x57 = $n(x$1$8)._4__F1();
       var x$13 = $m_Lcaos_view_Text$();
-      if ((x$13 === x52)) {
-        return new $c_Lcaos_frontend_widgets_Tabs(new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x51).apply__O__O($n(x54).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x53).apply__O__O($n(x54).apply__O__O($n(get).apply__O()))))), "", out, doc)
+      if ((x$13 === x55)) {
+        return new $c_Lcaos_frontend_widgets_Tabs(new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x54).apply__O__O($n(x57).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x56).apply__O__O($n(x57).apply__O__O($n(get).apply__O()))))), "", out, doc)
       }
     };
     if (false) {
       var x$1$9 = $as_Lcaos_frontend_widgets_WidgetInfo$VisualizeTab(x13);
-      var x42 = $n(x$1$9)._1__F1();
-      var x43 = $n(x$1$9)._2__Lcaos_view_ViewType();
-      var x44 = $n(x$1$9)._3__F1();
-      var x45 = $n(x$1$9)._4__F1();
-      if ((x43 instanceof $c_Lcaos_view_Code)) {
-        var x$1$10 = $as_Lcaos_view_Code(x43);
-        var this$30 = $n(x$1$10);
-        var x48 = this$30.Lcaos_view_Code__f_lang;
-        return new $c_Lcaos_frontend_widgets_Tabs(new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x42).apply__O__O($n(x45).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x44).apply__O__O($n(x45).apply__O__O($n(get).apply__O()))))), x48, out, doc)
+      var x45 = $n(x$1$9)._1__F1();
+      var x46 = $n(x$1$9)._2__Lcaos_view_ViewType();
+      var x47 = $n(x$1$9)._3__F1();
+      var x48 = $n(x$1$9)._4__F1();
+      if ((x46 instanceof $c_Lcaos_view_Code)) {
+        var x$1$10 = $as_Lcaos_view_Code(x46);
+        var this$29 = $n(x$1$10);
+        var x51 = this$29.Lcaos_view_Code__f_lang;
+        return new $c_Lcaos_frontend_widgets_Tabs(new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x45).apply__O__O($n(x48).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), new $c_sjsr_AnonFunction0((() => $as_sci_List($n(x47).apply__O__O($n(x48).apply__O__O($n(get).apply__O()))))), x51, out, doc)
       }
     };
     if (false) {
       var x$1$11 = $as_Lcaos_frontend_widgets_WidgetInfo$VisualizeOpt(x13);
-      var x37 = $n(x$1$11)._1__F1();
-      var x38 = $n(x$1$11)._2__Lcaos_view_ViewType();
-      var x39 = $n(x$1$11)._3__F1();
+      var x40 = $n(x$1$11)._1__F1();
+      var x41 = $n(x$1$11)._2__Lcaos_view_ViewType();
+      var x42 = $n(x$1$11)._3__F1();
       var x$15 = $m_Lcaos_view_Mermaid$();
-      if ((x$15 === x38)) {
-        return new $c_Lcaos_frontend_widgets_VisualiseOptMermaid(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_OptionView($n(x37).apply__O__O($n(x39).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), out, doc)
+      if ((x$15 === x41)) {
+        return new $c_Lcaos_frontend_widgets_VisualiseOptMermaid(new $c_sjsr_AnonFunction0((() => $as_Lcaos_view_OptionView($n(x40).apply__O__O($n(x42).apply__O__O($n(get).apply__O()))))), $as_T($n(w)._1__O()), out, doc)
       } else {
         throw $ct_jl_RuntimeException__T__(new $c_jl_RuntimeException(), "case not covered...")
       }
     };
     if ((x13 instanceof $c_Lcaos_frontend_widgets_WidgetInfo$Simulate)) {
-      var x28 = $as_Lcaos_frontend_widgets_WidgetInfo$Simulate(x13);
-      var this$33 = $n(x28);
-      var this$34 = $n(x28);
-      var this$35 = $n(x28);
-      var this$36 = $n(x28);
-      var x33 = this$36.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_typ;
-      var this$37 = $n(x28);
+      var x31 = $as_Lcaos_frontend_widgets_WidgetInfo$Simulate(x13);
+      var this$32 = $n(x31);
+      var this$33 = $n(x31);
+      var this$34 = $n(x31);
+      var this$35 = $n(x31);
+      var x36 = this$35.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_typ;
+      var this$36 = $n(x31);
       var x$17 = $m_Lcaos_view_Text$();
-      if ((x$17 === x33)) {
-        return new $c_Lcaos_frontend_widgets_SimulateText(get, x28, $as_T($n(w)._1__O()), out, doc)
+      if ((x$17 === x36)) {
+        return new $c_Lcaos_frontend_widgets_SimulateText(get, x31, $as_T($n(w)._1__O()), out, doc)
       } else {
         var x$19 = $m_Lcaos_view_Mermaid$();
-        if ((x$19 === x33)) {
-          return new $c_Lcaos_frontend_widgets_SimulateMermaid(get, x28, $as_T($n(w)._1__O()), out, doc)
+        if ((x$19 === x36)) {
+          return new $c_Lcaos_frontend_widgets_SimulateMermaid(get, x31, $as_T($n(w)._1__O()), out, doc)
         } else {
-          throw $ct_jl_RuntimeException__T__(new $c_jl_RuntimeException(), ((("case not covered when compiling widget '" + $n(w)._1__O()) + "': ") + x28))
+          throw $ct_jl_RuntimeException__T__(new $c_jl_RuntimeException(), ((("case not covered when compiling widget '" + $n(w)._1__O()) + "': ") + x31))
         }
       }
     };
     if ((x13 instanceof $c_Lcaos_frontend_widgets_WidgetInfo$Explore)) {
       var x$1$12 = $as_Lcaos_frontend_widgets_WidgetInfo$Explore(x13);
+      var this$38 = $n(x$1$12);
+      var x27 = this$38.Lcaos_frontend_widgets_WidgetInfo$Explore__f_pre;
       var this$39 = $n(x$1$12);
-      var x24 = this$39.Lcaos_frontend_widgets_WidgetInfo$Explore__f_pre;
+      var x28 = this$39.Lcaos_frontend_widgets_WidgetInfo$Explore__f_sos;
       var this$40 = $n(x$1$12);
-      var x25 = this$40.Lcaos_frontend_widgets_WidgetInfo$Explore__f_sos;
+      var x29 = this$40.Lcaos_frontend_widgets_WidgetInfo$Explore__f_vS;
       var this$41 = $n(x$1$12);
-      var x26 = this$41.Lcaos_frontend_widgets_WidgetInfo$Explore__f_vS;
-      var this$42 = $n(x$1$12);
-      var x27 = this$42.Lcaos_frontend_widgets_WidgetInfo$Explore__f_vA;
-      return new $c_Lcaos_frontend_widgets_Explore(new $c_sjsr_AnonFunction0((() => $n(x24).apply__O__O($n(get).apply__O()))), x25, x26, x27, $as_T($n(w)._1__O()), out, doc)
+      var x30 = this$41.Lcaos_frontend_widgets_WidgetInfo$Explore__f_vA;
+      return new $c_Lcaos_frontend_widgets_Explore(new $c_sjsr_AnonFunction0((() => $n(x27).apply__O__O($n(get).apply__O()))), x28, x29, x30, $as_T($n(w)._1__O()), out, doc)
     };
     if (false) {
       var x$1$13 = $as_Lcaos_frontend_widgets_WidgetInfo$Analyse(x13);
-      var x21 = $n(x$1$13)._1__F1();
+      var x24 = $n(x$1$13)._1__F1();
       return new $c_Lcaos_frontend_widgets_Invisible(get, new $c_sjsr_AnonFunction1(((stx) => {
-        var _1 = $n(x21).apply__O__O(stx);
+        var _1 = $n(x24).apply__O__O(stx);
         var _2 = $m_s_package$().s_package$__f_Nil;
         return new $c_T3(_1, _2, (void 0))
       })), $as_T($n(w)._1__O()))
     };
     if (false) {
-      var x$1$14 = $as_Lcaos_frontend_widgets_WidgetInfo$Custom(x13);
-      var x16 = $n(x$1$14)._1__T();
-      var x17 = $n(x$1$14)._2__F1();
-      var x18 = $n(x$1$14)._3__sci_List();
+      var x$1$14 = $as_Lcaos_frontend_widgets_WidgetInfo$WHtml(x13);
+      var x21 = $n(x$1$14)._1__T();
+      return new $c_Lcaos_frontend_widgets_HtmlBlock(x21, $as_T($n(w)._1__O()))
+    };
+    if (false) {
+      var x$1$15 = $as_Lcaos_frontend_widgets_WidgetInfo$Custom(x13);
+      var x16 = $n(x$1$15)._1__T();
+      var x17 = $n(x$1$15)._2__F1();
+      var x18 = $n(x$1$15)._3__sci_List();
       var $$x3 = $as_T($n(w)._1__O());
       var $$x2 = new $c_sjsr_AnonFunction0((() => {
         $n(x17).apply__O__O($n(get).apply__O())
@@ -1538,12 +1552,175 @@ $c_Lcaos_frontend_Site$.prototype.mkWidget__T2__F0__F0__Lcaos_frontend_widgets_O
     };
     throw $ct_jl_RuntimeException__T__(new $c_jl_RuntimeException(), ((("case not covered when compiling widget '" + $n(w)._1__O()) + "': ") + $n(w)._2__O()))
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
-    var this$50 = $n(out);
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
+    var this$49 = $n(out);
     var msg = e$2.getMessage__T();
-    $p_Lcaos_frontend_widgets_OutputArea__addBox__T__T__V(this$50, msg, "danger");
-    throw e$2
+    $p_Lcaos_frontend_widgets_OutputArea__addBox__T__T__V(this$49, msg, "danger");
+    throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
+  }
+});
+$c_Lcaos_frontend_Site$.prototype.initToggles__Lcaos_frontend_widgets_DomElem__Lcaos_frontend_Configurator__V = (function(el, config) {
+  var togglesPanel = $n($n(el).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "togglesPanel");
+  var this$1 = $n($n(config).toggles__sci_List());
+  var these = this$1;
+  while ((!$n(these).isEmpty__Z())) {
+    var arg1 = $n(these).head__O();
+    var t = $as_Lcaos_frontend_Configurator$Toggle(arg1);
+    var classStr = "tgBtn";
+    if ($n(t).on__Z()) {
+      classStr = (classStr + " onBt")
+    };
+    if ($n(t).hidden__Z()) {
+      classStr = (classStr + " hidden")
+    };
+    $n($n($n($n(togglesPanel).append__T__Lcaos_frontend_widgets_DomElem("button")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", ("id" + $f_T__hashCode__I($n($n(t).name__T()))))).attr__T__T__Lcaos_frontend_widgets_DomElem("class", classStr)).html__T__Lcaos_frontend_widgets_DomElem($n(t).name__T());
+    these = $as_sci_List($n(these).tail__O())
+  }
+});
+$c_Lcaos_frontend_Site$.prototype.mkToggleActions__Lcaos_frontend_Configurator__V = (function(config) {
+  var this$1 = $n($n(config).toggles__sci_List());
+  var these = this$1;
+  while ((!$n(these).isEmpty__Z())) {
+    var arg1 = $n(these).head__O();
+    var x$1 = $as_Lcaos_frontend_Configurator$Toggle(arg1);
+    var bt = $n(x$1)._1__T();
+    var tgs = $n(x$1)._2__sci_Set();
+    var button = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(("id" + $f_T__hashCode__I($n(bt))));
+    if ((button === null)) {
+      var x = (("Warning: toggle button '" + bt) + "' not found in the document.");
+      var this$3 = $m_s_Console$();
+      var this$4 = $n(this$3.out__Ljava_io_PrintStream());
+      this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"))
+    } else {
+      button.addEventListener("click", ((button, tgs) => ((e) => {
+        var on = $uZ(button.classList.contains("onBt"));
+        $n(tgs).foreach__F1__V(new $c_sjsr_AnonFunction1(((tg) => {
+          var tg$1 = $as_T(tg);
+          $m_Lcaos_frontend_Site$().toggleTarget__T__Z__V(tg$1, on)
+        })));
+        return $uZ(button.classList.toggle("onBt"))
+      }))(button, tgs));
+      if ($uZ(button.classList.contains("onBt"))) {
+        $n(tgs).foreach__F1__V(new $c_sjsr_AnonFunction1(((tg$2) => {
+          var tg$3 = $as_T(tg$2);
+          var this$5 = $n($m_Lcaos_frontend_Site$().getRootTarget__T__s_Option(tg$3));
+          if ((!this$5.isEmpty__Z())) {
+            var arg1$1 = this$5.get__O();
+            if (($as_T(arg1$1.getAttribute("oncounter")) === null)) {
+              arg1$1.setAttribute("oncounter", "1")
+            } else {
+              $m_sc_StringOps$();
+              var x$2 = $as_T(arg1$1.getAttribute("oncounter"));
+              var this$8 = $m_jl_Integer$();
+              var this$9 = ((1 + this$8.parseInt__T__I__I(x$2, 10)) | 0);
+              arg1$1.setAttribute("oncounter", ("" + this$9))
+            }
+          }
+        })))
+      }
+    };
+    these = $as_sci_List($n(these).tail__O())
+  };
+  var this$11 = $n($n(config).toggles__sci_List());
+  var these$1 = this$11;
+  while ((!$n(these$1).isEmpty__Z())) {
+    var arg1$2 = $n(these$1).head__O();
+    var x$1$1 = $as_Lcaos_frontend_Configurator$Toggle(arg1$2);
+    var bt$1 = $n(x$1$1)._1__T();
+    var tgs$1 = $n(x$1$1)._2__sci_Set();
+    var button$1 = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(("id" + $f_T__hashCode__I($n(bt$1))));
+    if ((button$1 === null)) {
+      var x$3 = (("Warning: toggle button '" + bt$1) + "' not found in the document.");
+      var this$13 = $m_s_Console$();
+      var this$14 = $n(this$13.out__Ljava_io_PrintStream());
+      this$14.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$3 + "\n"))
+    } else if ((!$uZ(button$1.classList.contains("onBt")))) {
+      $n(tgs$1).foreach__F1__V(new $c_sjsr_AnonFunction1(((tg$4) => {
+        var tg$5 = $as_T(tg$4);
+        var this$15 = $n($m_Lcaos_frontend_Site$().getRootTarget__T__s_Option(tg$5));
+        if ((!this$15.isEmpty__Z())) {
+          var arg1$3 = this$15.get__O();
+          if (($as_T(arg1$3.getAttribute("oncounter")) === null)) {
+            arg1$3.classList.add("hidden")
+          }
+        }
+      })))
+    };
+    these$1 = $as_sci_List($n(these$1).tail__O())
+  }
+});
+$c_Lcaos_frontend_Site$.prototype.toggleTarget__T__Z__V = (function(tg, on) {
+  var x98 = this.getRootTarget__T__s_Option(tg);
+  var x = $m_s_None$();
+  if ((x === x98)) {
+    var x$1 = (((("Warning: toggle target '" + tg) + "'(id: id") + $f_T__hashCode__I($n(tg))) + ") not found in the document.");
+    var this$2 = $m_s_Console$();
+    var this$3 = $n(this$2.out__Ljava_io_PrintStream());
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$1 + "\n"));
+    return (void 0)
+  };
+  if ((x98 instanceof $c_s_Some)) {
+    var target = $n($as_s_Some(x98)).s_Some__f_value;
+    var hide = false;
+    if ((on && ($as_T(target.getAttribute("oncounter")) !== null))) {
+      $m_sc_StringOps$();
+      var x$2 = $as_T(target.getAttribute("oncounter"));
+      var this$6 = $m_jl_Integer$();
+      var $$x1 = (this$6.parseInt__T__I__I(x$2, 10) > 1)
+    } else {
+      var $$x1 = false
+    };
+    if ($$x1) {
+      $m_sc_StringOps$();
+      var x$3 = $as_T(target.getAttribute("oncounter"));
+      var this$9 = $m_jl_Integer$();
+      var newCount = (((-1) + this$9.parseInt__T__I__I(x$3, 10)) | 0);
+      target.setAttribute("oncounter", ("" + newCount))
+    } else if ((on && ($as_T(target.getAttribute("oncounter")) !== null))) {
+      target.removeAttribute("oncounter");
+      hide = true
+    } else if ((!on)) {
+      if (($as_T(target.getAttribute("oncounter")) === null)) {
+        var newCount$2 = 1
+      } else {
+        $m_sc_StringOps$();
+        var x$4 = $as_T(target.getAttribute("oncounter"));
+        var this$13 = $m_jl_Integer$();
+        var newCount$2 = ((1 + this$13.parseInt__T__I__I(x$4, 10)) | 0)
+      };
+      target.setAttribute("oncounter", ("" + newCount$2))
+    };
+    if ((!hide)) {
+      target.classList.remove("hidden")
+    } else {
+      target.classList.add("hidden");
+      if ($uZ(target.classList.contains("panel-group"))) {
+        var widgetCont = target.firstChild.firstChild.firstChild.firstChild;
+        if ((widgetCont !== null)) {
+          widgetCont.classList.add("collapsed");
+          widgetCont.setAttribute("aria-expanded", "false")
+        };
+        var widgetBody = target.firstChild.lastChild;
+        if ((widgetBody !== null)) {
+          widgetBody.classList.remove("in");
+          widgetBody.style = "height: 0px";
+          widgetBody.setAttribute("aria-expanded", "false")
+        }
+      }
+    };
+    return (void 0)
+  };
+  throw new $c_s_MatchError(x98)
+});
+$c_Lcaos_frontend_Site$.prototype.getRootTarget__T__s_Option = (function(tg) {
+  var div = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(("id" + $f_T__hashCode__I($n(tg))));
+  if ((div === null)) {
+    return $m_s_None$()
+  } else if ($uZ(div.classList.contains("panel-default"))) {
+    var value = div.parentNode;
+    return new $c_s_Some(value)
+  } else {
+    return new $c_s_Some(div)
   }
 });
 $c_Lcaos_frontend_Site$.prototype.cleanContainers__V = (function() {
@@ -1571,8 +1748,8 @@ $c_Lcaos_frontend_Site$.prototype.initialiseContainers__V = (function() {
   })));
   $n($n($n(closePop).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", "CAOSPopupTitle")).attr__T__T__Lcaos_frontend_widgets_DomElem("style", "display:inline-block;font-weight: bold;");
   $n($n($n(closePop).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("style", "float:right;")).html__T__Lcaos_frontend_widgets_DomElem("&#10006;");
-  var this$3 = $n(this.Lcaos_frontend_Site$__f_lastConfig);
-  if (((!this$3.isEmpty__Z()) && ($n($as_Lcaos_frontend_Configurator($n(this.Lcaos_frontend_Site$__f_lastConfig).get__O())).footer__T() !== ""))) {
+  var this$1 = $n(this.Lcaos_frontend_Site$__f_lastConfig);
+  if (((!this$1.isEmpty__Z()) && ($n($as_Lcaos_frontend_Configurator($n(this.Lcaos_frontend_Site$__f_lastConfig).get__O())).footer__T() !== ""))) {
     $n($n($n(contentDiv).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__Lcaos_frontend_widgets_DomElem("width: 100%;text-align: center; display: inline-block;")).html__T__Lcaos_frontend_widgets_DomElem((("&nbsp;<br><p style=\"margin: 0px 30px 10px;\">" + $n($as_Lcaos_frontend_Configurator($n(this.Lcaos_frontend_Site$__f_lastConfig).get__O())).footer__T()) + "</p>"))
   };
   $m_Lcaos_frontend_widgets_Utils$().resizeCols__V()
@@ -1595,15 +1772,15 @@ $c_Lcaos_frontend_Site$.prototype.getFileAsText__Lorg_scalajs_dom_raw_File__V = 
   reader.onload = ((_$7) => {
     var str = $dp_toString__T($n(reader.result));
     var resultAsString = $f_T__replaceAll__T__T__T($n(str), "'", "'");
-    matchResult9: {
-      var x96 = this.Lcaos_frontend_Site$__f_lastConfig;
-      if ((x96 instanceof $c_s_Some)) {
-        var x98 = $as_Lcaos_frontend_Configurator($n($as_s_Some(x96)).s_Some__f_value);
-        if ((x98 !== null)) {
-          var c2 = new $c_Lcaos_frontend_Site$$anon$2(resultAsString, x98);
+    matchResult12: {
+      var x104 = this.Lcaos_frontend_Site$__f_lastConfig;
+      if ((x104 instanceof $c_s_Some)) {
+        var x106 = $as_Lcaos_frontend_Configurator($n($as_s_Some(x104)).s_Some__f_value);
+        if ((x106 !== null)) {
+          var c2 = new $c_Lcaos_frontend_Site$$anon$2(x106, resultAsString);
           this.cleanContainers__V();
           this.initSite__Lcaos_frontend_Configurator__V(c2);
-          break matchResult9
+          break matchResult12
         }
       }
     }
@@ -1695,114 +1872,6 @@ function $m_Lcaos_frontend_widgets_DomNode$() {
 function $p_Lcaos_frontend_widgets_ExampleWidget$__fix__T__T($thiz, s) {
   return $f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n(s), "\\\\n", "\u00a7NL;")), "module", "\u00a7MODL;")
 }
-function $p_Lcaos_frontend_widgets_ExampleWidget$__liftedTree1$1__T__Lcaos_frontend_Configurator$Example($thiz, ex$4) {
-  try {
-    $m_sc_StringOps$();
-    var x = $f_T__replaceAll__T__T__T($n(ex$4), "\u00a7MODL;", "module");
-    $m_sc_StringOps$();
-    $m_sc_StringOps$();
-    var from = 0;
-    _return: {
-      var this$4 = $n(x);
-      var len = this$4.length;
-      var i = from;
-      while ((i < len)) {
-        var this$5 = $n(x);
-        var index = i;
-        var arg1 = $charAt(this$5, index);
-        if ((arg1 === 58)) {
-          var x1 = i;
-          break _return
-        };
-        i = ((1 + i) | 0)
-      };
-      var x1 = (-1)
-    };
-    if ((x1 === (-1))) {
-      var x4___1 = x;
-      var x4___2 = ""
-    } else {
-      var this$6 = $n(x);
-      if ((x1 > this$6.length)) {
-        $charAt(this$6, x1)
-      };
-      if ((x1 < 0)) {
-        $charAt(this$6, (-1))
-      };
-      var _1 = $as_T(this$6.substring(0, x1));
-      var this$7 = $n(x);
-      if (((x1 < 0) || (x1 > this$7.length))) {
-        $charAt(this$7, x1)
-      };
-      var _2 = $as_T(this$7.substring(x1));
-      var x4___1 = _1;
-      var x4___2 = _2
-    };
-    var name = $as_T(x4___1);
-    var rest = $as_T(x4___2);
-    var \u03b41$___1 = name;
-    var \u03b41$___2 = rest;
-    var name$2 = $as_T(\u03b41$___1);
-    var rest$2 = $as_T(\u03b41$___2);
-    var rest2 = $m_sc_StringOps$().drop$extension__T__I__T(rest$2, 18);
-    $m_sc_StringOps$();
-    $m_sc_StringOps$();
-    $m_sc_StringOps$();
-    var from$1 = 0;
-    _return$1: {
-      var this$13 = $n(rest2);
-      var len$1 = this$13.length;
-      var i$1 = from$1;
-      while ((i$1 < len$1)) {
-        var this$14 = $n(rest2);
-        var index$1 = i$1;
-        var arg1$1 = $charAt(this$14, index$1);
-        if ((arg1$1 === 10)) {
-          var x1$1 = i$1;
-          break _return$1
-        };
-        i$1 = ((1 + i$1) | 0)
-      };
-      var x1$1 = (-1)
-    };
-    if ((x1$1 === (-1))) {
-      var x7___1 = rest2;
-      var x7___2 = ""
-    } else {
-      var this$15 = $n(rest2);
-      if ((x1$1 > this$15.length)) {
-        $charAt(this$15, x1$1)
-      };
-      if ((x1$1 < 0)) {
-        $charAt(this$15, (-1))
-      };
-      var _1$1 = $as_T(this$15.substring(0, x1$1));
-      var this$16 = $n(rest2);
-      if (((x1$1 < 0) || (x1$1 > this$16.length))) {
-        $charAt(this$16, x1$1)
-      };
-      var _2$1 = $as_T(this$16.substring(x1$1));
-      var x7___1 = _1$1;
-      var x7___2 = _2$1
-    };
-    var desc = $as_T(x7___1);
-    var rest3 = $as_T(x7___2);
-    var \u03b42$___1 = desc;
-    var \u03b42$___2 = rest3;
-    var desc$2 = $as_T(\u03b42$___1);
-    var rest3$2 = $as_T(\u03b42$___2);
-    $m_sc_StringOps$();
-    var $$x1 = $m_sc_StringOps$();
-    var this$20 = $n(rest3$2);
-    var code = $n($$x1).slice$extension__T__I__I__T(rest3$2, 1, this$20.length);
-    var example = $f_T__trim__T($n(code));
-    var name$1 = $f_T__trim__T($n(name$2));
-    var description = $f_T__trim__T($n(desc$2));
-    return new $c_Lcaos_frontend_Configurator$Example(example, name$1, description)
-  } catch (e) {
-    throw $ct_jl_RuntimeException__T__(new $c_jl_RuntimeException(), ("Failed to import when reading: " + ex$4))
-  }
-}
 /** @constructor */
 function $c_Lcaos_frontend_widgets_ExampleWidget$() {
   /*<skip>*/
@@ -1817,26 +1886,132 @@ $h_Lcaos_frontend_widgets_ExampleWidget$.prototype = $c_Lcaos_frontend_widgets_E
 $c_Lcaos_frontend_widgets_ExampleWidget$.prototype.txtToExamples__T__sc_Iterable = (function(str) {
   var this$1 = $n(str);
   var list = $f_T__split__T__I__AT(this$1, "module *", 0);
-  var $$x2 = $m_s_Predef$();
+  var $$x3 = $m_s_Predef$();
   $m_sc_ArrayOps$();
   var p = new $c_sjsr_AnonFunction1(((ex) => {
     var ex$1 = $as_T(ex);
     return (ex$1 !== "")
   }));
-  var this$6 = new $c_sc_ArrayOps$WithFilter(p, list);
+  var this$5 = new $c_sc_ArrayOps$WithFilter(p, list);
   var capacity = 0;
   var jsElems = null;
   capacity = 0;
   jsElems = [];
   var i = 0;
   while (true) {
-    var $$x1 = i;
-    var xs = this$6.sc_ArrayOps$WithFilter__f_xs;
-    if (($$x1 < $m_jl_reflect_Array$().getLength__O__I(xs))) {
-      var x = $m_sr_ScalaRunTime$().array_apply__O__I__O(this$6.sc_ArrayOps$WithFilter__f_xs, i);
-      if ($uZ($n(this$6.sc_ArrayOps$WithFilter__f_p).apply__O__O(x))) {
+    var $$x2 = i;
+    var xs = this$5.sc_ArrayOps$WithFilter__f_xs;
+    if (($$x2 < $m_jl_reflect_Array$().getLength__O__I(xs))) {
+      var x = $m_sr_ScalaRunTime$().array_apply__O__I__O(this$5.sc_ArrayOps$WithFilter__f_xs, i);
+      if ($uZ($n(this$5.sc_ArrayOps$WithFilter__f_p).apply__O__O(x))) {
         var ex$2 = $as_T(x);
-        var elem = $p_Lcaos_frontend_widgets_ExampleWidget$__liftedTree1$1__T__Lcaos_frontend_Configurator$Example(this, ex$2);
+        try {
+          $m_sc_StringOps$();
+          var x$1 = $f_T__replaceAll__T__T__T($n(ex$2), "\u00a7MODL;", "module");
+          $m_sc_StringOps$();
+          $m_sc_StringOps$();
+          var from = 0;
+          _return: {
+            var this$13 = $n(x$1);
+            var len = this$13.length;
+            var i$1 = from;
+            while ((i$1 < len)) {
+              var this$14 = $n(x$1);
+              var index = i$1;
+              var arg1 = $charAt(this$14, index);
+              if ((arg1 === 58)) {
+                var x1 = i$1;
+                break _return
+              };
+              i$1 = ((1 + i$1) | 0)
+            };
+            var x1 = (-1)
+          };
+          if ((x1 === (-1))) {
+            var x4___1 = x$1;
+            var x4___2 = ""
+          } else {
+            var this$15 = $n(x$1);
+            if ((x1 > this$15.length)) {
+              $charAt(this$15, x1)
+            };
+            if ((x1 < 0)) {
+              $charAt(this$15, (-1))
+            };
+            var _1 = $as_T(this$15.substring(0, x1));
+            var this$16 = $n(x$1);
+            if (((x1 < 0) || (x1 > this$16.length))) {
+              $charAt(this$16, x1)
+            };
+            var _2 = $as_T(this$16.substring(x1));
+            var x4___1 = _1;
+            var x4___2 = _2
+          };
+          var name = $as_T(x4___1);
+          var rest = $as_T(x4___2);
+          var \u03b41$___1 = name;
+          var \u03b41$___2 = rest;
+          var name$2 = $as_T(\u03b41$___1);
+          var rest$2 = $as_T(\u03b41$___2);
+          var rest2 = $m_sc_StringOps$().drop$extension__T__I__T(rest$2, 18);
+          $m_sc_StringOps$();
+          $m_sc_StringOps$();
+          $m_sc_StringOps$();
+          var from$1 = 0;
+          _return$1: {
+            var this$22 = $n(rest2);
+            var len$1 = this$22.length;
+            var i$2 = from$1;
+            while ((i$2 < len$1)) {
+              var this$23 = $n(rest2);
+              var index$1 = i$2;
+              var arg1$1 = $charAt(this$23, index$1);
+              if ((arg1$1 === 10)) {
+                var x1$1 = i$2;
+                break _return$1
+              };
+              i$2 = ((1 + i$2) | 0)
+            };
+            var x1$1 = (-1)
+          };
+          if ((x1$1 === (-1))) {
+            var x7___1 = rest2;
+            var x7___2 = ""
+          } else {
+            var this$24 = $n(rest2);
+            if ((x1$1 > this$24.length)) {
+              $charAt(this$24, x1$1)
+            };
+            if ((x1$1 < 0)) {
+              $charAt(this$24, (-1))
+            };
+            var _1$1 = $as_T(this$24.substring(0, x1$1));
+            var this$25 = $n(rest2);
+            if (((x1$1 < 0) || (x1$1 > this$25.length))) {
+              $charAt(this$25, x1$1)
+            };
+            var _2$1 = $as_T(this$25.substring(x1$1));
+            var x7___1 = _1$1;
+            var x7___2 = _2$1
+          };
+          var desc = $as_T(x7___1);
+          var rest3 = $as_T(x7___2);
+          var \u03b42$___1 = desc;
+          var \u03b42$___2 = rest3;
+          var desc$2 = $as_T(\u03b42$___1);
+          var rest3$2 = $as_T(\u03b42$___2);
+          $m_sc_StringOps$();
+          var $$x1 = $m_sc_StringOps$();
+          var this$29 = $n(rest3$2);
+          var code = $n($$x1).slice$extension__T__I__I__T(rest3$2, 1, this$29.length);
+          var example = $f_T__trim__T($n(code));
+          var name$1 = $f_T__trim__T($n(name$2));
+          var description = $f_T__trim__T($n(desc$2));
+          var elem = new $c_Lcaos_frontend_Configurator$Example(example, name$1, description)
+        } catch (e) {
+          var elem;
+          throw $ct_jl_RuntimeException__T__(new $c_jl_RuntimeException(), ("Failed to import when reading: " + ex$2))
+        };
         var unboxedElem = ((elem === null) ? null : elem);
         jsElems.push(unboxedElem)
       };
@@ -1845,14 +2020,14 @@ $c_Lcaos_frontend_widgets_ExampleWidget$.prototype.txtToExamples__T__sc_Iterable
       break
     }
   };
-  return $n($$x2).wrapRefArray__AO__scm_ArraySeq$ofRef(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)(jsElems))
+  return $n($$x3).wrapRefArray__AO__scm_ArraySeq$ofRef(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)(jsElems))
 });
 $c_Lcaos_frontend_widgets_ExampleWidget$.prototype.examplesToTxt__sc_Iterable__T = (function(examples) {
-  var this$2 = $n($as_sc_IterableOnceOps($n(examples).map__F1__O(new $c_sjsr_AnonFunction1(((e) => {
+  var this$1 = $n($as_sc_IterableOnceOps($n(examples).map__F1__O(new $c_sjsr_AnonFunction1(((e) => {
     var e$1 = $as_Lcaos_frontend_Configurator$Example(e);
-    return ((((("module " + $n(e$1).Lcaos_frontend_Configurator$Example__f_name) + ":\\n// description: ") + $p_Lcaos_frontend_widgets_ExampleWidget$__fix__T__T(this, $n(e$1).Lcaos_frontend_Configurator$Example__f_description)) + "\\n") + $p_Lcaos_frontend_widgets_ExampleWidget$__fix__T__T(this, $n(e$1).Lcaos_frontend_Configurator$Example__f_example))
+    return ((((("module " + $n(e$1).Lcaos_frontend_Configurator$Example__f_name) + ":\\n// description: ") + $p_Lcaos_frontend_widgets_ExampleWidget$__fix__T__T($m_Lcaos_frontend_widgets_ExampleWidget$(), $n(e$1).Lcaos_frontend_Configurator$Example__f_description)) + "\\n") + $p_Lcaos_frontend_widgets_ExampleWidget$__fix__T__T($m_Lcaos_frontend_widgets_ExampleWidget$(), $n(e$1).Lcaos_frontend_Configurator$Example__f_example))
   })))));
-  return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", "\\n\\n", "")
+  return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", "\\n\\n", "")
 });
 var $d_Lcaos_frontend_widgets_ExampleWidget$ = new $TypeData().initClass({
   Lcaos_frontend_widgets_ExampleWidget$: 0
@@ -1993,7 +2168,6 @@ function $ct_Lcaos_frontend_widgets_Widget__T__Lcaos_frontend_Documentation__($t
   return $thiz
 }
 function $p_Lcaos_frontend_widgets_Widget__drawButton__Lcaos_frontend_widgets_DomElem__s_util_Either__V($thiz, button, info) {
-  var this$ = $thiz;
   var info$tailLocal1 = info;
   while (true) {
     matchResult5: {
@@ -2036,20 +2210,14 @@ function $p_Lcaos_frontend_widgets_Widget__drawButton__Lcaos_frontend_widgets_Do
             break
           }
           case "oldDownload": {
-            var \u03b4this$tmp1 = this$;
             $n($m_s_package$().s_package$__f_Left);
-            var info$tailLocal1$tmp1 = new $c_s_util_Left("&dArr;");
-            this$ = \u03b4this$tmp1;
-            info$tailLocal1 = info$tailLocal1$tmp1;
+            info$tailLocal1 = new $c_s_util_Left("&dArr;");
             continue;
             break
           }
           default: {
-            var \u03b4this$tmp2 = this$;
             $n($m_s_package$().s_package$__f_Left);
-            var info$tailLocal1$tmp2 = new $c_s_util_Left(x31);
-            this$ = \u03b4this$tmp2;
-            info$tailLocal1 = info$tailLocal1$tmp2;
+            info$tailLocal1 = new $c_s_util_Left(x31);
             continue
           }
         }
@@ -2073,8 +2241,9 @@ function $h_Lcaos_frontend_widgets_Widget() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_Widget.prototype = $c_Lcaos_frontend_widgets_Widget.prototype;
-$c_Lcaos_frontend_widgets_Widget.prototype.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem = (function(parent, visible, headerStyle, buttons) {
-  this.Lcaos_frontend_widgets_Widget__f_wrap = $n($n($n($n($n(parent).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel-group")).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel panel-default")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_Widget__f_titleId);
+$c_Lcaos_frontend_widgets_Widget.prototype.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem = (function(parent, visible, hidden, headerStyle, buttons) {
+  var panel = $n($n(parent).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel-group");
+  this.Lcaos_frontend_widgets_Widget__f_wrap = $n($n($n(panel).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel panel-default")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_Widget__f_titleId);
   var $$x1 = $n($n($n($n($n(this.Lcaos_frontend_widgets_Widget__f_wrap).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel-heading my-panel-heading")).append__T__Lcaos_frontend_widgets_DomElem("h4")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel-title"));
   var this$1 = $n(buttons);
   var elem = $n($$x1).attr__T__T__Lcaos_frontend_widgets_DomElem("style", (("padding-right: " + Math.imul(28, this$1.length__I())) + "pt;"));
@@ -2095,13 +2264,15 @@ $c_Lcaos_frontend_widgets_Widget.prototype.panelBox__Lcaos_frontend_widgets_DomE
     throw new $c_s_MatchError(x$1$3)
   }));
   $n(this$4.filtered__sc_Iterable()).foreach__F1__V(f);
-  var ev$2 = $n($n($n($n($as_Lcaos_frontend_widgets_DomElem(expander.sr_ObjectRef__f_elem)).append__T__Lcaos_frontend_widgets_DomElem("a")).attr__T__T__Lcaos_frontend_widgets_DomElem("data-toggle", "collapse")).attr__T__T__Lcaos_frontend_widgets_DomElem("href", ("#collapse-1" + this.Lcaos_frontend_widgets_Widget__f_titleId))).attr__T__T__Lcaos_frontend_widgets_DomElem("aria-expanded", ("" + visible));
-  expander.sr_ObjectRef__f_elem = ev$2;
+  expander.sr_ObjectRef__f_elem = $n($n($n($n($as_Lcaos_frontend_widgets_DomElem(expander.sr_ObjectRef__f_elem)).append__T__Lcaos_frontend_widgets_DomElem("a")).attr__T__T__Lcaos_frontend_widgets_DomElem("data-toggle", "collapse")).attr__T__T__Lcaos_frontend_widgets_DomElem("href", ("#collapse-1" + this.Lcaos_frontend_widgets_Widget__f_titleId))).attr__T__T__Lcaos_frontend_widgets_DomElem("aria-expanded", ("" + visible));
   if ((!visible)) {
     $n($as_Lcaos_frontend_widgets_DomElem(expander.sr_ObjectRef__f_elem)).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "collapsed")
   };
   $n($as_Lcaos_frontend_widgets_DomElem(expander.sr_ObjectRef__f_elem)).text__T__Lcaos_frontend_widgets_DomNode(this.Lcaos_frontend_widgets_Widget__f_title);
   var res = $n($n($n($n($n($n($n(this.Lcaos_frontend_widgets_Widget__f_wrap).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", ("collapse-1" + this.Lcaos_frontend_widgets_Widget__f_titleId))).attr__T__T__Lcaos_frontend_widgets_DomElem("class", (visible ? "panel-collapse collapse in" : "panel-collapse collapse"))).attr__T__T__Lcaos_frontend_widgets_DomElem("style", (visible ? "" : "height: 0px;"))).attr__T__T__Lcaos_frontend_widgets_DomElem("aria-expanded", ("" + visible))).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel-body my-panel-body");
+  if (hidden) {
+    $n(panel).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "panel-group hidden")
+  };
   var prefix$1 = $n($m_Lcaos_frontend_widgets_Widget$().mkHelper__T__Lcaos_frontend_Documentation__s_Option(this.Lcaos_frontend_widgets_Widget__f_title, this.Lcaos_frontend_widgets_Widget__f_doc)).toList__sci_List();
   var allButtons = $n($n(buttons).reverse__sci_List()).$colon$colon$colon__sci_List__sci_List(prefix$1);
   var this$7 = $n(allButtons);
@@ -2140,9 +2311,7 @@ $c_Lcaos_frontend_widgets_Widget.prototype.panelBox__Lcaos_frontend_widgets_DomE
             $n(button).attr__T__T__Lcaos_frontend_widgets_DomElem("title", title$1)
           };
           $p_Lcaos_frontend_widgets_Widget__drawButton__Lcaos_frontend_widgets_DomElem__s_util_Either__V(this, button, name$1);
-          $n(button).on__T__F0__V("click", new $c_sjsr_AnonFunction0((() => {
-            $n(action$1).apply__O()
-          })));
+          $n(button).on__T__F0__V("click", action$1);
           break matchResult4
         }
       };
@@ -2163,8 +2332,7 @@ $c_Lcaos_frontend_widgets_Widget.prototype.isVisible__Z = (function() {
     var i = 0;
     while (true) {
       var arg1 = i;
-      var ev$3 = (elem || ($as_T(es.item(arg1).parentNode.parentNode.parentNode.attributes.getNamedItem("id").value) === this.Lcaos_frontend_widgets_Widget__f_titleId));
-      elem = ev$3;
+      elem = (elem || ($as_T(es.item(arg1).parentNode.parentNode.parentNode.attributes.getNamedItem("id").value) === this.Lcaos_frontend_widgets_Widget__f_titleId));
       if ((i === scala$collection$immutable$Range$$lastElement)) {
         break
       };
@@ -2260,7 +2428,8 @@ function $m_Lcaos_frontend_widgets_Widget$() {
 }
 function $f_Lcaos_frontend_widgets_WidgetInfo__$init$__V($thiz) {
   $thiz.expanded_$eq__Z__V(false);
-  $thiz.location_$eq__I__V(0)
+  $thiz.location_$eq__I__V(0);
+  $thiz.hidden_$eq__Z__V(false)
 }
 function $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo($thiz) {
   $thiz.expanded_$eq__Z__V(true);
@@ -2282,16 +2451,15 @@ function $isArrayOf_Lcaos_frontend_widgets_WidgetInfo(obj, depth) {
 function $asArrayOf_Lcaos_frontend_widgets_WidgetInfo(obj, depth) {
   return (($isArrayOf_Lcaos_frontend_widgets_WidgetInfo(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcaos.frontend.widgets.WidgetInfo;", depth))
 }
-function $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$1, _ids$1, s) {
+function $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I($thiz, _ids$1, i$1, s) {
   if ($n($as_sci_Map($n(_ids$1).sr_ObjectRef__f_elem)).contains__O__Z(s)) {
     return $uI($n($as_sci_Map($n(_ids$1).sr_ObjectRef__f_elem)).apply__O__O(s))
   } else {
+    var $$x2 = $n(_ids$1);
     var $$x1 = $as_sci_Map($n(_ids$1).sr_ObjectRef__f_elem);
     var y = $n(i$1).sr_IntRef__f_elem;
-    var ev$5 = $as_sci_Map($n($$x1).$plus__T2__sci_MapOps(new $c_T2(s, y)));
-    $n(_ids$1).sr_ObjectRef__f_elem = ev$5;
-    var ev$6 = ((1 + $n(i$1).sr_IntRef__f_elem) | 0);
-    $n(i$1).sr_IntRef__f_elem = ev$6;
+    $$x2.sr_ObjectRef__f_elem = $as_sci_Map($n($$x1).$plus__T2__sci_MapOps(new $c_T2(s, y)));
+    $n(i$1).sr_IntRef__f_elem = ((1 + $n(i$1).sr_IntRef__f_elem) | 0);
     return (((-1) + $n(i$1).sr_IntRef__f_elem) | 0)
   }
 }
@@ -2303,7 +2471,7 @@ function $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, s) {
     return $f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T($n($f_T__replaceAll__T__T__T((("\" " + s) + "\""), "<", "&lt;")), ">", "&gt;")), "\n", "<br>")
   }
 }
-function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRef__sci_Queue__sci_Set__I__T($thiz, sos$5, showSt$1, showAct$1, i$2, _ids$2, next, done, limit) {
+function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_ObjectRef__sr_IntRef__sci_Queue__sci_Set__I__T($thiz, sos$5, showSt$1, showAct$1, _ids$2, i$2, next, done, limit) {
   var next$tailLocal1 = next;
   while (true) {
     if ((limit <= 0)) {
@@ -2313,7 +2481,7 @@ function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRe
       while ($n(it).hasNext__Z()) {
         var this$2 = $n(b);
         var arg1 = $n(it).next__O();
-        var elem = (("\n  style " + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, arg1)) + " fill:#f87,stroke:#633,stroke-width:4px;");
+        var elem = (("\n  style " + $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I($thiz, _ids$2, i$2, arg1)) + " fill:#f87,stroke:#633,stroke-width:4px;");
         this$2.addOne__O__scm_Growable(elem)
       };
       var this$3 = $n($as_sc_IterableOnceOps($n(b).result__O()));
@@ -2329,30 +2497,29 @@ function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRe
           next$tailLocal1 = x52;
           continue
         };
-        var this$4 = $n(done);
-        var done2 = $as_sci_Set(this$4.incl__O__sci_SetOps(x51));
-        var elem$1 = (((("\n  " + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, x51)) + "([") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showSt$1).apply__O__O(x51)))) + "]);");
+        var elem$1 = (($n(sos$5), false) ? (("\n  style " + $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I($thiz, _ids$2, i$2, x51)) + " fill:#eff;") : "");
         var res = new $c_sr_ObjectRef(elem$1);
+        var this$6 = $n(done);
+        var done2 = $as_sci_Set(this$6.incl__O__sci_SetOps(x51));
+        res.sr_ObjectRef__f_elem = (($as_T(res.sr_ObjectRef__f_elem) + ((("\n  " + $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I($thiz, _ids$2, i$2, x51)) + "([") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showSt$1).apply__O__O(x51))))) + "]);");
         var next3 = new $c_sr_ObjectRef(x52);
         $n($n($n(sos$5).next__O__sci_Set(x51)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
           var x$1$1 = $as_T2(x$1);
           return ((x$1$1 !== null) && ($n(x$1$1)._1__O(), $n(x$1$1)._2__O(), true))
-        })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((showSt$1, showAct$1, i$2, _ids$2, x51, res, next3) => ((x$1$2) => {
+        })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((next3, res, showSt$1, x51, showAct$1, _ids$2, i$2) => ((x$1$2) => {
           var x$1$3 = $as_T2(x$1$2);
           matchResult15: {
             if ((x$1$3 !== null)) {
               var a$1 = $n(x$1$3)._1__O();
               var s2$1 = $n(x$1$3)._2__O();
-              var ev$7 = $n($as_sci_Queue(next3.sr_ObjectRef__f_elem)).enqueue__O__sci_Queue(s2$1);
-              next3.sr_ObjectRef__f_elem = ev$7;
-              var ev$8 = (($as_T(res.sr_ObjectRef__f_elem) + ((((((((("\n  " + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, s2$1)) + "([") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showSt$1).apply__O__O(s2$1)))) + "]);\n  ") + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, x51)) + " -->|") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showAct$1).apply__O__O(a$1)))) + "| ") + $p_Lcaos_sos_SOS$__ids$1__sr_IntRef__sr_ObjectRef__O__I($thiz, i$2, _ids$2, s2$1))) + ";");
-              res.sr_ObjectRef__f_elem = ev$8;
+              next3.sr_ObjectRef__f_elem = $n($as_sci_Queue(next3.sr_ObjectRef__f_elem)).enqueue__O__sci_Queue(s2$1);
+              res.sr_ObjectRef__f_elem = (($as_T(res.sr_ObjectRef__f_elem) + ((((((((("\n  " + $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I($thiz, _ids$2, i$2, s2$1)) + "([") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showSt$1).apply__O__O(s2$1)))) + "]);\n  ") + $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I($thiz, _ids$2, i$2, x51)) + " -->|") + $p_Lcaos_sos_SOS$__fix$1__T__T($thiz, $as_T($n(showAct$1).apply__O__O(a$1)))) + "| ") + $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I($thiz, _ids$2, i$2, s2$1))) + ";");
               break matchResult15
             };
             throw new $c_s_MatchError(x$1$3)
           }
-        }))(showSt$1, showAct$1, i$2, _ids$2, x51, res, next3)));
-        return (("" + $as_T(res.sr_ObjectRef__f_elem)) + $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRef__sci_Queue__sci_Set__I__T($thiz, sos$5, showSt$1, showAct$1, i$2, _ids$2, $as_sci_Queue(next3.sr_ObjectRef__f_elem), done2, (((-1) + limit) | 0)))
+        }))(next3, res, showSt$1, x51, showAct$1, _ids$2, i$2)));
+        return (("" + $as_T(res.sr_ObjectRef__f_elem)) + $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_ObjectRef__sr_IntRef__sci_Queue__sci_Set__I__T($thiz, sos$5, showSt$1, showAct$1, _ids$2, i$2, $as_sci_Queue(next3.sr_ObjectRef__f_elem), done2, (((-1) + limit) | 0)))
       }
     };
     var x = $m_s_None$();
@@ -2362,24 +2529,27 @@ function $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRe
     throw new $c_s_MatchError(x44)
   }
 }
-function $p_Lcaos_sos_SOS$__aux$3__Lcaos_sos_SOS__sci_Set__sci_Set__I__I__T3($thiz, sos$7, next, done, edges, limit) {
+function $p_Lcaos_sos_SOS$__aux$3__Lcaos_sos_SOS__sci_Set__sci_Set__sci_Set__I__I__T4($thiz, sos$7, next, done, passed, edges, limit) {
   var limit$tailLocal2 = limit;
   var edges$tailLocal2 = edges;
+  var passed$tailLocal1 = passed;
   var done$tailLocal2 = done;
   var next$tailLocal3 = next;
   while (true) {
     if ((limit$tailLocal2 <= 0)) {
       var _1 = done$tailLocal2;
-      var _2 = edges$tailLocal2;
-      return new $c_T3(_1, _2, false)
+      var _2 = passed$tailLocal1;
+      var _3 = edges$tailLocal2;
+      return new $c_T4(_1, _2, _3, false)
     };
     var this$2 = $n(next$tailLocal3);
     var x58 = $f_sc_IterableOps__headOption__s_Option(this$2);
     var x = $m_s_None$();
     if ((x === x58)) {
       var _1$1 = done$tailLocal2;
-      var _2$1 = edges$tailLocal2;
-      return new $c_T3(_1$1, _2$1, true)
+      var _2$1 = passed$tailLocal1;
+      var _3$1 = edges$tailLocal2;
+      return new $c_T4(_1$1, _2$1, _3$1, true)
     };
     if ((x58 instanceof $c_s_Some)) {
       var x62 = $n($as_s_Some(x58)).s_Some__f_value;
@@ -2389,19 +2559,28 @@ function $p_Lcaos_sos_SOS$__aux$3__Lcaos_sos_SOS__sci_Set__sci_Set__I__I__T3($th
         continue
       };
       var more = $n(sos$7).next__O__sci_Set(x62);
-      var this$5 = $n(next$tailLocal3);
-      var this$7 = $n(this$5.excl__O__sci_SetOps(x62));
-      var that = $as_sc_IterableOnce($n(more).map__F1__O(new $c_sjsr_AnonFunction1(((_$2) => {
+      var this$6 = $n(passed$tailLocal1);
+      var that = $as_sc_IterableOnce($n(more).map__F1__O(new $c_sjsr_AnonFunction1(((x62) => ((e) => {
+        var e$1 = $as_T2(e);
+        var _2$2 = $n(e$1)._1__O();
+        var _3$2 = $n(e$1)._2__O();
+        return new $c_T3(x62, _2$2, _3$2)
+      }))(x62))));
+      var passed2 = $as_sci_Set(this$6.concat__sc_IterableOnce__sc_SetOps(that));
+      var this$7 = $n(next$tailLocal3);
+      var this$8 = $n(this$7.excl__O__sci_SetOps(x62));
+      var that$1 = $as_sc_IterableOnce($n(more).map__F1__O(new $c_sjsr_AnonFunction1(((_$2) => {
         var _$2$1 = $as_T2(_$2);
         return $n(_$2$1)._2__O()
       }))));
-      var next$tailLocal3$tmp1 = $as_sci_Set(this$7.concat__sc_IterableOnce__sc_SetOps(that));
-      var this$8 = $n(done$tailLocal2);
-      var done$tailLocal2$tmp1 = $as_sci_Set(this$8.incl__O__sci_SetOps(x62));
+      var next$tailLocal3$tmp1 = $as_sci_Set(this$8.concat__sc_IterableOnce__sc_SetOps(that$1));
+      var this$9 = $n(done$tailLocal2);
+      var done$tailLocal2$tmp1 = $as_sci_Set(this$9.incl__O__sci_SetOps(x62));
       var edges$tailLocal2$tmp1 = ((edges$tailLocal2 + $n(more).size__I()) | 0);
       var limit$tailLocal2$tmp1 = ((limit$tailLocal2 - $n(more).size__I()) | 0);
       next$tailLocal3 = next$tailLocal3$tmp1;
       done$tailLocal2 = done$tailLocal2$tmp1;
+      passed$tailLocal1 = passed2;
       edges$tailLocal2 = edges$tailLocal2$tmp1;
       limit$tailLocal2 = limit$tailLocal2$tmp1;
       continue
@@ -2421,27 +2600,34 @@ function $h_Lcaos_sos_SOS$() {
 }
 $h_Lcaos_sos_SOS$.prototype = $c_Lcaos_sos_SOS$.prototype;
 $c_Lcaos_sos_SOS$.prototype.toMermaid__Lcaos_sos_SOS__O__F1__F1__I__T = (function(sos, s, showSt, showAct, maxNodes) {
+  $n($m_s_package$().s_package$__f_List);
+  var elems = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([s]));
+  return this.toMermaids__Lcaos_sos_SOS__sc_Iterable__F1__F1__I__T(sos, $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems), showSt, showAct, maxNodes)
+});
+$c_Lcaos_sos_SOS$.prototype.toMermaids__Lcaos_sos_SOS__sc_Iterable__F1__F1__I__T = (function(sos, ss, showSt, showAct, maxNodes) {
   var i = new $c_sr_IntRef(0);
   var this$2 = $n($m_s_Predef$().s_Predef$__f_Map);
   var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
   var elem = this$2.from__sc_IterableOnce__sci_Map(elems);
   var _ids = new $c_sr_ObjectRef(elem);
-  var xs = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([s]));
-  var $$x2 = $m_sci_Nil$();
-  var this$5 = $n(xs);
-  $m_sci_List$();
-  var $$x1 = $ct_sci_Queue__sci_List__sci_List__(new $c_sci_Queue(), $$x2, $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$5));
+  var this$5 = $n($as_sc_IterableOnceOps($n(ss).map__F1__O(new $c_sjsr_AnonFunction1(((s) => (("style " + $p_Lcaos_sos_SOS$__ids$1__sr_ObjectRef__sr_IntRef__O__I(this, _ids, i, s)) + " fill:#8f7,stroke:#363,stroke-width:4px;\n"))))));
+  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$5, "", "", "");
+  var xs = $n(ss).toList__sci_List();
+  var $$x1 = $ct_sci_Queue__sci_List__sci_List__(new $c_sci_Queue(), $m_sci_Nil$(), $n(xs));
   var this$7 = $n($m_s_Predef$().s_Predef$__f_Set);
   var elems$1 = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([]));
-  return ("graph TD\n  style 0 fill:#8f7,stroke:#363,stroke-width:4px;" + $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_IntRef__sr_ObjectRef__sci_Queue__sci_Set__I__T(this, sos, showSt, showAct, i, _ids, $$x1, this$7.from__sc_IterableOnce__sci_Set(elems$1), maxNodes))
+  return ((("graph TD\n  " + $$x2) + "\n  ") + $p_Lcaos_sos_SOS$__aux$1__Lcaos_sos_SOS__F1__F1__sr_ObjectRef__sr_IntRef__sci_Queue__sci_Set__I__T(this, sos, showSt, showAct, _ids, i, $$x1, this$7.from__sc_IterableOnce__sci_Set(elems$1), maxNodes))
 });
-$c_Lcaos_sos_SOS$.prototype.traverseEdges__Lcaos_sos_SOS__O__I__T3 = (function(sos, s, max) {
+$c_Lcaos_sos_SOS$.prototype.traverseEdges__Lcaos_sos_SOS__O__I__T4 = (function(sos, s, max) {
   var this$1 = $n($m_s_Predef$().s_Predef$__f_Set);
   var elems = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([s]));
-  var $$x1 = this$1.from__sc_IterableOnce__sci_Set(elems);
+  var $$x2 = this$1.from__sc_IterableOnce__sci_Set(elems);
   var this$2 = $n($m_s_Predef$().s_Predef$__f_Set);
   var elems$1 = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([]));
-  return $p_Lcaos_sos_SOS$__aux$3__Lcaos_sos_SOS__sci_Set__sci_Set__I__I__T3(this, sos, $$x1, this$2.from__sc_IterableOnce__sci_Set(elems$1), 0, max)
+  var $$x1 = this$2.from__sc_IterableOnce__sci_Set(elems$1);
+  var this$3 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([]));
+  return $p_Lcaos_sos_SOS$__aux$3__Lcaos_sos_SOS__sci_Set__sci_Set__sci_Set__I__I__T4(this, sos, $$x2, $$x1, this$3.from__sc_IterableOnce__sci_Set(elems$2), 0, max)
 });
 var $d_Lcaos_sos_SOS$ = new $TypeData().initClass({
   Lcaos_sos_SOS$: 0
@@ -5805,6 +5991,35 @@ function $m_jl_StackTrace$StringRE$() {
     $n_jl_StackTrace$StringRE$ = new $c_jl_StackTrace$StringRE$()
   };
   return $n_jl_StackTrace$StringRE$
+}
+/** @constructor */
+function $c_jl_System$Streams$() {
+  this.jl_System$Streams$__f_out = null;
+  this.jl_System$Streams$__f_err = null;
+  $n_jl_System$Streams$ = this;
+  this.jl_System$Streams$__f_out = new $c_jl_JSConsoleBasedPrintStream(false);
+  this.jl_System$Streams$__f_err = new $c_jl_JSConsoleBasedPrintStream(true)
+}
+$c_jl_System$Streams$.prototype = new $h_O();
+$c_jl_System$Streams$.prototype.constructor = $c_jl_System$Streams$;
+/** @constructor */
+function $h_jl_System$Streams$() {
+  /*<skip>*/
+}
+$h_jl_System$Streams$.prototype = $c_jl_System$Streams$.prototype;
+var $d_jl_System$Streams$ = new $TypeData().initClass({
+  jl_System$Streams$: 0
+}, false, "java.lang.System$Streams$", {
+  jl_System$Streams$: 1,
+  O: 1
+});
+$c_jl_System$Streams$.prototype.$classData = $d_jl_System$Streams$;
+var $n_jl_System$Streams$;
+function $m_jl_System$Streams$() {
+  if ((!$n_jl_System$Streams$)) {
+    $n_jl_System$Streams$ = new $c_jl_System$Streams$()
+  };
+  return $n_jl_System$Streams$
 }
 function $p_jl_System$SystemProperties$__loadSystemProperties__O($thiz) {
   var result = {};
@@ -10520,18 +10735,27 @@ function $m_Lrebecaos_backend_Eval$() {
   };
   return $n_Lrebecaos_backend_Eval$
 }
-function $p_Lrebecaos_backend_HistoryState$HistorySOS$__getFrom__Lrebecaos_backend_Semantics$Msg__T($thiz, a) {
-  return ($f_T__isBlank__Z($n($n(a).Lrebecaos_backend_Semantics$Msg__f_snd)) ? $n(a).Lrebecaos_backend_Semantics$Msg__f_rcv : $n(a).Lrebecaos_backend_Semantics$Msg__f_snd)
+/** @constructor */
+function $c_Lrebecaos_backend_HistoryState$HistorySOS$() {
+  /*<skip>*/
 }
-function $p_Lrebecaos_backend_HistoryState$HistorySOS$__getMsg__Lrebecaos_backend_Semantics$Msg__T($thiz, a) {
-  var $$x2 = $n(a).Lrebecaos_backend_Semantics$Msg__f_m;
-  var this$2 = $n($n(a).Lrebecaos_backend_Semantics$Msg__f_args);
-  var f = ((d) => {
-    var d$1 = $as_Lrebecaos_backend_Eval$Data(d);
-    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Eval$Data__T(d$1)
+$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype = new $h_O();
+$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype.constructor = $c_Lrebecaos_backend_HistoryState$HistorySOS$;
+/** @constructor */
+function $h_Lrebecaos_backend_HistoryState$HistorySOS$() {
+  /*<skip>*/
+}
+$h_Lrebecaos_backend_HistoryState$HistorySOS$.prototype = $c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype;
+$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype.toMermaidSndRcv__Lrebecaos_backend_HistoryState$HState__T = (function(hs) {
+  var this$2 = $n($n($n(hs).Lrebecaos_backend_HistoryState$HState__f_acts).reverse__sci_List());
+  var f = ((act) => {
+    var act$1 = $as_T2(act);
+    var $$x1 = $m_Lrebecaos_backend_HistoryState$HistorySOS$().rebecaos$backend$HistoryState$HistorySOS$$$getFrom__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()));
+    var a = $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O());
+    return (((((("  " + $$x1) + " ->> ") + $n(a).Lrebecaos_backend_Semantics$Msg__f_rcv) + ": ") + $m_Lrebecaos_backend_HistoryState$HistorySOS$().rebecaos$backend$HistoryState$HistorySOS$$$getMsg__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))) + $m_Lrebecaos_backend_HistoryState$HistorySOS$().rebecaos$backend$HistoryState$HistorySOS$$$getTime__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O())))
   });
   if ((this$2 === $m_sci_Nil$())) {
-    var $$x1 = $m_sci_Nil$()
+    var $$x2 = $m_sci_Nil$()
   } else {
     var arg1 = this$2.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
@@ -10544,12 +10768,47 @@ function $p_Lrebecaos_backend_HistoryState$HistorySOS$__getMsg__Lrebecaos_backen
       t = nx;
       rest = $as_sci_List($n(rest).tail__O())
     };
+    var $$x2 = h
+  };
+  var this$5 = $n($$x2);
+  var this$3 = $n($as_Lrebecaos_backend_Bag($n($n(hs).Lrebecaos_backend_HistoryState$HState__f_s).T3__f__3));
+  var suffix = $as_sc_IterableOnce($n($n(this$3.Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((m) => {
+    var m$1 = $as_Lrebecaos_backend_Semantics$Msg(m);
+    return (((((("  " + $m_Lrebecaos_backend_HistoryState$HistorySOS$().rebecaos$backend$HistoryState$HistorySOS$$$getFrom__Lrebecaos_backend_Semantics$Msg__T(m$1)) + " -->> ") + $n(m$1).Lrebecaos_backend_Semantics$Msg__f_rcv) + ": ") + $m_Lrebecaos_backend_HistoryState$HistorySOS$().rebecaos$backend$HistoryState$HistorySOS$$$getMsg__Lrebecaos_backend_Semantics$Msg__T(m$1)) + $m_Lrebecaos_backend_HistoryState$HistorySOS$().rebecaos$backend$HistoryState$HistorySOS$$$getTime__Lrebecaos_backend_Semantics$Msg__T(m$1))
+  }))));
+  var this$6 = $n(this$5.appendedAll__sc_IterableOnce__sci_List(suffix));
+  return ("sequenceDiagram\n" + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$6, "", "\n", ""))
+});
+$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype.rebecaos$backend$HistoryState$HistorySOS$$$getFrom__Lrebecaos_backend_Semantics$Msg__T = (function(a) {
+  return ($f_T__isBlank__Z($n($n(a).Lrebecaos_backend_Semantics$Msg__f_snd)) ? $n(a).Lrebecaos_backend_Semantics$Msg__f_rcv : $n(a).Lrebecaos_backend_Semantics$Msg__f_snd)
+});
+$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype.rebecaos$backend$HistoryState$HistorySOS$$$getMsg__Lrebecaos_backend_Semantics$Msg__T = (function(a) {
+  var $$x2 = $n(a).Lrebecaos_backend_Semantics$Msg__f_m;
+  var this$1 = $n($n(a).Lrebecaos_backend_Semantics$Msg__f_args);
+  var f = ((d) => {
+    var d$1 = $as_Lrebecaos_backend_Eval$Data(d);
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Eval$Data__T(d$1)
+  });
+  if ((this$1 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$1.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$1.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
     var $$x1 = h
   };
-  var this$3 = $n($$x1);
-  return ((($$x2 + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ",", "")) + ")")
-}
-function $p_Lrebecaos_backend_HistoryState$HistorySOS$__getTime__Lrebecaos_backend_Semantics$Msg__T($thiz, a) {
+  var this$2 = $n($$x1);
+  return ((($$x2 + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ",", "")) + ")")
+});
+$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype.rebecaos$backend$HistoryState$HistorySOS$$$getTime__Lrebecaos_backend_Semantics$Msg__T = (function(a) {
   var _1 = $n(a).Lrebecaos_backend_Semantics$Msg__f_tt;
   var _2 = $n(a).Lrebecaos_backend_Semantics$Msg__f_dl;
   var x11 = new $c_T2(_1, _2);
@@ -10573,50 +10832,6 @@ function $p_Lrebecaos_backend_HistoryState$HistorySOS$__getTime__Lrebecaos_backe
     return (((" @ " + x18) + "..") + dl)
   };
   throw new $c_s_MatchError(x11)
-}
-/** @constructor */
-function $c_Lrebecaos_backend_HistoryState$HistorySOS$() {
-  /*<skip>*/
-}
-$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype = new $h_O();
-$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype.constructor = $c_Lrebecaos_backend_HistoryState$HistorySOS$;
-/** @constructor */
-function $h_Lrebecaos_backend_HistoryState$HistorySOS$() {
-  /*<skip>*/
-}
-$h_Lrebecaos_backend_HistoryState$HistorySOS$.prototype = $c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype;
-$c_Lrebecaos_backend_HistoryState$HistorySOS$.prototype.toMermaidSndRcv__Lrebecaos_backend_HistoryState$HState__T = (function(hs) {
-  var this$2 = $n($n($n(hs).Lrebecaos_backend_HistoryState$HState__f_acts).reverse__sci_List());
-  var f = ((act) => {
-    var act$1 = $as_T2(act);
-    var $$x1 = $p_Lrebecaos_backend_HistoryState$HistorySOS$__getFrom__Lrebecaos_backend_Semantics$Msg__T(this, $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()));
-    var a = $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O());
-    return (((((("  " + $$x1) + " ->> ") + $n(a).Lrebecaos_backend_Semantics$Msg__f_rcv) + ": ") + $p_Lrebecaos_backend_HistoryState$HistorySOS$__getMsg__Lrebecaos_backend_Semantics$Msg__T(this, $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))) + $p_Lrebecaos_backend_HistoryState$HistorySOS$__getTime__Lrebecaos_backend_Semantics$Msg__T(this, $as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O())))
-  });
-  if ((this$2 === $m_sci_Nil$())) {
-    var $$x2 = $m_sci_Nil$()
-  } else {
-    var arg1 = this$2.head__O();
-    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-    var t = h;
-    var rest = $as_sci_List(this$2.tail__O());
-    while ((rest !== $m_sci_Nil$())) {
-      var arg1$1 = $n(rest).head__O();
-      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-      $n(t).sci_$colon$colon__f_next = nx;
-      t = nx;
-      rest = $as_sci_List($n(rest).tail__O())
-    };
-    var $$x2 = h
-  };
-  var this$4 = $n($$x2);
-  var this$3 = $n($as_Lrebecaos_backend_Bag($n($n(hs).Lrebecaos_backend_HistoryState$HState__f_s).T3__f__3));
-  var suffix = $as_sc_IterableOnce($n($n(this$3.Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((m) => {
-    var m$1 = $as_Lrebecaos_backend_Semantics$Msg(m);
-    return (((((("  " + $p_Lrebecaos_backend_HistoryState$HistorySOS$__getFrom__Lrebecaos_backend_Semantics$Msg__T(this, m$1)) + " -->> ") + $n(m$1).Lrebecaos_backend_Semantics$Msg__f_rcv) + ": ") + $p_Lrebecaos_backend_HistoryState$HistorySOS$__getMsg__Lrebecaos_backend_Semantics$Msg__T(this, m$1)) + $p_Lrebecaos_backend_HistoryState$HistorySOS$__getTime__Lrebecaos_backend_Semantics$Msg__T(this, m$1))
-  }))));
-  var this$5 = $n(this$4.appendedAll__sc_IterableOnce__sci_List(suffix));
-  return ("sequenceDiagram\n" + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$5, "", "\n", ""))
 });
 var $d_Lrebecaos_backend_HistoryState$HistorySOS$ = new $TypeData().initClass({
   Lrebecaos_backend_HistoryState$HistorySOS$: 0
@@ -10691,7 +10906,7 @@ function $p_Lrebecaos_syntax_Parser$__qAnyName__Lcats_parse_Parser($thiz) {
   var this$1 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz));
   var that = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(46)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz))).$qmark__Lcats_parse_Parser0();
   $m_Lcats_parse_Parser$();
-  var this$7 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
+  var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     if ((x$1 !== null)) {
@@ -10708,7 +10923,7 @@ function $p_Lrebecaos_syntax_Parser$__qAnyName__Lcats_parse_Parser($thiz) {
     };
     throw new $c_s_MatchError(x$1)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$7, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$6, fn)
 }
 function $p_Lrebecaos_syntax_Parser$__varName__Lcats_parse_Parser($thiz) {
   var $$x1 = $m_Lcats_parse_Parser$();
@@ -10737,14 +10952,14 @@ function $p_Lrebecaos_syntax_Parser$__className__Lcats_parse_Parser($thiz) {
   return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$10)
 }
 function $p_Lrebecaos_syntax_Parser$__intVal__Lcats_parse_Parser($thiz) {
-  var this$5 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
+  var this$4 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
   var fn = new $c_sjsr_AnonFunction1(((_$3) => {
     var _$3$1 = $as_T(_$3);
     $m_sc_StringOps$();
-    var this$4 = $m_jl_Integer$();
-    return this$4.parseInt__T__I__I(_$3$1, 10)
+    var this$3 = $m_jl_Integer$();
+    return this$3.parseInt__T__I__I(_$3$1, 10)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$5, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn)
 }
 function $p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser($thiz) {
   var ev$9 = $n($thiz.Lrebecaos_syntax_Parser$__f_sps);
@@ -10777,39 +10992,39 @@ function $p_Lrebecaos_syntax_Parser$__ite$1__Lcats_parse_Parser__Lcats_parse_Par
   var this$4 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
   var that$1 = $n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("else")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($thiz.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__commBlock$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$2))).$qmark__Lcats_parse_Parser0();
   $m_Lcats_parse_Parser$();
-  var this$10 = new $c_Lcats_parse_Parser$Impl$Prod(this$4, that$1);
+  var this$9 = new $c_Lcats_parse_Parser$Impl$Prod(this$4, that$1);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var b = $as_Lrebecaos_syntax_Program$Expr($n($as_T2($n(x$1)._1__O()))._1__O());
     var ct = $as_Lrebecaos_syntax_Program$Statement($n($as_T2($n(x$1)._1__O()))._2__O());
-    var this$8 = $n($as_s_Option($n(x$1)._2__O()));
-    var cf = $as_Lrebecaos_syntax_Program$Statement((this$8.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$8.get__O()));
+    var this$7 = $n($as_s_Option($n(x$1)._2__O()));
+    var cf = $as_Lrebecaos_syntax_Program$Statement((this$7.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$7.get__O()));
     return new $c_Lrebecaos_syntax_Program$Statement$ITE(b, ct, cf)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$9, fn)
 }
 function $p_Lrebecaos_syntax_Parser$__commBlock$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, stmRec$1) {
   var this$1 = $n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(123));
   var that = $thiz.Lrebecaos_syntax_Parser$__f_sps;
   $m_Lcats_parse_Parser$();
-  var this$6 = $n($n(new $c_Lcats_parse_Parser$Impl$Prod(this$1, that).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(stmRec$1).$qmark__Lcats_parse_Parser0()).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((_$6) => {
+  var this$5 = $n($n(new $c_Lcats_parse_Parser$Impl$Prod(this$1, that).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(stmRec$1).$qmark__Lcats_parse_Parser0()).map__F1__Lcats_parse_Parser0(new $c_sjsr_AnonFunction1(((_$6) => {
     var _$6$1 = $as_s_Option(_$6);
-    var this$5 = $n(_$6$1);
-    return $as_Lrebecaos_syntax_Program$Statement((this$5.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$5.get__O()))
+    var this$4 = $n(_$6$1);
+    return $as_Lrebecaos_syntax_Program$Statement((this$4.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$4.get__O()))
   }))))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125))));
   var that$1 = $thiz.skip__Lcats_parse_Parser();
-  var this$8 = $n(this$6.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
-  var this$7 = $n($thiz.call__Lcats_parse_Parser());
-  var that$2 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$7);
-  var this$10 = $n(this$8.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
-  var this$9 = $n($p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz));
-  var that$3 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$9);
-  var this$12 = $n(this$10.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
-  var this$11 = $n($thiz.choice__Lcats_parse_Parser());
-  var that$4 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$11);
-  var this$13 = $n(this$12.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4));
+  var this$7 = $n(this$5.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
+  var this$6 = $n($thiz.call__Lcats_parse_Parser());
+  var that$2 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$6);
+  var this$9 = $n(this$7.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
+  var this$8 = $n($p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz));
+  var that$3 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$8);
+  var this$11 = $n(this$9.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
+  var this$10 = $n($thiz.choice__Lcats_parse_Parser());
+  var that$4 = $m_Lcats_parse_Parser$().backtrack__Lcats_parse_Parser__Lcats_parse_Parser(this$10);
+  var this$12 = $n(this$11.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4));
   var that$5 = $thiz.newInst__Lcats_parse_Parser();
-  return this$13.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$5)
+  return this$12.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$5)
 }
 function $p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz) {
   var this$3 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser($thiz));
@@ -10822,59 +11037,57 @@ function $p_Lrebecaos_syntax_Parser$__assign$1__Lcats_parse_Parser($thiz) {
   var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$3, that$1);
   var that$2 = $thiz.expr2__Lcats_parse_Parser();
   $m_Lcats_parse_Parser$();
-  var this$11 = $n(new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$2).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59))));
+  var this$10 = $n(new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$2).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($n($thiz.Lrebecaos_syntax_Parser$__f_sps).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59))));
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var ident = $as_T($n($as_T2($n(x$1)._1__O()))._1__O());
     var e = $as_Lrebecaos_syntax_Program$Expr($n(x$1)._2__O());
     return new $c_Lrebecaos_syntax_Program$Statement$Assign(ident, e)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$11, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn)
 }
 function $p_Lrebecaos_syntax_Parser$__lit$1__Lcats_parse_Parser__Lcats_parse_Parser($thiz, exprRec$1) {
   return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((litR) => {
     var litR$1 = $as_Lcats_parse_Parser(litR);
-    var this$3 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("true"));
+    var this$2 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("true"));
     var b = new $c_Lrebecaos_syntax_Program$Expr$B(true);
-    var this$6 = $n($m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$3, b));
-    var this$5 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("false"));
+    var this$5 = $n($m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$2, b));
+    var this$4 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("false"));
     var b$1 = new $c_Lrebecaos_syntax_Program$Expr$B(false);
-    var that = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$5, b$1);
-    var this$12 = $n(this$6.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
-    var this$11 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
+    var that = $m_Lcats_parse_Parser$().as__Lcats_parse_Parser__O__Lcats_parse_Parser(this$4, b$1);
+    var this$11 = $n(this$5.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that));
+    var this$10 = $n($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits);
     var fn = new $c_sjsr_AnonFunction1(((x) => {
       var x$1 = $as_T(x);
       $m_sc_StringOps$();
-      var this$9 = $m_jl_Integer$();
-      var n = this$9.parseInt__T__I__I(x$1, 10);
+      var this$8 = $m_jl_Integer$();
+      var n = this$8.parseInt__T__I__I(x$1, 10);
       return new $c_Lrebecaos_syntax_Program$Expr$N(n)
     }));
-    var that$1 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$11, fn);
-    var this$18 = $n(this$12.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
-    var this$17 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(45)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits));
+    var that$1 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn);
+    var this$17 = $n(this$11.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$1));
+    var this$16 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(45)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Numbers$().Lcats_parse_Numbers$__f_digits));
     var fn$1 = new $c_sjsr_AnonFunction1(((x$2) => {
       var x$3 = $as_T(x$2);
       $m_sc_StringOps$();
-      var this$15 = $m_jl_Integer$();
-      var n$1 = ((-this$15.parseInt__T__I__I(x$3, 10)) | 0);
+      var this$14 = $m_jl_Integer$();
+      var n$1 = ((-this$14.parseInt__T__I__I(x$3, 10)) | 0);
       return new $c_Lrebecaos_syntax_Program$Expr$N(n$1)
     }));
-    var that$2 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$17, fn$1);
-    var this$19 = $n(this$18.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
-    var that$3 = $p_Lrebecaos_syntax_Parser$__qAnyName__Lcats_parse_Parser($thiz);
-    var this$20 = $n(this$19.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
+    var that$2 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$16, fn$1);
+    var this$18 = $n(this$17.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$2));
+    var that$3 = $p_Lrebecaos_syntax_Parser$__qAnyName__Lcats_parse_Parser($m_Lrebecaos_syntax_Parser$());
+    var this$19 = $n(this$18.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$3));
     var that$4 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(exprRec$1)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41));
-    var this$24 = $n(this$20.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4));
-    var this$23 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(33)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(litR$1));
+    var this$22 = $n(this$19.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$4));
+    var this$21 = $n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(33)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(litR$1));
     var fn$2 = new $c_sjsr_AnonFunction1(((x$3$1) => {
       var x$4 = $as_Lrebecaos_syntax_Program$Expr(x$3$1);
-      $n($m_s_package$().s_package$__f_List);
-      var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lrebecaos_syntax_Program$Expr.getArrayOf().constr)([x$4]));
-      var es = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+      var es = new $c_sci_$colon$colon(x$4, $m_sci_Nil$());
       return new $c_Lrebecaos_syntax_Program$Expr$Func("not", es)
     }));
-    var that$5 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$23, fn$2);
-    return this$24.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$5)
+    var that$5 = $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$21, fn$2);
+    return this$22.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that$5)
   })))
 }
 function $p_Lrebecaos_syntax_Parser$__op1$1__Lcats_parse_Parser($thiz) {
@@ -10893,18 +11106,18 @@ function $p_Lrebecaos_syntax_Parser$__op3$1__Lcats_parse_Parser($thiz) {
   var $$x2 = $m_Lcats_parse_Parser$();
   var this$1 = $n($m_s_Predef$().wrapString__T__sci_WrappedString("<>="));
   $m_sci_List$();
-  var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
+  var this$3 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
   var f = ((c) => {
     var c$1 = $uC(c);
     return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(c$1)
   });
-  if ((this$4 === $m_sci_Nil$())) {
+  if ((this$3 === $m_sci_Nil$())) {
     var $$x1 = $m_sci_Nil$()
   } else {
-    var arg1 = this$4.head__O();
+    var arg1 = this$3.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
     var t = h;
-    var rest = $as_sci_List(this$4.tail__O());
+    var rest = $as_sci_List(this$3.tail__O());
     while ((rest !== $m_sci_Nil$())) {
       var arg1$1 = $n(rest).head__O();
       var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -10914,30 +11127,30 @@ function $p_Lrebecaos_syntax_Parser$__op3$1__Lcats_parse_Parser($thiz) {
     };
     var $$x1 = h
   };
-  var this$5 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
+  var this$4 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
   var acc = new $c_Lcats_parse_Accumulator$$anon$1();
-  var this$7 = $n($m_Lcats_parse_Parser$().repAs__Lcats_parse_Parser__I__Lcats_parse_Accumulator__Lcats_parse_Parser(this$5, 1, acc));
-  var this$9 = $n($m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$7));
-  var this$8 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("!="));
-  var that = $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$8);
-  return this$9.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that)
+  var this$6 = $n($m_Lcats_parse_Parser$().repAs__Lcats_parse_Parser__I__Lcats_parse_Accumulator__Lcats_parse_Parser(this$4, 1, acc));
+  var this$8 = $n($m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$6));
+  var this$7 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("!="));
+  var that = $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$7);
+  return this$8.orElse__Lcats_parse_Parser__Lcats_parse_Parser(that)
 }
 function $p_Lrebecaos_syntax_Parser$__op4$1__Lcats_parse_Parser($thiz) {
   var $$x2 = $m_Lcats_parse_Parser$();
   var this$1 = $n($m_s_Predef$().wrapString__T__sci_WrappedString("+-"));
   $m_sci_List$();
-  var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
+  var this$3 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
   var f = ((c) => {
     var c$1 = $uC(c);
     return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(c$1)
   });
-  if ((this$4 === $m_sci_Nil$())) {
+  if ((this$3 === $m_sci_Nil$())) {
     var $$x1 = $m_sci_Nil$()
   } else {
-    var arg1 = this$4.head__O();
+    var arg1 = this$3.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
     var t = h;
-    var rest = $as_sci_List(this$4.tail__O());
+    var rest = $as_sci_List(this$3.tail__O());
     while ((rest !== $m_sci_Nil$())) {
       var arg1$1 = $n(rest).head__O();
       var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -10947,25 +11160,25 @@ function $p_Lrebecaos_syntax_Parser$__op4$1__Lcats_parse_Parser($thiz) {
     };
     var $$x1 = h
   };
-  var this$5 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
-  return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$5)
+  var this$4 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
+  return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$4)
 }
 function $p_Lrebecaos_syntax_Parser$__op5$1__Lcats_parse_Parser($thiz) {
   var $$x2 = $m_Lcats_parse_Parser$();
   var this$1 = $n($m_s_Predef$().wrapString__T__sci_WrappedString("*/%"));
   $m_sci_List$();
-  var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
+  var this$3 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
   var f = ((c) => {
     var c$1 = $uC(c);
     return $m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(c$1)
   });
-  if ((this$4 === $m_sci_Nil$())) {
+  if ((this$3 === $m_sci_Nil$())) {
     var $$x1 = $m_sci_Nil$()
   } else {
-    var arg1 = this$4.head__O();
+    var arg1 = this$3.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
     var t = h;
-    var rest = $as_sci_List(this$4.tail__O());
+    var rest = $as_sci_List(this$3.tail__O());
     while ((rest !== $m_sci_Nil$())) {
       var arg1$1 = $n(rest).head__O();
       var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -10975,8 +11188,8 @@ function $p_Lrebecaos_syntax_Parser$__op5$1__Lcats_parse_Parser($thiz) {
     };
     var $$x1 = h
   };
-  var this$5 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
-  return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$5)
+  var this$4 = $n($n($$x2).oneOf__sci_List__Lcats_parse_Parser($$x1));
+  return $m_Lcats_parse_Parser$().string__Lcats_parse_Parser__Lcats_parse_Parser(this$4)
 }
 function $p_Lrebecaos_syntax_Parser$__combine$1__T2__Lrebecaos_syntax_Program$Expr($thiz, x) {
   var this$1 = $n($as_s_Option($n(x)._2__O()));
@@ -11141,17 +11354,17 @@ $c_Lrebecaos_syntax_Parser$.prototype.system__Lcats_parse_Parser = (function() {
   var this$7 = $m_Lcats_parse_Parser$();
   var that$1 = $n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this$7.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$6, 0, sep$1));
   $m_Lcats_parse_Parser$();
-  var this$14 = $n($n($$x2).$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$5, new $c_Lcats_parse_Parser$Impl$Prod(this$8, that$1)));
+  var this$13 = $n($n($$x2).$times$greater$extension__Lcats_parse_Parser0__Lcats_parse_Parser__Lcats_parse_Parser(ev$5, new $c_Lcats_parse_Parser$Impl$Prod(this$8, that$1)));
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var $$x3 = $n($as_sc_IterableOnceOps($n($as_T2($n(x$1)._1__O()))._1__O()));
-    var this$12 = $m_s_$less$colon$less$();
-    var classes = $n($$x3).toMap__s_$less$colon$less__sci_Map(this$12.s_$less$colon$less$__f_singleton);
+    var this$11 = $m_s_$less$colon$less$();
+    var classes = $n($$x3).toMap__s_$less$colon$less__sci_Map(this$11.s_$less$colon$less$__f_singleton);
     var main = $as_sci_List($n($as_T2($n(x$1)._1__O()))._2__O());
     var reqs = $as_sci_List($n(x$1)._2__O());
     return new $c_Lrebecaos_syntax_Program$System(classes, main, reqs)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$14, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$13, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.mainblock__Lcats_parse_Parser = (function() {
   var $$x2 = $n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("main")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
@@ -11159,12 +11372,12 @@ $c_Lrebecaos_syntax_Parser$.prototype.mainblock__Lcats_parse_Parser = (function(
   var this$1 = $n(this.instancedecl__Lcats_parse_Parser());
   var sep = this.Lrebecaos_syntax_Parser$__f_sps;
   var this$2 = $m_Lcats_parse_Parser$();
-  var this$4 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125)));
+  var this$3 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125)));
   var fn = new $c_sjsr_AnonFunction1(((_$4) => {
     var _$4$1 = $as_sci_List(_$4);
     return $n(_$4$1)
   }));
-  return $n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn))
+  return $n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$3, fn))
 });
 $c_Lrebecaos_syntax_Parser$.prototype.check__Lcats_parse_Parser = (function() {
   return $n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("reaches")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(this.expr2__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(59)))
@@ -11187,7 +11400,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.instancedecl__Lcats_parse_Parser = (functi
   var this$10 = $m_Lcats_parse_Parser$();
   var that$2 = $n($n($n($n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this$10.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$9, 0, sep$1))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this));
   $m_Lcats_parse_Parser$();
-  var this$16 = new $c_Lcats_parse_Parser$Impl$Prod(this$11, that$2);
+  var this$15 = new $c_Lcats_parse_Parser$Impl$Prod(this$11, that$2);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var clazz = $as_T($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O());
@@ -11196,7 +11409,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.instancedecl__Lcats_parse_Parser = (functi
     var args = $as_sci_List($n(x$1)._2__O());
     return new $c_Lrebecaos_syntax_Program$InstanceDecl(clazz, name, known, args)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$16, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$15, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.reactiveclass__Lcats_parse_Parser = (function() {
   var this$1 = $n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("reactiveclass")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($p_Lrebecaos_syntax_Parser$__className__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)));
@@ -11210,30 +11423,30 @@ $c_Lrebecaos_syntax_Parser$.prototype.reactiveclass__Lcats_parse_Parser = (funct
   var this$5 = $m_Lcats_parse_Parser$();
   var that$1 = $n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($$x1).$tilde__Lcats_parse_Parser0__Lcats_parse_Parser0($n($n(this$5.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$4, 0, sep)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125))));
   $m_Lcats_parse_Parser$();
-  var this$20 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
+  var this$19 = new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var self = $n($as_T2($n(x$1)._1__O()))._1__O();
     var ev$7 = $as_T(self);
     var qsize = $as_s_Option($n($as_T2($n(x$1)._1__O()))._2__O());
-    var this$11 = $n($as_s_Option($n($as_T2($n($as_T2($n(x$1)._2__O()))._1__O()))._1__O()));
-    var known = $as_sci_List((this$11.isEmpty__Z() ? $m_s_package$().s_package$__f_Nil : this$11.get__O()));
-    var this$12 = $n($as_s_Option($n($as_T2($n($as_T2($n(x$1)._2__O()))._1__O()))._2__O()));
-    var state = $as_sci_List((this$12.isEmpty__Z() ? $m_s_package$().s_package$__f_Nil : this$12.get__O()));
-    var this$16 = $n($m_s_Predef$().s_Predef$__f_Map);
+    var this$10 = $n($as_s_Option($n($as_T2($n($as_T2($n(x$1)._2__O()))._1__O()))._1__O()));
+    var known = $as_sci_List((this$10.isEmpty__Z() ? $m_s_package$().s_package$__f_Nil : this$10.get__O()));
+    var this$11 = $n($as_s_Option($n($as_T2($n($as_T2($n(x$1)._2__O()))._1__O()))._2__O()));
+    var state = $as_sci_List((this$11.isEmpty__Z() ? $m_s_package$().s_package$__f_Nil : this$11.get__O()));
+    var this$15 = $n($m_s_Predef$().s_Predef$__f_Map);
     var $$x4 = $m_sr_ScalaRunTime$();
     var vars = $m_s_package$().s_package$__f_Nil;
     var stm = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
     var y = new $c_Lrebecaos_syntax_Program$Msgsrv(vars, stm);
     var elems = $n($$x4).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("initial", y)]));
-    var $$x5 = this$16.from__sc_IterableOnce__sci_Map(elems);
+    var $$x5 = this$15.from__sc_IterableOnce__sci_Map(elems);
     var $$x3 = $as_sc_IterableOnceOps($n($as_T2($n(x$1)._2__O()))._2__O());
-    var this$17 = $m_s_$less$colon$less$();
-    var msgsrv = $as_sci_Map($n($$x5).$plus$plus__sc_IterableOnce__sc_IterableOps($n($$x3).toMap__s_$less$colon$less__sci_Map(this$17.s_$less$colon$less$__f_singleton)));
+    var this$16 = $m_s_$less$colon$less$();
+    var msgsrv = $as_sci_Map($n($$x5).$plus$plus__sc_IterableOnce__sc_IterableOps($n($$x3).toMap__s_$less$colon$less__sci_Map(this$16.s_$less$colon$less$__f_singleton)));
     var y$1 = new $c_Lrebecaos_syntax_Program$ReactiveClass(qsize, known, state, msgsrv);
     return new $c_T2(ev$7, y$1)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$20, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$19, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.knownrebecs__Lcats_parse_Parser = (function() {
   return $n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("knownrebecs")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.blockQVar__Lcats_parse_Parser())
@@ -11246,12 +11459,12 @@ $c_Lrebecaos_syntax_Parser$.prototype.blockQVar__Lcats_parse_Parser = (function(
   var this$1 = $n($n(this.qvar__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this)));
   var sep = this.Lrebecaos_syntax_Parser$__f_sps;
   var this$2 = $m_Lcats_parse_Parser$();
-  var this$4 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125)));
+  var this$3 = $n($n($n($n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this$2.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$1, 0, sep))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125)));
   var fn = new $c_sjsr_AnonFunction1(((_$5) => {
     var _$5$1 = $as_sci_List(_$5);
     return $n(_$5$1)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$3, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.msgsrv__Lcats_parse_Parser = (function() {
   var $$x2 = $n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("msgsrv")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_fsps);
@@ -11265,31 +11478,31 @@ $c_Lrebecaos_syntax_Parser$.prototype.msgsrv__Lcats_parse_Parser = (function() {
   var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$3, that);
   var that$1 = $n($n($n($n($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(123)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n(this.statement__Lcats_parse_Parser()).$qmark__Lcats_parse_Parser0())).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(125));
   $m_Lcats_parse_Parser$();
-  var this$14 = $n($n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1)));
+  var this$13 = $n($n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(new $c_Lcats_parse_Parser$Impl$Prod(this$6, that$1)));
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var self = $n($as_T2($n(x$1)._1__O()))._1__O();
     var ev$8 = $as_T(self);
     var vars = $n($as_sci_List($n($as_T2($n(x$1)._1__O()))._2__O()));
-    var this$11 = $n($as_s_Option($n(x$1)._2__O()));
-    var stm = $as_Lrebecaos_syntax_Program$Statement((this$11.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$11.get__O()));
+    var this$10 = $n($as_s_Option($n(x$1)._2__O()));
+    var stm = $as_Lrebecaos_syntax_Program$Statement((this$10.isEmpty__Z() ? $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement() : this$10.get__O()));
     var y = new $c_Lrebecaos_syntax_Program$Msgsrv(vars, stm);
     return new $c_T2(ev$8, y)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$14, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$13, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.qvar__Lcats_parse_Parser = (function() {
   var this$1 = $n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this));
   var that = $n(this.Lrebecaos_syntax_Parser$__f_sps).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this));
   $m_Lcats_parse_Parser$();
-  var this$6 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
+  var this$5 = new $c_Lcats_parse_Parser$Impl$Prod(this$1, that);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var name = $as_T($n(x$1)._2__O());
     var typ = $as_T($n(x$1)._1__O());
     return new $c_Lrebecaos_syntax_Program$QVar(name, typ)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$6, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$5, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.statement__Lcats_parse_Parser = (function() {
   return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((stmRec) => {
@@ -11326,7 +11539,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.call__Lcats_parse_Parser = (function() {
   var this$12 = new $c_Lcats_parse_Parser$Impl$Prod(this$9, that$2);
   var that$3 = $n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("deadline")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n(this.expr2__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41)))).$qmark__Lcats_parse_Parser0();
   $m_Lcats_parse_Parser$();
-  var this$17 = $n(new $c_Lcats_parse_Parser$Impl$Prod(this$12, that$3).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this)));
+  var this$16 = $n(new $c_Lcats_parse_Parser$Impl$Prod(this$12, that$3).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this)));
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var rebec = $as_T($n($as_T2($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._1__O()))._1__O());
@@ -11336,7 +11549,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.call__Lcats_parse_Parser = (function() {
     var dl = $as_s_Option($n(x$1)._2__O());
     return new $c_Lrebecaos_syntax_Program$Statement$Call(rebec, meth, args, after, dl)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$17, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$16, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.choice__Lcats_parse_Parser = (function() {
   var this$3 = $n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
@@ -11346,17 +11559,17 @@ $c_Lrebecaos_syntax_Parser$.prototype.choice__Lcats_parse_Parser = (function() {
   var this$2 = $m_Lcats_parse_Parser$();
   var that = $n($$x1).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n(this$2.repSep__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser(this$1, 1, sep)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this)));
   $m_Lcats_parse_Parser$();
-  var this$10 = new $c_Lcats_parse_Parser$Impl$Prod(this$3, that);
+  var this$9 = new $c_Lcats_parse_Parser$Impl$Prod(this$3, that);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var v = $as_T($n(x$1)._1__O());
-    var this$7 = $n($as_Lcats_data_NonEmptyList($n(x$1)._2__O()));
-    var this$8 = $n(this$7.Lcats_data_NonEmptyList__f_tail);
-    var elem = this$7.Lcats_data_NonEmptyList__f_head;
-    var options = new $c_sci_$colon$colon(elem, this$8);
+    var this$6 = $n($as_Lcats_data_NonEmptyList($n(x$1)._2__O()));
+    var this$7 = $n(this$6.Lcats_data_NonEmptyList__f_tail);
+    var elem = this$6.Lcats_data_NonEmptyList__f_head;
+    var options = new $c_sci_$colon$colon(elem, this$7);
     return new $c_Lrebecaos_syntax_Program$Statement$Choice(v, options)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$10, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$9, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.newInst__Lcats_parse_Parser = (function() {
   var this$1 = $n($n($n($n($n($n($p_Lrebecaos_syntax_Parser$__anyName__Lcats_parse_Parser(this)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(61))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("new"))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps));
@@ -11376,7 +11589,7 @@ $c_Lrebecaos_syntax_Parser$.prototype.newInst__Lcats_parse_Parser = (function() 
   var this$10 = $m_Lcats_parse_Parser$();
   var that$2 = $n($n($n($n($$x2).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser0(this$10.repSep0__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser0(this$9, 0, sep$1))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser0($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this));
   $m_Lcats_parse_Parser$();
-  var this$17 = new $c_Lcats_parse_Parser$Impl$Prod(this$11, that$2);
+  var this$16 = new $c_Lcats_parse_Parser$Impl$Prod(this$11, that$2);
   var fn = new $c_sjsr_AnonFunction1(((x) => {
     var x$1 = $as_T2(x);
     var clazz = $as_T($n($as_T2($n($as_T2($n(x$1)._1__O()))._1__O()))._2__O());
@@ -11386,15 +11599,15 @@ $c_Lrebecaos_syntax_Parser$.prototype.newInst__Lcats_parse_Parser = (function() 
     var dec = new $c_Lrebecaos_syntax_Program$InstanceDecl(clazz, name, known, args);
     return new $c_Lrebecaos_syntax_Program$Statement$NewReb(dec)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$17, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$16, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.delay__Lcats_parse_Parser = (function() {
-  var this$3 = $n($n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("delay")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n(this.expr2__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this))));
+  var this$2 = $n($n($n($n($n($m_Lcats_parse_Parser$().string__T__Lcats_parse_Parser("delay")).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(40))).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$times$greater__Lcats_parse_Parser0__Lcats_parse_Parser($n($n($n(this.expr2__Lcats_parse_Parser()).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser(this.Lrebecaos_syntax_Parser$__f_sps)).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($m_Lcats_parse_Parser$().char__C__Lcats_parse_Parser(41))).$less$times__Lcats_parse_Parser0__Lcats_parse_Parser($p_Lrebecaos_syntax_Parser$__ending__Lcats_parse_Parser(this))));
   var fn = new $c_sjsr_AnonFunction1(((d) => {
     var d$1 = $as_Lrebecaos_syntax_Program$Expr(d);
     return new $c_Lrebecaos_syntax_Program$Statement$Delay(d$1)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$3, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$2, fn)
 });
 $c_Lrebecaos_syntax_Parser$.prototype.expr2__Lcats_parse_Parser = (function() {
   return $m_Lcats_parse_Parser$().recursive__F1__Lcats_parse_Parser(new $c_sjsr_AnonFunction1(((exprRec) => {
@@ -11405,14 +11618,14 @@ $c_Lrebecaos_syntax_Parser$.prototype.expr2__Lcats_parse_Parser = (function() {
 $c_Lrebecaos_syntax_Parser$.prototype.listSepRep__Lcats_parse_Parser__Lcats_parse_Parser0__F2__Lcats_parse_Parser = (function(elem, sep, join) {
   var this$1 = $n(elem);
   var this$2 = $m_Lcats_parse_Parser$();
-  var this$5 = $n(this$2.repSep__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser(this$1, 1, sep));
+  var this$4 = $n(this$2.repSep__Lcats_parse_Parser__I__Lcats_parse_Parser0__Lcats_parse_Parser(this$1, 1, sep));
   var fn = new $c_sjsr_AnonFunction1(((ls) => {
     var ls$1 = $as_Lcats_data_NonEmptyList(ls);
-    var this$4 = $n($n(ls$1).Lcats_data_NonEmptyList__f_tail);
+    var this$3 = $n($n(ls$1).Lcats_data_NonEmptyList__f_tail);
     var z = $n(ls$1).Lcats_data_NonEmptyList__f_head;
-    return $f_sc_LinearSeqOps__foldLeft__O__F2__O(this$4, z, join)
+    return $f_sc_LinearSeqOps__foldLeft__O__F2__O(this$3, z, join)
   }));
-  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$5, fn)
+  return $m_Lcats_parse_Parser$().map__Lcats_parse_Parser__F1__Lcats_parse_Parser(this$4, fn)
 });
 var $d_Lrebecaos_syntax_Parser$ = new $TypeData().initClass({
   Lrebecaos_syntax_Parser$: 0
@@ -11445,38 +11658,90 @@ $h_Lrebecaos_syntax_Show$.prototype = $c_Lrebecaos_syntax_Show$.prototype;
 $c_Lrebecaos_syntax_Show$.prototype.apply__T3__T = (function(st) {
   return ((("## Rebecs ##\n" + this.applyR__sci_Map__T($as_sci_Map($n(st).T3__f__2))) + "\n## Messages ##\n") + $n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).map__F1__Lrebecaos_backend_Bag(new $c_sjsr_AnonFunction1(((msg) => {
     var msg$1 = $as_Lrebecaos_backend_Semantics$Msg(msg);
-    return this.apply__Lrebecaos_backend_Semantics$Msg__T(msg$1)
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T(msg$1)
   }))))
 });
 $c_Lrebecaos_syntax_Show$.prototype.applyR__sci_Map__T = (function(rbs) {
-  var this$2 = $n($as_sc_IterableOnceOps($n(rbs).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
+  var this$1 = $n($as_sc_IterableOnceOps($n(rbs).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
     var x$1$1 = $as_T2(x$1);
     var k = $as_T($n(x$1$1)._1__O());
     var v = $as_Lrebecaos_backend_RebecEnv($n(x$1$1)._2__O());
-    return ((k + " => ") + this.apply__Lrebecaos_backend_RebecEnv__T(v))
+    return ((k + " => ") + $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_RebecEnv__T(v))
   })))));
-  return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", "\n", "")
+  return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", "\n", "")
 });
 $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_backend_RebecEnv__T = (function(rb) {
-  var this$2 = $n($as_sc_IterableOnceOps($n($n(rb).Lrebecaos_backend_RebecEnv__f_vars).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
+  var this$1 = $n($as_sc_IterableOnceOps($n($n(rb).Lrebecaos_backend_RebecEnv__f_vars).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
     var x$1$1 = $as_T2(x$1);
     var v = $as_T($n(x$1$1)._1__O());
     var d = $as_Lrebecaos_backend_Eval$Data($n(x$1$1)._2__O());
-    return ((v + ":") + this.apply__Lrebecaos_backend_Eval$Data__T(d))
+    return ((v + ":") + $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Eval$Data__T(d))
   })))));
-  return ((("[" + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ",", "")) + "]:") + $n(rb).Lrebecaos_backend_RebecEnv__f_clazz)
+  return ((("[" + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", ",", "")) + "]:") + $n(rb).Lrebecaos_backend_RebecEnv__f_clazz)
 });
 $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_backend_Semantics$Msg__T = (function(msg) {
   var $$x7 = (($n(msg).Lrebecaos_backend_Semantics$Msg__f_snd === "") ? "" : (("[" + $n(msg).Lrebecaos_backend_Semantics$Msg__f_snd) + "]"));
   var $$x6 = $n(msg).Lrebecaos_backend_Semantics$Msg__f_rcv;
   var $$x5 = $n(msg).Lrebecaos_backend_Semantics$Msg__f_m;
-  var this$2 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_args);
+  var this$1 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_args);
   var f = ((d) => {
     var d$1 = $as_Lrebecaos_backend_Eval$Data(d);
-    return this.apply__Lrebecaos_backend_Eval$Data__T(d$1)
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Eval$Data__T(d$1)
+  });
+  if ((this$1 === $m_sci_Nil$())) {
+    var $$x3 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$1.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$1.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x3 = h
+  };
+  var this$2 = $n($$x3);
+  var $$x4 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ",", "");
+  var $$x2 = (($n(msg).Lrebecaos_backend_Semantics$Msg__f_tt > 0) ? (" @ " + $n(msg).Lrebecaos_backend_Semantics$Msg__f_tt) : "");
+  var this$3 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl);
+  if (((!this$3.isEmpty__Z()) && ($n(msg).Lrebecaos_backend_Semantics$Msg__f_tt === 0))) {
+    var $$x1 = (" @ 0.." + $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl).get__O())
+  } else {
+    var this$4 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl);
+    if ((!this$4.isEmpty__Z())) {
+      var $$x1 = (".." + $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl).get__O())
+    } else {
+      var $$x1 = ""
+    }
+  };
+  return ((((((((($$x7 + " ") + $$x6) + ".") + $$x5) + "(") + $$x4) + ")") + $$x2) + $$x1)
+});
+$c_Lrebecaos_syntax_Show$.prototype.short__T3__T = (function(st) {
+  var this$1 = $n($as_sc_IterableOnceOps($n($as_sc_IterableOps($n(st).T3__f__2)).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
+    var x$1$1 = $as_T2(x$1);
+    var n = $as_T($n(x$1$1)._1__O());
+    var e = $as_Lrebecaos_backend_RebecEnv($n(x$1$1)._2__O());
+    return (n + (($n(e).now__I() > 0) ? ("-" + $n(e).now__I()) : ""))
+  })))));
+  return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", " ", "")
+});
+$c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_syntax_Program$System__T = (function(s) {
+  var this$1 = $n($as_sc_IterableOnceOps($n($n(s).Lrebecaos_syntax_Program$System__f_classes).map__F1__O(new $c_sjsr_AnonFunction1(((cl) => {
+    var cl$1 = $as_T2(cl);
+    return $m_Lrebecaos_syntax_Show$().showClass__T2__T(cl$1)
+  })))));
+  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", "\n", "");
+  var this$2 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
+  var f = ((i) => {
+    var i$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(i);
+    return $m_Lrebecaos_syntax_Show$().showInstDecl__Lrebecaos_syntax_Program$InstanceDecl__T(i$1)
   });
   if ((this$2 === $m_sci_Nil$())) {
-    var $$x3 = $m_sci_Nil$()
+    var $$x1 = $m_sci_Nil$()
   } else {
     var arg1 = this$2.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
@@ -11489,62 +11754,10 @@ $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_backend_Semantics$Msg__T = 
       t = nx;
       rest = $as_sci_List($n(rest).tail__O())
     };
-    var $$x3 = h
-  };
-  var this$3 = $n($$x3);
-  var $$x4 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ",", "");
-  var $$x2 = (($n(msg).Lrebecaos_backend_Semantics$Msg__f_tt > 0) ? (" @ " + $n(msg).Lrebecaos_backend_Semantics$Msg__f_tt) : "");
-  var this$4 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl);
-  if (((!this$4.isEmpty__Z()) && ($n(msg).Lrebecaos_backend_Semantics$Msg__f_tt === 0))) {
-    var $$x1 = (" @ 0.." + $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl).get__O())
-  } else {
-    var this$5 = $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl);
-    if ((!this$5.isEmpty__Z())) {
-      var $$x1 = (".." + $n($n(msg).Lrebecaos_backend_Semantics$Msg__f_dl).get__O())
-    } else {
-      var $$x1 = ""
-    }
-  };
-  return ((((((((($$x7 + " ") + $$x6) + ".") + $$x5) + "(") + $$x4) + ")") + $$x2) + $$x1)
-});
-$c_Lrebecaos_syntax_Show$.prototype.short__T3__T = (function(st) {
-  var this$2 = $n($as_sc_IterableOnceOps($n($as_sc_IterableOps($n(st).T3__f__2)).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
-    var x$1$1 = $as_T2(x$1);
-    var n = $as_T($n(x$1$1)._1__O());
-    var e = $as_Lrebecaos_backend_RebecEnv($n(x$1$1)._2__O());
-    return (n + (($n(e).now__I() > 0) ? ("-" + $n(e).now__I()) : ""))
-  })))));
-  return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", " ", "")
-});
-$c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_syntax_Program$System__T = (function(s) {
-  var this$2 = $n($as_sc_IterableOnceOps($n($n(s).Lrebecaos_syntax_Program$System__f_classes).map__F1__O(new $c_sjsr_AnonFunction1(((cl) => {
-    var cl$1 = $as_T2(cl);
-    return this.showClass__T2__T(cl$1)
-  })))));
-  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", "\n", "");
-  var this$3 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
-  var f = ((i) => {
-    var i$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(i);
-    return this.showInstDecl__Lrebecaos_syntax_Program$InstanceDecl__T(i$1)
-  });
-  if ((this$3 === $m_sci_Nil$())) {
-    var $$x1 = $m_sci_Nil$()
-  } else {
-    var arg1 = this$3.head__O();
-    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-    var t = h;
-    var rest = $as_sci_List(this$3.tail__O());
-    while ((rest !== $m_sci_Nil$())) {
-      var arg1$1 = $n(rest).head__O();
-      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-      $n(t).sci_$colon$colon__f_next = nx;
-      t = nx;
-      rest = $as_sci_List($n(rest).tail__O())
-    };
     var $$x1 = h
   };
-  var this$4 = $n($$x1);
-  return (($$x2 + "\nmain:") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", "", ""))
+  var this$3 = $n($$x1);
+  return (($$x2 + "\nmain:") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", "", ""))
 });
 $c_Lrebecaos_syntax_Show$.prototype.showClass__T2__T = (function(cl) {
   var $$x7 = $n(cl)._1__O();
@@ -11606,7 +11819,7 @@ $c_Lrebecaos_syntax_Show$.prototype.showClass__T2__T = (function(cl) {
   var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$7, "", "", "");
   var this$8 = $n($as_sc_IterableOnceOps($n($n($as_Lrebecaos_syntax_Program$ReactiveClass($n(cl)._2__O())).Lrebecaos_syntax_Program$ReactiveClass__f_msgsrv).map__F1__O(new $c_sjsr_AnonFunction1(((x$3$1) => {
     var x$4 = $as_T2(x$3$1);
-    return ((("\n  msgsrv " + $n(x$4)._1__O()) + ":") + this.showMsgSrv__Lrebecaos_syntax_Program$Msgsrv__T($as_Lrebecaos_syntax_Program$Msgsrv($n(x$4)._2__O())))
+    return ((("\n  msgsrv " + $n(x$4)._1__O()) + ":") + $m_Lrebecaos_syntax_Show$().showMsgSrv__Lrebecaos_syntax_Program$Msgsrv__T($as_Lrebecaos_syntax_Program$Msgsrv($n(x$4)._2__O())))
   })))));
   return ((((((("reactiveclass " + $$x7) + " (") + $$x6) + "):") + $$x4) + $$x2) + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$8, "", "", ""))
 });
@@ -11615,35 +11828,10 @@ $c_Lrebecaos_syntax_Show$.prototype.showInstDecl__Lrebecaos_syntax_Program$Insta
   var $$x3 = $n(i).Lrebecaos_syntax_Program$InstanceDecl__f_name;
   var this$1 = $n($n(i).Lrebecaos_syntax_Program$InstanceDecl__f_known);
   var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$1, "", ",", "");
-  var this$3 = $n($n(i).Lrebecaos_syntax_Program$InstanceDecl__f_args);
+  var this$2 = $n($n(i).Lrebecaos_syntax_Program$InstanceDecl__f_args);
   var f = ((e) => {
     var e$1 = $as_Lrebecaos_syntax_Program$Expr(e);
-    return this.apply__Lrebecaos_syntax_Program$Expr__T(e$1)
-  });
-  if ((this$3 === $m_sci_Nil$())) {
-    var $$x1 = $m_sci_Nil$()
-  } else {
-    var arg1 = this$3.head__O();
-    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-    var t = h;
-    var rest = $as_sci_List(this$3.tail__O());
-    while ((rest !== $m_sci_Nil$())) {
-      var arg1$1 = $n(rest).head__O();
-      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-      $n(t).sci_$colon$colon__f_next = nx;
-      t = nx;
-      rest = $as_sci_List($n(rest).tail__O())
-    };
-    var $$x1 = h
-  };
-  var this$4 = $n($$x1);
-  return (((((((("\n  " + $$x4) + " ") + $$x3) + "(") + $$x2) + "):(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", ",", "")) + ")")
-});
-$c_Lrebecaos_syntax_Show$.prototype.showMsgSrv__Lrebecaos_syntax_Program$Msgsrv__T = (function(ms) {
-  var this$2 = $n($n(ms).Lrebecaos_syntax_Program$Msgsrv__f_vars);
-  var f = ((x) => {
-    var x$1 = $as_Lrebecaos_syntax_Program$QVar(x);
-    return (($n(x$1).Lrebecaos_syntax_Program$QVar__f_name + ": ") + $n(x$1).Lrebecaos_syntax_Program$QVar__f_typ)
+    return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$Expr__T(e$1)
   });
   if ((this$2 === $m_sci_Nil$())) {
     var $$x1 = $m_sci_Nil$()
@@ -11662,9 +11850,34 @@ $c_Lrebecaos_syntax_Show$.prototype.showMsgSrv__Lrebecaos_syntax_Program$Msgsrv_
     var $$x1 = h
   };
   var this$3 = $n($$x1);
-  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ", ", "");
-  var this$4 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List($n(ms).Lrebecaos_syntax_Program$Msgsrv__f_stm));
-  return ((("" + $$x2) + "\n    ") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$4, "", "\n    ", ""))
+  return (((((((("\n  " + $$x4) + " ") + $$x3) + "(") + $$x2) + "):(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", ",", "")) + ")")
+});
+$c_Lrebecaos_syntax_Show$.prototype.showMsgSrv__Lrebecaos_syntax_Program$Msgsrv__T = (function(ms) {
+  var this$1 = $n($n(ms).Lrebecaos_syntax_Program$Msgsrv__f_vars);
+  var f = ((x) => {
+    var x$1 = $as_Lrebecaos_syntax_Program$QVar(x);
+    return (($n(x$1).Lrebecaos_syntax_Program$QVar__f_name + ": ") + $n(x$1).Lrebecaos_syntax_Program$QVar__f_typ)
+  });
+  if ((this$1 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$1.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$1.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$2 = $n($$x1);
+  var $$x2 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ", ", "");
+  var this$3 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List($n(ms).Lrebecaos_syntax_Program$Msgsrv__f_stm));
+  return ((("" + $$x2) + "\n    ") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$3, "", "\n    ", ""))
 });
 $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_syntax_Program$Expr__T = (function(e) {
   if ((e instanceof $c_Lrebecaos_syntax_Program$Expr$N)) {
@@ -11714,18 +11927,18 @@ $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_syntax_Program$Expr__T = (f
         return ("!" + $p_Lrebecaos_syntax_Show$__exprPar__Lrebecaos_syntax_Program$Expr__T(this, x11))
       }
     };
-    var this$22 = $n(x9);
+    var this$21 = $n(x9);
     var f = ((e$3) => {
       var e$1 = $as_Lrebecaos_syntax_Program$Expr(e$3);
-      return this.apply__Lrebecaos_syntax_Program$Expr__T(e$1)
+      return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$Expr__T(e$1)
     });
-    if ((this$22 === $m_sci_Nil$())) {
+    if ((this$21 === $m_sci_Nil$())) {
       var $$x1 = $m_sci_Nil$()
     } else {
-      var arg1 = this$22.head__O();
+      var arg1 = this$21.head__O();
       var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
       var t = h;
-      var rest = $as_sci_List(this$22.tail__O());
+      var rest = $as_sci_List(this$21.tail__O());
       while ((rest !== $m_sci_Nil$())) {
         var arg1$1 = $n(rest).head__O();
         var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -11735,8 +11948,8 @@ $c_Lrebecaos_syntax_Show$.prototype.apply__Lrebecaos_syntax_Program$Expr__T = (f
       };
       var $$x1 = h
     };
-    var this$23 = $n($$x1);
-    return (((x8 + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$23, "", ",", "")) + ")")
+    var this$22 = $n($$x1);
+    return (((x8 + "(") + $f_sc_IterableOnceOps__mkString__T__T__T__T(this$22, "", ",", "")) + ")")
   };
   throw new $c_s_MatchError(e)
 });
@@ -11783,18 +11996,18 @@ $c_Lrebecaos_syntax_Show$.prototype.showStms__Lrebecaos_syntax_Program$Statement
       var this$7 = $n(x$1$1);
       var x69 = this$7.Lrebecaos_syntax_Program$Statement$ITE__f_cf;
       var elem$1 = (("if " + this.apply__Lrebecaos_syntax_Program$Expr__T(x67)) + ":");
-      var this$9 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x68));
+      var this$8 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x68));
       var f = ((x) => {
         var x$2 = $as_T(x);
         return ("  " + x$2)
       });
-      if ((this$9 === $m_sci_Nil$())) {
+      if ((this$8 === $m_sci_Nil$())) {
         var prefix$2 = $m_sci_Nil$()
       } else {
-        var arg1 = this$9.head__O();
+        var arg1 = this$8.head__O();
         var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
         var t = h;
-        var rest = $as_sci_List(this$9.tail__O());
+        var rest = $as_sci_List(this$8.tail__O());
         while ((rest !== $m_sci_Nil$())) {
           var arg1$1 = $n(rest).head__O();
           var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -11808,18 +12021,18 @@ $c_Lrebecaos_syntax_Show$.prototype.showStms__Lrebecaos_syntax_Program$Statement
       if (((x69 === null) ? (x$3 === null) : $n(x69).equals__O__Z(x$3))) {
         var $$x1 = $m_s_package$().s_package$__f_Nil
       } else {
-        var this$10 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x69));
+        var this$9 = $n(this.showStms__Lrebecaos_syntax_Program$Statement__sci_List(x69));
         var f$1 = ((x$4) => {
           var x$5 = $as_T(x$4);
           return ("  " + x$5)
         });
-        if ((this$10 === $m_sci_Nil$())) {
+        if ((this$9 === $m_sci_Nil$())) {
           var $$x2 = $m_sci_Nil$()
         } else {
-          var arg1$2 = this$10.head__O();
+          var arg1$2 = this$9.head__O();
           var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
           var t$1 = h$1;
-          var rest$1 = $as_sci_List(this$10.tail__O());
+          var rest$1 = $as_sci_List(this$9.tail__O());
           while ((rest$1 !== $m_sci_Nil$())) {
             var arg1$3 = $n(rest$1).head__O();
             var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
@@ -11829,21 +12042,19 @@ $c_Lrebecaos_syntax_Show$.prototype.showStms__Lrebecaos_syntax_Program$Statement
           };
           var $$x2 = h$1
         };
-        var this$11 = $n($$x2);
-        var $$x1 = new $c_sci_$colon$colon("else:", this$11)
+        var this$10 = $n($$x2);
+        var $$x1 = new $c_sci_$colon$colon("else:", this$10)
       };
-      var this$12 = $n($n($$x1).$colon$colon$colon__sci_List__sci_List(prefix$2));
-      return new $c_sci_$colon$colon(elem$1, this$12)
+      var this$11 = $n($n($$x1).$colon$colon$colon__sci_List__sci_List(prefix$2));
+      return new $c_sci_$colon$colon(elem$1, this$11)
     };
     if ((x43 instanceof $c_Lrebecaos_syntax_Program$Statement$Assign)) {
       var x$1$2 = $as_Lrebecaos_syntax_Program$Statement$Assign(x43);
+      var this$13 = $n(x$1$2);
+      var x63 = this$13.Lrebecaos_syntax_Program$Statement$Assign__f_ident;
       var this$14 = $n(x$1$2);
-      var x63 = this$14.Lrebecaos_syntax_Program$Statement$Assign__f_ident;
-      var this$15 = $n(x$1$2);
-      var x64 = this$15.Lrebecaos_syntax_Program$Statement$Assign__f_e;
-      $n($m_s_package$().s_package$__f_List);
-      var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([((x63 + " := ") + this.apply__Lrebecaos_syntax_Program$Expr__T(x64))]));
-      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems)
+      var x64 = this$14.Lrebecaos_syntax_Program$Statement$Assign__f_e;
+      return new $c_sci_$colon$colon(((x63 + " := ") + this.apply__Lrebecaos_syntax_Program$Expr__T(x64)), $m_sci_Nil$())
     };
     var x$5$1 = $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$Statement();
     if (((x$5$1 === null) ? (x43 === null) : $n(x$5$1).equals__O__Z(x43))) {
@@ -11851,30 +12062,28 @@ $c_Lrebecaos_syntax_Show$.prototype.showStms__Lrebecaos_syntax_Program$Statement
     };
     if ((x43 instanceof $c_Lrebecaos_syntax_Program$Statement$Call)) {
       var x$1$3 = $as_Lrebecaos_syntax_Program$Statement$Call(x43);
+      var this$16 = $n(x$1$3);
+      var x56 = this$16.Lrebecaos_syntax_Program$Statement$Call__f_rebec;
+      var this$17 = $n(x$1$3);
+      var x57 = this$17.Lrebecaos_syntax_Program$Statement$Call__f_meth;
       var this$18 = $n(x$1$3);
-      var x56 = this$18.Lrebecaos_syntax_Program$Statement$Call__f_rebec;
+      var x58 = this$18.Lrebecaos_syntax_Program$Statement$Call__f_args;
       var this$19 = $n(x$1$3);
-      var x57 = this$19.Lrebecaos_syntax_Program$Statement$Call__f_meth;
+      var x59 = this$19.Lrebecaos_syntax_Program$Statement$Call__f_after;
       var this$20 = $n(x$1$3);
-      var x58 = this$20.Lrebecaos_syntax_Program$Statement$Call__f_args;
-      var this$21 = $n(x$1$3);
-      var x59 = this$21.Lrebecaos_syntax_Program$Statement$Call__f_after;
-      var this$22 = $n(x$1$3);
-      var x60 = this$22.Lrebecaos_syntax_Program$Statement$Call__f_dl;
-      $n($m_s_package$().s_package$__f_List);
-      var $$x6 = $m_sr_ScalaRunTime$();
-      var this$23 = $n(x58);
+      var x60 = this$20.Lrebecaos_syntax_Program$Statement$Call__f_dl;
+      var this$21 = $n(x58);
       var f$2 = ((e$2) => {
         var e = $as_Lrebecaos_syntax_Program$Expr(e$2);
-        return this.apply__Lrebecaos_syntax_Program$Expr__T(e)
+        return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$Expr__T(e)
       });
-      if ((this$23 === $m_sci_Nil$())) {
+      if ((this$21 === $m_sci_Nil$())) {
         var $$x4 = $m_sci_Nil$()
       } else {
-        var arg1$4 = this$23.head__O();
+        var arg1$4 = this$21.head__O();
         var h$2 = new $c_sci_$colon$colon(f$2(arg1$4), $m_sci_Nil$());
         var t$2 = h$2;
-        var rest$2 = $as_sci_List(this$23.tail__O());
+        var rest$2 = $as_sci_List(this$21.tail__O());
         while ((rest$2 !== $m_sci_Nil$())) {
           var arg1$5 = $n(rest$2).head__O();
           var nx$2 = new $c_sci_$colon$colon(f$2(arg1$5), $m_sci_Nil$());
@@ -11884,46 +12093,40 @@ $c_Lrebecaos_syntax_Show$.prototype.showStms__Lrebecaos_syntax_Program$Statement
         };
         var $$x4 = h$2
       };
-      var this$24 = $n($$x4);
-      var $$x5 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$24, "", ",", "");
-      var this$25 = $n(x59);
-      if ((!this$25.isEmpty__Z())) {
+      var this$22 = $n($$x4);
+      var $$x5 = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$22, "", ",", "");
+      var this$23 = $n(x59);
+      if ((!this$23.isEmpty__Z())) {
         var $$x3 = (" after " + this.apply__Lrebecaos_syntax_Program$Expr__T($as_Lrebecaos_syntax_Program$Expr($n(x59).get__O())))
       } else {
         var $$x3 = ""
       };
-      var this$26 = $n(x60);
-      var elems$1 = $n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([(((((((x56 + ".") + x57) + "(") + $$x5) + ")") + $$x3) + ((!this$26.isEmpty__Z()) ? (" deadline " + this.apply__Lrebecaos_syntax_Program$Expr__T($as_Lrebecaos_syntax_Program$Expr($n(x60).get__O()))) : ""))]));
-      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1)
+      var this$24 = $n(x60);
+      return new $c_sci_$colon$colon((((((((x56 + ".") + x57) + "(") + $$x5) + ")") + $$x3) + ((!this$24.isEmpty__Z()) ? (" deadline " + this.apply__Lrebecaos_syntax_Program$Expr__T($as_Lrebecaos_syntax_Program$Expr($n(x60).get__O()))) : "")), $m_sci_Nil$())
     };
     if ((x43 instanceof $c_Lrebecaos_syntax_Program$Statement$NewReb)) {
       var x$1$4 = $as_Lrebecaos_syntax_Program$Statement$NewReb(x43);
-      var this$29 = $n(x$1$4);
-      var x53 = this$29.Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
-      $n($m_s_package$().s_package$__f_List);
-      var $$x8 = $m_sr_ScalaRunTime$();
-      var $$x7 = $m_sc_StringOps$();
+      var this$26 = $n(x$1$4);
+      var x53 = this$26.Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
+      var $$x6 = $m_sc_StringOps$();
       var x$6 = this.showInstDecl__Lrebecaos_syntax_Program$InstanceDecl__T(x53);
-      var elems$2 = $n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([$n($$x7).drop$extension__T__I__T(x$6, 3)]));
-      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2)
+      return new $c_sci_$colon$colon($n($$x6).drop$extension__T__I__T(x$6, 3), $m_sci_Nil$())
     };
     if ((x43 instanceof $c_Lrebecaos_syntax_Program$Statement$Choice)) {
       var x$1$5 = $as_Lrebecaos_syntax_Program$Statement$Choice(x43);
-      var this$33 = $n(x$1$5);
-      var x49 = this$33.Lrebecaos_syntax_Program$Statement$Choice__f_v;
-      var this$34 = $n(x$1$5);
-      var x50 = this$34.Lrebecaos_syntax_Program$Statement$Choice__f_options;
+      var this$29 = $n(x$1$5);
+      var x49 = this$29.Lrebecaos_syntax_Program$Statement$Choice__f_v;
+      var this$30 = $n(x$1$5);
+      var x50 = this$30.Lrebecaos_syntax_Program$Statement$Choice__f_options;
       var e$1 = new $c_Lrebecaos_syntax_Program$Expr$Func("?", x50);
       s$tailLocal1 = new $c_Lrebecaos_syntax_Program$Statement$Assign(x49, e$1);
       continue
     };
     if ((x43 instanceof $c_Lrebecaos_syntax_Program$Statement$Delay)) {
       var x$1$6 = $as_Lrebecaos_syntax_Program$Statement$Delay(x43);
-      var this$38 = $n(x$1$6);
-      var x46 = this$38.Lrebecaos_syntax_Program$Statement$Delay__f_d;
-      $n($m_s_package$().s_package$__f_List);
-      var elems$3 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T.getArrayOf().constr)([("delay " + this.apply__Lrebecaos_syntax_Program$Expr__T(x46))]));
-      return $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3)
+      var this$34 = $n(x$1$6);
+      var x46 = this$34.Lrebecaos_syntax_Program$Statement$Delay__f_d;
+      return new $c_sci_$colon$colon(("delay " + this.apply__Lrebecaos_syntax_Program$Expr__T(x46)), $m_sci_Nil$())
     };
     throw new $c_s_MatchError(x43)
   }
@@ -16068,6 +16271,28 @@ function $m_s_sys_package$() {
   return $n_s_sys_package$
 }
 /** @constructor */
+function $c_s_util_DynamicVariable(init) {
+  this.s_util_DynamicVariable__f_v = null;
+  this.s_util_DynamicVariable__f_v = init
+}
+$c_s_util_DynamicVariable.prototype = new $h_O();
+$c_s_util_DynamicVariable.prototype.constructor = $c_s_util_DynamicVariable;
+/** @constructor */
+function $h_s_util_DynamicVariable() {
+  /*<skip>*/
+}
+$h_s_util_DynamicVariable.prototype = $c_s_util_DynamicVariable.prototype;
+$c_s_util_DynamicVariable.prototype.toString__T = (function() {
+  return (("DynamicVariable(" + this.s_util_DynamicVariable__f_v) + ")")
+});
+var $d_s_util_DynamicVariable = new $TypeData().initClass({
+  s_util_DynamicVariable: 0
+}, false, "scala.util.DynamicVariable", {
+  s_util_DynamicVariable: 1,
+  O: 1
+});
+$c_s_util_DynamicVariable.prototype.$classData = $d_s_util_DynamicVariable;
+/** @constructor */
 function $c_s_util_Sorting$() {
   /*<skip>*/
 }
@@ -17067,18 +17292,21 @@ $c_s_util_hashing_MurmurHash3.prototype.arrayHash$mVc$sp__Ajl_Void__I__I = (func
   }
 });
 /** @constructor */
-function $c_Lcaos_frontend_Site$$anon$2(resultAsString$1, c$1) {
+function $c_Lcaos_frontend_Site$$anon$2(c$1, resultAsString$1) {
   this.Lcaos_frontend_Site$$anon$2__f_smallWidgets = null;
   this.Lcaos_frontend_Site$$anon$2__f_documentation = null;
   this.Lcaos_frontend_Site$$anon$2__f_footer = null;
+  this.Lcaos_frontend_Site$$anon$2__f_toggles = null;
   this.Lcaos_frontend_Site$$anon$2__f_parser = null;
   this.Lcaos_frontend_Site$$anon$2__f_name = null;
+  this.Lcaos_frontend_Site$$anon$2__f_shortName = null;
   this.Lcaos_frontend_Site$$anon$2__f_languageName = null;
   this.Lcaos_frontend_Site$$anon$2__f_widgets = null;
   this.Lcaos_frontend_Site$$anon$2__f_examples = null;
   $f_Lcaos_frontend_Configurator__$init$__V(this);
   this.Lcaos_frontend_Site$$anon$2__f_parser = $n(c$1).parser__F1();
   this.Lcaos_frontend_Site$$anon$2__f_name = $n(c$1).name__T();
+  this.Lcaos_frontend_Site$$anon$2__f_shortName = $n(c$1).shortName__s_Option();
   this.Lcaos_frontend_Site$$anon$2__f_languageName = $n(c$1).languageName__T();
   this.Lcaos_frontend_Site$$anon$2__f_widgets = $n(c$1).widgets__sc_Iterable();
   this.Lcaos_frontend_Site$$anon$2__f_examples = $m_Lcaos_frontend_widgets_ExampleWidget$().txtToExamples__T__sc_Iterable(resultAsString$1)
@@ -17099,6 +17327,12 @@ $c_Lcaos_frontend_Site$$anon$2.prototype.documentation__Lcaos_frontend_Documenta
 $c_Lcaos_frontend_Site$$anon$2.prototype.footer__T = (function() {
   return this.Lcaos_frontend_Site$$anon$2__f_footer
 });
+$c_Lcaos_frontend_Site$$anon$2.prototype.toggles__sci_List = (function() {
+  return this.Lcaos_frontend_Site$$anon$2__f_toggles
+});
+$c_Lcaos_frontend_Site$$anon$2.prototype.caos$frontend$Configurator$_setter_$shortName_$eq__s_Option__V = (function(x$0) {
+  this.Lcaos_frontend_Site$$anon$2__f_shortName = x$0
+});
 $c_Lcaos_frontend_Site$$anon$2.prototype.caos$frontend$Configurator$_setter_$smallWidgets_$eq__sc_Iterable__V = (function(x$0) {
   this.Lcaos_frontend_Site$$anon$2__f_smallWidgets = x$0
 });
@@ -17108,11 +17342,17 @@ $c_Lcaos_frontend_Site$$anon$2.prototype.caos$frontend$Configurator$_setter_$doc
 $c_Lcaos_frontend_Site$$anon$2.prototype.caos$frontend$Configurator$_setter_$footer_$eq__T__V = (function(x$0) {
   this.Lcaos_frontend_Site$$anon$2__f_footer = x$0
 });
+$c_Lcaos_frontend_Site$$anon$2.prototype.caos$frontend$Configurator$_setter_$toggles_$eq__sci_List__V = (function(x$0) {
+  this.Lcaos_frontend_Site$$anon$2__f_toggles = x$0
+});
 $c_Lcaos_frontend_Site$$anon$2.prototype.parser__F1 = (function() {
   return this.Lcaos_frontend_Site$$anon$2__f_parser
 });
 $c_Lcaos_frontend_Site$$anon$2.prototype.name__T = (function() {
   return this.Lcaos_frontend_Site$$anon$2__f_name
+});
+$c_Lcaos_frontend_Site$$anon$2.prototype.shortName__s_Option = (function() {
+  return this.Lcaos_frontend_Site$$anon$2__f_shortName
 });
 $c_Lcaos_frontend_Site$$anon$2.prototype.languageName__T = (function() {
   return this.Lcaos_frontend_Site$$anon$2__f_languageName
@@ -17135,13 +17375,12 @@ function $p_Lcaos_frontend_widgets_CustomWidget__runWidget__V($thiz) {
   try {
     $n($thiz.Lcaos_frontend_widgets_CustomWidget__f_reload).apply__O()
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction($thiz.Lcaos_frontend_widgets_CustomWidget__f_errorBox, $thiz.Lcaos_frontend_widgets_CustomWidget__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 }
@@ -17170,7 +17409,7 @@ function $h_Lcaos_frontend_widgets_CustomWidget() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_CustomWidget.prototype = $c_Lcaos_frontend_widgets_CustomWidget.prototype;
-$c_Lcaos_frontend_widgets_CustomWidget.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
+$c_Lcaos_frontend_widgets_CustomWidget.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
   var this$4 = $n(this.Lcaos_frontend_widgets_CustomWidget__f_moreButtons);
   var f = ((kv) => {
     var kv$1 = $as_T2(kv);
@@ -17197,7 +17436,7 @@ $c_Lcaos_frontend_widgets_CustomWidget.prototype.init__Lcaos_frontend_widgets_Do
     var buttons$1 = h
   };
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_CustomWidget__f_divName);
+  $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_CustomWidget__f_divName);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((e) => ((!this.isVisible__Z()) ? ($p_Lcaos_frontend_widgets_CustomWidget__runWidget__V(this), (void 0)) : (void 0)))
 });
 $c_Lcaos_frontend_widgets_CustomWidget.prototype.update__V = (function() {
@@ -17285,8 +17524,6 @@ var $d_Lcaos_frontend_widgets_DomElem = new $TypeData().initClass({
 });
 $c_Lcaos_frontend_widgets_DomElem.prototype.$classData = $d_Lcaos_frontend_widgets_DomElem;
 function $p_Lcaos_frontend_widgets_ExampleWidget__buttons__sci_List($thiz) {
-  $n($m_s_package$().s_package$__f_List);
-  var $$x2 = $m_sr_ScalaRunTime$();
   $n($m_s_package$().s_package$__f_Right);
   var self = new $c_s_util_Right("upload");
   var _1 = new $c_sjsr_AnonFunction0((() => {
@@ -17300,10 +17537,9 @@ function $p_Lcaos_frontend_widgets_ExampleWidget__buttons__sci_List($thiz) {
     $m_Lcaos_frontend_widgets_Utils$().downloadTxt__T__T__V($m_Lcaos_frontend_widgets_ExampleWidget$().examplesToTxt__sc_Iterable__T($thiz.Lcaos_frontend_widgets_ExampleWidget__f_examples), "examples.txt")
   }));
   var y$1 = new $c_T2(_1$1, "Download Examples");
-  var elems = $n($$x2).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x1, new $c_T2(self$1, y$1)]));
-  var this$11 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems));
+  var this$10 = new $c_sci_$colon$colon($$x1, new $c_sci_$colon$colon(new $c_T2(self$1, y$1), $m_sci_Nil$()));
   var suffix = $m_Lcaos_frontend_widgets_Widget$().mkHelper__T__Lcaos_frontend_Documentation__s_Option($thiz.Lcaos_frontend_widgets_Widget__f_title, $n($thiz.Lcaos_frontend_widgets_ExampleWidget__f_config).documentation__Lcaos_frontend_Documentation());
-  return this$11.appendedAll__sc_IterableOnce__sci_List(suffix)
+  return this$10.appendedAll__sc_IterableOnce__sci_List(suffix)
 }
 /** @constructor */
 function $c_Lcaos_frontend_widgets_ExampleWidget(title, config, reload, setableExample, setableDescription) {
@@ -17339,10 +17575,10 @@ $c_Lcaos_frontend_widgets_ExampleWidget.prototype.get__sci_Seq = (function() {
     return new $c_T2(self, y)
   }))))).toSeq__sci_Seq()
 });
-$c_Lcaos_frontend_widgets_ExampleWidget.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
+$c_Lcaos_frontend_widgets_ExampleWidget.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
   var buttons$1 = $p_Lcaos_frontend_widgets_ExampleWidget__buttons__sci_List(this);
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  var buttonsDiv = $n($n($n($c_Lcaos_frontend_widgets_Widget.prototype.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem.call(this, div, visible, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", "buttons")).attr__T__T__Lcaos_frontend_widgets_DomElem("style", "padding: 2pt;");
+  var buttonsDiv = $n($n($n($c_Lcaos_frontend_widgets_Widget.prototype.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem.call(this, div, visible, hidden, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", "buttons")).attr__T__T__Lcaos_frontend_widgets_DomElem("style", "padding: 2pt;");
   $n(buttonsDiv).style__T__Lcaos_frontend_widgets_DomElem("display:block; padding:2pt");
   $n(this.Lcaos_frontend_widgets_ExampleWidget__f_examples).map__F1__O(new $c_sjsr_AnonFunction1(((ex) => {
     var ex$1 = $as_Lcaos_frontend_Configurator$Example(ex);
@@ -17354,6 +17590,7 @@ $c_Lcaos_frontend_widgets_ExampleWidget.prototype.update__V = (function() {
 });
 $c_Lcaos_frontend_widgets_ExampleWidget.prototype.genButton__Lcaos_frontend_Configurator$Example__Lcaos_frontend_widgets_DomElem__V = (function(ex, buttonsDiv) {
   var button = $n($n(buttonsDiv).append__T__Lcaos_frontend_widgets_DomElem("button")).textEl__T__Lcaos_frontend_widgets_DomElem($n(ex).Lcaos_frontend_Configurator$Example__f_name);
+  $n(button).attr__T__T__Lcaos_frontend_widgets_DomElem("id", ("id" + $f_T__hashCode__I($n($n(ex).Lcaos_frontend_Configurator$Example__f_name))));
   $n(button).on__T__F0__V("click", new $c_sjsr_AnonFunction0((() => {
     var this$2 = $n(this.Lcaos_frontend_widgets_ExampleWidget__f_setableExample);
     var value = $n(ex).Lcaos_frontend_Configurator$Example__f_example;
@@ -17427,27 +17664,24 @@ function $p_Lcaos_frontend_widgets_Explore__aux$1__sci_Set__sci_Set__sci_Set__T2
         $n($n(nexts).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
           var x$1$1 = $as_T2(x$1);
           return ((x$1$1 !== null) && ($n(x$1$1)._1__O(), $n(x$1$1)._2__O(), true))
-        })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((x23, next2, res) => ((x$1$2) => {
+        })))).foreach__F1__V(new $c_sjsr_AnonFunction1(((next2, res, x23) => ((x$1$2) => {
           var x$1$3 = $as_T2(x$1$2);
           matchResult3: {
             if ((x$1$3 !== null)) {
               var a$1 = $n(x$1$3)._1__O();
               var s2$1 = $n(x$1$3)._2__O();
               var this$8 = $n($as_sci_Set(next2.sr_ObjectRef__f_elem));
-              var ev$5 = $as_sci_Set(this$8.incl__O__sci_SetOps(s2$1));
-              next2.sr_ObjectRef__f_elem = ev$5;
+              next2.sr_ObjectRef__f_elem = $as_sci_Set(this$8.incl__O__sci_SetOps(s2$1));
               if ($n($thiz.Lcaos_frontend_widgets_Explore__f_tree).contains__O__Z(s2$1)) {
-                var ev$6 = (($as_T(res.sr_ObjectRef__f_elem) + ((((((((("\n  " + $thiz.mkStId__O__T(s2$1)) + "([\"") + $ps_Lcaos_frontend_widgets_Explore__fix$1__T__T($as_T($n($thiz.Lcaos_frontend_widgets_Explore__f_vS).apply__O__O(s2$1)))) + "\"]);\n  ") + $thiz.mkStId__O__T(x23)) + " -->|\"") + $ps_Lcaos_frontend_widgets_Explore__fix$1__T__T($as_T($n($thiz.Lcaos_frontend_widgets_Explore__f_vA).apply__O__O(a$1)))) + "\"| ") + $thiz.mkStId__O__T(s2$1))) + ";");
-                res.sr_ObjectRef__f_elem = ev$6
+                res.sr_ObjectRef__f_elem = (($as_T(res.sr_ObjectRef__f_elem) + ((((((((("\n  " + $thiz.mkStId__O__T(s2$1)) + "([\"") + $ps_Lcaos_frontend_widgets_Explore__fix$1__T__T($as_T($n($thiz.Lcaos_frontend_widgets_Explore__f_vS).apply__O__O(s2$1)))) + "\"]);\n  ") + $thiz.mkStId__O__T(x23)) + " -->|\"") + $ps_Lcaos_frontend_widgets_Explore__fix$1__T__T($as_T($n($thiz.Lcaos_frontend_widgets_Explore__f_vA).apply__O__O(a$1)))) + "\"| ") + $thiz.mkStId__O__T(s2$1))) + ";")
               } else {
-                var ev$7 = (($as_T(res.sr_ObjectRef__f_elem) + ((((("\n  " + $thiz.mkStId__O__T(x23)) + " -->|\"") + $ps_Lcaos_frontend_widgets_Explore__fix$1__T__T($as_T($n($thiz.Lcaos_frontend_widgets_Explore__f_vA).apply__O__O(a$1)))) + "\"| ") + $thiz.mkStId__O__T(s2$1))) + ";");
-                res.sr_ObjectRef__f_elem = ev$7
+                res.sr_ObjectRef__f_elem = (($as_T(res.sr_ObjectRef__f_elem) + ((((("\n  " + $thiz.mkStId__O__T(x23)) + " -->|\"") + $ps_Lcaos_frontend_widgets_Explore__fix$1__T__T($as_T($n($thiz.Lcaos_frontend_widgets_Explore__f_vA).apply__O__O(a$1)))) + "\"| ") + $thiz.mkStId__O__T(s2$1))) + ";")
               };
               break matchResult3
             };
             throw new $c_s_MatchError(x$1$3)
           }
-        }))(x23, next2, res)));
+        }))(next2, res, x23)));
         matchResult4: {
           var \u03b46$___1;
           var \u03b46$___2;
@@ -17536,19 +17770,16 @@ function $h_Lcaos_frontend_widgets_Explore() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_Explore.prototype = $c_Lcaos_frontend_widgets_Explore.prototype;
-$c_Lcaos_frontend_widgets_Explore.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  $n($m_s_package$().s_package$__f_List);
-  var $$x1 = $m_sr_ScalaRunTime$();
+$c_Lcaos_frontend_widgets_Explore.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
   $n($m_s_package$().s_package$__f_Right);
   var self = new $c_s_util_Right("refresh");
   var _1 = new $c_sjsr_AnonFunction0((() => {
     this.update__V()
   }));
   var y = new $c_T2(_1, "Explore next actions of the current program");
-  var elems = $n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
-  var buttons$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+  var buttons$1 = new $c_sci_$colon$colon(new $c_T2(self, y), $m_sci_Nil$());
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  var box = this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, headerStyle$1, buttons$1);
+  var box = this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, headerStyle$1, buttons$1);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((_$3) => ((!this.isVisible__Z()) ? (this.initialise__V(), (void 0)) : (void 0)));
   this.Lcaos_frontend_widgets_Explore__f_container = $n($n(box).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__Lcaos_frontend_widgets_DomElem("display:inline; width:100%;");
   $n($n($n($n($n($n(this.Lcaos_frontend_widgets_Explore__f_container).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "mermaid")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_Explore__f_divBox)).style__T__T__Lcaos_frontend_widgets_DomElem("text-align", "center")).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_Explore__f_svgBox)
@@ -17569,13 +17800,12 @@ $c_Lcaos_frontend_widgets_Explore.prototype.initialise__V = (function() {
     this.Lcaos_frontend_widgets_Explore__f_tree = this$3.from__sc_IterableOnce__sci_Map(elems);
     this.updateDiagram__V()
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_Explore__f_errorBox, ("111" + this.Lcaos_frontend_widgets_Explore__f_name));
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -17587,13 +17817,12 @@ $c_Lcaos_frontend_widgets_Explore.prototype.expandState__O__V = (function(st) {
     this.updateDiagram__V();
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().location.replace(("#" + this.mkStId__O__T(st)))
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b42$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_Explore__f_errorBox, ("222" + this.Lcaos_frontend_widgets_Explore__f_name));
     if ($n(\u03b42$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b42$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -17623,13 +17852,12 @@ $c_Lcaos_frontend_widgets_Explore.prototype.updateDiagram__V = (function() {
       })
     })))
   } catch (e$1) {
-    var e$2 = e$1;
-    var e$2$1 = ((e$2 instanceof $c_jl_Throwable) ? e$2 : new $c_sjs_js_JavaScriptException(e$2));
+    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
     var \u03b43$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_Explore__f_errorBox, ("333" + this.Lcaos_frontend_widgets_Explore__f_name));
-    if ($n(\u03b43$).isDefinedAt__O__Z(e$2$1)) {
-      $n(\u03b43$).apply__O__O(e$2$1)
+    if ($n(\u03b43$).isDefinedAt__O__Z(e$2)) {
+      $n(\u03b43$).apply__O__O(e$2)
     } else {
-      throw e$2$1
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -17698,6 +17926,41 @@ var $d_Lcaos_frontend_widgets_Explore = new $TypeData().initClass({
 });
 $c_Lcaos_frontend_widgets_Explore.prototype.$classData = $d_Lcaos_frontend_widgets_Explore;
 /** @constructor */
+function $c_Lcaos_frontend_widgets_HtmlBlock(block, title) {
+  this.Lcaos_frontend_widgets_Widget__f_title = null;
+  this.Lcaos_frontend_widgets_Widget__f_doc = null;
+  this.Lcaos_frontend_widgets_Widget__f_titleId = null;
+  this.Lcaos_frontend_widgets_Widget__f_wrap = null;
+  this.Lcaos_frontend_widgets_HtmlBlock__f_block = null;
+  this.Lcaos_frontend_widgets_HtmlBlock__f_block = block;
+  var docs = $m_Lcaos_frontend_Documentation$().$lessinit$greater$default$1__sci_Map();
+  $ct_Lcaos_frontend_widgets_Widget__T__Lcaos_frontend_Documentation__(this, title, new $c_Lcaos_frontend_Documentation(docs))
+}
+$c_Lcaos_frontend_widgets_HtmlBlock.prototype = new $h_Lcaos_frontend_widgets_Widget();
+$c_Lcaos_frontend_widgets_HtmlBlock.prototype.constructor = $c_Lcaos_frontend_widgets_HtmlBlock;
+/** @constructor */
+function $h_Lcaos_frontend_widgets_HtmlBlock() {
+  /*<skip>*/
+}
+$h_Lcaos_frontend_widgets_HtmlBlock.prototype = $c_Lcaos_frontend_widgets_HtmlBlock.prototype;
+$c_Lcaos_frontend_widgets_HtmlBlock.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
+  var content = $n($n(div).append__T__Lcaos_frontend_widgets_DomElem("div")).html__T__Lcaos_frontend_widgets_DomElem(this.Lcaos_frontend_widgets_HtmlBlock__f_block);
+  if (hidden) {
+    $n(content).style__T__T__Lcaos_frontend_widgets_DomElem("display", "none")
+  }
+});
+$c_Lcaos_frontend_widgets_HtmlBlock.prototype.update__V = (function() {
+  /*<skip>*/
+});
+var $d_Lcaos_frontend_widgets_HtmlBlock = new $TypeData().initClass({
+  Lcaos_frontend_widgets_HtmlBlock: 0
+}, false, "caos.frontend.widgets.HtmlBlock", {
+  Lcaos_frontend_widgets_HtmlBlock: 1,
+  Lcaos_frontend_widgets_Widget: 1,
+  O: 1
+});
+$c_Lcaos_frontend_widgets_HtmlBlock.prototype.$classData = $d_Lcaos_frontend_widgets_HtmlBlock;
+/** @constructor */
 function $c_Lcaos_frontend_widgets_Invisible(stx, analyse, title) {
   this.Lcaos_frontend_widgets_Widget__f_title = null;
   this.Lcaos_frontend_widgets_Widget__f_doc = null;
@@ -17719,8 +17982,8 @@ function $h_Lcaos_frontend_widgets_Invisible() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_Invisible.prototype = $c_Lcaos_frontend_widgets_Invisible.prototype;
-$c_Lcaos_frontend_widgets_Invisible.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  $n(this.Lcaos_frontend_widgets_Invisible__f_content).init__Lcaos_frontend_widgets_DomElem__V(div);
+$c_Lcaos_frontend_widgets_Invisible.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
+  $n(this.Lcaos_frontend_widgets_Invisible__f_content).init__Lcaos_frontend_widgets_DomElem__Z__V(div, hidden);
   $n($n(this.Lcaos_frontend_widgets_Invisible__f_content).Lcaos_frontend_widgets_OutputArea__f_outputs).style__T__Lcaos_frontend_widgets_DomElem("padding: 0px 5px 0px 5px;");
   this.update__V()
 });
@@ -17759,13 +18022,12 @@ $c_Lcaos_frontend_widgets_Invisible.prototype.update__V = (function() {
     })));
     new $c_s_Some(res$2)
   } catch (e$2) {
-    var e$3 = e$2;
-    var e$3$1 = ((e$3 instanceof $c_jl_Throwable) ? e$3 : new $c_sjs_js_JavaScriptException(e$3));
+    var e$3 = ((e$2 instanceof $c_jl_Throwable) ? e$2 : new $c_sjs_js_JavaScriptException(e$2));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_Invisible__f_content, this.Lcaos_frontend_widgets_Widget__f_title);
-    if ($n(\u03b41$).isDefinedAt__O__Z(e$3$1)) {
-      $n(\u03b41$).apply__O__O(e$3$1)
+    if ($n(\u03b41$).isDefinedAt__O__Z(e$3)) {
+      $n(\u03b41$).apply__O__O(e$3)
     } else {
-      throw e$3$1
+      throw ((e$3 instanceof $c_sjs_js_JavaScriptException) ? e$3.sjs_js_JavaScriptException__f_exception : $n(e$3))
     }
   }
 });
@@ -17778,8 +18040,16 @@ var $d_Lcaos_frontend_widgets_Invisible = new $TypeData().initClass({
 });
 $c_Lcaos_frontend_widgets_Invisible.prototype.$classData = $d_Lcaos_frontend_widgets_Invisible;
 function $p_Lcaos_frontend_widgets_OutputArea__addBox__T__T__V($thiz, msg, style) {
-  var out = $n($n($thiz.Lcaos_frontend_widgets_OutputArea__f_outputs).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", ("alert alert-" + style));
-  var xs = $m_sc_StringOps$().split$extension__T__C__AT(msg, 10);
+  var this$3 = $uD(Math.random());
+  var rnd = ("" + this$3);
+  var out = $n($n($n($thiz.Lcaos_frontend_widgets_OutputArea__f_outputs).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", rnd)).attr__T__T__Lcaos_frontend_widgets_DomElem("class", ("alert alert-" + style));
+  var bt = $n($n($n($n($n(out).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "mydiv")).append__T__Lcaos_frontend_widgets_DomElem("button")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", "close-btn")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "close-btn");
+  $n(bt).text__T__Lcaos_frontend_widgets_DomNode("x");
+  $n(bt).on__T__F0__V("click", new $c_sjsr_AnonFunction0((() => {
+    new $c_Lcaos_frontend_widgets_DomElem($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(rnd)).style__T__T__Lcaos_frontend_widgets_DomElem("display", "none")
+  })));
+  var this$5 = $n(msg);
+  var xs = $f_T__split__T__I__AT(this$5, "\n\n", 0);
   $m_sc_ArrayOps$();
   var f = ((s) => {
     var s$1 = $as_T(s);
@@ -17866,8 +18136,8 @@ function $h_Lcaos_frontend_widgets_OutputArea() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_OutputArea.prototype = $c_Lcaos_frontend_widgets_OutputArea.prototype;
-$c_Lcaos_frontend_widgets_OutputArea.prototype.init__Lcaos_frontend_widgets_DomElem__V = (function(div) {
-  this.Lcaos_frontend_widgets_OutputArea__f_outputs = $n($n(div).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "alertContainer")
+$c_Lcaos_frontend_widgets_OutputArea.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, hidden) {
+  this.Lcaos_frontend_widgets_OutputArea__f_outputs = ((!hidden) ? $n($n(div).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "alertContainer") : $n($n($n(div).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "alertContainer")).style__T__T__Lcaos_frontend_widgets_DomElem("display", "none"))
 });
 $c_Lcaos_frontend_widgets_OutputArea.prototype.setValue__T__V = (function(msg) {
   $n(this.Lcaos_frontend_widgets_OutputArea__f_outputs).text__T__Lcaos_frontend_widgets_DomNode("");
@@ -17990,12 +18260,8 @@ function $c_Lcaos_frontend_widgets_SimulateMermaid(stx, simulate, name, errorBox
   $ct_Lcaos_frontend_widgets_Widget__T__Lcaos_frontend_Documentation__(this, name, doc);
   this.Lcaos_frontend_widgets_SimulateMermaid__f_svgBox = (this.Lcaos_frontend_widgets_Widget__f_titleId + "Svg");
   this.Lcaos_frontend_widgets_SimulateMermaid__f_divBox = (this.Lcaos_frontend_widgets_Widget__f_titleId + "Box");
-  $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]));
-  this.Lcaos_frontend_widgets_SimulateMermaid__f_traceActs = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
-  $n($m_s_package$().s_package$__f_List);
-  var elems$1 = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]));
-  this.Lcaos_frontend_widgets_SimulateMermaid__f_traceStx = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1)
+  this.Lcaos_frontend_widgets_SimulateMermaid__f_traceActs = $m_sci_Nil$();
+  this.Lcaos_frontend_widgets_SimulateMermaid__f_traceStx = $m_sci_Nil$()
 }
 $c_Lcaos_frontend_widgets_SimulateMermaid.prototype = new $h_Lcaos_frontend_widgets_Widget();
 $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.constructor = $c_Lcaos_frontend_widgets_SimulateMermaid;
@@ -18004,19 +18270,16 @@ function $h_Lcaos_frontend_widgets_SimulateMermaid() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_SimulateMermaid.prototype = $c_Lcaos_frontend_widgets_SimulateMermaid.prototype;
-$c_Lcaos_frontend_widgets_SimulateMermaid.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  $n($m_s_package$().s_package$__f_List);
-  var $$x1 = $m_sr_ScalaRunTime$();
+$c_Lcaos_frontend_widgets_SimulateMermaid.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
   $n($m_s_package$().s_package$__f_Right);
   var self = new $c_s_util_Right("refresh");
   var _1 = new $c_sjsr_AnonFunction0((() => {
     this.update__V()
   }));
   var y = new $c_T2(_1, "Simulate next actions of current program");
-  var elems = $n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
-  var buttons$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+  var buttons$1 = new $c_sci_$colon$colon(new $c_T2(self, y), $m_sci_Nil$());
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  var box = this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, headerStyle$1, buttons$1);
+  var box = this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, headerStyle$1, buttons$1);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((_$6) => ((!this.isVisible__Z()) ? (this.initialise__V(), (void 0)) : (void 0)));
   this.Lcaos_frontend_widgets_SimulateMermaid__f_top = $n($n(box).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__Lcaos_frontend_widgets_DomElem("width:100%;margin-bottom:10px;margin:5px 1px 5px 15px");
   $n($n($n($n($n(box).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__T__Lcaos_frontend_widgets_DomElem("padding", "5px 1px 5px 15px")).append__T__Lcaos_frontend_widgets_DomElem("button")).textEl__T__Lcaos_frontend_widgets_DomElem("undo")).on__T__F0__V("click", new $c_sjsr_AnonFunction0((() => {
@@ -18039,13 +18302,12 @@ $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.initialise__V = (function() 
     var this$1 = $n($m_s_package$().s_package$__f_Nil);
     this.initialiseWith__O__sci_List__sci_List__V(c, $$x1, new $c_sci_$colon$colon(c, this$1))
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_SimulateMermaid__f_errorBox, this.Lcaos_frontend_widgets_SimulateMermaid__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18118,13 +18380,12 @@ $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.takeStep__O__O__V = (functio
     this.updateSimulationSteps__sci_List__V($as_sci_List($f_sc_StrictOptimizedIterableOps__zip__sc_IterableOnce__O(this$6, that)));
     this.updateEnabledActions__O__V(goesTo)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b42$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_SimulateMermaid__f_errorBox, this.Lcaos_frontend_widgets_SimulateMermaid__f_name);
     if ($n(\u03b42$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b42$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18209,13 +18470,12 @@ $c_Lcaos_frontend_widgets_SimulateMermaid.prototype.showSt__O__V = (function(st)
     var mermaidJs = $m_Lcaos_frontend_widgets_MermaidJS$().apply__T__T__T__T(mermaid, this.Lcaos_frontend_widgets_SimulateMermaid__f_divBox, this.Lcaos_frontend_widgets_SimulateMermaid__f_svgBox);
     (0, eval)(mermaidJs)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b43$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_SimulateMermaid__f_errorBox, this.Lcaos_frontend_widgets_SimulateMermaid__f_name);
     if ($n(\u03b43$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b43$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18254,12 +18514,8 @@ function $c_Lcaos_frontend_widgets_SimulateText(stx, simulate, name, errorBox, d
   this.Lcaos_frontend_widgets_SimulateText__f_errorBox = errorBox;
   $ct_Lcaos_frontend_widgets_Widget__T__Lcaos_frontend_Documentation__(this, name, doc);
   this.Lcaos_frontend_widgets_SimulateText__f_simBox = (this.Lcaos_frontend_widgets_Widget__f_titleId + "Box");
-  $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]));
-  this.Lcaos_frontend_widgets_SimulateText__f_traceActs = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
-  $n($m_s_package$().s_package$__f_List);
-  var elems$1 = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]));
-  this.Lcaos_frontend_widgets_SimulateText__f_traceStx = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1)
+  this.Lcaos_frontend_widgets_SimulateText__f_traceActs = $m_sci_Nil$();
+  this.Lcaos_frontend_widgets_SimulateText__f_traceStx = $m_sci_Nil$()
 }
 $c_Lcaos_frontend_widgets_SimulateText.prototype = new $h_Lcaos_frontend_widgets_Widget();
 $c_Lcaos_frontend_widgets_SimulateText.prototype.constructor = $c_Lcaos_frontend_widgets_SimulateText;
@@ -18268,19 +18524,16 @@ function $h_Lcaos_frontend_widgets_SimulateText() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_SimulateText.prototype = $c_Lcaos_frontend_widgets_SimulateText.prototype;
-$c_Lcaos_frontend_widgets_SimulateText.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  $n($m_s_package$().s_package$__f_List);
-  var $$x1 = $m_sr_ScalaRunTime$();
+$c_Lcaos_frontend_widgets_SimulateText.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
   $n($m_s_package$().s_package$__f_Right);
   var self = new $c_s_util_Right("refresh");
   var _1 = new $c_sjsr_AnonFunction0((() => {
     this.update__V()
   }));
   var y = new $c_T2(_1, "Simulate next actions of current program");
-  var elems = $n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
-  var buttons$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+  var buttons$1 = new $c_sci_$colon$colon(new $c_T2(self, y), $m_sci_Nil$());
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  var box = this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, headerStyle$1, buttons$1);
+  var box = this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, headerStyle$1, buttons$1);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((_$6) => ((!this.isVisible__Z()) ? (this.initialise__V(), (void 0)) : (void 0)));
   this.Lcaos_frontend_widgets_SimulateText__f_top = $n($n(box).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__Lcaos_frontend_widgets_DomElem("width:100%;margin-bottom:10px;margin:5px 1px 5px 15px");
   $n($n($n($n($n(box).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__T__Lcaos_frontend_widgets_DomElem("padding", "5px 1px 5px 15px")).append__T__Lcaos_frontend_widgets_DomElem("button")).textEl__T__Lcaos_frontend_widgets_DomElem("undo")).on__T__F0__V("click", new $c_sjsr_AnonFunction0((() => {
@@ -18303,13 +18556,12 @@ $c_Lcaos_frontend_widgets_SimulateText.prototype.initialise__V = (function() {
     var this$1 = $n($m_s_package$().s_package$__f_Nil);
     this.initialiseWith__O__sci_List__sci_List__V(c, $$x1, new $c_sci_$colon$colon(c, this$1))
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_SimulateText__f_errorBox, this.Lcaos_frontend_widgets_SimulateText__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18382,13 +18634,12 @@ $c_Lcaos_frontend_widgets_SimulateText.prototype.takeStep__O__O__V = (function(a
     this.updateSimulationSteps__sci_List__V($as_sci_List($f_sc_StrictOptimizedIterableOps__zip__sc_IterableOnce__O(this$6, that)));
     this.updateEnabledActions__O__V(goesTo)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b42$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_SimulateText__f_errorBox, this.Lcaos_frontend_widgets_SimulateText__f_name);
     if ($n(\u03b42$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b42$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18538,8 +18789,8 @@ function $h_Lcaos_frontend_widgets_VisualiseCode() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_VisualiseCode.prototype = $c_Lcaos_frontend_widgets_VisualiseCode.prototype;
-$c_Lcaos_frontend_widgets_VisualiseCode.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  this.Lcaos_frontend_widgets_VisualiseCode__f_box = $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, $m_s_package$().s_package$__f_Nil, $m_s_package$().s_package$__f_Nil)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseCode__f_divBox);
+$c_Lcaos_frontend_widgets_VisualiseCode.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
+  this.Lcaos_frontend_widgets_VisualiseCode__f_box = $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, $m_s_package$().s_package$__f_Nil, $m_s_package$().s_package$__f_Nil)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseCode__f_divBox);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((e) => ((!this.isVisible__Z()) ? (this.showCode__V(), (void 0)) : (void 0)))
 });
 $c_Lcaos_frontend_widgets_VisualiseCode.prototype.update__V = (function() {
@@ -18556,13 +18807,12 @@ $c_Lcaos_frontend_widgets_VisualiseCode.prototype.showCode__V = (function() {
     var \u03b42$ = $m_Lcaos_frontend_widgets_VisualiseCode$();
     \u03b42$.Lcaos_frontend_widgets_VisualiseCode$__f_caos$frontend$widgets$VisualiseCode$$$index = ((1 + \u03b42$.Lcaos_frontend_widgets_VisualiseCode$__f_caos$frontend$widgets$VisualiseCode$$$index) | 0)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_VisualiseCode__f_errorBox, this.Lcaos_frontend_widgets_VisualiseCode__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18600,19 +18850,16 @@ function $h_Lcaos_frontend_widgets_VisualiseMermaid() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_VisualiseMermaid.prototype = $c_Lcaos_frontend_widgets_VisualiseMermaid.prototype;
-$c_Lcaos_frontend_widgets_VisualiseMermaid.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  $n($m_s_package$().s_package$__f_List);
-  var $$x1 = $m_sr_ScalaRunTime$();
+$c_Lcaos_frontend_widgets_VisualiseMermaid.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
   $n($m_s_package$().s_package$__f_Right);
   var self = new $c_s_util_Right("download");
   var _1 = new $c_sjsr_AnonFunction0((() => {
     $m_Lcaos_frontend_widgets_Utils$().downloadSvg__T__V(this.Lcaos_frontend_widgets_VisualiseMermaid__f_svgBox)
   }));
   var y = new $c_T2(_1, "Download SVG");
-  var elems = $n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
-  var buttons$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+  var buttons$1 = new $c_sci_$colon$colon(new $c_T2(self, y), $m_sci_Nil$());
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  this.Lcaos_frontend_widgets_VisualiseMermaid__f_box = $n($n($n($n($n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "mermaid")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseMermaid__f_divBox)).style__T__T__Lcaos_frontend_widgets_DomElem("text-align", "center")).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseMermaid__f_svgBox);
+  this.Lcaos_frontend_widgets_VisualiseMermaid__f_box = $n($n($n($n($n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "mermaid")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseMermaid__f_divBox)).style__T__T__Lcaos_frontend_widgets_DomElem("text-align", "center")).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseMermaid__f_svgBox);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((e) => ((!this.isVisible__Z()) ? (this.showMermaid__V(), (void 0)) : (void 0)))
 });
 $c_Lcaos_frontend_widgets_VisualiseMermaid.prototype.update__V = (function() {
@@ -18625,13 +18872,12 @@ $c_Lcaos_frontend_widgets_VisualiseMermaid.prototype.showMermaid__V = (function(
     var diagram = $n($as_Lcaos_view_View($n(this.Lcaos_frontend_widgets_VisualiseMermaid__f_mermaid).apply__O())).Lcaos_view_View__f_code;
     this.showMermaid__T__V(diagram)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_VisualiseMermaid__f_errorBox, this.Lcaos_frontend_widgets_VisualiseMermaid__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18645,13 +18891,12 @@ $c_Lcaos_frontend_widgets_VisualiseMermaid.prototype.showMermaid__T__V = (functi
     var mermaidJs = $m_Lcaos_frontend_widgets_MermaidJS$().apply__T__T__T__T(diagramFixed, this.Lcaos_frontend_widgets_VisualiseMermaid__f_divBox, this.Lcaos_frontend_widgets_VisualiseMermaid__f_svgBox);
     (0, eval)(mermaidJs)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b42$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_VisualiseMermaid__f_errorBox, this.Lcaos_frontend_widgets_VisualiseMermaid__f_name);
     if ($n(\u03b42$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b42$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18689,43 +18934,10 @@ function $h_Lcaos_frontend_widgets_VisualiseOptMermaid() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype = $c_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype;
-$c_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype.fix__T__T = (function(s) {
-  var this$1 = $n(s);
-  var target = $as_T(String.fromCharCode(32));
-  var replacement = $as_T(String.fromCharCode(95));
-  var this$4 = $n(target);
-  var $$x2 = this$1.split(this$4);
-  var this$5 = $n(replacement);
-  var $$x1 = $$x2.join(this$5);
-  var this$6 = $n($as_T($$x1));
-  var target$1 = $as_T(String.fromCharCode(40));
-  var replacement$1 = $as_T(String.fromCharCode(95));
-  var this$9 = $n(target$1);
-  var $$x4 = this$6.split(this$9);
-  var this$10 = $n(replacement$1);
-  var $$x3 = $$x4.join(this$10);
-  var this$11 = $n($as_T($$x3));
-  var target$2 = $as_T(String.fromCharCode(41));
-  var replacement$2 = $as_T(String.fromCharCode(95));
-  var this$14 = $n(target$2);
-  var $$x6 = this$11.split(this$14);
-  var this$15 = $n(replacement$2);
-  var $$x5 = $$x6.join(this$15);
-  var this$16 = $n($as_T($$x5));
-  var target$3 = $as_T(String.fromCharCode(58));
-  var replacement$3 = $as_T(String.fromCharCode(95));
-  var this$19 = $n(target$3);
-  var $$x8 = this$16.split(this$19);
-  var this$20 = $n(replacement$3);
-  var $$x7 = $$x8.join(this$20);
-  return $as_T($$x7)
-});
-$c_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]));
-  var buttons$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
+$c_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
+  var buttons$1 = $m_sci_Nil$();
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_box = $n($n($n($n($n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__T__Lcaos_frontend_widgets_DomElem("text-align", "center")).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__T__Lcaos_frontend_widgets_DomElem("padding", "5px 0px 5px 0px")).style__T__T__Lcaos_frontend_widgets_DomElem("display", "inline-flex")).style__T__T__Lcaos_frontend_widgets_DomElem("flex-wrap", "wrap");
+  this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_box = $n($n($n($n($n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, false, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__T__Lcaos_frontend_widgets_DomElem("text-align", "center")).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__T__Lcaos_frontend_widgets_DomElem("padding", "5px 0px 5px 0px")).style__T__T__Lcaos_frontend_widgets_DomElem("display", "inline-flex")).style__T__T__Lcaos_frontend_widgets_DomElem("flex-wrap", "wrap");
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((_$2) => ((!this.isVisible__Z()) ? (this.showOptions__V(), (void 0)) : (void 0)))
 });
 $c_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype.update__V = (function() {
@@ -18754,32 +18966,30 @@ $c_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype.showOptions__V = (functi
     }));
     $n(this$2.filtered__sc_Iterable()).foreach__F1__V(f)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_errorBox, this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
 $c_Lcaos_frontend_widgets_VisualiseOptMermaid.prototype.showOption__T__T__V = (function(name, code) {
   try {
-    var namefix = this.fix__T__T(name);
+    var namefix = $f_T__hashCode__I($n(name));
     var mbox = $n($n(this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_box).append__T__Lcaos_frontend_widgets_DomElem("div")).style__T__T__Lcaos_frontend_widgets_DomElem("text-align", "center");
     $n($n(mbox).append__T__Lcaos_frontend_widgets_DomElem("h4")).text__T__Lcaos_frontend_widgets_DomNode(("" + name));
     $n($n($n($n($n($n(mbox).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "mermaid")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", (("" + this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_divBox) + namefix))).style__T__T__Lcaos_frontend_widgets_DomElem("text-align", "center")).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", (("" + this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_svgBox) + namefix));
     var mermaidJs = $m_Lcaos_frontend_widgets_MermaidJS$().apply__T__T__T__T($f_T__replaceAll__T__T__T($n(code), "\\\\", "\\\\\\\\"), (("" + this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_divBox) + namefix), (("" + this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_svgBox) + namefix));
     (0, eval)(mermaidJs)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b42$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_errorBox, this.Lcaos_frontend_widgets_VisualiseOptMermaid__f_name);
     if ($n(\u03b42$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b42$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -18822,8 +19032,8 @@ function $h_Lcaos_frontend_widgets_VisualiseText() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_VisualiseText.prototype = $c_Lcaos_frontend_widgets_VisualiseText.prototype;
-$c_Lcaos_frontend_widgets_VisualiseText.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  this.Lcaos_frontend_widgets_VisualiseText__f_box = $n($n($n($n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, $m_s_package$().s_package$__f_Nil, $m_s_package$().s_package$__f_Nil)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "text")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseText__f_divBox)).append__T__Lcaos_frontend_widgets_DomElem("pre")).attr__T__T__Lcaos_frontend_widgets_DomElem("style", "text-align: left;margin: 0;font-size: 1.2rem;");
+$c_Lcaos_frontend_widgets_VisualiseText.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
+  this.Lcaos_frontend_widgets_VisualiseText__f_box = $n($n($n($n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, $m_s_package$().s_package$__f_Nil, $m_s_package$().s_package$__f_Nil)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "text")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_VisualiseText__f_divBox)).append__T__Lcaos_frontend_widgets_DomElem("pre")).attr__T__T__Lcaos_frontend_widgets_DomElem("style", "text-align: left;margin: 0;font-size: 1.2rem;");
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((e) => ((!this.isVisible__Z()) ? (this.showText__V(), (void 0)) : (void 0)))
 });
 $c_Lcaos_frontend_widgets_VisualiseText.prototype.update__V = (function() {
@@ -18836,13 +19046,12 @@ $c_Lcaos_frontend_widgets_VisualiseText.prototype.showText__V = (function() {
     var toShow = $n($as_Lcaos_view_View($n(this.Lcaos_frontend_widgets_VisualiseText__f_text).apply__O())).Lcaos_view_View__f_code;
     $n(this.Lcaos_frontend_widgets_VisualiseText__f_box).text__T__Lcaos_frontend_widgets_DomNode(toShow)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_VisualiseText__f_errorBox, this.Lcaos_frontend_widgets_VisualiseText__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -21064,12 +21273,9 @@ var $d_ju_regex_Pattern = new $TypeData().initClass({
 });
 $c_ju_regex_Pattern.prototype.$classData = $d_ju_regex_Pattern;
 /** @constructor */
-function $c_Lrebecaos_backend_HistoryState$HistorySOS$$anon$1(sos$2, outer) {
+function $c_Lrebecaos_backend_HistoryState$HistorySOS$$anon$1(sos$2) {
   this.Lrebecaos_backend_HistoryState$HistorySOS$$anon$1__f_sos$1 = null;
-  this.Lrebecaos_backend_HistoryState$HistorySOS$$anon$1__f_sos$1 = sos$2;
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  }
+  this.Lrebecaos_backend_HistoryState$HistorySOS$$anon$1__f_sos$1 = sos$2
 }
 $c_Lrebecaos_backend_HistoryState$HistorySOS$$anon$1.prototype = new $h_O();
 $c_Lrebecaos_backend_HistoryState$HistorySOS$$anon$1.prototype.constructor = $c_Lrebecaos_backend_HistoryState$HistorySOS$$anon$1;
@@ -21152,15 +21358,15 @@ function $p_Lrebecaos_backend_Semantics$__aux$1__I__sci_Map__sci_Set__I__I__sci_
           var as$1 = $as_T2(as);
           var self = $n(as$1)._2__O();
           var ev$20 = $as_T3(self);
-          var this$9 = $n(trace);
+          var this$8 = $n(trace);
           var elem = $n(as$1)._1__O();
-          var y = new $c_sci_$colon$colon(elem, this$9);
+          var y = new $c_sci_$colon$colon(elem, this$8);
           return new $c_T2(ev$20, y)
         }))(trace))));
-        var this$11 = $m_s_$less$colon$less$();
-        var nextSt$tailLocal1$tmp1 = $as_sci_Map($n($$x2).$plus$plus__sc_IterableOnce__sc_IterableOps($n($$x1).toMap__s_$less$colon$less__sci_Map(this$11.s_$less$colon$less$__f_singleton)));
-        var this$12 = $n(done$tailLocal1);
-        var done$tailLocal1$tmp1 = $as_sci_Set(this$12.incl__O__sci_SetOps(x167));
+        var this$10 = $m_s_$less$colon$less$();
+        var nextSt$tailLocal1$tmp1 = $as_sci_Map($n($$x2).$plus$plus__sc_IterableOnce__sc_IterableOps($n($$x1).toMap__s_$less$colon$less__sci_Map(this$10.s_$less$colon$less$__f_singleton)));
+        var this$11 = $n(done$tailLocal1);
+        var done$tailLocal1$tmp1 = $as_sci_Set(this$11.incl__O__sci_SetOps(x167));
         var edges$tailLocal1$tmp1 = ((edges$tailLocal1 + $n(more).size__I()) | 0);
         var limit$tailLocal1$tmp1 = ((limit$tailLocal1 - $n(more).size__I()) | 0);
         nextSt$tailLocal1 = nextSt$tailLocal1$tmp1;
@@ -21262,18 +21468,18 @@ $c_Lrebecaos_backend_Semantics$.prototype.initSt__Lrebecaos_syntax_Program$Syste
   return new $c_T3(s, _2, _3)
 });
 $c_Lrebecaos_backend_Semantics$.prototype.getInstances__Lrebecaos_syntax_Program$System__sci_List = (function(s) {
-  var this$3 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
+  var this$2 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
   var f = ((dec) => {
     var dec$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(dec);
-    return this.instantiate__Lrebecaos_syntax_Program$InstanceDecl__Lrebecaos_syntax_Program$System__Lrebecaos_backend_Eval$Data__T2(dec$1, s, new $c_Lrebecaos_backend_Eval$Data$N(0))
+    return $m_Lrebecaos_backend_Semantics$().instantiate__Lrebecaos_syntax_Program$InstanceDecl__Lrebecaos_syntax_Program$System__Lrebecaos_backend_Eval$Data__T2(dec$1, s, new $c_Lrebecaos_backend_Eval$Data$N(0))
   });
-  if ((this$3 === $m_sci_Nil$())) {
+  if ((this$2 === $m_sci_Nil$())) {
     return $m_sci_Nil$()
   } else {
-    var arg1 = this$3.head__O();
+    var arg1 = this$2.head__O();
     var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
     var t = h;
-    var rest = $as_sci_List(this$3.tail__O());
+    var rest = $as_sci_List(this$2.tail__O());
     while ((rest !== $m_sci_Nil$())) {
       var arg1$1 = $n(rest).head__O();
       var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -21293,30 +21499,30 @@ $c_Lrebecaos_backend_Semantics$.prototype.instantiate__Lrebecaos_syntax_Program$
   var y = $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_name;
   var rebs = $as_sci_Map($n($$x1).$plus__T2__sci_MapOps(new $c_T2("self", y)));
   var self = $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_name;
-  var this$7 = $n($m_s_Predef$().s_Predef$__f_Map);
+  var this$6 = $n($m_s_Predef$().s_Predef$__f_Map);
   var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("now", now)]));
-  var vars = this$7.from__sc_IterableOnce__sci_Map(elems);
+  var vars = this$6.from__sc_IterableOnce__sci_Map(elems);
   var clazz$1 = $n(dec).Lrebecaos_syntax_Program$InstanceDecl__f_clazz;
   var y$1 = new $c_Lrebecaos_backend_RebecEnv(vars, meth, clazz$1).addRebecs__sc_Iterable__Lrebecaos_backend_RebecEnv(rebs);
   return new $c_T2(self, y$1)
 });
 $c_Lrebecaos_backend_Semantics$.prototype.getInitMsg__Lrebecaos_syntax_Program$System__sci_List = (function(s) {
-  var this$4 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
+  var this$3 = $n($n(s).Lrebecaos_syntax_Program$System__f_main);
   var f$1 = ((dec) => {
     var dec$1 = $as_Lrebecaos_syntax_Program$InstanceDecl(dec);
     var rcv = $n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_name;
-    var this$2 = $n($n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_args);
+    var this$1 = $n($n(dec$1).Lrebecaos_syntax_Program$InstanceDecl__f_args);
     var f = ((a) => {
       var a$1 = $as_Lrebecaos_syntax_Program$Expr(a);
       return $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(a$1, $m_Lrebecaos_backend_RebecEnv$().empty__Lrebecaos_backend_RebecEnv())
     });
-    if ((this$2 === $m_sci_Nil$())) {
+    if ((this$1 === $m_sci_Nil$())) {
       var args = $m_sci_Nil$()
     } else {
-      var arg1 = this$2.head__O();
+      var arg1 = this$1.head__O();
       var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
       var t = h;
-      var rest = $as_sci_List(this$2.tail__O());
+      var rest = $as_sci_List(this$1.tail__O());
       while ((rest !== $m_sci_Nil$())) {
         var arg1$1 = $n(rest).head__O();
         var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -21330,13 +21536,13 @@ $c_Lrebecaos_backend_Semantics$.prototype.getInitMsg__Lrebecaos_syntax_Program$S
     var x = new $c_Lrebecaos_backend_Semantics$Msg(rcv, "initial", args, "", 0, dl);
     return x
   });
-  if ((this$4 === $m_sci_Nil$())) {
+  if ((this$3 === $m_sci_Nil$())) {
     return $m_sci_Nil$()
   } else {
-    var arg1$2 = this$4.head__O();
+    var arg1$2 = this$3.head__O();
     var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
     var t$1 = h$1;
-    var rest$1 = $as_sci_List(this$4.tail__O());
+    var rest$1 = $as_sci_List(this$3.tail__O());
     while ((rest$1 !== $m_sci_Nil$())) {
       var arg1$3 = $n(rest$1).head__O();
       var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
@@ -21481,24 +21687,24 @@ $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
     return $n(m$3).Lrebecaos_backend_Semantics$Msg__f_rcv
   }))));
   var $$x1 = $m_s_Option$();
-  var this$4 = $n($as_sc_IterableOnceOps($n($n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((_$1) => {
+  var this$1 = $n($as_sc_IterableOnceOps($n($n($n($as_Lrebecaos_backend_Bag($n(st).T3__f__3)).Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((_$1) => {
     var _$1$1 = $as_Lrebecaos_backend_Semantics$Msg(_$1);
     return $n(_$1$1).Lrebecaos_backend_Semantics$Msg__f_tt
   })))));
   var ord = $m_s_math_Ordering$Int$();
-  var this$5 = $n($n($$x1).option2Iterable__s_Option__sc_Iterable($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$4, ord)));
-  return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$5)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((smallestTT) => {
+  var this$2 = $n($n($$x1).option2Iterable__s_Option__sc_Iterable($f_sc_IterableOnceOps__minOption__s_math_Ordering__s_Option(this$1, ord)));
+  return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$2)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((smallestTT) => {
     var smallestTT$1 = $uI(smallestTT);
-    var this$6 = $n($as_Lrebecaos_backend_Bag($n(st).T3__f__3));
-    return $as_sc_IterableOnce($n($n($n($n(this$6.Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
+    var this$3 = $n($as_Lrebecaos_backend_Bag($n(st).T3__f__3));
+    return $as_sc_IterableOnce($n($n($n($n(this$3.Lrebecaos_backend_Bag__f_bag).keySet__sci_Set()).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1) => {
       var x$1$1 = $as_Lrebecaos_backend_Semantics$Msg(x$1);
       if ((x$1$1 !== null)) {
+        var this$5 = $n(x$1$1);
+        var this$6 = $n(x$1$1);
+        var this$7 = $n(x$1$1);
         var this$8 = $n(x$1$1);
         var this$9 = $n(x$1$1);
         var this$10 = $n(x$1$1);
-        var this$11 = $n(x$1$1);
-        var this$12 = $n(x$1$1);
-        var this$13 = $n(x$1$1);
         return true
       } else {
         return false
@@ -21506,46 +21712,47 @@ $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
     })))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$2) => {
       var x$1$3 = $as_Lrebecaos_backend_Semantics$Msg(x$1$2);
       if ((x$1$3 !== null)) {
+        var this$12 = $n(x$1$3);
+        var this$13 = $n(x$1$3);
+        var this$14 = $n(x$1$3);
         var this$15 = $n(x$1$3);
         var this$16 = $n(x$1$3);
         var this$17 = $n(x$1$3);
-        var this$18 = $n(x$1$3);
-        var this$19 = $n(x$1$3);
-        var this$20 = $n(x$1$3);
-        return this.enabled__Lrebecaos_backend_Semantics$Msg__sci_Set__I__Z(x$1$3, initials, smallestTT$1)
+        return $m_Lrebecaos_backend_Semantics$().enabled__Lrebecaos_backend_Semantics$Msg__sci_Set__I__Z(x$1$3, initials, smallestTT$1)
       };
       throw new $c_s_MatchError(x$1$3)
     })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((x$1$3$1) => {
       var x$1$4 = $as_Lrebecaos_backend_Semantics$Msg(x$1$3$1);
       if ((x$1$4 !== null)) {
+        var this$19 = $n(x$1$4);
+        var x103 = this$19.Lrebecaos_backend_Semantics$Msg__f_rcv;
+        var this$20 = $n(x$1$4);
+        var x104 = this$20.Lrebecaos_backend_Semantics$Msg__f_m;
+        var this$21 = $n(x$1$4);
+        var x105 = this$21.Lrebecaos_backend_Semantics$Msg__f_args;
         var this$22 = $n(x$1$4);
-        var x103 = this$22.Lrebecaos_backend_Semantics$Msg__f_rcv;
+        var x106 = this$22.Lrebecaos_backend_Semantics$Msg__f_snd;
         var this$23 = $n(x$1$4);
-        var x104 = this$23.Lrebecaos_backend_Semantics$Msg__f_m;
+        var x107 = this$23.Lrebecaos_backend_Semantics$Msg__f_tt;
         var this$24 = $n(x$1$4);
-        var x105 = this$24.Lrebecaos_backend_Semantics$Msg__f_args;
-        var this$25 = $n(x$1$4);
-        var x106 = this$25.Lrebecaos_backend_Semantics$Msg__f_snd;
-        var this$26 = $n(x$1$4);
-        var x107 = this$26.Lrebecaos_backend_Semantics$Msg__f_tt;
-        var this$27 = $n(x$1$4);
-        var this$28 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($as_sc_MapOps($n(st).T3__f__2)).get__O__s_Option(x103)));
-        return $as_sci_Set($n($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$28)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((rebEnv) => {
+        var this$25 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($as_sc_MapOps($n(st).T3__f__2)).get__O__s_Option(x103)));
+        return $as_sci_Set($n($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$25)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((rebEnv) => {
           var rebEnv$1 = $as_Lrebecaos_backend_RebecEnv(rebEnv);
-          return this.enabledDL__Lrebecaos_backend_Semantics$Msg__Lrebecaos_backend_RebecEnv__Z(x$1$4, rebEnv$1)
+          return $m_Lrebecaos_backend_Semantics$().enabledDL__Lrebecaos_backend_Semantics$Msg__Lrebecaos_backend_RebecEnv__Z(x$1$4, rebEnv$1)
         })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((rebEnv$2) => {
           var rebEnv$3 = $as_Lrebecaos_backend_RebecEnv(rebEnv$2);
-          var this$29 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($n(rebEnv$3).Lrebecaos_backend_RebecEnv__f_meth).get__O__s_Option(x104)));
-          return $as_sc_IterableOnce($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$29)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((mth) => {
+          var this$26 = $n($m_s_Option$().option2Iterable__s_Option__sc_Iterable($n($n(rebEnv$3).Lrebecaos_backend_RebecEnv__f_meth).get__O__s_Option(x104)));
+          return $as_sc_IterableOnce($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$26)).flatMap__F1__O(new $c_sjsr_AnonFunction1(((mth) => {
             var mth$1 = $as_Lrebecaos_syntax_Program$Msgsrv(mth);
+            var $$x5 = $m_Lrebecaos_backend_Semantics$();
             var $$x4 = $n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_stm;
-            var $$x3 = $n($n(rebEnv$3).addValuation__sci_Map__Lrebecaos_backend_RebecEnv(this.unify__sci_List__sci_List__sci_Map($n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_vars, x105)));
+            var $$x3 = $n($n(rebEnv$3).addValuation__sci_Map__Lrebecaos_backend_RebecEnv($m_Lrebecaos_backend_Semantics$().unify__sci_List__sci_List__sci_Map($n(mth$1).Lrebecaos_syntax_Program$Msgsrv__f_vars, x105)));
             var x = $n(rebEnv$3).now__I();
             var n = ((x > x107) ? x : x107);
             var y = new $c_Lrebecaos_backend_Eval$Data$N(n);
             var $$x2 = $n($$x3).addAssignment__T2__Lrebecaos_backend_RebecEnv(new $c_T2("now", y));
             var y$1 = new $c_Lrebecaos_backend_Eval$Data$RebRef(x106);
-            return $as_sc_IterableOnce($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_RebecEnv__Lrebecaos_syntax_Program$System__sci_Set($$x4, $n($$x2).addAssignment__T2__Lrebecaos_backend_RebecEnv(new $c_T2("sender", y$1)), $as_Lrebecaos_syntax_Program$System($n(st).T3__f__1))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$5) => {
+            return $as_sc_IterableOnce($n($n($n($$x5).evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_RebecEnv__Lrebecaos_syntax_Program$System__sci_Set($$x4, $n($$x2).addAssignment__T2__Lrebecaos_backend_RebecEnv(new $c_T2("sender", y$1)), $as_Lrebecaos_syntax_Program$System($n(st).T3__f__1))).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$5) => {
               var x$1$6 = $as_T3(x$1$5);
               return ((x$1$6 !== null) && ($as_Lrebecaos_backend_RebecEnv($n(x$1$6).T3__f__1), $as_Lrebecaos_backend_Bag($n(x$1$6).T3__f__2), $as_sci_Map($n(x$1$6).T3__f__3), true))
             })))).map__F1__O(new $c_sjsr_AnonFunction1(((x$1$2$1) => {
@@ -21556,9 +21763,10 @@ $c_Lrebecaos_backend_Semantics$.prototype.next__T3__sci_Set = (function(st) {
                 var newRebs$1 = $as_sci_Map($n(x$1$7).T3__f__3);
                 var updMsg = $n(newMsgs$1).map__F1__Lrebecaos_backend_Bag(new $c_sjsr_AnonFunction1(((m$4) => {
                   var m$5 = $as_Lrebecaos_backend_Semantics$Msg(m$4);
-                  var this$42 = $n($m_s_Predef$().s_Predef$__f_Map);
+                  var $$x6 = $m_Lrebecaos_backend_Semantics$();
+                  var this$39 = $n($m_s_Predef$().s_Predef$__f_Map);
                   var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2("self", x103)]));
-                  return this.subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg(m$5, this$42.from__sc_IterableOnce__sci_Map(elems))
+                  return $n($$x6).subst__Lrebecaos_backend_Semantics$Msg__sci_Map__Lrebecaos_backend_Semantics$Msg(m$5, this$39.from__sc_IterableOnce__sci_Map(elems))
                 })));
                 var self = new $c_T2(x$1$4, updMsg);
                 var _1 = $n(st).T3__f__1;
@@ -21628,13 +21836,13 @@ $c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Stat
       return $as_sci_Set($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_RebecEnv__Lrebecaos_syntax_Program$System__sci_Set(x158, reb, syst)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$1) => {
         var x$1$2 = $as_T3(x$1$1);
         return ((x$1$2 !== null) && ($as_Lrebecaos_backend_RebecEnv($n(x$1$2).T3__f__1), $as_Lrebecaos_backend_Bag($n(x$1$2).T3__f__2), $as_sci_Map($n(x$1$2).T3__f__3), true))
-      })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((reb, syst, x159) => ((x$1$2$1) => {
+      })))).flatMap__F1__O(new $c_sjsr_AnonFunction1(((x159, reb, syst) => ((x$1$2$1) => {
         var x$1$3 = $as_T3(x$1$2$1);
         if ((x$1$3 !== null)) {
           var sigma$1 = $as_Lrebecaos_backend_RebecEnv($n(x$1$3).T3__f__1);
           var msgs$1 = $as_Lrebecaos_backend_Bag($n(x$1$3).T3__f__2);
           var r1$1 = $as_sci_Map($n(x$1$3).T3__f__3);
-          return $as_sci_Set($n($n(this.evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_RebecEnv__Lrebecaos_syntax_Program$System__sci_Set(x159, $n(reb).addValuation__sci_Map__Lrebecaos_backend_RebecEnv($n(sigma$1).Lrebecaos_backend_RebecEnv__f_vars), syst)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$2$2) => {
+          return $as_sci_Set($n($n($m_Lrebecaos_backend_Semantics$().evalStm__Lrebecaos_syntax_Program$Statement__Lrebecaos_backend_RebecEnv__Lrebecaos_syntax_Program$System__sci_Set(x159, $n(reb).addValuation__sci_Map__Lrebecaos_backend_RebecEnv($n(sigma$1).Lrebecaos_backend_RebecEnv__f_vars), syst)).withFilter__F1__sc_WithFilter(new $c_sjsr_AnonFunction1(((x$1$2$2) => {
             var x$1$4 = $as_T3(x$1$2$2);
             return ((x$1$4 !== null) && ($as_Lrebecaos_backend_RebecEnv($n(x$1$4).T3__f__1), $as_Lrebecaos_backend_Bag($n(x$1$4).T3__f__2), $as_sci_Map($n(x$1$4).T3__f__3), true))
           })))).map__F1__O(new $c_sjsr_AnonFunction1(((x$1$3$1) => {
@@ -21651,34 +21859,34 @@ $c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Stat
           }))))
         };
         throw new $c_s_MatchError(x$1$3)
-      }))(reb, syst, x159))))
+      }))(x159, reb, syst))))
     };
     if ((x125 instanceof $c_Lrebecaos_syntax_Program$Statement$Assign)) {
       var x$1$6 = $as_Lrebecaos_syntax_Program$Statement$Assign(x125);
+      var this$9 = $n(x$1$6);
+      var x150 = this$9.Lrebecaos_syntax_Program$Statement$Assign__f_ident;
       var this$10 = $n(x$1$6);
-      var x150 = this$10.Lrebecaos_syntax_Program$Statement$Assign__f_ident;
-      var this$11 = $n(x$1$6);
-      var x151 = this$11.Lrebecaos_syntax_Program$Statement$Assign__f_e;
+      var x151 = this$10.Lrebecaos_syntax_Program$Statement$Assign__f_e;
       var $$x2 = $n(reb);
       var y = $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(x151, reb);
       var reb2 = $n($$x2).addAssignment__T2__Lrebecaos_backend_RebecEnv(new $c_T2(x150, y));
-      var this$16 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var this$15 = $n($m_s_Predef$().s_Predef$__f_Set);
       var $$x3 = $m_sr_ScalaRunTime$();
       var _2$2 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
-      var this$14 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var this$13 = $n($m_s_Predef$().s_Predef$__f_Map);
       var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
-      var _3$2 = this$14.from__sc_IterableOnce__sci_Map(elems$2);
+      var _3$2 = this$13.from__sc_IterableOnce__sci_Map(elems$2);
       var elems$3 = $n($$x3).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(reb2, _2$2, _3$2)]));
-      return this$16.from__sc_IterableOnce__sci_Set(elems$3)
+      return this$15.from__sc_IterableOnce__sci_Set(elems$3)
     };
     if ((x125 instanceof $c_Lrebecaos_syntax_Program$Statement$ITE)) {
       var x$1$7 = $as_Lrebecaos_syntax_Program$Statement$ITE(x125);
+      var this$17 = $n(x$1$7);
+      var x145 = this$17.Lrebecaos_syntax_Program$Statement$ITE__f_b;
       var this$18 = $n(x$1$7);
-      var x145 = this$18.Lrebecaos_syntax_Program$Statement$ITE__f_b;
+      var x146 = this$18.Lrebecaos_syntax_Program$Statement$ITE__f_ct;
       var this$19 = $n(x$1$7);
-      var x146 = this$19.Lrebecaos_syntax_Program$Statement$ITE__f_ct;
-      var this$20 = $n(x$1$7);
-      var x147 = this$20.Lrebecaos_syntax_Program$Statement$ITE__f_cf;
+      var x147 = this$19.Lrebecaos_syntax_Program$Statement$ITE__f_cf;
       if ($n($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(x145, reb)).toBool__Z()) {
         stm$tailLocal1 = x146;
         continue
@@ -21689,26 +21897,26 @@ $c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Stat
     };
     if ((x125 instanceof $c_Lrebecaos_syntax_Program$Statement$Choice)) {
       var x$1$8 = $as_Lrebecaos_syntax_Program$Statement$Choice(x125);
+      var this$21 = $n(x$1$8);
+      var x141 = this$21.Lrebecaos_syntax_Program$Statement$Choice__f_v;
       var this$22 = $n(x$1$8);
-      var x141 = this$22.Lrebecaos_syntax_Program$Statement$Choice__f_v;
-      var this$23 = $n(x$1$8);
-      var x142 = this$23.Lrebecaos_syntax_Program$Statement$Choice__f_options;
-      var this$24 = $n(x142);
-      return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$24)).map__F1__O(new $c_sjsr_AnonFunction1(((reb, x141) => ((opt) => {
+      var x142 = this$22.Lrebecaos_syntax_Program$Statement$Choice__f_options;
+      var this$23 = $n(x142);
+      return $as_sci_Set($n($m_sci_Set$().from__sc_IterableOnce__sci_Set(this$23)).map__F1__O(new $c_sjsr_AnonFunction1(((reb, x141) => ((opt) => {
         var opt$1 = $as_Lrebecaos_syntax_Program$Expr(opt);
         var newopt = $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(opt$1, reb);
         var sigma2$2 = $n(reb).addAssignment__T2__Lrebecaos_backend_RebecEnv(new $c_T2(x141, newopt));
         var _2$3 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
-        var this$27 = $n($m_s_Predef$().s_Predef$__f_Map);
+        var this$26 = $n($m_s_Predef$().s_Predef$__f_Map);
         var elems$4 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
-        var _3$3 = this$27.from__sc_IterableOnce__sci_Map(elems$4);
+        var _3$3 = this$26.from__sc_IterableOnce__sci_Map(elems$4);
         return new $c_T3(sigma2$2, _2$3, _3$3)
       }))(reb, x141))))
     };
     if ((x125 instanceof $c_Lrebecaos_syntax_Program$Statement$NewReb)) {
       var x$1$9 = $as_Lrebecaos_syntax_Program$Statement$NewReb(x125);
-      var this$30 = $n(x$1$9);
-      var x138 = this$30.Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
+      var this$29 = $n(x$1$9);
+      var x138 = this$29.Lrebecaos_syntax_Program$Statement$NewReb__f_dec;
       var rebID = $m_Lrebecaos_backend_RebecEnv$().newVar__T();
       var localName = $n(x138).Lrebecaos_syntax_Program$InstanceDecl__f_name;
       var clazz = $as_Lrebecaos_syntax_Program$ReactiveClass($n($n(syst).Lrebecaos_syntax_Program$System__f_classes).getOrElse__O__F0__O($n(x138).Lrebecaos_syntax_Program$InstanceDecl__f_clazz, new $c_sjsr_AnonFunction0(((x138) => (() => {
@@ -21716,18 +21924,18 @@ $c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Stat
       }))(x138))));
       var meth = $n(clazz).Lrebecaos_syntax_Program$ReactiveClass__f_msgsrv;
       var $$x5 = $n(clazz).Lrebecaos_syntax_Program$ReactiveClass__f_known;
-      var this$31 = $n($n(x138).Lrebecaos_syntax_Program$InstanceDecl__f_known);
+      var this$30 = $n($n(x138).Lrebecaos_syntax_Program$InstanceDecl__f_known);
       var f = ((reb) => ((name) => {
         var name$1 = $as_T(name);
         return $n(reb).getReb__T__T(name$1)
       }))(reb);
-      if ((this$31 === $m_sci_Nil$())) {
+      if ((this$30 === $m_sci_Nil$())) {
         var $$x4 = $m_sci_Nil$()
       } else {
-        var arg1 = this$31.head__O();
+        var arg1 = this$30.head__O();
         var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
         var t = h;
-        var rest = $as_sci_List(this$31.tail__O());
+        var rest = $as_sci_List(this$30.tail__O());
         while ((rest !== $m_sci_Nil$())) {
           var arg1$1 = $n(rest).head__O();
           var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -21738,28 +21946,28 @@ $c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Stat
         var $$x4 = h
       };
       var knwonRebs = this.unifyReb__sci_List__sci_List__sci_Map($$x5, $$x4);
-      var this$38 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var this$37 = $n($m_s_Predef$().s_Predef$__f_Map);
       var $$x7 = $m_sr_ScalaRunTime$();
       var n = $n(reb).now__I();
       var y$1 = new $c_Lrebecaos_backend_Eval$Data$N(n);
       var $$x6 = new $c_T2("now", y$1);
       var y$2 = new $c_Lrebecaos_backend_Eval$Data$RebRef(rebID);
       var elems$5 = $n($$x7).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x6, new $c_T2("self", y$2)]));
-      var vars = this$38.from__sc_IterableOnce__sci_Map(elems$5);
+      var vars = this$37.from__sc_IterableOnce__sci_Map(elems$5);
       var clazz$1 = $n(x138).Lrebecaos_syntax_Program$InstanceDecl__f_clazz;
       var newRebState = new $c_Lrebecaos_backend_RebecEnv(vars, meth, clazz$1).addRebecs__sc_Iterable__Lrebecaos_backend_RebecEnv(knwonRebs);
-      var this$40 = $n($n(x138).Lrebecaos_syntax_Program$InstanceDecl__f_args);
+      var this$39 = $n($n(x138).Lrebecaos_syntax_Program$InstanceDecl__f_args);
       var f$1 = ((reb) => ((_$2) => {
         var _$2$1 = $as_Lrebecaos_syntax_Program$Expr(_$2);
         return $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(_$2$1, reb)
       }))(reb);
-      if ((this$40 === $m_sci_Nil$())) {
+      if ((this$39 === $m_sci_Nil$())) {
         var args = $m_sci_Nil$()
       } else {
-        var arg1$2 = this$40.head__O();
+        var arg1$2 = this$39.head__O();
         var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
         var t$1 = h$1;
-        var rest$1 = $as_sci_List(this$40.tail__O());
+        var rest$1 = $as_sci_List(this$39.tail__O());
         while ((rest$1 !== $m_sci_Nil$())) {
           var arg1$3 = $n(rest$1).head__O();
           var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
@@ -21773,85 +21981,85 @@ $c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Stat
       var tt = $n(reb).now__I();
       var dl = $m_s_None$();
       var msg = new $c_Lrebecaos_backend_Semantics$Msg(rebID, "initial", args, snd, tt, dl);
-      var this$53 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var this$52 = $n($m_s_Predef$().s_Predef$__f_Set);
       var $$x9 = $m_sr_ScalaRunTime$();
-      var this$44 = $n(reb);
-      var $$x8 = this$44.Lrebecaos_backend_RebecEnv__f_vars;
+      var this$43 = $n(reb);
+      var $$x8 = this$43.Lrebecaos_backend_RebecEnv__f_vars;
       var y$3 = new $c_Lrebecaos_backend_Eval$Data$RebRef(rebID);
       var vars$1 = $as_sci_Map($n($$x8).$plus__T2__sci_MapOps(new $c_T2(localName, y$3)));
-      var meth$1 = this$44.Lrebecaos_backend_RebecEnv__f_meth;
-      var clazz$2 = this$44.Lrebecaos_backend_RebecEnv__f_clazz;
+      var meth$1 = this$43.Lrebecaos_backend_RebecEnv__f_meth;
+      var clazz$2 = this$43.Lrebecaos_backend_RebecEnv__f_clazz;
       var _1 = new $c_Lrebecaos_backend_RebecEnv(vars$1, meth$1, clazz$2);
       var _2$4 = $n($m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag()).$plus__O__Lrebecaos_backend_Bag(msg);
-      var this$51 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var this$50 = $n($m_s_Predef$().s_Predef$__f_Map);
       var elems$6 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(rebID, newRebState)]));
-      var _3$4 = this$51.from__sc_IterableOnce__sci_Map(elems$6);
+      var _3$4 = this$50.from__sc_IterableOnce__sci_Map(elems$6);
       var elems$7 = $n($$x9).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(_1, _2$4, _3$4)]));
-      return this$53.from__sc_IterableOnce__sci_Set(elems$7)
+      return this$52.from__sc_IterableOnce__sci_Set(elems$7)
     };
     if ((x125 instanceof $c_Lrebecaos_syntax_Program$Statement$Call)) {
       var x$1$10 = $as_Lrebecaos_syntax_Program$Statement$Call(x125);
+      var this$54 = $n(x$1$10);
+      var x131 = this$54.Lrebecaos_syntax_Program$Statement$Call__f_rebec;
       var this$55 = $n(x$1$10);
-      var x131 = this$55.Lrebecaos_syntax_Program$Statement$Call__f_rebec;
+      var x132 = this$55.Lrebecaos_syntax_Program$Statement$Call__f_meth;
       var this$56 = $n(x$1$10);
-      var x132 = this$56.Lrebecaos_syntax_Program$Statement$Call__f_meth;
+      var x133 = this$56.Lrebecaos_syntax_Program$Statement$Call__f_args;
       var this$57 = $n(x$1$10);
-      var x133 = this$57.Lrebecaos_syntax_Program$Statement$Call__f_args;
+      var x134 = this$57.Lrebecaos_syntax_Program$Statement$Call__f_after;
       var this$58 = $n(x$1$10);
-      var x134 = this$58.Lrebecaos_syntax_Program$Statement$Call__f_after;
-      var this$59 = $n(x$1$10);
-      var x135 = this$59.Lrebecaos_syntax_Program$Statement$Call__f_dl;
+      var x135 = this$58.Lrebecaos_syntax_Program$Statement$Call__f_dl;
       var r = $n(reb).getReb__T__T(x131);
-      var this$60 = $n(x134);
-      if (this$60.isEmpty__Z()) {
+      var this$59 = $n(x134);
+      if (this$59.isEmpty__Z()) {
         var after2 = $m_s_None$()
       } else {
-        var arg1$4 = this$60.get__O();
+        var arg1$4 = this$59.get__O();
         var _$3 = $as_Lrebecaos_syntax_Program$Expr(arg1$4);
         var after2 = new $c_s_Some($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(_$3, reb))
       };
-      var this$61 = $n(x135);
-      if (this$61.isEmpty__Z()) {
+      var this$60 = $n(x135);
+      if (this$60.isEmpty__Z()) {
         var deadline2 = $m_s_None$()
       } else {
-        var arg1$5 = this$61.get__O();
+        var arg1$5 = this$60.get__O();
         var _$4 = $as_Lrebecaos_syntax_Program$Expr(arg1$5);
         var deadline2 = new $c_s_Some($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(_$4, reb))
       };
       var $$x11 = $n(reb).now__I();
-      var this$62 = $n(after2);
-      if (this$62.isEmpty__Z()) {
+      var this$61 = $n(after2);
+      if (this$61.isEmpty__Z()) {
         var $$x10 = $m_s_None$()
       } else {
-        var arg1$6 = this$62.get__O();
+        var arg1$6 = this$61.get__O();
         var _$5 = $as_Lrebecaos_backend_Eval$Data(arg1$6);
         var $$x10 = new $c_s_Some($n(_$5).toInt__I())
       };
-      var this$63 = $n($$x10);
-      var tt$1 = (($$x11 + $uI((this$63.isEmpty__Z() ? 0 : this$63.get__O()))) | 0);
-      var this$64 = $n(deadline2);
-      if (this$64.isEmpty__Z()) {
+      var this$62 = $n($$x10);
+      var tt$1 = (($$x11 + $uI((this$62.isEmpty__Z() ? 0 : this$62.get__O()))) | 0);
+      var this$63 = $n(deadline2);
+      if (this$63.isEmpty__Z()) {
         var dl$1 = $m_s_None$()
       } else {
-        var arg1$7 = this$64.get__O();
+        var arg1$7 = this$63.get__O();
         var _$6 = $as_Lrebecaos_backend_Eval$Data(arg1$7);
         var dl$1 = new $c_s_Some((($n(_$6).toInt__I() + $n(reb).now__I()) | 0))
       };
-      var this$69 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var this$68 = $n($m_s_Predef$().s_Predef$__f_Set);
       var $$x13 = $m_sr_ScalaRunTime$();
       var $$x12 = $n($m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag());
-      var this$65 = $n(x133);
+      var this$64 = $n(x133);
       var f$2 = ((reb) => ((_$7) => {
         var _$7$1 = $as_Lrebecaos_syntax_Program$Expr(_$7);
         return $m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(_$7$1, reb)
       }))(reb);
-      if ((this$65 === $m_sci_Nil$())) {
+      if ((this$64 === $m_sci_Nil$())) {
         var args$1 = $m_sci_Nil$()
       } else {
-        var arg1$8 = this$65.head__O();
+        var arg1$8 = this$64.head__O();
         var h$2 = new $c_sci_$colon$colon(f$2(arg1$8), $m_sci_Nil$());
         var t$2 = h$2;
-        var rest$2 = $as_sci_List(this$65.tail__O());
+        var rest$2 = $as_sci_List(this$64.tail__O());
         while ((rest$2 !== $m_sci_Nil$())) {
           var arg1$9 = $n(rest$2).head__O();
           var nx$2 = new $c_sci_$colon$colon(f$2(arg1$9), $m_sci_Nil$());
@@ -21862,28 +22070,28 @@ $c_Lrebecaos_backend_Semantics$.prototype.evalStm__Lrebecaos_syntax_Program$Stat
         var args$1 = h$2
       };
       var _2$5 = $n($$x12).$plus__O__Lrebecaos_backend_Bag(new $c_Lrebecaos_backend_Semantics$Msg(r, x132, args$1, "self", tt$1, dl$1));
-      var this$67 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var this$66 = $n($m_s_Predef$().s_Predef$__f_Map);
       var elems$8 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
-      var _3$5 = this$67.from__sc_IterableOnce__sci_Map(elems$8);
+      var _3$5 = this$66.from__sc_IterableOnce__sci_Map(elems$8);
       var elems$9 = $n($$x13).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(reb, _2$5, _3$5)]));
-      return this$69.from__sc_IterableOnce__sci_Set(elems$9)
+      return this$68.from__sc_IterableOnce__sci_Set(elems$9)
     };
     if ((x125 instanceof $c_Lrebecaos_syntax_Program$Statement$Delay)) {
       var x$1$11 = $as_Lrebecaos_syntax_Program$Statement$Delay(x125);
-      var this$71 = $n(x$1$11);
-      var x128 = this$71.Lrebecaos_syntax_Program$Statement$Delay__f_d;
+      var this$70 = $n(x$1$11);
+      var x128 = this$70.Lrebecaos_syntax_Program$Statement$Delay__f_d;
       var tt$2 = (($n(reb).now__I() + $n($m_Lrebecaos_backend_Eval$().apply__Lrebecaos_syntax_Program$Expr__Lrebecaos_backend_RebecEnv__Lrebecaos_backend_Eval$Data(x128, reb)).toInt__I()) | 0);
-      var this$77 = $n($m_s_Predef$().s_Predef$__f_Set);
+      var this$76 = $n($m_s_Predef$().s_Predef$__f_Set);
       var $$x15 = $m_sr_ScalaRunTime$();
       var $$x14 = $n(reb);
       var y$4 = new $c_Lrebecaos_backend_Eval$Data$N(tt$2);
       var _1$1 = $n($$x14).addAssignment__T2__Lrebecaos_backend_RebecEnv(new $c_T2("now", y$4));
       var _2$6 = $m_Lrebecaos_backend_Bag$().apply__Lrebecaos_backend_Bag();
-      var this$75 = $n($m_s_Predef$().s_Predef$__f_Map);
+      var this$74 = $n($m_s_Predef$().s_Predef$__f_Map);
       var elems$10 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
-      var _3$6 = this$75.from__sc_IterableOnce__sci_Map(elems$10);
+      var _3$6 = this$74.from__sc_IterableOnce__sci_Map(elems$10);
       var elems$11 = $n($$x15).wrapRefArray__AO__sci_ArraySeq(new ($d_T3.getArrayOf().constr)([new $c_T3(_1$1, _2$6, _3$6)]));
-      return this$77.from__sc_IterableOnce__sci_Set(elems$11)
+      return this$76.from__sc_IterableOnce__sci_Set(elems$11)
     };
     throw new $c_s_MatchError(x125)
   }
@@ -21932,7 +22140,9 @@ function $m_Lrebecaos_backend_Semantics$() {
 }
 /** @constructor */
 function $c_Lrebecaos_frontend_RebecaosConfig$() {
+  this.Lrebecaos_frontend_RebecaosConfig$__f_shortName = null;
   this.Lrebecaos_frontend_RebecaosConfig$__f_smallWidgets = null;
+  this.Lrebecaos_frontend_RebecaosConfig$__f_toggles = null;
   this.Lrebecaos_frontend_RebecaosConfig$__f_name = null;
   this.Lrebecaos_frontend_RebecaosConfig$__f_languageName = null;
   this.Lrebecaos_frontend_RebecaosConfig$__f_parser = null;
@@ -21949,16 +22159,80 @@ function $c_Lrebecaos_frontend_RebecaosConfig$() {
     return $m_Lrebecaos_backend_Semantics$().initSt__Lrebecaos_syntax_Program$System__T3($m_Lrebecaos_syntax_Parser$().parseProgram__T__Lrebecaos_syntax_Program$System(str$1))
   }));
   $n($m_s_package$().s_package$__f_List);
-  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n  knownrebecs { Example ex;}\n  statevars { int counter; }\n  msgsrv initial() {\n    counter=0;\n    ex.add(1);}\n  msgsrv add(int a) {\n    if ( counter < 100) \n      {counter = counter + a;}\n  }\n}\n\nmain {\n  Example ex1(ex2):();\n  Example ex2(ex1):();\n}", "Simple", "Simple example of a Rebeca program, borrowed from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This includes a few adaptations from the original paper, e.g., initialising the counter in the <code>initial</code> method."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n  knownrebecs {}\n  statevars {\n    int counter;\n    Example target;\n  }\n  msgsrv initial() {\n    counter=0;\n    target = self;\n    target.add(1);}\n  msgsrv add(int a) {\n    counter = counter + a;\n    if ( counter == 1) \n      target = new Example():();\n    target.add(1);\n  }\n}\n\nmain {\n  Example ex1():();\n}", "[Dyn] Simple", "Variation of the \"Simple\" example of a Rebeca program from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This version keeps creating new Example rebecs dynamically every 1-2 counts."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Example {\n  knownrebecs { Example ex;}\n  statevars { int counter; }\n  msgsrv initial() {\n    counter=0;\n    ex.add(1);}\n  msgsrv add(int a) {\n    if ( counter < 100) \n      {counter = counter + a;}\n  }\n}\n\nmain {\n  Example ex1(ex2):();\n  Example ex2(ex1):();\n}\n\nreaches ex1.counter > 1;\nreaches ex1.counter==1;\nreaches ex2.counter==1;\nreaches deadlock;", "[Reach] Simple", "Variation of the \"Simple\" example of a Rebeca program from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This version includes four reachability properties that can be checked in the widget \"Reachability checks\"."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n  knownrebecs {\n    Consumer consumer;\n  }\n  statevars {\n    byte p;\n  }\n  msgsrv initial() {\n    self.produce();\n  }\n  msgsrv produce() {\n    // produce data\n    p=?(1,2,3,4);\n    consumer.consume(p);\n    self.produce();\n  }\n}\n\nreactiveclass Consumer {\n  knownrebecs {\n  }\n  statevars {\n    byte p;\n  }\n  msgsrv initial() {\n  }\n  msgsrv consume(byte data) {\n    // consume data\n    p = data;\n  }\n}\n\nmain {\n  Producer prod(cons):();\n  Consumer cons():();\n}", "Prod-Cons", "Producer-consumer example from the paper <a href=\"https://link.springer.com/chapter/10.1007/978-3-540-74792-5_5\">Rebeca: Theory, Applications, and Tools (FMCO 2006)</a>"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Producer {\n  knownrebecs {\n    Consumer consumer;\n  }\n  statevars {\n    byte p;\n    Producer newProducer;\n  }\n  msgsrv initial() {\n    self.produce();\n  }\n  msgsrv produce() {\n    // produce data\n    p=?(1,2,3,4);\n    if (p==3) {\n      newProducer = new Producer(consumer):();\n    }\n    consumer.consume(p);\n    if(p!=4){\n      self.produce();\n    }\n  }\n}\n\nreactiveclass Consumer {\n  knownrebecs {\n  }\n  statevars {\n    byte p;\n  }\n  msgsrv initial() {\n  }\n  msgsrv consume(byte data) {\n    // consume data\n    p = data;\n  }\n}\n\nmain {\n  Producer prod(cons):();\n  Consumer cons():();\n}", "[Dyn] Prod-Cons", "Dynamic version of the producer-consumer example from the paper <a href=\"https://link.springer.com/chapter/10.1007/978-3-540-74792-5_5\">Rebeca: Theory, Applications, and Tools (FMCO 2006)</a>"), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}", "[Time] Ticket service", "Ticket Service example from the paper <a href=\"https://www.sciencedirect.com/science/article/pii/S0167642314003153\">\"Timed Rebeca schedulability and deadlock freedom analysis using bounded floating time transition system\" (SCP 2015)</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n  }\n  msgsrv initial() {\n  }\n  msgsrv requestTicket() {\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket();\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try();\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):();\n  Customer c(a):();\n}", "Untimed Ticket Service", "Untimed version of the Ticket Service example from the paper <a href=\"https://www.sciencedirect.com/science/article/pii/S0167642314003153\">\"Timed Rebeca schedulability and deadlock freedom analysis using bounded floating time transition system\" (SCP 2015)</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass SenderAgent(3) {\n  knownrebecs { ReceiverAgent receiverAgent; }\n  statevars {\n    boolean receivedAck; \n    int sendDelay;\n  }\n  msgsrv initial() {\n    receivedAck = false;\n    self.start();\n  }\n  msgsrv start() {\n    sendDelay = ?(-1,2,3,4); // -1=fail -- 2,3,4=delays\n    if (sendDelay != -1) {\n      receiverAgent.send() after(sendDelay);\n    }\n    self.checkAck() after(8);\n  }\n  msgsrv ack() { receivedAck = true; }\n  msgsrv checkAck() {\n    if (!receivedAck) self.start();\n  }\n}\nreactiveclass ReceiverAgent(3) {\n  knownrebecs { SenderAgent senderAgent; }\n  statevars {int sendDelay;}\n  msgsrv initial() {}\n  msgsrv send() {\n    sendDelay = ?(-1,1,2,3); // -1=fail -- 1,2,3=delays\n    if (sendDelay != -1) {\n      senderAgent.ack() after(sendDelay);\n    }\n  }\n}\nmain {\n  ReceiverAgent receiverAgent(senderAgent):();\n  SenderAgent senderAgent(receiverAgent):();\n}", "Sender-receiver", "Simple communication protocol, described in <a href=\"https://link.springer.com/chapter/10.1007/3-540-49538-X_16\">\"Time and asynchrony in interactions among distributed real-time objects\"</a>, used as an example for Rebeca in <a href=\"https://www.sciencedirect.com/science/article/pii/S0167642314000239\">\"Modelling and simulation of asynchronous real-time systems\nusing Timed Rebeca\" (SCP 2014)</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Philosopher(3)\n{\n  knownrebecs\n  {\n    Fork forkL;\n    Fork forkR;\n  }\n  statevars\n  {\n    boolean eating;\n    boolean fL;\n    boolean fR;\n  }\n  msgsrv initial()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    self.arrive();\n  }\n\n  msgsrv arrive()\n  {\n    forkL.request();\n  }\n\n  msgsrv permit()\n  {\n    if (sender == forkL) {\n      if (!fL) {\n        fL = true;\n        forkR.request();\n      }\n    }\n    else {\n      if (fL && !(fR)) {\n        fR = true;\n        self.eat();\n      }\n      // else discard the message\n    }\n  }\n\n  msgsrv eat()\n  {\n    eating = true;\n    self.leave();\n  }\n\n  msgsrv leave()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    forkL.release();\n    forkR.release();\n    self.arrive();\n  }\n}\n\nreactiveclass Fork(3)\n{\n  knownrebecs\n  {\n    Philosopher philL;\n    Philosopher philR;\n  }\n  statevars\n  {\n    boolean lAssign;  \n    boolean rAssign;  \n    boolean leftReq;\n    boolean rightReq;\n  }\n  msgsrv initial()\n  { \n    lAssign = false;\n    rAssign = false;\n    leftReq = false;\n    rightReq = false;\n  }\n\n  msgsrv request()\n  {\n    if (sender == philL) {\n      if (!leftReq) {\n        leftReq = true;\n        if (!rAssign) {\n          lAssign = true;\n          philL.permit();\n        }\n      } \n      // else discard message\n    }\n    else {\n      if (!rightReq) {\n        rightReq = true;\n        if (!lAssign) {\n          rAssign = true;\n          philR.permit();\n        }\n      }\n      // else discard message\n    }\n  }\n  msgsrv release()\n  {\n    if (sender == philL && lAssign){\n      leftReq = false;\n      lAssign = false;\n      if (rightReq) {\n        rAssign=true;\n        philR.permit();\n      }\n    }\n    if (sender == philR && rAssign){\n      rAssign = false;\n      rightReq = false;\n      if (leftReq) {\n        lAssign=true;\n        philL.permit();\n      }\n    }\n  }\n}\n\nmain\n{\n  Philosopher phil0(fork0, fork2):();\n  Philosopher phil1(fork0, fork1):();\n  Philosopher phil2(fork1, fork2):();\n\n  Fork fork0(phil0, phil1):();\n  Fork fork1(phil1, phil2):();\n  Fork fork2(phil2, phil0):();\n}", "Dining Philosophers", "Dining philosophers, taken from <a href=\"https://rebeca-lang.org/examples\">https://rebeca-lang.org/examples</a>. Unlike core Rebeca, this example requires references to rebecs to be compared in data expressions."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BridgeController(5) {\n  knownrebecs {\n    Train t1;\n    Train t2;\n  }\n\n  statevars {\n    boolean isWaiting1;\n    boolean isWaiting2;\n    boolean isOnBridge1;\n    boolean isOnBridge2;\n  }\n\n  msgsrv initial() {\n    isOnBridge1 = false;  // red\n    isOnBridge2 = false;  // red\n    isWaiting1 = false;\n    isWaiting2 = false;\n  }\n  \n  msgsrv Arrive() {\n    if (sender == t1){\n      if (isOnBridge2 == false) {\n        isOnBridge1 = true; // green\n        t1.YouMayPass();\n      }\n      else {\n        isWaiting1 = true;\n      }\n    }\n    else {\n      if (isOnBridge1 == false){\n        isOnBridge2 = true; // green\n        t2.YouMayPass();\n      }\n      else{\n        isWaiting2 = true;\n      }\n    }\n  }\n  \n  msgsrv Leave() {\n    if (sender == t1) {\n      isOnBridge1 = false;  // red\n      if (isWaiting2){\n        isOnBridge2 = true;\n        t2.YouMayPass();\n        isWaiting2 = false;\n      }\n    } else {\n      isOnBridge2 = false;  // red\n      if (isWaiting1) {\n        isOnBridge1 = true;\n        t1.YouMayPass();\n        isWaiting1 = false;\n      }\n    }\n  }\n}\n\nreactiveclass Train(3) {\n  knownrebecs {\n    BridgeController controller;\n  }\n\n  statevars {\n    boolean onTheBridge;\n  }\n\n  msgsrv initial() {\n    onTheBridge = false;\n    self.Passed();\n  }\n\n  msgsrv YouMayPass() {\n    onTheBridge = true;\n    self.Passed();\n  }\n  \n  msgsrv Passed() {\n    onTheBridge = false;\n    controller.Leave();\n    self.ReachBridge();\n  }\n\n  msgsrv ReachBridge() {\n    controller.Arrive();\n  }\n}\n\nmain {\n  Train train1(theController):();\n  Train train2(theController):();\n  BridgeController theController(train1, train2):();\n}", "Trains", "Two trains and a controller, taken from <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/TrainController\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/TrainController</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8) { \n    knownrebecs { \n      Node nodeL; \n        Node nodeR; \n    } \n      \n    statevars { \n        boolean monitor; \n        int myId; \n        int phase; \n        int monitorId; \n        boolean receivedLeft; \n        boolean receivedRight; \n    } \n  \n    msgsrv initial(int id) { \n        myId = id; \n        monitor = false; \n        monitorId = id; \n        phase = 1; \n        receivedLeft = false; \n        receivedRight = false; \n        self.arrive(); \n    } \n  \n    msgsrv arrive() { \n        nodeL.receive(myId, true, phase); \n        nodeR.receive(myId, true, phase); \n  } \n  \n  msgsrv receive(int msgId, boolean inOut, int hopCount) { \n    if ((sender==nodeL) &&  (inOut)) {\n      if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)) { \n        monitorId = msgId; \n              nodeR.receive (msgId, true, hopCount-1); \n            } else { \n        if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){ \n          monitorId=msgId; \n                    nodeL.receive (msgId, false,1); \n                } else { \n                    if (msgId == myId) { \n                      monitor = true; \n                      monitorId = myId; \n                  } \n                } \n      } \n        } \n            \n        if ((sender==nodeR) && (inOut)) { \n      if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)){ \n              monitorId=msgId; \n                nodeL.receive (msgId, true, hopCount-1); \n            } else { \n        if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){  \n                  monitorId=msgId; \n          nodeR.receive (msgId, false,1); \n                } else { \n                  if (msgId == myId) { \n                      monitor = true; \n                        monitorId = myId; \n                    } \n                } \n          } \n        } \n            \n        if ((sender==nodeL) && !(inOut) && !(msgId==myId)) { \n          nodeR.receive(msgId, false, 1);           \n        } \n            \n        if ((sender==nodeR) &&  !(inOut) && !(msgId==myId)) { \n          nodeL.receive(msgId, false, 1);           \n        } \n            \n    if ((sender==nodeL) && !(inOut) && ((msgId == myId) && (hopCount==1))) { \n          receivedLeft = true; \n        } \n    if (((sender==nodeR) && (msgId == myId)) && !(inOut) && (hopCount==1)) { \n          receivedRight = true; \n        }     \n            \n        if (receivedLeft && receivedRight&& (phase<3)){ \n          if(phase==2) { \n              monitor=true; \n            } else { \n                phase = phase * 2; \n                receivedLeft=false; \n                receivedRight=false; \n                nodeL.receive(myId, true, phase); \n                nodeR.receive(myId, true, phase); \n            } \n        } \n  } \n} \n  \n  \nmain { \n      Node node1(node4,node2):(1); \n      Node node2(node1,node3):(2); \n      Node node3(node2,node4):(3); \n      Node node4(node3,node1):(4); \n} ", "Leader Election HS (fix)", "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Node(8){\n  knownrebecs {\n    Node rightNode;\n  }\n  statevars {\n    boolean isLeader;\n    int myNumber;\n    int currentLeader;    \n  }\n  msgsrv initial(int n) {\n    myNumber = n;\n    currentLeader = n;\n    isLeader = false;\n    self.send();\n  }\n  \n  msgsrv ImLeader() {\n    self.ImLeader();\n    //The algorithm terminates here, but the leader keeps sending a msg to himself to avoid deadlock.\n  }\n  msgsrv send() {\n    rightNode.receive(currentLeader);\n  }\n  msgsrv receive(int n) {\n    if (n == myNumber) {\n      isLeader = true;\n      self.ImLeader();\n    }\n    else {\n      if (n > currentLeader) {\n        currentLeader = n;\n        self.send();\n      }\n      //else discard\n    }\n  }\n}\n\nmain { \n//Each node must have a unique identifier\n//In case of having more than three nodes or changing the leader to other node (rather than node1), you should change the property file too.\n   Node node0(node2):(4); \n   Node node1(node0):(20); \n   Node node2(node1):(10); \n} ", "Leader Election LCR", "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection</a>."), new $c_Lcaos_frontend_Configurator$Example("//Commit Protocol\nreactiveclass Node(10) {\n  knownrebecs {\n      Node node1;\n      Node node2;\n  }\n  statevars {\n      byte srvNo;\n    boolean recievedResults;\n    boolean creationAbility;\n    int recievedResultsCounter;\n    int expectedResultsCounter;\n    boolean[2] cooperatorKnownRebecs;\n    \n  }\n  \n  msgsrv initial(boolean nodeCreationAbility) {\n    creationAbility = nodeCreationAbility;\n    self.createTransaction();\n  }\n  \n  msgsrv createTransaction() {\n\n    boolean startTrans;\n    startTrans = ?(true, false);\n    if (startTrans && creationAbility) {\n      boolean dispatcher = false;\n      boolean result;\n\n      int i;\n      for(i = 0; i < 2; i = i + 1)\n        cooperatorKnownRebecs[i] = false;\n\n      recievedResultsCounter = 0;\n      recievedResults = true;\n\n\n      expectedResultsCounter = 0;\n\n            srvNo = 1;\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs[0] = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node1.startGlobalTransaction();\n      }\n\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs[1] = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node2.startGlobalTransaction();\n      }\n\n      expectedResultsCounter = expectedResultsCounter + 1;\n      result = ?(true, false);\n      self.cooperatorResponse(result);\n    }\n    else {\n      self.createTransaction();\n    }\n  }\n  \n  msgsrv startGlobalTransaction() {\n    boolean result;\n    result = ?(true, false);\n\n    if (sender == node1) {\n      node1.cooperatorResponse(result);\n    }\n    if (sender == node2) {\n      node2.cooperatorResponse(result);\n        }\n        \n  }\n\n  msgsrv cooperatorResponse(boolean result) {\n    recievedResultsCounter = recievedResultsCounter + 1;\n    if (!result)\n      recievedResults = false;\n\n    if (recievedResultsCounter == expectedResultsCounter) {\n            int i;\n      if (cooperatorKnownRebecs[0]) {\n        node1.applyResult(recievedResults);\n      }\n      if (cooperatorKnownRebecs[1]) {\n        node2.applyResult(recievedResults);\n      }\n\n      self.createTransaction();\n    }\n  }\n  \n\n  msgsrv applyResult(boolean result) {\n  }\n\n}\n\n\nmain {\n  Node node1(node2, node3):(true);\n  Node node2(node3, node1):(false);\n  Node node3(node1, node2):(true);\n}", "Commit (unsupported-array)", "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem</a>."), new $c_Lcaos_frontend_Configurator$Example("// Adapted version without arrays\n//Commit Protocol\nreactiveclass Node(10) {\n  knownrebecs {\n      Node node1;\n      Node node2;\n  }\n  statevars {\n      byte srvNo;\n    boolean recievedResults;\n    boolean creationAbility;\n    int recievedResultsCounter;\n    int expectedResultsCounter;\n    boolean cooperatorKnownRebecs0;\n    boolean cooperatorKnownRebecs1;\n    \n  }\n  \n  msgsrv initial(boolean nodeCreationAbility) {\n    creationAbility = nodeCreationAbility;\n    self.createTransaction();\n  }\n  \n  msgsrv createTransaction() {\n\n    //boolean startTrans;\n    startTrans = ?(true, false);\n    if (startTrans && creationAbility) {\n      //boolean dispatcher = false;\n      //boolean result;\n\n      //int i;\n      //for(i = 0; i < 2; i = i + 1)\n      //  cooperatorKnownRebecs[i] = false;\n      cooperatorKnownRebecs0 = false;\n      cooperatorKnownRebecs1 = false;\n\n      recievedResultsCounter = 0;\n      recievedResults = true;\n\n\n      expectedResultsCounter = 0;\n\n            srvNo = 1;\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs0 = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node1.startGlobalTransaction();\n      }\n\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs1 = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node2.startGlobalTransaction();\n      }\n\n      expectedResultsCounter = expectedResultsCounter + 1;\n      result = ?(true, false);\n      self.cooperatorResponse(result);\n    }\n    else {\n      self.createTransaction();\n    }\n  }\n  \n  msgsrv startGlobalTransaction() {\n    //boolean result;\n    result = ?(true, false);\n\n    if (sender == node1) {\n      node1.cooperatorResponse(result);\n    }\n    if (sender == node2) {\n      node2.cooperatorResponse(result);\n        }\n        \n  }\n\n  msgsrv cooperatorResponse(boolean result) {\n    recievedResultsCounter = recievedResultsCounter + 1;\n    if (!result)\n      recievedResults = false;\n\n    if (recievedResultsCounter == expectedResultsCounter) {\n            //int i;\n      if (cooperatorKnownRebecs0) {\n        node1.applyResult(recievedResults);\n      }\n      if (cooperatorKnownRebecs1) {\n        node2.applyResult(recievedResults);\n      }\n\n      self.createTransaction();\n    }\n  }\n  \n\n  msgsrv applyResult(boolean result) {\n  }\n\n}\n\n\nmain {\n  Node node1(node2, node3):(true);\n  Node node2(node3, node1):(false);\n  Node node3(node1, node2):(true);\n}", "Commit (adapted)", "Adapted, without arrays, from <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass Sender(5) { \n  knownrebecs { \n    Medium medium; \n    Receiver rec;     \n  } \n      \n  statevars { \n    boolean receivedBit; \n    boolean sendBit; \n    boolean hasSucceeded; \n  } \n  \n  msgsrv initial() { \n    sendBit = false; \n    medium.pass(sendBit); \n    self.sendMsg(); \n    hasSucceeded = false;\n  } \n  \n  msgsrv sendMsg() { \n    //receive(hasSucceeded) \n    if (hasSucceeded == true) { \n      if (sendBit == true) { \n        sendBit = false; \n      } else { \n        sendBit = true; \n      } \n    } \n            \n    medium.pass(sendBit); \n    self.sendMsg(); \n  } \n} \n  \nreactiveclass Receiver(5) { \n  knownrebecs { \n    Medium medium; \n    Sender sender;    \n  } \n      \n  statevars { \n    boolean messageBit; \n  } \n  \n  msgsrv initial() { \n  } \n  \n  msgsrv receiveMsg(boolean msgBit) { \n    messageBit =msgBit; \n    //sender.receive(true); \n  } \n} \n  \nreactiveclass Medium(5) { \n  knownrebecs { \n    Receiver receiver; \n    Sender sender;    \n  } \n      \n  statevars { \n    boolean passMessage; \n  } \n  \n  msgsrv initial() { \n    passMessage=true; \n  } \n  \n  msgsrv pass(boolean msgBit) { \n    passMessage = ?(true,false); \n    if(passMessage == true) { \n      receiver.receiveMsg( msgBit); \n    } else { \n      //sender,receive(false); \n    } \n  } \n} \n  \nmain { \n  Sender sender (medium, receiver):(); \n  Medium medium(receiver, sender):(); \n  Receiver receiver(medium, sender):(); \n}", "Sender-receiver", "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/SenderReceiver\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/SenderReceiver</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass BufferManager(4) {\n  knownrebecs {\n    Producer producer;\n    Consumer consumer;\n  }\n\n  statevars {\n    boolean empty;\n    boolean full;\n    boolean producerWaiting;\n    boolean consumerWaiting;\n    int bufferlenght;\n    int nextProduce;\n    int nextConsume;    \n  }\n\n  msgsrv initial() {\n    bufferlenght = 2;\n    empty = true;\n    full = false;\n    producerWaiting = false;\n    consumerWaiting = false;\n    nextProduce = 0;\n    nextConsume = 0;\n  }\n\n  msgsrv giveMeNextProduce() {\n    if (!full)  {\n      producer.produce(nextProduce);\n    } \n  }\n\n  msgsrv giveMeNextConsume() {\n    if (!empty) {\n      consumer.consume(nextConsume);\n    } \n       else {\n      consumerWaiting = true;\n    }\n  }\n\n  msgsrv ackProduce() {\n    nextProduce = (nextProduce + 1) %\n                    bufferlenght;\n    if (nextProduce == nextConsume) {\n      full = true;\n    }\n    empty = false;\n    if (consumerWaiting) {\n      consumer.consume(nextConsume);\n      consumerWaiting = false;\n    }\n  }\n\n  msgsrv ackConsume() {\n    nextConsume = (nextConsume + 1) %\n                    bufferlenght;\n    if (nextConsume == nextProduce) {\n      empty = true;\n    }\n    full = false;\n    if (producerWaiting) {\n      producer.produce(nextProduce);\n      producerWaiting = false;\n    }\n  }\n}\n\nreactiveclass Producer(2) {\n  knownrebecs {\n    BufferManager buffer;\n  }\n\n  statevars {\n  }\n\n  msgsrv initial() {\n    self.beginProduce();\n  }\n  \n  msgsrv produce(int bufNum) {\n    buffer.ackProduce();\n    self.beginProduce();\n  }\n\n  msgsrv beginProduce() {\n    buffer.giveMeNextProduce();\n  }\n}\n\nreactiveclass Consumer(2) {\n  knownrebecs {\n    BufferManager buffer;    \n  }\n\n  statevars {\n  }\n\n  msgsrv initial() {\n    self.beginConsume();\n  }\n\n  msgsrv consume(int bufNum) {\n    buffer.ackConsume();\n    self.beginConsume();  \n  }\n  \n  msgsrv beginConsume() {\n    buffer.giveMeNextConsume();\n  }\n\n}\n\nmain { \n  BufferManager buffer(producer, consumer):();\n  Producer producer(buffer):();\n  Consumer consumer(buffer):();\n}", "Prod-Cons (larger)", "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/ProducerConsumer\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/ProducerConsumer</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (byte)(distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (byte)(distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = (byte)255;\n             rootDistance = (byte)255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( ! isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (byte)(distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (byte)(distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,D):(1);\n    BridgeToLanPort out1F(p1F,F):(2);\n    BridgeToLanPort out5D(p5D,D):(3);\n    BridgeToLanPort out5B(p5B,B):(4);\n    BridgeToLanPort out7F(p7F,F):(5);\n    BridgeToLanPort out7B(p7B,B):(6);\n    BridgeToLanPort out7K(p7K,K):(7);\n\n    ExtendedLan D(in1D, in5D):();\n    ExtendedLan B(in7B, in5B):();\n    ExtendedLan F(in1F, in7F):();\n    ExtendedLan K(in7K, in7K):();\n}", "Spanning-tree (unsupported-casting)", "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol</a>."), new $c_Lcaos_frontend_Configurator$Example("reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = 255;\n             rootDistance = 255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( !isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,d):(1);\n    BridgeToLanPort out1F(p1F,f):(2);\n    BridgeToLanPort out5D(p5D,d):(3);\n    BridgeToLanPort out5B(p5B,b):(4);\n    BridgeToLanPort out7F(p7F,f):(5);\n    BridgeToLanPort out7B(p7B,b):(6);\n    BridgeToLanPort out7K(p7K,k):(7);\n\n    ExtendedLan d(in1D, in5D):();\n    ExtendedLan b(in7B, in5B):();\n    ExtendedLan f(in1F, in7F):();\n    ExtendedLan k(in7K, in7K):();\n}", "Spanning-tree (adapted)", "Adapted from <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol</a>."), new $c_Lcaos_frontend_Configurator$Example("/*\n\n* Model for 4x4 ASPIN. The model can be extended for lager NoCs by declaring routers in main part (last section of the code).\n\n*In the model only one packet is sent from router R00 to router R23. More packets can be scheduled to sent from a source to destination \n as like in \"Router\" mesage server.\n\n*/\n\nreactiveclass Manager(10){\n  \n  knownrebecs{\n    Router r00;\n    Router r10;\n    Router r20;\n    Router r30;\n    \n    Router r01;\n    Router r11;\n    Router r21;\n    Router r31;\n    \n    Router r02;\n    Router r12;\n    Router r22;\n    Router r32;\n    \n    Router r03;\n    Router r13;\n    Router r23;\n    Router r33;\n  }\n  \n  statevars{\n  }\n  \n  Manager(){\n  }\n  \n  msgsrv reset(){ //each source and destination routeeer should be initialized here.\n    r01.reStart() after(700); //source    \n  }\n}\n\nreactiveclass Router(10) {\n\n  knownrebecs {\n    Manager manager;\n    Router N;  // : 0\n    Router E;  // : 1\n    Router S;  // : 2\n    Router W;  // : 3    \n  }\n  \n  statevars {\n    int bufSize;\n    int maxTime;  // To check if a packet is recieved by the time maxTime\n    int recieved;\n    \n    byte[4] bufNum; //for each of four sides\n    boolean[4] full;\n    boolean[4] enable;\n    boolean [4] outMutex;\n    \n    byte Xid;\n    byte Yid;\n  }\n  \n  Router(byte X, byte Y){  \n    Xid = X;\n    Yid = Y;\n  \n    bufSize = 2;\n    maxTime = 250 ; \n    recieved = 0;\n\n    for(int i=0;i<4;i++){    \n      enable[i] = true;\n      outMutex[i] = true;\n      bufNum[i] = 0;\n      full[i] = false;\n    }\n    \n    //packet generation\n    if(X == 0 && Y == 0){\n      self.reqSend(2,3,1,5) after(10);  //sending a packet\n    }\n    \n    if(X == 0 && Y == 1){        // permamnet, don't change. \n      self.reStart() after(700);\n    }\n    \n    if(X == 2 && Y == 3){        // in destination router. not necessary for all packets. just to check when the packet is recieved\n      self.checkRecieved()after(maxTime);\n    }\n  }\n  \n  msgsrv reqSend(byte Xtarget, byte Ytarget, int directionS, int packId){  \n    if (enable[directionS] == true){\n      boolean sent = false;\n          \n      if(Xtarget > Xid){    // Routing Algorithm XY: first move through horisental channels \n        if(outMutex[1] == true){  \n          E.give_Ack(Xtarget, Ytarget,directionS,3,5, packId) after(26);\n          outMutex[1] = false;\n          enable[directionS] = false;\n          sent = true;\n        }else\n          self.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n      }  \n      else if(Xtarget < Xid){  \n        if(outMutex[3] == true){\n          W.give_Ack(Xtarget, Ytarget,directionS,1,5, packId ) after(26);  \n          outMutex[3] = false;\n          enable[directionS] = false;\n          sent = true;\n        } else\n          self.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n      }  \n      else if(Ytarget > Yid){  \n        if(outMutex[2] == true){\n          S.give_Ack(Xtarget, Ytarget,directionS,0,5, packId ) after(26);  \n          outMutex [2] = false;\n          enable[directionS] = false;\n          sent = true;\n        }else\n          self.reqSend(Xtarget, Ytarget,directionS, packId) after(1);  \n      }  \n      else if(Ytarget < Yid){  \n        if(outMutex[0] == true){\n          N.give_Ack(Xtarget, Ytarget,directionS,2,5 , packId) after(26);  \n          outMutex[0] = false;\n          enable[directionS] = false;\n          sent = true;\n        }else\n          self.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n      }\n\n      if(sent == true){\n        bufNum[directionS] = (byte)bufNum[directionS] + 1;\n\n        if (bufNum[directionS] == bufSize) full[directionS] = true;         //update the value of \"full\".\n      }  \n    } else\n      self.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n  }\n  \n  msgsrv get_Ack(int directionS){\n    \n    enable[directionS] = true;\n    \n    bufNum[directionS] = (byte)bufNum[directionS] - 1;  \n    full[directionS] = false;\n\n    if (sender == N) {\n      outMutex[0] = true;\n    }  \n    else if (sender == E){ \n      outMutex[1] = true;\n    }  \n    else if (sender == S){\n      outMutex[2] = true;\n      }\n    else if (sender == W){ \n      outMutex[3] = true;\n    }  \n  }\n  \n  msgsrv give_Ack(byte Xtarget, byte Ytarget,int directionS, int directionD,int msgSender, int packId){\n    int MSGSender;\n    if(sender == N)\n      MSGSender = 0;\n    else if (sender == E)\n      MSGSender = 1;\n    else if (sender == S)\n      MSGSender = 2;\n    else if (sender == W)\n      MSGSender = 3;\n    else {MSGSender = msgSender;\n      \n    }\n        \n    if(!(Xtarget == Xid && Ytarget == Yid)){\n        \n      if (full[directionD]) //buffer is full, the packet should wait.\n        self.give_Ack(Xtarget, Ytarget,directionS,directionD,MSGSender,\n               packId)after(2)deadline(3); //waiting via recalling give_ack after 2 time units.\n      \n      else{  \n        self.reqSend(Xtarget, Ytarget,directionD, packId); \n          \n        if(MSGSender == 0)\n          N.get_Ack(directionS);\n        else if(MSGSender == 1)    \n          E.get_Ack(directionS);\n        else if(MSGSender == 2)    \n          S.get_Ack(directionS);\n        else if(MSGSender == 3)    \n          W.get_Ack(directionS);\n      }    \n    }    \n    \n    else if((Xtarget == Xid && Ytarget == Yid)){ //reach target\n        \n        recieved = recieved + 1;\n          \n        if(MSGSender == 0)\n          N.get_Ack(directionS);\n        else if(MSGSender == 1)    \n          E.get_Ack(directionS);\n        else if(MSGSender == 2)    \n          S.get_Ack(directionS);\n        else if(MSGSender == 3)    \n          W.get_Ack(directionS);\n      }\n  }\n\n  msgsrv reStart(){\n    manager.reset();\n  }  \n  \n  msgsrv deadlineMiss(){\n    delay(5);\n  }\n  \n  msgsrv checkPoint(){ // causes to hult\n    self.deadlineMiss() after(1)deadline(3);\n    self.deadlineMiss() after(1)deadline(3);\n  }\n  \n  msgsrv checkRecieved(){ // Halt if recieved is 0, by calling checkpoint.(checkpoint method allways cause program to hult).\n    \n    if (recieved == 0){\n      self.checkPoint();\n    }\n      \n  }\n}\n\nmain {\n  Manager m(r00,r10,r20,r30,r01,r11,r21,r31,r02,r12,r22,r32,r03,r13,r23,r33):();\n  \n  Router r00(m,r03,r10,r01,r30):(0,0);\n  Router r10(m,r13,r20,r11,r00):(1,0);\n  Router r20(m,r23,r30,r21,r10):(2,0);\n  Router r30(m,r33,r00,r31,r20):(3,0);\n  \n  Router r01(m,r00,r11,r02,r31):(0,1);\n  Router r11(m,r10,r21,r12,r01):(1,1);\n  Router r21(m,r20,r31,r22,r11):(2,1);\n  Router r31(m,r30,r01,r32,r21):(3,1);\n  \n  Router r02(m,r01,r12,r03,r32):(0,2);\n  Router r12(m,r11,r22,r13,r02):(1,2);\n  Router r22(m,r21,r32,r23,r12):(2,2);\n  Router r32(m,r31,r02,r33,r22):(3,2);\n  \n  Router r03(m,r02,r13,r00,r33):(0,3);\n  Router r13(m,r12,r23,r10,r03):(1,3);\n  Router r23(m,r22,r33,r20,r13):(2,3);\n  Router r33(m,r32,r03,r30,r23):(3,3);\n}", "NOC (unsupported-array)", "From <a href=\"https://rebeca-lang.org/examples\">https://rebeca-lang.org/examples</a>."), new $c_Lcaos_frontend_Configurator$Example("env int RESENDING_PERIOD = 25;\nenv int NORMAL_SPEED = 15;\nenv int REDUCED_SPEED = 7;\nenv int SAFE_DISTANCE = 20;  // segments has 1000 meters length and each sub-segment has 200 meteres length\nenv int SEGMENT_LENGTH = 200;\nenv int LOADING_TIME_PC = 60;\nenv int LOADING_TIME_WL = 60;\nenv int UNLOADING_TIME_SC = 30;\nenv int CHARGING_TIME_C1 = 60;\nenv int CHARGING_TIME_C2 = 60;\nenv int LEAVING_PERIOD = 13;\nenv int NUMBER_VEHICLES = 4;\n\n//************* E1:WL, E2:Crusher, E3:SC, E4:DP ***********\n\nreactiveclass CrossController (10){    // to control when S4 passes S3\n  knownrebecs\n  {\n  }\n  statevars\n  {\n    boolean crossIsFree;\n  }\n  CrossController()\n  { \n    crossIsFree= true;\n  }\n  msgsrv giveCrossPermission(int vehicleId){\n    if(crossIsFree){\n      crossIsFree = false;\n      ((Segment)sender).getCrossPermission(vehicleId);\n    }\n    else ((Segment)sender).crossNotAvailable(vehicleId);\n  }\n  msgsrv freeCross(int vehicleId){\n    crossIsFree = true;  \n  }\n}\n\nreactiveclass PrimaryCrusher (14) {\n  knownrebecs\n  {\n    Segment firstSubSegPcToSc;\n  }\n  statevars\n  {\n    boolean isLoading;\n  }\n  PrimaryCrusher()\n  { \n    isLoading= false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isLoading == false){\n      isLoading = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    delay(LOADING_TIME_PC);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegPcToSc.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isLoading= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\nreactiveclass SecondaryCrusher (14) {\n  knownrebecs\n  {\n    Segment firstSubSegScToPrepoint;\n  }\n  statevars\n  {\n    boolean isUnloading;\n  }\n  SecondaryCrusher()\n  { \n    isUnloading= false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isUnloading == false){\n      isUnloading = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    delay(UNLOADING_TIME_SC);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegScToPrepoint.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isUnloading= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\nreactiveclass PrePoint (14) {       // the point at the end of S7\n  knownrebecs\n  {\n    Segment firstSubSegPreToE1;\n    Segment firstSubSegPreToE2;\n  }\n  statevars\n  {\n    boolean isBusy;\n    boolean toE1;\n    int count;\n  }\n  PrePoint()\n  { \n    isBusy= false;\n    toE1 = true;\n    count=0;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isBusy == false){\n      isBusy = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    if(toE1)\n      firstSubSegPreToE1.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isBusy= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    if(toE1){\n      toE1 = false;\n      firstSubSegPreToE2.givePermisionForVehicle(vehicleId, -1);  \n    }\n    else \n    {\n      toE1 = true;\n      self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n    }\n  }\n}\n\nreactiveclass DecisionStation (14) {\n  knownrebecs\n  {\n    Segment firstSubSegDsToPc;\n  }\n  statevars\n  {  \n    boolean vehicle1Reached;\n    boolean vehicle2Reached;\n    boolean vehicle3Reached;\n    boolean vehicle4Reached;\n    boolean vehicle5Reached;\n    boolean vehicle6Reached;\n    boolean vehicle7Reached;\n    boolean vehicle8Reached;\n  }\n  DecisionStation()\n  { \n    self.leaveParkingSlots();\n  }\n  msgsrv leaveParkingSlots(){\n    \n    startSendingToNext(1) after(1);\n    \n    if(NUMBER_VEHICLES == 2 || NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 \n    || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(2) after(4);\n      \n    if(NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 \n    || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(3) after(6);\n      \n    if(NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 \n    || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(4) after(9);\n      \n     if(NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7\n    || NUMBER_VEHICLES == 8)\n      startSendingToNext(5) after(12);\n      \n    if(NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(6) after(15);\n      \n    if(NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(7) after(19);\n    \n    if(NUMBER_VEHICLES == 8)\n      startSendingToNext(8) after(26);\n  }\n  msgsrv getPermision(int vehicleId){\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree(int vehicleId, int segmentDes){\n    startSendingToNext(vehicleId) after (RESENDING_PERIOD);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegDsToPc.givePermisionForVehicle(vehicleId,1);\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n    ((Segment)sender).getPermision(vehicleId);\n  }\n  msgsrv vehicleEntered(int vehicleId){\n    //startSendingToNext(vehicleId) after(LEAVING_PERIOD);\n    if(vehicleId == 1)\n      vehicle1Reached = true;\n    else if(vehicleId == 2)\n      vehicle2Reached = true;\n    else if(vehicleId == 3)\n      vehicle3Reached = true;\n    else if(vehicleId == 4)\n      vehicle4Reached = true;\n    else if(vehicleId == 5)\n      vehicle5Reached = true;\n    else if(vehicleId == 6)\n      vehicle6Reached = true;\n    else if(vehicleId == 7)\n      vehicle7Reached = true;\n    else if(vehicleId == 8)\n      vehicle8Reached = true;\n    \n    //if(NUMBER_VEHICLES == 4)\n    //    assertion(false);\n    // when all vehicles travelled once the model checking stops by puting 'assertion(false)'\n    if(NUMBER_VEHICLES == 1){\n      if(vehicle1Reached == true)\n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 2){\n      if(vehicle1Reached == true && vehicle2Reached == true) \n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 3){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true) \n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 4){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true) \n        assertion(false);\n    }    \n    else if(NUMBER_VEHICLES == 5){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true) \n        assertion(false);\n    }    \n    else if(NUMBER_VEHICLES == 6){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true)\n        assertion(false);\n    }    \n    else if(NUMBER_VEHICLES == 7){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n      && vehicle7Reached == true)\n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 8){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n      && vehicle7Reached == true && vehicle8Reached == true)\n        assertion(false);\n    }\n  }\n  msgsrv loop (){\n    self.loop() after(5000);\n  }\n}\n\nreactiveclass WheelLoader (14) {\n  knownrebecs\n  {\n    Segment firstSubSegWlToSc;\n  }\n  statevars\n  {\n    boolean isLoading;\n  }\n  WheelLoader()\n  { \n    isLoading = false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isLoading == false){\n      isLoading = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    delay(LOADING_TIME_WL);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegWlToSc.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isLoading= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\nreactiveclass Segment(14) {\n  knownrebecs\n  {\n    \n  }\n  statevars\n  {\n    boolean isFree;\n    boolean stoppedVehicle;\n    int vehicleSpeed;      // speed of the current vehicle\n    int segmentLength;\n    \n    Segment nextSegment;\n    DecisionStation decisionS;\n    PrimaryCrusher primaryC;\n    SecondaryCrusher secondaryC;\n    WheelLoader wheelL;\n    PrePoint prePoint;\n    CrossController crossCtrl;\n    Segment segRequestingCross;\n  }\n  Segment(Segment nextS, WheelLoader wl, PrimaryCrusher pc, SecondaryCrusher sc, \n        DecisionStation ds, PrePoint preCs, CrossController ctrl, int speed, int segLength)\n  { \n    nextSegment = nextS;\n    decisionS = ds;\n    primaryC = pc;\n    secondaryC = sc;\n    wheelL = wl;\n    prePoint = preCs;  \n    crossCtrl = ctrl;\n    segRequestingCross = null;\n    segmentLength = segLength;\n    \n    vehicleSpeed = speed;\n    isFree = true;\n    stoppedVehicle =false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId, int segmentDes){\n    if (isFree)\n    {\n      isFree=false;\n      if(crossCtrl == null){\n        if(sender instanceof Segment)\n          ((Segment)sender).getPermision(vehicleId);\n        else if(sender instanceof DecisionStation)\n          ((DecisionStation)sender).getPermision(vehicleId);\n        else if(sender instanceof PrimaryCrusher)\n          ((PrimaryCrusher)sender).getPermision(vehicleId);\n        else if(sender instanceof WheelLoader)\n          ((WheelLoader)sender).getPermision(vehicleId);\n        else if(sender instanceof SecondaryCrusher)\n          ((SecondaryCrusher)sender).getPermision(vehicleId);\n        else if(sender instanceof PrePoint)\n          ((PrePoint)sender).getPermision(vehicleId);\n      }\n      else {\n        segRequestingCross = ((Segment)sender);\n        crossCtrl.giveCrossPermission(vehicleId);\n      }\n    }\n    else{\n      if(sender instanceof Segment)\n        ((Segment)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof DecisionStation)\n        ((DecisionStation)sender).segmentNotFree(vehicleId, segmentDes);\n      else if(sender instanceof PrimaryCrusher)\n        ((PrimaryCrusher)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof WheelLoader)\n        ((WheelLoader)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof SecondaryCrusher)\n        ((SecondaryCrusher)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof PrePoint)\n        ((PrePoint)sender).segmentNotFree(vehicleId);\n    }\n  \n  }\n  msgsrv getCrossPermission(int vehicleId){\n    ((Segment)segRequestingCross).getPermision(vehicleId);\n  }\n  msgsrv vehicleEntered (int vehicleId){  // moving of vehicle inside the segment should be modeled\n    delay((segmentLength-SAFE_DISTANCE)/vehicleSpeed);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv crossNotAvailable(int vehicleId){\n    isFree = true;\n    ((Segment)segRequestingCross).segmentNotFree(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    if(nextSegment != null)\n      nextSegment.givePermisionForVehicle(vehicleId,-1);\n    else if(primaryC != null)\n      primaryC.givePermisionForVehicle(vehicleId);\n    else if(wheelL != null)\n      wheelL.givePermisionForVehicle(vehicleId);\n    else if(secondaryC != null)\n      secondaryC.givePermisionForVehicle(vehicleId);\n    else if(decisionS != null)\n      decisionS.givePermisionForVehicle(vehicleId);\n    else if(prePoint != null)\n      prePoint.givePermisionForVehicle(vehicleId);\n      \n  }\n  msgsrv getPermision (int vehicleId){\n    stoppedVehicle = false;\n    delay(SAFE_DISTANCE/vehicleSpeed);\n    isFree = true;\n    if(crossCtrl != null){\n      segRequestingCross = null;\n      crossCtrl.freeCross(vehicleId);\n    }\n    if(sender instanceof Segment)\n      ((Segment)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof DecisionStation)\n      ((DecisionStation)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof PrimaryCrusher)\n      ((PrimaryCrusher)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof WheelLoader)\n      ((WheelLoader)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof SecondaryCrusher)\n      ((SecondaryCrusher)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof PrePoint)\n      ((PrePoint)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree(int vehicleId){\n    stoppedVehicle = true;\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\n\nmain{\n  //************* E1:WL, E2:PC, E3:SC, E4:DP ***********\n  PrimaryCrusher pc(subSeg1E2ToS2):();\n  SecondaryCrusher sc(subSeg1E3ToE4):();\n  WheelLoader wl(subSeg1E1ToS2):();\n  DecisionStation ds(subSeg1S4ToPre):();\n  CrossController controller():();\n  PrePoint prePoint(subSeg1S5ToE1,subSeg1S6ToE2):();\n  // ():(segment,E1,E2,E3,E4,prepoint,controller)\n  \n  //################ S1 ##################\n  Segment subSeg1E2ToS2():(subSeg2E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n  Segment subSeg2E2ToS2():(subSeg3E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3E2ToS2():(subSeg4E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4E2ToS2():(subSeg5E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5E2ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n  \n  //##################### S7 ##############\n  Segment subSeg1E1ToS2():(subSeg2E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2E1ToS2():(subSeg3E1ToS2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3E1ToS2():(subSeg4E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4E1ToS2():(subSeg5E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5E1ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  \n  //################## S2 ################\n  Segment subSeg1S2ToE3():(subSeg2S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S2ToE3():(subSeg3S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S2ToE3():(subSeg4S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4S2ToE3():(subSeg5S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5S2ToE3():(null,null,null,sc,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  \n  //################## S3 #############\n  Segment subSeg1E3ToE4():(subSeg2E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2E3ToE4():(subSeg3E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3E3ToE4():(subSeg4E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4E3ToE4():(subSeg5E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5E3ToE4():(null,null,null,null,ds,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  \n  //################## S6 #############\n  Segment subSeg1S6ToE2():(subSeg2S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S6ToE2():(subSeg3S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S6ToE2():(subSeg4S6ToE2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4S6ToE2():(subSeg5S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5S6ToE2():(null,null,pc,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  \n  //################## S5 #############\n  Segment subSeg1S5ToE1():(subSeg2S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S5ToE1():(subSeg3S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S5ToE1():(null,wl,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  \n  //################## S4 #############\n  Segment subSeg1S4ToPre():(subSeg2S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S4ToPre():(subSeg3S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S4ToPre():(subSeg4S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4S4ToPre():(subSeg5S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5S4ToPre():(null,null,null,null,null,prePoint,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  \n}", "[Time] Vehicles (unsupported-casting)", "From <a href=\"https://rebeca-lang.org/examples\">https://rebeca-lang.org/examples</a>. This version uses several unsupported features, such as casting, instanceOf, null-references, and env.")]));
+  var $$x44 = $m_sr_ScalaRunTime$();
+  var $$x43 = $m_Lcaos_frontend_Configurator$();
+  var self = new $c_T2("Simple", "reactiveclass Example {\n  knownrebecs { Example ex;}\n  statevars { int counter; }\n  msgsrv initial() {\n    counter=0;\n    ex.add(1);}\n  msgsrv add(int a) {\n    if ( counter < 100) \n      {counter = counter + a;}\n  }\n}\n\nmain {\n  Example ex1(ex2):();\n  Example ex2(ex1):();\n}");
+  var $$x42 = $n($$x43).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self, "Simple example of a Rebeca program, borrowed from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This includes a few adaptations from the original paper, e.g., initialising the counter in the <code>initial</code> method."));
+  var $$x41 = $m_Lcaos_frontend_Configurator$();
+  var self$1 = new $c_T2("[Dyn] Simple", "reactiveclass Example {\n  knownrebecs {}\n  statevars {\n    int counter;\n    Example target;\n  }\n  msgsrv initial() {\n    counter=0;\n    target = self;\n    target.add(1);}\n  msgsrv add(int a) {\n    counter = counter + a;\n    if ( counter == 1) \n      target = new Example():();\n    target.add(1);\n  }\n}\n\nmain {\n  Example ex1():();\n}");
+  var $$x40 = $n($$x41).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$1, "Variation of the \"Simple\" example of a Rebeca program from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This version keeps creating new Example rebecs dynamically every 1-2 counts."));
+  var $$x39 = $m_Lcaos_frontend_Configurator$();
+  var self$2 = new $c_T2("[Reach] Simple", "reactiveclass Example {\n  knownrebecs { Example ex;}\n  statevars { int counter; }\n  msgsrv initial() {\n    counter=0;\n    ex.add(1);}\n  msgsrv add(int a) {\n    if ( counter < 100) \n      {counter = counter + a;}\n  }\n}\n\nmain {\n  Example ex1(ex2):();\n  Example ex2(ex1):();\n}\n\nreaches ex1.counter > 1;\nreaches ex1.counter==1;\nreaches ex2.counter==1;\nreaches deadlock;");
+  var $$x38 = $n($$x39).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$2, "Variation of the \"Simple\" example of a Rebeca program from the paper <a href=\"https://cs.rit.edu/~hh/papers/HojjatETAL07Sarir.pdf\">\"Sarir: A Rebeca to mCRL2 Translator\" (ACSD 2007)</a>. This version includes four reachability properties that can be checked in the widget \"Reachability checks\"."));
+  var $$x37 = $m_Lcaos_frontend_Configurator$();
+  var self$3 = new $c_T2("Ping-Pong", "reactiveclass Ponger {\n  knownrebecs { Ponger other;}\n  statevars { int max; }\n  msgsrv initial(boolean st, int m) {\n  \tmax = m;\n    if (st) {\n    \tother.ping(1);\n      other.ping(2);\n    }\n  }\n  msgsrv ping(int n) {\n    if (n<max) {other.pong(n+1);}\n  }\n  msgsrv pong(int n) {\n\t\tother.ping(n+1);\n  }\n}\n\nmain {\n  Ponger alice(bob):(true,2);\n  Ponger bob(alice):(false,2);\n}");
+  var $$x36 = $n($$x37).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$3, "Simple ping-pong example. The two rebecs are of the same class, and they keep sending messages to each other until a certain count is reached."));
+  var $$x35 = $m_Lcaos_frontend_Configurator$();
+  var self$4 = new $c_T2("Ping-Pong asym", "reactiveclass Pinger {\n  knownrebecs { Ponger p; }\n  statevars { int count; }\n  msgsrv initial() {\n    count = 0;\n    p.pong();\n  }\n  msgsrv pong() {\n    count = count + 1;\n    if (count < 3) p.pong();\n  }\n}\n\nreactiveclass Ponger {\n  knownrebecs { Pinger p; }\n  statevars { int count; }\n  msgsrv initial() {\n    count = 0;\n  }\n  msgsrv pong() {\n    count = count + 1;\n    if (count < 3) p.pong();\n  }\n}\n\nmain {\n  Pinger ping(pong):();\n  Ponger pong(ping):();\n}");
+  var $$x34 = $n($$x35).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$4, "Simple ping-pong variation. The two rebecs are of different classes, but they keep sending messages to each other until a certain count is reached."));
+  var $$x33 = $m_Lcaos_frontend_Configurator$();
+  var self$5 = new $c_T2("Prod-Cons", "reactiveclass Producer {\n  knownrebecs {\n    Consumer consumer;\n  }\n  statevars {\n    byte p;\n  }\n  msgsrv initial() {\n    self.produce();\n  }\n  msgsrv produce() {\n    // produce data\n    p=?(1,2,3,4);\n    consumer.consume(p);\n    self.produce();\n  }\n}\n\nreactiveclass Consumer {\n  knownrebecs {\n  }\n  statevars {\n    byte p;\n  }\n  msgsrv initial() {\n  }\n  msgsrv consume(byte data) {\n    // consume data\n    p = data;\n  }\n}\n\nmain {\n  Producer prod(cons):();\n  Consumer cons():();\n}");
+  var $$x32 = $n($$x33).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$5, "Producer-consumer example from the paper <a href=\"https://link.springer.com/chapter/10.1007/978-3-540-74792-5_5\">Rebeca: Theory, Applications, and Tools (FMCO 2006)</a>"));
+  var $$x31 = $m_Lcaos_frontend_Configurator$();
+  var self$6 = new $c_T2("[Dyn] Prod-Cons", "reactiveclass Producer {\n  knownrebecs {\n    Consumer consumer;\n  }\n  statevars {\n    byte p;\n    Producer newProducer;\n  }\n  msgsrv initial() {\n    self.produce();\n  }\n  msgsrv produce() {\n    // produce data\n    p=?(1,2,3,4);\n    if (p==3) {\n      newProducer = new Producer(consumer):();\n    }\n    consumer.consume(p);\n    if(p!=4){\n      self.produce();\n    }\n  }\n}\n\nreactiveclass Consumer {\n  knownrebecs {\n  }\n  statevars {\n    byte p;\n  }\n  msgsrv initial() {\n  }\n  msgsrv consume(byte data) {\n    // consume data\n    p = data;\n  }\n}\n\nmain {\n  Producer prod(cons):();\n  Consumer cons():();\n}");
+  var $$x30 = $n($$x31).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$6, "Dynamic version of the producer-consumer example from the paper <a href=\"https://link.springer.com/chapter/10.1007/978-3-540-74792-5_5\">Rebeca: Theory, Applications, and Tools (FMCO 2006)</a>"));
+  var $$x29 = $m_Lcaos_frontend_Configurator$();
+  var self$7 = new $c_T2("[Time] Ticket service", "reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n    int issueDelay;\n  }\n  msgsrv initial(int myDelay) {\n    issueDelay = myDelay;\n  }\n  msgsrv requestTicket() {\n    delay(issueDelay);\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket()\n      deadline (5);\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try() after(30);\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):(3);\n  Customer c(a):();\n}");
+  var $$x28 = $n($$x29).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$7, "Ticket Service example from the paper <a href=\"https://www.sciencedirect.com/science/article/pii/S0167642314003153\">\"Timed Rebeca schedulability and deadlock freedom analysis using bounded floating time transition system\" (SCP 2015)</a>."));
+  var $$x27 = $m_Lcaos_frontend_Configurator$();
+  var self$8 = new $c_T2("Untimed Ticket Service", "reactiveclass TicketService {\n  knownrebecs {\n    Agent a;\n  }\n  statevars {\n  }\n  msgsrv initial() {\n  }\n  msgsrv requestTicket() {\n    a.ticketIssued (1);\n  }\n}\nreactiveclass Agent {\n  knownrebecs {\n    TicketService ts;\n    Customer c;\n  }\n  msgsrv requestTicket() {\n    ts.requestTicket();\n  }\n\n  msgsrv ticketIssued(byte id) {\n    c.ticketIssued(id);\n  }\n}\nreactiveclass Customer {\n  knownrebecs {\n    Agent a;\n  }\n  msgsrv initial() {\n    self.try();\n  }\n  msgsrv try() {\n    a.requestTicket();\n  }\n  msgsrv ticketIssued(byte id) {\n    self.try();\n  }\n}\nmain {\n  Agent a(ts, c):();\n  TicketService ts(a):();\n  Customer c(a):();\n}");
+  var $$x26 = $n($$x27).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$8, "Untimed version of the Ticket Service example from the paper <a href=\"https://www.sciencedirect.com/science/article/pii/S0167642314003153\">\"Timed Rebeca schedulability and deadlock freedom analysis using bounded floating time transition system\" (SCP 2015)</a>."));
+  var $$x25 = $m_Lcaos_frontend_Configurator$();
+  var self$9 = new $c_T2("Sender-receiver", "reactiveclass SenderAgent(3) {\n  knownrebecs { ReceiverAgent receiverAgent; }\n  statevars {\n    boolean receivedAck; \n    int sendDelay;\n  }\n  msgsrv initial() {\n    receivedAck = false;\n    self.start();\n  }\n  msgsrv start() {\n    sendDelay = ?(-1,2,3,4); // -1=fail -- 2,3,4=delays\n    if (sendDelay != -1) {\n      receiverAgent.send() after(sendDelay);\n    }\n    self.checkAck() after(8);\n  }\n  msgsrv ack() { receivedAck = true; }\n  msgsrv checkAck() {\n    if (!receivedAck) self.start();\n  }\n}\nreactiveclass ReceiverAgent(3) {\n  knownrebecs { SenderAgent senderAgent; }\n  statevars {int sendDelay;}\n  msgsrv initial() {}\n  msgsrv send() {\n    sendDelay = ?(-1,1,2,3); // -1=fail -- 1,2,3=delays\n    if (sendDelay != -1) {\n      senderAgent.ack() after(sendDelay);\n    }\n  }\n}\nmain {\n  ReceiverAgent receiverAgent(senderAgent):();\n  SenderAgent senderAgent(receiverAgent):();\n}");
+  var $$x24 = $n($$x25).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$9, "Simple communication protocol, described in <a href=\"https://link.springer.com/chapter/10.1007/3-540-49538-X_16\">\"Time and asynchrony in interactions among distributed real-time objects\"</a>, used as an example for Rebeca in <a href=\"https://www.sciencedirect.com/science/article/pii/S0167642314000239\">\"Modelling and simulation of asynchronous real-time systems\nusing Timed Rebeca\" (SCP 2014)</a>."));
+  var $$x23 = $m_Lcaos_frontend_Configurator$();
+  var self$10 = new $c_T2("Dining Philosophers", "reactiveclass Philosopher(3)\n{\n  knownrebecs\n  {\n    Fork forkL;\n    Fork forkR;\n  }\n  statevars\n  {\n    boolean eating;\n    boolean fL;\n    boolean fR;\n  }\n  msgsrv initial()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    self.arrive();\n  }\n\n  msgsrv arrive()\n  {\n    forkL.request();\n  }\n\n  msgsrv permit()\n  {\n    if (sender == forkL) {\n      if (!fL) {\n        fL = true;\n        forkR.request();\n      }\n    }\n    else {\n      if (fL && !(fR)) {\n        fR = true;\n        self.eat();\n      }\n      // else discard the message\n    }\n  }\n\n  msgsrv eat()\n  {\n    eating = true;\n    self.leave();\n  }\n\n  msgsrv leave()\n  {\n    fL = false;\n    fR = false;\n    eating = false;\n    forkL.release();\n    forkR.release();\n    self.arrive();\n  }\n}\n\nreactiveclass Fork(3)\n{\n  knownrebecs\n  {\n    Philosopher philL;\n    Philosopher philR;\n  }\n  statevars\n  {\n    boolean lAssign;  \n    boolean rAssign;  \n    boolean leftReq;\n    boolean rightReq;\n  }\n  msgsrv initial()\n  { \n    lAssign = false;\n    rAssign = false;\n    leftReq = false;\n    rightReq = false;\n  }\n\n  msgsrv request()\n  {\n    if (sender == philL) {\n      if (!leftReq) {\n        leftReq = true;\n        if (!rAssign) {\n          lAssign = true;\n          philL.permit();\n        }\n      } \n      // else discard message\n    }\n    else {\n      if (!rightReq) {\n        rightReq = true;\n        if (!lAssign) {\n          rAssign = true;\n          philR.permit();\n        }\n      }\n      // else discard message\n    }\n  }\n  msgsrv release()\n  {\n    if (sender == philL && lAssign){\n      leftReq = false;\n      lAssign = false;\n      if (rightReq) {\n        rAssign=true;\n        philR.permit();\n      }\n    }\n    if (sender == philR && rAssign){\n      rAssign = false;\n      rightReq = false;\n      if (leftReq) {\n        lAssign=true;\n        philL.permit();\n      }\n    }\n  }\n}\n\nmain\n{\n  Philosopher phil0(fork0, fork2):();\n  Philosopher phil1(fork0, fork1):();\n  Philosopher phil2(fork1, fork2):();\n\n  Fork fork0(phil0, phil1):();\n  Fork fork1(phil1, phil2):();\n  Fork fork2(phil2, phil0):();\n}");
+  var $$x22 = $n($$x23).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$10, "Dining philosophers, taken from <a href=\"https://rebeca-lang.org/examples\">https://rebeca-lang.org/examples</a>. Unlike core Rebeca, this example requires references to rebecs to be compared in data expressions."));
+  var $$x21 = $m_Lcaos_frontend_Configurator$();
+  var self$11 = new $c_T2("Trains", "reactiveclass BridgeController(5) {\n  knownrebecs {\n    Train t1;\n    Train t2;\n  }\n\n  statevars {\n    boolean isWaiting1;\n    boolean isWaiting2;\n    boolean isOnBridge1;\n    boolean isOnBridge2;\n  }\n\n  msgsrv initial() {\n    isOnBridge1 = false;  // red\n    isOnBridge2 = false;  // red\n    isWaiting1 = false;\n    isWaiting2 = false;\n  }\n  \n  msgsrv Arrive() {\n    if (sender == t1){\n      if (isOnBridge2 == false) {\n        isOnBridge1 = true; // green\n        t1.YouMayPass();\n      }\n      else {\n        isWaiting1 = true;\n      }\n    }\n    else {\n      if (isOnBridge1 == false){\n        isOnBridge2 = true; // green\n        t2.YouMayPass();\n      }\n      else{\n        isWaiting2 = true;\n      }\n    }\n  }\n  \n  msgsrv Leave() {\n    if (sender == t1) {\n      isOnBridge1 = false;  // red\n      if (isWaiting2){\n        isOnBridge2 = true;\n        t2.YouMayPass();\n        isWaiting2 = false;\n      }\n    } else {\n      isOnBridge2 = false;  // red\n      if (isWaiting1) {\n        isOnBridge1 = true;\n        t1.YouMayPass();\n        isWaiting1 = false;\n      }\n    }\n  }\n}\n\nreactiveclass Train(3) {\n  knownrebecs {\n    BridgeController controller;\n  }\n\n  statevars {\n    boolean onTheBridge;\n  }\n\n  msgsrv initial() {\n    onTheBridge = false;\n    self.Passed();\n  }\n\n  msgsrv YouMayPass() {\n    onTheBridge = true;\n    self.Passed();\n  }\n  \n  msgsrv Passed() {\n    onTheBridge = false;\n    controller.Leave();\n    self.ReachBridge();\n  }\n\n  msgsrv ReachBridge() {\n    controller.Arrive();\n  }\n}\n\nmain {\n  Train train1(theController):();\n  Train train2(theController):();\n  BridgeController theController(train1, train2):();\n}");
+  var $$x20 = $n($$x21).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$11, "Two trains and a controller, taken from <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/TrainController\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/TrainController</a>."));
+  var $$x19 = $m_Lcaos_frontend_Configurator$();
+  var self$12 = new $c_T2("Leader Election HS (fix)", "reactiveclass Node(8) { \n    knownrebecs { \n      Node nodeL; \n        Node nodeR; \n    } \n      \n    statevars { \n        boolean monitor; \n        int myId; \n        int phase; \n        int monitorId; \n        boolean receivedLeft; \n        boolean receivedRight; \n    } \n  \n    msgsrv initial(int id) { \n        myId = id; \n        monitor = false; \n        monitorId = id; \n        phase = 1; \n        receivedLeft = false; \n        receivedRight = false; \n        self.arrive(); \n    } \n  \n    msgsrv arrive() { \n        nodeL.receive(myId, true, phase); \n        nodeR.receive(myId, true, phase); \n  } \n  \n  msgsrv receive(int msgId, boolean inOut, int hopCount) { \n    if ((sender==nodeL) &&  (inOut)) {\n      if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)) { \n        monitorId = msgId; \n              nodeR.receive (msgId, true, hopCount-1); \n            } else { \n        if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){ \n          monitorId=msgId; \n                    nodeL.receive (msgId, false,1); \n                } else { \n                    if (msgId == myId) { \n                      monitor = true; \n                      monitorId = myId; \n                  } \n                } \n      } \n        } \n            \n        if ((sender==nodeR) && (inOut)) { \n      if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount >1)){ \n              monitorId=msgId; \n                nodeL.receive (msgId, true, hopCount-1); \n            } else { \n        if (((msgId <monitorId)||(msgId==monitorId)) && (hopCount ==1)){  \n                  monitorId=msgId; \n          nodeR.receive (msgId, false,1); \n                } else { \n                  if (msgId == myId) { \n                      monitor = true; \n                        monitorId = myId; \n                    } \n                } \n          } \n        } \n            \n        if ((sender==nodeL) && !(inOut) && !(msgId==myId)) { \n          nodeR.receive(msgId, false, 1);           \n        } \n            \n        if ((sender==nodeR) &&  !(inOut) && !(msgId==myId)) { \n          nodeL.receive(msgId, false, 1);           \n        } \n            \n    if ((sender==nodeL) && !(inOut) && ((msgId == myId) && (hopCount==1))) { \n          receivedLeft = true; \n        } \n    if (((sender==nodeR) && (msgId == myId)) && !(inOut) && (hopCount==1)) { \n          receivedRight = true; \n        }     \n            \n        if (receivedLeft && receivedRight&& (phase<3)){ \n          if(phase==2) { \n              monitor=true; \n            } else { \n                phase = phase * 2; \n                receivedLeft=false; \n                receivedRight=false; \n                nodeL.receive(myId, true, phase); \n                nodeR.receive(myId, true, phase); \n            } \n        } \n  } \n} \n  \n  \nmain { \n      Node node1(node4,node2):(1); \n      Node node2(node1,node3):(2); \n      Node node3(node2,node4):(3); \n      Node node4(node3,node1):(4); \n} ");
+  var $$x18 = $n($$x19).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$12, "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection</a>."));
+  var $$x17 = $m_Lcaos_frontend_Configurator$();
+  var self$13 = new $c_T2("Leader Election LCR", "reactiveclass Node(8){\n  knownrebecs {\n    Node rightNode;\n  }\n  statevars {\n    boolean isLeader;\n    int myNumber;\n    int currentLeader;    \n  }\n  msgsrv initial(int n) {\n    myNumber = n;\n    currentLeader = n;\n    isLeader = false;\n    self.send();\n  }\n  \n  msgsrv ImLeader() {\n    self.ImLeader();\n    //The algorithm terminates here, but the leader keeps sending a msg to himself to avoid deadlock.\n  }\n  msgsrv send() {\n    rightNode.receive(currentLeader);\n  }\n  msgsrv receive(int n) {\n    if (n == myNumber) {\n      isLeader = true;\n      self.ImLeader();\n    }\n    else {\n      if (n > currentLeader) {\n        currentLeader = n;\n        self.send();\n      }\n      //else discard\n    }\n  }\n}\n\nmain { \n//Each node must have a unique identifier\n//In case of having more than three nodes or changing the leader to other node (rather than node1), you should change the property file too.\n   Node node0(node2):(4); \n   Node node1(node0):(20); \n   Node node2(node1):(10); \n} ");
+  var $$x16 = $n($$x17).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$13, "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/LeaderElection</a>."));
+  var $$x15 = $m_Lcaos_frontend_Configurator$();
+  var self$14 = new $c_T2("Commit (unsupported-array)", "//Commit Protocol\nreactiveclass Node(10) {\n  knownrebecs {\n      Node node1;\n      Node node2;\n  }\n  statevars {\n      byte srvNo;\n    boolean recievedResults;\n    boolean creationAbility;\n    int recievedResultsCounter;\n    int expectedResultsCounter;\n    boolean[2] cooperatorKnownRebecs;\n    \n  }\n  \n  msgsrv initial(boolean nodeCreationAbility) {\n    creationAbility = nodeCreationAbility;\n    self.createTransaction();\n  }\n  \n  msgsrv createTransaction() {\n\n    boolean startTrans;\n    startTrans = ?(true, false);\n    if (startTrans && creationAbility) {\n      boolean dispatcher = false;\n      boolean result;\n\n      int i;\n      for(i = 0; i < 2; i = i + 1)\n        cooperatorKnownRebecs[i] = false;\n\n      recievedResultsCounter = 0;\n      recievedResults = true;\n\n\n      expectedResultsCounter = 0;\n\n            srvNo = 1;\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs[0] = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node1.startGlobalTransaction();\n      }\n\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs[1] = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node2.startGlobalTransaction();\n      }\n\n      expectedResultsCounter = expectedResultsCounter + 1;\n      result = ?(true, false);\n      self.cooperatorResponse(result);\n    }\n    else {\n      self.createTransaction();\n    }\n  }\n  \n  msgsrv startGlobalTransaction() {\n    boolean result;\n    result = ?(true, false);\n\n    if (sender == node1) {\n      node1.cooperatorResponse(result);\n    }\n    if (sender == node2) {\n      node2.cooperatorResponse(result);\n        }\n        \n  }\n\n  msgsrv cooperatorResponse(boolean result) {\n    recievedResultsCounter = recievedResultsCounter + 1;\n    if (!result)\n      recievedResults = false;\n\n    if (recievedResultsCounter == expectedResultsCounter) {\n            int i;\n      if (cooperatorKnownRebecs[0]) {\n        node1.applyResult(recievedResults);\n      }\n      if (cooperatorKnownRebecs[1]) {\n        node2.applyResult(recievedResults);\n      }\n\n      self.createTransaction();\n    }\n  }\n  \n\n  msgsrv applyResult(boolean result) {\n  }\n\n}\n\n\nmain {\n  Node node1(node2, node3):(true);\n  Node node2(node3, node1):(false);\n  Node node3(node1, node2):(true);\n}");
+  var $$x14 = $n($$x15).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$14, "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem</a>."));
+  var $$x13 = $m_Lcaos_frontend_Configurator$();
+  var self$15 = new $c_T2("Commit (adapted)", "// Adapted version without arrays\n//Commit Protocol\nreactiveclass Node(10) {\n  knownrebecs {\n      Node node1;\n      Node node2;\n  }\n  statevars {\n      byte srvNo;\n    boolean recievedResults;\n    boolean creationAbility;\n    int recievedResultsCounter;\n    int expectedResultsCounter;\n    boolean cooperatorKnownRebecs0;\n    boolean cooperatorKnownRebecs1;\n    \n  }\n  \n  msgsrv initial(boolean nodeCreationAbility) {\n    creationAbility = nodeCreationAbility;\n    self.createTransaction();\n  }\n  \n  msgsrv createTransaction() {\n\n    //boolean startTrans;\n    startTrans = ?(true, false);\n    if (startTrans && creationAbility) {\n      //boolean dispatcher = false;\n      //boolean result;\n\n      //int i;\n      //for(i = 0; i < 2; i = i + 1)\n      //  cooperatorKnownRebecs[i] = false;\n      cooperatorKnownRebecs0 = false;\n      cooperatorKnownRebecs1 = false;\n\n      recievedResultsCounter = 0;\n      recievedResults = true;\n\n\n      expectedResultsCounter = 0;\n\n            srvNo = 1;\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs0 = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node1.startGlobalTransaction();\n      }\n\n      dispatcher = ?(true, false);\n      if (dispatcher) {\n        cooperatorKnownRebecs1 = true;\n        expectedResultsCounter = expectedResultsCounter + 1;\n        node2.startGlobalTransaction();\n      }\n\n      expectedResultsCounter = expectedResultsCounter + 1;\n      result = ?(true, false);\n      self.cooperatorResponse(result);\n    }\n    else {\n      self.createTransaction();\n    }\n  }\n  \n  msgsrv startGlobalTransaction() {\n    //boolean result;\n    result = ?(true, false);\n\n    if (sender == node1) {\n      node1.cooperatorResponse(result);\n    }\n    if (sender == node2) {\n      node2.cooperatorResponse(result);\n        }\n        \n  }\n\n  msgsrv cooperatorResponse(boolean result) {\n    recievedResultsCounter = recievedResultsCounter + 1;\n    if (!result)\n      recievedResults = false;\n\n    if (recievedResultsCounter == expectedResultsCounter) {\n            //int i;\n      if (cooperatorKnownRebecs0) {\n        node1.applyResult(recievedResults);\n      }\n      if (cooperatorKnownRebecs1) {\n        node2.applyResult(recievedResults);\n      }\n\n      self.createTransaction();\n    }\n  }\n  \n\n  msgsrv applyResult(boolean result) {\n  }\n\n}\n\n\nmain {\n  Node node1(node2, node3):(true);\n  Node node2(node3, node1):(false);\n  Node node3(node1, node2):(true);\n}");
+  var $$x12 = $n($$x13).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$15, "Adapted, without arrays, from <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/CommitProblem</a>."));
+  var $$x11 = $m_Lcaos_frontend_Configurator$();
+  var self$16 = new $c_T2("Sender-receiver", "reactiveclass Sender(5) { \n  knownrebecs { \n    Medium medium; \n    Receiver rec;     \n  } \n      \n  statevars { \n    boolean receivedBit; \n    boolean sendBit; \n    boolean hasSucceeded; \n  } \n  \n  msgsrv initial() { \n    sendBit = false; \n    medium.pass(sendBit); \n    self.sendMsg(); \n    hasSucceeded = false;\n  } \n  \n  msgsrv sendMsg() { \n    //receive(hasSucceeded) \n    if (hasSucceeded == true) { \n      if (sendBit == true) { \n        sendBit = false; \n      } else { \n        sendBit = true; \n      } \n    } \n            \n    medium.pass(sendBit); \n    self.sendMsg(); \n  } \n} \n  \nreactiveclass Receiver(5) { \n  knownrebecs { \n    Medium medium; \n    Sender sender;    \n  } \n      \n  statevars { \n    boolean messageBit; \n  } \n  \n  msgsrv initial() { \n  } \n  \n  msgsrv receiveMsg(boolean msgBit) { \n    messageBit =msgBit; \n    //sender.receive(true); \n  } \n} \n  \nreactiveclass Medium(5) { \n  knownrebecs { \n    Receiver receiver; \n    Sender sender;    \n  } \n      \n  statevars { \n    boolean passMessage; \n  } \n  \n  msgsrv initial() { \n    passMessage=true; \n  } \n  \n  msgsrv pass(boolean msgBit) { \n    passMessage = ?(true,false); \n    if(passMessage == true) { \n      receiver.receiveMsg( msgBit); \n    } else { \n      //sender,receive(false); \n    } \n  } \n} \n  \nmain { \n  Sender sender (medium, receiver):(); \n  Medium medium(receiver, sender):(); \n  Receiver receiver(medium, sender):(); \n}");
+  var $$x10 = $n($$x11).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$16, "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/SenderReceiver\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/SenderReceiver</a>."));
+  var $$x9 = $m_Lcaos_frontend_Configurator$();
+  var self$17 = new $c_T2("Prod-Cons (larger)", "reactiveclass BufferManager(4) {\n  knownrebecs {\n    Producer producer;\n    Consumer consumer;\n  }\n\n  statevars {\n    boolean empty;\n    boolean full;\n    boolean producerWaiting;\n    boolean consumerWaiting;\n    int bufferlenght;\n    int nextProduce;\n    int nextConsume;    \n  }\n\n  msgsrv initial() {\n    bufferlenght = 2;\n    empty = true;\n    full = false;\n    producerWaiting = false;\n    consumerWaiting = false;\n    nextProduce = 0;\n    nextConsume = 0;\n  }\n\n  msgsrv giveMeNextProduce() {\n    if (!full)  {\n      producer.produce(nextProduce);\n    } \n  }\n\n  msgsrv giveMeNextConsume() {\n    if (!empty) {\n      consumer.consume(nextConsume);\n    } \n       else {\n      consumerWaiting = true;\n    }\n  }\n\n  msgsrv ackProduce() {\n    nextProduce = (nextProduce + 1) %\n                    bufferlenght;\n    if (nextProduce == nextConsume) {\n      full = true;\n    }\n    empty = false;\n    if (consumerWaiting) {\n      consumer.consume(nextConsume);\n      consumerWaiting = false;\n    }\n  }\n\n  msgsrv ackConsume() {\n    nextConsume = (nextConsume + 1) %\n                    bufferlenght;\n    if (nextConsume == nextProduce) {\n      empty = true;\n    }\n    full = false;\n    if (producerWaiting) {\n      producer.produce(nextProduce);\n      producerWaiting = false;\n    }\n  }\n}\n\nreactiveclass Producer(2) {\n  knownrebecs {\n    BufferManager buffer;\n  }\n\n  statevars {\n  }\n\n  msgsrv initial() {\n    self.beginProduce();\n  }\n  \n  msgsrv produce(int bufNum) {\n    buffer.ackProduce();\n    self.beginProduce();\n  }\n\n  msgsrv beginProduce() {\n    buffer.giveMeNextProduce();\n  }\n}\n\nreactiveclass Consumer(2) {\n  knownrebecs {\n    BufferManager buffer;    \n  }\n\n  statevars {\n  }\n\n  msgsrv initial() {\n    self.beginConsume();\n  }\n\n  msgsrv consume(int bufNum) {\n    buffer.ackConsume();\n    self.beginConsume();  \n  }\n  \n  msgsrv beginConsume() {\n    buffer.giveMeNextConsume();\n  }\n\n}\n\nmain { \n  BufferManager buffer(producer, consumer):();\n  Producer producer(buffer):();\n  Consumer consumer(buffer):();\n}");
+  var $$x8 = $n($$x9).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$17, "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/ProducerConsumer\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/ProducerConsumer</a>."));
+  var $$x7 = $m_Lcaos_frontend_Configurator$();
+  var self$18 = new $c_T2("Spanning-tree (unsupported-casting)", "reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (byte)(distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (byte)(distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = (byte)255;\n             rootDistance = (byte)255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( ! isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (byte)(distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (byte)(distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,D):(1);\n    BridgeToLanPort out1F(p1F,F):(2);\n    BridgeToLanPort out5D(p5D,D):(3);\n    BridgeToLanPort out5B(p5B,B):(4);\n    BridgeToLanPort out7F(p7F,F):(5);\n    BridgeToLanPort out7B(p7B,B):(6);\n    BridgeToLanPort out7K(p7K,K):(7);\n\n    ExtendedLan D(in1D, in5D):();\n    ExtendedLan B(in7B, in5B):();\n    ExtendedLan F(in1F, in7F):();\n    ExtendedLan K(in7K, in7K):();\n}");
+  var $$x6 = $n($$x7).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$18, "From <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol</a>."));
+  var $$x5 = $m_Lcaos_frontend_Configurator$();
+  var self$19 = new $c_T2("Spanning-tree (adapted)", "reactiveclass RootController(7)\n{\n       knownrebecs\n       {\n               PortController pController1;\n               PortController pController2;\n               PortController pController3;\n//               PortController pController4;\n//               PortController pController5;\n       }\n       statevars\n       {\n               byte rootID;\n               byte rootDistance;\n               byte myID;\n               boolean IamRoot;\n       }\n\n       msgsrv initial(byte id)\n       {\n               myID = id;\n               rootID = myID;\n               rootDistance = 0;\n               IamRoot = true;\n               self.config();\n       }\n\n       msgsrv recvInf( byte senderID, byte distance, byte believedRootID)\n       {\n               if( believedRootID < rootID)\n               {\n                       rootID = believedRootID;\n                       rootDistance = (distance + 1);\n                       IamRoot = false;\n\n                       //sender.setBestPort();                                               *\n                       //if( sender != pController1)                                         *\n                       if(true)\n                       {\n                               pController1.setBadPort();\n                       }\n                       //if( sender != pController2)                                         *\n                       if(true)\n                       {\n                               pController2.setBadPort();\n                       }\n                       //if( sender != pController3)                                         *\n                       if(true)\n                       {\n                               pController3.setBadPort();\n                       }\n                       //if( sender != pController4)                                         *\n                       //if(true)\n                       //{\n                       //        pController4.setBadPort();\n                       //}\n                       //if( sender != pController5)                                         *\n                       //if(true)\n                       //{\n                       //        pController5.setBadPort();\n                       //}\n\n                       //receive(best);                                                      *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n                       //receive(bad);                                                       *\n\n                       pController1.sendLan( myID, rootDistance, rootID);\n                       pController2.sendLan( myID, rootDistance, rootID);\n                       pController3.sendLan( myID, rootDistance, rootID);\n                       //pController4.sendLan( myID, rootDistance, rootID);\n                       //pController5.sendLan( myID, rootDistance, rootID);\n               }\n               else\n               {\n                       if( believedRootID == rootID && distance + 1  < rootDistance)\n                       {\n                               rootID = believedRootID;\n                               rootDistance = (distance + 1);\n                               //sender.setBestPort();                                  *\n                               //if( sender != pController1)                            *\n                               if(true)\n                               {\n                                       pController1.setBadPort();\n                               }\n                               //if( sender != pController2)                            *\n                               if(true)\n                               {\n                                       pController2.setBadPort();\n                               }\n                               //if( sender != pController3)                            *\n                               if(true)\n                               {\n                                       pController3.setBadPort();\n                               }\n                               //if( sender != pController4)                            *\n                               //if(true)\n                               //{\n                               //        pController4.setBadPort();\n                               //}\n                               //if( sender != pController5)                            *\n                               //if(true)\n                               //{\n                               //        pController5.setBadPort();\n                               //}\n\n                               //receive( best);                                        *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n                               //receive( bad);                                         *\n\n\n                               pController1.sendLan( myID, rootDistance, rootID);\n                               pController2.sendLan( myID, rootDistance, rootID);\n                               pController3.sendLan( myID, rootDistance, rootID);\n                               //pController4.sendLan( myID, rootDistance, rootID);\n                               //pController5.sendLan( myID, rootDistance, rootID);\n                       }\n                       else\n                       {\n                            if(believedRootID == rootID && distance + 1 == rootDistance)\n                            {}\n                            else\n                            {\n                                self.config();\n                            }\n                       }\n               }\n\n       }\n       msgsrv config()\n       {\n               if( IamRoot)\n               {\n                       pController1.sendLan( myID, 0, myID);\n                       pController2.sendLan( myID, 0, myID);\n                       pController3.sendLan( myID, 0, myID);\n                       //pController4.sendLan( myID, 0, myID);\n                       //pController5.sendLan( myID, 0, myID);\n               }\n\n       }\n}\nreactiveclass PortController(4)\n{\n     knownrebecs\n     {\n             RootController  rootController;\n             BridgeToLanPort bridgeToLan;\n             LanToBridgePort lanToBridge;\n     }\n\n     statevars\n     {\n             byte rootID;\n             byte rootDistance;\n             boolean isTheBestPort;\n     }\n\n     msgsrv initial()\n     {\n             rootID = 255;\n             rootDistance = 255;\n     }\n\n     msgsrv setBestPort()\n     {\n             isTheBestPort = true;\n             //rootController.best();                                           *\n     }\n\n     msgsrv setBadPort()\n     {\n             isTheBestPort = false;\n             //rootController.bad();                                            *\n     }\n\n     msgsrv sendLan( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                     bridgeToLan.turnOn();\n                     //receive( alive);                                         *\n                     bridgeToLan.send( senderID, distance, believedRootID);\n                     //receive( sendToLan );                                    *\n             }\n             else\n             {\n                     if( believedRootID == rootID && distance < rootDistance )\n                     {\n                             bridgeToLan.turnOn();\n                             //receive( alive);                                             *\n                             bridgeToLan.send( senderID, distance, believedRootID);\n                             //receive( sendToLan );                                        *\n                     }\n                     else\n                     {\n                             if( !isTheBestPort)\n                             {\n                                     bridgeToLan.turnOff();\n                                     //receive( died);                                      *\n                             }\n                     }\n             }\n     }\n     msgsrv sendBridge( byte senderID, byte distance, byte believedRootID)\n     {\n             if( believedRootID < rootID)\n             {\n                  rootID = believedRootID;\n                  rootDistance = (distance + 1);\n             }\n             else\n             {\n                if( believedRootID == rootID && distance < rootDistance )\n                {\n                    rootDistance = (distance + 1);\n                }\n             }\n             rootController.recvInf( senderID, distance, believedRootID);\n             //lanToBridge.sendToBridge();                                                  *\n     }\n}\nreactiveclass BridgeToLanPort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n             ExtendedLan lan;\n     }\n\n     statevars\n     {\n             boolean alive;\n             byte myID;\n     }\n\n     msgsrv initial(byte id)\n     {\n             alive = true;\n             myID = id;\n     }\n     msgsrv turnOn()\n     {\n             alive = true;\n             //portController.alive();                                      *\n     }\n\n     msgsrv turnOff()\n     {\n             alive = false;\n             //portController.died();                                       *\n     }\n\n     msgsrv send( byte senderID, byte distance, byte believedRootID)\n     {\n             if(alive)\n             {\n                     lan.recv(myID, senderID, distance, believedRootID);\n             }\n             //portController.sendToLan();                                  *\n     }\n}\nreactiveclass LanToBridgePort(3)\n{\n     knownrebecs\n     {\n             PortController portController;\n     }\n     statevars\n     {byte myID;}\n\n     msgsrv initial(byte id)\n     {\n        myID = id;\n     }\n\n     msgsrv broadCast( byte portID , byte senderID, byte distance, byte believedRootID)\n     {\n             if(portID != myID)\n             {\n                portController.sendBridge( senderID, distance, believedRootID);\n                //recieve(sendToBridge)                                                            *\n             }\n\n     }\n}\nreactiveclass ExtendedLan(3)\n{\n     knownrebecs\n     {\n             LanToBridgePort port1;\n             LanToBridgePort port2;\n     }\n\n     statevars\n     {}\n\n     msgsrv initial()\n     {}\n\n     msgsrv recv(byte portID, byte senderID, byte distance, byte believedRootID)\n     {\n             //broadCast( portID, senderID, distance, believedRootID);\n     }\n}\n\n\nmain ////////////////////known objects binding\n{\n    RootController r1(p1D ,p1F ,p1D):(1);\n    RootController r5(p5D ,p5B ,p5D):(5);\n    RootController r7(p7F ,p7B ,p7K):(7);\n    PortController p1D(r1 ,out1D ,in1D):();\n    PortController p1F(r1 ,out1F ,in1F):();\n    PortController p5D(r5 ,out5D ,in5D):();\n    PortController p5B(r5 ,out5B ,in5B):();\n    PortController p7F(r7 ,out7F ,in7F):();\n    PortController p7B(r7 ,out7B ,in7B):();\n    PortController p7K(r7 ,out7K ,in7K):();\n\n    LanToBridgePort in1D(p1D):(1);\n    LanToBridgePort in1F(p1F):(2);\n    LanToBridgePort in5D(p5D):(3);\n    LanToBridgePort in5B(p5B):(4);\n    LanToBridgePort in7F(p7F):(5);\n    LanToBridgePort in7B(p7B):(6);\n    LanToBridgePort in7K(p7K):(7);\n\n    BridgeToLanPort out1D(p1D,d):(1);\n    BridgeToLanPort out1F(p1F,f):(2);\n    BridgeToLanPort out5D(p5D,d):(3);\n    BridgeToLanPort out5B(p5B,b):(4);\n    BridgeToLanPort out7F(p7F,f):(5);\n    BridgeToLanPort out7B(p7B,b):(6);\n    BridgeToLanPort out7K(p7K,k):(7);\n\n    ExtendedLan d(in1D, in5D):();\n    ExtendedLan b(in7B, in5B):();\n    ExtendedLan f(in1F, in7F):();\n    ExtendedLan k(in7K, in7K):();\n}");
+  var $$x4 = $n($$x5).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$19, "Adapted from <a href=\"https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol\">https://rebeca-lang.org/allprojects/CoreRebecaExamples/SpanningTreeProtocol</a>."));
+  var $$x3 = $m_Lcaos_frontend_Configurator$();
+  var self$20 = new $c_T2("NOC (unsupported-array)", "/*\n\n* Model for 4x4 ASPIN. The model can be extended for lager NoCs by declaring routers in main part (last section of the code).\n\n*In the model only one packet is sent from router R00 to router R23. More packets can be scheduled to sent from a source to destination \n as like in \"Router\" mesage server.\n\n*/\n\nreactiveclass Manager(10){\n  \n  knownrebecs{\n    Router r00;\n    Router r10;\n    Router r20;\n    Router r30;\n    \n    Router r01;\n    Router r11;\n    Router r21;\n    Router r31;\n    \n    Router r02;\n    Router r12;\n    Router r22;\n    Router r32;\n    \n    Router r03;\n    Router r13;\n    Router r23;\n    Router r33;\n  }\n  \n  statevars{\n  }\n  \n  Manager(){\n  }\n  \n  msgsrv reset(){ //each source and destination routeeer should be initialized here.\n    r01.reStart() after(700); //source    \n  }\n}\n\nreactiveclass Router(10) {\n\n  knownrebecs {\n    Manager manager;\n    Router N;  // : 0\n    Router E;  // : 1\n    Router S;  // : 2\n    Router W;  // : 3    \n  }\n  \n  statevars {\n    int bufSize;\n    int maxTime;  // To check if a packet is recieved by the time maxTime\n    int recieved;\n    \n    byte[4] bufNum; //for each of four sides\n    boolean[4] full;\n    boolean[4] enable;\n    boolean [4] outMutex;\n    \n    byte Xid;\n    byte Yid;\n  }\n  \n  Router(byte X, byte Y){  \n    Xid = X;\n    Yid = Y;\n  \n    bufSize = 2;\n    maxTime = 250 ; \n    recieved = 0;\n\n    for(int i=0;i<4;i++){    \n      enable[i] = true;\n      outMutex[i] = true;\n      bufNum[i] = 0;\n      full[i] = false;\n    }\n    \n    //packet generation\n    if(X == 0 && Y == 0){\n      self.reqSend(2,3,1,5) after(10);  //sending a packet\n    }\n    \n    if(X == 0 && Y == 1){        // permamnet, don't change. \n      self.reStart() after(700);\n    }\n    \n    if(X == 2 && Y == 3){        // in destination router. not necessary for all packets. just to check when the packet is recieved\n      self.checkRecieved()after(maxTime);\n    }\n  }\n  \n  msgsrv reqSend(byte Xtarget, byte Ytarget, int directionS, int packId){  \n    if (enable[directionS] == true){\n      boolean sent = false;\n          \n      if(Xtarget > Xid){    // Routing Algorithm XY: first move through horisental channels \n        if(outMutex[1] == true){  \n          E.give_Ack(Xtarget, Ytarget,directionS,3,5, packId) after(26);\n          outMutex[1] = false;\n          enable[directionS] = false;\n          sent = true;\n        }else\n          self.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n      }  \n      else if(Xtarget < Xid){  \n        if(outMutex[3] == true){\n          W.give_Ack(Xtarget, Ytarget,directionS,1,5, packId ) after(26);  \n          outMutex[3] = false;\n          enable[directionS] = false;\n          sent = true;\n        } else\n          self.reqSend(Xtarget, Ytarget,directionS, packId) after(1);\n      }  \n      else if(Ytarget > Yid){  \n        if(outMutex[2] == true){\n          S.give_Ack(Xtarget, Ytarget,directionS,0,5, packId ) after(26);  \n          outMutex [2] = false;\n          enable[directionS] = false;\n          sent = true;\n        }else\n          self.reqSend(Xtarget, Ytarget,directionS, packId) after(1);  \n      }  \n      else if(Ytarget < Yid){  \n        if(outMutex[0] == true){\n          N.give_Ack(Xtarget, Ytarget,directionS,2,5 , packId) after(26);  \n          outMutex[0] = false;\n          enable[directionS] = false;\n          sent = true;\n        }else\n          self.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n      }\n\n      if(sent == true){\n        bufNum[directionS] = (byte)bufNum[directionS] + 1;\n\n        if (bufNum[directionS] == bufSize) full[directionS] = true;         //update the value of \"full\".\n      }  \n    } else\n      self.reqSend(Xtarget, Ytarget,directionS,packId) after(1);\n  }\n  \n  msgsrv get_Ack(int directionS){\n    \n    enable[directionS] = true;\n    \n    bufNum[directionS] = (byte)bufNum[directionS] - 1;  \n    full[directionS] = false;\n\n    if (sender == N) {\n      outMutex[0] = true;\n    }  \n    else if (sender == E){ \n      outMutex[1] = true;\n    }  \n    else if (sender == S){\n      outMutex[2] = true;\n      }\n    else if (sender == W){ \n      outMutex[3] = true;\n    }  \n  }\n  \n  msgsrv give_Ack(byte Xtarget, byte Ytarget,int directionS, int directionD,int msgSender, int packId){\n    int MSGSender;\n    if(sender == N)\n      MSGSender = 0;\n    else if (sender == E)\n      MSGSender = 1;\n    else if (sender == S)\n      MSGSender = 2;\n    else if (sender == W)\n      MSGSender = 3;\n    else {MSGSender = msgSender;\n      \n    }\n        \n    if(!(Xtarget == Xid && Ytarget == Yid)){\n        \n      if (full[directionD]) //buffer is full, the packet should wait.\n        self.give_Ack(Xtarget, Ytarget,directionS,directionD,MSGSender,\n               packId)after(2)deadline(3); //waiting via recalling give_ack after 2 time units.\n      \n      else{  \n        self.reqSend(Xtarget, Ytarget,directionD, packId); \n          \n        if(MSGSender == 0)\n          N.get_Ack(directionS);\n        else if(MSGSender == 1)    \n          E.get_Ack(directionS);\n        else if(MSGSender == 2)    \n          S.get_Ack(directionS);\n        else if(MSGSender == 3)    \n          W.get_Ack(directionS);\n      }    \n    }    \n    \n    else if((Xtarget == Xid && Ytarget == Yid)){ //reach target\n        \n        recieved = recieved + 1;\n          \n        if(MSGSender == 0)\n          N.get_Ack(directionS);\n        else if(MSGSender == 1)    \n          E.get_Ack(directionS);\n        else if(MSGSender == 2)    \n          S.get_Ack(directionS);\n        else if(MSGSender == 3)    \n          W.get_Ack(directionS);\n      }\n  }\n\n  msgsrv reStart(){\n    manager.reset();\n  }  \n  \n  msgsrv deadlineMiss(){\n    delay(5);\n  }\n  \n  msgsrv checkPoint(){ // causes to hult\n    self.deadlineMiss() after(1)deadline(3);\n    self.deadlineMiss() after(1)deadline(3);\n  }\n  \n  msgsrv checkRecieved(){ // Halt if recieved is 0, by calling checkpoint.(checkpoint method allways cause program to hult).\n    \n    if (recieved == 0){\n      self.checkPoint();\n    }\n      \n  }\n}\n\nmain {\n  Manager m(r00,r10,r20,r30,r01,r11,r21,r31,r02,r12,r22,r32,r03,r13,r23,r33):();\n  \n  Router r00(m,r03,r10,r01,r30):(0,0);\n  Router r10(m,r13,r20,r11,r00):(1,0);\n  Router r20(m,r23,r30,r21,r10):(2,0);\n  Router r30(m,r33,r00,r31,r20):(3,0);\n  \n  Router r01(m,r00,r11,r02,r31):(0,1);\n  Router r11(m,r10,r21,r12,r01):(1,1);\n  Router r21(m,r20,r31,r22,r11):(2,1);\n  Router r31(m,r30,r01,r32,r21):(3,1);\n  \n  Router r02(m,r01,r12,r03,r32):(0,2);\n  Router r12(m,r11,r22,r13,r02):(1,2);\n  Router r22(m,r21,r32,r23,r12):(2,2);\n  Router r32(m,r31,r02,r33,r22):(3,2);\n  \n  Router r03(m,r02,r13,r00,r33):(0,3);\n  Router r13(m,r12,r23,r10,r03):(1,3);\n  Router r23(m,r22,r33,r20,r13):(2,3);\n  Router r33(m,r32,r03,r30,r23):(3,3);\n}");
+  var $$x2 = $n($$x3).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$20, "From <a href=\"https://rebeca-lang.org/examples\">https://rebeca-lang.org/examples</a>."));
+  var $$x1 = $m_Lcaos_frontend_Configurator$();
+  var self$21 = new $c_T2("[Time] Vehicles (unsupported-casting)", "env int RESENDING_PERIOD = 25;\nenv int NORMAL_SPEED = 15;\nenv int REDUCED_SPEED = 7;\nenv int SAFE_DISTANCE = 20;  // segments has 1000 meters length and each sub-segment has 200 meteres length\nenv int SEGMENT_LENGTH = 200;\nenv int LOADING_TIME_PC = 60;\nenv int LOADING_TIME_WL = 60;\nenv int UNLOADING_TIME_SC = 30;\nenv int CHARGING_TIME_C1 = 60;\nenv int CHARGING_TIME_C2 = 60;\nenv int LEAVING_PERIOD = 13;\nenv int NUMBER_VEHICLES = 4;\n\n//************* E1:WL, E2:Crusher, E3:SC, E4:DP ***********\n\nreactiveclass CrossController (10){    // to control when S4 passes S3\n  knownrebecs\n  {\n  }\n  statevars\n  {\n    boolean crossIsFree;\n  }\n  CrossController()\n  { \n    crossIsFree= true;\n  }\n  msgsrv giveCrossPermission(int vehicleId){\n    if(crossIsFree){\n      crossIsFree = false;\n      ((Segment)sender).getCrossPermission(vehicleId);\n    }\n    else ((Segment)sender).crossNotAvailable(vehicleId);\n  }\n  msgsrv freeCross(int vehicleId){\n    crossIsFree = true;  \n  }\n}\n\nreactiveclass PrimaryCrusher (14) {\n  knownrebecs\n  {\n    Segment firstSubSegPcToSc;\n  }\n  statevars\n  {\n    boolean isLoading;\n  }\n  PrimaryCrusher()\n  { \n    isLoading= false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isLoading == false){\n      isLoading = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    delay(LOADING_TIME_PC);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegPcToSc.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isLoading= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\nreactiveclass SecondaryCrusher (14) {\n  knownrebecs\n  {\n    Segment firstSubSegScToPrepoint;\n  }\n  statevars\n  {\n    boolean isUnloading;\n  }\n  SecondaryCrusher()\n  { \n    isUnloading= false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isUnloading == false){\n      isUnloading = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    delay(UNLOADING_TIME_SC);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegScToPrepoint.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isUnloading= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\nreactiveclass PrePoint (14) {       // the point at the end of S7\n  knownrebecs\n  {\n    Segment firstSubSegPreToE1;\n    Segment firstSubSegPreToE2;\n  }\n  statevars\n  {\n    boolean isBusy;\n    boolean toE1;\n    int count;\n  }\n  PrePoint()\n  { \n    isBusy= false;\n    toE1 = true;\n    count=0;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isBusy == false){\n      isBusy = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    if(toE1)\n      firstSubSegPreToE1.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isBusy= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    if(toE1){\n      toE1 = false;\n      firstSubSegPreToE2.givePermisionForVehicle(vehicleId, -1);  \n    }\n    else \n    {\n      toE1 = true;\n      self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n    }\n  }\n}\n\nreactiveclass DecisionStation (14) {\n  knownrebecs\n  {\n    Segment firstSubSegDsToPc;\n  }\n  statevars\n  {  \n    boolean vehicle1Reached;\n    boolean vehicle2Reached;\n    boolean vehicle3Reached;\n    boolean vehicle4Reached;\n    boolean vehicle5Reached;\n    boolean vehicle6Reached;\n    boolean vehicle7Reached;\n    boolean vehicle8Reached;\n  }\n  DecisionStation()\n  { \n    self.leaveParkingSlots();\n  }\n  msgsrv leaveParkingSlots(){\n    \n    startSendingToNext(1) after(1);\n    \n    if(NUMBER_VEHICLES == 2 || NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 \n    || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(2) after(4);\n      \n    if(NUMBER_VEHICLES == 3  || NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 \n    || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(3) after(6);\n      \n    if(NUMBER_VEHICLES == 4 || NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 \n    || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(4) after(9);\n      \n     if(NUMBER_VEHICLES == 5 || NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7\n    || NUMBER_VEHICLES == 8)\n      startSendingToNext(5) after(12);\n      \n    if(NUMBER_VEHICLES == 6 || NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(6) after(15);\n      \n    if(NUMBER_VEHICLES == 7 || NUMBER_VEHICLES == 8)\n      startSendingToNext(7) after(19);\n    \n    if(NUMBER_VEHICLES == 8)\n      startSendingToNext(8) after(26);\n  }\n  msgsrv getPermision(int vehicleId){\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree(int vehicleId, int segmentDes){\n    startSendingToNext(vehicleId) after (RESENDING_PERIOD);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegDsToPc.givePermisionForVehicle(vehicleId,1);\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n    ((Segment)sender).getPermision(vehicleId);\n  }\n  msgsrv vehicleEntered(int vehicleId){\n    //startSendingToNext(vehicleId) after(LEAVING_PERIOD);\n    if(vehicleId == 1)\n      vehicle1Reached = true;\n    else if(vehicleId == 2)\n      vehicle2Reached = true;\n    else if(vehicleId == 3)\n      vehicle3Reached = true;\n    else if(vehicleId == 4)\n      vehicle4Reached = true;\n    else if(vehicleId == 5)\n      vehicle5Reached = true;\n    else if(vehicleId == 6)\n      vehicle6Reached = true;\n    else if(vehicleId == 7)\n      vehicle7Reached = true;\n    else if(vehicleId == 8)\n      vehicle8Reached = true;\n    \n    //if(NUMBER_VEHICLES == 4)\n    //    assertion(false);\n    // when all vehicles travelled once the model checking stops by puting 'assertion(false)'\n    if(NUMBER_VEHICLES == 1){\n      if(vehicle1Reached == true)\n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 2){\n      if(vehicle1Reached == true && vehicle2Reached == true) \n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 3){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true) \n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 4){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true) \n        assertion(false);\n    }    \n    else if(NUMBER_VEHICLES == 5){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true) \n        assertion(false);\n    }    \n    else if(NUMBER_VEHICLES == 6){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true)\n        assertion(false);\n    }    \n    else if(NUMBER_VEHICLES == 7){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n      && vehicle7Reached == true)\n        assertion(false);\n    }\n    else if(NUMBER_VEHICLES == 8){\n      if(vehicle1Reached == true && vehicle2Reached == true && vehicle3Reached == true \n      && vehicle4Reached == true && vehicle5Reached == true && vehicle6Reached == true \n      && vehicle7Reached == true && vehicle8Reached == true)\n        assertion(false);\n    }\n  }\n  msgsrv loop (){\n    self.loop() after(5000);\n  }\n}\n\nreactiveclass WheelLoader (14) {\n  knownrebecs\n  {\n    Segment firstSubSegWlToSc;\n  }\n  statevars\n  {\n    boolean isLoading;\n  }\n  WheelLoader()\n  { \n    isLoading = false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId){\n     if (isLoading == false){\n      isLoading = true;\n      ((Segment)sender).getPermision(vehicleId);\n    }\n    else \n      ((Segment)sender).segmentNotFree(vehicleId);\n  }  \n  msgsrv vehicleEntered(int vehicleId){\n    delay(LOADING_TIME_WL);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    firstSubSegWlToSc.givePermisionForVehicle(vehicleId,-1);\n  }\n  msgsrv getPermision (int vehicleId){\n    isLoading= false;\n    ((Segment)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree (int vehicleId){\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\nreactiveclass Segment(14) {\n  knownrebecs\n  {\n    \n  }\n  statevars\n  {\n    boolean isFree;\n    boolean stoppedVehicle;\n    int vehicleSpeed;      // speed of the current vehicle\n    int segmentLength;\n    \n    Segment nextSegment;\n    DecisionStation decisionS;\n    PrimaryCrusher primaryC;\n    SecondaryCrusher secondaryC;\n    WheelLoader wheelL;\n    PrePoint prePoint;\n    CrossController crossCtrl;\n    Segment segRequestingCross;\n  }\n  Segment(Segment nextS, WheelLoader wl, PrimaryCrusher pc, SecondaryCrusher sc, \n        DecisionStation ds, PrePoint preCs, CrossController ctrl, int speed, int segLength)\n  { \n    nextSegment = nextS;\n    decisionS = ds;\n    primaryC = pc;\n    secondaryC = sc;\n    wheelL = wl;\n    prePoint = preCs;  \n    crossCtrl = ctrl;\n    segRequestingCross = null;\n    segmentLength = segLength;\n    \n    vehicleSpeed = speed;\n    isFree = true;\n    stoppedVehicle =false;\n  }\n  msgsrv givePermisionForVehicle(int vehicleId, int segmentDes){\n    if (isFree)\n    {\n      isFree=false;\n      if(crossCtrl == null){\n        if(sender instanceof Segment)\n          ((Segment)sender).getPermision(vehicleId);\n        else if(sender instanceof DecisionStation)\n          ((DecisionStation)sender).getPermision(vehicleId);\n        else if(sender instanceof PrimaryCrusher)\n          ((PrimaryCrusher)sender).getPermision(vehicleId);\n        else if(sender instanceof WheelLoader)\n          ((WheelLoader)sender).getPermision(vehicleId);\n        else if(sender instanceof SecondaryCrusher)\n          ((SecondaryCrusher)sender).getPermision(vehicleId);\n        else if(sender instanceof PrePoint)\n          ((PrePoint)sender).getPermision(vehicleId);\n      }\n      else {\n        segRequestingCross = ((Segment)sender);\n        crossCtrl.giveCrossPermission(vehicleId);\n      }\n    }\n    else{\n      if(sender instanceof Segment)\n        ((Segment)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof DecisionStation)\n        ((DecisionStation)sender).segmentNotFree(vehicleId, segmentDes);\n      else if(sender instanceof PrimaryCrusher)\n        ((PrimaryCrusher)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof WheelLoader)\n        ((WheelLoader)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof SecondaryCrusher)\n        ((SecondaryCrusher)sender).segmentNotFree(vehicleId);\n      else if(sender instanceof PrePoint)\n        ((PrePoint)sender).segmentNotFree(vehicleId);\n    }\n  \n  }\n  msgsrv getCrossPermission(int vehicleId){\n    ((Segment)segRequestingCross).getPermision(vehicleId);\n  }\n  msgsrv vehicleEntered (int vehicleId){  // moving of vehicle inside the segment should be modeled\n    delay((segmentLength-SAFE_DISTANCE)/vehicleSpeed);\n    self.startSendingToNext(vehicleId);\n  }\n  msgsrv crossNotAvailable(int vehicleId){\n    isFree = true;\n    ((Segment)segRequestingCross).segmentNotFree(vehicleId);\n  }\n  msgsrv startSendingToNext(int vehicleId){\n    if(nextSegment != null)\n      nextSegment.givePermisionForVehicle(vehicleId,-1);\n    else if(primaryC != null)\n      primaryC.givePermisionForVehicle(vehicleId);\n    else if(wheelL != null)\n      wheelL.givePermisionForVehicle(vehicleId);\n    else if(secondaryC != null)\n      secondaryC.givePermisionForVehicle(vehicleId);\n    else if(decisionS != null)\n      decisionS.givePermisionForVehicle(vehicleId);\n    else if(prePoint != null)\n      prePoint.givePermisionForVehicle(vehicleId);\n      \n  }\n  msgsrv getPermision (int vehicleId){\n    stoppedVehicle = false;\n    delay(SAFE_DISTANCE/vehicleSpeed);\n    isFree = true;\n    if(crossCtrl != null){\n      segRequestingCross = null;\n      crossCtrl.freeCross(vehicleId);\n    }\n    if(sender instanceof Segment)\n      ((Segment)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof DecisionStation)\n      ((DecisionStation)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof PrimaryCrusher)\n      ((PrimaryCrusher)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof WheelLoader)\n      ((WheelLoader)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof SecondaryCrusher)\n      ((SecondaryCrusher)sender).vehicleEntered(vehicleId);\n    else if(sender instanceof PrePoint)\n      ((PrePoint)sender).vehicleEntered(vehicleId);\n  }\n  msgsrv segmentNotFree(int vehicleId){\n    stoppedVehicle = true;\n    self.startSendingToNext(vehicleId) after(RESENDING_PERIOD);\n  }\n}\n\n\nmain{\n  //************* E1:WL, E2:PC, E3:SC, E4:DP ***********\n  PrimaryCrusher pc(subSeg1E2ToS2):();\n  SecondaryCrusher sc(subSeg1E3ToE4):();\n  WheelLoader wl(subSeg1E1ToS2):();\n  DecisionStation ds(subSeg1S4ToPre):();\n  CrossController controller():();\n  PrePoint prePoint(subSeg1S5ToE1,subSeg1S6ToE2):();\n  // ():(segment,E1,E2,E3,E4,prepoint,controller)\n  \n  //################ S1 ##################\n  Segment subSeg1E2ToS2():(subSeg2E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n  Segment subSeg2E2ToS2():(subSeg3E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3E2ToS2():(subSeg4E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4E2ToS2():(subSeg5E2ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5E2ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH); \n  \n  //##################### S7 ##############\n  Segment subSeg1E1ToS2():(subSeg2E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2E1ToS2():(subSeg3E1ToS2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3E1ToS2():(subSeg4E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4E1ToS2():(subSeg5E1ToS2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5E1ToS2():(subSeg1S2ToE3,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  \n  //################## S2 ################\n  Segment subSeg1S2ToE3():(subSeg2S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S2ToE3():(subSeg3S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S2ToE3():(subSeg4S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4S2ToE3():(subSeg5S2ToE3,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5S2ToE3():(null,null,null,sc,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  \n  //################## S3 #############\n  Segment subSeg1E3ToE4():(subSeg2E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2E3ToE4():(subSeg3E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3E3ToE4():(subSeg4E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4E3ToE4():(subSeg5E3ToE4,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5E3ToE4():(null,null,null,null,ds,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  \n  //################## S6 #############\n  Segment subSeg1S6ToE2():(subSeg2S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S6ToE2():(subSeg3S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S6ToE2():(subSeg4S6ToE2,null,null,null,null,null,controller,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4S6ToE2():(subSeg5S6ToE2,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5S6ToE2():(null,null,pc,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  \n  //################## S5 #############\n  Segment subSeg1S5ToE1():(subSeg2S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S5ToE1():(subSeg3S5ToE1,null,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S5ToE1():(null,wl,null,null,null,null,null,REDUCED_SPEED,SEGMENT_LENGTH);\n  \n  //################## S4 #############\n  Segment subSeg1S4ToPre():(subSeg2S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg2S4ToPre():(subSeg3S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg3S4ToPre():(subSeg4S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg4S4ToPre():(subSeg5S4ToPre,null,null,null,null,null,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  Segment subSeg5S4ToPre():(null,null,null,null,null,prePoint,null,NORMAL_SPEED,SEGMENT_LENGTH);\n  \n}");
+  var elems = $n($$x44).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcaos_frontend_Configurator$Example.getArrayOf().constr)([$$x42, $$x40, $$x38, $$x36, $$x34, $$x32, $$x30, $$x28, $$x26, $$x24, $$x22, $$x20, $$x18, $$x16, $$x14, $$x12, $$x10, $$x8, $$x6, $$x4, $$x2, $n($$x1).toExampleDesc__T2__Lcaos_frontend_Configurator$Example(new $c_T2(self$21, "From <a href=\"https://rebeca-lang.org/examples\">https://rebeca-lang.org/examples</a>. This version uses several unsupported features, such as casting, instanceOf, null-references, and env."))]));
   this.Lrebecaos_frontend_RebecaosConfig$__f_examples = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
-  $n($m_s_package$().s_package$__f_List);
-  var $$x9 = $m_sr_ScalaRunTime$();
-  var this$125 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((s) => {
+  var this$93 = $n($m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((s) => {
     var s$1 = $as_T3(s);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$System__T($as_Lrebecaos_syntax_Program$System($n(s$1).T3__f__1))
   })), new $c_Lcaos_view_Code("haskell")));
-  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$125, 1);
-  var $$x8 = new $c_T2("View pretty data", y);
+  var y = $f_Lcaos_frontend_widgets_WidgetInfo__moveTo__I__Lcaos_frontend_widgets_WidgetInfo(this$93, 1);
+  var $$x52 = new $c_T2("View pretty data", y);
   var y$1 = $m_Lcaos_frontend_Configurator$().steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e) => {
     var e$1 = $as_T3(e);
     return e$1
@@ -21969,26 +22243,23 @@ function $c_Lrebecaos_frontend_RebecaosConfig$() {
     var a$1 = $as_T2(a);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(a$1)._1__O()))
   })), $m_Lcaos_view_Text$());
-  var $$x7 = new $c_T2("Run semantics (state's view)", y$1);
-  var $$x5 = $m_Lcaos_frontend_Configurator$();
-  var $$x4 = new $c_sjsr_AnonFunction1(((e$2) => {
+  var $$x51 = new $c_T2("Run semantics (state's view)", y$1);
+  var $$x49 = $m_Lcaos_frontend_Configurator$();
+  var $$x48 = new $c_sjsr_AnonFunction1(((e$2) => {
     var e$3 = $as_T3(e$2);
-    $n($m_s_package$().s_package$__f_List);
-    var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
-    var acts = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$1);
+    var acts = $m_sci_Nil$();
     return new $c_Lrebecaos_backend_HistoryState$HState(e$3, acts)
   }));
-  var this$132 = $m_Lrebecaos_backend_HistoryState$HistorySOS$();
   var sos = $m_Lrebecaos_backend_Semantics$();
-  var this$133 = $n($n($$x5).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x4, new $c_Lrebecaos_backend_HistoryState$HistorySOS$$anon$1(sos, this$132), new $c_sjsr_AnonFunction1(((hs) => {
+  var this$100 = $n($n($$x49).steps__F1__Lcaos_sos_SOS__F1__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo($$x48, new $c_Lrebecaos_backend_HistoryState$HistorySOS$$anon$1(sos), new $c_sjsr_AnonFunction1(((hs) => {
     var hs$1 = $as_Lrebecaos_backend_HistoryState$HState(hs);
     return $m_Lrebecaos_backend_HistoryState$HistorySOS$().toMermaidSndRcv__Lrebecaos_backend_HistoryState$HState__T(hs$1)
   })), new $c_sjsr_AnonFunction1(((act) => {
     var act$1 = $as_T2(act);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(act$1)._1__O()))
   })), $m_Lcaos_view_Mermaid$()));
-  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$133);
-  var $$x6 = new $c_T2("Run semantics (sequence chart)", y$2);
+  var y$2 = $f_Lcaos_frontend_widgets_WidgetInfo__expand__Lcaos_frontend_widgets_WidgetInfo(this$100);
+  var $$x50 = new $c_T2("Run semantics (sequence chart)", y$2);
   var y$3 = $m_Lcaos_frontend_Configurator$().lts__F1__Lcaos_sos_SOS__F1__F1__I__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$3$1) => {
     var e$4 = $as_T3(e$3$1);
     return e$4
@@ -21999,7 +22270,7 @@ function $c_Lrebecaos_frontend_RebecaosConfig$() {
     var x$1 = $as_T2(x);
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(x$1)._1__O()))
   })), 50);
-  var $$x3 = new $c_T2("Build LTS", y$3);
+  var $$x47 = new $c_T2("Build LTS", y$3);
   var initialSt = new $c_sjsr_AnonFunction1(((e$4$1) => {
     var e$5 = $as_T3(e$4$1);
     return e$5
@@ -22014,90 +22285,82 @@ function $c_Lrebecaos_frontend_RebecaosConfig$() {
     return $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_backend_Semantics$Msg__T($as_Lrebecaos_backend_Semantics$Msg($n(x$3)._1__O()))
   }));
   var y$4 = new $c_Lcaos_frontend_widgets_WidgetInfo$Explore(initialSt, sos$1, viewSt, viewAct);
-  var $$x2 = new $c_T2("Build LTS (explore)", y$4);
+  var $$x46 = new $c_T2("Build LTS (explore)", y$4);
   var y$5 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$5$1) => {
     var e$6 = $as_T3(e$5$1);
-    matchResult1: {
-      var \u03b41$___1;
-      var \u03b41$___2;
-      var \u03b41$___3;
-      var x1 = $m_Lcaos_sos_SOS$().traverseEdges__Lcaos_sos_SOS__O__I__T3($m_Lrebecaos_backend_Semantics$(), e$6, 3000);
+    matchResult1$1: {
+      var \u03b41$;
+      var x1 = $m_Lcaos_sos_SOS$().traverseEdges__Lcaos_sos_SOS__O__I__T4($m_Lrebecaos_backend_Semantics$(), e$6, 3000);
       if ((x1 !== null)) {
-        var st$5 = $as_sci_Set($n(x1).T3__f__1);
-        var eds = $uI($n(x1).T3__f__2);
-        var done = $uZ($n(x1).T3__f__3);
-        var \u03b41$___1 = st$5;
-        var \u03b41$___2 = eds;
-        var \u03b41$___3 = done;
-        break matchResult1
+        var st$5 = $as_sci_Set($n(x1).T4__f__1);
+        var eds = $as_sci_Set($n(x1).T4__f__2);
+        var done = $uZ($n(x1).T4__f__4);
+        var \u03b41$ = new $c_T3(st$5, eds, done);
+        break matchResult1$1
       };
       throw new $c_s_MatchError(x1)
     };
-    var st$2$1 = $as_sci_Set(\u03b41$___1);
-    var eds$2 = $uI(\u03b41$___2);
-    var done$2 = $uZ(\u03b41$___3);
+    var st$2$1 = $as_sci_Set($n(\u03b41$).T3__f__1);
+    var eds$2 = $as_sci_Set($n(\u03b41$).T3__f__2);
+    var done$2 = $uZ($n(\u03b41$).T3__f__3);
     return (((("States: " + $n(st$2$1).size__I()) + "\nEdges: ") + eds$2) + ((!done$2) ? "\n(stopped: limit of edges reached)" : ""))
   })), $m_Lcaos_view_Text$());
-  var $$x1 = new $c_T2("Number of states and edges", y$5);
+  var $$x45 = new $c_T2("Number of states and edges", y$5);
   var y$6 = $m_Lcaos_frontend_Configurator$().view__F1__Lcaos_view_ViewType__Lcaos_frontend_widgets_WidgetInfo(new $c_sjsr_AnonFunction1(((e$6$1) => {
     var e$7 = $as_T3(e$6$1);
     var search = $m_Lrebecaos_backend_Semantics$().checkReqs__T3__I__T3(e$7, 5000);
-    var this$145 = $n($as_sc_IterableOnceOps($n($as_sc_IterableOps($n(search).T3__f__1)).map__F1__O(new $c_sjsr_AnonFunction1(((x$4) => {
+    var this$112 = $n($as_sc_IterableOnceOps($n($as_sc_IterableOps($n(search).T3__f__1)).map__F1__O(new $c_sjsr_AnonFunction1(((x$4) => {
       var x$5 = $as_T2(x$4);
       return ((((("Found state where '" + $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$Expr__T($as_Lrebecaos_syntax_Program$Expr($n(x$5)._1__O()))) + "' after\n  ") + $f_T__replaceAll__T__T__T($n($as_T($n($as_T2($n(x$5)._2__O()))._1__O())), " > ", "\n  ")) + ":\n") + $n($as_T2($n(x$5)._2__O()))._2__O())
     })))));
-    var res = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$145, "", "\n-----------------\n", "");
+    var res = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$112, "", "\n-----------------\n", "");
     if ((!$uZ($n(search).T3__f__3))) {
       $m_sc_StringOps$();
       var x$6 = res;
-      var this$148 = $n(x$6);
-      if ((!(this$148 === ""))) {
+      var this$115 = $n(x$6);
+      if ((!(this$115 === ""))) {
         res = (res + "\n-----------------\n")
       };
       res = ((res + ("Stopped after traversing " + $n(search).T3__f__2)) + " edges.\n")
     };
-    var this$149 = $n(res);
-    if ((this$149 === "")) {
-      var this$150 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
-      var x5 = this$150.length__I();
-      if ((x5 === 0)) {
+    var this$116 = $n(res);
+    if ((this$116 === "")) {
+      var this$117 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
+      var x6 = this$117.length__I();
+      if ((x6 === 0)) {
         return "Write \"reaches EXPR;\" at the end of the file to search for a state that satisfies EXPR."
       };
-      if ((x5 === 1)) {
+      if ((x6 === 1)) {
         return (("The state with '" + $m_Lrebecaos_syntax_Show$().apply__Lrebecaos_syntax_Program$Expr__T($as_Lrebecaos_syntax_Program$Expr($n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs).head__O()))) + "' is not reachable.")
       };
-      var this$151 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
-      return (("None of the " + this$151.length__I()) + " states is reachable.")
+      var this$118 = $n($n($as_Lrebecaos_syntax_Program$System($n(e$7).T3__f__1)).Lrebecaos_syntax_Program$System__f_reqs);
+      return (("None of the " + this$118.length__I()) + " states is reachable.")
     } else {
       return res
     }
   })), $m_Lcaos_view_Text$());
-  var elems$2 = $n($$x9).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x8, $$x7, $$x6, $$x3, $$x2, $$x1, new $c_T2("Reachability checks", y$6)]));
-  this.Lrebecaos_frontend_RebecaosConfig$__f_widgets = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2);
+  this.Lrebecaos_frontend_RebecaosConfig$__f_widgets = new $c_sci_$colon$colon($$x52, new $c_sci_$colon$colon($$x51, new $c_sci_$colon$colon($$x50, new $c_sci_$colon$colon($$x47, new $c_sci_$colon$colon($$x46, new $c_sci_$colon$colon($$x45, new $c_sci_$colon$colon(new $c_T2("Reachability checks", y$6), $m_sci_Nil$())))))));
   this.Lrebecaos_frontend_RebecaosConfig$__f_footer = ($m_sc_StringOps$(), $m_sc_StringOps$().stripMargin$extension__T__C__T("Simple animator of <a target=\"_blank\" href=\"https://rebeca-lang.org\">Rebeca</a>, including time and dynamic extensions.\n      | Most examples can be found in\n      |   <a target=\"_blank\" href=\"https://rebeca-lang.org/examples\">\n      |     https://rebeca-lang.org/examples</a>.\n      | Source code available online:\n      | <a target=\"_blank\" href=\"https://github.com/fm-dcc/rebecaos\">\n      | https://github.com/fm-dcc/rebecaos</a> (CAOS).", 124));
   $m_sc_StringOps$();
   var sosRules = $m_sc_StringOps$().stripMargin$extension__T__C__T("The operational rules that we use to reduce programs are provided below.\n      |These are explained, e.g. in\n      |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.\n      |<pre>\n      |WHEN\n      |  (\u03c3_r(m), // statements in method m\n      |   \u03c3_r[now=max(TT,\u03c3_r(now)),[arg=v],sender=s], // initial state of r\n      |   Env,    // state of other rebecs\n      |   B)      // initial outgoing messages\n      |  EVALUATES TO\n      |  (\u03c3'_r,   // updated state of r\n      |   Env',   // updatred state of other rebecs (possibly with new rebecs)\n      |   B')     // updated outgoing messages\n      |IF\n      |  TT\u2264min(B) \u2227              // r is the next one to execute (based on time)\n      |  \u03c3_r(now)\u2264DL              // r can still execute\n      |THEN\n      |  ({\u03c3_r} \u222a Env,            // take \u03c3_r from Env\n      |   {(r,m(v),s,TT,DL)} \u222a B) // take a message from B\n      |  \u2192\n      |  ({\u03c3'_r} \u222a Env',          // update state of r and set of other rebecs\n      |   B')                     // update outgoing messages\n      |</pre>", 124);
-  var $$x16 = $m_Lcaos_frontend_Configurator$();
-  $n($m_s_package$().s_package$__f_List);
-  var $$x15 = $m_sr_ScalaRunTime$();
-  var self = this.Lrebecaos_frontend_RebecaosConfig$__f_languageName;
-  var self$1 = new $c_T2(self, "More information on the syntax of rebecaOS");
+  var $$x58 = $m_Lcaos_frontend_Configurator$();
+  var self$22 = this.Lrebecaos_frontend_RebecaosConfig$__f_languageName;
+  var self$23 = new $c_T2(self$22, "More information on the syntax of rebecaOS");
   $m_sc_StringOps$();
   var x$7 = (("<p>The syntax and timed (static) semantics for a Rebeca program can be found, e.g., in\n        |<a href=\"http://dx.doi.org/10.1016/j.scico.2014.07.005\" target=\"_blank\">this SCP publication (2014)</a>.</p>\n        |\n        |<p>" + sosRules) + "</p>\n        |");
   var y$7 = $m_sc_StringOps$().stripMargin$extension__T__C__T(x$7, 124);
-  var $$x14 = new $c_T2(self$1, y$7);
-  var self$2 = new $c_T2("Build LTS", "More information on the operational rules used here");
-  var $$x13 = new $c_T2(self$2, sosRules);
-  var self$3 = new $c_T2("Build LTS (explore)", "More information on the operational rules used here");
-  var $$x12 = new $c_T2(self$3, sosRules);
-  var self$4 = new $c_T2("Run semantics", "More information on the operational rules used here");
-  var $$x11 = new $c_T2(self$4, sosRules);
-  var self$5 = new $c_T2("Run semantics (sequence chart)", "More information on the sequence charts.");
+  var $$x57 = new $c_T2(self$23, y$7);
+  var self$24 = new $c_T2("Build LTS", "More information on the operational rules used here");
+  var $$x56 = new $c_T2(self$24, sosRules);
+  var self$25 = new $c_T2("Build LTS (explore)", "More information on the operational rules used here");
+  var $$x55 = new $c_T2(self$25, sosRules);
+  var self$26 = new $c_T2("Run semantics", "More information on the operational rules used here");
+  var $$x54 = new $c_T2(self$26, sosRules);
+  var self$27 = new $c_T2("Run semantics (sequence chart)", "More information on the sequence charts.");
   var y$8 = (("<p>Builds interactively a sequence chart. <ul><li>Solid arrows represent messages that are both <strong>sent and received</strong>.<li>Dashed arrows represent pending messages that are <strong>sent but not received.</strong>.</ul></p>" + ("\n <p> " + sosRules)) + " </p>");
-  var $$x10 = new $c_T2(self$5, y$8);
-  var self$6 = new $c_T2("Reachability checks", "More information on how to check if a property is reachable.");
-  var elems$3 = $n($$x15).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([$$x14, $$x13, $$x12, $$x11, $$x10, new $c_T2(self$6, "<p> If at the end of your program you include reachability properties of the form <code>reaches EXPR;</code>, this widget will display the results from searching for a state that satisfies <code>EXPR</code>. </p><p> The <code>EXPR</code> uses the same syntax as expressions in Rebeca, but variables must be quantified by the name of the rebec that owns it. E.g., <code>reaches ex1.counter==1</code> searches for a state where the <code>counter</code> variable of the <code>ex1</code> rebec is equal to 1. The special predicate <code>deadlock</code> holds when the state has no outgoing transitions. The search stops after traversing around 5000 transitions.</p>")]));
-  this.Lrebecaos_frontend_RebecaosConfig$__f_documentation = $n($$x16).toDocumentation__sci_List__Lcaos_frontend_Documentation($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3))
+  var $$x53 = new $c_T2(self$27, y$8);
+  var self$28 = new $c_T2("Reachability checks", "More information on how to check if a property is reachable.");
+  this.Lrebecaos_frontend_RebecaosConfig$__f_documentation = $n($$x58).toDocumentation__sci_List__Lcaos_frontend_Documentation(new $c_sci_$colon$colon($$x57, new $c_sci_$colon$colon($$x56, new $c_sci_$colon$colon($$x55, new $c_sci_$colon$colon($$x54, new $c_sci_$colon$colon($$x53, new $c_sci_$colon$colon(new $c_T2(self$28, "<p> If at the end of your program you include reachability properties of the form <code>reaches EXPR;</code>, this widget will display the results from searching for a state that satisfies <code>EXPR</code>. </p><p> The <code>EXPR</code> uses the same syntax as expressions in Rebeca, but variables must be quantified by the name of the rebec that owns it. E.g., <code>reaches ex1.counter==1</code> searches for a state where the <code>counter</code> variable of the <code>ex1</code> rebec is equal to 1. The special predicate <code>deadlock</code> holds when the state has no outgoing transitions. The search stops after traversing around 5000 transitions.</p>"), $m_sci_Nil$())))))))
 }
 $c_Lrebecaos_frontend_RebecaosConfig$.prototype = new $h_O();
 $c_Lrebecaos_frontend_RebecaosConfig$.prototype.constructor = $c_Lrebecaos_frontend_RebecaosConfig$;
@@ -22106,8 +22369,17 @@ function $h_Lrebecaos_frontend_RebecaosConfig$() {
   /*<skip>*/
 }
 $h_Lrebecaos_frontend_RebecaosConfig$.prototype = $c_Lrebecaos_frontend_RebecaosConfig$.prototype;
+$c_Lrebecaos_frontend_RebecaosConfig$.prototype.shortName__s_Option = (function() {
+  return this.Lrebecaos_frontend_RebecaosConfig$__f_shortName
+});
 $c_Lrebecaos_frontend_RebecaosConfig$.prototype.smallWidgets__sc_Iterable = (function() {
   return this.Lrebecaos_frontend_RebecaosConfig$__f_smallWidgets
+});
+$c_Lrebecaos_frontend_RebecaosConfig$.prototype.toggles__sci_List = (function() {
+  return this.Lrebecaos_frontend_RebecaosConfig$__f_toggles
+});
+$c_Lrebecaos_frontend_RebecaosConfig$.prototype.caos$frontend$Configurator$_setter_$shortName_$eq__s_Option__V = (function(x$0) {
+  this.Lrebecaos_frontend_RebecaosConfig$__f_shortName = x$0
 });
 $c_Lrebecaos_frontend_RebecaosConfig$.prototype.caos$frontend$Configurator$_setter_$smallWidgets_$eq__sc_Iterable__V = (function(x$0) {
   this.Lrebecaos_frontend_RebecaosConfig$__f_smallWidgets = x$0
@@ -22117,6 +22389,9 @@ $c_Lrebecaos_frontend_RebecaosConfig$.prototype.caos$frontend$Configurator$_sett
 });
 $c_Lrebecaos_frontend_RebecaosConfig$.prototype.caos$frontend$Configurator$_setter_$footer_$eq__T__V = (function(x$0) {
   this.Lrebecaos_frontend_RebecaosConfig$__f_footer = x$0
+});
+$c_Lrebecaos_frontend_RebecaosConfig$.prototype.caos$frontend$Configurator$_setter_$toggles_$eq__sci_List__V = (function(x$0) {
+  this.Lrebecaos_frontend_RebecaosConfig$__f_toggles = x$0
 });
 $c_Lrebecaos_frontend_RebecaosConfig$.prototype.name__T = (function() {
   return this.Lrebecaos_frontend_RebecaosConfig$__f_name
@@ -22344,6 +22619,39 @@ function $m_s_Array$() {
     $n_s_Array$ = new $c_s_Array$()
   };
   return $n_s_Array$
+}
+/** @constructor */
+function $c_s_Console$() {
+  this.s_Console$__f_outVar = null;
+  $n_s_Console$ = this;
+  this.s_Console$__f_outVar = new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_out);
+  new $c_s_util_DynamicVariable($m_jl_System$Streams$().jl_System$Streams$__f_err);
+  new $c_s_util_DynamicVariable(null)
+}
+$c_s_Console$.prototype = new $h_O();
+$c_s_Console$.prototype.constructor = $c_s_Console$;
+/** @constructor */
+function $h_s_Console$() {
+  /*<skip>*/
+}
+$h_s_Console$.prototype = $c_s_Console$.prototype;
+$c_s_Console$.prototype.out__Ljava_io_PrintStream = (function() {
+  return $as_Ljava_io_PrintStream($n(this.s_Console$__f_outVar).s_util_DynamicVariable__f_v)
+});
+var $d_s_Console$ = new $TypeData().initClass({
+  s_Console$: 0
+}, false, "scala.Console$", {
+  s_Console$: 1,
+  O: 1,
+  s_io_AnsiColor: 1
+});
+$c_s_Console$.prototype.$classData = $d_s_Console$;
+var $n_s_Console$;
+function $m_s_Console$() {
+  if ((!$n_s_Console$)) {
+    $n_s_Console$ = new $c_s_Console$()
+  };
+  return $n_s_Console$
 }
 /** @constructor */
 function $c_s_LowPriorityImplicits() {
@@ -23453,9 +23761,6 @@ function $h_Lcaos_frontend_Documentation$() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_Documentation$.prototype = $c_Lcaos_frontend_Documentation$.prototype;
-$c_Lcaos_frontend_Documentation$.prototype.toString__T = (function() {
-  return "Documentation"
-});
 $c_Lcaos_frontend_Documentation$.prototype.$lessinit$greater$default$1__sci_Map = (function() {
   var this$1 = $n($m_s_Predef$().s_Predef$__f_Map);
   var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([]));
@@ -23535,7 +23840,7 @@ function $h_Lcaos_frontend_widgets_CodeWidget() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_CodeWidget.prototype = $c_Lcaos_frontend_widgets_CodeWidget.prototype;
-$c_Lcaos_frontend_widgets_CodeWidget.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
+$c_Lcaos_frontend_widgets_CodeWidget.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
   var textId = (this.Lcaos_frontend_Site$$anon$1__f_boxId + "Text");
   $n($m_s_package$().s_package$__f_Right);
   var self = new $c_s_util_Right("download");
@@ -23547,7 +23852,7 @@ $c_Lcaos_frontend_widgets_CodeWidget.prototype.init__Lcaos_frontend_widgets_DomE
   var this$6 = $n(this.Lcaos_frontend_Site$$anon$1__f_buttons);
   var buttons$1 = new $c_sci_$colon$colon(down, this$6);
   var headerStyle$1 = $m_s_package$().s_package$__f_Nil;
-  var inputDiv = $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", textId);
+  var inputDiv = $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, headerStyle$1, buttons$1)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", textId);
   $n($n($n($n($n(inputDiv).append__T__Lcaos_frontend_widgets_DomElem("textarea")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_Site$$anon$1__f_boxId)).attr__T__T__Lcaos_frontend_widgets_DomElem("name", this.Lcaos_frontend_Site$$anon$1__f_boxId)).attr__T__T__Lcaos_frontend_widgets_DomElem("class", "my-textarea prettyprint lang-java")).attr__T__T__Lcaos_frontend_widgets_DomElem("style", "width: 100%; max-width: 100%; min-width: 100%;");
   $p_Lcaos_frontend_widgets_CodeWidget__buildCodeArea__T__sjs_js_Dynamic(this, this.Lcaos_frontend_Site$$anon$1__f_input);
   var realTxt = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(textId).childNodes[1].childNodes[0].childNodes[0];
@@ -23562,15 +23867,6 @@ $c_Lcaos_frontend_widgets_CodeWidget.prototype.update__V = (function() {
 $c_Lcaos_frontend_widgets_CodeWidget.prototype.setValue__T__V = (function(value) {
   this.Lcaos_frontend_widgets_CodeWidget__f_code.setValue(value)
 });
-var $d_Lcaos_frontend_widgets_CodeWidget = new $TypeData().initClass({
-  Lcaos_frontend_widgets_CodeWidget: 0
-}, false, "caos.frontend.widgets.CodeWidget", {
-  Lcaos_frontend_widgets_CodeWidget: 1,
-  Lcaos_frontend_widgets_Widget: 1,
-  O: 1,
-  Lcaos_frontend_widgets_Setable: 1
-});
-$c_Lcaos_frontend_widgets_CodeWidget.prototype.$classData = $d_Lcaos_frontend_widgets_CodeWidget;
 /** @constructor */
 function $c_Lcaos_frontend_widgets_Tabs$() {
   this.Lcaos_frontend_widgets_Tabs$__f_caos$frontend$widgets$Tabs$$$index = 0;
@@ -23583,9 +23879,6 @@ function $h_Lcaos_frontend_widgets_Tabs$() {
   /*<skip>*/
 }
 $h_Lcaos_frontend_widgets_Tabs$.prototype = $c_Lcaos_frontend_widgets_Tabs$.prototype;
-$c_Lcaos_frontend_widgets_Tabs$.prototype.toString__T = (function() {
-  return "Tabs"
-});
 var $d_Lcaos_frontend_widgets_Tabs$ = new $TypeData().initClass({
   Lcaos_frontend_widgets_Tabs$: 0
 }, false, "caos.frontend.widgets.Tabs$", {
@@ -25405,7 +25698,7 @@ function $s_Lrebecaos_syntax_Program$Statement$__Skip__Lrebecaos_syntax_Program$
 /** @constructor */
 function $c_Lrebecaos_syntax_Program$Statement$() {
   $n_Lrebecaos_syntax_Program$Statement$ = this;
-  $t_Lrebecaos_syntax_Program$Statement$__Skip = new $c_Lrebecaos_syntax_Program$Statement$$anon$1(0, "Skip", this)
+  $t_Lrebecaos_syntax_Program$Statement$__Skip = new $c_Lrebecaos_syntax_Program$Statement$$anon$1("Skip", 0)
 }
 $c_Lrebecaos_syntax_Program$Statement$.prototype = new $h_O();
 $c_Lrebecaos_syntax_Program$Statement$.prototype.constructor = $c_Lrebecaos_syntax_Program$Statement$;
@@ -28297,8 +28590,7 @@ $c_Lcaos_frontend_Configurator$Example.prototype.productIterator__sc_Iterator = 
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_frontend_Configurator$Example.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1309886510), true)
 });
 $c_Lcaos_frontend_Configurator$Example.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -28357,6 +28649,15 @@ var $d_Lcaos_frontend_Configurator$Example = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lcaos_frontend_Configurator$Example.prototype.$classData = $d_Lcaos_frontend_Configurator$Example;
+function $as_Lcaos_frontend_Configurator$Toggle(obj) {
+  return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "caos.frontend.Configurator$Toggle"))
+}
+function $isArrayOf_Lcaos_frontend_Configurator$Toggle(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcaos_frontend_Configurator$Toggle)))
+}
+function $asArrayOf_Lcaos_frontend_Configurator$Toggle(obj, depth) {
+  return (($isArrayOf_Lcaos_frontend_Configurator$Toggle(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcaos.frontend.Configurator$Toggle;", depth))
+}
 /** @constructor */
 function $c_Lcaos_frontend_Documentation(docs) {
   this.Lcaos_frontend_Documentation__f_docs = null;
@@ -28373,8 +28674,7 @@ $c_Lcaos_frontend_Documentation.prototype.productIterator__sc_Iterator = (functi
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_frontend_Documentation.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 1125846642, true)
 });
 $c_Lcaos_frontend_Documentation.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -28412,11 +28712,12 @@ $c_Lcaos_frontend_Documentation.prototype.add__sc_Iterable__Lcaos_frontend_Docum
   var $$x2 = this.Lcaos_frontend_Documentation__f_docs;
   var $$x1 = $as_sc_IterableOnceOps($n(elements).map__F1__O(new $c_sjsr_AnonFunction1(((x$1) => {
     var x$1$1 = $as_T2(x$1);
-    var _1$1 = $n($as_T2($n(x$1$1)._1__O()))._1__O();
-    var _1 = $n($as_T2($n(x$1$1)._1__O()))._2__O();
-    var _2 = $as_T($n(x$1$1)._2__O());
-    var _2$1 = new $c_T2(_1, _2);
-    return new $c_T2(_1$1, _2$1)
+    var xy = $as_T2($n(x$1$1)._1__O());
+    var z = $as_T($n(x$1$1)._2__O());
+    var _1$1 = $n(xy)._1__O();
+    var _1 = $n(xy)._2__O();
+    var _2 = new $c_T2(_1, z);
+    return new $c_T2(_1$1, _2)
   }))));
   var this$3 = $m_s_$less$colon$less$();
   return new $c_Lcaos_frontend_Documentation($as_sci_Map($n($$x2).$plus$plus__sc_IterableOnce__sc_IterableOps($n($$x1).toMap__s_$less$colon$less__sci_Map(this$3.s_$less$colon$less$__f_singleton))))
@@ -28441,20 +28742,20 @@ var $d_Lcaos_frontend_Documentation = new $TypeData().initClass({
 });
 $c_Lcaos_frontend_Documentation.prototype.$classData = $d_Lcaos_frontend_Documentation;
 /** @constructor */
-function $c_Lcaos_frontend_Site$$anon$1(config$4, ex$1) {
+function $c_Lcaos_frontend_Site$$anon$1(config$5, ex$1) {
   this.Lcaos_frontend_widgets_Widget__f_title = null;
   this.Lcaos_frontend_widgets_Widget__f_doc = null;
   this.Lcaos_frontend_widgets_Widget__f_titleId = null;
   this.Lcaos_frontend_widgets_Widget__f_wrap = null;
   this.Lcaos_frontend_widgets_CodeWidget__f_theme = null;
   this.Lcaos_frontend_widgets_CodeWidget__f_code = null;
-  this.Lcaos_frontend_Site$$anon$1__f_config$5 = null;
+  this.Lcaos_frontend_Site$$anon$1__f_config$6 = null;
   this.Lcaos_frontend_Site$$anon$1__f_input = null;
   this.Lcaos_frontend_Site$$anon$1__f_boxId = null;
   this.Lcaos_frontend_Site$$anon$1__f_buttons = null;
   this.Lcaos_frontend_Site$$anon$1__f_codemirror = null;
-  this.Lcaos_frontend_Site$$anon$1__f_config$5 = config$4;
-  $ct_Lcaos_frontend_widgets_CodeWidget__T__sci_List__(this, $n(config$4).languageName__T(), $m_s_package$().s_package$__f_Nil);
+  this.Lcaos_frontend_Site$$anon$1__f_config$6 = config$5;
+  $ct_Lcaos_frontend_widgets_CodeWidget__T__sci_List__(this, $n(config$5).languageName__T(), $m_s_package$().s_package$__f_Nil);
   if ((ex$1 instanceof $c_s_Some)) {
     var e = $as_Lcaos_frontend_Configurator$Example($n($as_s_Some(ex$1)).s_Some__f_value);
     var $$x1 = $n(e).Lcaos_frontend_Configurator$Example__f_example
@@ -28462,19 +28763,16 @@ function $c_Lcaos_frontend_Site$$anon$1(config$4, ex$1) {
     var $$x1 = ""
   };
   this.Lcaos_frontend_Site$$anon$1__f_input = $$x1;
-  this.Lcaos_frontend_Site$$anon$1__f_boxId = ($n(config$4).name__T() + "Box");
-  $n($m_s_package$().s_package$__f_List);
-  var $$x2 = $m_sr_ScalaRunTime$();
+  this.Lcaos_frontend_Site$$anon$1__f_boxId = ($n(config$5).name__T() + "Box");
   $n($m_s_package$().s_package$__f_Right);
   var self = new $c_s_util_Right("refresh");
   var _1 = new $c_sjsr_AnonFunction0((() => {
     this.reload__V()
   }));
-  var _2 = (("Load the " + $n(config$4).languageName__T()) + " program (shift-enter)");
+  var _2 = (("Load the " + $n(config$5).languageName__T()) + " program (shift-enter)");
   var y = new $c_T2(_1, _2);
-  var elems = $n($$x2).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(self, y)]));
-  var prefix$1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems);
-  this.Lcaos_frontend_Site$$anon$1__f_buttons = $n($n($m_Lcaos_frontend_widgets_Widget$().mkHelper__T__Lcaos_frontend_Documentation__s_Option($n(config$4).languageName__T(), $n(config$4).documentation__Lcaos_frontend_Documentation())).toList__sci_List()).$colon$colon$colon__sci_List__sci_List(prefix$1);
+  var prefix$1 = new $c_sci_$colon$colon(new $c_T2(self, y), $m_sci_Nil$());
+  this.Lcaos_frontend_Site$$anon$1__f_buttons = $n($n($m_Lcaos_frontend_widgets_Widget$().mkHelper__T__Lcaos_frontend_Documentation__s_Option($n(config$5).languageName__T(), $n(config$5).documentation__Lcaos_frontend_Documentation())).toList__sci_List()).$colon$colon$colon__sci_List__sci_List(prefix$1);
   this.Lcaos_frontend_Site$$anon$1__f_codemirror = "caos"
 }
 $c_Lcaos_frontend_Site$$anon$1.prototype = new $h_Lcaos_frontend_widgets_CodeWidget();
@@ -28485,7 +28783,7 @@ function $h_Lcaos_frontend_Site$$anon$1() {
 }
 $h_Lcaos_frontend_Site$$anon$1.prototype = $c_Lcaos_frontend_Site$$anon$1.prototype;
 $c_Lcaos_frontend_Site$$anon$1.prototype.get__O = (function() {
-  return $n($n(this.Lcaos_frontend_Site$$anon$1__f_config$5).parser__F1()).apply__O__O(this.Lcaos_frontend_Site$$anon$1__f_input)
+  return $n($n(this.Lcaos_frontend_Site$$anon$1__f_config$6).parser__F1()).apply__O__O(this.Lcaos_frontend_Site$$anon$1__f_input)
 });
 $c_Lcaos_frontend_Site$$anon$1.prototype.reload__V = (function() {
   var this$1 = $n($m_Lcaos_frontend_Site$().Lcaos_frontend_Site$__f_descriptionArea);
@@ -28519,8 +28817,7 @@ $c_Lcaos_view_View.prototype.productIterator__sc_Iterator = (function() {
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_view_View.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-97110733), true)
 });
 $c_Lcaos_view_View.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -29342,6 +29639,17 @@ var $d_Lcats_parse_Parser$Error = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lcats_parse_Parser$Error.prototype.$classData = $d_Lcats_parse_Parser$Error;
+/** @constructor */
+function $c_Ljava_io_OutputStream() {
+  /*<skip>*/
+}
+$c_Ljava_io_OutputStream.prototype = new $h_O();
+$c_Ljava_io_OutputStream.prototype.constructor = $c_Ljava_io_OutputStream;
+/** @constructor */
+function $h_Ljava_io_OutputStream() {
+  /*<skip>*/
+}
+$h_Ljava_io_OutputStream.prototype = $c_Ljava_io_OutputStream.prototype;
 class $c_jl_AssertionError extends $c_jl_Error {
   constructor(detailMessage) {
     super();
@@ -31078,8 +31386,7 @@ $c_Lrebecaos_backend_Bag.prototype.productIterator__sc_Iterator = (function() {
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_backend_Bag.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 1106497887, true)
 });
 $c_Lrebecaos_backend_Bag.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -31208,8 +31515,7 @@ $c_Lrebecaos_backend_HistoryState$HState.prototype.productIterator__sc_Iterator 
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_backend_HistoryState$HState.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-279520917), true)
 });
 $c_Lrebecaos_backend_HistoryState$HState.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -31292,8 +31598,7 @@ $c_Lrebecaos_backend_RebecEnv.prototype.productIterator__sc_Iterator = (function
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_backend_RebecEnv.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1856459851), true)
 });
 $c_Lrebecaos_backend_RebecEnv.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -31431,31 +31736,30 @@ $c_Lrebecaos_backend_Semantics$Msg.prototype.productIterator__sc_Iterator = (fun
 $c_Lrebecaos_backend_Semantics$Msg.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   var hash = acc;
-  var data = $f_T__hashCode__I("Msg");
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  acc = $m_sr_Statics$().mix__I__I__I(hash, 77665);
   var hash$1 = acc;
   var x = this.Lrebecaos_backend_Semantics$Msg__f_rcv;
-  var data$1 = $m_sr_Statics$().anyHash__O__I(x);
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var data = $m_sr_Statics$().anyHash__O__I(x);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
   var hash$2 = acc;
   var x$1 = this.Lrebecaos_backend_Semantics$Msg__f_m;
-  var data$2 = $m_sr_Statics$().anyHash__O__I(x$1);
-  acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
+  var data$1 = $m_sr_Statics$().anyHash__O__I(x$1);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$1);
   var hash$3 = acc;
   var x$2 = this.Lrebecaos_backend_Semantics$Msg__f_args;
-  var data$3 = $m_sr_Statics$().anyHash__O__I(x$2);
-  acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
+  var data$2 = $m_sr_Statics$().anyHash__O__I(x$2);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$2);
   var hash$4 = acc;
   var x$3 = this.Lrebecaos_backend_Semantics$Msg__f_snd;
-  var data$4 = $m_sr_Statics$().anyHash__O__I(x$3);
-  acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$4);
+  var data$3 = $m_sr_Statics$().anyHash__O__I(x$3);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$3);
   var hash$5 = acc;
-  var data$5 = this.Lrebecaos_backend_Semantics$Msg__f_tt;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$5, data$5);
+  var data$4 = this.Lrebecaos_backend_Semantics$Msg__f_tt;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$5, data$4);
   var hash$6 = acc;
   var x$4 = this.Lrebecaos_backend_Semantics$Msg__f_dl;
-  var data$6 = $m_sr_Statics$().anyHash__O__I(x$4);
-  acc = $m_sr_Statics$().mix__I__I__I(hash$6, data$6);
+  var data$5 = $m_sr_Statics$().anyHash__O__I(x$4);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$6, data$5);
   var hash$7 = acc;
   return $m_sr_Statics$().finalizeHash__I__I__I(hash$7, 6)
 });
@@ -31569,8 +31873,7 @@ $c_Lrebecaos_syntax_Program$InstanceDecl.prototype.productIterator__sc_Iterator 
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_syntax_Program$InstanceDecl.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-618444221), true)
 });
 $c_Lrebecaos_syntax_Program$InstanceDecl.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -31670,8 +31973,7 @@ $c_Lrebecaos_syntax_Program$Msgsrv.prototype.productIterator__sc_Iterator = (fun
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_syntax_Program$Msgsrv.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1002801668), true)
 });
 $c_Lrebecaos_syntax_Program$Msgsrv.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -31752,8 +32054,7 @@ $c_Lrebecaos_syntax_Program$QVar.prototype.productIterator__sc_Iterator = (funct
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_syntax_Program$QVar.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 1555758820, true)
 });
 $c_Lrebecaos_syntax_Program$QVar.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -31824,8 +32125,7 @@ $c_Lrebecaos_syntax_Program$ReactiveClass.prototype.productIterator__sc_Iterator
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_syntax_Program$ReactiveClass.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 749627757, true)
 });
 $c_Lrebecaos_syntax_Program$ReactiveClass.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -31936,8 +32236,7 @@ $c_Lrebecaos_syntax_Program$System.prototype.productIterator__sc_Iterator = (fun
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lrebecaos_syntax_Program$System.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1127774402), true)
 });
 $c_Lrebecaos_syntax_Program$System.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -33162,8 +33461,7 @@ $c_Lcaos_frontend_widgets_Tabs.prototype.productIterator__sc_Iterator = (functio
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_frontend_widgets_Tabs.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 607200232, true)
 });
 $c_Lcaos_frontend_widgets_Tabs.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -33248,8 +33546,8 @@ $c_Lcaos_frontend_widgets_Tabs.prototype.productElement__I__O = (function(n) {
     }
   }
 });
-$c_Lcaos_frontend_widgets_Tabs.prototype.init__Lcaos_frontend_widgets_DomElem__Z__V = (function(div, visible) {
-  this.Lcaos_frontend_widgets_Tabs__f_box = $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, $m_s_package$().s_package$__f_Nil, $m_s_package$().s_package$__f_Nil)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_Tabs__f_divBox);
+$c_Lcaos_frontend_widgets_Tabs.prototype.init__Lcaos_frontend_widgets_DomElem__Z__Z__V = (function(div, visible, hidden) {
+  this.Lcaos_frontend_widgets_Tabs__f_box = $n($n(this.panelBox__Lcaos_frontend_widgets_DomElem__Z__Z__sci_List__sci_List__Lcaos_frontend_widgets_DomElem(div, visible, hidden, $m_s_package$().s_package$__f_Nil, $m_s_package$().s_package$__f_Nil)).append__T__Lcaos_frontend_widgets_DomElem("div")).attr__T__T__Lcaos_frontend_widgets_DomElem("id", this.Lcaos_frontend_widgets_Tabs__f_divBox);
   $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().getElementById(this.Lcaos_frontend_widgets_Widget__f_titleId).firstChild.firstChild.firstChild.onclick = ((e) => ((!this.isVisible__Z()) ? (this.showTabs__V(), (void 0)) : (void 0)))
 });
 $c_Lcaos_frontend_widgets_Tabs.prototype.update__V = (function() {
@@ -33322,13 +33620,12 @@ $c_Lcaos_frontend_widgets_Tabs.prototype.showTabs__V = (function() {
     var this$19 = $n(views);
     \u03b42$.Lcaos_frontend_widgets_Tabs$__f_caos$frontend$widgets$Tabs$$$index = (($$x3 + this$19.length__I()) | 0)
   } catch (e) {
-    var e$1 = e;
-    var e$2 = ((e$1 instanceof $c_jl_Throwable) ? e$1 : new $c_sjs_js_JavaScriptException(e$1));
+    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
     var \u03b41$ = $m_Lcaos_frontend_widgets_Widget$().checkExceptions__Lcaos_frontend_widgets_OutputArea__T__s_PartialFunction(this.Lcaos_frontend_widgets_Tabs__f_errorBox, this.Lcaos_frontend_widgets_Tabs__f_name);
     if ($n(\u03b41$).isDefinedAt__O__Z(e$2)) {
       $n(\u03b41$).apply__O__O(e$2)
     } else {
-      throw e$2
+      throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
     }
   }
 });
@@ -33441,6 +33738,7 @@ function $asArrayOf_Lcaos_frontend_widgets_WidgetInfo$Custom(obj, depth) {
 function $c_Lcaos_frontend_widgets_WidgetInfo$Explore(pre, sos, vS, vA) {
   this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_expanded = false;
   this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_location = 0;
+  this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_hidden = false;
   this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_pre = null;
   this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_sos = null;
   this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_vS = null;
@@ -33464,18 +33762,23 @@ $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.expanded__Z = (function()
 $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.location__I = (function() {
   return this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_location
 });
+$c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.hidden__Z = (function() {
+  return this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_hidden
+});
 $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.expanded_$eq__Z__V = (function(x$1) {
   this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_expanded = x$1
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.location_$eq__I__V = (function(x$1) {
   this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_location = x$1
 });
+$c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.hidden_$eq__Z__V = (function(x$1) {
+  this.Lcaos_frontend_widgets_WidgetInfo$Explore__f_hidden = x$1
+});
 $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.productIterator__sc_Iterator = (function() {
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1906699287), true)
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -33576,6 +33879,7 @@ $c_Lcaos_frontend_widgets_WidgetInfo$Explore.prototype.$classData = $d_Lcaos_fro
 function $c_Lcaos_frontend_widgets_WidgetInfo$Simulate(sos, v, lb, typ, pre) {
   this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_expanded = false;
   this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_location = 0;
+  this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_hidden = false;
   this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_sos = null;
   this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_v = null;
   this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_lb = null;
@@ -33601,18 +33905,23 @@ $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.expanded__Z = (function(
 $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.location__I = (function() {
   return this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_location
 });
+$c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.hidden__Z = (function() {
+  return this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_hidden
+});
 $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.expanded_$eq__Z__V = (function(x$1) {
   this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_expanded = x$1
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.location_$eq__I__V = (function(x$1) {
   this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_location = x$1
 });
+$c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.hidden_$eq__Z__V = (function(x$1) {
+  this.Lcaos_frontend_widgets_WidgetInfo$Simulate__f_hidden = x$1
+});
 $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.productIterator__sc_Iterator = (function() {
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-2146125356), true)
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -33725,6 +34034,7 @@ $c_Lcaos_frontend_widgets_WidgetInfo$Simulate.prototype.$classData = $d_Lcaos_fr
 function $c_Lcaos_frontend_widgets_WidgetInfo$Visualize(v, typ, pre) {
   this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_expanded = false;
   this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_location = 0;
+  this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_hidden = false;
   this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_v = null;
   this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_typ = null;
   this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_pre = null;
@@ -33746,18 +34056,23 @@ $c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.expanded__Z = (function
 $c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.location__I = (function() {
   return this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_location
 });
+$c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.hidden__Z = (function() {
+  return this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_hidden
+});
 $c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.expanded_$eq__Z__V = (function(x$1) {
   this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_expanded = x$1
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.location_$eq__I__V = (function(x$1) {
   this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_location = x$1
 });
+$c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.hidden_$eq__Z__V = (function(x$1) {
+  this.Lcaos_frontend_widgets_WidgetInfo$Visualize__f_hidden = x$1
+});
 $c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.productIterator__sc_Iterator = (function() {
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-2142179850), true)
 });
 $c_Lcaos_frontend_widgets_WidgetInfo$Visualize.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -33865,6 +34180,15 @@ function $isArrayOf_Lcaos_frontend_widgets_WidgetInfo$VisualizeTab(obj, depth) {
 function $asArrayOf_Lcaos_frontend_widgets_WidgetInfo$VisualizeTab(obj, depth) {
   return (($isArrayOf_Lcaos_frontend_widgets_WidgetInfo$VisualizeTab(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcaos.frontend.widgets.WidgetInfo$VisualizeTab;", depth))
 }
+function $as_Lcaos_frontend_widgets_WidgetInfo$WHtml(obj) {
+  return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "caos.frontend.widgets.WidgetInfo$WHtml"))
+}
+function $isArrayOf_Lcaos_frontend_widgets_WidgetInfo$WHtml(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcaos_frontend_widgets_WidgetInfo$WHtml)))
+}
+function $asArrayOf_Lcaos_frontend_widgets_WidgetInfo$WHtml(obj, depth) {
+  return (($isArrayOf_Lcaos_frontend_widgets_WidgetInfo$WHtml(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcaos.frontend.widgets.WidgetInfo$WHtml;", depth))
+}
 /** @constructor */
 function $c_Lcaos_view_Code(lang) {
   this.Lcaos_view_Code__f_lang = null;
@@ -33881,8 +34205,7 @@ $c_Lcaos_view_Code.prototype.productIterator__sc_Iterator = (function() {
   return new $c_s_Product$$anon$1(this)
 });
 $c_Lcaos_view_Code.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-345615840), true)
 });
 $c_Lcaos_view_Code.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -36832,6 +37155,20 @@ var $d_Lcats_parse_Parser$Impl$WithContextP0 = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lcats_parse_Parser$Impl$WithContextP0.prototype.$classData = $d_Lcats_parse_Parser$Impl$WithContextP0;
+function $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__($thiz, out) {
+  return $thiz
+}
+/** @constructor */
+function $c_Ljava_io_FilterOutputStream() {
+  /*<skip>*/
+}
+$c_Ljava_io_FilterOutputStream.prototype = new $h_Ljava_io_OutputStream();
+$c_Ljava_io_FilterOutputStream.prototype.constructor = $c_Ljava_io_FilterOutputStream;
+/** @constructor */
+function $h_Ljava_io_FilterOutputStream() {
+  /*<skip>*/
+}
+$h_Ljava_io_FilterOutputStream.prototype = $c_Ljava_io_FilterOutputStream.prototype;
 class $c_jl_ArithmeticException extends $c_jl_RuntimeException {
   constructor(s) {
     super();
@@ -36993,6 +37330,28 @@ var $d_jl_IndexOutOfBoundsException = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_jl_IndexOutOfBoundsException.prototype.$classData = $d_jl_IndexOutOfBoundsException;
+/** @constructor */
+function $c_jl_JSConsoleBasedPrintStream$DummyOutputStream() {
+  /*<skip>*/
+}
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype = new $h_Ljava_io_OutputStream();
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.constructor = $c_jl_JSConsoleBasedPrintStream$DummyOutputStream;
+/** @constructor */
+function $h_jl_JSConsoleBasedPrintStream$DummyOutputStream() {
+  /*<skip>*/
+}
+$h_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype = $c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype;
+var $d_jl_JSConsoleBasedPrintStream$DummyOutputStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream$DummyOutputStream", {
+  jl_JSConsoleBasedPrintStream$DummyOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  jl_AutoCloseable: 1,
+  Ljava_io_Flushable: 1
+});
+$c_jl_JSConsoleBasedPrintStream$DummyOutputStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream$DummyOutputStream;
 class $c_jl_NegativeArraySizeException extends $c_jl_RuntimeException {
   constructor() {
     super();
@@ -37222,17 +37581,6 @@ function $isArrayOf_Lrebecaos_syntax_Program$Expr(obj, depth) {
 function $asArrayOf_Lrebecaos_syntax_Program$Expr(obj, depth) {
   return (($isArrayOf_Lrebecaos_syntax_Program$Expr(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lrebecaos.syntax.Program$Expr;", depth))
 }
-var $d_Lrebecaos_syntax_Program$Expr = new $TypeData().initClass({
-  Lrebecaos_syntax_Program$Expr: 0
-}, false, "rebecaos.syntax.Program$Expr", {
-  Lrebecaos_syntax_Program$Expr: 1,
-  O: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lrebecaos_syntax_Program$Expr.prototype.$classData = $d_Lrebecaos_syntax_Program$Expr;
 /** @constructor */
 function $c_Lrebecaos_syntax_Program$Statement() {
   /*<skip>*/
@@ -44584,11 +44932,10 @@ $h_Lrebecaos_backend_Eval$Data$B.prototype = $c_Lrebecaos_backend_Eval$Data$B.pr
 $c_Lrebecaos_backend_Eval$Data$B.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   var hash = acc;
-  var data = $f_T__hashCode__I("B");
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  acc = $m_sr_Statics$().mix__I__I__I(hash, 66);
   var hash$1 = acc;
-  var data$1 = (this.Lrebecaos_backend_Eval$Data$B__f_b ? 1231 : 1237);
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var data = (this.Lrebecaos_backend_Eval$Data$B__f_b ? 1231 : 1237);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
   var hash$2 = acc;
   return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
 });
@@ -44653,11 +45000,10 @@ $h_Lrebecaos_backend_Eval$Data$N.prototype = $c_Lrebecaos_backend_Eval$Data$N.pr
 $c_Lrebecaos_backend_Eval$Data$N.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   var hash = acc;
-  var data = $f_T__hashCode__I("N");
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  acc = $m_sr_Statics$().mix__I__I__I(hash, 78);
   var hash$1 = acc;
-  var data$1 = this.Lrebecaos_backend_Eval$Data$N__f_n;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var data = this.Lrebecaos_backend_Eval$Data$N__f_n;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
   var hash$2 = acc;
   return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
 });
@@ -44720,8 +45066,7 @@ function $h_Lrebecaos_backend_Eval$Data$RebRef() {
 }
 $h_Lrebecaos_backend_Eval$Data$RebRef.prototype = $c_Lrebecaos_backend_Eval$Data$RebRef.prototype;
 $c_Lrebecaos_backend_Eval$Data$RebRef.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 59826139, true)
 });
 $c_Lrebecaos_backend_Eval$Data$RebRef.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -44784,11 +45129,10 @@ $h_Lrebecaos_syntax_Program$Expr$B.prototype = $c_Lrebecaos_syntax_Program$Expr$
 $c_Lrebecaos_syntax_Program$Expr$B.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   var hash = acc;
-  var data = $f_T__hashCode__I("B");
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  acc = $m_sr_Statics$().mix__I__I__I(hash, 66);
   var hash$1 = acc;
-  var data$1 = (this.Lrebecaos_syntax_Program$Expr$B__f_b ? 1231 : 1237);
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var data = (this.Lrebecaos_syntax_Program$Expr$B__f_b ? 1231 : 1237);
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
   var hash$2 = acc;
   return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
 });
@@ -44853,8 +45197,7 @@ function $h_Lrebecaos_syntax_Program$Expr$Func() {
 }
 $h_Lrebecaos_syntax_Program$Expr$Func.prototype = $c_Lrebecaos_syntax_Program$Expr$Func.prototype;
 $c_Lrebecaos_syntax_Program$Expr$Func.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1665736233), true)
 });
 $c_Lrebecaos_syntax_Program$Expr$Func.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -44928,8 +45271,7 @@ function $h_Lrebecaos_syntax_Program$Expr$Infix() {
 }
 $h_Lrebecaos_syntax_Program$Expr$Infix.prototype = $c_Lrebecaos_syntax_Program$Expr$Infix.prototype;
 $c_Lrebecaos_syntax_Program$Expr$Infix.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 1439534361, true)
 });
 $c_Lrebecaos_syntax_Program$Expr$Infix.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45018,11 +45360,10 @@ $h_Lrebecaos_syntax_Program$Expr$N.prototype = $c_Lrebecaos_syntax_Program$Expr$
 $c_Lrebecaos_syntax_Program$Expr$N.prototype.hashCode__I = (function() {
   var acc = (-889275714);
   var hash = acc;
-  var data = $f_T__hashCode__I("N");
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  acc = $m_sr_Statics$().mix__I__I__I(hash, 78);
   var hash$1 = acc;
-  var data$1 = this.Lrebecaos_syntax_Program$Expr$N__f_n;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var data = this.Lrebecaos_syntax_Program$Expr$N__f_n;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data);
   var hash$2 = acc;
   return $m_sr_Statics$().finalizeHash__I__I__I(hash$2, 1)
 });
@@ -45087,8 +45428,7 @@ function $h_Lrebecaos_syntax_Program$Expr$Var() {
 }
 $h_Lrebecaos_syntax_Program$Expr$Var.prototype = $c_Lrebecaos_syntax_Program$Expr$Var.prototype;
 $c_Lrebecaos_syntax_Program$Expr$Var.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1909112293), true)
 });
 $c_Lrebecaos_syntax_Program$Expr$Var.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45154,8 +45494,7 @@ function $h_Lrebecaos_syntax_Program$Statement$Assign() {
 }
 $h_Lrebecaos_syntax_Program$Statement$Assign.prototype = $c_Lrebecaos_syntax_Program$Statement$Assign.prototype;
 $c_Lrebecaos_syntax_Program$Statement$Assign.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1763916719), true)
 });
 $c_Lrebecaos_syntax_Program$Statement$Assign.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45233,8 +45572,7 @@ function $h_Lrebecaos_syntax_Program$Statement$Call() {
 }
 $h_Lrebecaos_syntax_Program$Statement$Call.prototype = $c_Lrebecaos_syntax_Program$Statement$Call.prototype;
 $c_Lrebecaos_syntax_Program$Statement$Call.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1451414441), true)
 });
 $c_Lrebecaos_syntax_Program$Statement$Call.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45338,8 +45676,7 @@ function $h_Lrebecaos_syntax_Program$Statement$Choice() {
 }
 $h_Lrebecaos_syntax_Program$Statement$Choice.prototype = $c_Lrebecaos_syntax_Program$Statement$Choice.prototype;
 $c_Lrebecaos_syntax_Program$Statement$Choice.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 2147058976, true)
 });
 $c_Lrebecaos_syntax_Program$Statement$Choice.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45409,8 +45746,7 @@ function $h_Lrebecaos_syntax_Program$Statement$Delay() {
 }
 $h_Lrebecaos_syntax_Program$Statement$Delay.prototype = $c_Lrebecaos_syntax_Program$Statement$Delay.prototype;
 $c_Lrebecaos_syntax_Program$Statement$Delay.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1230031895), true)
 });
 $c_Lrebecaos_syntax_Program$Statement$Delay.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45477,8 +45813,7 @@ function $h_Lrebecaos_syntax_Program$Statement$ITE() {
 }
 $h_Lrebecaos_syntax_Program$Statement$ITE.prototype = $c_Lrebecaos_syntax_Program$Statement$ITE.prototype;
 $c_Lrebecaos_syntax_Program$Statement$ITE.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, 162748735, true)
 });
 $c_Lrebecaos_syntax_Program$Statement$ITE.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45567,8 +45902,7 @@ function $h_Lrebecaos_syntax_Program$Statement$NewReb() {
 }
 $h_Lrebecaos_syntax_Program$Statement$NewReb.prototype = $c_Lrebecaos_syntax_Program$Statement$NewReb.prototype;
 $c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-366242807), true)
 });
 $c_Lrebecaos_syntax_Program$Statement$NewReb.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -45633,8 +45967,7 @@ function $h_Lrebecaos_syntax_Program$Statement$Seq() {
 }
 $h_Lrebecaos_syntax_Program$Statement$Seq.prototype = $c_Lrebecaos_syntax_Program$Statement$Seq.prototype;
 $c_Lrebecaos_syntax_Program$Statement$Seq.prototype.hashCode__I = (function() {
-  var this$2 = $m_s_util_hashing_MurmurHash3$();
-  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+  return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1105397705), true)
 });
 $c_Lrebecaos_syntax_Program$Statement$Seq.prototype.equals__O__Z = (function(x$0) {
   if ((this === x$0)) {
@@ -47980,6 +48313,30 @@ function $m_Lcats_instances_package$option$() {
   };
   return $n_Lcats_instances_package$option$
 }
+function $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__($thiz, _out, autoFlush, charset) {
+  $ct_Ljava_io_FilterOutputStream__Ljava_io_OutputStream__($thiz, _out);
+  return $thiz
+}
+/** @constructor */
+function $c_Ljava_io_PrintStream() {
+  /*<skip>*/
+}
+$c_Ljava_io_PrintStream.prototype = new $h_Ljava_io_FilterOutputStream();
+$c_Ljava_io_PrintStream.prototype.constructor = $c_Ljava_io_PrintStream;
+/** @constructor */
+function $h_Ljava_io_PrintStream() {
+  /*<skip>*/
+}
+$h_Ljava_io_PrintStream.prototype = $c_Ljava_io_PrintStream.prototype;
+function $as_Ljava_io_PrintStream(obj) {
+  return (((obj instanceof $c_Ljava_io_PrintStream) || (obj === null)) ? obj : $throwClassCastException(obj, "java.io.PrintStream"))
+}
+function $isArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Ljava_io_PrintStream)))
+}
+function $asArrayOf_Ljava_io_PrintStream(obj, depth) {
+  return (($isArrayOf_Ljava_io_PrintStream(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Ljava.io.PrintStream;", depth))
+}
 class $c_Lrebecaos_backend_Eval$UnkonwnElm extends $c_jl_RuntimeException {
   constructor(msg) {
     super();
@@ -47991,8 +48348,7 @@ class $c_Lrebecaos_backend_Eval$UnkonwnElm extends $c_jl_RuntimeException {
     return new $c_s_Product$$anon$1(this)
   };
   hashCode__I() {
-    var this$2 = $m_s_util_hashing_MurmurHash3$();
-    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+    return $m_s_util_hashing_MurmurHash3$().productHash__s_Product__I__Z__I(this, (-1057285340), true)
   };
   equals__O__Z(x$0) {
     if ((this === x$0)) {
@@ -50135,6 +50491,73 @@ function $m_Lcats_parse_Parser$Impl$StartParser$() {
   };
   return $n_Lcats_parse_Parser$Impl$StartParser$
 }
+function $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V($thiz, line) {
+  if (($as_T((typeof console)) !== "undefined")) {
+    if (($thiz.jl_JSConsoleBasedPrintStream__f_isErr && $uZ((!(!console.error))))) {
+      console.error(line)
+    } else {
+      console.log(line)
+    }
+  }
+}
+/** @constructor */
+function $c_jl_JSConsoleBasedPrintStream(isErr) {
+  this.jl_JSConsoleBasedPrintStream__f_isErr = false;
+  this.jl_JSConsoleBasedPrintStream__f_buffer = null;
+  this.jl_JSConsoleBasedPrintStream__f_isErr = isErr;
+  var out = new $c_jl_JSConsoleBasedPrintStream$DummyOutputStream();
+  $ct_Ljava_io_PrintStream__Ljava_io_OutputStream__Z__Ljava_nio_charset_Charset__(this, out, false, null);
+  this.jl_JSConsoleBasedPrintStream__f_buffer = ""
+}
+$c_jl_JSConsoleBasedPrintStream.prototype = new $h_Ljava_io_PrintStream();
+$c_jl_JSConsoleBasedPrintStream.prototype.constructor = $c_jl_JSConsoleBasedPrintStream;
+/** @constructor */
+function $h_jl_JSConsoleBasedPrintStream() {
+  /*<skip>*/
+}
+$h_jl_JSConsoleBasedPrintStream.prototype = $c_jl_JSConsoleBasedPrintStream.prototype;
+$c_jl_JSConsoleBasedPrintStream.prototype.java$lang$JSConsoleBasedPrintStream$$printString__T__V = (function(s) {
+  var rest = s;
+  while ((rest !== "")) {
+    var this$1 = $n(rest);
+    var nlPos = $uI(this$1.indexOf("\n"));
+    if ((nlPos < 0)) {
+      this.jl_JSConsoleBasedPrintStream__f_buffer = (("" + this.jl_JSConsoleBasedPrintStream__f_buffer) + rest);
+      rest = ""
+    } else {
+      var $$x1 = this.jl_JSConsoleBasedPrintStream__f_buffer;
+      var this$2 = $n(rest);
+      if ((nlPos > this$2.length)) {
+        $charAt(this$2, nlPos)
+      };
+      if ((nlPos < 0)) {
+        $charAt(this$2, (-1))
+      };
+      $p_jl_JSConsoleBasedPrintStream__doWriteLine__T__V(this, (("" + $$x1) + $as_T(this$2.substring(0, nlPos))));
+      this.jl_JSConsoleBasedPrintStream__f_buffer = "";
+      var this$3 = $n(rest);
+      var beginIndex = ((1 + nlPos) | 0);
+      if (((beginIndex < 0) || (beginIndex > this$3.length))) {
+        $charAt(this$3, beginIndex)
+      };
+      rest = $as_T(this$3.substring(beginIndex))
+    }
+  }
+});
+var $d_jl_JSConsoleBasedPrintStream = new $TypeData().initClass({
+  jl_JSConsoleBasedPrintStream: 0
+}, false, "java.lang.JSConsoleBasedPrintStream", {
+  jl_JSConsoleBasedPrintStream: 1,
+  Ljava_io_PrintStream: 1,
+  Ljava_io_FilterOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  jl_AutoCloseable: 1,
+  Ljava_io_Flushable: 1,
+  jl_Appendable: 1
+});
+$c_jl_JSConsoleBasedPrintStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream;
 function $f_sc_BitSetOps__contains__I__Z($thiz, elem) {
   if ((elem >= 0)) {
     var this$1 = $thiz.word__I__J((elem >> 6));
@@ -52200,12 +52623,9 @@ var $d_Lcats_instances_Function1Instances$$anon$1 = new $TypeData().initClass({
 });
 $c_Lcats_instances_Function1Instances$$anon$1.prototype.$classData = $d_Lcats_instances_Function1Instances$$anon$1;
 /** @constructor */
-function $c_Lrebecaos_syntax_Program$Statement$$anon$1(_$ordinal$3, \u03b4name$3, outer) {
+function $c_Lrebecaos_syntax_Program$Statement$$anon$1(\u03b4name$3, _$ordinal$3) {
   this.Lrebecaos_syntax_Program$Statement$$anon$1__f_$name$1 = null;
-  this.Lrebecaos_syntax_Program$Statement$$anon$1__f_$name$1 = \u03b4name$3;
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  }
+  this.Lrebecaos_syntax_Program$Statement$$anon$1__f_$name$1 = \u03b4name$3
 }
 $c_Lrebecaos_syntax_Program$Statement$$anon$1.prototype = new $h_Lrebecaos_syntax_Program$Statement();
 $c_Lrebecaos_syntax_Program$Statement$$anon$1.prototype.constructor = $c_Lrebecaos_syntax_Program$Statement$$anon$1;
@@ -52225,6 +52645,9 @@ $c_Lrebecaos_syntax_Program$Statement$$anon$1.prototype.productPrefix__T = (func
 });
 $c_Lrebecaos_syntax_Program$Statement$$anon$1.prototype.toString__T = (function() {
   return this.Lrebecaos_syntax_Program$Statement$$anon$1__f_$name$1
+});
+$c_Lrebecaos_syntax_Program$Statement$$anon$1.prototype.hashCode__I = (function() {
+  return $f_T__hashCode__I($n(this.Lrebecaos_syntax_Program$Statement$$anon$1__f_$name$1))
 });
 var $d_Lrebecaos_syntax_Program$Statement$$anon$1 = new $TypeData().initClass({
   Lrebecaos_syntax_Program$Statement$$anon$1: 0

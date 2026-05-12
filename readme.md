@@ -8,7 +8,7 @@ A compiled version of this project can be used at
 
 # Tutorial
 
-A snapshot of this project with tag [v0.1](https://github.com/FM-DCC/rebecaos/releases/tag/v0.1) has been archived in Zenodo at https://zenodo.org/records/14947781.
+A snapshot of this project with tag [v0.2](https://github.com/FM-DCC/rebecaos/releases/tag/v0.2) has been archived in Zenodo at https://zenodo.org/records/14947780.
 This version in Zenodo has been extended with:
  - a detailed `readme.md` explaining how to compile and modify this code, and how to replicate examples from a published article;
  - a `Dockerfile` which can be used to recompile the code using Docker, without relying on JVM nor sbt.

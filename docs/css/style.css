@@ -13,7 +13,9 @@
 .fade {
     display: none;
 }
-
+.mermaid>svg {
+    min-height: 200px;
+}
 .close-btn {
     position: absolute; /* Position the button absolutely within the div */
     top: -22px; /* Distance from the top */

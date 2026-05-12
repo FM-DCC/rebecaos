@@ -8,5 +8,5 @@ import rebecaos.syntax.Program.System
 /** Main function called by ScalaJS' compiled javascript when loading. */
 object Main {
   def main(args: Array[String]):Unit =
-    initSite[St](RebecaosConfig)
+    initSite[St](CaosConfig)
 }
